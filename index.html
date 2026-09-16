@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHI LEDGER — Cookie Chain Analytics</title>
+<meta name="description" content="Golden-ratio ledger analytics + BCH mining telemetry dashboard on Cookie Chain (SVM). Connect a wallet and anchor a ledger seal on-chain.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@solana/web3.js@1.98.0/lib/index.iife.min.js"></script>
+<style>
+  body { background:#0a0a0f; color:#e8e6df; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .gold { color:#e8b93c; } .gold-dim { color:#9a7b28; }
+  .card { background:#12121a; border:1px solid #26263a; border-radius:14px; }
+  .bar { background:linear-gradient(90deg,#e8b93c,#8a6a1c); height:8px; border-radius:4px; }
+  .mono { font-family: ui-monospace, monospace; }
+  .btn { background:#e8b93c; color:#0a0a0f; font-weight:700; border-radius:10px; padding:10px 18px; }
+  .btn:disabled { background:#4a4a5a; color:#999; cursor:not-allowed; }
+  .btn-ghost { border:1px solid #e8b93c; color:#e8b93c; border-radius:10px; padding:10px 18px; }
+  input, select { background:#1a1a26; border:1px solid #33334d; border-radius:8px; padding:8px 12px; color:#e8e6df; }
+  .phi-ring { border:2px solid #e8b93c; border-radius:9999px; }
+  a { color:#e8b93c; }
+  .status-dot { width:10px; height:10px; border-radius:9999px; display:inline-block; }
+</style>
+</head>
+<body class="min-h-screen">
+<div class="max-w-6xl mx-auto px-4 py-8">
+
+  <!-- Header -->
+  <header class="flex flex-wrap items-center justify-between gap-4 mb-8">
+    <div>
+      <h1 class="text-3xl font-bold"><span class="gold">φ</span> PHI LEDGER <span class="text-sm font-normal gold-dim">· Cookie Chain cApp</span></h1>
+      <p class="text-sm text-gray-400 mt-1">Golden-ratio ledger analytics + BCH mining telemetry, anchored on Cookie Chain (SVM).</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="walletLabel" class="mono text-xs text-gray-400">not connected</span>
+      <button id="connectBtn" class="btn text-sm">Connect Wallet</button>
+    </div>
+  </header>
+
+  <!-- Chain status strip -->
+  <div class="card p-4 mb-6 flex flex-wrap gap-x-8 gap-y-3 items-center text-sm">
+    <div class="flex items-center gap-2"><span id="rpcDot" class="status-dot bg-gray-500"></span><span class="text-gray-400">Cookie Chain RPC</span> <span id="rpcState" class="mono">…</span></div>
+    <div><span class="text-gray-400">Slot</span> <span id="statSlot" class="mono gold">…</span></div>
+    <div><span class="text-gray-400">Epoch</span> <span id="statEpoch" class="mono gold">…</span></div>
+    <div><span class="text-gray-400">Block height</span> <span id="statHeight" class="mono gold">…</span></div>
+    <div><span class="text-gray-400">TPS</span> <span id="statTps" class="mono gold">…</span></div>
+    <div class="ml-auto text-xs text-gray-500 mono">rpc.cookiescan.io</div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <!-- Ledger analytics -->
+    <div class="card p-6">
+      <h2 class="text-xl font-bold mb-1"><span class="gold">φ</span> Ledger Analytics</h2>
+      <p class="text-xs text-gray-500 mb-4">Tyree Jones · public phi ledger · snapshot <span id="snapHash" class="mono"></span></p>
+      <div class="grid grid-cols-3 gap-3 mb-4 text-center">
+        <div class="card p-3"><div id="sealCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">seals</div></div>
+        <div class="card p-3"><div id="entryCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">entries</div></div>
+        <div class="card p-3"><div id="ladderCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">ladders</div></div>
+      </div>
+      <h3 class="text-sm font-bold text-gray-300 mb-2">Entries per ladder</h3>
+      <div id="ladderBars" class="space-y-2 mb-4"></div>
+      <input id="entrySearch" placeholder="Search 428 entries…" class="w-full text-sm mb-2">
+      <div id="entryList" class="text-xs mono max-h-56 overflow-y-auto space-y-1 text-gray-300"></div>
+    </div>
+
+    <!-- Mining telemetry -->
+    <div class="card p-6">
+      <h2 class="text-xl font-bold mb-1"><span class="gold">⛏</span> BCH Mining Telemetry</h2>
+      <p class="text-xs text-gray-500 mb-4">Live · SoloPool · payout <span class="mono">qp432rtl…f2vm</span> <span id="mineAge" class="text-gray-600"></span></p>
+      <div class="grid grid-cols-2 gap-3 mb-4 text-center">
+        <div class="card p-3"><div id="mineHash" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">live hashrate</div></div>
+        <div class="card p-3"><div id="mineShares" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">valid shares</div></div>
+        <div class="card p-3"><div id="mineBest" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">best share</div></div>
+        <div class="card p-3"><div id="mineBlocks" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">blocks found</div></div>
+      </div>
+      <h3 class="text-sm font-bold text-gray-300 mb-2">Workers</h3>
+      <div id="workerList" class="text-xs mono space-y-1 text-gray-300"></div>
+      <p class="text-[11px] text-gray-600 mt-3">Shares are proof-of-work telemetry, not banked BCH. Read-only.</p>
+    </div>
+  </div>
+
+  <!-- On-chain anchor -->
+  <div class="card p-6 mb-6">
+    <h2 class="text-xl font-bold mb-1"><span class="gold">⚓</span> Anchor a Seal On-Chain</h2>
+    <p class="text-sm text-gray-400 mb-4">Write the SHA-256 of the ledger snapshot + a seal name to Cookie Chain as a memo. Permanent, public, verifiable. Costs a tiny COOK fee.</p>
+    <div class="flex flex-wrap gap-3 items-end mb-4">
+      <div class="flex-1 min-w-[220px]">
+        <label class="text-xs text-gray-500">Seal to anchor</label>
+        <select id="sealSelect" class="w-full text-sm mt-1"></select>
+      </div>
+      <div>
+        <label class="text-xs text-gray-500">Your COOK balance</label>
+        <div id="cookBal" class="mono text-sm mt-2">connect wallet</div>
+      </div>
+      <button id="anchorBtn" class="btn text-sm" disabled>Anchor on Cookie Chain</button>
+    </div>
+    <div id="anchorOut" class="text-sm mono hidden"></div>
+    <p id="noCook" class="text-xs text-yellow-500/90 hidden mt-2">No COOK on Cookie Chain — bridge a little from Solana to pay the fee: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></p>
+  </div>
+
+  <footer class="text-xs text-gray-600 flex flex-wrap gap-x-6 gap-y-2 justify-between">
+    <div>Built by <span class="gold">Tyree Jones (tyofthestarz)</span> · open source (MIT) · <a href="https://github.com/tyofthestars11-lab/vesuvius-progress-prize" target="_blank" rel="noopener">vesuvius-progress-prize</a> · <a href="https://www.kaggle.com/datasets/tyreejones393/phi-quantum-pulses" target="_blank" rel="noopener">Kaggle DOI 10.34740/kaggle/dsv/17364449</a></div>
+    <div class="mono">RPC <a href="https://rpc.cookiescan.io" target="_blank" rel="noopener">rpc.cookiescan.io</a> · Explorer <a href="https://cookiescan.io" target="_blank" rel="noopener">cookiescan.io</a> · Docs <a href="https://docs.cookiechain.wtf" target="_blank" rel="noopener">docs.cookiechain.wtf</a></div>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
