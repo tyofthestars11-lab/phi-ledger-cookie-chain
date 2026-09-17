@@ -181,24 +181,27 @@ $('connectBtn').addEventListener('click', async () => {
   }
   // Try each provider in order; if one's connect() throws, try the next.
   let lastErr = null;
-  // Universal: try every provider, and for each try publicKey, connect(), and request().
+  // Rewrite: ALWAYS call connect() to get the authoritative address.
+  // Never trust p.publicKey alone — it can be a placeholder (e.g. 1111...).
   for (const p of providers) {
-    const methods = [];
-    // 1. Already-available publicKey (dApp browser).
-    // 2. Legacy connect().
-    // 3. EIP-1193-style request().
     try {
-      let pubkey = p.publicKey;
-      if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
-      if (!pubkey && typeof p.connect === 'function') {
-        const resp = await p.connect().catch(e => { throw e; });
-        pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
-        if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+      let pubkey = null;
+      // 1. Legacy connect() — the authoritative source.
+      if (typeof p.connect === 'function') {
+        const resp = await p.connect();
+        const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
+        if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
       }
+      // 2. Check p.publicKey AFTER connect() (it should now be populated).
+      if (!pubkey && p.publicKey) {
+        const pk = p.publicKey;
+        pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+      }
+      // 3. EIP-1193-style request() as fallback.
       if (!pubkey && typeof p.request === 'function') {
         const resp = await p.request({ method: 'connect' });
-        pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (typeof resp === 'string' ? resp : null);
-        if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+        const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || p.publicKey;
+        if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
       }
       provider = p;
       if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned invalid address: ' + pubkey);
