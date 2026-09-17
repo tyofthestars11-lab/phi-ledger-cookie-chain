@@ -300,6 +300,12 @@ $('anchorBtn').addEventListener('click', async () => {
       } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 5000)); }
     }
     if (!confirmed) throw lastErr || new Error('Transaction was not confirmed after 4 broadcast attempts.');
+    // Verify the transaction actually succeeded (not just confirmed).
+    const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
+    const txErr = txInfo?.meta?.err;
+    if (txErr) {
+      throw new Error('Transaction landed but failed on-chain: ' + JSON.stringify(txErr) + '. Please try again — the network is inconsistent.');
+    }
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     refreshBalance();
   } catch (e) {
