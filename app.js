@@ -91,6 +91,34 @@ async function mining() {
   }
 }
 
+/* ---------- Wallet-injection guard ----------
+ * Some wallets (Phantom) append their own instructions at sign time — e.g.
+ * Phantom's Lighthouse security program. If that program does not exist on
+ * Cookie Chain the transaction can never succeed, so we detect it BEFORE
+ * broadcasting and stop instead of burning a fee on a doomed transaction. */
+const COMPUTE_BUDGET_PROGRAM = 'ComputeBudget111111111111111111111111111111';
+async function missingPrograms(signedTx) {
+  const ids = [...new Set(signedTx.instructions.map(ix => ix.programId.toString()))];
+  const unknown = ids.filter(id => id !== MEMO_PROGRAM && id !== COMPUTE_BUDGET_PROGRAM);
+  const missing = [];
+  for (const id of unknown) {
+    try {
+      const info = await connection.getAccountInfo(new PublicKey(id));
+      if (!info) missing.push(id);
+    } catch (e) { /* RPC hiccup: treat as unknown, not missing */ }
+  }
+  return { unknown, missing };
+}
+function injectionError(missing) {
+  const names = missing.map(m => short(m, 10)).join(', ');
+  return new Error(
+    'Not broadcast (no fee spent): your wallet added an instruction for program ' + names +
+    ', which does not exist on Cookie Chain — this anchor can never succeed from this wallet. ' +
+    'Phantom injects its Lighthouse security program automatically; Nightly does not. ' +
+    'Connect with Nightly instead (add the Cookie Chain network: rpc.cookiescan.io).'
+  );
+}
+
 /* ---------- base58 (for Phantom mobile deep links) ---------- */
 const BS58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
 function bs58encode(bytes) {
@@ -132,8 +160,10 @@ function bs58decode(s) {
 
 /* ---------- Wallet connect (injected provider: Phantom / Nightly / Solflare) ---------- */
 function findProvider() {
-  const cands = [window.solana, window.nightly && window.nightly.solana, window.backpack].filter(Boolean);
-  return cands.find(p => p && p.isPhantom || p && p.connect) || cands[0] || null;
+  const cands = [window.nightly && window.nightly.solana, window.solana, window.backpack].filter(Boolean);
+  // Prefer Nightly: Phantom auto-injects its Lighthouse security instruction,
+  // which does not exist on Cookie Chain, so Phantom-signed anchors always fail.
+  return cands.find(p => p && p.isNightly) || cands.find(p => p && p.connect) || null;
 }
 
 $('connectBtn').addEventListener('click', async () => {
@@ -245,6 +275,9 @@ async function handlePhantomReturn() {
   out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
   try {
     const raw = bs58decode(signedB58);
+    const returned = Transaction.from(raw);
+    const { missing } = await missingPrograms(returned);
+    if (missing.length > 0) throw injectionError(missing);
     const sig = await connection.sendRawTransaction(raw);
     out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
     await connection.confirmTransaction(sig, 'confirmed');
@@ -281,6 +314,10 @@ $('anchorBtn').addEventListener('click', async () => {
     if (signed.recentBlockhash !== blockhash) {
       throw new Error('Wallet changed the transaction network data. Please try Nightly wallet instead — see note below.');
     }
+    // Wallet-injection guard: stop BEFORE broadcast if the wallet appended an
+    // instruction calling a program that does not exist on Cookie Chain.
+    const { missing } = await missingPrograms(signed);
+    if (missing.length > 0) throw injectionError(missing);
     // Skip preflight: the RPC's simulation is unreliable. Broadcast directly.
     const rawTx = signed.serialize();
     sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
@@ -304,7 +341,7 @@ $('anchorBtn').addEventListener('click', async () => {
     const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
     const txErr = txInfo?.meta?.err;
     if (txErr) {
-      throw new Error('Transaction landed but failed on-chain: ' + JSON.stringify(txErr) + '. Please try again — the network is inconsistent.');
+      throw new Error('Transaction landed but the chain rejected it: ' + JSON.stringify(txErr) + '. Retrying from the same wallet will fail the same way — see the wallet note above.');
     }
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     refreshBalance();
