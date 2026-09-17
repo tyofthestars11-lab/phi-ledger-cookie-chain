@@ -233,79 +233,191 @@ async function buildAnchorTx(walletAddr, seal) {
 
 $('mobileAddr').addEventListener('change', refreshMobileBalance);
 
+/* ---------- Phantom app: encrypted deeplink session (NaCl box) ----------
+ * The app only honors well-formed requests: an encrypted session first
+ * (connect), then an encrypted sign payload. A bare ?transaction= URL is
+ * unreadable to the app — it just opens home. This is the documented flow:
+ * the approval happens IN THE APP, the site only broadcasts afterwards. */
+const PHANTOM_UL = 'https://phantom.app/ul/v1';
+function phantomRedirect() { return window.location.origin + window.location.pathname; }
+function getDappKeys() {
+  let pub = null, sec = null;
+  try { pub = sessionStorage.getItem('dapp_pub'); sec = sessionStorage.getItem('dapp_sec'); } catch (e) {}
+  if (!pub || !sec) {
+    const kp = nacl.box.keyPair();
+    pub = bs58encode(kp.publicKey); sec = bs58encode(kp.secretKey);
+    try { sessionStorage.setItem('dapp_pub', pub); sessionStorage.setItem('dapp_sec', sec); } catch (e) {}
+  }
+  return { pub, sec };
+}
+function getPhantomSession() {
+  try {
+    const session = sessionStorage.getItem('phantom_session');
+    const phantomPub = sessionStorage.getItem('phantom_pubkey');
+    if (session && phantomPub) return { session, phantomPub };
+  } catch (e) {}
+  return null;
+}
+function setPhantomSession(session, phantomPub) {
+  try { sessionStorage.setItem('phantom_session', session); sessionStorage.setItem('phantom_pubkey', phantomPub); } catch (e) {}
+}
+function setPendingSign(addr, seal) {
+  try {
+    sessionStorage.setItem('phantom_pending_sign', JSON.stringify({ addr, seal }));
+    sessionStorage.setItem('anchorReroute', seal);
+  } catch (e) {}
+}
+function getPendingSign() {
+  try { return JSON.parse(sessionStorage.getItem('phantom_pending_sign') || 'null'); } catch (e) { return null; }
+}
+function clearPendingSign() {
+  try { sessionStorage.removeItem('phantom_pending_sign'); sessionStorage.removeItem('anchorReroute'); } catch (e) {}
+}
+function encryptForPhantom(obj, phantomPubB58) {
+  const dapp = getDappKeys();
+  const nonce = nacl.randomBytes(24);
+  const box = nacl.box(new TextEncoder().encode(JSON.stringify(obj)), nonce, bs58decode(phantomPubB58), bs58decode(dapp.sec));
+  return { nonceB58: bs58encode(nonce), payloadB58: bs58encode(box) };
+}
+function decryptFromPhantom(dataB58, nonceB58, phantomPubB58) {
+  const dapp = getDappKeys();
+  const opened = nacl.box.open(bs58decode(dataB58), bs58decode(nonceB58), bs58decode(phantomPubB58), bs58decode(dapp.sec));
+  if (!opened) throw new Error('Could not decrypt the wallet response.');
+  return JSON.parse(new TextDecoder().decode(opened));
+}
+// Step 1: connect — establishes the encrypted session. On return the boot
+// handler stores the session and continues to the sign step automatically.
+function phantomConnect(out) {
+  const dapp = getDappKeys();
+  if (out) out.innerHTML = '<span class="text-gray-400">Opening Phantom to connect… approve in the app.</span>';
+  const redirect = encodeURIComponent(phantomRedirect());
+  const appUrl = encodeURIComponent(phantomRedirect());
+  window.location.href = `${PHANTOM_UL}/connect?dapp_encryption_public_key=${dapp.pub}&cluster=mainnet-beta&app_url=${appUrl}&redirect_link=${redirect}`;
+}
+// Step 2: sign — fresh transaction, encrypted payload, approval IN THE APP.
+async function phantomSignRequest(addr, seal, out) {
+  const sess = getPhantomSession();
+  if (!sess) { phantomConnect(out); return; }
+  if (out) out.innerHTML = '<span class="text-gray-400">Opening Phantom… approve the anchor in the app.</span>';
+  const tx = await buildAnchorTx(addr, seal); // fresh blockhash for the app
+  const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
+  const enc = encryptForPhantom({ transaction: b58, session: sess.session }, sess.phantomPub);
+  const dapp = getDappKeys();
+  const redirect = encodeURIComponent(phantomRedirect());
+  window.location.href = `${PHANTOM_UL}/signTransaction?dapp_encryption_public_key=${dapp.pub}&nonce=${enc.nonceB58}&redirect_link=${redirect}&payload=${enc.payloadB58}`;
+}
+// Entry: one call from either button. Connects first if needed, else signs.
+async function phantomAnchorFlow(addr, seal, out) {
+  setPendingSign(addr, seal);
+  try {
+    if (getPhantomSession()) await phantomSignRequest(addr, seal, out);
+    else phantomConnect(out);
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+  }
+}
+
 $('mobileAnchorBtn').addEventListener('click', async () => {
   const addr = $('mobileAddr').value.trim();
   const seal = $('sealSelect').value;
   const out = $('mobileOut');
   if (!addr || !seal || !snapshot) { out.textContent = 'Enter your wallet address first.'; return; }
   out.classList.remove('hidden');
-  out.innerHTML = '<span class="text-gray-400">Building transaction… opening Phantom.</span>';
   try {
     new PublicKey(addr); // validate
-    const tx = await buildAnchorTx(addr, seal);
-    const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
-    const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
-    try { sessionStorage.setItem('anchorReroute', seal); } catch (e) {}
-    window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
+    await phantomAnchorFlow(addr, seal, out);
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
   }
 });
 
-/* Handle return from the wallet app with a signed transaction */
+/* Handle returns from the Phantom app: connect (session) or sign (signed tx) */
 async function handlePhantomReturn() {
   const params = new URLSearchParams(window.location.search);
-  let rerouted = null;
-  try { rerouted = sessionStorage.getItem('anchorReroute'); } catch (e) {}
-  const clearReroute = () => { try { sessionStorage.removeItem('anchorReroute'); } catch (e) {} };
-  if (params.get('errorCode')) {
-    clearReroute();
-    const out = $('mobileOut') || $('anchorOut');
+  const encPub = params.get('phantom_encryption_public_key');
+  const data = params.get('data');
+  const nonce = params.get('nonce');
+  const errCode = params.get('errorCode');
+  const rerouted = getPendingSign();
+  const out = $('mobileOut') || $('anchorOut');
+
+  if (errCode) {
+    clearPendingSign();
+    history.replaceState(null, '', window.location.pathname);
     if (out) {
       out.classList.remove('hidden');
       out.innerHTML = `<span class="text-red-400">Wallet declined:</span> <span class="text-gray-400">${(params.get('errorMessage') || 'rejected').slice(0, 160)}</span>`;
     }
-    history.replaceState(null, '', window.location.pathname);
     return;
   }
-  const signedB58 = params.get('transaction');
-  // Loop trap: the engine fired the app deeplink but we came back with no
-  // signed bytes — the app couldn't open itself (in-app browser circle).
-  if (rerouted && (!signedB58 || params.get('anchored') !== '1')) {
-    clearReroute();
+  // Loop trap: we fired an app deeplink but came back with no app response —
+  // the app couldn't open itself (in-app browser circle).
+  if (rerouted && !encPub && !data) {
+    clearPendingSign();
     history.replaceState(null, '', window.location.pathname);
-    const out = $('anchorOut');
-    out.classList.remove('hidden');
-    out.innerHTML = `<span class="text-amber-300">That looped — you're inside Phantom's own browser, so the app can't open itself.</span><br><span class="text-gray-400 text-sm">Open this page in your phone's real Chrome browser and tap Anchor once. The app will open properly there, and the engine carries the rest.</span><br><button id="copyLinkBtnR" class="btn-ghost text-xs mt-2">Copy page link</button>`;
+    const ao = $('anchorOut');
+    ao.classList.remove('hidden');
+    ao.innerHTML = `<span class="text-amber-300">That looped — you're inside Phantom's own browser, so the app can't open itself.</span><br><span class="text-gray-400 text-sm">Open this page in your phone's real Chrome browser and tap Anchor once. The app will open properly there, and the engine carries the rest.</span><br><button id="copyLinkBtnR" class="btn-ghost text-xs mt-2">Copy page link</button>`;
     wireCopyButton('copyLinkBtnR');
     return;
   }
-  if (!signedB58 || params.get('anchored') !== '1') return;
-  clearReroute();
+  if (!encPub && !data) return; // not our return
   history.replaceState(null, '', window.location.pathname);
-  const out = $('mobileOut');
-  $('mobileAnchor').classList.remove('hidden');
-  out.classList.remove('hidden');
-  try {
-    const raw = bs58decode(signedB58);
-    const returned = Transaction.from(raw);
-    // Byte rung on the app's output: exactly one memo instruction, our seal
-    // text, every program present on-chain. Nothing trusted, all verified.
-    const ix = returned.instructions[0];
-    let dataText = '';
-    try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
-    const looksAnchor = returned.instructions.length === 1 && ix && ix.programId.toString() === MEMO_PROGRAM && dataText.indexOf('PHI-LEDGER|') === 0;
-    const { missing } = await missingPrograms(returned);
-    if (!looksAnchor || missing.length > 0) {
-      const why = !looksAnchor ? 'bytes that are not the anchor transaction' : 'a program (' + missing.map(m => short(m, 8)).join(',') + ') with no account on Cookie Chain';
-      out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">The wallet app returned ${why} — nothing was broadcast, no fee spent. This wallet can't produce clean bytes for Cookie Chain; the remaining route is Nightly (add the Cookie Chain network: rpc.cookiescan.io).</span>`;
-      return;
+
+  // --- Connect return: decrypt, store the session, continue to sign ---
+  if (encPub && data) {
+    try {
+      const dec = decryptFromPhantom(data, nonce, encPub);
+      setPhantomSession(dec.session, encPub);
+      const pending = getPendingSign();
+      if (pending) {
+        const po = $('mobileOut');
+        $('mobileAnchor').classList.remove('hidden');
+        if (po) po.classList.remove('hidden');
+        await phantomSignRequest(pending.addr, pending.seal, po || out);
+      } else if (out) {
+        out.classList.remove('hidden');
+        out.innerHTML = '<span class="text-green-400">Connected to the Phantom app.</span>';
+      }
+    } catch (e) {
+      clearPendingSign();
+      if (out) {
+        out.classList.remove('hidden');
+        out.innerHTML = `<span class="text-red-400">Connect failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+      }
     }
-    const sig = await broadcastAndVerify(returned, out, null);
-    const sealMatch = dataText.match(/seal=([^|]+)/);
-    anchorDone(out, sig, sealMatch ? sealMatch[1] : 'seal');
-  } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+    return;
+  }
+
+  // --- Sign return: decrypt the signed tx, verify bytes, broadcast ---
+  if (data) {
+    clearPendingSign();
+    const mo = $('mobileOut');
+    $('mobileAnchor').classList.remove('hidden');
+    mo.classList.remove('hidden');
+    try {
+      const sess = getPhantomSession();
+      if (!sess) throw new Error('Session expired — tap again to reconnect.');
+      const dec = decryptFromPhantom(data, nonce, sess.phantomPub);
+      const returned = Transaction.from(bs58decode(dec.transaction));
+      // Byte rung on the app's output: exactly one memo instruction, our seal
+      // text, every program present on-chain. Nothing trusted, all verified.
+      const ix = returned.instructions[0];
+      let dataText = '';
+      try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
+      const looksAnchor = returned.instructions.length === 1 && ix && ix.programId.toString() === MEMO_PROGRAM && dataText.indexOf('PHI-LEDGER|') === 0;
+      const { missing } = await missingPrograms(returned);
+      if (!looksAnchor || missing.length > 0) {
+        const why = !looksAnchor ? 'bytes that are not the anchor transaction' : 'a program (' + missing.map(m => short(m, 8)).join(',') + ') with no account on Cookie Chain';
+        mo.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">The wallet app returned ${why} — nothing was broadcast, no fee spent. This wallet can't produce clean bytes for Cookie Chain; the remaining route is Nightly (add the Cookie Chain network: rpc.cookiescan.io).</span>`;
+        return;
+      }
+      const sig = await broadcastAndVerify(returned, mo, null);
+      const sealMatch = dataText.match(/seal=([^|]+)/);
+      anchorDone(mo, sig, sealMatch ? sealMatch[1] : 'seal');
+    } catch (e) {
+      mo.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+    }
   }
 }
 
@@ -370,11 +482,13 @@ function wireCopyButton(id) {
   });
 }
 
-function fireAppDeeplink(tx, seal) {
-  const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
-  const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
-  try { sessionStorage.setItem('anchorReroute', seal); } catch (e) {}
-  window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
+// Engine reroute into the encrypted app flow (connect first if needed).
+function fireAppDeeplink(addr, seal, out) {
+  setPendingSign(addr, seal);
+  if (getPhantomSession()) phantomSignRequest(addr, seal, out).catch(e => {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+  });
+  else phantomConnect(out);
 }
 
 const IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
@@ -408,8 +522,7 @@ async function runAnchorEngine() {
     if (!IS_MOBILE) {
       throw new Error('In-page signing returned foreign bytes (' + check.problems.join('; ') + '). On desktop the remaining route is Nightly with the Cookie Chain network (rpc.cookiescan.io) added.');
     }
-    const fresh = await buildAnchorTx(wallet, seal); // fresh blockhash for the app
-    fireAppDeeplink(fresh, seal);
+    fireAppDeeplink(wallet, seal, out);
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
