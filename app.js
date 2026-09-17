@@ -679,6 +679,74 @@ function normalizeSignedTx(r) {
   } catch (e) {}
   return null;
 }
+function describeShape(r) {
+  // Compact, exception-safe description of an unknown provider return value.
+  try {
+    if (r === null) return 'null';
+    if (r === undefined) return 'undefined';
+    const t = typeof r;
+    if (t === 'string') return `string len=${r.length} head=${r.slice(0, 24)}`;
+    if (t !== 'object') return t + '=' + String(r).slice(0, 40);
+    if (r instanceof Uint8Array) return `Uint8Array len=${r.length} head=${hexOf(r.slice(0, 8))}`;
+    if (Array.isArray(r)) return `array len=${r.length} [${r.slice(0, 4).map(describeShape).join('|')}]`;
+    const ctor = (r.constructor && r.constructor.name) || '?';
+    const vals = Object.keys(r).slice(0, 8).map(k => {
+      let v;
+      try { v = r[k]; } catch (e) { return k + '=<throw>'; }
+      if (typeof v === 'string') return `${k}:str len=${v.length} head=${v.slice(0, 16)}`;
+      if (v instanceof Uint8Array) return `${k}:u8 len=${v.length} head=${hexOf(v.slice(0, 8))}`;
+      if (Array.isArray(v)) return `${k}:arr len=${v.length}`;
+      return `${k}:${typeof v}`;
+    }).join(', ');
+    return `object ctor=${ctor} {${vals}}`;
+  } catch (e) { return '<undescribable>'; }
+}
+function txToB64(u8) {
+  let s = '';
+  for (let i = 0; i < u8.length; i += 8192) s += String.fromCharCode.apply(null, u8.subarray(i, i + 8192));
+  return btoa(s);
+}
+function transformProbes(msgBytes) {
+  // Every known way a wallet might rewrite message bytes before signing.
+  const enc = new TextEncoder();
+  const probes = [['raw-bytes', msgBytes]];
+  try { probes.push(['utf8-round-trip', enc.encode(new TextDecoder().decode(msgBytes))]); } catch (e) {}
+  probes.push(['comma-joined', enc.encode(Array.from(msgBytes).join(','))]);
+  probes.push(['json-array', enc.encode(JSON.stringify(Array.from(msgBytes)))]);
+  probes.push(['hex-string', enc.encode(hexOf(msgBytes))]);
+  try { probes.push(['base64-string', enc.encode(txToB64(msgBytes))]); } catch (e) {}
+  const pre = enc.encode('solana offchain');
+  const env0 = new Uint8Array(1 + pre.length + 1 + msgBytes.length);
+  env0[0] = 0xff; env0.set(pre, 1); env0[1 + pre.length] = 0x00; env0.set(msgBytes, 1 + pre.length + 1);
+  probes.push(['offchain-envelope-v0', env0]);
+  const envR = new Uint8Array(1 + pre.length + msgBytes.length);
+  envR[0] = 0xff; envR.set(pre, 1); envR.set(msgBytes, 1 + pre.length);
+  probes.push(['offchain-envelope-raw', envR]);
+  return probes;
+}
+function probeVerifies(cands, msgBytes, pub) {
+  // Try every transform; return {name, enc} of the first that verifies, else null.
+  for (const [name, bytes] of transformProbes(msgBytes)) {
+    for (const c of cands) {
+      try { if (nacl.sign.detached.verify(bytes, c.bytes, pub)) return { name, enc: c.enc }; } catch (e) {}
+    }
+  }
+  return null;
+}
+const KEY_CHECK_TEXT = 'phi-ledger-key-check';
+async function walletKeyCheck(pubBytes) {
+  // The decisive test: does this provider sign with the key it reports?
+  // Signs a fixed readable message and checks the signature against the
+  // connected public key under every known transform.
+  // Returns {outcome: 'raw'|'enveloped'|'none', detail}.
+  const msg = new TextEncoder().encode(KEY_CHECK_TEXT);
+  const r = await provider.signMessage(msg);
+  const cands = extractSigCandidates(r);
+  const hit = probeVerifies(cands, msg, pubBytes);
+  if (hit && hit.name === 'raw-bytes') return { outcome: 'raw', detail: 'signed raw bytes with the reported key' };
+  if (hit) return { outcome: 'enveloped', detail: `signed <${hit.name}> (as ${hit.enc}) — never raw bytes` };
+  return { outcome: 'none', detail: `tried ${cands.length ? cands[0].enc : 'no-candidate'}; response ${describeShape(r)}` };
+}
 function firstDiffByte(aHex, bHex) {
   const n = Math.min(aHex.length, bHex.length);
   for (let i = 0; i < n; i += 2) {
@@ -690,22 +758,14 @@ function divergenceReport(msgBytes, cands, raw, pub) {
   const parts = [];
   parts.push(`wallet signature did not verify against the anchor bytes (message ${msgBytes.length}B)`);
   if (!cands.length) {
-    parts.push('no 64-byte signature candidate in the wallet response');
-    try { parts.push('response: ' + JSON.stringify(raw).slice(0, 160)); }
-    catch (e) { parts.push('response: ' + String(raw).slice(0, 160)); }
+    parts.push('no 64-byte signature candidate in the wallet response (' + describeShape(raw) + ')');
   } else {
-    for (const c of cands) parts.push(`tried ${c.enc} (head ${hexOf(c.bytes.slice(0, 8))}…) — invalid`);
+    for (const c of cands.slice(0, 3)) parts.push(`tried ${c.enc} sig=${bs58encode(c.bytes).slice(0, 12)}… — invalid`);
+    parts.push('full sig: ' + bs58encode(cands[0].bytes));
   }
-  // Probe: did the wallet sign the UTF-8 round-trip of the bytes instead of the raw bytes?
-  try {
-    const rt = new TextEncoder().encode(new TextDecoder().decode(msgBytes));
-    let rtMatch = false;
-    for (const c of cands) {
-      try { if (nacl.sign.detached.verify(rt, c.bytes, pub)) { rtMatch = true; break; } } catch (e) {}
-    }
-    if (rtMatch) parts.push('PROBE MATCH: the wallet signed the UTF-8 round-trip of the bytes, not the raw bytes — its signMessage cannot sign raw transaction bytes');
-    else if (hexOf(rt) !== hexOf(msgBytes)) parts.push('probe: UTF-8 round-trip alters the bytes, but the signature matches neither form');
-  } catch (e) {}
+  const hit = probeVerifies(cands, msgBytes, pub);
+  if (hit) parts.push(`PROBE MATCH: the wallet signed <${hit.name}> (as ${hit.enc}), not the raw anchor bytes — this signature can never broadcast`);
+  else parts.push('probes (raw, utf8-round-trip, comma-joined, json-array, hex-string, base64-string, offchain envelopes): no match — the wallet signed with a different key or an unknown transform');
   return parts.join('; ');
 }
 async function signMessageFallback(walletAddr, seal) {
@@ -730,23 +790,38 @@ async function signMessageFallback(walletAddr, seal) {
   throw new Error(divergenceReport(msgBytes, cands, r, pub));
 }
 
-// One tap runs the whole: build → sign → verify bytes → reroute-or-broadcast → verify.
+// One tap runs the whole: key-check → sign → verify bytes → broadcast → verify.
 async function runAnchorEngine() {
   if (!provider || !wallet) return;
   const seal = $('sealSelect').value;
   const out = $('anchorOut');
   out.classList.remove('hidden');
   let alterNote = '';
+  const pubBytes = new PublicKey(wallet).toBytes();
   try {
     out.innerHTML = '<span class="text-gray-400">Building anchor transaction…</span>';
     const tx = await buildAnchorTx(wallet, seal);
+    // Step 0 — key check: does this provider sign with the key it reports?
+    // One readable approval ("phi-ledger-key-check"). If the wallet signs with a
+    // different key than the connected address, nothing downstream can verify.
+    let enveloped = false;
+    if (typeof provider.signMessage === 'function') {
+      out.innerHTML = '<span class="text-gray-400">Checking the wallet key… approve once in your wallet.</span>';
+      const kc = await walletKeyCheck(pubBytes);
+      if (kc.outcome === 'none') {
+        throw new Error(`key check FAILED: the wallet's signature for "${KEY_CHECK_TEXT}" does not verify with ${wallet} (${kc.detail}). It reports one address and signs with another (or rewrites every payload) — no signature from this provider can anchor. No fee spent.`);
+      }
+      enveloped = kc.outcome !== 'raw';
+      if (enveloped) alterNote = `key check: wallet ${kc.detail}. `;
+    }
     out.innerHTML = '<span class="text-gray-400">Signing… approve in your wallet.</span>';
     // Always sign locally and broadcast via our Cookie Chain connection.
     // (provider.signAndSendTransaction would broadcast via the wallet's own
     // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
     let finalTx = null, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
     if (typeof provider.signTransaction === 'function') {
-      const signedTx = normalizeSignedTx(await provider.signTransaction(tx));
+      const rawSigned = await provider.signTransaction(tx);
+      const signedTx = normalizeSignedTx(rawSigned);
       if (signedTx) {
         const wantHex = hexOf(tx.serializeMessage());
         const gotHex = hexOf(signedTx.serializeMessage());
@@ -754,18 +829,39 @@ async function runAnchorEngine() {
           finalTx = signedTx;
         } else {
           const off = firstDiffByte(wantHex, gotHex);
-          alterNote = `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
+          alterNote += `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
+          if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
           out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
           finalTx = await signMessageFallback(wallet, seal);
           finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
         }
       } else {
-        alterNote = 'signTransaction returned an unreadable shape. ';
-        out.innerHTML = '<span class="text-gray-400">Wallet returned an unreadable signature — signing the exact bytes instead… approve in your wallet.</span>';
-        finalTx = await signMessageFallback(wallet, seal);
-        finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+        // Maybe signTransaction returned a bare signature instead of a transaction.
+        const msgBytes = new Uint8Array(tx.serializeMessage());
+        const cands = extractSigCandidates(rawSigned);
+        let attached = false;
+        for (const c of cands) {
+          try {
+            if (nacl.sign.detached.verify(msgBytes, c.bytes, pubBytes)) {
+              tx.addSignature(new PublicKey(wallet), c.bytes);
+              attached = true;
+              break;
+            }
+          } catch (e) {}
+        }
+        if (attached) {
+          alterNote += 'signTransaction returned a bare signature (verified) instead of a transaction. ';
+          finalTx = tx;
+        } else {
+          alterNote += 'signTransaction returned ' + describeShape(rawSigned) + '. ';
+          if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
+          out.innerHTML = '<span class="text-gray-400">Wallet returned an unreadable signature — signing the exact bytes instead… approve in your wallet.</span>';
+          finalTx = await signMessageFallback(wallet, seal);
+          finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+        }
       }
     } else if (typeof provider.signMessage === 'function') {
+      if (enveloped) throw new Error(alterNote + 'this provider only signs enveloped messages, never raw transaction bytes — no broadcastable signature exists. No fee spent.');
       out.innerHTML = '<span class="text-gray-400">Signing the exact bytes… approve in your wallet.</span>';
       finalTx = await signMessageFallback(wallet, seal);
       finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
@@ -783,7 +879,8 @@ async function runAnchorEngine() {
     anchorDone(out, sig, seal);
     refreshBalance();
   } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(alterNote + String((e && e.message) || e))}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
+    const full = (alterNote + String((e && e.message) || e)).slice(0, 900);
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
 }
 $('anchorBtn').addEventListener('click', runAnchorEngine);
