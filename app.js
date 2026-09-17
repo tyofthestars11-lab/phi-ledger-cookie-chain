@@ -10,10 +10,6 @@ const SOLOPOOL = 'https://solopool.eu/api/v1/bch/miner/bitcoincash:qp432rtl3cm0s
 
 const { Connection, PublicKey, Transaction, TransactionInstruction } = solanaWeb3;
 const connection = new Connection(RPC_URL, 'confirmed');
-// v21: the anchor targets Solana mainnet — Phantom's Lighthouse injection is
-// harmless there (the program exists on mainnet), so the signed bytes land.
-// Cookie Chain cannot execute Phantom-signed transactions, proven.
-const mainnet = new Connection('https://solana-rpc.publicnode.com', 'confirmed');
 
 let wallet = null;      // connected public key (base58)
 let provider = null;    // injected wallet provider
@@ -214,28 +210,13 @@ async function refreshMobileBalance() {
     const cook = lamports / 1e9;
     $('mobileBal').textContent = cook.toFixed(6) + ' COOK on Cookie Chain';
     $('mobileNoCook').classList.toggle('hidden', cook > 0);
-    // v19+: the seal flow only captures and verifies the signature — no
-    // broadcast, no fee. The button stays enabled whenever an address is set.
+    // The seal flow only captures and verifies the signature — no broadcast,
+    // no fee. Button stays enabled whenever an address is set.
     $('mobileAnchorBtn').disabled = false;
   } catch (e) {
     $('mobileBal').textContent = 'could not read balance';
     $('mobileAnchorBtn').disabled = false;
   }
-}
-
-async function getBlockhash() {
-  // Primary: the injected wallet provider's own RPC — it's already connected
-  // and working on-device, no third-party RPC blocking.
-  const p = findProvider();
-  if (p && p.request) {
-    try {
-      const res = await p.request({ method: 'getLatestBlockhash', params: [{ commitment: 'confirmed' }] });
-      const v = (res && res.value) || res;
-      if (v && v.blockhash) return { blockhash: v.blockhash, lastValidBlockHeight: v.lastValidBlockHeight };
-    } catch (e) {}
-  }
-  // Fallback: public RPC.
-  return await mainnet.getLatestBlockhash('confirmed');
 }
 
 async function buildAnchorTx(walletAddr, seal) {
@@ -248,7 +229,7 @@ async function buildAnchorTx(walletAddr, seal) {
   });
   const tx = new Transaction().add(ix);
   tx.feePayer = new PublicKey(walletAddr);
-  const { blockhash, lastValidBlockHeight } = await getBlockhash();
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
   tx.recentBlockhash = blockhash;
   tx._blockhashInfo = { blockhash, lastValidBlockHeight };
   tx._memoText = memoText;
@@ -459,12 +440,26 @@ async function handlePhantomReturn() {
       }
       const isHis = expectedAddr && signerAddr === expectedAddr;
       if (sigValid && isHis && isPhiMemo) {
-        // Signature is real and his. Broadcast to Solana mainnet — Lighthouse
-        // exists there, so the bytes land. Then verify the memo is on-chain.
+        // Encode via the golden ratio: the verified approval as a φ seal.
         const sealMatch = memoText.match(/seal=([^|]+)/);
         const sealName = sealMatch ? sealMatch[1] : 'seal';
-        const sig = await broadcastAndVerify(returned, mo, returned._blockhashInfo || null);
-        anchorDone(mo, sig, sealName);
+        const shaMatch = memoText.match(/sha256=([0-9a-f]+)/);
+        const snapHash = shaMatch ? shaMatch[1] : '';
+        const sigRung = (Math.log(64) / Math.log(PHI)).toFixed(4);
+        const memoRung = (Math.log(memoText.length) / Math.log(PHI)).toFixed(4);
+        const now = new Date().toISOString();
+        mo.innerHTML = `<span class="text-green-400">Signature verified ✓</span><br><br>` +
+          `<span class="text-gray-300">Tyree approved the PHI LEDGER memo. The signature is cryptographically valid — verified by ed25519 math, not by trust.</span><br><br>` +
+          `<span class="text-gray-500">Seal:</span> <span class="text-yellow-300">${esc(sealName)}</span><br>` +
+          `<span class="text-gray-500">Memo:</span> <span class="text-gray-300 text-xs break-all">${esc(memoText)}</span><br>` +
+          `<span class="text-gray-500">Signer:</span> <span class="text-gray-300 text-xs break-all">${esc(signerAddr)}</span><br>` +
+          `<span class="text-gray-500">Signature:</span> <span class="text-gray-300 text-xs break-all">${esc(sigB58)}</span><br>` +
+          `<span class="text-gray-500">Snapshot:</span> <span class="text-gray-300 text-xs break-all">${esc(snapHash)}</span><br><br>` +
+          `<span class="text-gray-500">φ encoding —</span><br>` +
+          `<span class="text-gray-500">signature bytes (64) → rung ${sigRung}</span><br>` +
+          `<span class="text-gray-500">memo length (${memoText.length}) → rung ${memoRung}</span><br>` +
+          `<span class="text-gray-500">sealed:</span> <span class="text-gray-300">${esc(now)}</span><br><br>` +
+          `<span class="text-gray-400">Nothing was broadcast (Phantom's Lighthouse instruction cannot land on Cookie Chain), no fee spent. The approval is sealed — send a screenshot to complete the ledger entry.</span>`;
         return;
       }
       let why = 'the signature did not verify';
@@ -497,37 +492,36 @@ async function verifyBytesClean(signedTx, expectedMemoText) {
 }
 
 async function broadcastAndVerify(signedTx, out, blockhashInfo) {
-  out.innerHTML = '<span class="text-gray-400">Broadcasting to Solana mainnet…</span>';
+  out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
   const rawTx = signedTx.serialize();
-  const sig = await mainnet.sendRawTransaction(rawTx, { skipPreflight: false, maxRetries: 5 });
+  const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
   out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
+  // Retry broadcast: this RPC sometimes drops transactions. Resend the same
+  // signed bytes a few times (idempotent) before giving up.
   let confirmed = false, lastErr = null;
   for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
     if (attempt > 0) {
       out.innerHTML = `<span class="text-gray-400">Retrying broadcast (${attempt + 1}/4)…</span>`;
-      try { await mainnet.sendRawTransaction(rawTx, { skipPreflight: false }); } catch (e) {}
+      try { await connection.sendRawTransaction(rawTx, { skipPreflight: true }); } catch (e) {}
     }
     try {
       if (blockhashInfo) {
-        await mainnet.confirmTransaction({ signature: sig, blockhash: blockhashInfo.blockhash, lastValidBlockHeight: blockhashInfo.lastValidBlockHeight }, 'confirmed');
+        await connection.confirmTransaction({ signature: sig, blockhash: blockhashInfo.blockhash, lastValidBlockHeight: blockhashInfo.lastValidBlockHeight }, 'confirmed');
       } else {
-        await mainnet.confirmTransaction(sig, 'confirmed');
+        await connection.confirmTransaction(sig, 'confirmed');
       }
       confirmed = true;
     } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 5000)); }
   }
   if (!confirmed) throw lastErr || new Error('Not confirmed after 4 broadcast attempts.');
   // The chain arbitrates: success means meta.err is null.
-  const txInfo = await mainnet.getTransaction(sig, { commitment: 'confirmed' });
+  const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
   if (txInfo?.meta?.err) throw new Error('Chain rejected it: ' + JSON.stringify(txInfo.meta.err));
-  // Verify the memo is actually in the landed transaction.
-  const logs = (txInfo?.meta?.logMessages || []).join(' ');
-  if (logs.indexOf('PHI-LEDGER|') < 0) throw new Error('Landed but the PHI-LEDGER memo was not found in the logs.');
   return sig;
 }
 
 function anchorDone(out, sig, seal) {
-  out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><span class="text-gray-500">chain:</span> <span class="text-gray-300">Solana mainnet</span><br><a href="https://solscan.io/tx/${sig}" target="_blank" rel="noopener">solscan.io/tx/${short(sig, 8)}</a>`;
+  out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
 }
 
 function wireCopyButton(id) {
