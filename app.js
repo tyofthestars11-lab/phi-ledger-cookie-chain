@@ -361,6 +361,25 @@ $('mobileAnchorBtn').addEventListener('click', async () => {
   }
 });
 
+/* "Open in Phantom" — routes DIRECTLY to the app's approval UI, never the site.
+ * One tap fires the encrypted deeplink flow: connect approval on first tap
+ * (session cached after), then straight to signTransaction — Phantom opens
+ * on its confirm screen with the payload, not on the website. */
+$('openPhantom').addEventListener('click', async () => {
+  const addr = ($('mobileAddr').value || '').trim() || wallet;
+  const seal = $('sealSelect').value;
+  const out = $('mobileOut');
+  out.classList.remove('hidden');
+  if (!addr || !seal || !snapshot) { out.textContent = 'Enter your wallet address first.'; return; }
+  try {
+    new PublicKey(addr); // validate
+    $('mobileAnchor').classList.remove('hidden');
+    await phantomAnchorFlow(addr, seal, out);
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+  }
+});
+
 /* Handle returns from the Phantom app: connect (session) or sign (signed tx) */
 async function handlePhantomReturn() {
   const params = new URLSearchParams(window.location.search);
