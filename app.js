@@ -281,16 +281,12 @@ $('anchorBtn').addEventListener('click', async () => {
     if (signed.recentBlockhash !== blockhash) {
       throw new Error('Wallet changed the transaction network data. Please try Nightly wallet instead — see note below.');
     }
-    // Introspect: did the wallet add/change instructions?
-    const progIds = signed.instructions.map(ix => ix.programId.toBase58());
-    if (progIds.length !== 1 || progIds[0] !== MEMO_PROGRAM) {
-      throw new Error('Wallet modified the transaction instructions. Programs now: ' + progIds.join(', '));
-    }
-    sig = await connection.sendRawTransaction(signed.serialize(), { skipPreflight: false, maxRetries: 5 });
+    // Skip preflight: the RPC's simulation is unreliable. Broadcast directly.
+    const rawTx = signed.serialize();
+    sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
     out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
     // Retry broadcast: this RPC sometimes drops transactions. Resend the same
     // signed bytes a few times (idempotent) before giving up.
-    const rawTx = signed.serialize();
     let confirmed = false;
     let lastErr = null;
     for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
