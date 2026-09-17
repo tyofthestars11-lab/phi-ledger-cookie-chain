@@ -154,6 +154,11 @@ function bs58decode(s) {
 }
 
 /* ---------- Wallet connect (injected provider: Phantom / Nightly / Solflare) ---------- */
+function isValidAddress(addr) {
+  // Real Solana address: 32-44 base58 chars, not the system program.
+  return typeof addr === 'string' && addr.length >= 32 && addr.length <= 44 &&
+         addr !== '11111111111111111111111111111111' && /^[1-9A-HJ-NP-Za-km-z]+$/.test(addr);
+}
 function findProviders() {
   const cands = [window.nightly && window.nightly.solana, window.solana, window.backpack].filter(Boolean);
   // Prefer Nightly when present. The engine verifies every signer's bytes
@@ -196,7 +201,7 @@ $('connectBtn').addEventListener('click', async () => {
         if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
       }
       provider = p;
-      if (!pubkey) throw new Error('wallet did not return an address');
+      if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned invalid address: ' + pubkey);
       wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
     $('connectBtn').textContent = 'Connected';
