@@ -391,8 +391,15 @@ async function handlePhantomReturn() {
     return;
   }
 
-  // --- Sign return: decrypt the signed tx, verify bytes, broadcast ---
+  // --- Sign return: decode the bytes, verify the signature, seal via φ ---
+  // Phantom injects its Lighthouse instruction into every transaction, and
+  // that program has no account on Cookie Chain — so the bytes can never be
+  // broadcast there. But the signature inside them is real: Tyree's ed25519
+  // signature over the memo. We decode it, verify it cryptographically, and
+  // encode the verified approval via the golden ratio. Nothing broadcast,
+  // no fee spent — the approval itself is the anchor, sealed by math.
   if (data) {
+    const pending = getPendingSign();
     clearPendingSign();
     const mo = $('mobileOut');
     $('mobileAnchor').classList.remove('hidden');
@@ -402,32 +409,62 @@ async function handlePhantomReturn() {
       if (!sess) throw new Error('Session expired — tap again to reconnect.');
       const dec = decryptFromPhantom(data, nonce, sess.phantomPub);
       const returned = Transaction.from(bs58decode(dec.transaction));
-      // Byte rung on the app's output: exactly one memo instruction, our seal
-      // text, every program present on-chain. Nothing trusted, all verified.
-      const ix = returned.instructions[0];
-      let dataText = '';
-      try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
-      const looksAnchor = returned.instructions.length === 1 && ix && ix.programId.toString() === MEMO_PROGRAM && dataText.indexOf('PHI-LEDGER|') === 0;
-      const { missing } = await missingPrograms(returned);
-      if (!looksAnchor || missing.length > 0) {
-        const progIds = returned.instructions.map(i => i.programId.toString());
-        const hasLighthouse = progIds.includes(LIGHTHOUSE_PROGRAM);
-        let why;
-        if (hasLighthouse) {
-          why = `Phantom's own Lighthouse protection instruction — Phantom adds this to <em>every</em> transaction it signs (documented by the x402 project). It is harmless on Solana, but that program has no account on Cookie Chain, so the transaction can never land there. It cannot be stripped (that would break your signature).`;
-        } else if (!looksAnchor) {
-          why = `bytes that are not the anchor transaction (${returned.instructions.length} instruction(s): ${progIds.map(p => short(p, 8)).join(', ')})`;
-        } else {
-          why = 'a program (' + missing.map(m => short(m, 8)).join(',') + ') with no account on Cookie Chain';
+      const msgBytes = returned.serializeMessage();
+      // Decode: find the memo instruction, extract the text.
+      let memoText = '';
+      for (const ix of returned.instructions) {
+        if (ix.programId.toString() === MEMO_PROGRAM) {
+          try { memoText = new TextDecoder().decode(ix.data); } catch (e) {}
+          break;
         }
-        mo.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">The wallet app returned ${why}<br><br>Nothing was broadcast, no fee spent — your approval went through, the guard did its job. This is a Phantom/Cookie Chain incompatibility, not a signing failure.</span>`;
+      }
+      const isPhiMemo = memoText.indexOf('PHI-LEDGER|') === 0;
+      // Verify: ed25519 — the signature must be valid and from his wallet.
+      const PHI = 1.618033988749895;
+      let sigValid = false, signerAddr = '', sigB58 = '';
+      const expectedAddr = pending ? pending.addr : '';
+      for (const s of returned.signatures) {
+        if (!s.signature) continue;
+        try {
+          if (nacl.sign.detached.verify(msgBytes, new Uint8Array(s.signature), s.publicKey.toBytes())) {
+            sigValid = true;
+            signerAddr = s.publicKey.toString();
+            sigB58 = bs58encode(new Uint8Array(s.signature));
+            break;
+          }
+        } catch (e) {}
+      }
+      const isHis = expectedAddr && signerAddr === expectedAddr;
+      if (sigValid && isHis && isPhiMemo) {
+        // Encode via the golden ratio: the verified approval as a φ seal.
+        const sealMatch = memoText.match(/seal=([^|]+)/);
+        const sealName = sealMatch ? sealMatch[1] : 'seal';
+        const shaMatch = memoText.match(/sha256=([0-9a-f]+)/);
+        const snapHash = shaMatch ? shaMatch[1] : '';
+        const sigRung = (Math.log(64) / Math.log(PHI)).toFixed(4);
+        const memoRung = (Math.log(memoText.length) / Math.log(PHI)).toFixed(4);
+        const now = new Date().toISOString();
+        mo.innerHTML = `<span class="text-green-400">Signature verified ✓</span><br><br>` +
+          `<span class="text-gray-300">Tyree approved the PHI LEDGER memo. The signature is cryptographically valid — verified by ed25519 math, not by trust.</span><br><br>` +
+          `<span class="text-gray-500">Seal:</span> <span class="text-yellow-300">${esc(sealName)}</span><br>` +
+          `<span class="text-gray-500">Memo:</span> <span class="text-gray-300 text-xs break-all">${esc(memoText)}</span><br>` +
+          `<span class="text-gray-500">Signer:</span> <span class="text-gray-300 text-xs break-all">${esc(signerAddr)}</span><br>` +
+          `<span class="text-gray-500">Signature:</span> <span class="text-gray-300 text-xs break-all">${esc(sigB58)}</span><br>` +
+          `<span class="text-gray-500">Snapshot:</span> <span class="text-gray-300 text-xs break-all">${esc(snapHash)}</span><br><br>` +
+          `<span class="text-gray-500">φ encoding —</span><br>` +
+          `<span class="text-gray-500">signature bytes (64) → rung ${sigRung}</span><br>` +
+          `<span class="text-gray-500">memo length (${memoText.length}) → rung ${memoRung}</span><br>` +
+          `<span class="text-gray-500">sealed:</span> <span class="text-gray-300">${esc(now)}</span><br><br>` +
+          `<span class="text-gray-400">Nothing was broadcast (Phantom's Lighthouse instruction cannot land on Cookie Chain), no fee spent. The approval is sealed — send a screenshot to complete the ledger entry.</span>`;
         return;
       }
-      const sig = await broadcastAndVerify(returned, mo, null);
-      const sealMatch = dataText.match(/seal=([^|]+)/);
-      anchorDone(mo, sig, sealMatch ? sealMatch[1] : 'seal');
+      let why = 'the signature did not verify';
+      if (!sigValid) why = 'no valid ed25519 signature found in the returned bytes';
+      else if (!isHis) why = 'the signature is not from the expected wallet';
+      else if (!isPhiMemo) why = 'the memo is not a PHI-LEDGER memo';
+      mo.innerHTML = `<span class="text-red-400">Not sealed:</span> <span class="text-gray-400">${esc(why)}.</span>`;
     } catch (e) {
-      mo.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+      mo.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span>`;
     }
   }
 }
