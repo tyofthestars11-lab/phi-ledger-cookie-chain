@@ -111,12 +111,13 @@ async function missingPrograms(signedTx) {
 }
 function injectionError(missing) {
   const names = missing.map(m => short(m, 10)).join(', ');
-  return new Error(
-    'Not broadcast (no fee spent): your wallet added an instruction for program ' + names +
-    ', which does not exist on Cookie Chain — this anchor can never succeed from this wallet. ' +
-    'Phantom injects its Lighthouse security program automatically; Nightly does not. ' +
-    'Connect with Nightly instead (add the Cookie Chain network: rpc.cookiescan.io).'
+  const err = new Error(
+    'Not broadcast (no fee spent). Phantom auto-injected its Lighthouse security program (' + names +
+    '), which does not exist on Cookie Chain — this anchor can never land from Phantom. ' +
+    'Fix: connect with Nightly instead (add the Cookie Chain network: rpc.cookiescan.io) and anchor again.'
   );
+  err.isInjection = true;
+  return err;
 }
 
 /* ---------- base58 (for Phantom mobile deep links) ---------- */
@@ -283,7 +284,7 @@ async function handlePhantomReturn() {
     await connection.confirmTransaction(sig, 'confirmed');
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
   } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
+    out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${String(e.message || e).slice(0, 400)}</span>`;
   }
 }
 
@@ -346,7 +347,10 @@ $('anchorBtn').addEventListener('click', async () => {
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     refreshBalance();
   } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span><br><span class="text-gray-500 text-xs">If this is a funds error, bridge a little COOK: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></span>`;
+    const msg = (e.message || e);
+    const bridgeHint = e.isInjection ? '' :
+      `<br><span class="text-gray-500 text-xs">If this is a funds error, bridge a little COOK: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></span>`;
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${String(msg).slice(0, 400)}</span>${bridgeHint}`;
   }
 });
 
