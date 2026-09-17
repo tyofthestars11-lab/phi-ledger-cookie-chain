@@ -159,19 +159,15 @@ function isValidAddress(addr) {
   return typeof addr === 'string' && addr.length >= 32 && addr.length <= 44 &&
          addr !== '11111111111111111111111111111111' && /^[1-9A-HJ-NP-Za-km-z]+$/.test(addr);
 }
-function findProviders() {
-  const cands = [window.nightly && window.nightly.solana, window.solana, window.backpack].filter(Boolean);
-  // Prefer Nightly when present. The engine verifies every signer's bytes
-  // anyway; preference just skips the known-dirty path first.
-  const nightly = cands.filter(p => p && p.isNightly);
-  const rest = cands.filter(p => p && !p.isNightly && p.connect);
-  return [...nightly, ...rest];
+// Single provider only — no loops, no popup circles. window.solana is the standard.
+function getProvider() {
+  return window.solana || (window.nightly && window.nightly.solana) || window.backpack || null;
 }
 
 $('connectBtn').addEventListener('click', async () => {
-  const providers = findProviders();
-  if (!providers.length) {
-    // Mobile Chrome has no injected provider — offer the Phantom app deep-link flow.
+  const p = getProvider();
+  if (!p) {
+    // Mobile Chrome has no injected provider — offer the wallet app deep-link flow.
     $('mobileAnchor').classList.remove('hidden');
     $('connectBtn').textContent = 'Use Phantom app ↓';
     $('connectBtn').disabled = true;
@@ -179,12 +175,8 @@ $('connectBtn').addEventListener('click', async () => {
     refreshMobileBalance();
     return;
   }
-  // Try each provider in order; if one's connect() throws, try the next.
-  let lastErr = null;
-  // Rewrite: ALWAYS call connect() to get the authoritative address.
-  // Never trust p.publicKey alone — it can be a placeholder (e.g. 1111...).
-  for (const p of providers) {
-    try {
+  // Single connect() call — no loops, no popup circles.
+  try {
       let pubkey = null;
       // 1. Legacy connect() — the authoritative source.
       if (typeof p.connect === 'function') {
@@ -215,15 +207,8 @@ $('connectBtn').addEventListener('click', async () => {
     if (p.isNightly === undefined && window.nightly) {
       console.log('Nightly detected — ensure Cookie Chain network (rpc.cookiescan.io) is added in the wallet.');
     }
-    lastErr = null;
-    break; // connected — stop trying providers
   } catch (e) {
-    lastErr = e;
-    continue; // try next provider
-  }
-  }
-  if (lastErr) {
-    alert('Wallet connection rejected: ' + (lastErr.message || lastErr));
+    alert('Wallet connection rejected: ' + (e.message || e));
     return;
   }
 });
