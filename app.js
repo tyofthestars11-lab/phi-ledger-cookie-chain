@@ -175,7 +175,11 @@ $('connectBtn').addEventListener('click', async () => {
   try {
     const resp = await p.connect();
     provider = p;
-    wallet = resp.publicKey.toString();
+    // Wallets return the address in different shapes; handle them all.
+    let pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
+    if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+    if (!pubkey) throw new Error('wallet did not return an address');
+    wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
     $('connectBtn').textContent = 'Connected';
     $('connectBtn').disabled = true;
