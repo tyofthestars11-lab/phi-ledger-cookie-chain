@@ -100,7 +100,12 @@
 
     <!-- Mobile flow: no injected wallet (e.g. Chrome on Android). Sign via Phantom app deep link. -->
     <div id="mobileAnchor" class="hidden mt-4 pt-4 border-t border-gray-800">
-      <p class="text-sm text-gray-400 mb-3">On mobile: enter the wallet address that holds your COOK on Cookie Chain, then sign in the Phantom app.</p>
+      <p class="text-sm text-gray-400 mb-3">On mobile: open this page in your wallet's browser.</p>
+      <div class="flex flex-wrap gap-3 items-center mb-3">
+        <a id="openNightly" class="btn text-sm" href="intent://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/#Intent;scheme=https;action=android.intent.action.VIEW;end">Open in Nightly</a>
+        <span class="text-xs text-gray-500">Tap → choose Nightly from the list</span>
+      </div>
+      <p class="text-sm text-gray-400 mb-3">Or enter the wallet address that holds your COOK on Cookie Chain, then sign in the Phantom app.</p>
       <div class="flex flex-wrap gap-3 items-end mb-3">
         <div class="flex-1 min-w-[220px]">
           <label class="text-xs text-gray-500">Your wallet address</label>
@@ -122,6 +127,6 @@
     <div class="mono">RPC <a href="https://rpc.cookiescan.io" target="_blank" rel="noopener">rpc.cookiescan.io</a> · Explorer <a href="https://cookiescan.io" target="_blank" rel="noopener">cookiescan.io</a> · Docs <a href="https://docs.cookiechain.wtf" target="_blank" rel="noopener">docs.cookiechain.wtf</a></div>
   </footer>
 </div>
-<script src="app.js?v=28"></script>
+<script src="app.js?v=29"></script>
 </body>
 </html>
