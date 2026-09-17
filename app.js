@@ -176,19 +176,26 @@ $('connectBtn').addEventListener('click', async () => {
   }
   // Try each provider in order; if one's connect() throws, try the next.
   let lastErr = null;
+  // Universal: try every provider, and for each try publicKey, connect(), and request().
   for (const p of providers) {
+    const methods = [];
+    // 1. Already-available publicKey (dApp browser).
+    // 2. Legacy connect().
+    // 3. EIP-1193-style request().
     try {
-      // In a wallet's own dApp browser, publicKey may already be set — use it directly.
-      // Only call connect() if we don't have an address yet.
       let pubkey = p.publicKey;
       if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
-      if (!pubkey) {
-        const resp = await p.connect();
+      if (!pubkey && typeof p.connect === 'function') {
+        const resp = await p.connect().catch(e => { throw e; });
         pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
         if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
       }
+      if (!pubkey && typeof p.request === 'function') {
+        const resp = await p.request({ method: 'connect' });
+        pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (typeof resp === 'string' ? resp : null);
+        if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+      }
       provider = p;
-      // Wallets return the address in different shapes; handle them all.
       if (!pubkey) throw new Error('wallet did not return an address');
       wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
