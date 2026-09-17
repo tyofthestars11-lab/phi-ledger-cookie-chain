@@ -281,9 +281,24 @@ $('anchorBtn').addEventListener('click', async () => {
     if (signed.recentBlockhash !== blockhash) {
       throw new Error('Wallet changed the transaction network data. Please try Nightly wallet instead — see note below.');
     }
-    sig = await connection.sendRawTransaction(signed.serialize(), { skipPreflight: false });
+    sig = await connection.sendRawTransaction(signed.serialize(), { skipPreflight: false, maxRetries: 5 });
     out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
-    await connection.confirmTransaction({ signature: sig, blockhash, lastValidBlockHeight }, 'confirmed');
+    // Retry broadcast: this RPC sometimes drops transactions. Resend the same
+    // signed bytes a few times (idempotent) before giving up.
+    const rawTx = signed.serialize();
+    let confirmed = false;
+    let lastErr = null;
+    for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
+      if (attempt > 0) {
+        out.innerHTML = `<span class="text-gray-400">Retrying broadcast (${attempt + 1}/4)…</span>`;
+        try { await connection.sendRawTransaction(rawTx, { skipPreflight: true }); } catch (e) { /* already landed */ }
+      }
+      try {
+        await connection.confirmTransaction({ signature: sig, blockhash, lastValidBlockHeight }, 'confirmed');
+        confirmed = true;
+      } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 5000)); }
+    }
+    if (!confirmed) throw lastErr || new Error('Transaction was not confirmed after 4 broadcast attempts.');
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     refreshBalance();
   } catch (e) {
