@@ -562,6 +562,13 @@ async function broadcastAndVerify(signedTx, out, blockhashInfo) {
   return sig;
 }
 
+// Byte helpers
+function hexOf(u8) {
+  let s = '';
+  for (let i = 0; i < u8.length; i++) s += u8[i].toString(16).padStart(2, '0');
+  return s;
+}
+
 function anchorDone(out, sig, seal) {
   out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
 }
@@ -601,21 +608,34 @@ async function runAnchorEngine() {
     // (provider.signAndSendTransaction would broadcast via the wallet's own
     // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
     const signed = await provider.signTransaction(tx);
-    if (signed.recentBlockhash !== tx._blockhashInfo.blockhash) {
-      throw new Error('Wallet changed the transaction network data.');
+    // The wallet must return the transaction byte-identical: signatures live
+    // outside the message, so the message bytes must match exactly. (A wallet
+    // sitting on the wrong network "helpfully" swaps in its own blockhash.)
+    const wantHex = hexOf(tx.serializeMessage());
+    let gotHex = '';
+    try { gotHex = hexOf(signed.serializeMessage()); } catch (e) { gotHex = 'unreadable'; }
+    let finalTx = signed, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
+    if (gotHex !== wantHex) {
+      // Fall back to raw message signing: the wallet signs the exact bytes
+      // and cannot rewrite them. Fresh transaction, fresh blockhash.
+      if (typeof provider.signMessage !== 'function') {
+        throw new Error('Wallet rewrote the transaction network data and does not support raw message signing.');
+      }
+      out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
+      const tx2 = await buildAnchorTx(wallet, seal);
+      const r = await provider.signMessage(tx2.serializeMessage());
+      let sigBytes = (r && r.signature) ? r.signature : r;
+      if (typeof sigBytes === 'string') sigBytes = bs58decode(sigBytes);
+      tx2.addSignature(new PublicKey(wallet), sigBytes);
+      finalTx = tx2; finalInfo = tx2._blockhashInfo; finalMemo = tx2._memoText;
     }
-    const check = await verifyBytesClean(signed, tx._memoText);
-    if (check.clean) {
-      const sig = await broadcastAndVerify(signed, out, tx._blockhashInfo);
-      anchorDone(out, sig, seal);
-      refreshBalance();
-      return;
+    const check = await verifyBytesClean(finalTx, finalMemo);
+    if (!check.clean) {
+      throw new Error('wallet returned altered bytes (' + check.problems.join('; ') + ') — no fee spent.');
     }
-    // Fuel: dirty bytes STOP the engine — no second tap, no fee spent, and no
-    // reroute into another wallet's connect screen. Rerouting after a
-    // confirmation is a circle, not a confirmation page. Name the problem.
-    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">wallet returned altered bytes (${check.problems.join('; ')}) — no fee spent.</span><br><span class="text-gray-500 text-xs">This wallet injects extra instructions unknown to Cookie Chain. Anchor from a non-injecting wallet (e.g. Nightly) to complete.</span>`;
-    return;
+    const sig = await broadcastAndVerify(finalTx, out, finalInfo);
+    anchorDone(out, sig, seal);
+    refreshBalance();
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
