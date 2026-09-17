@@ -154,16 +154,18 @@ function bs58decode(s) {
 }
 
 /* ---------- Wallet connect (injected provider: Phantom / Nightly / Solflare) ---------- */
-function findProvider() {
+function findProviders() {
   const cands = [window.nightly && window.nightly.solana, window.solana, window.backpack].filter(Boolean);
   // Prefer Nightly when present. The engine verifies every signer's bytes
   // anyway; preference just skips the known-dirty path first.
-  return cands.find(p => p && p.isNightly) || cands.find(p => p && p.connect) || null;
+  const nightly = cands.filter(p => p && p.isNightly);
+  const rest = cands.filter(p => p && !p.isNightly && p.connect);
+  return [...nightly, ...rest];
 }
 
 $('connectBtn').addEventListener('click', async () => {
-  const p = findProvider();
-  if (!p) {
+  const providers = findProviders();
+  if (!providers.length) {
     // Mobile Chrome has no injected provider — offer the Phantom app deep-link flow.
     $('mobileAnchor').classList.remove('hidden');
     $('connectBtn').textContent = 'Use Phantom app ↓';
@@ -172,14 +174,17 @@ $('connectBtn').addEventListener('click', async () => {
     refreshMobileBalance();
     return;
   }
-  try {
-    const resp = await p.connect();
-    provider = p;
-    // Wallets return the address in different shapes; handle them all.
-    let pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
-    if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
-    if (!pubkey) throw new Error('wallet did not return an address');
-    wallet = pubkey;
+  // Try each provider in order; if one's connect() throws, try the next.
+  let lastErr = null;
+  for (const p of providers) {
+    try {
+      const resp = await p.connect();
+      provider = p;
+      // Wallets return the address in different shapes; handle them all.
+      let pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
+      if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+      if (!pubkey) throw new Error('wallet did not return an address');
+      wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
     $('connectBtn').textContent = 'Connected';
     $('connectBtn').disabled = true;
@@ -189,8 +194,16 @@ $('connectBtn').addEventListener('click', async () => {
     if (p.isNightly === undefined && window.nightly) {
       console.log('Nightly detected — ensure Cookie Chain network (rpc.cookiescan.io) is added in the wallet.');
     }
+    lastErr = null;
+    break; // connected — stop trying providers
   } catch (e) {
-    alert('Wallet connection rejected: ' + (e.message || e));
+    lastErr = e;
+    continue; // try next provider
+  }
+  }
+  if (lastErr) {
+    alert('Wallet connection rejected: ' + (lastErr.message || lastErr));
+    return;
   }
 });
 
