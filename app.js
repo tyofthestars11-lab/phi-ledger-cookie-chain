@@ -5,6 +5,7 @@
 const RPC_URL = 'https://rpc.cookiescan.io';
 const EXPLORER = 'https://cookiescan.io';
 const MEMO_PROGRAM = 'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo';
+const LIGHTHOUSE_PROGRAM = 'L2TExMFKdjpN9kozasaurPirfHy9P8sbXoAN1qA3S95'; // Phantom's protection injector
 const SOLOPOOL = 'https://solopool.eu/api/v1/bch/miner/bitcoincash:qp432rtl3cm0se35rdy6ye8ay2tfxas80y24ntf2vm';
 
 const { Connection, PublicKey, Transaction, TransactionInstruction } = solanaWeb3;
@@ -409,8 +410,17 @@ async function handlePhantomReturn() {
       const looksAnchor = returned.instructions.length === 1 && ix && ix.programId.toString() === MEMO_PROGRAM && dataText.indexOf('PHI-LEDGER|') === 0;
       const { missing } = await missingPrograms(returned);
       if (!looksAnchor || missing.length > 0) {
-        const why = !looksAnchor ? 'bytes that are not the anchor transaction' : 'a program (' + missing.map(m => short(m, 8)).join(',') + ') with no account on Cookie Chain';
-        mo.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">The wallet app returned ${why} — nothing was broadcast, no fee spent. This wallet can't produce clean bytes for Cookie Chain; the remaining route is Nightly (add the Cookie Chain network: rpc.cookiescan.io).</span>`;
+        const progIds = returned.instructions.map(i => i.programId.toString());
+        const hasLighthouse = progIds.includes(LIGHTHOUSE_PROGRAM);
+        let why;
+        if (hasLighthouse) {
+          why = `Phantom's own Lighthouse protection instruction — Phantom adds this to <em>every</em> transaction it signs (documented by the x402 project). It is harmless on Solana, but that program has no account on Cookie Chain, so the transaction can never land there. It cannot be stripped (that would break your signature).`;
+        } else if (!looksAnchor) {
+          why = `bytes that are not the anchor transaction (${returned.instructions.length} instruction(s): ${progIds.map(p => short(p, 8)).join(', ')})`;
+        } else {
+          why = 'a program (' + missing.map(m => short(m, 8)).join(',') + ') with no account on Cookie Chain';
+        }
+        mo.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">The wallet app returned ${why}<br><br>Nothing was broadcast, no fee spent — your approval went through, the guard did its job. This is a Phantom/Cookie Chain incompatibility, not a signing failure.</span>`;
         return;
       }
       const sig = await broadcastAndVerify(returned, mo, null);
