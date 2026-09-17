@@ -594,12 +594,149 @@ function fireAppDeeplink(addr, seal, out) {
 
 const IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
 
+/* ---------- Signature plumbing: every known wallet return shape ----------
+ * v42 root-cause fix: the old code assumed provider.signMessage returns
+ * {signature} as base58. If the wallet returns base64 (or hex, or a raw
+ * Uint8Array), bs58decode produces garbage and addSignature throws
+ * "Signature verification failed". Now every candidate encoding is tried
+ * and each candidate is verified with ed25519 BEFORE attaching — the exact
+ * divergence is reported instead of guessed. */
+function b64decode(s) {
+  const bin = atob(s);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+function hexDecode(s) {
+  const clean = String(s).trim().toLowerCase();
+  if (!/^[0-9a-f]+$/.test(clean) || clean.length % 2 !== 0) return null;
+  const out = new Uint8Array(clean.length / 2);
+  for (let i = 0; i < out.length; i++) out[i] = parseInt(clean.slice(2 * i, 2 * i + 2), 16);
+  return out;
+}
+function coerceBytes(v) {
+  // Unknown payload -> Uint8Array. Tries base64, base58, hex for strings.
+  if (!v && v !== '') return null;
+  if (v instanceof Uint8Array) return v;
+  if (Array.isArray(v)) return new Uint8Array(v);
+  if (typeof v === 'string') {
+    const s = v.trim();
+    if (!s) return null;
+    try { const b = b64decode(s); if (b.length > 0) return b; } catch (e) {}
+    try { return bs58decode(s); } catch (e) {}
+    const h = hexDecode(s);
+    if (h && h.length > 0) return h;
+  }
+  return null;
+}
+function extractSigCandidates(r) {
+  // Pull every plausible 64-byte signature out of a signMessage response.
+  const cands = [];
+  const push = (bytes, enc) => { if (bytes && bytes.length === 64) cands.push({ enc, bytes }); };
+  if (!r && r !== '') return cands;
+  if (r instanceof Uint8Array) { push(r, 'raw-bytes'); return cands; }
+  if (Array.isArray(r)) { push(new Uint8Array(r), 'array'); return cands; }
+  if (typeof r === 'string') {
+    const s = r.trim();
+    try { push(bs58decode(s), 'bs58'); } catch (e) {}
+    try { push(b64decode(s), 'base64'); } catch (e) {}
+    const h = hexDecode(s); if (h) push(h, 'hex');
+    return cands;
+  }
+  if (typeof r === 'object') {
+    const s = r.signature !== undefined ? r.signature : (r.signatures && r.signatures[0] !== undefined ? r.signatures[0] : (r.data !== undefined ? r.data : null));
+    if (s !== null && s !== undefined) extractSigCandidates(s).forEach(c => cands.push(c));
+  }
+  return cands;
+}
+function txSignatureVerifies(signedTx, walletAddr) {
+  try {
+    const msg = signedTx.serializeMessage();
+    const pub = new PublicKey(walletAddr).toBytes();
+    const sigs = signedTx.signatures;
+    if (!sigs || !sigs.length || !sigs[0].signature) return false;
+    return nacl.sign.detached.verify(msg, new Uint8Array(sigs[0].signature), pub);
+  } catch (e) { return false; }
+}
+function normalizeSignedTx(r) {
+  // provider.signTransaction return shapes: Transaction instance, tx-like
+  // object, Wallet-Standard bytes (base64/bs58/hex/Uint8Array), {signedTransaction},
+  // {transaction}, or single-element arrays. Returns a Transaction or null.
+  try {
+    if (!r) return null;
+    if (r instanceof Transaction) return r;
+    if (Array.isArray(r)) return normalizeSignedTx(r[0]);
+    if (typeof r === 'object') {
+      const inner = r.signedTransaction !== undefined ? r.signedTransaction : (r.transaction !== undefined ? r.transaction : r);
+      if (inner instanceof Transaction) return inner;
+      if (typeof inner.serializeMessage === 'function') return inner;
+      const bytes = coerceBytes(inner);
+      if (bytes && bytes.length > 64) return Transaction.from(bytes);
+      return null;
+    }
+    const bytes = coerceBytes(r);
+    if (bytes && bytes.length > 64) return Transaction.from(bytes);
+  } catch (e) {}
+  return null;
+}
+function firstDiffByte(aHex, bHex) {
+  const n = Math.min(aHex.length, bHex.length);
+  for (let i = 0; i < n; i += 2) {
+    if (aHex.slice(i, i + 2) !== bHex.slice(i, i + 2)) return i / 2;
+  }
+  return n / 2;
+}
+function divergenceReport(msgBytes, cands, raw, pub) {
+  const parts = [];
+  parts.push(`wallet signature did not verify against the anchor bytes (message ${msgBytes.length}B)`);
+  if (!cands.length) {
+    parts.push('no 64-byte signature candidate in the wallet response');
+    try { parts.push('response: ' + JSON.stringify(raw).slice(0, 160)); }
+    catch (e) { parts.push('response: ' + String(raw).slice(0, 160)); }
+  } else {
+    for (const c of cands) parts.push(`tried ${c.enc} (head ${hexOf(c.bytes.slice(0, 8))}…) — invalid`);
+  }
+  // Probe: did the wallet sign the UTF-8 round-trip of the bytes instead of the raw bytes?
+  try {
+    const rt = new TextEncoder().encode(new TextDecoder().decode(msgBytes));
+    let rtMatch = false;
+    for (const c of cands) {
+      try { if (nacl.sign.detached.verify(rt, c.bytes, pub)) { rtMatch = true; break; } } catch (e) {}
+    }
+    if (rtMatch) parts.push('PROBE MATCH: the wallet signed the UTF-8 round-trip of the bytes, not the raw bytes — its signMessage cannot sign raw transaction bytes');
+    else if (hexOf(rt) !== hexOf(msgBytes)) parts.push('probe: UTF-8 round-trip alters the bytes, but the signature matches neither form');
+  } catch (e) {}
+  return parts.join('; ');
+}
+async function signMessageFallback(walletAddr, seal) {
+  // The wallet signs the EXACT message bytes; the signature is verified with
+  // ed25519 before it is ever attached. Fresh transaction, fresh blockhash.
+  if (typeof provider.signMessage !== 'function') {
+    throw new Error('Wallet rewrote the transaction bytes and does not support raw message signing.');
+  }
+  const tx2 = await buildAnchorTx(walletAddr, seal);
+  const msgBytes = new Uint8Array(tx2.serializeMessage());
+  const r = await provider.signMessage(msgBytes);
+  const cands = extractSigCandidates(r);
+  const pub = new PublicKey(walletAddr).toBytes();
+  for (const c of cands) {
+    let ok = false;
+    try { ok = nacl.sign.detached.verify(msgBytes, c.bytes, pub); } catch (e) {}
+    if (ok) {
+      tx2.addSignature(new PublicKey(walletAddr), c.bytes); // pre-verified: cannot throw
+      return tx2;
+    }
+  }
+  throw new Error(divergenceReport(msgBytes, cands, r, pub));
+}
+
 // One tap runs the whole: build → sign → verify bytes → reroute-or-broadcast → verify.
 async function runAnchorEngine() {
   if (!provider || !wallet) return;
   const seal = $('sealSelect').value;
   const out = $('anchorOut');
   out.classList.remove('hidden');
+  let alterNote = '';
   try {
     out.innerHTML = '<span class="text-gray-400">Building anchor transaction…</span>';
     const tx = await buildAnchorTx(wallet, seal);
@@ -607,37 +744,46 @@ async function runAnchorEngine() {
     // Always sign locally and broadcast via our Cookie Chain connection.
     // (provider.signAndSendTransaction would broadcast via the wallet's own
     // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
-    const signed = await provider.signTransaction(tx);
-    // The wallet must return the transaction byte-identical: signatures live
-    // outside the message, so the message bytes must match exactly. (A wallet
-    // sitting on the wrong network "helpfully" swaps in its own blockhash.)
-    const wantHex = hexOf(tx.serializeMessage());
-    let gotHex = '';
-    try { gotHex = hexOf(signed.serializeMessage()); } catch (e) { gotHex = 'unreadable'; }
-    let finalTx = signed, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
-    if (gotHex !== wantHex) {
-      // Fall back to raw message signing: the wallet signs the exact bytes
-      // and cannot rewrite them. Fresh transaction, fresh blockhash.
-      if (typeof provider.signMessage !== 'function') {
-        throw new Error('Wallet rewrote the transaction network data and does not support raw message signing.');
+    let finalTx = null, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
+    if (typeof provider.signTransaction === 'function') {
+      const signedTx = normalizeSignedTx(await provider.signTransaction(tx));
+      if (signedTx) {
+        const wantHex = hexOf(tx.serializeMessage());
+        const gotHex = hexOf(signedTx.serializeMessage());
+        if (gotHex === wantHex && txSignatureVerifies(signedTx, wallet)) {
+          finalTx = signedTx;
+        } else {
+          const off = firstDiffByte(wantHex, gotHex);
+          alterNote = `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
+          out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
+          finalTx = await signMessageFallback(wallet, seal);
+          finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+        }
+      } else {
+        alterNote = 'signTransaction returned an unreadable shape. ';
+        out.innerHTML = '<span class="text-gray-400">Wallet returned an unreadable signature — signing the exact bytes instead… approve in your wallet.</span>';
+        finalTx = await signMessageFallback(wallet, seal);
+        finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
       }
-      out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
-      const tx2 = await buildAnchorTx(wallet, seal);
-      const r = await provider.signMessage(tx2.serializeMessage());
-      let sigBytes = (r && r.signature) ? r.signature : r;
-      if (typeof sigBytes === 'string') sigBytes = bs58decode(sigBytes);
-      tx2.addSignature(new PublicKey(wallet), sigBytes);
-      finalTx = tx2; finalInfo = tx2._blockhashInfo; finalMemo = tx2._memoText;
+    } else if (typeof provider.signMessage === 'function') {
+      out.innerHTML = '<span class="text-gray-400">Signing the exact bytes… approve in your wallet.</span>';
+      finalTx = await signMessageFallback(wallet, seal);
+      finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+    } else {
+      throw new Error('Wallet supports neither signTransaction nor signMessage.');
     }
     const check = await verifyBytesClean(finalTx, finalMemo);
     if (!check.clean) {
       throw new Error('wallet returned altered bytes (' + check.problems.join('; ') + ') — no fee spent.');
     }
+    if (!txSignatureVerifies(finalTx, wallet)) {
+      throw new Error('assembled transaction carries no valid signature — no fee spent.');
+    }
     const sig = await broadcastAndVerify(finalTx, out, finalInfo);
     anchorDone(out, sig, seal);
     refreshBalance();
   } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(alterNote + String((e && e.message) || e))}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
 }
 $('anchorBtn').addEventListener('click', runAnchorEngine);
