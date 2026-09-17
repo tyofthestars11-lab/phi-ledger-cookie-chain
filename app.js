@@ -216,6 +216,7 @@ async function refreshMobileBalance() {
 }
 
 async function buildAnchorTx(walletAddr, seal) {
+  if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
   const memoText = `PHI-LEDGER|seal=${seal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
   const ix = new TransactionInstruction({
     keys: [{ pubkey: new PublicKey(walletAddr), isSigner: true, isWritable: false }],
@@ -352,14 +353,13 @@ async function handlePhantomReturn() {
     return;
   }
   // Loop trap: we fired an app deeplink but came back with no app response —
-  // the app couldn't open itself (in-app browser circle).
+  // the app didn't take the link. Surface it plainly; no browser instructions.
   if (rerouted && !encPub && !data) {
     clearPendingSign();
     history.replaceState(null, '', window.location.pathname);
     const ao = $('anchorOut');
     ao.classList.remove('hidden');
-    ao.innerHTML = `<span class="text-amber-300">That looped — you're inside Phantom's own browser, so the app can't open itself.</span><br><span class="text-gray-400 text-sm">Open this page in your phone's real Chrome browser and tap Anchor once. The app will open properly there, and the engine carries the rest.</span><br><button id="copyLinkBtnR" class="btn-ghost text-xs mt-2">Copy page link</button>`;
-    wireCopyButton('copyLinkBtnR');
+    ao.innerHTML = `<span class="text-amber-300">The app didn't respond to the link.</span><br><span class="text-gray-400 text-sm">Make sure the Phantom app is installed, then tap Anchor once more.</span>`;
     return;
   }
   if (!encPub && !data) return; // not our return
@@ -533,6 +533,8 @@ $('anchorBtn').addEventListener('click', runAnchorEngine);
 /* ---------- boot ---------- */
 pulse(); setInterval(pulse, 15000);
 mining(); setInterval(mining, 30000);
-loadLedger();
-if ($('mobileAddr').value.trim()) refreshMobileBalance();
-handlePhantomReturn();
+(async () => {
+  try { await loadLedger(); } catch (e) { /* snapshot stays null; anchor button guards it */ }
+  if ($('mobileAddr').value.trim()) refreshMobileBalance();
+  await handlePhantomReturn();
+})();
