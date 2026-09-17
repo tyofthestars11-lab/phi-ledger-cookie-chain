@@ -223,6 +223,21 @@ async function refreshMobileBalance() {
   }
 }
 
+async function getBlockhash() {
+  // Primary: the injected wallet provider's own RPC — it's already connected
+  // and working on-device, no third-party RPC blocking.
+  const p = findProvider();
+  if (p && p.request) {
+    try {
+      const res = await p.request({ method: 'getLatestBlockhash', params: [{ commitment: 'confirmed' }] });
+      const v = (res && res.value) || res;
+      if (v && v.blockhash) return { blockhash: v.blockhash, lastValidBlockHeight: v.lastValidBlockHeight };
+    } catch (e) {}
+  }
+  // Fallback: public RPC.
+  return await mainnet.getLatestBlockhash('confirmed');
+}
+
 async function buildAnchorTx(walletAddr, seal) {
   if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
   const memoText = `PHI-LEDGER|seal=${seal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
@@ -233,7 +248,7 @@ async function buildAnchorTx(walletAddr, seal) {
   });
   const tx = new Transaction().add(ix);
   tx.feePayer = new PublicKey(walletAddr);
-  const { blockhash, lastValidBlockHeight } = await mainnet.getLatestBlockhash('confirmed');
+  const { blockhash, lastValidBlockHeight } = await getBlockhash();
   tx.recentBlockhash = blockhash;
   tx._blockhashInfo = { blockhash, lastValidBlockHeight };
   tx._memoText = memoText;
