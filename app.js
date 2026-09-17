@@ -238,40 +238,39 @@ $('mobileAddr').addEventListener('change', refreshMobileBalance);
  * (connect), then an encrypted sign payload. A bare ?transaction= URL is
  * unreadable to the app — it just opens home. This is the documented flow:
  * the approval happens IN THE APP, the site only broadcasts afterwards. */
-const PHANTOM_UL = 'https://phantom.app/ul/v1';
+const PHANTOM_SCHEME = 'phantom://v1'; // custom protocol: opens the app directly, no website, ever
+// Session persists across tabs (the app can return into a fresh tab).
+function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
 function phantomRedirect() { return window.location.origin + window.location.pathname; }
 function getDappKeys() {
-  let pub = null, sec = null;
-  try { pub = sessionStorage.getItem('dapp_pub'); sec = sessionStorage.getItem('dapp_sec'); } catch (e) {}
+  let pub = lsGet('dapp_pub'), sec = lsGet('dapp_sec');
   if (!pub || !sec) {
     const kp = nacl.box.keyPair();
     pub = bs58encode(kp.publicKey); sec = bs58encode(kp.secretKey);
-    try { sessionStorage.setItem('dapp_pub', pub); sessionStorage.setItem('dapp_sec', sec); } catch (e) {}
+    lsSet('dapp_pub', pub); lsSet('dapp_sec', sec);
   }
   return { pub, sec };
 }
 function getPhantomSession() {
-  try {
-    const session = sessionStorage.getItem('phantom_session');
-    const phantomPub = sessionStorage.getItem('phantom_pubkey');
-    if (session && phantomPub) return { session, phantomPub };
-  } catch (e) {}
+  const session = lsGet('phantom_session');
+  const phantomPub = lsGet('phantom_pubkey');
+  if (session && phantomPub) return { session, phantomPub };
   return null;
 }
 function setPhantomSession(session, phantomPub) {
-  try { sessionStorage.setItem('phantom_session', session); sessionStorage.setItem('phantom_pubkey', phantomPub); } catch (e) {}
+  lsSet('phantom_session', session); lsSet('phantom_pubkey', phantomPub);
 }
 function setPendingSign(addr, seal) {
-  try {
-    sessionStorage.setItem('phantom_pending_sign', JSON.stringify({ addr, seal }));
-    sessionStorage.setItem('anchorReroute', seal);
-  } catch (e) {}
+  lsSet('phantom_pending_sign', JSON.stringify({ addr, seal }));
+  lsSet('anchorReroute', seal);
 }
 function getPendingSign() {
-  try { return JSON.parse(sessionStorage.getItem('phantom_pending_sign') || 'null'); } catch (e) { return null; }
+  try { return JSON.parse(lsGet('phantom_pending_sign') || 'null'); } catch (e) { return null; }
 }
 function clearPendingSign() {
-  try { sessionStorage.removeItem('phantom_pending_sign'); sessionStorage.removeItem('anchorReroute'); } catch (e) {}
+  lsDel('phantom_pending_sign'); lsDel('anchorReroute');
 }
 function encryptForPhantom(obj, phantomPubB58) {
   const dapp = getDappKeys();
@@ -292,7 +291,8 @@ function phantomConnect(out) {
   if (out) out.innerHTML = '<span class="text-gray-400">Opening Phantom to connect… approve in the app.</span>';
   const redirect = encodeURIComponent(phantomRedirect());
   const appUrl = encodeURIComponent(phantomRedirect());
-  window.location.href = `${PHANTOM_UL}/connect?dapp_encryption_public_key=${dapp.pub}&cluster=mainnet-beta&app_url=${appUrl}&redirect_link=${redirect}`;
+  const q = `dapp_encryption_public_key=${dapp.pub}&cluster=mainnet-beta&app_url=${appUrl}&redirect_link=${redirect}`;
+  window.location.href = `${PHANTOM_SCHEME}/connect?${q}`; // straight into the app
 }
 // Step 2: sign — fresh transaction, encrypted payload, approval IN THE APP.
 async function phantomSignRequest(addr, seal, out) {
@@ -304,7 +304,8 @@ async function phantomSignRequest(addr, seal, out) {
   const enc = encryptForPhantom({ transaction: b58, session: sess.session }, sess.phantomPub);
   const dapp = getDappKeys();
   const redirect = encodeURIComponent(phantomRedirect());
-  window.location.href = `${PHANTOM_UL}/signTransaction?dapp_encryption_public_key=${dapp.pub}&nonce=${enc.nonceB58}&redirect_link=${redirect}&payload=${enc.payloadB58}`;
+  const q = `dapp_encryption_public_key=${dapp.pub}&nonce=${enc.nonceB58}&redirect_link=${redirect}&payload=${enc.payloadB58}`;
+  window.location.href = `${PHANTOM_SCHEME}/signTransaction?${q}`; // straight into the app
 }
 // Entry: one call from either button. Connects first if needed, else signs.
 async function phantomAnchorFlow(addr, seal, out) {
