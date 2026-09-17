@@ -210,9 +210,12 @@ async function refreshMobileBalance() {
     const cook = lamports / 1e9;
     $('mobileBal').textContent = cook.toFixed(6) + ' COOK on Cookie Chain';
     $('mobileNoCook').classList.toggle('hidden', cook > 0);
-    $('mobileAnchorBtn').disabled = cook <= 0;
+    // v19+: the seal flow only captures and verifies the signature — no
+    // broadcast, no fee. The button stays enabled whenever an address is set.
+    $('mobileAnchorBtn').disabled = false;
   } catch (e) {
     $('mobileBal').textContent = 'could not read balance';
+    $('mobileAnchorBtn').disabled = false;
   }
 }
 
@@ -234,6 +237,7 @@ async function buildAnchorTx(walletAddr, seal) {
 }
 
 $('mobileAddr').addEventListener('change', refreshMobileBalance);
+$('mobileAddr').addEventListener('input', () => { if ($('mobileAddr').value.trim()) $('mobileAnchorBtn').disabled = false; });
 
 /* ---------- Phantom app: encrypted deeplink session (NaCl box) ----------
  * The app only honors well-formed requests: an encrypted session first
