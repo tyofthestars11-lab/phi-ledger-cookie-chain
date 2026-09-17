@@ -270,15 +270,20 @@ $('anchorBtn').addEventListener('click', async () => {
     });
     const tx = new Transaction().add(ix);
     tx.feePayer = new PublicKey(wallet);
-    tx.recentBlockhash = (await connection.getLatestBlockhash('confirmed')).blockhash;
+    const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
+    tx.recentBlockhash = blockhash;
     let sig;
     // Always sign locally and broadcast via our Cookie Chain connection.
     // (provider.signAndSendTransaction would broadcast via the wallet's own
     // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
     const signed = await provider.signTransaction(tx);
-    sig = await connection.sendRawTransaction(signed.serialize());
+    // If the wallet replaced our blockhash, the tx is invalid on Cookie Chain.
+    if (signed.recentBlockhash !== blockhash) {
+      throw new Error('Wallet changed the transaction network data. Please try Nightly wallet instead — see note below.');
+    }
+    sig = await connection.sendRawTransaction(signed.serialize(), { skipPreflight: false });
     out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
-    await connection.confirmTransaction(sig, 'confirmed');
+    await connection.confirmTransaction({ signature: sig, blockhash, lastValidBlockHeight }, 'confirmed');
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     refreshBalance();
   } catch (e) {
