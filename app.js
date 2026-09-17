@@ -365,19 +365,6 @@ $('mobileAnchorBtn').addEventListener('click', async () => {
  * One tap fires the encrypted deeplink flow: connect approval on first tap
  * (session cached after), then straight to signTransaction — Phantom opens
  * on its confirm screen with the payload, not on the website. */
-$('openNightly').addEventListener('click', async () => {
-  // Like Phantom's phantom://v1: Nightly's official nightly:// scheme opens the
-  // Nightly app directly, no website. The site URL is also copied so it can be
-  // pasted into Nightly's browser tab, where window.nightly.solana is injected.
-  const btn = $('openNightly');
-  try {
-    await navigator.clipboard.writeText(window.location.origin + window.location.pathname);
-  } catch (e) { /* clipboard is best-effort */ }
-  btn.textContent = 'Opening Nightly… paste the URL in its browser tab';
-  window.location.href = 'nightly://';
-  setTimeout(() => { btn.textContent = 'Open in Nightly'; }, 6000);
-});
-
 $('openPhantom').addEventListener('click', async () => {
   const addr = ($('mobileAddr').value || '').trim() || wallet;
   const seal = $('sealSelect').value;
