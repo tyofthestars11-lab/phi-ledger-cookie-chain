@@ -4,7 +4,7 @@
  */
 const RPC_URL = 'https://rpc.cookiescan.io';
 const EXPLORER = 'https://cookiescan.io';
-const MEMO_PROGRAM = 'MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr';
+const MEMO_PROGRAM = 'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo';
 const SOLOPOOL = 'https://solopool.eu/api/v1/bch/miner/bitcoincash:qp432rtl3cm0se35rdy6ye8ay2tfxas80y24ntf2vm';
 
 const { Connection, PublicKey, Transaction, TransactionInstruction } = solanaWeb3;
