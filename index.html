@@ -96,6 +96,24 @@
     </div>
     <div id="anchorOut" class="text-sm mono hidden"></div>
     <p id="noCook" class="text-xs text-yellow-500/90 hidden mt-2">No COOK on Cookie Chain — bridge a little from Solana to pay the fee: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></p>
+
+    <!-- Mobile flow: no injected wallet (e.g. Chrome on Android). Sign via Phantom app deep link. -->
+    <div id="mobileAnchor" class="hidden mt-4 pt-4 border-t border-gray-800">
+      <p class="text-sm text-gray-400 mb-3">On mobile: enter the wallet address that holds your COOK on Cookie Chain, then sign in the Phantom app.</p>
+      <div class="flex flex-wrap gap-3 items-end mb-3">
+        <div class="flex-1 min-w-[220px]">
+          <label class="text-xs text-gray-500">Your wallet address</label>
+          <input id="mobileAddr" class="w-full text-sm mono mt-1" placeholder="paste your Solana address" value="A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q">
+        </div>
+        <div>
+          <label class="text-xs text-gray-500">COOK on Cookie Chain</label>
+          <div id="mobileBal" class="mono text-sm mt-2">—</div>
+        </div>
+        <button id="mobileAnchorBtn" class="btn text-sm" disabled>Sign in Phantom app</button>
+      </div>
+      <div id="mobileOut" class="text-sm mono hidden"></div>
+      <p id="mobileNoCook" class="text-xs text-yellow-500/90 hidden mt-2">No COOK on Cookie Chain at that address — bridge first: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></p>
+    </div>
   </div>
 
   <footer class="text-xs text-gray-600 flex flex-wrap gap-x-6 gap-y-2 justify-between">

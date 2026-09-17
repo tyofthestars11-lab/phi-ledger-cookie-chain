@@ -91,6 +91,45 @@ async function mining() {
   }
 }
 
+/* ---------- base58 (for Phantom mobile deep links) ---------- */
+const BS58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+function bs58encode(bytes) {
+  let zeros = 0;
+  while (zeros < bytes.length && bytes[zeros] === 0) zeros++;
+  const digits = [0];
+  for (let i = zeros; i < bytes.length; i++) {
+    let carry = bytes[i];
+    for (let j = 0; j < digits.length; j++) {
+      carry += digits[j] << 8;
+      digits[j] = carry % 58;
+      carry = Math.floor(carry / 58);
+    }
+    while (carry > 0) { digits.push(carry % 58); carry = Math.floor(carry / 58); }
+  }
+  let out = '1'.repeat(zeros);
+  for (let i = digits.length - 1; i >= 0; i--) out += BS58[digits[i]];
+  return out;
+}
+function bs58decode(s) {
+  let zeros = 0;
+  while (zeros < s.length && s[zeros] === '1') zeros++;
+  const bytes = [0];
+  for (let i = zeros; i < s.length; i++) {
+    const val = BS58.indexOf(s[i]);
+    if (val < 0) throw new Error('bad bs58');
+    let carry = val;
+    for (let j = 0; j < bytes.length; j++) {
+      carry += bytes[j] * 58;
+      bytes[j] = carry & 0xff;
+      carry >>= 8;
+    }
+    while (carry > 0) { bytes.push(carry & 0xff); carry >>= 8; }
+  }
+  const out = new Uint8Array(zeros + bytes.length);
+  for (let i = 0; i < bytes.length; i++) out[zeros + i] = bytes[bytes.length - 1 - i];
+  return out;
+}
+
 /* ---------- Wallet connect (injected provider: Phantom / Nightly / Solflare) ---------- */
 function findProvider() {
   const cands = [window.solana, window.nightly && window.nightly.solana, window.backpack].filter(Boolean);
@@ -100,7 +139,12 @@ function findProvider() {
 $('connectBtn').addEventListener('click', async () => {
   const p = findProvider();
   if (!p) {
-    alert('No Solana wallet found. Install Phantom, Nightly, or Solflare, then reload.');
+    // Mobile Chrome has no injected provider — offer the Phantom app deep-link flow.
+    $('mobileAnchor').classList.remove('hidden');
+    $('connectBtn').textContent = 'Use Phantom app ↓';
+    $('connectBtn').disabled = true;
+    $('walletLabel').textContent = 'mobile flow below';
+    refreshMobileBalance();
     return;
   }
   try {
@@ -129,6 +173,84 @@ async function refreshBalance() {
     $('noCook').classList.toggle('hidden', cook > 0);
   } catch (e) {
     $('cookBal').textContent = 'n/a';
+  }
+}
+
+/* ---------- Mobile anchor: Phantom app deep link (no injected provider) ---------- */
+async function refreshMobileBalance() {
+  const addr = $('mobileAddr').value.trim();
+  if (!addr) return;
+  try {
+    const lamports = await connection.getBalance(new PublicKey(addr));
+    const cook = lamports / 1e9;
+    $('mobileBal').textContent = cook.toFixed(6) + ' COOK on Cookie Chain';
+    $('mobileNoCook').classList.toggle('hidden', cook > 0);
+    $('mobileAnchorBtn').disabled = cook <= 0;
+  } catch (e) {
+    $('mobileBal').textContent = 'could not read balance';
+  }
+}
+
+async function buildAnchorTx(walletAddr, seal) {
+  const memoText = `PHI-LEDGER|seal=${seal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
+  const ix = new TransactionInstruction({
+    keys: [{ pubkey: new PublicKey(walletAddr), isSigner: true, isWritable: false }],
+    programId: new PublicKey(MEMO_PROGRAM),
+    data: new TextEncoder().encode(memoText),
+  });
+  const tx = new Transaction().add(ix);
+  tx.feePayer = new PublicKey(walletAddr);
+  tx.recentBlockhash = (await connection.getLatestBlockhash('confirmed')).blockhash;
+  return tx;
+}
+
+$('mobileAddr').addEventListener('change', refreshMobileBalance);
+
+$('mobileAnchorBtn').addEventListener('click', async () => {
+  const addr = $('mobileAddr').value.trim();
+  const seal = $('sealSelect').value;
+  const out = $('mobileOut');
+  if (!addr || !seal || !snapshot) { out.textContent = 'Enter your wallet address first.'; return; }
+  out.classList.remove('hidden');
+  out.innerHTML = '<span class="text-gray-400">Building transaction… opening Phantom.</span>';
+  try {
+    new PublicKey(addr); // validate
+    const tx = await buildAnchorTx(addr, seal);
+    const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
+    const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
+    window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
+  }
+});
+
+/* Handle return from Phantom app with a signed transaction */
+async function handlePhantomReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('errorCode')) {
+    const out = $('mobileOut') || $('anchorOut');
+    if (out) {
+      out.classList.remove('hidden');
+      out.innerHTML = `<span class="text-red-400">Phantom declined:</span> <span class="text-gray-400">${(params.get('errorMessage') || 'rejected').slice(0, 160)}</span>`;
+    }
+    history.replaceState(null, '', window.location.pathname);
+    return;
+  }
+  const signedB58 = params.get('transaction');
+  if (!signedB58 || params.get('anchored') !== '1') return;
+  history.replaceState(null, '', window.location.pathname);
+  const out = $('mobileOut');
+  $('mobileAnchor').classList.remove('hidden');
+  out.classList.remove('hidden');
+  out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
+  try {
+    const raw = bs58decode(signedB58);
+    const sig = await connection.sendRawTransaction(raw);
+    out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
+    await connection.confirmTransaction(sig, 'confirmed');
+    out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
   }
 }
 
@@ -170,3 +292,4 @@ $('anchorBtn').addEventListener('click', async () => {
 pulse(); setInterval(pulse, 15000);
 mining(); setInterval(mining, 30000);
 loadLedger();
+handlePhantomReturn();
