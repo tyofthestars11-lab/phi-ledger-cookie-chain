@@ -272,13 +272,11 @@ $('anchorBtn').addEventListener('click', async () => {
     tx.feePayer = new PublicKey(wallet);
     tx.recentBlockhash = (await connection.getLatestBlockhash('confirmed')).blockhash;
     let sig;
-    if (provider.signAndSendTransaction) {
-      const res = await provider.signAndSendTransaction(tx);
-      sig = res.signature;
-    } else {
-      const signed = await provider.signTransaction(tx);
-      sig = await connection.sendRawTransaction(signed.serialize());
-    }
+    // Always sign locally and broadcast via our Cookie Chain connection.
+    // (provider.signAndSendTransaction would broadcast via the wallet's own
+    // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
+    const signed = await provider.signTransaction(tx);
+    sig = await connection.sendRawTransaction(signed.serialize());
     out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
     await connection.confirmTransaction(sig, 'confirmed');
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
