@@ -91,11 +91,15 @@ async function mining() {
   }
 }
 
-/* ---------- Wallet-injection guard ----------
- * Some wallets (Phantom) append their own instructions at sign time — e.g.
- * Phantom's Lighthouse security program. If that program does not exist on
- * Cookie Chain the transaction can never succeed, so we detect it BEFORE
- * broadcasting and stop instead of burning a fee on a doomed transaction. */
+/* ---------- The Anchor Engine: one whole flow, φ² = φ + 1 ----------
+ * Not parts: the site, the signer, and Cookie Chain move as one motion.
+ * Rung 1: build the anchor transaction exactly.
+ * Rung 2: sign — then VERIFY THE BYTES. No signer's output is ever trusted.
+ * Rung 3: dirty bytes are +1 fuel — the engine reroutes automatically
+ *          (in-page → wallet app), never a dead end, never a burned fee.
+ * Rung 4: broadcast → confirm → the chain arbitrates (meta.err, memo).
+ * The engine stops before broadcast whenever the bytes aren't exactly
+ * the anchor. A failed experiment costs nothing. */
 const COMPUTE_BUDGET_PROGRAM = 'ComputeBudget111111111111111111111111111111';
 async function missingPrograms(signedTx) {
   const ids = [...new Set(signedTx.instructions.map(ix => ix.programId.toString()))];
@@ -109,18 +113,7 @@ async function missingPrograms(signedTx) {
   }
   return { unknown, missing };
 }
-function injectionError(missing) {
-  const names = missing.map(m => short(m, 10)).join(', ');
-  const err = new Error(
-    'Not broadcast (no fee spent). Phantom auto-injected its Lighthouse security program (' + names +
-    '), which does not exist on Cookie Chain — this anchor can never land through Phantom\'s in-page signing. ' +
-    'Try the Phantom app button below, or Nightly (add the Cookie Chain network: rpc.cookiescan.io).'
-  );
-  err.isInjection = true;
-  return err;
-}
-
-/* ---------- base58 (for Phantom mobile deep links) ---------- */
+/* ---------- base58 (for wallet-app deep links) ---------- */
 const BS58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
 function bs58encode(bytes) {
   let zeros = 0;
@@ -162,8 +155,8 @@ function bs58decode(s) {
 /* ---------- Wallet connect (injected provider: Phantom / Nightly / Solflare) ---------- */
 function findProvider() {
   const cands = [window.nightly && window.nightly.solana, window.solana, window.backpack].filter(Boolean);
-  // Prefer Nightly: Phantom auto-injects its Lighthouse security instruction,
-  // which does not exist on Cookie Chain, so Phantom-signed anchors always fail.
+  // Prefer Nightly when present. The engine verifies every signer's bytes
+  // anyway; preference just skips the known-dirty path first.
   return cands.find(p => p && p.isNightly) || cands.find(p => p && p.connect) || null;
 }
 
@@ -231,7 +224,10 @@ async function buildAnchorTx(walletAddr, seal) {
   });
   const tx = new Transaction().add(ix);
   tx.feePayer = new PublicKey(walletAddr);
-  tx.recentBlockhash = (await connection.getLatestBlockhash('confirmed')).blockhash;
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
+  tx.recentBlockhash = blockhash;
+  tx._blockhashInfo = { blockhash, lastValidBlockHeight };
+  tx._memoText = memoText;
   return tx;
 }
 
@@ -249,144 +245,176 @@ $('mobileAnchorBtn').addEventListener('click', async () => {
     const tx = await buildAnchorTx(addr, seal);
     const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
     const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
+    try { sessionStorage.setItem('anchorReroute', seal); } catch (e) {}
     window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
   }
 });
 
-/* Handle return from Phantom app with a signed transaction */
+/* Handle return from the wallet app with a signed transaction */
 async function handlePhantomReturn() {
   const params = new URLSearchParams(window.location.search);
+  let rerouted = null;
+  try { rerouted = sessionStorage.getItem('anchorReroute'); } catch (e) {}
+  const clearReroute = () => { try { sessionStorage.removeItem('anchorReroute'); } catch (e) {} };
   if (params.get('errorCode')) {
+    clearReroute();
     const out = $('mobileOut') || $('anchorOut');
     if (out) {
       out.classList.remove('hidden');
-      out.innerHTML = `<span class="text-red-400">Phantom declined:</span> <span class="text-gray-400">${(params.get('errorMessage') || 'rejected').slice(0, 160)}</span>`;
+      out.innerHTML = `<span class="text-red-400">Wallet declined:</span> <span class="text-gray-400">${(params.get('errorMessage') || 'rejected').slice(0, 160)}</span>`;
     }
     history.replaceState(null, '', window.location.pathname);
     return;
   }
   const signedB58 = params.get('transaction');
+  // Loop trap: the engine fired the app deeplink but we came back with no
+  // signed bytes — the app couldn't open itself (in-app browser circle).
+  if (rerouted && (!signedB58 || params.get('anchored') !== '1')) {
+    clearReroute();
+    history.replaceState(null, '', window.location.pathname);
+    const out = $('anchorOut');
+    out.classList.remove('hidden');
+    out.innerHTML = `<span class="text-amber-300">That looped — you're inside Phantom's own browser, so the app can't open itself.</span><br><span class="text-gray-400 text-sm">Open this page in your phone's real Chrome browser and tap Anchor once. The app will open properly there, and the engine carries the rest.</span><br><button id="copyLinkBtnR" class="btn-ghost text-xs mt-2">Copy page link</button>`;
+    wireCopyButton('copyLinkBtnR');
+    return;
+  }
   if (!signedB58 || params.get('anchored') !== '1') return;
+  clearReroute();
   history.replaceState(null, '', window.location.pathname);
   const out = $('mobileOut');
   $('mobileAnchor').classList.remove('hidden');
   out.classList.remove('hidden');
-  out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
   try {
     const raw = bs58decode(signedB58);
     const returned = Transaction.from(raw);
+    // Byte rung on the app's output: exactly one memo instruction, our seal
+    // text, every program present on-chain. Nothing trusted, all verified.
+    const ix = returned.instructions[0];
+    let dataText = '';
+    try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
+    const looksAnchor = returned.instructions.length === 1 && ix && ix.programId.toString() === MEMO_PROGRAM && dataText.indexOf('PHI-LEDGER|') === 0;
     const { missing } = await missingPrograms(returned);
-    if (missing.length > 0) throw injectionError(missing);
-    const sig = await connection.sendRawTransaction(raw);
-    out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
-    await connection.confirmTransaction(sig, 'confirmed');
-    // Verify the transaction actually succeeded, not just confirmed.
-    const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
-    if (txInfo?.meta?.err) {
-      throw new Error('Transaction landed but the chain rejected it: ' + JSON.stringify(txInfo.meta.err));
+    if (!looksAnchor || missing.length > 0) {
+      const why = !looksAnchor ? 'bytes that are not the anchor transaction' : 'a program (' + missing.map(m => short(m, 8)).join(',') + ') with no account on Cookie Chain';
+      out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">The wallet app returned ${why} — nothing was broadcast, no fee spent. This wallet can't produce clean bytes for Cookie Chain; the remaining route is Nightly (add the Cookie Chain network: rpc.cookiescan.io).</span>`;
+      return;
     }
-    out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+    const sig = await broadcastAndVerify(returned, out, null);
+    const sealMatch = dataText.match(/seal=([^|]+)/);
+    anchorDone(out, sig, sealMatch ? sealMatch[1] : 'seal');
   } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${String(e.message || e).slice(0, 400)}</span>`;
+    out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
   }
 }
 
-/* ---------- Anchor a seal: memo tx on Cookie Chain ---------- */
-$('anchorBtn').addEventListener('click', async () => {
+/* ---------- Anchor engine ---------- */
+function shortErr(e) { return String((e && e.message) || e).slice(0, 220); }
+
+// The byte rung: signed bytes must be EXACTLY what we built — one memo
+// instruction, our data verbatim, every program present on-chain.
+async function verifyBytesClean(signedTx, expectedMemoText) {
+  const problems = [];
+  if (signedTx.instructions.length !== 1) problems.push('instruction count ' + signedTx.instructions.length + ' (expected 1)');
+  const ix = signedTx.instructions[0];
+  if (!ix || ix.programId.toString() !== MEMO_PROGRAM) problems.push('foreign program ' + short(ix ? ix.programId.toString() : '?', 8));
+  let dataText = '';
+  try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
+  if (dataText !== expectedMemoText) problems.push('memo data altered');
+  const { missing } = await missingPrograms(signedTx);
+  if (missing.length > 0) problems.push('missing program ' + missing.map(m => short(m, 8)).join(','));
+  return { clean: problems.length === 0, problems };
+}
+
+async function broadcastAndVerify(signedTx, out, blockhashInfo) {
+  out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
+  const rawTx = signedTx.serialize();
+  const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
+  out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
+  // Retry broadcast: this RPC sometimes drops transactions. Resend the same
+  // signed bytes a few times (idempotent) before giving up.
+  let confirmed = false, lastErr = null;
+  for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
+    if (attempt > 0) {
+      out.innerHTML = `<span class="text-gray-400">Retrying broadcast (${attempt + 1}/4)…</span>`;
+      try { await connection.sendRawTransaction(rawTx, { skipPreflight: true }); } catch (e) {}
+    }
+    try {
+      if (blockhashInfo) {
+        await connection.confirmTransaction({ signature: sig, blockhash: blockhashInfo.blockhash, lastValidBlockHeight: blockhashInfo.lastValidBlockHeight }, 'confirmed');
+      } else {
+        await connection.confirmTransaction(sig, 'confirmed');
+      }
+      confirmed = true;
+    } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 5000)); }
+  }
+  if (!confirmed) throw lastErr || new Error('Not confirmed after 4 broadcast attempts.');
+  // The chain arbitrates: success means meta.err is null.
+  const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
+  if (txInfo?.meta?.err) throw new Error('Chain rejected it: ' + JSON.stringify(txInfo.meta.err));
+  return sig;
+}
+
+function anchorDone(out, sig, seal) {
+  out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+}
+
+function wireCopyButton(id) {
+  const cp = $(id);
+  if (cp) cp.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.origin + window.location.pathname);
+      cp.textContent = 'Copied — paste it in Chrome';
+    } catch (e) { cp.textContent = 'Copy failed — long-press the address bar'; }
+  });
+}
+
+function fireAppDeeplink(tx, seal) {
+  const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
+  const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
+  try { sessionStorage.setItem('anchorReroute', seal); } catch (e) {}
+  window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
+}
+
+const IS_MOBILE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+
+// One tap runs the whole: build → sign → verify bytes → reroute-or-broadcast → verify.
+async function runAnchorEngine() {
   if (!provider || !wallet) return;
   const seal = $('sealSelect').value;
-  const memoText = `PHI-LEDGER|seal=${seal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
   const out = $('anchorOut');
   out.classList.remove('hidden');
-  out.innerHTML = '<span class="text-gray-400">Building transaction… approve in your wallet.</span>';
   try {
-    const ix = new TransactionInstruction({
-      keys: [{ pubkey: new PublicKey(wallet), isSigner: true, isWritable: false }],
-      programId: new PublicKey(MEMO_PROGRAM),
-      data: new TextEncoder().encode(memoText),
-    });
-    const tx = new Transaction().add(ix);
-    tx.feePayer = new PublicKey(wallet);
-    const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
-    tx.recentBlockhash = blockhash;
-    let sig;
+    out.innerHTML = '<span class="text-gray-400">Building anchor transaction…</span>';
+    const tx = await buildAnchorTx(wallet, seal);
+    out.innerHTML = '<span class="text-gray-400">Signing… approve in your wallet.</span>';
     // Always sign locally and broadcast via our Cookie Chain connection.
     // (provider.signAndSendTransaction would broadcast via the wallet's own
     // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
     const signed = await provider.signTransaction(tx);
-    // If the wallet replaced our blockhash, the tx is invalid on Cookie Chain.
-    if (signed.recentBlockhash !== blockhash) {
-      throw new Error('Wallet changed the transaction network data. Please try Nightly wallet instead — see note below.');
+    if (signed.recentBlockhash !== tx._blockhashInfo.blockhash) {
+      throw new Error('Wallet changed the transaction network data.');
     }
-    // Wallet-injection guard: stop BEFORE broadcast if the wallet appended an
-    // instruction calling a program that does not exist on Cookie Chain.
-    const { missing } = await missingPrograms(signed);
-    if (missing.length > 0) throw injectionError(missing);
-    // Skip preflight: the RPC's simulation is unreliable. Broadcast directly.
-    const rawTx = signed.serialize();
-    sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
-    out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
-    // Retry broadcast: this RPC sometimes drops transactions. Resend the same
-    // signed bytes a few times (idempotent) before giving up.
-    let confirmed = false;
-    let lastErr = null;
-    for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
-      if (attempt > 0) {
-        out.innerHTML = `<span class="text-gray-400">Retrying broadcast (${attempt + 1}/4)…</span>`;
-        try { await connection.sendRawTransaction(rawTx, { skipPreflight: true }); } catch (e) { /* already landed */ }
-      }
-      try {
-        await connection.confirmTransaction({ signature: sig, blockhash, lastValidBlockHeight }, 'confirmed');
-        confirmed = true;
-      } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 5000)); }
+    const check = await verifyBytesClean(signed, tx._memoText);
+    if (check.clean) {
+      const sig = await broadcastAndVerify(signed, out, tx._blockhashInfo);
+      anchorDone(out, sig, seal);
+      refreshBalance();
+      return;
     }
-    if (!confirmed) throw lastErr || new Error('Transaction was not confirmed after 4 broadcast attempts.');
-    // Verify the transaction actually succeeded (not just confirmed).
-    const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
-    const txErr = txInfo?.meta?.err;
-    if (txErr) {
-      throw new Error('Transaction landed but the chain rejected it: ' + JSON.stringify(txErr) + '. Retrying from the same wallet will fail the same way — see the wallet note above.');
+    // Fuel: dirty bytes reroute automatically — no second tap, no fee spent.
+    out.innerHTML = `<span class="text-gray-400">In-page signing returned foreign bytes (${check.problems.join('; ')}) — rerouting through the wallet app…</span>`;
+    if (!IS_MOBILE) {
+      throw new Error('In-page signing returned foreign bytes (' + check.problems.join('; ') + '). On desktop the remaining route is Nightly with the Cookie Chain network (rpc.cookiescan.io) added.');
     }
-    out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
-    refreshBalance();
+    const fresh = await buildAnchorTx(wallet, seal); // fresh blockhash for the app
+    fireAppDeeplink(fresh, seal);
   } catch (e) {
-    const msg = String(e.message || e);
-    let extra;
-    if (e.isInjection) {
-      extra = `<br><button id="deeplinkBtn" class="btn-ghost text-sm mt-3">Try Phantom app signing instead</button>` +
-        `<div class="text-gray-500 text-xs mt-2">No new wallet needed — opens your Phantom app to sign the same anchor. ` +
-        `If the app signs clean, the seal lands. If it injects too, the same check catches it before any fee is spent.</div>` +
-        `<div class="text-amber-300/90 text-xs mt-2">Loop trap: if you are inside Phantom's own app browser right now, this button just circles back here. ` +
-        `Open this page in your phone's real Chrome browser first, then tap it there.</div>` +
-        `<button id="copyLinkBtn" class="btn-ghost text-xs mt-2">Copy page link</button>`;
-    } else {
-      extra = `<br><span class="text-gray-500 text-xs">If this is a funds error, bridge a little COOK: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></span>`;
-    }
-    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${msg.slice(0, 400)}</span>${extra}`;
-    const dl = $('deeplinkBtn');
-    if (dl) dl.addEventListener('click', async () => {
-      out.innerHTML = '<span class="text-gray-400">Opening Phantom app…</span>';
-      try {
-        const seal = $('sealSelect').value;
-        const tx = await buildAnchorTx(wallet, seal);
-        const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
-        const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
-        window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
-      } catch (err) {
-        out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${String(err.message || err).slice(0, 200)}</span>`;
-      }
-    });
-    const cp = $('copyLinkBtn');
-    if (cp) cp.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(window.location.origin + window.location.pathname);
-        cp.textContent = 'Copied — paste it in Chrome';
-      } catch (e) { cp.textContent = 'Copy failed — long-press the address bar'; }
-    });
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
-});
+}
+$('anchorBtn').addEventListener('click', runAnchorEngine);
 
 /* ---------- boot ---------- */
 pulse(); setInterval(pulse, 15000);
