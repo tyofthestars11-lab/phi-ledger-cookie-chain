@@ -113,8 +113,8 @@ function injectionError(missing) {
   const names = missing.map(m => short(m, 10)).join(', ');
   const err = new Error(
     'Not broadcast (no fee spent). Phantom auto-injected its Lighthouse security program (' + names +
-    '), which does not exist on Cookie Chain — this anchor can never land from Phantom. ' +
-    'Fix: connect with Nightly instead (add the Cookie Chain network: rpc.cookiescan.io) and anchor again.'
+    '), which does not exist on Cookie Chain — this anchor can never land through Phantom\'s in-page signing. ' +
+    'Try the Phantom app button below, or Nightly (add the Cookie Chain network: rpc.cookiescan.io).'
   );
   err.isInjection = true;
   return err;
@@ -282,6 +282,11 @@ async function handlePhantomReturn() {
     const sig = await connection.sendRawTransaction(raw);
     out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
     await connection.confirmTransaction(sig, 'confirmed');
+    // Verify the transaction actually succeeded, not just confirmed.
+    const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
+    if (txInfo?.meta?.err) {
+      throw new Error('Transaction landed but the chain rejected it: ' + JSON.stringify(txInfo.meta.err));
+    }
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${String(e.message || e).slice(0, 400)}</span>`;
@@ -347,10 +352,29 @@ $('anchorBtn').addEventListener('click', async () => {
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     refreshBalance();
   } catch (e) {
-    const msg = (e.message || e);
-    const bridgeHint = e.isInjection ? '' :
-      `<br><span class="text-gray-500 text-xs">If this is a funds error, bridge a little COOK: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></span>`;
-    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${String(msg).slice(0, 400)}</span>${bridgeHint}`;
+    const msg = String(e.message || e);
+    let extra;
+    if (e.isInjection) {
+      extra = `<br><button id="deeplinkBtn" class="btn-ghost text-sm mt-3">Try Phantom app signing instead</button>` +
+        `<div class="text-gray-500 text-xs mt-2">No new wallet needed — opens your Phantom app to sign the same anchor. ` +
+        `If the app signs clean, the seal lands. If it injects too, the same check catches it before any fee is spent.</div>`;
+    } else {
+      extra = `<br><span class="text-gray-500 text-xs">If this is a funds error, bridge a little COOK: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></span>`;
+    }
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${msg.slice(0, 400)}</span>${extra}`;
+    const dl = $('deeplinkBtn');
+    if (dl) dl.addEventListener('click', async () => {
+      out.innerHTML = '<span class="text-gray-400">Opening Phantom app…</span>';
+      try {
+        const seal = $('sealSelect').value;
+        const tx = await buildAnchorTx(wallet, seal);
+        const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
+        const redirect = encodeURIComponent(window.location.origin + window.location.pathname + '?anchored=1');
+        window.location.href = `https://phantom.app/ul/v1/signTransaction?transaction=${b58}&redirect_link=${redirect}`;
+      } catch (err) {
+        out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${String(err.message || err).slice(0, 200)}</span>`;
+      }
+    });
   }
 });
 
@@ -358,4 +382,5 @@ $('anchorBtn').addEventListener('click', async () => {
 pulse(); setInterval(pulse, 15000);
 mining(); setInterval(mining, 30000);
 loadLedger();
+if ($('mobileAddr').value.trim()) refreshMobileBalance();
 handlePhantomReturn();
