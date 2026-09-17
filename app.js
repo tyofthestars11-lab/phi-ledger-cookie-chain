@@ -178,11 +178,17 @@ $('connectBtn').addEventListener('click', async () => {
   let lastErr = null;
   for (const p of providers) {
     try {
-      const resp = await p.connect();
+      // In a wallet's own dApp browser, publicKey may already be set — use it directly.
+      // Only call connect() if we don't have an address yet.
+      let pubkey = p.publicKey;
+      if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+      if (!pubkey) {
+        const resp = await p.connect();
+        pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
+        if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
+      }
       provider = p;
       // Wallets return the address in different shapes; handle them all.
-      let pubkey = (resp && resp.publicKey) || (resp && resp.address) || p.publicKey || (resp && resp.account);
-      if (pubkey && typeof pubkey !== 'string') pubkey = pubkey.toString ? pubkey.toString() : String(pubkey);
       if (!pubkey) throw new Error('wallet did not return an address');
       wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
