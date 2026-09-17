@@ -13,7 +13,7 @@ const connection = new Connection(RPC_URL, 'confirmed');
 // v21: the anchor targets Solana mainnet — Phantom's Lighthouse injection is
 // harmless there (the program exists on mainnet), so the signed bytes land.
 // Cookie Chain cannot execute Phantom-signed transactions, proven.
-const mainnet = new Connection('https://api.mainnet-beta.solana.com', 'confirmed');
+const mainnet = new Connection('https://solana-rpc.publicnode.com', 'confirmed');
 
 let wallet = null;      // connected public key (base58)
 let provider = null;    // injected wallet provider
