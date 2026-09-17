@@ -366,16 +366,15 @@ $('mobileAnchorBtn').addEventListener('click', async () => {
  * (session cached after), then straight to signTransaction — Phantom opens
  * on its confirm screen with the payload, not on the website. */
 $('openNightly').addEventListener('click', async () => {
-  // No verified Nightly deep-link scheme exists; the old intent:// href only
-  // reopened this site in the default browser. Copy the URL so it can be
+  // Like Phantom's phantom://v1: Nightly's official nightly:// scheme opens the
+  // Nightly app directly, no website. The site URL is also copied so it can be
   // pasted into Nightly's browser tab, where window.nightly.solana is injected.
   const btn = $('openNightly');
   try {
     await navigator.clipboard.writeText(window.location.origin + window.location.pathname);
-    btn.textContent = 'Copied — open Nightly → browser → paste & go';
-  } catch (e) {
-    btn.textContent = 'Copy failed — long-press the address bar to copy';
-  }
+  } catch (e) { /* clipboard is best-effort */ }
+  btn.textContent = 'Opening Nightly… paste the URL in its browser tab';
+  window.location.href = 'nightly://';
   setTimeout(() => { btn.textContent = 'Open in Nightly'; }, 6000);
 });
 
