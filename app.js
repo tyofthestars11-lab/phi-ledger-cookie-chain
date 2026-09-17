@@ -357,7 +357,10 @@ $('anchorBtn').addEventListener('click', async () => {
     if (e.isInjection) {
       extra = `<br><button id="deeplinkBtn" class="btn-ghost text-sm mt-3">Try Phantom app signing instead</button>` +
         `<div class="text-gray-500 text-xs mt-2">No new wallet needed — opens your Phantom app to sign the same anchor. ` +
-        `If the app signs clean, the seal lands. If it injects too, the same check catches it before any fee is spent.</div>`;
+        `If the app signs clean, the seal lands. If it injects too, the same check catches it before any fee is spent.</div>` +
+        `<div class="text-amber-300/90 text-xs mt-2">Loop trap: if you are inside Phantom's own app browser right now, this button just circles back here. ` +
+        `Open this page in your phone's real Chrome browser first, then tap it there.</div>` +
+        `<button id="copyLinkBtn" class="btn-ghost text-xs mt-2">Copy page link</button>`;
     } else {
       extra = `<br><span class="text-gray-500 text-xs">If this is a funds error, bridge a little COOK: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></span>`;
     }
@@ -374,6 +377,13 @@ $('anchorBtn').addEventListener('click', async () => {
       } catch (err) {
         out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${String(err.message || err).slice(0, 200)}</span>`;
       }
+    });
+    const cp = $('copyLinkBtn');
+    if (cp) cp.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.origin + window.location.pathname);
+        cp.textContent = 'Copied — paste it in Chrome';
+      } catch (e) { cp.textContent = 'Copy failed — long-press the address bar'; }
     });
   }
 });
