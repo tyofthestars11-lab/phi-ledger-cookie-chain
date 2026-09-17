@@ -611,12 +611,11 @@ async function runAnchorEngine() {
       refreshBalance();
       return;
     }
-    // Fuel: dirty bytes reroute automatically — no second tap, no fee spent.
-    out.innerHTML = `<span class="text-gray-400">In-page signing returned foreign bytes (${check.problems.join('; ')}) — rerouting through the wallet app…</span>`;
-    if (!IS_MOBILE) {
-      throw new Error('In-page signing returned foreign bytes (' + check.problems.join('; ') + '). On desktop the remaining route is Nightly with the Cookie Chain network (rpc.cookiescan.io) added.');
-    }
-    fireAppDeeplink(wallet, seal, out);
+    // Fuel: dirty bytes STOP the engine — no second tap, no fee spent, and no
+    // reroute into another wallet's connect screen. Rerouting after a
+    // confirmation is a circle, not a confirmation page. Name the problem.
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">wallet returned altered bytes (${check.problems.join('; ')}) — no fee spent.</span><br><span class="text-gray-500 text-xs">This wallet injects extra instructions unknown to Cookie Chain. Anchor from a non-injecting wallet (e.g. Nightly) to complete.</span>`;
+    return;
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
