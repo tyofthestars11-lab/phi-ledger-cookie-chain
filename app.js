@@ -257,6 +257,20 @@ async function buildAnchorTx(walletAddr, seal) {
 
 $('mobileAddr').addEventListener('change', refreshMobileBalance);
 
+// Mobile flow: anchor through the Solflare app via the encrypted deep link.
+// The session persists on this device, so repeated anchors go straight through.
+$('solflareAnchorBtn').addEventListener('click', async () => {
+  const addr = $('mobileAddr').value.trim();
+  const out = $('mobileOut');
+  out.classList.remove('hidden');
+  if (!isValidAddress(addr)) {
+    out.innerHTML = '<span class="text-amber-300">Enter your Solana wallet address first.</span>';
+    return;
+  }
+  await refreshMobileBalance();
+  await solflareAnchorFlow(addr, $('sealSelect').value, out);
+});
+
 /* ---------- Phantom app: encrypted deeplink session (NaCl box) ----------
  * The app only honors well-formed requests: an encrypted session first
  * (connect), then an encrypted sign payload. A bare ?transaction= URL is
