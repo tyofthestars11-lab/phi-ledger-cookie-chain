@@ -234,11 +234,13 @@ async function refreshMobileBalance() {
     $('mobileBal').textContent = cook.toFixed(6) + ' COOK on Cookie Chain';
     $('mobileNoCook').classList.toggle('hidden', cook > 0);
     // The seal flow only captures and verifies the signature — no broadcast,
-    // no fee. Button stays enabled whenever an address is set.
+    // no fee. Buttons stay enabled whenever an address is set.
     $('mobileAnchorBtn').disabled = false;
+    $('mobileAnchorBtnSolflare').disabled = false;
   } catch (e) {
     $('mobileBal').textContent = 'could not read balance';
     $('mobileAnchorBtn').disabled = false;
+    $('mobileAnchorBtnSolflare').disabled = false;
   }
 }
 
@@ -260,7 +262,7 @@ async function buildAnchorTx(walletAddr, seal) {
 }
 
 $('mobileAddr').addEventListener('change', refreshMobileBalance);
-$('mobileAddr').addEventListener('input', () => { if ($('mobileAddr').value.trim()) $('mobileAnchorBtn').disabled = false; });
+$('mobileAddr').addEventListener('input', () => { if ($('mobileAddr').value.trim()) { $('mobileAnchorBtn').disabled = false; $('mobileAnchorBtnSolflare').disabled = false; } });
 
 /* ---------- Phantom app: encrypted deeplink session (NaCl box) ----------
  * The app only honors well-formed requests: an encrypted session first
@@ -291,8 +293,8 @@ function getPhantomSession() {
 function setPhantomSession(session, phantomPub) {
   lsSet('phantom_session', session); lsSet('phantom_pubkey', phantomPub);
 }
-function setPendingSign(addr, seal) {
-  lsSet('phantom_pending_sign', JSON.stringify({ addr, seal }));
+function setPendingSign(addr, seal, kind) {
+  lsSet('phantom_pending_sign', JSON.stringify({ addr, seal, kind: kind || 'phantom' }));
   lsSet('anchorReroute', seal);
 }
 function getPendingSign() {
@@ -301,15 +303,15 @@ function getPendingSign() {
 function clearPendingSign() {
   lsDel('phantom_pending_sign'); lsDel('anchorReroute');
 }
-function encryptForPhantom(obj, phantomPubB58) {
+function encryptForWallet(obj, walletPubB58) {
   const dapp = getDappKeys();
   const nonce = nacl.randomBytes(24);
-  const box = nacl.box(new TextEncoder().encode(JSON.stringify(obj)), nonce, bs58decode(phantomPubB58), bs58decode(dapp.sec));
+  const box = nacl.box(new TextEncoder().encode(JSON.stringify(obj)), nonce, bs58decode(walletPubB58), bs58decode(dapp.sec));
   return { nonceB58: bs58encode(nonce), payloadB58: bs58encode(box) };
 }
-function decryptFromPhantom(dataB58, nonceB58, phantomPubB58) {
+function decryptFromWallet(dataB58, nonceB58, walletPubB58) {
   const dapp = getDappKeys();
-  const opened = nacl.box.open(bs58decode(dataB58), bs58decode(nonceB58), bs58decode(phantomPubB58), bs58decode(dapp.sec));
+  const opened = nacl.box.open(bs58decode(dataB58), bs58decode(nonceB58), bs58decode(walletPubB58), bs58decode(dapp.sec));
   if (!opened) throw new Error('Could not decrypt the wallet response.');
   return JSON.parse(new TextDecoder().decode(opened));
 }
@@ -330,7 +332,7 @@ async function phantomSignRequest(addr, seal, out) {
   if (out) out.innerHTML = '<span class="text-gray-400">Opening Phantom… approve the anchor in the app.</span>';
   const tx = await buildAnchorTx(addr, seal); // fresh blockhash for the app
   const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
-  const enc = encryptForPhantom({ transaction: b58, session: sess.session }, sess.phantomPub);
+  const enc = encryptForWallet({ transaction: b58, session: sess.session }, sess.phantomPub);
   const dapp = getDappKeys();
   const redirect = encodeURIComponent(phantomRedirect());
   const q = `dapp_encryption_public_key=${dapp.pub}&nonce=${enc.nonceB58}&redirect_link=${redirect}&payload=${enc.payloadB58}`;
@@ -338,10 +340,59 @@ async function phantomSignRequest(addr, seal, out) {
 }
 // Entry: one call from either button. Connects first if needed, else signs.
 async function phantomAnchorFlow(addr, seal, out) {
-  setPendingSign(addr, seal);
+  setPendingSign(addr, seal, 'phantom');
   try {
     if (getPhantomSession()) await phantomSignRequest(addr, seal, out);
     else phantomConnect(out);
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+  }
+}
+
+/* ---------- Solflare app: encrypted deeplink session (NaCl box) ----------
+ * Same universal-link protocol as Phantom — verified against Solflare's
+ * official deep-link sample app (solflare-wallet/deep-link-sample-app):
+ * solflare://ul/v1/connect and solflare://ul/v1/signTransaction, NaCl-box
+ * encrypted payloads, the wallet answers with solflare_encryption_public_key. */
+const SOLFLARE_SCHEME = 'solflare://ul/v1'; // custom protocol: opens the app directly, no website, ever
+function getSolflareSession() {
+  const session = lsGet('solflare_session');
+  const solflarePub = lsGet('solflare_pubkey');
+  if (session && solflarePub) return { session, solflarePub };
+  return null;
+}
+function setSolflareSession(session, solflarePub) {
+  lsSet('solflare_session', session); lsSet('solflare_pubkey', solflarePub);
+}
+// Step 1: connect — establishes the encrypted session. On return the boot
+// handler stores the session and continues to the sign step automatically.
+function solflareConnect(out) {
+  const dapp = getDappKeys();
+  if (out) out.innerHTML = '<span class="text-gray-400">Opening Solflare to connect… approve in the app.</span>';
+  const redirect = encodeURIComponent(phantomRedirect());
+  const appUrl = encodeURIComponent(phantomRedirect());
+  const q = `dapp_encryption_public_key=${dapp.pub}&cluster=mainnet-beta&app_url=${appUrl}&redirect_link=${redirect}`;
+  window.location.href = `${SOLFLARE_SCHEME}/connect?${q}`; // straight into the app
+}
+// Step 2: sign — fresh transaction, encrypted payload, approval IN THE APP.
+async function solflareSignRequest(addr, seal, out) {
+  const sess = getSolflareSession();
+  if (!sess) { solflareConnect(out); return; }
+  if (out) out.innerHTML = '<span class="text-gray-400">Opening Solflare… approve the anchor in the app.</span>';
+  const tx = await buildAnchorTx(addr, seal); // fresh blockhash for the app
+  const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
+  const enc = encryptForWallet({ transaction: b58, session: sess.session }, sess.solflarePub);
+  const dapp = getDappKeys();
+  const redirect = encodeURIComponent(phantomRedirect());
+  const q = `dapp_encryption_public_key=${dapp.pub}&nonce=${enc.nonceB58}&redirect_link=${redirect}&payload=${enc.payloadB58}`;
+  window.location.href = `${SOLFLARE_SCHEME}/signTransaction?${q}`; // straight into the app
+}
+// Entry: one call from either button. Connects first if needed, else signs.
+async function solflareAnchorFlow(addr, seal, out) {
+  setPendingSign(addr, seal, 'solflare');
+  try {
+    if (getSolflareSession()) await solflareSignRequest(addr, seal, out);
+    else solflareConnect(out);
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
   }
@@ -356,6 +407,20 @@ $('mobileAnchorBtn').addEventListener('click', async () => {
   try {
     new PublicKey(addr); // validate
     await phantomAnchorFlow(addr, seal, out);
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
+  }
+});
+
+$('mobileAnchorBtnSolflare').addEventListener('click', async () => {
+  const addr = $('mobileAddr').value.trim();
+  const seal = $('sealSelect').value;
+  const out = $('mobileOut');
+  if (!addr || !seal || !snapshot) { out.textContent = 'Enter your wallet address first.'; return; }
+  out.classList.remove('hidden');
+  try {
+    new PublicKey(addr); // validate
+    await solflareAnchorFlow(addr, seal, out);
   } catch (e) {
     out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
   }
@@ -380,10 +445,34 @@ $('openPhantom').addEventListener('click', async () => {
   }
 });
 
-/* Handle returns from the Phantom app: connect (session) or sign (signed tx) */
-async function handlePhantomReturn() {
+/* "Open in Solflare" — same one-tap encrypted deeplink flow as Phantom:
+ * connect approval on first tap (session cached after), then straight to
+ * signTransaction — Solflare opens on its confirm screen with the payload. */
+$('openSolflare').addEventListener('click', async () => {
+  const addr = ($('mobileAddr').value || '').trim() || wallet;
+  const seal = $('sealSelect').value;
+  const out = $('mobileOut');
+  out.classList.remove('hidden');
+  if (!addr || !seal || !snapshot) { out.textContent = 'Enter your wallet address first.'; return; }
+  try {
+    new PublicKey(addr); // validate
+    $('mobileAnchor').classList.remove('hidden');
+    await solflareAnchorFlow(addr, seal, out);
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${shortErr(e)}</span>`;
+  }
+});
+
+/* Handle returns from the wallet apps: connect (session) or sign (signed tx).
+ * Speaks both Phantom and Solflare — same encrypted protocol, the wallet
+ * answers with phantom_encryption_public_key or solflare_encryption_public_key. */
+async function handleWalletReturn() {
   const params = new URLSearchParams(window.location.search);
-  const encPub = params.get('phantom_encryption_public_key');
+  const phantomPub = params.get('phantom_encryption_public_key');
+  const solflarePub = params.get('solflare_encryption_public_key');
+  const encPub = phantomPub || solflarePub;
+  const retKind = solflarePub ? 'solflare' : 'phantom';
+  const wName = k => (k === 'solflare' ? 'Solflare' : 'Phantom');
   const data = params.get('data');
   const nonce = params.get('nonce');
   const errCode = params.get('errorCode');
@@ -406,7 +495,7 @@ async function handlePhantomReturn() {
     history.replaceState(null, '', window.location.pathname);
     const ao = $('anchorOut');
     ao.classList.remove('hidden');
-    ao.innerHTML = `<span class="text-amber-300">The app didn't respond to the link.</span><br><span class="text-gray-400 text-sm">Make sure the Phantom app is installed, then tap Anchor once more.</span>`;
+    ao.innerHTML = `<span class="text-amber-300">The app didn't respond to the link.</span><br><span class="text-gray-400 text-sm">Make sure the ${wName(rerouted && rerouted.kind)} app is installed, then tap Anchor once more.</span>`;
     return;
   }
   if (!encPub && !data) return; // not our return
@@ -415,17 +504,19 @@ async function handlePhantomReturn() {
   // --- Connect return: decrypt, store the session, continue to sign ---
   if (encPub && data) {
     try {
-      const dec = decryptFromPhantom(data, nonce, encPub);
-      setPhantomSession(dec.session, encPub);
+      const dec = decryptFromWallet(data, nonce, encPub);
+      if (retKind === 'solflare') setSolflareSession(dec.session, encPub);
+      else setPhantomSession(dec.session, encPub);
       const pending = getPendingSign();
       if (pending) {
         const po = $('mobileOut');
         $('mobileAnchor').classList.remove('hidden');
         if (po) po.classList.remove('hidden');
-        await phantomSignRequest(pending.addr, pending.seal, po || out);
+        if (pending.kind === 'solflare') await solflareSignRequest(pending.addr, pending.seal, po || out);
+        else await phantomSignRequest(pending.addr, pending.seal, po || out);
       } else if (out) {
         out.classList.remove('hidden');
-        out.innerHTML = '<span class="text-green-400">Connected to the Phantom app.</span>';
+        out.innerHTML = `<span class="text-green-400">Connected to the ${wName(retKind)} app.</span>`;
       }
     } catch (e) {
       clearPendingSign();
@@ -438,22 +529,23 @@ async function handlePhantomReturn() {
   }
 
   // --- Sign return: decode the bytes, verify the signature, seal via φ ---
-  // Phantom injects its Lighthouse instruction into every transaction, and
-  // that program has no account on Cookie Chain — so the bytes can never be
-  // broadcast there. But the signature inside them is real: Tyree's ed25519
-  // signature over the memo. We decode it, verify it cryptographically, and
-  // encode the verified approval via the golden ratio. Nothing broadcast,
-  // no fee spent — the approval itself is the anchor, sealed by math.
+  // The seal flow never broadcasts — the bytes can't land on Cookie Chain
+  // (e.g. Phantom injects its Lighthouse instruction, which has no account
+  // there). But the signature inside them is real: Tyree's ed25519 signature
+  // over the memo. We decode it, verify it cryptographically, and encode the
+  // verified approval via the golden ratio. Nothing broadcast, no fee spent —
+  // the approval itself is the anchor, sealed by math.
   if (data) {
     const pending = getPendingSign();
     clearPendingSign();
+    const kind = (pending && pending.kind) || retKind;
     const mo = $('mobileOut');
     $('mobileAnchor').classList.remove('hidden');
     mo.classList.remove('hidden');
     try {
-      const sess = getPhantomSession();
+      const sess = kind === 'solflare' ? getSolflareSession() : getPhantomSession();
       if (!sess) throw new Error('Session expired — tap again to reconnect.');
-      const dec = decryptFromPhantom(data, nonce, sess.phantomPub);
+      const dec = decryptFromWallet(data, nonce, kind === 'solflare' ? sess.solflarePub : sess.phantomPub);
       const returned = Transaction.from(bs58decode(dec.transaction));
       const msgBytes = returned.serializeMessage();
       // Decode: find the memo instruction, extract the text.
@@ -501,7 +593,7 @@ async function handlePhantomReturn() {
           `<span class="text-gray-500">signature bytes (64) → rung ${sigRung}</span><br>` +
           `<span class="text-gray-500">memo length (${memoText.length}) → rung ${memoRung}</span><br>` +
           `<span class="text-gray-500">sealed:</span> <span class="text-gray-300">${esc(now)}</span><br><br>` +
-          `<span class="text-gray-400">Nothing was broadcast (Phantom's Lighthouse instruction cannot land on Cookie Chain), no fee spent. The approval is sealed — send a screenshot to complete the ledger entry.</span>`;
+          `<span class="text-gray-400">Nothing was broadcast${kind === 'phantom' ? " (Phantom's Lighthouse instruction cannot land on Cookie Chain)" : ""}, no fee spent. The approval is sealed — send a screenshot to complete the ledger entry.</span>`;
         return;
       }
       let why = 'the signature did not verify';
@@ -891,5 +983,5 @@ mining(); setInterval(mining, 30000);
 (async () => {
   try { await loadLedger(); } catch (e) { /* snapshot stays null; anchor button guards it */ }
   if ($('mobileAddr').value.trim()) refreshMobileBalance();
-  await handlePhantomReturn();
+  await handleWalletReturn();
 })();
