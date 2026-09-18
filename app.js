@@ -542,7 +542,7 @@ async function handleWalletReturn() {
           `<span class="text-gray-500">Signature:</span> <span class="text-gray-300 text-xs break-all">${esc(sigB58)}</span><br>` +
           `<span class="text-gray-500">Snapshot:</span> <span class="text-gray-300 text-xs break-all">${esc(snapHash)}</span><br><br>` +
           `<span class="text-gray-500">φ encoding —</span><br>` +
-          `<span class="text-gray-500">signature bytes (64) → rung ${sigRung}</span><br>` +
+          `<span class="text-gray-500">signature bytes (64) → ${sigRung} (constant arithmetic — every ed25519 signature is 64 bytes, not an address)</span><br>` +
           `<span class="text-gray-500">memo length (${memoText.length}) → rung ${memoRung}</span><br>` +
           `<span class="text-gray-500">sealed:</span> <span class="text-gray-300">${esc(now)}</span><br><br>` +
           `<span class="text-gray-400">Nothing was broadcast${kind === 'phantom' ? " (Phantom's Lighthouse instruction cannot land on Cookie Chain)" : ""}, no fee spent. The approval is sealed — send a screenshot to complete the ledger entry.</span>`;
