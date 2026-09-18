@@ -234,13 +234,11 @@ async function refreshMobileBalance() {
     $('mobileBal').textContent = cook.toFixed(6) + ' COOK on Cookie Chain';
     $('mobileNoCook').classList.toggle('hidden', cook > 0);
     // The seal flow only captures and verifies the signature — no broadcast,
-    // no fee. Buttons stay enabled whenever an address is set.
+    // no fee. The button stays enabled whenever an address is set.
     $('mobileAnchorBtn').disabled = false;
-    $('mobileAnchorBtnSolflare').disabled = false;
   } catch (e) {
     $('mobileBal').textContent = 'could not read balance';
     $('mobileAnchorBtn').disabled = false;
-    $('mobileAnchorBtnSolflare').disabled = false;
   }
 }
 
@@ -262,7 +260,7 @@ async function buildAnchorTx(walletAddr, seal) {
 }
 
 $('mobileAddr').addEventListener('change', refreshMobileBalance);
-$('mobileAddr').addEventListener('input', () => { if ($('mobileAddr').value.trim()) { $('mobileAnchorBtn').disabled = false; $('mobileAnchorBtnSolflare').disabled = false; } });
+$('mobileAddr').addEventListener('input', () => { if ($('mobileAddr').value.trim()) $('mobileAnchorBtn').disabled = false; });
 
 /* ---------- Phantom app: encrypted deeplink session (NaCl box) ----------
  * The app only honors well-formed requests: an encrypted session first
@@ -373,6 +371,13 @@ function solflareConnect(out) {
   const appUrl = encodeURIComponent(phantomRedirect());
   const q = `dapp_encryption_public_key=${dapp.pub}&cluster=mainnet-beta&app_url=${appUrl}&redirect_link=${redirect}`;
   window.location.href = `${SOLFLARE_SCHEME}/connect?${q}`; // straight into the app
+  // If the app never takes the link (not installed), say so plainly —
+  // no silent spinner.
+  setTimeout(() => {
+    if (!document.hidden && out) {
+      out.innerHTML += `<br><span class="text-amber-300 text-sm">Solflare didn't open — it may not be installed on this device. <a class="underline" href="https://solflare.com" target="_blank" rel="noopener">Get Solflare</a>, then tap again.</span>`;
+    }
+  }, 4000);
 }
 // Step 2: sign — fresh transaction, encrypted payload, approval IN THE APP.
 async function solflareSignRequest(addr, seal, out) {
@@ -412,20 +417,6 @@ $('mobileAnchorBtn').addEventListener('click', async () => {
   }
 });
 
-$('mobileAnchorBtnSolflare').addEventListener('click', async () => {
-  const addr = $('mobileAddr').value.trim();
-  const seal = $('sealSelect').value;
-  const out = $('mobileOut');
-  if (!addr || !seal || !snapshot) { out.textContent = 'Enter your wallet address first.'; return; }
-  out.classList.remove('hidden');
-  try {
-    new PublicKey(addr); // validate
-    await solflareAnchorFlow(addr, seal, out);
-  } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${(e.message || e).slice(0, 200)}</span>`;
-  }
-});
-
 /* "Open in Phantom" — routes DIRECTLY to the app's approval UI, never the site.
  * One tap fires the encrypted deeplink flow: connect approval on first tap
  * (session cached after), then straight to signTransaction — Phantom opens
@@ -445,9 +436,10 @@ $('openPhantom').addEventListener('click', async () => {
   }
 });
 
-/* "Open in Solflare" — same one-tap encrypted deeplink flow as Phantom:
- * connect approval on first tap (session cached after), then straight to
- * signTransaction — Solflare opens on its confirm screen with the payload. */
+/* "Open in Solflare" — the single Solflare button: routes DIRECTLY to the
+ * app's approval UI, never the site. One tap fires the encrypted deeplink
+ * flow: connect approval on first tap (session cached after), then straight
+ * to signTransaction — Solflare opens on its confirm screen with the payload. */
 $('openSolflare').addEventListener('click', async () => {
   const addr = ($('mobileAddr').value || '').trim() || wallet;
   const seal = $('sealSelect').value;
