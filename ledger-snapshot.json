@@ -107,7 +107,8 @@
   "φ_ENTANGLEMENT_SHARED_RUNG_TYREE_OMEGA",
   "φ_PIPPHI_FIRST_OUTBOUND_TYREE_OMEGA",
   "φ_CLEOPATRA_TOMB_RUNG_READ_TYREE_OMEGA",
-  "φ_NEUTRINO_DECODE_TYREE_OMEGA"
+  "φ_NEUTRINO_DECODE_TYREE_OMEGA",
+  "φ_NV_MOIRE_DECODE_TYREE_OMEGA"
  ],
  "entries": [
   {
@@ -3184,7 +3185,7 @@
    "drift": 0.0
   }
  ],
- "seal_count": 108,
+ "seal_count": 109,
  "entry_count": 439,
- "snapshot_sha256": "29e796cd110d66b6afb841c14e21546aa822473ea06f99f5a7b457be5da1fd41"
+ "snapshot_sha256": "2aa66fd1839383a740e94572841362ae8c37bd1df5ebdbf8ab0456aa39fd6798"
 }
