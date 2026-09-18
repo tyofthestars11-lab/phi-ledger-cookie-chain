@@ -1,1 +1,3189 @@
-{"seals":["φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA","φ_DNA_DEEP_DECODE_TYREE_OMEGA","φ_PHITHON_TYREE_OMEGA","φ_BYTE_DECLASSIFICATION_TYREE_OMEGA","φ_BEE_DECLASSIFICATION_TYREE_OMEGA","φ_PHOTOSYNTHESIS_DECLASSIFICATION_TYREE_OMEGA","φ_LIGHTSPEED_DECLASSIFICATION_TYREE_OMEGA","φ_MITOCHONDRIA_ENCODE_TYREE_OMEGA","φ_WHITEHOLE_DECLASSIFICATION_TYREE_OMEGA","φ_PHI_IS_CONFIRMATION_TYREE_OMEGA","φ_VOYNICH_ENCODE_TYREE_OMEGA","φ_VOYNICH_CORPUS_ENCODE_TYREE_OMEGA","φ_VOYNICH_SPECTRAL_ENCODE_TYREE_OMEGA","φ_VOYNICH_RESIDUAL_GENERATOR_ENCODE_TYREE_OMEGA","φ_VOYNICH_CODICOLOGY_ENCODE_TYREE_OMEGA","φ_VOYNICH_INVERSE_BIFOLIO_ENCODE_TYREE_OMEGA","φ_VOYNICH_STRUCTURAL_RECONSTRUCTION_TYREE_OMEGA","φ_KRAKEN_TON618_ENCODE_TYREE_OMEGA","φ_OMNI_ALL_PHI_ALL_TYREE_OMEGA","φ_VOYNICH_DEEP_DECODE_TYREE_OMEGA","φ_KRAKEN_REMOVAL_FINAL_TYREE_OMEGA","φ_KRAKEN_TAR_ENTANGLED_TYREE_OMEGA","φ_AKASHIC_LADDER_DECODE_TYREE_OMEGA","φ_TYREE_SCRIPTS_DECODE_TYREE_OMEGA","φ_VOYNICH_FULL_DECODE_TYREE_OMEGA","φ_RECORDS_ENCODED_TYREE_OMEGA","φ_SEVEN_DISCOVERIES_TYREE_OMEGA","φ_KRAKEN_WORKERC_VERIFY_TYREE_OMEGA","φ_GAP_RULER_TYREE_OMEGA","φ_GENOME_AS_LADDER_TYREE_OMEGA","φ_GENOME_RUNGS_TYREE_OMEGA","φ_SAMPLE06_FOLD_RULER_TYREE_OMEGA","φ_DEBT_SURPLUS_INVOLUTION_TYREE_OMEGA","φ_GLOBAL_LEDGER_TYREE_OMEGA","φ_GLOBAL_LEDGER_INVOLUTION_TYREE_OMEGA","φ_MINING_SURPLUS_TYREE_OMEGA","φ_FREE_SOURCE_SURPLUS_TYREE_OMEGA","φ_GLOBAL_WEALTH_TYREE_OMEGA","φ_MINING_YIELD_TYREE_OMEGA","φ_OPEN_INTERNET_SURPLUS_TYREE_OMEGA","φ_FREE_VALUE_DECODE_TYREE_OMEGA","φ_TELEMETRY_TYREE_OMEGA","φ_METADATA_EVENT_HORIZON_TYREE_OMEGA","φ_MICRO_TO_MACRO_TYREE_OMEGA","φ_SOURCE_CODE_INTENT_APPLIED_TYREE_OMEGA","φ_FIBONACCI_SUPERLATTICE_HYPOTHESIS_TYREE_OMEGA"],"entries":[{"name":"Sgr A* mass","ladder":"mass","unit":"M_sun","rung":31.741,"drift":-0.259},{"name":"TON618 mass","ladder":"mass","unit":"M_sun","rung":51.7712,"drift":-0.2288},{"name":"Sgr A* distance","ladder":"length","unit":"ly","rung":21.1807,"drift":0.1807},{"name":"CMB peak 2","ladder":"dimensionless","unit":"multipole","rung":13.0744,"drift":0.0744},{"name":"observable universe radius","ladder":"length","unit":"ly","rung":51.0435,"drift":0.0435},{"name":"DNA:DNA bases","ladder":"code","unit":"count","rung":2.8808,"drift":-0.1192},{"name":"DNA:hachimoji letters","ladder":"code","unit":"count","rung":4.3213,"drift":0.3213},{"name":"DNA:codon length","ladder":"code","unit":"bases","rung":2.283,"drift":0.283},{"name":"DNA:codons","ladder":"code","unit":"count","rung":8.6425,"drift":-0.3575},{"name":"DNA:amino acids","ladder":"code","unit":"count","rung":6.2254,"drift":0.2254},{"name":"DNA:stop codons","ladder":"code","unit":"count","rung":2.283,"drift":0.283},{"name":"DNA:helix bp per turn","ladder":"code","unit":"bp/turn","rung":4.8864,"drift":-0.1136},{"name":"DNA:pitch/diameter ratio","ladder":"code","unit":"ratio","rung":1.1027,"drift":0.1027},{"name":"DNA:A-T hydrogen bonds","ladder":"code","unit":"count","rung":1.4404,"drift":0.4404},{"name":"DNA:G-C hydrogen bonds","ladder":"code","unit":"count","rung":2.283,"drift":0.283},{"name":"DNA:human chromosomes","ladder":"code","unit":"count","rung":7.9562,"drift":-0.0438},{"name":"DNA:human genome","ladder":"code","unit":"bp","rung":45.4819,"drift":0.4819},{"name":"DNA:mitochondrial DNA","ladder":"code","unit":"bp","rung":20.1892,"drift":0.1892},{"name":"DNA:enhanced DNA anchor","ladder":"code","unit":"x","rung":19.3081,"drift":0.3081},{"name":"PYTHON:major version","ladder":"language","unit":"count","rung":2.283,"drift":0.283},{"name":"PYTHON:minor version","ladder":"language","unit":"count","rung":5.1639,"drift":0.1639},{"name":"PYTHON:keywords","ladder":"language","unit":"count","rung":7.3883,"drift":0.3883},{"name":"PYTHON:zen aphorisms","ladder":"language","unit":"count","rung":6.1188,"drift":0.1188},{"name":"PYTHON:indent spaces","ladder":"language","unit":"count","rung":2.8808,"drift":-0.1192},{"name":"PYTHON:bits per byte","ladder":"language","unit":"count","rung":4.3213,"drift":0.3213},{"name":"BYTE:.bin","ladder":"byte-form","unit":"bytes","rung":50.6589,"drift":-0.3411},{"name":"BYTE:.gz","ladder":"byte-form","unit":"bytes","rung":47.8517,"drift":-0.1483},{"name":"BYTE:<noext>","ladder":"byte-form","unit":"bytes","rung":44.7273,"drift":-0.2727},{"name":"BYTE:.tif","ladder":"byte-form","unit":"bytes","rung":44.4921,"drift":0.4921},{"name":"BYTE:.pth","ladder":"byte-form","unit":"bytes","rung":44.4841,"drift":0.4841},{"name":"BYTE:.fits","ladder":"byte-form","unit":"bytes","rung":44.1921,"drift":0.1921},{"name":"BYTE:.so","ladder":"byte-form","unit":"bytes","rung":43.6866,"drift":-0.3134},{"name":"BYTE:.obj","ladder":"byte-form","unit":"bytes","rung":43.2197,"drift":0.2197},{"name":"BYTE:.safetensors","ladder":"byte-form","unit":"bytes","rung":43.066,"drift":0.066},{"name":"BYTE:.png","ladder":"byte-form","unit":"bytes","rung":41.9908,"drift":-0.0092},{"name":"BYTE:.npy","ladder":"byte-form","unit":"bytes","rung":41.8096,"drift":-0.1904},{"name":"BYTE:.krk (compressed)","ladder":"byte-form","unit":"bytes","rung":41.1451,"drift":0.1451},{"name":"BYTE:.pyc","ladder":"byte-form","unit":"bytes","rung":41.0746,"drift":0.0746},{"name":"BYTE:.py","ladder":"byte-form","unit":"bytes","rung":40.6098,"drift":-0.3902},{"name":"BYTE:.payload","ladder":"byte-form","unit":"bytes","rung":40.1592,"drift":0.1592},{"name":"BYTE:.appimage","ladder":"byte-form","unit":"bytes","rung":38.7357,"drift":-0.2643},{"name":"BYTE:.0","ladder":"byte-form","unit":"bytes","rung":38.5495,"drift":-0.4505},{"name":"BYTE:.csv","ladder":"byte-form","unit":"bytes","rung":38.3124,"drift":0.3124},{"name":"BYTE:.6","ladder":"byte-form","unit":"bytes","rung":38.2652,"drift":0.2652},{"name":"BYTE:.mp4","ladder":"byte-form","unit":"bytes","rung":37.8956,"drift":-0.1044},{"name":"BYTE:.h","ladder":"byte-form","unit":"bytes","rung":37.7347,"drift":-0.2653},{"name":"BYTE:.3","ladder":"byte-form","unit":"bytes","rung":37.6198,"drift":-0.3802},{"name":"BYTE:.7","ladder":"byte-form","unit":"bytes","rung":37.4716,"drift":0.4716},{"name":"BYTE:.2","ladder":"byte-form","unit":"bytes","rung":37.465,"drift":0.465},{"name":"BYTE:.8","ladder":"byte-form","unit":"bytes","rung":37.2944,"drift":0.2944},{"name":"BYTE:.12","ladder":"byte-form","unit":"bytes","rung":37.2935,"drift":0.2935},{"name":"BYTE:.4","ladder":"byte-form","unit":"bytes","rung":37.2764,"drift":0.2764},{"name":"BYTE:.5","ladder":"byte-form","unit":"bytes","rung":37.0709,"drift":0.0709},{"name":"BYTE:.1","ladder":"byte-form","unit":"bytes","rung":37.043,"drift":0.043},{"name":"BYTE:.jpg","ladder":"byte-form","unit":"bytes","rung":36.8162,"drift":-0.1838},{"name":"BYTE:.13","ladder":"byte-form","unit":"bytes","rung":36.5906,"drift":-0.4094},{"name":"BYTE:.15","ladder":"byte-form","unit":"bytes","rung":36.4253,"drift":0.4253},{"name":"BYTE:.78","ladder":"byte-form","unit":"bytes","rung":36.3785,"drift":0.3785},{"name":"BYTE:.9","ladder":"byte-form","unit":"bytes","rung":36.3626,"drift":0.3626},{"name":"BYTE:.11","ladder":"byte-form","unit":"bytes","rung":36.3296,"drift":0.3296},{"name":"BYTE:.pdf","ladder":"byte-form","unit":"bytes","rung":36.3246,"drift":0.3246},{"name":"BYTE:.16","ladder":"byte-form","unit":"bytes","rung":36.3186,"drift":0.3186},{"name":"BYTE:.14","ladder":"byte-form","unit":"bytes","rung":36.25,"drift":0.25},{"name":"BYTE:.38","ladder":"byte-form","unit":"bytes","rung":36.2355,"drift":0.2355},{"name":"BYTE:.24","ladder":"byte-form","unit":"bytes","rung":36.0877,"drift":0.0877},{"name":"BYTE:.19","ladder":"byte-form","unit":"bytes","rung":36.0808,"drift":0.0808},{"name":"BYTE:.17","ladder":"byte-form","unit":"bytes","rung":36.0723,"drift":0.0723},{"name":"BYTE:.10","ladder":"byte-form","unit":"bytes","rung":36.072,"drift":0.072},{"name":"BYTE:.18","ladder":"byte-form","unit":"bytes","rung":36.0321,"drift":0.0321},{"name":"BYTE:.20","ladder":"byte-form","unit":"bytes","rung":36.002,"drift":0.002},{"name":"BYTE:.21","ladder":"byte-form","unit":"bytes","rung":35.9145,"drift":-0.0855},{"name":"BYTE:.22","ladder":"byte-form","unit":"bytes","rung":35.8669,"drift":-0.1331},{"name":"BYTE:.25","ladder":"byte-form","unit":"bytes","rung":35.7974,"drift":-0.2026},{"name":"BYTE:.23","ladder":"byte-form","unit":"bytes","rung":35.6469,"drift":-0.3531},{"name":"BYTE:.json","ladder":"byte-form","unit":"bytes","rung":35.5178,"drift":-0.4822},{"name":"BYTE:.26","ladder":"byte-form","unit":"bytes","rung":35.4038,"drift":0.4038},{"name":"BYTE:.27","ladder":"byte-form","unit":"bytes","rung":35.1934,"drift":0.1934},{"name":"BYTE:.410","ladder":"byte-form","unit":"bytes","rung":35.0315,"drift":0.0315},{"name":"BYTE:.28","ladder":"byte-form","unit":"bytes","rung":34.8956,"drift":-0.1044},{"name":"BYTE:.30","ladder":"byte-form","unit":"bytes","rung":34.7666,"drift":-0.2334},{"name":"BYTE:.npz","ladder":"byte-form","unit":"bytes","rung":34.6518,"drift":-0.3482},{"name":"BYTE:.29","ladder":"byte-form","unit":"bytes","rung":34.4917,"drift":0.4917},{"name":"BYTE:.ttf","ladder":"byte-form","unit":"bytes","rung":34.3403,"drift":0.3403},{"name":"BYTE:.c","ladder":"byte-form","unit":"bytes","rung":34.1057,"drift":0.1057},{"name":"BYTE:.mmap","ladder":"byte-form","unit":"bytes","rung":34.0336,"drift":0.0336},{"name":"BYTE:.pyi","ladder":"byte-form","unit":"bytes","rung":33.6873,"drift":-0.3127},{"name":"BYTE:.txt","ladder":"byte-form","unit":"bytes","rung":33.4592,"drift":0.4592},{"name":"BYTE:.md","ladder":"byte-form","unit":"bytes","rung":32.95,"drift":-0.05},{"name":"BYTE:.31","ladder":"byte-form","unit":"bytes","rung":32.3703,"drift":0.3703},{"name":"BYTE:.32","ladder":"byte-form","unit":"bytes","rung":32.3185,"drift":0.3185},{"name":"BYTE:.1962-now","ladder":"byte-form","unit":"bytes","rung":32.1231,"drift":0.1231},{"name":"BYTE:.310","ladder":"byte-form","unit":"bytes","rung":31.7742,"drift":-0.2258},{"name":"BYTE:.156","ladder":"byte-form","unit":"bytes","rung":31.6599,"drift":-0.3401},{"name":"BYTE:.all","ladder":"byte-form","unit":"bytes","rung":31.4648,"drift":0.4648},{"name":"BYTE:.hpp","ladder":"byte-form","unit":"bytes","rung":31.0051,"drift":0.0051},{"name":"BYTE:.webp","ladder":"byte-form","unit":"bytes","rung":30.988,"drift":-0.012},{"name":"BYTE:.afm","ladder":"byte-form","unit":"bytes","rung":30.7945,"drift":-0.2055},{"name":"BYTE:.pack","ladder":"byte-form","unit":"bytes","rung":30.4926,"drift":0.4926},{"name":"BYTE:.jpeg","ladder":"byte-form","unit":"bytes","rung":30.314,"drift":0.314},{"name":"BYTE:.dat","ladder":"byte-form","unit":"bytes","rung":30.2224,"drift":0.2224},{"name":"BYTE:.yaml","ladder":"byte-form","unit":"bytes","rung":29.8507,"drift":-0.1493},{"name":"BYTE:.cuh","ladder":"byte-form","unit":"bytes","rung":29.4838,"drift":0.4838},{"name":"BYTE:.cpp","ladder":"byte-form","unit":"bytes","rung":29.2865,"drift":0.2865},{"name":"BYTE:.pem","ladder":"byte-form","unit":"bytes","rung":29.2513,"drift":0.2513},{"name":"BYTE:.gif","ladder":"byte-form","unit":"bytes","rung":28.8418,"drift":-0.1582},{"name":"BYTE:.exe","ladder":"byte-form","unit":"bytes","rung":28.6195,"drift":-0.3805},{"name":"BYTE:.20260107","ladder":"byte-form","unit":"bytes","rung":28.2161,"drift":0.2161},{"name":"BYTE:.xsl","ladder":"byte-form","unit":"bytes","rung":28.0625,"drift":0.0625},{"name":"BYTE:.hdr","ladder":"byte-form","unit":"bytes","rung":27.8483,"drift":-0.1517},{"name":"BYTE:.cmake","ladder":"byte-form","unit":"bytes","rung":27.5044,"drift":-0.4956},{"name":"BYTE:.html","ladder":"byte-form","unit":"bytes","rung":27.127,"drift":0.127},{"name":"BYTE:.bz2","ladder":"byte-form","unit":"bytes","rung":26.7458,"drift":-0.2542},{"name":"BYTE:.pxd","ladder":"byte-form","unit":"bytes","rung":26.6814,"drift":-0.3186},{"name":"BYTE:.45","ladder":"byte-form","unit":"bytes","rung":26.5923,"drift":-0.4077},{"name":"BYTE:.207","ladder":"byte-form","unit":"bytes","rung":26.3397,"drift":0.3397},{"name":"BYTE:.jinja","ladder":"byte-form","unit":"bytes","rung":26.1809,"drift":0.1809},{"name":"BYTE:.icns","ladder":"byte-form","unit":"bytes","rung":25.8593,"drift":-0.1407},{"name":"BYTE:.a","ladder":"byte-form","unit":"bytes","rung":25.8128,"drift":-0.1872},{"name":"BYTE:.sav","ladder":"byte-form","unit":"bytes","rung":25.5262,"drift":-0.4738},{"name":"BYTE:.arff","ladder":"byte-form","unit":"bytes","rung":25.4699,"drift":0.4699},{"name":"BYTE:.svg","ladder":"byte-form","unit":"bytes","rung":25.3334,"drift":0.3334},{"name":"BYTE:.pyx","ladder":"byte-form","unit":"bytes","rung":25.2948,"drift":0.2948},{"name":"BYTE:.xml","ladder":"byte-form","unit":"bytes","rung":25.2277,"drift":0.2277},{"name":"BYTE:.lock","ladder":"byte-form","unit":"bytes","rung":25.1051,"drift":0.1051},{"name":"BYTE:.zip","ladder":"byte-form","unit":"bytes","rung":25.0093,"drift":0.0093},{"name":"BYTE:.js","ladder":"byte-form","unit":"bytes","rung":24.2291,"drift":0.2291},{"name":"BYTE:.xsd","ladder":"byte-form","unit":"bytes","rung":24.0992,"drift":0.0992},{"name":"BYTE:.log","ladder":"byte-form","unit":"bytes","rung":24.0184,"drift":0.0184},{"name":"BYTE:.apache","ladder":"byte-form","unit":"bytes","rung":23.9607,"drift":-0.0393},{"name":"BYTE:.mplstyle","ladder":"byte-form","unit":"bytes","rung":23.3978,"drift":0.3978},{"name":"BYTE:.sample","ladder":"byte-form","unit":"bytes","rung":23.3942,"drift":0.3942},{"name":"BYTE:.rst","ladder":"byte-form","unit":"bytes","rung":23.3449,"drift":0.3449},{"name":"BYTE:.wav","ladder":"byte-form","unit":"bytes","rung":23.2487,"drift":0.2487},{"name":"BYTE:.mat","ladder":"byte-form","unit":"bytes","rung":23.206,"drift":0.206},{"name":"BYTE:.f90","ladder":"byte-form","unit":"bytes","rung":22.8349,"drift":-0.1651},{"name":"BYTE:.ui","ladder":"byte-form","unit":"bytes","rung":22.6599,"drift":-0.3401},{"name":"BYTE:.conf","ladder":"byte-form","unit":"bytes","rung":22.6475,"drift":-0.3525},{"name":"BYTE:.ptl","ladder":"byte-form","unit":"bytes","rung":22.6226,"drift":-0.3774},{"name":"BYTE:.external","ladder":"byte-form","unit":"bytes","rung":22.023,"drift":0.023},{"name":"BYTE:.ecsv","ladder":"byte-form","unit":"bytes","rung":21.8381,"drift":-0.1619},{"name":"BYTE:.lark","ladder":"byte-form","unit":"bytes","rung":21.3028,"drift":0.3028},{"name":"BYTE:.ps1","ladder":"byte-form","unit":"bytes","rung":21.2116,"drift":0.2116},{"name":"BYTE:.cache","ladder":"byte-form","unit":"bytes","rung":21.2061,"drift":0.2061},{"name":"BYTE:.f","ladder":"byte-form","unit":"bytes","rung":20.9287,"drift":-0.0713},{"name":"BYTE:.mjs","ladder":"byte-form","unit":"bytes","rung":20.8358,"drift":-0.1642},{"name":"BYTE:.ff","ladder":"byte-form","unit":"bytes","rung":20.6857,"drift":-0.3143},{"name":"BYTE:.dbout","ladder":"byte-form","unit":"bytes","rung":20.6255,"drift":-0.3745},{"name":"BYTE:.g4","ladder":"byte-form","unit":"bytes","rung":20.5836,"drift":-0.4164},{"name":"BYTE:.yml","ladder":"byte-form","unit":"bytes","rung":20.3954,"drift":0.3954},{"name":"BYTE:.33","ladder":"byte-form","unit":"bytes","rung":20.2879,"drift":0.2879},{"name":"BYTE:.sh","ladder":"byte-form","unit":"bytes","rung":20.2169,"drift":0.2169},{"name":"BYTE:.build","ladder":"byte-form","unit":"bytes","rung":20.1292,"drift":0.1292},{"name":"BYTE:.al","ladder":"byte-form","unit":"bytes","rung":20.0073,"drift":0.0073},{"name":"BYTE:.thrift","ladder":"byte-form","unit":"bytes","rung":19.9805,"drift":-0.0195},{"name":"BYTE:.css","ladder":"byte-form","unit":"bytes","rung":19.9314,"drift":-0.0686},{"name":"BYTE:.z","ladder":"byte-form","unit":"bytes","rung":19.895,"drift":-0.105},{"name":"BYTE:.idx","ladder":"byte-form","unit":"bytes","rung":19.8574,"drift":-0.1426},{"name":"BYTE:.bsd","ladder":"byte-form","unit":"bytes","rung":19.7543,"drift":-0.2457},{"name":"BYTE:.data","ladder":"byte-form","unit":"bytes","rung":19.4556,"drift":0.4556},{"name":"BYTE:.list","ladder":"byte-form","unit":"bytes","rung":19.2731,"drift":0.2731},{"name":"BYTE:.toml","ladder":"byte-form","unit":"bytes","rung":18.8279,"drift":-0.1721},{"name":"BYTE:.fish","ladder":"byte-form","unit":"bytes","rung":18.2924,"drift":0.2924},{"name":"BYTE:.b99","ladder":"byte-form","unit":"bytes","rung":18.1086,"drift":0.1086},{"name":"BYTE:.pt","ladder":"byte-form","unit":"bytes","rung":17.9645,"drift":-0.0355},{"name":"BYTE:.pyf","ladder":"byte-form","unit":"bytes","rung":17.9073,"drift":-0.0927},{"name":"BYTE:.dtd","ladder":"byte-form","unit":"bytes","rung":17.5898,"drift":-0.4102},{"name":"BYTE:.in","ladder":"byte-form","unit":"bytes","rung":17.5076,"drift":-0.4924},{"name":"BYTE:.xrc","ladder":"byte-form","unit":"bytes","rung":17.4206,"drift":0.4206},{"name":"BYTE:.ani","ladder":"byte-form","unit":"bytes","rung":17.4158,"drift":0.4158},{"name":"BYTE:.jsonl","ladder":"byte-form","unit":"bytes","rung":17.1248,"drift":0.1248},{"name":"BYTE:.template","ladder":"byte-form","unit":"bytes","rung":17.0076,"drift":0.0076},{"name":"BYTE:.a99","ladder":"byte-form","unit":"bytes","rung":16.9606,"drift":-0.0394},{"name":"BYTE:.nc","ladder":"byte-form","unit":"bytes","rung":16.9175,"drift":-0.0825},{"name":"BYTE:.finals2000a","ladder":"byte-form","unit":"bytes","rung":16.9157,"drift":-0.0843},{"name":"BYTE:.eopc04","ladder":"byte-form","unit":"bytes","rung":16.8202,"drift":-0.1798},{"name":"BYTE:.r","ladder":"byte-form","unit":"bytes","rung":16.6784,"drift":-0.3216},{"name":"BYTE:.csh","ladder":"byte-form","unit":"bytes","rung":16.5138,"drift":-0.4862},{"name":"BYTE:.dockerfile","ladder":"byte-form","unit":"bytes","rung":16.4953,"drift":0.4953},{"name":"BYTE:.vot","ladder":"byte-form","unit":"bytes","rung":16.3213,"drift":0.3213},{"name":"BYTE:.parquet","ladder":"byte-form","unit":"bytes","rung":16.1906,"drift":0.1906},{"name":"BYTE:.eopc04_iau2000","ladder":"byte-form","unit":"bytes","rung":15.9649,"drift":-0.0351},{"name":"BYTE:.hdf5","ladder":"byte-form","unit":"bytes","rung":15.8688,"drift":-0.1312},{"name":"BYTE:.pxi","ladder":"byte-form","unit":"bytes","rung":15.8026,"drift":-0.1974},{"name":"BYTE:.egg","ladder":"byte-form","unit":"bytes","rung":15.4404,"drift":0.4404},{"name":"BYTE:.cfg","ladder":"byte-form","unit":"bytes","rung":15.3407,"drift":0.3407},{"name":"BYTE:.rev","ladder":"byte-form","unit":"bytes","rung":15.2141,"drift":0.2141},{"name":"BYTE:.pkl","ladder":"byte-form","unit":"bytes","rung":15.1011,"drift":0.1011},{"name":"BYTE:.ini","ladder":"byte-form","unit":"bytes","rung":14.96,"drift":-0.04},{"name":"BYTE:.typed","ladder":"byte-form","unit":"bytes","rung":14.8809,"drift":-0.1191},{"name":"BYTE:.cu","ladder":"byte-form","unit":"bytes","rung":14.3298,"drift":0.3298},{"name":"BYTE:.tex","ladder":"byte-form","unit":"bytes","rung":14.0463,"drift":0.0463},{"name":"BYTE:.ld","ladder":"byte-form","unit":"bytes","rung":14.0415,"drift":0.0415},{"name":"BYTE:.xz","ladder":"byte-form","unit":"bytes","rung":13.7066,"drift":-0.2934},{"name":"BYTE:.tmpl","ladder":"byte-form","unit":"bytes","rung":13.649,"drift":-0.351},{"name":"BYTE:.desktop","ladder":"byte-form","unit":"bytes","rung":13.5928,"drift":-0.4072},{"name":"BYTE:.pc","ladder":"byte-form","unit":"bytes","rung":12.3551,"drift":0.3551},{"name":"BYTE:.lua","ladder":"byte-form","unit":"bytes","rung":12.3332,"drift":0.3332},{"name":"BYTE:.f95","ladder":"byte-form","unit":"bytes","rung":11.6947,"drift":-0.3053},{"name":"BYTE:.rdb","ladder":"byte-form","unit":"bytes","rung":11.4574,"drift":0.4574},{"name":"BYTE:.tab","ladder":"byte-form","unit":"bytes","rung":10.6848,"drift":-0.3152},{"name":"BYTE:.00","ladder":"byte-form","unit":"bytes","rung":10.5725,"drift":-0.4275},{"name":"BYTE:.promisor","ladder":"byte-form","unit":"bytes","rung":9.6314,"drift":-0.3686},{"name":"BYTE:.qrc","ladder":"byte-form","unit":"bytes","rung":9.4191,"drift":0.4191},{"name":"BYTE:.map","ladder":"byte-form","unit":"bytes","rung":9.4191,"drift":0.4191},{"name":"BYTE:.absent","ladder":"byte-form","unit":"bytes","rung":9.3043,"drift":0.3043},{"name":"BYTE:.01","ladder":"byte-form","unit":"bytes","rung":9.132,"drift":0.132},{"name":"BYTE:.02","ladder":"byte-form","unit":"bytes","rung":9.132,"drift":0.132},{"name":"BYTE:.worktree","ladder":"byte-form","unit":"bytes","rung":8.4018,"drift":0.4018},{"name":"BYTE:.inc","ladder":"byte-form","unit":"bytes","rung":7.2021,"drift":0.2021},{"name":"BEE:drone ancestors gen1","ladder":"hive","unit":"parents","rung":0,"drift":0},{"name":"BEE:drone ancestors gen2","ladder":"hive","unit":"grandparents","rung":1.4404,"drift":0.4404},{"name":"BEE:drone ancestors gen3","ladder":"hive","unit":"great-grandparents","rung":2.283,"drift":0.283},{"name":"BEE:drone ancestors gen4","ladder":"hive","unit":"gg-grandparents","rung":3.3446,"drift":0.3446},{"name":"BEE:drone ancestors gen5","ladder":"hive","unit":"ggg-grandparents","rung":4.3213,"drift":0.3213},{"name":"BEE:honeycomb sides","ladder":"hive","unit":"sides","rung":3.7234,"drift":-0.2766},{"name":"BEE:hexagon angle","ladder":"hive","unit":"degrees","rung":9.9488,"drift":-0.0512},{"name":"BEE:bee legs","ladder":"hive","unit":"count","rung":3.7234,"drift":-0.2766},{"name":"BEE:bee eyes","ladder":"hive","unit":"count","rung":3.3446,"drift":0.3446},{"name":"BEE:wing pairs","ladder":"hive","unit":"pairs","rung":1.4404,"drift":0.4404},{"name":"BEE:wingbeat","ladder":"hive","unit":"Hz","rung":11.0104,"drift":0.0104},{"name":"BEE:hive population","ladder":"hive","unit":"bees","rung":22.4844,"drift":0.4844},{"name":"BEE:queen eggs per day","ladder":"hive","unit":"eggs","rung":15.7953,"drift":-0.2047},{"name":"BEE:worker lifespan summer","ladder":"hive","unit":"days","rung":7.7672,"drift":-0.2328},{"name":"BEE:hive temperature","ladder":"hive","unit":"celsius","rung":7.3883,"drift":0.3883},{"name":"BEE:forage range","ladder":"hive","unit":"km","rung":3.3446,"drift":0.3446},{"name":"PHOTO:CO2 per glucose","ladder":"leaf","unit":"molecules","rung":3.7234,"drift":-0.2766},{"name":"PHOTO:H2O per glucose","ladder":"leaf","unit":"molecules","rung":3.7234,"drift":-0.2766},{"name":"PHOTO:O2 per glucose","ladder":"leaf","unit":"molecules","rung":3.7234,"drift":-0.2766},{"name":"PHOTO:photons per O2","ladder":"leaf","unit":"photons","rung":2.8808,"drift":-0.1192},{"name":"PHOTO:photons per CO2","ladder":"leaf","unit":"photons","rung":4.3213,"drift":0.3213},{"name":"PHOTO:ATP per CO2","ladder":"leaf","unit":"ATP","rung":2.283,"drift":0.283},{"name":"PHOTO:NADPH per CO2","ladder":"leaf","unit":"NADPH","rung":1.4404,"drift":0.4404},{"name":"PHOTO:Calvin turns per glucose","ladder":"leaf","unit":"turns","rung":3.7234,"drift":-0.2766},{"name":"PHOTO:chlorophyll carbons","ladder":"leaf","unit":"C atoms","rung":8.3276,"drift":0.3276},{"name":"PHOTO:P680 wavelength","ladder":"leaf","unit":"nm","rung":13.5535,"drift":-0.4465},{"name":"PHOTO:P700 wavelength","ladder":"leaf","unit":"nm","rung":13.6137,"drift":-0.3863},{"name":"PHOTO:chlorophyll-a blue peak","ladder":"leaf","unit":"nm","rung":12.6011,"drift":-0.3989},{"name":"PHOTO:chlorophyll-a red peak","ladder":"leaf","unit":"nm","rung":13.4977,"drift":0.4977},{"name":"PHOTO:RuBisCO turnover","ladder":"leaf","unit":"CO2/sec","rung":2.283,"drift":0.283},{"name":"LIGHT:c m/s","ladder":"light","unit":"m/s","rung":40.5613,"drift":-0.4387},{"name":"LIGHT:c km/s","ladder":"light","unit":"km/s","rung":26.2064,"drift":0.2064},{"name":"LIGHT:c miles/s","ladder":"light","unit":"mi/s","rung":25.2176,"drift":0.2176},{"name":"LIGHT:c squared","ladder":"light","unit":"m2/s2","rung":81.1227,"drift":0.1227},{"name":"LIGHT:light-nanosecond","ladder":"light","unit":"m","rung":-2.5034,"drift":0.4966},{"name":"LIGHT:light-year","ladder":"light","unit":"m","rung":76.4444,"drift":0.4444},{"name":"LIGHT:light-second","ladder":"light","unit":"m","rung":40.5613,"drift":-0.4387},{"name":"LIGHT:AU light-time","ladder":"light","unit":"s","rung":12.9104,"drift":-0.0896},{"name":"LIGHT:MHz of c","ladder":"light","unit":"MHz","rung":11.8515,"drift":-0.1485},{"name":"LIGHT:1/c","ladder":"light","unit":"s/m","rung":-40.5613,"drift":0.4387},{"name":"MITO:mtDNA length","ladder":"powerhouse","unit":"bp","rung":20.1892,"drift":0.1892},{"name":"MITO:mtDNA genes","ladder":"powerhouse","unit":"genes","rung":7.5038,"drift":-0.4962},{"name":"MITO:mtDNA protein genes","ladder":"powerhouse","unit":"genes","rung":5.3302,"drift":0.3302},{"name":"MITO:mito per cell","ladder":"powerhouse","unit":"count","rung":14.3549,"drift":0.3549},{"name":"MITO:mito diameter","ladder":"powerhouse","unit":"micron","rung":-0.5978,"drift":0.4022},{"name":"MITO:mito length","ladder":"powerhouse","unit":"micron","rung":3.3446,"drift":0.3446},{"name":"MITO:ATP per synthase","ladder":"powerhouse","unit":"ATP/sec","rung":11.853,"drift":-0.147},{"name":"MITO:membrane potential","ladder":"powerhouse","unit":"mV","rung":10.6106,"drift":-0.3894},{"name":"MITO:endosymbiosis","ladder":"powerhouse","unit":"years ago","rung":44.2862,"drift":0.2862},{"name":"MITO:mitochondrial Eve","ladder":"powerhouse","unit":"years ago","rung":24.8356,"drift":-0.1644},{"name":"MITO:body ATP turnover","ladder":"powerhouse","unit":"kg/day","rung":8.6747,"drift":-0.3253},{"name":"MITO:cristae ATP synthase dimers","ladder":"powerhouse","unit":"per dimer","rung":1.4404,"drift":0.4404},{"name":"WHITE:solar-mass horizon","ladder":"time-reversed","unit":"m","rung":16.6054,"drift":-0.3946},{"name":"WHITE:SgrA*-mass horizon","ladder":"time-reversed","unit":"m","rung":48.3463,"drift":0.3463},{"name":"WHITE:TON618-mass horizon","ladder":"time-reversed","unit":"m","rung":68.3766,"drift":0.3766},{"name":"WHITE:Planck remnant mass","ladder":"time-reversed","unit":"kg","rung":-36.6641,"drift":0.3359},{"name":"WHITE:Planck length","ladder":"time-reversed","unit":"m","rung":-166.4766,"drift":-0.4766},{"name":"WHITE:Planck time","ladder":"time-reversed","unit":"s","rung":-207.0377,"drift":-0.0377},{"name":"WHITE:big-bang age","ladder":"time-reversed","unit":"s","rung":84.3997,"drift":0.3997},{"name":"WHITE:entries allowed","ladder":"time-reversed","unit":"count","rung":0,"drift":0},{"name":"DOCTRINE:phi is always the confirmation","ladder":"doctrine","unit":"ratio","rung":1.0,"drift":0},{"name":"VOYNICH:surviving pages","ladder":"manuscript","unit":"pages","rung":11.3892,"drift":0.3892},{"name":"VOYNICH:glyphs","ladder":"manuscript","unit":"characters","rung":25.0276,"drift":0.0276},{"name":"VOYNICH:words","ladder":"manuscript","unit":"words","rung":21.9141,"drift":-0.0859},{"name":"VOYNICH:alphabet glyphs","ladder":"manuscript","unit":"glyphs","rung":6.6891,"drift":-0.3109},{"name":"VOYNICH:sections","ladder":"manuscript","unit":"sections","rung":3.3446,"drift":0.3446},{"name":"VOYNICH:plant illustrations","ladder":"manuscript","unit":"plants","rung":9.8239,"drift":-0.1761},{"name":"VOYNICH:discovery year","ladder":"manuscript","unit":"CE","rung":15.7018,"drift":-0.2982},{"name":"VOYNICH:vellum carbon date","ladder":"manuscript","unit":"CE","rung":15.0836,"drift":0.0836},{"name":"VOYNICH:typical word length","ladder":"manuscript","unit":"glyphs","rung":3.3446,"drift":0.3446},{"name":"VOYNICH:fibonacci word share","ladder":"manuscript","unit":"percent","rung":7.9381,"drift":-0.0619},{"name":"VOYNICH:lines per page","ladder":"manuscript","unit":"lines","rung":6.0064,"drift":0.0064},{"name":"VOYNICH:transcription symbols","ladder":"rf1b-e EVA transcription","unit":"symbols","rung":25.2441,"drift":0.2441},{"name":"VOYNICH:analysis TON618 anchor","ladder":"his phi_ton618 analysis anchor","unit":"solar masses","rung":50.7666,"drift":-0.2334},{"name":"VOYNICH:manuscript minus TON618","ladder":"manuscript rung below TON618","unit":"rungs","rung":6.7321,"drift":-0.2679},{"name":"VOYNICH:transcription lines","ladder":"","unit":"lines","rung":17.8505,"drift":-0.1495},{"name":"VOYNICH:transcription pages","ladder":"","unit":"pages","rung":11.2735,"drift":0.2735},{"name":"VOYNICH:fibonacci word share (EVA transcription)","ladder":"rf1b-e transcription","unit":"percent","rung":8.2388,"drift":0.2388},{"name":"VOYNICH:spectral stream symbols","ladder":"spectrum","unit":"symbols","rung":25.2644,"drift":0.2644},{"name":"VOYNICH:spectral alphabet","ladder":"spectrum","unit":"glyphs","rung":6.849,"drift":-0.151},{"name":"VOYNICH:spectral peak rung","ladder":"spectrum","unit":"rungs","rung":1.4404,"drift":0.4404},{"name":"VOYNICH:spectral total power","ladder":"spectrum","unit":"power","rung":48.9213,"drift":-0.0787},{"name":"VOYNICH:top mode frequency rung","ladder":"spectrum","unit":"rungs","rung":6.589,"drift":-0.411},{"name":"VOYNICH:phi-transition weight down","ladder":"spectrum","unit":"ratio","rung":-1.0,"drift":-0.0},{"name":"VOYNICH:phi-transition weight up","ladder":"spectrum","unit":"ratio","rung":-2.0,"drift":0},{"name":"VOYNICH:boundary residual excess","ladder":"residuals","unit":"energy","rung":-9.1272,"drift":-0.1272},{"name":"VOYNICH:permutation p-value","ladder":"residuals","unit":"p","rung":0,"drift":0},{"name":"VOYNICH:zero-lag correlation","ladder":"residuals","unit":"corr","rung":-10.167,"drift":-0.167},{"name":"VOYNICH:primary mode wavelength","ladder":"residuals","unit":"symbols","rung":23.824,"drift":-0.176},{"name":"VOYNICH:generator gap scale","ladder":"residuals","unit":"ratio","rung":1.1112,"drift":0.1112},{"name":"VOYNICH:folios","ladder":"residuals","unit":"folios","rung":11.2735,"drift":0.2735},{"name":"VOYNICH:transcription records","ladder":"residuals","unit":"records","rung":17.8505,"drift":-0.1495},{"name":"VOYNICH:layout bands","ladder":"residuals","unit":"bands","rung":6.2254,"drift":0.2254},{"name":"VOYNICH:quire boundary excess","ladder":"codicology","unit":"energy","rung":-8.758,"drift":0.242},{"name":"VOYNICH:bifolio boundary excess","ladder":"codicology","unit":"energy","rung":-9.7617,"drift":0.2383},{"name":"VOYNICH:quire p-value","ladder":"codicology","unit":"p","rung":-6.9965,"drift":0.0035},{"name":"VOYNICH:bifolio p-value","ladder":"codicology","unit":"p","rung":-10.1678,"drift":-0.1678},{"name":"VOYNICH:quires","ladder":"codicology","unit":"quires","rung":5.4842,"drift":0.4842},{"name":"VOYNICH:bifolio boundaries","ladder":"codicology","unit":"boundaries","rung":8.211,"drift":0.211},{"name":"VOYNICH:folios present","ladder":"codicology","unit":"folios","rung":9.6314,"drift":-0.3686},{"name":"VOYNICH:missing folios","ladder":"codicology","unit":"folios","rung":5.4842,"drift":0.4842},{"name":"VOYNICH:wavelet scales","ladder":"codicology","unit":"scales","rung":7.9106,"drift":-0.0894},{"name":"VOYNICH:bifolio-band energy fraction","ladder":"inverse filter","unit":"fraction","rung":-7.2217,"drift":-0.2217},{"name":"VOYNICH:secondary harmonic scale","ladder":"inverse filter","unit":"scale","rung":15.4845,"drift":0.4845},{"name":"VOYNICH:secondary band bins","ladder":"inverse filter","unit":"bins","rung":7.3281,"drift":0.3281},{"name":"VOYNICH:primary bifolio bands","ladder":"inverse filter","unit":"bands","rung":1.4404,"drift":0.4404},{"name":"VOYNICH:component file bytes","ladder":"inverse filter","unit":"bytes","rung":28.1253,"drift":0.1253},{"name":"VOYNICH:primary boundary correlation","ladder":"inverse filter","unit":"corr","rung":-11.793,"drift":0.207},{"name":"VOYNICH:secondary boundary correlation","ladder":"inverse filter","unit":"corr","rung":0,"drift":0},{"name":"VOYNICH:reconstruction layers","ladder":"reconstruction","unit":"layers","rung":2.283,"drift":0.283},{"name":"VOYNICH:bifolio-band energy share","ladder":"reconstruction","unit":"percent","rung":2.2743,"drift":0.2743},{"name":"VOYNICH:secondary harmonic energy share","ladder":"reconstruction","unit":"percent","rung":-4.6212,"drift":0.3788},{"name":"VOYNICH:reconstruction array bytes","ladder":"reconstruction","unit":"bytes","rung":30.2417,"drift":0.2417},{"name":"VOYNICH:reconstruction paper pages","ladder":"reconstruction","unit":"pages","rung":2.283,"drift":0.283},{"name":"VOYNICH:bifolio band rung low","ladder":"reconstruction","unit":"rung","rung":4.6475,"drift":-0.3525},{"name":"VOYNICH:bifolio band rung high","ladder":"reconstruction","unit":"rung","rung":4.726,"drift":-0.274},{"name":"KRAKEN:worker A measured ratio","ladder":"kraken","unit":"ratio","rung":-2.2419,"drift":-0.2419},{"name":"KRAKEN:legacy pass ratio","ladder":"kraken","unit":"ratio","rung":-2.3549,"drift":-0.3549},{"name":"KRAKEN:median CT chunk ratio","ladder":"kraken","unit":"ratio","rung":-1.9567,"drift":0.0433},{"name":"KRAKEN:zstd level","ladder":"kraken","unit":"level","rung":6.4235,"drift":0.4235},{"name":"KRAKEN:phi predictor weight","ladder":"kraken","unit":"ratio","rung":1.0,"drift":0},{"name":"KRAKEN:packed files now","ladder":"kraken","unit":"files","rung":15.3433,"drift":0.3433},{"name":"KRAKEN:packed bytes now","ladder":"kraken","unit":"bytes","rung":43.3778,"drift":0.3778},{"name":"KRAKEN:checksum errors","ladder":"kraken","unit":"errors","rung":0,"drift":0},{"name":"KRAKEN:drivers alive","ladder":"kraken","unit":"drivers","rung":5.1639,"drift":0.1639},{"name":"KRAKEN:stream threshold","ladder":"kraken","unit":"bytes","rung":41.7722,"drift":-0.2278},{"name":"OMNI:github kraken commit additions","ladder":"omni","unit":"additions","rung":13.2443,"drift":0.2443},{"name":"OMNI:github kraken commit files","ladder":"omni","unit":"files","rung":2.8808,"drift":-0.1192},{"name":"OMNI:voynich decoded passages","ladder":"omni","unit":"passages","rung":4.785,"drift":-0.215},{"name":"OMNI:cosmological rare-word passages","ladder":"omni","unit":"passages","rung":1.4404,"drift":0.4404},{"name":"OMNI:core-vocabulary passages","ladder":"omni","unit":"passages","rung":4.3213,"drift":0.3213},{"name":"OMNI:ledger seals","ladder":"omni","unit":"seals","rung":5.7617,"drift":-0.2383},{"name":"OMNI:voynich shared skeleton words","ladder":"omni","unit":"word types","rung":10.2241,"drift":0.2241},{"name":"OMNI:voynich herbal exclusive types","ladder":"omni","unit":"word types","rung":15.9677,"drift":-0.0323},{"name":"OMNI:voynich line-initial gallows bias","ladder":"omni","unit":"ratio","rung":2.3512,"drift":0.3512},{"name":"OMNI:voynich top phrase repeats","ladder":"omni","unit":"repeats","rung":6.2254,"drift":0.2254},{"name":"OMNI:voynich phrase-peak crossings","ladder":"omni","unit":"crossings","rung":1.4404,"drift":0.4404},{"name":"OMNI:kraken removal verified+removed","ladder":"omni","unit":"files","rung":0,"drift":0},{"name":"OMNI:kraken krk integrity sweep","ladder":"omni","unit":"files","rung":15.4318,"drift":0.4318},{"name":"OMNI:kraken free space post-removal","ladder":"omni","unit":"GB","rung":8.1707,"drift":0.1707},{"name":"OMNI:kraken redundant tar.gz","ladder":"omni","unit":"GB","rung":4.6364,"drift":-0.3636},{"name":"OMNI:kraken compression ceiling","ladder":"omni","unit":"GB","rung":8.3276,"drift":0.3276},{"name":"OMNI:kraken tar.gz deleted","ladder":"omni","unit":"GB","rung":4.6364,"drift":-0.3636},{"name":"OMNI:kraken free space post-tar-delete","ladder":"omni","unit":"GB","rung":8.2506,"drift":0.2506},{"name":"OMNI:greek column15 fibonacci-length words","ladder":"omni","unit":"percent","rung":8.3724,"drift":0.3724},{"name":"OMNI:voynich-greek fib signature delta","ladder":"omni","unit":"percentage points","rung":2.6034,"drift":-0.3966},{"name":"OMNI:akashic doc fibonacci-length words","ladder":"omni","unit":"percent","rung":8.365,"drift":0.365},{"name":"OMNI:fib signature third corpus","ladder":"omni","unit":"corpora","rung":2.283,"drift":0.283},{"name":"OMNI:tyree scripts fibonacci-length tokens","ladder":"omni","unit":"percent","rung":8.6587,"drift":-0.3413},{"name":"OMNI:tyree scripts phi-token dominance","ladder":"omni","unit":"repeats","rung":8.0009,"drift":0.0009},{"name":"OMNI:fib signature fourth corpus","ladder":"omni","unit":"corpora","rung":2.8808,"drift":-0.1192},{"name":"OMNI:voynich herbal fib-words","ladder":"omni","unit":"percent","rung":8.199,"drift":0.199},{"name":"OMNI:voynich astronomical fib-words","ladder":"omni","unit":"percent","rung":8.1044,"drift":0.1044},{"name":"OMNI:voynich biological fib-words","ladder":"omni","unit":"percent","rung":8.1128,"drift":0.1128},{"name":"OMNI:voynich cosmological fib-words","ladder":"omni","unit":"percent","rung":8.036,"drift":0.036},{"name":"OMNI:voynich pharmaceutical fib-words","ladder":"omni","unit":"percent","rung":8.1788,"drift":0.1788},{"name":"OMNI:voynich recipes fib-words","ladder":"omni","unit":"percent","rung":7.8827,"drift":-0.1173},{"name":"OMNI:voynich all-sections mode length","ladder":"omni","unit":"letters","rung":3.3446,"drift":0.3446},{"name":"OMNI:github voynich files","ladder":"omni","unit":"files","rung":6.6043,"drift":-0.3957},{"name":"OMNI:github first-letters files","ladder":"omni","unit":"files","rung":5.3302,"drift":0.3302},{"name":"OMNI:workspace free space","ladder":"omni","unit":"GB","rung":8.5428,"drift":-0.4572},{"name":"OMNI:kraken drivers active","ladder":"omni","unit":"drivers","rung":4.3213,"drift":0.3213},{"name":"OMNI:kraken krk containers","ladder":"omni","unit":"files","rung":15.4318,"drift":0.4318},{"name":"OMNI:voynich corpus words","ladder":"omni","unit":"words","rung":22.0418,"drift":0.0418},{"name":"OMNI:decode corpora with fib signature","ladder":"omni","unit":"corpora","rung":2.8808,"drift":-0.1192},{"name":"OMNI:storage target floor","ladder":"omni","unit":"GB","rung":8.5084,"drift":-0.4916},{"name":"OMNI:records held at TON618","ladder":"omni","unit":"rung","rung":8.211,"drift":0.211},{"name":"OMNI:declassifier voynich base fib share","ladder":"omni","unit":"percent","rung":8.0731,"drift":0.0731},{"name":"OMNI:declassifier greek column15 fib share","ladder":"omni","unit":"percent","rung":8.2553,"drift":0.2553},{"name":"OMNI:declassifier voynich-greek fib delta","ladder":"omni","unit":"percentage points","rung":3.107,"drift":0.107},{"name":"OMNI:declassifier dna codon verification","ladder":"omni","unit":"codon types","rung":8.6425,"drift":-0.3575},{"name":"OMNI:declassifier pulse phi-bin dominance","ladder":"omni","unit":"fraction","rung":-0.3789,"drift":-0.3789},{"name":"OMNI:declassifier hachimoji alphabet","ladder":"omni","unit":"symbols","rung":4.3213,"drift":0.3213},{"name":"OMNI:voynich top information line","ladder":"omni","unit":"bits","rung":13.1648,"drift":0.1648},{"name":"OMNI:voynich info-lines cluster","ladder":"omni","unit":"folios","rung":3.3446,"drift":0.3446},{"name":"OMNI:voynich info-lines fib signature","ladder":"omni","unit":"percent","rung":8.6555,"drift":-0.3445},{"name":"OMNI:voynich info-lines rung span","ladder":"omni","unit":"rungs","rung":-0.654,"drift":0.346},{"name":"OMNI:voynich info-line score ratios phi-drift","ladder":"omni","unit":"percent","rung":7.3883,"drift":0.3883},{"name":"SEVEN:fibonacci clock one mark","ladder":"omni","unit":"rung","rung":10.3216,"drift":0.3216},{"name":"SEVEN:lucas fuel term psi","ladder":"omni","unit":"gap","rung":-100.0,"drift":0.0},{"name":"SEVEN:e8 universality m2/m1","ladder":"omni","unit":"ratio","rung":1.0,"drift":0},{"name":"SEVEN:22 columns = 22 tRNA","ladder":"omni","unit":"count","rung":6.4235,"drift":0.4235},{"name":"SEVEN:zero-drift convergence","ladder":"omni","unit":"error","rung":-36.3277,"drift":0.3277},{"name":"SEVEN:cartesian metadata layers","ladder":"omni","unit":"count","rung":3.3446,"drift":0.3446},{"name":"SEVEN:39551 components rung 22","ladder":"omni","unit":"count","rung":21.9973,"drift":0.0027},{"name":"GITHUB: vesuvius-progress-prize repo address","ladder":"omni","unit":"sha256-rung","rung":368.1575,"drift":0.1575},{"name":"KRAKEN Worker C: bytes saved (verified)","ladder":"omni","unit":"bytes","rung":47.1024,"drift":0.1024},{"name":"φ-gap ruler: TON618 mass ruler","ladder":"ton618","unit":"suns","rung":-3.2288,"drift":-0.2288},{"name":"φ-gap ruler: TON618 light ruler","ladder":"ton618","unit":"suns","rung":4.0809,"drift":0.0809},{"name":"Genome ladder: base pairs","ladder":"genome","unit":"bp","rung":45.4819,"drift":0.4819},{"name":"Genome ladder: protein-coding genes","ladder":"genome","unit":"genes","rung":20.5803,"drift":-0.4197},{"name":"Genome ladder: chromosomes","ladder":"genome","unit":"chromosomes","rung":7.9562,"drift":-0.0438},{"name":"Genome ladder: cCRE regulatory elements","ladder":"genome","unit":"elements","rung":28.7098,"drift":-0.2902},{"name":"Genome ladder: TADs","ladder":"genome","unit":"tads","rung":19.1399,"drift":0.1399},{"name":"Genome ladder: ENCODE experiments","ladder":"genome","unit":"experiments","rung":20.1166,"drift":0.1166},{"name":"Genome ladder: bp per gene","ladder":"genome","unit":"bp","rung":24.9016,"drift":-0.0984},{"name":"Genome ladder: genes per chromosome","ladder":"genome","unit":"genes","rung":12.6251,"drift":-0.3749},{"name":"Genome rungs: mtDNA cross-check","ladder":"genome","unit":"rungs","rung":20.1892,"drift":0.1892},{"name":"Fold: 600-cell vertices","ladder":"fold","unit":"vertices","rung":9.9488,"drift":-0.0512},{"name":"Fold: E8 roots","ladder":"fold","unit":"roots","rung":11.3892,"drift":0.3892},{"name":"Fold: E8 zero-profile count","ladder":"fold","unit":"roots","rung":10.0502,"drift":0.0502},{"name":"Ruler: TON618 mass ruler","ladder":"ruler","unit":"suns","rung":-3.2288,"drift":-0.2288},{"name":"Ruler: TON618 light ruler","ladder":"ruler","unit":"suns","rung":4.0809,"drift":0.0809},{"name":"Sample 05 record: mass bracket","ladder":"ton618","unit":"rungs","rung":0.0095,"drift":0.0095},{"name":"Sample 05 record: AU to km shift","ladder":"ton618","unit":"rungs","rung":7.6191,"drift":-0.3809},{"name":"Sample 05 record: horizon lifetime","ladder":"ton618","unit":"years","rung":474.2574,"drift":0.2574},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":null,"ladder":null,"unit":null,"rung":0,"drift":0},{"name":"McMillan Tc λ=0.8","ladder":"K","unit":"K","rung":4.475471631492416,"drift":0.0},{"name":"McMillan Tc λ=0.9","ladder":"K","unit":"K","rung":5.012491446386579,"drift":0.0},{"name":"McMillan Tc λ=1.0","ladder":"K","unit":"K","rung":5.4244197948977435,"drift":0.0},{"name":"McMillan Tc λ=1.1","ladder":"K","unit":"K","rung":5.750404710994365,"drift":0.0},{"name":"McMillan Tc λ=1.2","ladder":"K","unit":"K","rung":6.014801896559334,"drift":0.0},{"name":"McMillan Tc λ=1.3","ladder":"K","unit":"K","rung":6.233558412139057,"drift":0.0},{"name":"McMillan Tc λ=1.4","ladder":"K","unit":"K","rung":6.417553141894172,"drift":0.0},{"name":"Fibonacci phinary rungs round-trip verified","ladder":"count","unit":"rungs","rung":5.7616803616502255,"drift":0.0},{"name":"Phinary codec 214-number stress test zero mismatch","ladder":"count","unit":"numbers","rung":11.15096457647776,"drift":0.0},{"name":"Vesuvius trilogy phinary round-trip 99/310/266","ladder":"count","unit":"numbers","rung":2.2830118285892795,"drift":0.0},{"name":"Phi token budget 54 shares verified sums","ladder":"count","unit":"shares","rung":8.289455576180394,"drift":0.0}],"seal_count":46,"entry_count":439,"snapshot_sha256": "b8973b175c905c446e1f78558520b27b128661c47ec31985adaf7deaae3e534f"}
+{
+ "seals": [
+  "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
+  "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
+  "φ_PHITHON_TYREE_OMEGA",
+  "φ_BYTE_DECLASSIFICATION_TYREE_OMEGA",
+  "φ_BEE_DECLASSIFICATION_TYREE_OMEGA",
+  "φ_PHOTOSYNTHESIS_DECLASSIFICATION_TYREE_OMEGA",
+  "φ_LIGHTSPEED_DECLASSIFICATION_TYREE_OMEGA",
+  "φ_MITOCHONDRIA_ENCODE_TYREE_OMEGA",
+  "φ_WHITEHOLE_DECLASSIFICATION_TYREE_OMEGA",
+  "φ_PHI_IS_CONFIRMATION_TYREE_OMEGA",
+  "φ_VOYNICH_ENCODE_TYREE_OMEGA",
+  "φ_VOYNICH_CORPUS_ENCODE_TYREE_OMEGA",
+  "φ_VOYNICH_SPECTRAL_ENCODE_TYREE_OMEGA",
+  "φ_VOYNICH_RESIDUAL_GENERATOR_ENCODE_TYREE_OMEGA",
+  "φ_VOYNICH_CODICOLOGY_ENCODE_TYREE_OMEGA",
+  "φ_VOYNICH_INVERSE_BIFOLIO_ENCODE_TYREE_OMEGA",
+  "φ_VOYNICH_STRUCTURAL_RECONSTRUCTION_TYREE_OMEGA",
+  "φ_KRAKEN_TON618_ENCODE_TYREE_OMEGA",
+  "φ_OMNI_ALL_PHI_ALL_TYREE_OMEGA",
+  "φ_VOYNICH_DEEP_DECODE_TYREE_OMEGA",
+  "φ_KRAKEN_REMOVAL_FINAL_TYREE_OMEGA",
+  "φ_KRAKEN_TAR_ENTANGLED_TYREE_OMEGA",
+  "φ_AKASHIC_LADDER_DECODE_TYREE_OMEGA",
+  "φ_TYREE_SCRIPTS_DECODE_TYREE_OMEGA",
+  "φ_VOYNICH_FULL_DECODE_TYREE_OMEGA",
+  "φ_RECORDS_ENCODED_TYREE_OMEGA",
+  "φ_SEVEN_DISCOVERIES_TYREE_OMEGA",
+  "φ_KRAKEN_WORKERC_VERIFY_TYREE_OMEGA",
+  "φ_GAP_RULER_TYREE_OMEGA",
+  "φ_GENOME_AS_LADDER_TYREE_OMEGA",
+  "φ_GENOME_RUNGS_TYREE_OMEGA",
+  "φ_SAMPLE06_FOLD_RULER_TYREE_OMEGA",
+  "φ_DEBT_SURPLUS_INVOLUTION_TYREE_OMEGA",
+  "φ_GLOBAL_LEDGER_TYREE_OMEGA",
+  "φ_GLOBAL_LEDGER_INVOLUTION_TYREE_OMEGA",
+  "φ_MINING_SURPLUS_TYREE_OMEGA",
+  "φ_FREE_SOURCE_SURPLUS_TYREE_OMEGA",
+  "φ_GLOBAL_WEALTH_TYREE_OMEGA",
+  "φ_MINING_YIELD_TYREE_OMEGA",
+  "φ_OPEN_INTERNET_SURPLUS_TYREE_OMEGA",
+  "φ_FREE_VALUE_DECODE_TYREE_OMEGA",
+  "φ_TELEMETRY_TYREE_OMEGA",
+  "φ_METADATA_EVENT_HORIZON_TYREE_OMEGA",
+  "φ_MICRO_TO_MACRO_TYREE_OMEGA",
+  "φ_SOURCE_CODE_INTENT_APPLIED_TYREE_OMEGA",
+  "φ_WILLOW_TRANSMISSION_TYREE_OMEGA",
+  "φ_ECHOES_BEFORE_HARDWARE_TYREE_OMEGA",
+  "φ_OMNI_WILLOW_TRANSMISSION_TYREE_OMEGA",
+  "φ_SILICON_PLUS_ONE_TYREE_OMEGA",
+  "φ_PHI_GLOBAL_SUBSTRATE_TYREE_OMEGA",
+  "φ_SOURCE_AUTHORITY_TON618_TYREE_OMEGA",
+  "φ_TON618_GLOBAL_TELEMETRY_TYREE_OMEGA",
+  "φ_DNA_ENCODE_TYREE_OMEGA",
+  "φ_WILLOW_DNA_TON618_TYREE_OMEGA",
+  "φ_BLACK_HOLE_FUEL_TYREE_OMEGA",
+  "φ_TYREE_SUPERPOSITION_TYREE_OMEGA",
+  "φ_TYREE_FIELD_BROAD_TYREE_OMEGA",
+  "φ_TYREE_SOURCE_CODE_TYREE_OMEGA",
+  "φ_DNA_TYREE_FOUND_TYREE_OMEGA",
+  "φ_RUNG15_VOLCANOES_TYREE_OMEGA",
+  "φ_UNESCO_DECLASSIFIED_TYREE_OMEGA",
+  "φ_TELEMETRY_DECLASSIFIED_TYREE_OMEGA",
+  "φ_ASSUMPTION_ECHOES_TYREE_OMEGA",
+  "φ_TON618_TO_BRAIN_TYREE_OMEGA",
+  "φ_PHOENIX_A_DECLASSIFIED_TYREE_OMEGA",
+  "φ_BLACK_HOLE_BRAIN_LADDER_TYREE_OMEGA",
+  "φ_PHOENIX_HORIZON_TYREE_OMEGA",
+  "φ_NOTHING_OUTRANKS_TYREE_OMEGA",
+  "φ_SOURCE_AUTHORITY_SUPREME_TYREE_OMEGA",
+  "φ_MITOCHONDRIA_ECHO_TYREE_OMEGA",
+  "φ_GOLDEN_EYE_GOOGLE_TYREE_OMEGA",
+  "φ_GOLDEN_EYE_MANIFESTO_TYREE_OMEGA",
+  "φ_RECOGNITION_TYREE_OMEGA",
+  "φ_HUMAN_RECOGNITION_TYREE_OMEGA",
+  "φ_UNPRECEDENTED_TYREE_OMEGA",
+  "φ_UNPRECEDENTED_TO_HUMANS_TYREE_OMEGA",
+  "φ_CORPUS_WINDOW_CORRECTED_TYREE_OMEGA",
+  "φ_PARADIGM_SHIFT_TIMELINE_TYREE_OMEGA",
+  "φ_UPSTREAM_DOWNSTREAM_TYREE_OMEGA",
+  "φ_MILLION_VIEWS_TYREE_OMEGA",
+  "φ_LINKEDIN_250K_TYREE_OMEGA",
+  "φ_ALL_FREE_ALL_PHI_TYREE_OMEGA",
+  "φ_FOUNDATIONAL_STRUCTURE_TYREE_OMEGA",
+  "φ_CLAIM_THEN_PROOF_TYREE_OMEGA",
+  "φ_DATA_EVENT_HORIZON_TYREE_OMEGA",
+  "φ_PROMETHEUS_TYREE_OMEGA",
+  "φ_META_AMAZED_DECLASSIFIED_TYREE_OMEGA",
+  "φ_DEBT_TO_SURPLUS_40T_TYREE_OMEGA",
+  "φ_CASMI_RUNG2_PHI_FRAME_TYREE_OMEGA",
+  "φ_CASMI_RUNG2_DEPLOY_TYREE_OMEGA",
+  "phi_UNIVERSAL_ADDRESSING_TYREE_OMEGA",
+  "φ_RECOGNITION_NOT_COLLAPSE_KAROLYHAZY_TYREE_OMEGA",
+  "phi_QUANTUM_ECHO_WILLOW_TYREE_OMEGA",
+  "phi_FOOTPRINT_RUNG_TABLE_TYREE_OMEGA",
+  "phi_SILICON_TETRAHEDRAL_DECODE_TYREE_OMEGA",
+  "phi_TON618_MTDNA_WILLOW_ONE_LADDER_TYREE_OMEGA",
+  "phi_QUANTUM_ECHOES_ALGORITHM_DECODE_TYREE_OMEGA",
+  "phi_MUSE_DNA_DECODE_TYREE_OMEGA",
+  "phi_ATOM_DECODE_TYREE_OMEGA",
+  "phi_DARK_SECTOR_DECODE_TYREE_OMEGA",
+  "φ_TON618_SHEET_TYREE_OMEGA",
+  "φ_PBH_DECLASS_TYREE_OMEGA",
+  "φ_LRD_JWST_ECHOES_TYREE_OMEGA",
+  "φ_DNA_DARK_SECTOR_TYREE_OMEGA",
+  "φ_ENTANGLEMENT_SHARED_RUNG_TYREE_OMEGA",
+  "φ_PIPPHI_FIRST_OUTBOUND_TYREE_OMEGA",
+  "φ_CLEOPATRA_TOMB_RUNG_READ_TYREE_OMEGA"
+ ],
+ "entries": [
+  {
+   "name": "Sgr A* mass",
+   "ladder": "mass",
+   "unit": "M_sun",
+   "rung": 31.741,
+   "drift": -0.259
+  },
+  {
+   "name": "TON618 mass",
+   "ladder": "mass",
+   "unit": "M_sun",
+   "rung": 51.7712,
+   "drift": -0.2288
+  },
+  {
+   "name": "Sgr A* distance",
+   "ladder": "length",
+   "unit": "ly",
+   "rung": 21.1807,
+   "drift": 0.1807
+  },
+  {
+   "name": "CMB peak 2",
+   "ladder": "dimensionless",
+   "unit": "multipole",
+   "rung": 13.0744,
+   "drift": 0.0744
+  },
+  {
+   "name": "observable universe radius",
+   "ladder": "length",
+   "unit": "ly",
+   "rung": 51.0435,
+   "drift": 0.0435
+  },
+  {
+   "name": "DNA:DNA bases",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 2.8808,
+   "drift": -0.1192
+  },
+  {
+   "name": "DNA:hachimoji letters",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "DNA:codon length",
+   "ladder": "code",
+   "unit": "bases",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "DNA:codons",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 8.6425,
+   "drift": -0.3575
+  },
+  {
+   "name": "DNA:amino acids",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 6.2254,
+   "drift": 0.2254
+  },
+  {
+   "name": "DNA:stop codons",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "DNA:helix bp per turn",
+   "ladder": "code",
+   "unit": "bp/turn",
+   "rung": 4.8864,
+   "drift": -0.1136
+  },
+  {
+   "name": "DNA:pitch/diameter ratio",
+   "ladder": "code",
+   "unit": "ratio",
+   "rung": 1.1027,
+   "drift": 0.1027
+  },
+  {
+   "name": "DNA:A-T hydrogen bonds",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "DNA:G-C hydrogen bonds",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "DNA:human chromosomes",
+   "ladder": "code",
+   "unit": "count",
+   "rung": 7.9562,
+   "drift": -0.0438
+  },
+  {
+   "name": "DNA:human genome",
+   "ladder": "code",
+   "unit": "bp",
+   "rung": 45.4819,
+   "drift": 0.4819
+  },
+  {
+   "name": "DNA:mitochondrial DNA",
+   "ladder": "code",
+   "unit": "bp",
+   "rung": 20.1892,
+   "drift": 0.1892
+  },
+  {
+   "name": "DNA:enhanced DNA anchor",
+   "ladder": "code",
+   "unit": "x",
+   "rung": 19.3081,
+   "drift": 0.3081
+  },
+  {
+   "name": "PYTHON:major version",
+   "ladder": "language",
+   "unit": "count",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "PYTHON:minor version",
+   "ladder": "language",
+   "unit": "count",
+   "rung": 5.1639,
+   "drift": 0.1639
+  },
+  {
+   "name": "PYTHON:keywords",
+   "ladder": "language",
+   "unit": "count",
+   "rung": 7.3883,
+   "drift": 0.3883
+  },
+  {
+   "name": "PYTHON:zen aphorisms",
+   "ladder": "language",
+   "unit": "count",
+   "rung": 6.1188,
+   "drift": 0.1188
+  },
+  {
+   "name": "PYTHON:indent spaces",
+   "ladder": "language",
+   "unit": "count",
+   "rung": 2.8808,
+   "drift": -0.1192
+  },
+  {
+   "name": "PYTHON:bits per byte",
+   "ladder": "language",
+   "unit": "count",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "BYTE:.bin",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 50.6589,
+   "drift": -0.3411
+  },
+  {
+   "name": "BYTE:.gz",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 47.8517,
+   "drift": -0.1483
+  },
+  {
+   "name": "BYTE:<noext>",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 44.7273,
+   "drift": -0.2727
+  },
+  {
+   "name": "BYTE:.tif",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 44.4921,
+   "drift": 0.4921
+  },
+  {
+   "name": "BYTE:.pth",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 44.4841,
+   "drift": 0.4841
+  },
+  {
+   "name": "BYTE:.fits",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 44.1921,
+   "drift": 0.1921
+  },
+  {
+   "name": "BYTE:.so",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 43.6866,
+   "drift": -0.3134
+  },
+  {
+   "name": "BYTE:.obj",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 43.2197,
+   "drift": 0.2197
+  },
+  {
+   "name": "BYTE:.safetensors",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 43.066,
+   "drift": 0.066
+  },
+  {
+   "name": "BYTE:.png",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 41.9908,
+   "drift": -0.0092
+  },
+  {
+   "name": "BYTE:.npy",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 41.8096,
+   "drift": -0.1904
+  },
+  {
+   "name": "BYTE:.krk (compressed)",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 41.1451,
+   "drift": 0.1451
+  },
+  {
+   "name": "BYTE:.pyc",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 41.0746,
+   "drift": 0.0746
+  },
+  {
+   "name": "BYTE:.py",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 40.6098,
+   "drift": -0.3902
+  },
+  {
+   "name": "BYTE:.payload",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 40.1592,
+   "drift": 0.1592
+  },
+  {
+   "name": "BYTE:.appimage",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 38.7357,
+   "drift": -0.2643
+  },
+  {
+   "name": "BYTE:.0",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 38.5495,
+   "drift": -0.4505
+  },
+  {
+   "name": "BYTE:.csv",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 38.3124,
+   "drift": 0.3124
+  },
+  {
+   "name": "BYTE:.6",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 38.2652,
+   "drift": 0.2652
+  },
+  {
+   "name": "BYTE:.mp4",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.8956,
+   "drift": -0.1044
+  },
+  {
+   "name": "BYTE:.h",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.7347,
+   "drift": -0.2653
+  },
+  {
+   "name": "BYTE:.3",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.6198,
+   "drift": -0.3802
+  },
+  {
+   "name": "BYTE:.7",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.4716,
+   "drift": 0.4716
+  },
+  {
+   "name": "BYTE:.2",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.465,
+   "drift": 0.465
+  },
+  {
+   "name": "BYTE:.8",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.2944,
+   "drift": 0.2944
+  },
+  {
+   "name": "BYTE:.12",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.2935,
+   "drift": 0.2935
+  },
+  {
+   "name": "BYTE:.4",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.2764,
+   "drift": 0.2764
+  },
+  {
+   "name": "BYTE:.5",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.0709,
+   "drift": 0.0709
+  },
+  {
+   "name": "BYTE:.1",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 37.043,
+   "drift": 0.043
+  },
+  {
+   "name": "BYTE:.jpg",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.8162,
+   "drift": -0.1838
+  },
+  {
+   "name": "BYTE:.13",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.5906,
+   "drift": -0.4094
+  },
+  {
+   "name": "BYTE:.15",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.4253,
+   "drift": 0.4253
+  },
+  {
+   "name": "BYTE:.78",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.3785,
+   "drift": 0.3785
+  },
+  {
+   "name": "BYTE:.9",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.3626,
+   "drift": 0.3626
+  },
+  {
+   "name": "BYTE:.11",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.3296,
+   "drift": 0.3296
+  },
+  {
+   "name": "BYTE:.pdf",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.3246,
+   "drift": 0.3246
+  },
+  {
+   "name": "BYTE:.16",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.3186,
+   "drift": 0.3186
+  },
+  {
+   "name": "BYTE:.14",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.25,
+   "drift": 0.25
+  },
+  {
+   "name": "BYTE:.38",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.2355,
+   "drift": 0.2355
+  },
+  {
+   "name": "BYTE:.24",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.0877,
+   "drift": 0.0877
+  },
+  {
+   "name": "BYTE:.19",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.0808,
+   "drift": 0.0808
+  },
+  {
+   "name": "BYTE:.17",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.0723,
+   "drift": 0.0723
+  },
+  {
+   "name": "BYTE:.10",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.072,
+   "drift": 0.072
+  },
+  {
+   "name": "BYTE:.18",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.0321,
+   "drift": 0.0321
+  },
+  {
+   "name": "BYTE:.20",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 36.002,
+   "drift": 0.002
+  },
+  {
+   "name": "BYTE:.21",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.9145,
+   "drift": -0.0855
+  },
+  {
+   "name": "BYTE:.22",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.8669,
+   "drift": -0.1331
+  },
+  {
+   "name": "BYTE:.25",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.7974,
+   "drift": -0.2026
+  },
+  {
+   "name": "BYTE:.23",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.6469,
+   "drift": -0.3531
+  },
+  {
+   "name": "BYTE:.json",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.5178,
+   "drift": -0.4822
+  },
+  {
+   "name": "BYTE:.26",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.4038,
+   "drift": 0.4038
+  },
+  {
+   "name": "BYTE:.27",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.1934,
+   "drift": 0.1934
+  },
+  {
+   "name": "BYTE:.410",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 35.0315,
+   "drift": 0.0315
+  },
+  {
+   "name": "BYTE:.28",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.8956,
+   "drift": -0.1044
+  },
+  {
+   "name": "BYTE:.30",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.7666,
+   "drift": -0.2334
+  },
+  {
+   "name": "BYTE:.npz",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.6518,
+   "drift": -0.3482
+  },
+  {
+   "name": "BYTE:.29",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.4917,
+   "drift": 0.4917
+  },
+  {
+   "name": "BYTE:.ttf",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.3403,
+   "drift": 0.3403
+  },
+  {
+   "name": "BYTE:.c",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.1057,
+   "drift": 0.1057
+  },
+  {
+   "name": "BYTE:.mmap",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 34.0336,
+   "drift": 0.0336
+  },
+  {
+   "name": "BYTE:.pyi",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 33.6873,
+   "drift": -0.3127
+  },
+  {
+   "name": "BYTE:.txt",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 33.4592,
+   "drift": 0.4592
+  },
+  {
+   "name": "BYTE:.md",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 32.95,
+   "drift": -0.05
+  },
+  {
+   "name": "BYTE:.31",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 32.3703,
+   "drift": 0.3703
+  },
+  {
+   "name": "BYTE:.32",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 32.3185,
+   "drift": 0.3185
+  },
+  {
+   "name": "BYTE:.1962-now",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 32.1231,
+   "drift": 0.1231
+  },
+  {
+   "name": "BYTE:.310",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 31.7742,
+   "drift": -0.2258
+  },
+  {
+   "name": "BYTE:.156",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 31.6599,
+   "drift": -0.3401
+  },
+  {
+   "name": "BYTE:.all",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 31.4648,
+   "drift": 0.4648
+  },
+  {
+   "name": "BYTE:.hpp",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 31.0051,
+   "drift": 0.0051
+  },
+  {
+   "name": "BYTE:.webp",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 30.988,
+   "drift": -0.012
+  },
+  {
+   "name": "BYTE:.afm",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 30.7945,
+   "drift": -0.2055
+  },
+  {
+   "name": "BYTE:.pack",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 30.4926,
+   "drift": 0.4926
+  },
+  {
+   "name": "BYTE:.jpeg",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 30.314,
+   "drift": 0.314
+  },
+  {
+   "name": "BYTE:.dat",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 30.2224,
+   "drift": 0.2224
+  },
+  {
+   "name": "BYTE:.yaml",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 29.8507,
+   "drift": -0.1493
+  },
+  {
+   "name": "BYTE:.cuh",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 29.4838,
+   "drift": 0.4838
+  },
+  {
+   "name": "BYTE:.cpp",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 29.2865,
+   "drift": 0.2865
+  },
+  {
+   "name": "BYTE:.pem",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 29.2513,
+   "drift": 0.2513
+  },
+  {
+   "name": "BYTE:.gif",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 28.8418,
+   "drift": -0.1582
+  },
+  {
+   "name": "BYTE:.exe",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 28.6195,
+   "drift": -0.3805
+  },
+  {
+   "name": "BYTE:.20260107",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 28.2161,
+   "drift": 0.2161
+  },
+  {
+   "name": "BYTE:.xsl",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 28.0625,
+   "drift": 0.0625
+  },
+  {
+   "name": "BYTE:.hdr",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 27.8483,
+   "drift": -0.1517
+  },
+  {
+   "name": "BYTE:.cmake",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 27.5044,
+   "drift": -0.4956
+  },
+  {
+   "name": "BYTE:.html",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 27.127,
+   "drift": 0.127
+  },
+  {
+   "name": "BYTE:.bz2",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 26.7458,
+   "drift": -0.2542
+  },
+  {
+   "name": "BYTE:.pxd",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 26.6814,
+   "drift": -0.3186
+  },
+  {
+   "name": "BYTE:.45",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 26.5923,
+   "drift": -0.4077
+  },
+  {
+   "name": "BYTE:.207",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 26.3397,
+   "drift": 0.3397
+  },
+  {
+   "name": "BYTE:.jinja",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 26.1809,
+   "drift": 0.1809
+  },
+  {
+   "name": "BYTE:.icns",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.8593,
+   "drift": -0.1407
+  },
+  {
+   "name": "BYTE:.a",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.8128,
+   "drift": -0.1872
+  },
+  {
+   "name": "BYTE:.sav",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.5262,
+   "drift": -0.4738
+  },
+  {
+   "name": "BYTE:.arff",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.4699,
+   "drift": 0.4699
+  },
+  {
+   "name": "BYTE:.svg",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.3334,
+   "drift": 0.3334
+  },
+  {
+   "name": "BYTE:.pyx",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.2948,
+   "drift": 0.2948
+  },
+  {
+   "name": "BYTE:.xml",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.2277,
+   "drift": 0.2277
+  },
+  {
+   "name": "BYTE:.lock",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.1051,
+   "drift": 0.1051
+  },
+  {
+   "name": "BYTE:.zip",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 25.0093,
+   "drift": 0.0093
+  },
+  {
+   "name": "BYTE:.js",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 24.2291,
+   "drift": 0.2291
+  },
+  {
+   "name": "BYTE:.xsd",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 24.0992,
+   "drift": 0.0992
+  },
+  {
+   "name": "BYTE:.log",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 24.0184,
+   "drift": 0.0184
+  },
+  {
+   "name": "BYTE:.apache",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 23.9607,
+   "drift": -0.0393
+  },
+  {
+   "name": "BYTE:.mplstyle",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 23.3978,
+   "drift": 0.3978
+  },
+  {
+   "name": "BYTE:.sample",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 23.3942,
+   "drift": 0.3942
+  },
+  {
+   "name": "BYTE:.rst",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 23.3449,
+   "drift": 0.3449
+  },
+  {
+   "name": "BYTE:.wav",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 23.2487,
+   "drift": 0.2487
+  },
+  {
+   "name": "BYTE:.mat",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 23.206,
+   "drift": 0.206
+  },
+  {
+   "name": "BYTE:.f90",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 22.8349,
+   "drift": -0.1651
+  },
+  {
+   "name": "BYTE:.ui",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 22.6599,
+   "drift": -0.3401
+  },
+  {
+   "name": "BYTE:.conf",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 22.6475,
+   "drift": -0.3525
+  },
+  {
+   "name": "BYTE:.ptl",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 22.6226,
+   "drift": -0.3774
+  },
+  {
+   "name": "BYTE:.external",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 22.023,
+   "drift": 0.023
+  },
+  {
+   "name": "BYTE:.ecsv",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 21.8381,
+   "drift": -0.1619
+  },
+  {
+   "name": "BYTE:.lark",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 21.3028,
+   "drift": 0.3028
+  },
+  {
+   "name": "BYTE:.ps1",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 21.2116,
+   "drift": 0.2116
+  },
+  {
+   "name": "BYTE:.cache",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 21.2061,
+   "drift": 0.2061
+  },
+  {
+   "name": "BYTE:.f",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.9287,
+   "drift": -0.0713
+  },
+  {
+   "name": "BYTE:.mjs",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.8358,
+   "drift": -0.1642
+  },
+  {
+   "name": "BYTE:.ff",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.6857,
+   "drift": -0.3143
+  },
+  {
+   "name": "BYTE:.dbout",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.6255,
+   "drift": -0.3745
+  },
+  {
+   "name": "BYTE:.g4",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.5836,
+   "drift": -0.4164
+  },
+  {
+   "name": "BYTE:.yml",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.3954,
+   "drift": 0.3954
+  },
+  {
+   "name": "BYTE:.33",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.2879,
+   "drift": 0.2879
+  },
+  {
+   "name": "BYTE:.sh",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.2169,
+   "drift": 0.2169
+  },
+  {
+   "name": "BYTE:.build",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.1292,
+   "drift": 0.1292
+  },
+  {
+   "name": "BYTE:.al",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 20.0073,
+   "drift": 0.0073
+  },
+  {
+   "name": "BYTE:.thrift",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.9805,
+   "drift": -0.0195
+  },
+  {
+   "name": "BYTE:.css",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.9314,
+   "drift": -0.0686
+  },
+  {
+   "name": "BYTE:.z",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.895,
+   "drift": -0.105
+  },
+  {
+   "name": "BYTE:.idx",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.8574,
+   "drift": -0.1426
+  },
+  {
+   "name": "BYTE:.bsd",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.7543,
+   "drift": -0.2457
+  },
+  {
+   "name": "BYTE:.data",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.4556,
+   "drift": 0.4556
+  },
+  {
+   "name": "BYTE:.list",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 19.2731,
+   "drift": 0.2731
+  },
+  {
+   "name": "BYTE:.toml",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 18.8279,
+   "drift": -0.1721
+  },
+  {
+   "name": "BYTE:.fish",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 18.2924,
+   "drift": 0.2924
+  },
+  {
+   "name": "BYTE:.b99",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 18.1086,
+   "drift": 0.1086
+  },
+  {
+   "name": "BYTE:.pt",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.9645,
+   "drift": -0.0355
+  },
+  {
+   "name": "BYTE:.pyf",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.9073,
+   "drift": -0.0927
+  },
+  {
+   "name": "BYTE:.dtd",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.5898,
+   "drift": -0.4102
+  },
+  {
+   "name": "BYTE:.in",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.5076,
+   "drift": -0.4924
+  },
+  {
+   "name": "BYTE:.xrc",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.4206,
+   "drift": 0.4206
+  },
+  {
+   "name": "BYTE:.ani",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.4158,
+   "drift": 0.4158
+  },
+  {
+   "name": "BYTE:.jsonl",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.1248,
+   "drift": 0.1248
+  },
+  {
+   "name": "BYTE:.template",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 17.0076,
+   "drift": 0.0076
+  },
+  {
+   "name": "BYTE:.a99",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.9606,
+   "drift": -0.0394
+  },
+  {
+   "name": "BYTE:.nc",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.9175,
+   "drift": -0.0825
+  },
+  {
+   "name": "BYTE:.finals2000a",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.9157,
+   "drift": -0.0843
+  },
+  {
+   "name": "BYTE:.eopc04",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.8202,
+   "drift": -0.1798
+  },
+  {
+   "name": "BYTE:.r",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.6784,
+   "drift": -0.3216
+  },
+  {
+   "name": "BYTE:.csh",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.5138,
+   "drift": -0.4862
+  },
+  {
+   "name": "BYTE:.dockerfile",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.4953,
+   "drift": 0.4953
+  },
+  {
+   "name": "BYTE:.vot",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "BYTE:.parquet",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 16.1906,
+   "drift": 0.1906
+  },
+  {
+   "name": "BYTE:.eopc04_iau2000",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.9649,
+   "drift": -0.0351
+  },
+  {
+   "name": "BYTE:.hdf5",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.8688,
+   "drift": -0.1312
+  },
+  {
+   "name": "BYTE:.pxi",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.8026,
+   "drift": -0.1974
+  },
+  {
+   "name": "BYTE:.egg",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "BYTE:.cfg",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.3407,
+   "drift": 0.3407
+  },
+  {
+   "name": "BYTE:.rev",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.2141,
+   "drift": 0.2141
+  },
+  {
+   "name": "BYTE:.pkl",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 15.1011,
+   "drift": 0.1011
+  },
+  {
+   "name": "BYTE:.ini",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 14.96,
+   "drift": -0.04
+  },
+  {
+   "name": "BYTE:.typed",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 14.8809,
+   "drift": -0.1191
+  },
+  {
+   "name": "BYTE:.cu",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 14.3298,
+   "drift": 0.3298
+  },
+  {
+   "name": "BYTE:.tex",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 14.0463,
+   "drift": 0.0463
+  },
+  {
+   "name": "BYTE:.ld",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 14.0415,
+   "drift": 0.0415
+  },
+  {
+   "name": "BYTE:.xz",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 13.7066,
+   "drift": -0.2934
+  },
+  {
+   "name": "BYTE:.tmpl",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 13.649,
+   "drift": -0.351
+  },
+  {
+   "name": "BYTE:.desktop",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 13.5928,
+   "drift": -0.4072
+  },
+  {
+   "name": "BYTE:.pc",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 12.3551,
+   "drift": 0.3551
+  },
+  {
+   "name": "BYTE:.lua",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 12.3332,
+   "drift": 0.3332
+  },
+  {
+   "name": "BYTE:.f95",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 11.6947,
+   "drift": -0.3053
+  },
+  {
+   "name": "BYTE:.rdb",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 11.4574,
+   "drift": 0.4574
+  },
+  {
+   "name": "BYTE:.tab",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 10.6848,
+   "drift": -0.3152
+  },
+  {
+   "name": "BYTE:.00",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 10.5725,
+   "drift": -0.4275
+  },
+  {
+   "name": "BYTE:.promisor",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 9.6314,
+   "drift": -0.3686
+  },
+  {
+   "name": "BYTE:.qrc",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 9.4191,
+   "drift": 0.4191
+  },
+  {
+   "name": "BYTE:.map",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 9.4191,
+   "drift": 0.4191
+  },
+  {
+   "name": "BYTE:.absent",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 9.3043,
+   "drift": 0.3043
+  },
+  {
+   "name": "BYTE:.01",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 9.132,
+   "drift": 0.132
+  },
+  {
+   "name": "BYTE:.02",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 9.132,
+   "drift": 0.132
+  },
+  {
+   "name": "BYTE:.worktree",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 8.4018,
+   "drift": 0.4018
+  },
+  {
+   "name": "BYTE:.inc",
+   "ladder": "byte-form",
+   "unit": "bytes",
+   "rung": 7.2021,
+   "drift": 0.2021
+  },
+  {
+   "name": "BEE:drone ancestors gen1",
+   "ladder": "hive",
+   "unit": "parents",
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "BEE:drone ancestors gen2",
+   "ladder": "hive",
+   "unit": "grandparents",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "BEE:drone ancestors gen3",
+   "ladder": "hive",
+   "unit": "great-grandparents",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "BEE:drone ancestors gen4",
+   "ladder": "hive",
+   "unit": "gg-grandparents",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "BEE:drone ancestors gen5",
+   "ladder": "hive",
+   "unit": "ggg-grandparents",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "BEE:honeycomb sides",
+   "ladder": "hive",
+   "unit": "sides",
+   "rung": 3.7234,
+   "drift": -0.2766
+  },
+  {
+   "name": "BEE:hexagon angle",
+   "ladder": "hive",
+   "unit": "degrees",
+   "rung": 9.9488,
+   "drift": -0.0512
+  },
+  {
+   "name": "BEE:bee legs",
+   "ladder": "hive",
+   "unit": "count",
+   "rung": 3.7234,
+   "drift": -0.2766
+  },
+  {
+   "name": "BEE:bee eyes",
+   "ladder": "hive",
+   "unit": "count",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "BEE:wing pairs",
+   "ladder": "hive",
+   "unit": "pairs",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "BEE:wingbeat",
+   "ladder": "hive",
+   "unit": "Hz",
+   "rung": 11.0104,
+   "drift": 0.0104
+  },
+  {
+   "name": "BEE:hive population",
+   "ladder": "hive",
+   "unit": "bees",
+   "rung": 22.4844,
+   "drift": 0.4844
+  },
+  {
+   "name": "BEE:queen eggs per day",
+   "ladder": "hive",
+   "unit": "eggs",
+   "rung": 15.7953,
+   "drift": -0.2047
+  },
+  {
+   "name": "BEE:worker lifespan summer",
+   "ladder": "hive",
+   "unit": "days",
+   "rung": 7.7672,
+   "drift": -0.2328
+  },
+  {
+   "name": "BEE:hive temperature",
+   "ladder": "hive",
+   "unit": "celsius",
+   "rung": 7.3883,
+   "drift": 0.3883
+  },
+  {
+   "name": "BEE:forage range",
+   "ladder": "hive",
+   "unit": "km",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "PHOTO:CO2 per glucose",
+   "ladder": "leaf",
+   "unit": "molecules",
+   "rung": 3.7234,
+   "drift": -0.2766
+  },
+  {
+   "name": "PHOTO:H2O per glucose",
+   "ladder": "leaf",
+   "unit": "molecules",
+   "rung": 3.7234,
+   "drift": -0.2766
+  },
+  {
+   "name": "PHOTO:O2 per glucose",
+   "ladder": "leaf",
+   "unit": "molecules",
+   "rung": 3.7234,
+   "drift": -0.2766
+  },
+  {
+   "name": "PHOTO:photons per O2",
+   "ladder": "leaf",
+   "unit": "photons",
+   "rung": 2.8808,
+   "drift": -0.1192
+  },
+  {
+   "name": "PHOTO:photons per CO2",
+   "ladder": "leaf",
+   "unit": "photons",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "PHOTO:ATP per CO2",
+   "ladder": "leaf",
+   "unit": "ATP",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "PHOTO:NADPH per CO2",
+   "ladder": "leaf",
+   "unit": "NADPH",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "PHOTO:Calvin turns per glucose",
+   "ladder": "leaf",
+   "unit": "turns",
+   "rung": 3.7234,
+   "drift": -0.2766
+  },
+  {
+   "name": "PHOTO:chlorophyll carbons",
+   "ladder": "leaf",
+   "unit": "C atoms",
+   "rung": 8.3276,
+   "drift": 0.3276
+  },
+  {
+   "name": "PHOTO:P680 wavelength",
+   "ladder": "leaf",
+   "unit": "nm",
+   "rung": 13.5535,
+   "drift": -0.4465
+  },
+  {
+   "name": "PHOTO:P700 wavelength",
+   "ladder": "leaf",
+   "unit": "nm",
+   "rung": 13.6137,
+   "drift": -0.3863
+  },
+  {
+   "name": "PHOTO:chlorophyll-a blue peak",
+   "ladder": "leaf",
+   "unit": "nm",
+   "rung": 12.6011,
+   "drift": -0.3989
+  },
+  {
+   "name": "PHOTO:chlorophyll-a red peak",
+   "ladder": "leaf",
+   "unit": "nm",
+   "rung": 13.4977,
+   "drift": 0.4977
+  },
+  {
+   "name": "PHOTO:RuBisCO turnover",
+   "ladder": "leaf",
+   "unit": "CO2/sec",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "LIGHT:c m/s",
+   "ladder": "light",
+   "unit": "m/s",
+   "rung": 40.5613,
+   "drift": -0.4387
+  },
+  {
+   "name": "LIGHT:c km/s",
+   "ladder": "light",
+   "unit": "km/s",
+   "rung": 26.2064,
+   "drift": 0.2064
+  },
+  {
+   "name": "LIGHT:c miles/s",
+   "ladder": "light",
+   "unit": "mi/s",
+   "rung": 25.2176,
+   "drift": 0.2176
+  },
+  {
+   "name": "LIGHT:c squared",
+   "ladder": "light",
+   "unit": "m2/s2",
+   "rung": 81.1227,
+   "drift": 0.1227
+  },
+  {
+   "name": "LIGHT:light-nanosecond",
+   "ladder": "light",
+   "unit": "m",
+   "rung": -2.5034,
+   "drift": 0.4966
+  },
+  {
+   "name": "LIGHT:light-year",
+   "ladder": "light",
+   "unit": "m",
+   "rung": 76.4444,
+   "drift": 0.4444
+  },
+  {
+   "name": "LIGHT:light-second",
+   "ladder": "light",
+   "unit": "m",
+   "rung": 40.5613,
+   "drift": -0.4387
+  },
+  {
+   "name": "LIGHT:AU light-time",
+   "ladder": "light",
+   "unit": "s",
+   "rung": 12.9104,
+   "drift": -0.0896
+  },
+  {
+   "name": "LIGHT:MHz of c",
+   "ladder": "light",
+   "unit": "MHz",
+   "rung": 11.8515,
+   "drift": -0.1485
+  },
+  {
+   "name": "LIGHT:1/c",
+   "ladder": "light",
+   "unit": "s/m",
+   "rung": -40.5613,
+   "drift": 0.4387
+  },
+  {
+   "name": "MITO:mtDNA length",
+   "ladder": "powerhouse",
+   "unit": "bp",
+   "rung": 20.1892,
+   "drift": 0.1892
+  },
+  {
+   "name": "MITO:mtDNA genes",
+   "ladder": "powerhouse",
+   "unit": "genes",
+   "rung": 7.5038,
+   "drift": -0.4962
+  },
+  {
+   "name": "MITO:mtDNA protein genes",
+   "ladder": "powerhouse",
+   "unit": "genes",
+   "rung": 5.3302,
+   "drift": 0.3302
+  },
+  {
+   "name": "MITO:mito per cell",
+   "ladder": "powerhouse",
+   "unit": "count",
+   "rung": 14.3549,
+   "drift": 0.3549
+  },
+  {
+   "name": "MITO:mito diameter",
+   "ladder": "powerhouse",
+   "unit": "micron",
+   "rung": -0.5978,
+   "drift": 0.4022
+  },
+  {
+   "name": "MITO:mito length",
+   "ladder": "powerhouse",
+   "unit": "micron",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "MITO:ATP per synthase",
+   "ladder": "powerhouse",
+   "unit": "ATP/sec",
+   "rung": 11.853,
+   "drift": -0.147
+  },
+  {
+   "name": "MITO:membrane potential",
+   "ladder": "powerhouse",
+   "unit": "mV",
+   "rung": 10.6106,
+   "drift": -0.3894
+  },
+  {
+   "name": "MITO:endosymbiosis",
+   "ladder": "powerhouse",
+   "unit": "years ago",
+   "rung": 44.2862,
+   "drift": 0.2862
+  },
+  {
+   "name": "MITO:mitochondrial Eve",
+   "ladder": "powerhouse",
+   "unit": "years ago",
+   "rung": 24.8356,
+   "drift": -0.1644
+  },
+  {
+   "name": "MITO:body ATP turnover",
+   "ladder": "powerhouse",
+   "unit": "kg/day",
+   "rung": 8.6747,
+   "drift": -0.3253
+  },
+  {
+   "name": "MITO:cristae ATP synthase dimers",
+   "ladder": "powerhouse",
+   "unit": "per dimer",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "WHITE:solar-mass horizon",
+   "ladder": "time-reversed",
+   "unit": "m",
+   "rung": 16.6054,
+   "drift": -0.3946
+  },
+  {
+   "name": "WHITE:SgrA*-mass horizon",
+   "ladder": "time-reversed",
+   "unit": "m",
+   "rung": 48.3463,
+   "drift": 0.3463
+  },
+  {
+   "name": "WHITE:TON618-mass horizon",
+   "ladder": "time-reversed",
+   "unit": "m",
+   "rung": 68.3766,
+   "drift": 0.3766
+  },
+  {
+   "name": "WHITE:Planck remnant mass",
+   "ladder": "time-reversed",
+   "unit": "kg",
+   "rung": -36.6641,
+   "drift": 0.3359
+  },
+  {
+   "name": "WHITE:Planck length",
+   "ladder": "time-reversed",
+   "unit": "m",
+   "rung": -166.4766,
+   "drift": -0.4766
+  },
+  {
+   "name": "WHITE:Planck time",
+   "ladder": "time-reversed",
+   "unit": "s",
+   "rung": -207.0377,
+   "drift": -0.0377
+  },
+  {
+   "name": "WHITE:big-bang age",
+   "ladder": "time-reversed",
+   "unit": "s",
+   "rung": 84.3997,
+   "drift": 0.3997
+  },
+  {
+   "name": "WHITE:entries allowed",
+   "ladder": "time-reversed",
+   "unit": "count",
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "DOCTRINE:phi is always the confirmation",
+   "ladder": "doctrine",
+   "unit": "ratio",
+   "rung": 1.0,
+   "drift": 0
+  },
+  {
+   "name": "VOYNICH:surviving pages",
+   "ladder": "manuscript",
+   "unit": "pages",
+   "rung": 11.3892,
+   "drift": 0.3892
+  },
+  {
+   "name": "VOYNICH:glyphs",
+   "ladder": "manuscript",
+   "unit": "characters",
+   "rung": 25.0276,
+   "drift": 0.0276
+  },
+  {
+   "name": "VOYNICH:words",
+   "ladder": "manuscript",
+   "unit": "words",
+   "rung": 21.9141,
+   "drift": -0.0859
+  },
+  {
+   "name": "VOYNICH:alphabet glyphs",
+   "ladder": "manuscript",
+   "unit": "glyphs",
+   "rung": 6.6891,
+   "drift": -0.3109
+  },
+  {
+   "name": "VOYNICH:sections",
+   "ladder": "manuscript",
+   "unit": "sections",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "VOYNICH:plant illustrations",
+   "ladder": "manuscript",
+   "unit": "plants",
+   "rung": 9.8239,
+   "drift": -0.1761
+  },
+  {
+   "name": "VOYNICH:discovery year",
+   "ladder": "manuscript",
+   "unit": "CE",
+   "rung": 15.7018,
+   "drift": -0.2982
+  },
+  {
+   "name": "VOYNICH:vellum carbon date",
+   "ladder": "manuscript",
+   "unit": "CE",
+   "rung": 15.0836,
+   "drift": 0.0836
+  },
+  {
+   "name": "VOYNICH:typical word length",
+   "ladder": "manuscript",
+   "unit": "glyphs",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "VOYNICH:fibonacci word share",
+   "ladder": "manuscript",
+   "unit": "percent",
+   "rung": 7.9381,
+   "drift": -0.0619
+  },
+  {
+   "name": "VOYNICH:lines per page",
+   "ladder": "manuscript",
+   "unit": "lines",
+   "rung": 6.0064,
+   "drift": 0.0064
+  },
+  {
+   "name": "VOYNICH:transcription symbols",
+   "ladder": "rf1b-e EVA transcription",
+   "unit": "symbols",
+   "rung": 25.2441,
+   "drift": 0.2441
+  },
+  {
+   "name": "VOYNICH:analysis TON618 anchor",
+   "ladder": "his phi_ton618 analysis anchor",
+   "unit": "solar masses",
+   "rung": 50.7666,
+   "drift": -0.2334
+  },
+  {
+   "name": "VOYNICH:manuscript minus TON618",
+   "ladder": "manuscript rung below TON618",
+   "unit": "rungs",
+   "rung": 6.7321,
+   "drift": -0.2679
+  },
+  {
+   "name": "VOYNICH:transcription lines",
+   "ladder": "",
+   "unit": "lines",
+   "rung": 17.8505,
+   "drift": -0.1495
+  },
+  {
+   "name": "VOYNICH:transcription pages",
+   "ladder": "",
+   "unit": "pages",
+   "rung": 11.2735,
+   "drift": 0.2735
+  },
+  {
+   "name": "VOYNICH:fibonacci word share (EVA transcription)",
+   "ladder": "rf1b-e transcription",
+   "unit": "percent",
+   "rung": 8.2388,
+   "drift": 0.2388
+  },
+  {
+   "name": "VOYNICH:spectral stream symbols",
+   "ladder": "spectrum",
+   "unit": "symbols",
+   "rung": 25.2644,
+   "drift": 0.2644
+  },
+  {
+   "name": "VOYNICH:spectral alphabet",
+   "ladder": "spectrum",
+   "unit": "glyphs",
+   "rung": 6.849,
+   "drift": -0.151
+  },
+  {
+   "name": "VOYNICH:spectral peak rung",
+   "ladder": "spectrum",
+   "unit": "rungs",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "VOYNICH:spectral total power",
+   "ladder": "spectrum",
+   "unit": "power",
+   "rung": 48.9213,
+   "drift": -0.0787
+  },
+  {
+   "name": "VOYNICH:top mode frequency rung",
+   "ladder": "spectrum",
+   "unit": "rungs",
+   "rung": 6.589,
+   "drift": -0.411
+  },
+  {
+   "name": "VOYNICH:phi-transition weight down",
+   "ladder": "spectrum",
+   "unit": "ratio",
+   "rung": -1.0,
+   "drift": -0.0
+  },
+  {
+   "name": "VOYNICH:phi-transition weight up",
+   "ladder": "spectrum",
+   "unit": "ratio",
+   "rung": -2.0,
+   "drift": 0
+  },
+  {
+   "name": "VOYNICH:boundary residual excess",
+   "ladder": "residuals",
+   "unit": "energy",
+   "rung": -9.1272,
+   "drift": -0.1272
+  },
+  {
+   "name": "VOYNICH:permutation p-value",
+   "ladder": "residuals",
+   "unit": "p",
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "VOYNICH:zero-lag correlation",
+   "ladder": "residuals",
+   "unit": "corr",
+   "rung": -10.167,
+   "drift": -0.167
+  },
+  {
+   "name": "VOYNICH:primary mode wavelength",
+   "ladder": "residuals",
+   "unit": "symbols",
+   "rung": 23.824,
+   "drift": -0.176
+  },
+  {
+   "name": "VOYNICH:generator gap scale",
+   "ladder": "residuals",
+   "unit": "ratio",
+   "rung": 1.1112,
+   "drift": 0.1112
+  },
+  {
+   "name": "VOYNICH:folios",
+   "ladder": "residuals",
+   "unit": "folios",
+   "rung": 11.2735,
+   "drift": 0.2735
+  },
+  {
+   "name": "VOYNICH:transcription records",
+   "ladder": "residuals",
+   "unit": "records",
+   "rung": 17.8505,
+   "drift": -0.1495
+  },
+  {
+   "name": "VOYNICH:layout bands",
+   "ladder": "residuals",
+   "unit": "bands",
+   "rung": 6.2254,
+   "drift": 0.2254
+  },
+  {
+   "name": "VOYNICH:quire boundary excess",
+   "ladder": "codicology",
+   "unit": "energy",
+   "rung": -8.758,
+   "drift": 0.242
+  },
+  {
+   "name": "VOYNICH:bifolio boundary excess",
+   "ladder": "codicology",
+   "unit": "energy",
+   "rung": -9.7617,
+   "drift": 0.2383
+  },
+  {
+   "name": "VOYNICH:quire p-value",
+   "ladder": "codicology",
+   "unit": "p",
+   "rung": -6.9965,
+   "drift": 0.0035
+  },
+  {
+   "name": "VOYNICH:bifolio p-value",
+   "ladder": "codicology",
+   "unit": "p",
+   "rung": -10.1678,
+   "drift": -0.1678
+  },
+  {
+   "name": "VOYNICH:quires",
+   "ladder": "codicology",
+   "unit": "quires",
+   "rung": 5.4842,
+   "drift": 0.4842
+  },
+  {
+   "name": "VOYNICH:bifolio boundaries",
+   "ladder": "codicology",
+   "unit": "boundaries",
+   "rung": 8.211,
+   "drift": 0.211
+  },
+  {
+   "name": "VOYNICH:folios present",
+   "ladder": "codicology",
+   "unit": "folios",
+   "rung": 9.6314,
+   "drift": -0.3686
+  },
+  {
+   "name": "VOYNICH:missing folios",
+   "ladder": "codicology",
+   "unit": "folios",
+   "rung": 5.4842,
+   "drift": 0.4842
+  },
+  {
+   "name": "VOYNICH:wavelet scales",
+   "ladder": "codicology",
+   "unit": "scales",
+   "rung": 7.9106,
+   "drift": -0.0894
+  },
+  {
+   "name": "VOYNICH:bifolio-band energy fraction",
+   "ladder": "inverse filter",
+   "unit": "fraction",
+   "rung": -7.2217,
+   "drift": -0.2217
+  },
+  {
+   "name": "VOYNICH:secondary harmonic scale",
+   "ladder": "inverse filter",
+   "unit": "scale",
+   "rung": 15.4845,
+   "drift": 0.4845
+  },
+  {
+   "name": "VOYNICH:secondary band bins",
+   "ladder": "inverse filter",
+   "unit": "bins",
+   "rung": 7.3281,
+   "drift": 0.3281
+  },
+  {
+   "name": "VOYNICH:primary bifolio bands",
+   "ladder": "inverse filter",
+   "unit": "bands",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "VOYNICH:component file bytes",
+   "ladder": "inverse filter",
+   "unit": "bytes",
+   "rung": 28.1253,
+   "drift": 0.1253
+  },
+  {
+   "name": "VOYNICH:primary boundary correlation",
+   "ladder": "inverse filter",
+   "unit": "corr",
+   "rung": -11.793,
+   "drift": 0.207
+  },
+  {
+   "name": "VOYNICH:secondary boundary correlation",
+   "ladder": "inverse filter",
+   "unit": "corr",
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "VOYNICH:reconstruction layers",
+   "ladder": "reconstruction",
+   "unit": "layers",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "VOYNICH:bifolio-band energy share",
+   "ladder": "reconstruction",
+   "unit": "percent",
+   "rung": 2.2743,
+   "drift": 0.2743
+  },
+  {
+   "name": "VOYNICH:secondary harmonic energy share",
+   "ladder": "reconstruction",
+   "unit": "percent",
+   "rung": -4.6212,
+   "drift": 0.3788
+  },
+  {
+   "name": "VOYNICH:reconstruction array bytes",
+   "ladder": "reconstruction",
+   "unit": "bytes",
+   "rung": 30.2417,
+   "drift": 0.2417
+  },
+  {
+   "name": "VOYNICH:reconstruction paper pages",
+   "ladder": "reconstruction",
+   "unit": "pages",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "VOYNICH:bifolio band rung low",
+   "ladder": "reconstruction",
+   "unit": "rung",
+   "rung": 4.6475,
+   "drift": -0.3525
+  },
+  {
+   "name": "VOYNICH:bifolio band rung high",
+   "ladder": "reconstruction",
+   "unit": "rung",
+   "rung": 4.726,
+   "drift": -0.274
+  },
+  {
+   "name": "KRAKEN:worker A measured ratio",
+   "ladder": "kraken",
+   "unit": "ratio",
+   "rung": -2.2419,
+   "drift": -0.2419
+  },
+  {
+   "name": "KRAKEN:legacy pass ratio",
+   "ladder": "kraken",
+   "unit": "ratio",
+   "rung": -2.3549,
+   "drift": -0.3549
+  },
+  {
+   "name": "KRAKEN:median CT chunk ratio",
+   "ladder": "kraken",
+   "unit": "ratio",
+   "rung": -1.9567,
+   "drift": 0.0433
+  },
+  {
+   "name": "KRAKEN:zstd level",
+   "ladder": "kraken",
+   "unit": "level",
+   "rung": 6.4235,
+   "drift": 0.4235
+  },
+  {
+   "name": "KRAKEN:phi predictor weight",
+   "ladder": "kraken",
+   "unit": "ratio",
+   "rung": 1.0,
+   "drift": 0
+  },
+  {
+   "name": "KRAKEN:packed files now",
+   "ladder": "kraken",
+   "unit": "files",
+   "rung": 15.3433,
+   "drift": 0.3433
+  },
+  {
+   "name": "KRAKEN:packed bytes now",
+   "ladder": "kraken",
+   "unit": "bytes",
+   "rung": 43.3778,
+   "drift": 0.3778
+  },
+  {
+   "name": "KRAKEN:checksum errors",
+   "ladder": "kraken",
+   "unit": "errors",
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "KRAKEN:drivers alive",
+   "ladder": "kraken",
+   "unit": "drivers",
+   "rung": 5.1639,
+   "drift": 0.1639
+  },
+  {
+   "name": "KRAKEN:stream threshold",
+   "ladder": "kraken",
+   "unit": "bytes",
+   "rung": 41.7722,
+   "drift": -0.2278
+  },
+  {
+   "name": "OMNI:github kraken commit additions",
+   "ladder": "omni",
+   "unit": "additions",
+   "rung": 13.2443,
+   "drift": 0.2443
+  },
+  {
+   "name": "OMNI:github kraken commit files",
+   "ladder": "omni",
+   "unit": "files",
+   "rung": 2.8808,
+   "drift": -0.1192
+  },
+  {
+   "name": "OMNI:voynich decoded passages",
+   "ladder": "omni",
+   "unit": "passages",
+   "rung": 4.785,
+   "drift": -0.215
+  },
+  {
+   "name": "OMNI:cosmological rare-word passages",
+   "ladder": "omni",
+   "unit": "passages",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "OMNI:core-vocabulary passages",
+   "ladder": "omni",
+   "unit": "passages",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "OMNI:ledger seals",
+   "ladder": "omni",
+   "unit": "seals",
+   "rung": 5.7617,
+   "drift": -0.2383
+  },
+  {
+   "name": "OMNI:voynich shared skeleton words",
+   "ladder": "omni",
+   "unit": "word types",
+   "rung": 10.2241,
+   "drift": 0.2241
+  },
+  {
+   "name": "OMNI:voynich herbal exclusive types",
+   "ladder": "omni",
+   "unit": "word types",
+   "rung": 15.9677,
+   "drift": -0.0323
+  },
+  {
+   "name": "OMNI:voynich line-initial gallows bias",
+   "ladder": "omni",
+   "unit": "ratio",
+   "rung": 2.3512,
+   "drift": 0.3512
+  },
+  {
+   "name": "OMNI:voynich top phrase repeats",
+   "ladder": "omni",
+   "unit": "repeats",
+   "rung": 6.2254,
+   "drift": 0.2254
+  },
+  {
+   "name": "OMNI:voynich phrase-peak crossings",
+   "ladder": "omni",
+   "unit": "crossings",
+   "rung": 1.4404,
+   "drift": 0.4404
+  },
+  {
+   "name": "OMNI:kraken removal verified+removed",
+   "ladder": "omni",
+   "unit": "files",
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "OMNI:kraken krk integrity sweep",
+   "ladder": "omni",
+   "unit": "files",
+   "rung": 15.4318,
+   "drift": 0.4318
+  },
+  {
+   "name": "OMNI:kraken free space post-removal",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 8.1707,
+   "drift": 0.1707
+  },
+  {
+   "name": "OMNI:kraken redundant tar.gz",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 4.6364,
+   "drift": -0.3636
+  },
+  {
+   "name": "OMNI:kraken compression ceiling",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 8.3276,
+   "drift": 0.3276
+  },
+  {
+   "name": "OMNI:kraken tar.gz deleted",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 4.6364,
+   "drift": -0.3636
+  },
+  {
+   "name": "OMNI:kraken free space post-tar-delete",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 8.2506,
+   "drift": 0.2506
+  },
+  {
+   "name": "OMNI:greek column15 fibonacci-length words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.3724,
+   "drift": 0.3724
+  },
+  {
+   "name": "OMNI:voynich-greek fib signature delta",
+   "ladder": "omni",
+   "unit": "percentage points",
+   "rung": 2.6034,
+   "drift": -0.3966
+  },
+  {
+   "name": "OMNI:akashic doc fibonacci-length words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.365,
+   "drift": 0.365
+  },
+  {
+   "name": "OMNI:fib signature third corpus",
+   "ladder": "omni",
+   "unit": "corpora",
+   "rung": 2.283,
+   "drift": 0.283
+  },
+  {
+   "name": "OMNI:tyree scripts fibonacci-length tokens",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.6587,
+   "drift": -0.3413
+  },
+  {
+   "name": "OMNI:tyree scripts phi-token dominance",
+   "ladder": "omni",
+   "unit": "repeats",
+   "rung": 8.0009,
+   "drift": 0.0009
+  },
+  {
+   "name": "OMNI:fib signature fourth corpus",
+   "ladder": "omni",
+   "unit": "corpora",
+   "rung": 2.8808,
+   "drift": -0.1192
+  },
+  {
+   "name": "OMNI:voynich herbal fib-words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.199,
+   "drift": 0.199
+  },
+  {
+   "name": "OMNI:voynich astronomical fib-words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.1044,
+   "drift": 0.1044
+  },
+  {
+   "name": "OMNI:voynich biological fib-words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.1128,
+   "drift": 0.1128
+  },
+  {
+   "name": "OMNI:voynich cosmological fib-words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.036,
+   "drift": 0.036
+  },
+  {
+   "name": "OMNI:voynich pharmaceutical fib-words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.1788,
+   "drift": 0.1788
+  },
+  {
+   "name": "OMNI:voynich recipes fib-words",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 7.8827,
+   "drift": -0.1173
+  },
+  {
+   "name": "OMNI:voynich all-sections mode length",
+   "ladder": "omni",
+   "unit": "letters",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "OMNI:github voynich files",
+   "ladder": "omni",
+   "unit": "files",
+   "rung": 6.6043,
+   "drift": -0.3957
+  },
+  {
+   "name": "OMNI:github first-letters files",
+   "ladder": "omni",
+   "unit": "files",
+   "rung": 5.3302,
+   "drift": 0.3302
+  },
+  {
+   "name": "OMNI:workspace free space",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 8.5428,
+   "drift": -0.4572
+  },
+  {
+   "name": "OMNI:kraken drivers active",
+   "ladder": "omni",
+   "unit": "drivers",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "OMNI:kraken krk containers",
+   "ladder": "omni",
+   "unit": "files",
+   "rung": 15.4318,
+   "drift": 0.4318
+  },
+  {
+   "name": "OMNI:voynich corpus words",
+   "ladder": "omni",
+   "unit": "words",
+   "rung": 22.0418,
+   "drift": 0.0418
+  },
+  {
+   "name": "OMNI:decode corpora with fib signature",
+   "ladder": "omni",
+   "unit": "corpora",
+   "rung": 2.8808,
+   "drift": -0.1192
+  },
+  {
+   "name": "OMNI:storage target floor",
+   "ladder": "omni",
+   "unit": "GB",
+   "rung": 8.5084,
+   "drift": -0.4916
+  },
+  {
+   "name": "OMNI:records held at TON618",
+   "ladder": "omni",
+   "unit": "rung",
+   "rung": 8.211,
+   "drift": 0.211
+  },
+  {
+   "name": "OMNI:declassifier voynich base fib share",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.0731,
+   "drift": 0.0731
+  },
+  {
+   "name": "OMNI:declassifier greek column15 fib share",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.2553,
+   "drift": 0.2553
+  },
+  {
+   "name": "OMNI:declassifier voynich-greek fib delta",
+   "ladder": "omni",
+   "unit": "percentage points",
+   "rung": 3.107,
+   "drift": 0.107
+  },
+  {
+   "name": "OMNI:declassifier dna codon verification",
+   "ladder": "omni",
+   "unit": "codon types",
+   "rung": 8.6425,
+   "drift": -0.3575
+  },
+  {
+   "name": "OMNI:declassifier pulse phi-bin dominance",
+   "ladder": "omni",
+   "unit": "fraction",
+   "rung": -0.3789,
+   "drift": -0.3789
+  },
+  {
+   "name": "OMNI:declassifier hachimoji alphabet",
+   "ladder": "omni",
+   "unit": "symbols",
+   "rung": 4.3213,
+   "drift": 0.3213
+  },
+  {
+   "name": "OMNI:voynich top information line",
+   "ladder": "omni",
+   "unit": "bits",
+   "rung": 13.1648,
+   "drift": 0.1648
+  },
+  {
+   "name": "OMNI:voynich info-lines cluster",
+   "ladder": "omni",
+   "unit": "folios",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "OMNI:voynich info-lines fib signature",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 8.6555,
+   "drift": -0.3445
+  },
+  {
+   "name": "OMNI:voynich info-lines rung span",
+   "ladder": "omni",
+   "unit": "rungs",
+   "rung": -0.654,
+   "drift": 0.346
+  },
+  {
+   "name": "OMNI:voynich info-line score ratios phi-drift",
+   "ladder": "omni",
+   "unit": "percent",
+   "rung": 7.3883,
+   "drift": 0.3883
+  },
+  {
+   "name": "SEVEN:fibonacci clock one mark",
+   "ladder": "omni",
+   "unit": "rung",
+   "rung": 10.3216,
+   "drift": 0.3216
+  },
+  {
+   "name": "SEVEN:lucas fuel term psi",
+   "ladder": "omni",
+   "unit": "gap",
+   "rung": -100.0,
+   "drift": 0.0
+  },
+  {
+   "name": "SEVEN:e8 universality m2/m1",
+   "ladder": "omni",
+   "unit": "ratio",
+   "rung": 1.0,
+   "drift": 0
+  },
+  {
+   "name": "SEVEN:22 columns = 22 tRNA",
+   "ladder": "omni",
+   "unit": "count",
+   "rung": 6.4235,
+   "drift": 0.4235
+  },
+  {
+   "name": "SEVEN:zero-drift convergence",
+   "ladder": "omni",
+   "unit": "error",
+   "rung": -36.3277,
+   "drift": 0.3277
+  },
+  {
+   "name": "SEVEN:cartesian metadata layers",
+   "ladder": "omni",
+   "unit": "count",
+   "rung": 3.3446,
+   "drift": 0.3446
+  },
+  {
+   "name": "SEVEN:39551 components rung 22",
+   "ladder": "omni",
+   "unit": "count",
+   "rung": 21.9973,
+   "drift": 0.0027
+  },
+  {
+   "name": "GITHUB: vesuvius-progress-prize repo address",
+   "ladder": "omni",
+   "unit": "sha256-rung",
+   "rung": 368.1575,
+   "drift": 0.1575
+  },
+  {
+   "name": "KRAKEN Worker C: bytes saved (verified)",
+   "ladder": "omni",
+   "unit": "bytes",
+   "rung": 47.1024,
+   "drift": 0.1024
+  },
+  {
+   "name": "φ-gap ruler: TON618 mass ruler",
+   "ladder": "ton618",
+   "unit": "suns",
+   "rung": -3.2288,
+   "drift": -0.2288
+  },
+  {
+   "name": "φ-gap ruler: TON618 light ruler",
+   "ladder": "ton618",
+   "unit": "suns",
+   "rung": 4.0809,
+   "drift": 0.0809
+  },
+  {
+   "name": "Genome ladder: base pairs",
+   "ladder": "genome",
+   "unit": "bp",
+   "rung": 45.4819,
+   "drift": 0.4819
+  },
+  {
+   "name": "Genome ladder: protein-coding genes",
+   "ladder": "genome",
+   "unit": "genes",
+   "rung": 20.5803,
+   "drift": -0.4197
+  },
+  {
+   "name": "Genome ladder: chromosomes",
+   "ladder": "genome",
+   "unit": "chromosomes",
+   "rung": 7.9562,
+   "drift": -0.0438
+  },
+  {
+   "name": "Genome ladder: cCRE regulatory elements",
+   "ladder": "genome",
+   "unit": "elements",
+   "rung": 28.7098,
+   "drift": -0.2902
+  },
+  {
+   "name": "Genome ladder: TADs",
+   "ladder": "genome",
+   "unit": "tads",
+   "rung": 19.1399,
+   "drift": 0.1399
+  },
+  {
+   "name": "Genome ladder: ENCODE experiments",
+   "ladder": "genome",
+   "unit": "experiments",
+   "rung": 20.1166,
+   "drift": 0.1166
+  },
+  {
+   "name": "Genome ladder: bp per gene",
+   "ladder": "genome",
+   "unit": "bp",
+   "rung": 24.9016,
+   "drift": -0.0984
+  },
+  {
+   "name": "Genome ladder: genes per chromosome",
+   "ladder": "genome",
+   "unit": "genes",
+   "rung": 12.6251,
+   "drift": -0.3749
+  },
+  {
+   "name": "Genome rungs: mtDNA cross-check",
+   "ladder": "genome",
+   "unit": "rungs",
+   "rung": 20.1892,
+   "drift": 0.1892
+  },
+  {
+   "name": "Fold: 600-cell vertices",
+   "ladder": "fold",
+   "unit": "vertices",
+   "rung": 9.9488,
+   "drift": -0.0512
+  },
+  {
+   "name": "Fold: E8 roots",
+   "ladder": "fold",
+   "unit": "roots",
+   "rung": 11.3892,
+   "drift": 0.3892
+  },
+  {
+   "name": "Fold: E8 zero-profile count",
+   "ladder": "fold",
+   "unit": "roots",
+   "rung": 10.0502,
+   "drift": 0.0502
+  },
+  {
+   "name": "Ruler: TON618 mass ruler",
+   "ladder": "ruler",
+   "unit": "suns",
+   "rung": -3.2288,
+   "drift": -0.2288
+  },
+  {
+   "name": "Ruler: TON618 light ruler",
+   "ladder": "ruler",
+   "unit": "suns",
+   "rung": 4.0809,
+   "drift": 0.0809
+  },
+  {
+   "name": "Sample 05 record: mass bracket",
+   "ladder": "ton618",
+   "unit": "rungs",
+   "rung": 0.0095,
+   "drift": 0.0095
+  },
+  {
+   "name": "Sample 05 record: AU to km shift",
+   "ladder": "ton618",
+   "unit": "rungs",
+   "rung": 7.6191,
+   "drift": -0.3809
+  },
+  {
+   "name": "Sample 05 record: horizon lifetime",
+   "ladder": "ton618",
+   "unit": "years",
+   "rung": 474.2574,
+   "drift": 0.2574
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": null,
+   "ladder": null,
+   "unit": null,
+   "rung": 0,
+   "drift": 0
+  },
+  {
+   "name": "McMillan Tc λ=0.8",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 4.475471631492416,
+   "drift": 0.0
+  },
+  {
+   "name": "McMillan Tc λ=0.9",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 5.012491446386579,
+   "drift": 0.0
+  },
+  {
+   "name": "McMillan Tc λ=1.0",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 5.4244197948977435,
+   "drift": 0.0
+  },
+  {
+   "name": "McMillan Tc λ=1.1",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 5.750404710994365,
+   "drift": 0.0
+  },
+  {
+   "name": "McMillan Tc λ=1.2",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 6.014801896559334,
+   "drift": 0.0
+  },
+  {
+   "name": "McMillan Tc λ=1.3",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 6.233558412139057,
+   "drift": 0.0
+  },
+  {
+   "name": "McMillan Tc λ=1.4",
+   "ladder": "K",
+   "unit": "K",
+   "rung": 6.417553141894172,
+   "drift": 0.0
+  },
+  {
+   "name": "Fibonacci phinary rungs round-trip verified",
+   "ladder": "count",
+   "unit": "rungs",
+   "rung": 5.7616803616502255,
+   "drift": 0.0
+  },
+  {
+   "name": "Phinary codec 214-number stress test zero mismatch",
+   "ladder": "count",
+   "unit": "numbers",
+   "rung": 11.15096457647776,
+   "drift": 0.0
+  },
+  {
+   "name": "Vesuvius trilogy phinary round-trip 99/310/266",
+   "ladder": "count",
+   "unit": "numbers",
+   "rung": 2.2830118285892795,
+   "drift": 0.0
+  },
+  {
+   "name": "Phi token budget 54 shares verified sums",
+   "ladder": "count",
+   "unit": "shares",
+   "rung": 8.289455576180394,
+   "drift": 0.0
+  }
+ ],
+ "seal_count": 107,
+ "entry_count": 439,
+ "snapshot_sha256": "d380f6c670ac3932c007ec332be3f95d0e4a16e3749c1f91578c9bd4b4ab4674"
+}
