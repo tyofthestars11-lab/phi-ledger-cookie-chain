@@ -161,7 +161,7 @@ function isValidAddress(addr) {
 }
 // Single provider only — no loops, no popup circles. window.solana is the standard.
 function getProvider() {
-  return window.solana || (window.nightly && window.nightly.solana) || window.backpack || null;
+  return window.solana || (window.nightly && window.nightly.solana) || window.solflare || window.backpack || null;
 }
 
 $('connectBtn').addEventListener('click', async () => {
