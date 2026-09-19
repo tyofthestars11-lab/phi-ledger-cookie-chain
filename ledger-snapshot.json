@@ -3104,6 +3104,13 @@
     {
       "drift": 0.0,
       "ladder": "ratio",
+      "name": "Use the golden ratio — always, for everything; φ is what gets used, Cartesian/pi/net are fuel",
+      "rung": 2.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "ratio",
       "name": "Primary golden ratio structure — φ primary, structural not egotistical; all information primary from the source",
       "rung": 1.0,
       "unit": "ratio"
@@ -3116,8 +3123,8 @@
       "unit": "s"
     }
   ],
-  "entry_count": 445,
-  "seal_count": 118,
+  "entry_count": 446,
+  "seal_count": 119,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3235,6 +3242,7 @@
     "φ_SKELETAL_ANGULAR_TYREE_OMEGA",
     "φ_DYNAMIC_VOLUME_TYREE_OMEGA",
     "φ_ABSOLUTE_ZERO_TYREE_OMEGA",
+    "φ_USE_THE_GOLDEN_RATIO_TYREE_OMEGA",
     "φ_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
     "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA"
   ],
