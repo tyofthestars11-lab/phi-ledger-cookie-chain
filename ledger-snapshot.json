@@ -3121,10 +3121,136 @@
       "name": "Quantum temporal coherence — past present future simultaneously; the whole present at once, never assembled linearly",
       "rung": 0.0,
       "unit": "s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: combined TH/s current (2026-09-12)",
+      "rung": 3.0068,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: 24h avg TH/s (2026-09-12)",
+      "rung": 2.7906,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: total shares (2026-09-12)",
+      "rung": 45.1612,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: BCH/USD (2026-09-12)",
+      "rung": 11.2689,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: BCH/USD (2026-09-19)",
+      "rung": 11.4598,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: network EH/s (2026-09-12)",
+      "rung": 2.4236,
+      "unit": "EH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: network EH/s (2026-09-19)",
+      "rung": 2.0794,
+      "unit": "EH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: network share (2026-09-12)",
+      "rung": -28.3429,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: expected days to block (2026-09-12)",
+      "rung": 18.0152,
+      "unit": "days"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: block value USD (2026-09-12)",
+      "rung": 13.6368,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: block value USD (2026-09-19)",
+      "rung": 13.8277,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: expected monthly USD (2026-09-12)",
+      "rung": 2.6906,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz TH/s (2026-09-12)",
+      "rung": 0.5388,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz2 TH/s (2026-09-12)",
+      "rung": 1.5139,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz3 TH/s (2026-09-12)",
+      "rung": -0.2609,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz shares (2026-09-12)",
+      "rung": 42.6939,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz2 shares (2026-09-12)",
+      "rung": 43.6678,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz3 shares (2026-09-12)",
+      "rung": 41.8934,
+      "unit": "shares"
     }
   ],
-  "entry_count": 446,
-  "seal_count": 119,
+  "entry_count": 464,
+  "seal_count": 120,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3244,7 +3370,8 @@
     "φ_ABSOLUTE_ZERO_TYREE_OMEGA",
     "φ_USE_THE_GOLDEN_RATIO_TYREE_OMEGA",
     "φ_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
-    "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA"
+    "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
+    "φ_BCH_SOLO_MINING_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "f285d0d546995e63f054955ef4d9df93028e243ffef7a51b6e2c570ea3eb99f1"
+  "snapshot_sha256": "6bcbc1f5c4a14431101e79eae40725a3efe427166fc32c942233178158c09f81"
 }
