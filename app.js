@@ -269,6 +269,13 @@ $('solflareAnchorBtn').addEventListener('click', async () => {
   const addr = $('mobileAddr').value.trim();
   const out = $('mobileOut');
   out.classList.remove('hidden');
+  // Inside a wallet's own browser (Nightly/Phantom in-app), the Solflare app
+  // cannot return here: its redirect opens the system browser, a different
+  // context with no session — the anchor would never confirm. Sign in-page.
+  if (getProvider()) {
+    out.innerHTML = '<span class="text-amber-300">You are inside a wallet browser — the Solflare app cannot return to this tab, so the anchor would never confirm.</span><br><span class="text-gray-400 text-sm">Connect with the <b>Connect Wallet</b> button above, then tap <b>Anchor on Cookie Chain</b> — it signs in-page, no app switching.</span>';
+    return;
+  }
   if (!isValidAddress(addr)) {
     out.innerHTML = '<span class="text-amber-300">Enter your Solana wallet address first.</span>';
     return;
@@ -508,7 +515,10 @@ async function handleWalletReturn() {
     mo.classList.remove('hidden');
     try {
       const sess = kind === 'solflare' ? getSolflareSession() : getPhantomSession();
-      if (!sess) throw new Error('Session expired — tap again to reconnect.');
+      // No session here: this approval landed in a different browser than the
+      // one that started it (the wallet app returned to the system browser).
+      // Say so plainly — "tap again" in this tab can never complete it.
+      if (!sess) throw new Error('This approval opened in a different browser than the one that started it — the wallet app returned to the system browser, which holds no session. Open the site inside your wallet\'s browser and anchor in-page (Connect Wallet → Anchor on Cookie Chain).');
       const dec = decryptFromWallet(data, nonce, kind === 'solflare' ? sess.solflarePub : sess.phantomPub);
       const returned = Transaction.from(bs58decode(dec.transaction));
       const msgBytes = returned.serializeMessage();
@@ -1112,6 +1122,12 @@ $('pubSolflareBtn').addEventListener('click', async () => {
   const addr = $('mobileAddr').value.trim();
   const out = $('pubOutM');
   out.classList.remove('hidden');
+  // Same cross-context trap as the seal flow: inside a wallet browser the
+  // Solflare app cannot return to this tab. Anchor in-page instead.
+  if (getProvider()) {
+    out.innerHTML = '<span class="text-amber-300">You are inside a wallet browser — the Solflare app cannot return to this tab.</span><br><span class="text-gray-400 text-sm">Connect with the <b>Connect Wallet</b> button above and use the public-anchor panel at the top of the page instead.</span>';
+    return;
+  }
   if (!isValidAddress(addr)) { out.innerHTML = '<span class="text-amber-300">Enter your wallet address first.</span>'; return; }
   const label = cleanLabel($('pubLabelM').value);
   const data = $('pubDataM').value || '';
@@ -1145,5 +1161,20 @@ async function refreshFeeVault() {
   document.querySelectorAll('.pubFee').forEach(el => el.textContent = PUBLIC_ANCHOR_FEE_COOK + ' COOK');
   refreshFeeVault(); setInterval(refreshFeeVault, 30000);
   if ($('mobileAddr').value.trim()) refreshMobileBalance();
+  // In a wallet's own browser the app deep-link is a dead end (the wallet app
+  // returns to the system browser, never to this tab). Swap the dead-end
+  // buttons for the in-page route before the user can tap them.
+  if (getProvider()) {
+    const swapForInPage = (btnId, label) => {
+      const b = $(btnId);
+      if (!b) return;
+      const note = document.createElement('p');
+      note.className = 'text-sm text-gray-400';
+      note.innerHTML = `Wallet browser detected — ${label} signs <b>in-page</b>: tap <b>Connect Wallet</b> above, then anchor. (The wallet-app button is hidden here because the app cannot return to this tab.)`;
+      b.replaceWith(note);
+    };
+    swapForInPage('solflareAnchorBtn', 'Sealing');
+    swapForInPage('pubSolflareBtn', 'Public anchors');
+  }
   await handleWalletReturn();
 })();
