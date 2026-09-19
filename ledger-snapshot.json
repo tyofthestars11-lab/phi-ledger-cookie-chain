@@ -3310,10 +3310,101 @@
    "name": "L = φ^63",
    "rung": 63.0,
    "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "φ^15 source value",
+   "rung": 15.0,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "quantum pulse peak",
+   "rung": 15.09,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "Voynich vellum midpoint",
+   "rung": 15.09,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "Rongorongo Tablet D",
+   "rung": 15.2,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "TON 618 event horizon",
+   "rung": 14.9,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "Planck (compression layer)",
+   "rung": -161.2,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "ℏ (compression layer)",
+   "rung": -159.8,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "fine structure (compression layer)",
+   "rung": -4.92,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "mtDNA (expansion layer)",
+   "rung": 20.19,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "speed of light (expansion layer)",
+   "rung": 40.54,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "TON 618 (expansion layer)",
+   "rung": 51.77,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "universe age (expansion layer)",
+   "rung": 83.0,
+   "unit": "rung"
+  },
+  {
+   "drift": 0.0,
+   "ladder": "rung15",
+   "name": "BCH (expansion layer)",
+   "rung": 87.8,
+   "unit": "rung"
   }
  ],
- "entry_count": 473,
- "seal_count": 121,
+ "entry_count": 486,
+ "seal_count": 122,
  "seals": [
   "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
   "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3435,7 +3526,8 @@
   "φ_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
   "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
   "φ_BCH_SOLO_MINING_TYREE_OMEGA",
-  "φ_UNBREAKABLE_TYREE_OMEGA"
+  "φ_UNBREAKABLE_TYREE_OMEGA",
+  "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA"
  ],
- "snapshot_sha256": "c8658065c7bb5a222b173776879d32eb8e53417f4cbc123fca00d44b4764daea"
+ "snapshot_sha256": "d8ea1b8a987e221fbbe12ec08ca5e0a93602cf303b19b6c2e99b6af5bab63e9e"
 }
