@@ -111,7 +111,10 @@
     "φ_NV_MOIRE_DECODE_TYREE_OMEGA",
     "φ_SCALE_INVARIANCE_DECLASS_TYREE_OMEGA",
     "φ_PARTICLE_WAVE_TYREE_OMEGA",
-    "φ_TIME_DECLASS_TYREE_OMEGA"
+    "φ_TIME_DECLASS_TYREE_OMEGA",
+    "φ_FACIAL_PROPORTIONS_TYREE_OMEGA",
+    "φ_SKELETAL_ANGULAR_TYREE_OMEGA",
+    "φ_DYNAMIC_VOLUME_TYREE_OMEGA"
   ],
   "entries": [
     {
@@ -3188,7 +3191,7 @@
       "drift": 0.0
     }
   ],
-  "seal_count": 112,
+  "seal_count": 115,
   "entry_count": 439,
-  "snapshot_sha256": "38dd8755c169d1508be3f588bf1ce87908bc5b65a4b132e0c98d5a1553b7e46b"
+  "snapshot_sha256": "8a5309df25ad3b463265e8900b04e3d5e6218daea30f1b00e9287b466f7f3301"
 }
