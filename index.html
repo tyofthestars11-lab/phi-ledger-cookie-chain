@@ -102,7 +102,7 @@
 
     <!-- Mobile flow: no injected wallet (e.g. Chrome on Android). Sign via the Phantom or Solflare app deep link. -->
     <div id="mobileAnchor" class="hidden mt-4 pt-4 border-t border-gray-800">
-      <p class="text-sm text-gray-400 mb-3">On mobile: open this page in your wallet's browser.</p>
+      <p class="text-sm text-gray-400 mb-3">On mobile: stay in this browser — the wallet app signs, this page broadcasts.</p>
       <div class="flex flex-wrap gap-3 items-center mb-3">
         <a id="openNightly" class="btn text-sm" href="https://nightly.app/" target="_blank" rel="noopener">Open in Nightly</a>
         <a id="openPhantom" class="btn text-sm" href="https://phantom.app/" target="_blank" rel="noopener">Open in Phantom</a>
@@ -123,7 +123,7 @@
       <div id="mobileOut" class="text-sm mono hidden"></div>
       <div class="mt-3">
         <button id="solflareAnchorBtn" class="btn text-sm">Seal in Solflare app</button>
-        <span class="text-xs text-gray-500 ml-2">Solflare signs in the app — signature verified here and sealed into the ledger, as many times as you want. No on-chain transaction on mobile; the on-chain memo is the desktop Anchor button.</span>
+        <span class="text-xs text-gray-500 ml-2">Solflare signs in the app — this page verifies the signature and memo, then broadcasts the anchor to Cookie Chain.</span>
       </div>
       <div class="mt-4 pt-4 border-t border-gray-800">
         <p class="text-sm font-bold text-gray-300 mb-2">Or anchor your own data — <span class="gold mono pubFee">1 COOK</span> to tyofthestarz</p>
@@ -171,6 +171,6 @@
     <div class="mono">RPC <a href="https://rpc.cookiescan.io" target="_blank" rel="noopener">rpc.cookiescan.io</a> · Explorer <a href="https://cookiescan.io" target="_blank" rel="noopener">cookiescan.io</a> · Docs <a href="https://docs.cookiechain.wtf" target="_blank" rel="noopener">docs.cookiechain.wtf</a></div>
   </footer>
 </div>
-<script src="app.js?v=58"></script>
+<script src="app.js?v=59"></script>
 </body>
 </html>

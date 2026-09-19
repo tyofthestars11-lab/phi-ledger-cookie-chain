@@ -566,6 +566,39 @@ async function handleWalletReturn() {
         return;
       }
       if (sigValid && isHis && isPhiMemo) {
+        // The wallet returned a signed, valid seal tx. If every program in it
+        // exists on Cookie Chain and the bytes are exactly our anchor, the
+        // page broadcasts it here — the app only signed. (This bypasses any
+        // injected provider that rewrites memos: what lands is byte-verified.)
+        const pendSeal = (pending && pending.seal) || '';
+        const expSealMemo = (snapshot && pendSeal)
+          ? `PHI-LEDGER|seal=${pendSeal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz` : null;
+        let broadcastable = false, bcWhy = '';
+        try {
+          const bc = expSealMemo ? await verifyBytesClean(returned, expSealMemo) : { clean: false, problems: ['no expected memo'] };
+          const mp = await missingPrograms(returned);
+          if (bc.clean && mp.missing.length === 0) broadcastable = true;
+          else bcWhy = 'bytes: ' + (bc.problems || []).join('; ') + (mp.missing.length ? ' | missing on-chain: ' + mp.missing.map(m => short(m, 8)).join(',') : '');
+        } catch (e) { bcWhy = shortErr(e); }
+        if (broadcastable) {
+          try {
+            mo.innerHTML = '<span class="text-gray-400">Signature verified — broadcasting your anchor to Cookie Chain…</span>';
+            const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: true, maxRetries: 5 });
+            mo.innerHTML = '<span class="text-gray-400">Confirming…</span>';
+            await connection.confirmTransaction(sig, 'confirmed');
+            const chainMemo = await readChainMemo(sig);
+            if (chainMemo !== expSealMemo) throw new Error('chain holds a different memo than the anchor — not sealed.');
+            const sealMatch = memoText.match(/seal=([^|]+)/);
+            mo.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${esc(sealMatch ? sealMatch[1] : pendSeal)}<br><a class="underline" href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+            try { if (typeof refreshBalance === 'function') refreshBalance(); } catch (e) {}
+            return;
+          } catch (e) {
+            mo.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span><br><span class="text-gray-500 text-xs">Signature was valid — nothing verifiable landed. Tap again to retry.</span>`;
+            return;
+          }
+        }
+        // Not broadcastable (e.g. wallet injected a foreign instruction):
+        // keep the verify-only seal — the approval is real, nothing lands.
         // Encode via the golden ratio: the verified approval as a φ seal.
         const sealMatch = memoText.match(/seal=([^|]+)/);
         const sealName = sealMatch ? sealMatch[1] : 'seal';
