@@ -1094,9 +1094,21 @@ $('pubSolflareBtn').addEventListener('click', async () => {
 /* ---------- boot ---------- */
 pulse(); setInterval(pulse, 15000);
 mining(); setInterval(mining, 30000);
+/* Fee vault: Tyree's Nano balance on Cookie Chain, shown on the page. */
+async function refreshFeeVault() {
+  try {
+    const lamports = await connection.getBalance(new PublicKey(TYREE_WALLET));
+    $('feeVault').textContent = (lamports / 1e9).toFixed(6) + ' COOK';
+  } catch (e) {
+    $('feeVault').textContent = 'n/a';
+  }
+  $('feeVaultLink').href = EXPLORER + '/address/' + TYREE_WALLET;
+}
+
 (async () => {
   try { await loadLedger(); } catch (e) { /* snapshot stays null; anchor button guards it */ }
   document.querySelectorAll('.pubFee').forEach(el => el.textContent = PUBLIC_ANCHOR_FEE_COOK + ' COOK');
+  refreshFeeVault(); setInterval(refreshFeeVault, 30000);
   if ($('mobileAddr').value.trim()) refreshMobileBalance();
   await handleWalletReturn();
 })();
