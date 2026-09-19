@@ -960,6 +960,15 @@ async function runAnchorEngine() {
       throw new Error('assembled transaction carries no valid signature — no fee spent.');
     }
     const sig = await broadcastAndVerify(finalTx, out, finalInfo);
+    // The chain arbitrates the memo: read back what actually landed and
+    // require it to be byte-identical to the anchor memo. "Anchored" means
+    // the chain holds exactly this memo — never a success screen on faith.
+    const chainMemo = await readChainMemo(sig);
+    if (chainMemo !== finalMemo) {
+      throw new Error('chain holds a different memo than the anchor (' +
+        (chainMemo === null ? 'no memo instruction found' : 'memo length ' + chainMemo.length + ' vs ' + finalMemo.length + ', content differs') +
+        ') — not sealed. The fee was spent; tap again to re-anchor.');
+    }
     anchorDone(out, sig, seal);
     refreshBalance();
   } catch (e) {
@@ -967,6 +976,29 @@ async function runAnchorEngine() {
     out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
   }
 }
+/* ---------- Chain memo read-back ---------- */
+// Reads the memo instruction back off the confirmed transaction and returns
+// its text, or null if no memo instruction is present. This is the final
+// arbiter: the anchor counts only if the chain holds exactly our memo.
+async function readChainMemo(sig) {
+  const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed', maxSupportedTransactionVersion: 0 });
+  const msg = txInfo && txInfo.transaction && txInfo.transaction.message;
+  const ixs = (msg && msg.instructions) || [];
+  // accountKeys may be strings or parsed objects depending on encoding
+  const keys = (msg && msg.accountKeys) || [];
+  const keyStr = k => (typeof k === 'string' ? k : (k && k.pubkey) || '');
+  for (const ix of ixs) {
+    const prog = keyStr(keys[ix.programIdIndex]);
+    if (prog === MEMO_PROGRAM) {
+      try {
+        const raw = Uint8Array.from(atob(ix.data), c => c.charCodeAt(0));
+        return new TextDecoder().decode(raw);
+      } catch (e) { return null; }
+    }
+  }
+  return null;
+}
+
 $('anchorBtn').addEventListener('click', runAnchorEngine);
 
 /* ---------- Public anchors: anyone anchors their data for a small COOK fee ----------
