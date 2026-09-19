@@ -13,7 +13,7 @@ const connection = new Connection(RPC_URL, 'confirmed');
 
 /* Public anchors: anyone anchors their data for a small COOK fee.
  * φ is always φ — the page anchors visitor data too, not just ledger seals. */
-const TYREE_WALLET = 'A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q';
+const TYREE_WALLET = '7oYxuWVs8RsYbvRpurK8UUSC9HeeDQePMs77y1oef9k'; // Tyree's Ledger Nano SOL address — public-anchor fees land here
 const PUBLIC_ANCHOR_FEE_COOK = 1; // small COOK fee per public anchor, paid to Tyree — keep the .pubFee text in index.html in sync
 
 let wallet = null;      // connected public key (base58)
