@@ -914,6 +914,7 @@ async function runAnchorEngine() {
   const out = $('anchorOut');
   out.classList.remove('hidden');
   let alterNote = '';
+  let broadcastHappened = false;
   const pubBytes = new PublicKey(wallet).toBytes();
   try {
     out.innerHTML = '<span class="text-gray-400">Building anchor transaction…</span>';
@@ -998,15 +999,19 @@ async function runAnchorEngine() {
     // the chain holds exactly this memo — never a success screen on faith.
     const chainMemo = await readChainMemo(sig);
     if (chainMemo !== finalMemo) {
+      broadcastHappened = true;
       throw new Error('chain holds a different memo than the anchor (' +
-        (chainMemo === null ? 'no memo instruction found' : 'memo length ' + chainMemo.length + ' vs ' + finalMemo.length + ', content differs') +
+        (chainMemo === null ? 'could not read the memo back' : 'memo length ' + chainMemo.length + ' vs ' + finalMemo.length + ', content differs') +
         ') — not sealed. The fee was spent; tap again to re-anchor.');
     }
     anchorDone(out, sig, seal);
     refreshBalance();
   } catch (e) {
     const full = (alterNote + String((e && e.message) || e)).slice(0, 900);
-    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">No fee was spent — the engine stops before broadcast whenever the bytes aren't exactly the anchor.</span>`;
+    const footer = broadcastHappened
+      ? 'The transaction was broadcast but the memo did not verify — the fee was spent.'
+      : 'Stopped before broadcast — no fee was spent.';
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">${footer}</span>`;
   }
 }
 /* ---------- Chain memo read-back ---------- */
@@ -1024,7 +1029,8 @@ async function readChainMemo(sig) {
     const prog = keyStr(keys[ix.programIdIndex]);
     if (prog === MEMO_PROGRAM) {
       try {
-        const raw = Uint8Array.from(atob(ix.data), c => c.charCodeAt(0));
+        // Solana serves raw instruction data as base58, not base64.
+        const raw = bs58decode(ix.data);
         return new TextDecoder().decode(raw);
       } catch (e) { return null; }
     }
