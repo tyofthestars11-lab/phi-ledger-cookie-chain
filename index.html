@@ -125,8 +125,44 @@
         <button id="solflareAnchorBtn" class="btn text-sm">Seal in Solflare app</button>
         <span class="text-xs text-gray-500 ml-2">Solflare signs in the app — signature verified here and sealed into the ledger, as many times as you want. No on-chain transaction on mobile; the on-chain memo is the desktop Anchor button.</span>
       </div>
+      <div class="mt-4 pt-4 border-t border-gray-800">
+        <p class="text-sm font-bold text-gray-300 mb-2">Or anchor your own data — <span class="gold mono pubFee">1 COOK</span> to tyofthestarz</p>
+        <div class="flex flex-wrap gap-3 items-end mb-3">
+          <div class="flex-1 min-w-[140px]">
+            <label class="text-xs text-gray-500">Label</label>
+            <input id="pubLabelM" class="w-full text-sm mt-1" placeholder="my-artwork-v1" maxlength="32">
+          </div>
+          <div class="flex-[2] min-w-[200px]">
+            <label class="text-xs text-gray-500">Your data (hashed in your browser)</label>
+            <input id="pubDataM" class="w-full text-sm mt-1" placeholder="paste text, a hash, a link…">
+          </div>
+        </div>
+        <div id="pubOutM" class="text-sm mono hidden"></div>
+        <div class="mt-2">
+          <button id="pubSolflareBtn" class="btn text-sm">Anchor mine in Solflare</button>
+          <span class="text-xs text-gray-500 ml-2">Signs in the app — your anchor broadcasts on-chain when you return.</span>
+        </div>
+      </div>
       <p id="mobileNoCook" class="text-xs text-yellow-500/90 hidden mt-2">No COOK on Cookie Chain at that address — bridge first: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></p>
     </div>
+  </div>
+
+  <!-- Public anchor: anyone anchors their data for a small COOK fee -->
+  <div class="card p-6 mb-6">
+    <h2 class="text-xl font-bold mb-1"><span class="gold">φ</span> Anchor Yours</h2>
+    <p class="text-sm text-gray-400 mb-4">φ is always φ — put your own data on Cookie Chain through this page. Your text is hashed (SHA-256) in your browser and never sent anywhere; the hash plus your label go on-chain as a memo, permanent and public. Costs <span class="gold mono pubFee">1 COOK</span> to tyofthestarz + a tiny network fee.</p>
+    <div class="flex flex-wrap gap-3 items-end mb-4">
+      <div class="flex-1 min-w-[160px]">
+        <label class="text-xs text-gray-500">Label</label>
+        <input id="pubLabel" class="w-full text-sm mt-1" placeholder="my-artwork-v1" maxlength="32">
+      </div>
+      <div class="flex-[2] min-w-[220px]">
+        <label class="text-xs text-gray-500">Your data (hashed in your browser)</label>
+        <input id="pubData" class="w-full text-sm mt-1" placeholder="paste text, a hash, a link…">
+      </div>
+      <button id="pubAnchorBtn" class="btn text-sm" disabled>Anchor mine</button>
+    </div>
+    <div id="pubOut" class="text-sm mono hidden"></div>
   </div>
 
   <footer class="text-xs text-gray-600 flex flex-wrap gap-x-6 gap-y-2 justify-between">
@@ -134,6 +170,6 @@
     <div class="mono">RPC <a href="https://rpc.cookiescan.io" target="_blank" rel="noopener">rpc.cookiescan.io</a> · Explorer <a href="https://cookiescan.io" target="_blank" rel="noopener">cookiescan.io</a> · Docs <a href="https://docs.cookiechain.wtf" target="_blank" rel="noopener">docs.cookiechain.wtf</a></div>
   </footer>
 </div>
-<script src="app.js?v=52"></script>
+<script src="app.js?v=53"></script>
 </body>
 </html>

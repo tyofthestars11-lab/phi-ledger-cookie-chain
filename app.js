@@ -8,8 +8,13 @@ const MEMO_PROGRAM = 'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo';
 const LIGHTHOUSE_PROGRAM = 'L2TExMFKdjpN9kozasaurPirfHy9P8sbXoAN1qA3S95'; // Phantom's protection injector
 const SOLOPOOL = 'https://solopool.eu/api/v1/bch/miner/bitcoincash:qp432rtl3cm0se35rdy6ye8ay2tfxas80y24ntf2vm';
 
-const { Connection, PublicKey, Transaction, TransactionInstruction } = solanaWeb3;
+const { Connection, PublicKey, Transaction, TransactionInstruction, SystemProgram } = solanaWeb3;
 const connection = new Connection(RPC_URL, 'confirmed');
+
+/* Public anchors: anyone anchors their data for a small COOK fee.
+ * φ is always φ — the page anchors visitor data too, not just ledger seals. */
+const TYREE_WALLET = 'A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q';
+const PUBLIC_ANCHOR_FEE_COOK = 1; // small COOK fee per public anchor, paid to Tyree — keep the .pubFee text in index.html in sync
 
 let wallet = null;      // connected public key (base58)
 let provider = null;    // injected wallet provider
@@ -202,6 +207,7 @@ $('connectBtn').addEventListener('click', async () => {
     $('connectBtn').textContent = 'Connected';
     $('connectBtn').disabled = true;
     $('anchorBtn').disabled = false;
+    $('pubAnchorBtn').disabled = false;
     refreshBalance();
     // Nightly on custom network: remind user
     if (p.isNightly === undefined && window.nightly) {
@@ -300,8 +306,8 @@ function getPhantomSession() {
 function setPhantomSession(session, phantomPub) {
   lsSet('phantom_session', session); lsSet('phantom_pubkey', phantomPub);
 }
-function setPendingSign(addr, seal, kind) {
-  lsSet('phantom_pending_sign', JSON.stringify({ addr, seal, kind: kind || 'phantom' }));
+function setPendingSign(addr, seal, kind, extra) {
+  lsSet('phantom_pending_sign', JSON.stringify({ addr, seal, kind: kind || 'phantom', extra: extra || null }));
   lsSet('anchorReroute', seal);
 }
 function getPendingSign() {
@@ -464,7 +470,13 @@ async function handleWalletReturn() {
         const po = $('mobileOut');
         $('mobileAnchor').classList.remove('hidden');
         if (po) po.classList.remove('hidden');
-        if (pending.kind === 'solflare') await solflareSignRequest(pending.addr, pending.seal, po || out);
+        const isPub = pending.extra && pending.extra.isPublic;
+        if (isPub) {
+          const pout = pending.extra.outId ? $(pending.extra.outId) : (po || out);
+          if (pout) pout.classList.remove('hidden');
+          await publicSignRequest(pending.addr, pending.extra.label, pending.extra.dataHash, pout, pending.kind);
+        }
+        else if (pending.kind === 'solflare') await solflareSignRequest(pending.addr, pending.seal, po || out);
         else await phantomSignRequest(pending.addr, pending.seal, po || out);
       } else if (out) {
         out.classList.remove('hidden');
@@ -525,6 +537,34 @@ async function handleWalletReturn() {
         } catch (e) {}
       }
       const isHis = expectedAddr && signerAddr === expectedAddr;
+      // --- Public anchor return: signature verified AND broadcast ---
+      // Unlike seal approvals (verify-only), a public anchor must land on-chain:
+      // the fee transfer + memo are atomic in the visitor's signed tx.
+      const isPublicReturn = pending && pending.extra && pending.extra.isPublic;
+      if (isPublicReturn) {
+        const expMemo = `PHI-LEDGER|public|${pending.extra.label}|sha256=${pending.extra.dataHash}|by=${pending.addr}`;
+        const pmo = (pending.extra.outId && $(pending.extra.outId)) || mo;
+        pmo.classList.remove('hidden');
+        const memoOk = memoText === expMemo;
+        if (!(sigValid && isHis && memoOk)) {
+          let why = 'the signature did not verify';
+          if (!sigValid) why = 'no valid ed25519 signature found in the returned bytes';
+          else if (!isHis) why = 'the signature is not from the expected wallet';
+          else why = 'the returned memo does not match your anchor';
+          pmo.innerHTML = `<span class="text-red-400">Not anchored:</span> <span class="text-gray-400">${esc(why)} — no fee spent.</span>`;
+          return;
+        }
+        try {
+          pmo.innerHTML = '<span class="text-gray-400">Signature verified — broadcasting your anchor to Cookie Chain…</span>';
+          const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: true, maxRetries: 5 });
+          pmo.innerHTML = '<span class="text-gray-400">Confirming…</span>';
+          await connection.confirmTransaction(sig, 'confirmed');
+          pmo.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">label:</span> ${esc(pending.extra.label)}<br><span class="text-gray-500">sha256:</span> <span class="text-xs break-all">${esc(pending.extra.dataHash)}</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+        } catch (e) {
+          pmo.innerHTML = `<span class="text-red-400">Broadcast failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span><br><span class="text-gray-500 text-xs">The signature was valid — tap again to retry (nothing was spent).</span>`;
+        }
+        return;
+      }
       if (sigValid && isHis && isPhiMemo) {
         // Encode via the golden ratio: the verified approval as a φ seal.
         const sealMatch = memoText.match(/seal=([^|]+)/);
@@ -929,11 +969,134 @@ async function runAnchorEngine() {
 }
 $('anchorBtn').addEventListener('click', runAnchorEngine);
 
+/* ---------- Public anchors: anyone anchors their data for a small COOK fee ----------
+ * The visitor's text is hashed (SHA-256) in their browser — never sent anywhere.
+ * One atomic tx: transfer PUBLIC_ANCHOR_FEE_COOK to Tyree + the PHI-LEDGER|public
+ * memo carrying label + hash + visitor address. Fee and memo land together or
+ * not at all. Desktop/wallet-browser signs in-page; mobile goes through the
+ * wallet app deep link and the return handler broadcasts the signed bytes. */
+async function sha256hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+const cleanLabel = s => (s || '').trim().replace(/[^A-Za-z0-9_-]/g, '').slice(0, 32);
+
+async function buildPublicAnchorTx(walletAddr, label, dataHash) {
+  const from = new PublicKey(walletAddr);
+  const memoText = `PHI-LEDGER|public|${label}|sha256=${dataHash}|by=${walletAddr}`;
+  const tx = new Transaction().add(
+    SystemProgram.transfer({
+      fromPubkey: from,
+      toPubkey: new PublicKey(TYREE_WALLET),
+      lamports: Math.round(PUBLIC_ANCHOR_FEE_COOK * 1e9),
+    }),
+    new TransactionInstruction({
+      keys: [{ pubkey: from, isSigner: true, isWritable: false }],
+      programId: new PublicKey(MEMO_PROGRAM),
+      data: new TextEncoder().encode(memoText),
+    })
+  );
+  tx.feePayer = from;
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
+  tx.recentBlockhash = blockhash;
+  tx._blockhashInfo = { blockhash, lastValidBlockHeight };
+  tx._memoText = memoText;
+  return tx;
+}
+
+function publicDone(out, sig, label, dataHash) {
+  out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">label:</span> ${esc(label)}<br><span class="text-gray-500">sha256:</span> <span class="text-xs break-all">${esc(dataHash)}</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+}
+
+async function runPublicAnchorEngine() {
+  if (!provider || !wallet) return;
+  const label = cleanLabel($('pubLabel').value);
+  const data = $('pubData').value || '';
+  const out = $('pubOut');
+  out.classList.remove('hidden');
+  if (!label) { out.innerHTML = '<span class="text-amber-300">Give your anchor a label first.</span>'; return; }
+  if (!data.trim()) { out.innerHTML = '<span class="text-amber-300">Paste the data to anchor first.</span>'; return; }
+  try {
+    out.innerHTML = '<span class="text-gray-400">Hashing in your browser — your data never leaves this page…</span>';
+    const dataHash = await sha256hex(data);
+    const bal = await connection.getBalance(new PublicKey(wallet));
+    if (bal < Math.round(PUBLIC_ANCHOR_FEE_COOK * 1e9) + 20000) {
+      out.innerHTML = `<span class="text-amber-300">Not enough COOK — you need ${PUBLIC_ANCHOR_FEE_COOK} COOK for the fee plus a little for the network fee.</span>`;
+      return;
+    }
+    out.innerHTML = '<span class="text-gray-400">Building… approve in your wallet.</span>';
+    const tx = await buildPublicAnchorTx(wallet, label, dataHash);
+    let signed = null;
+    if (typeof provider.signTransaction === 'function') {
+      signed = normalizeSignedTx(await provider.signTransaction(tx));
+    } else {
+      throw new Error('This wallet cannot sign transactions.');
+    }
+    if (!signed) throw new Error('Wallet returned nothing to broadcast — no fee spent.');
+    if (hexOf(signed.serializeMessage()) !== hexOf(tx.serializeMessage())) {
+      throw new Error('wallet altered the transaction bytes — no fee spent.');
+    }
+    if (!txSignatureVerifies(signed, wallet)) throw new Error('signature did not verify — no fee spent.');
+    const sig = await broadcastAndVerify(signed, out, tx._blockhashInfo);
+    publicDone(out, sig, label, dataHash);
+    refreshBalance();
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${esc(shortErr(e))}</span>`;
+  }
+}
+$('pubAnchorBtn').addEventListener('click', runPublicAnchorEngine);
+
+/* Mobile public anchor: same tx, approved in the wallet app via deep link. */
+async function publicSignRequest(addr, label, dataHash, out, kind) {
+  kind = kind || 'solflare';
+  const sess = kind === 'phantom' ? getPhantomSession() : getSolflareSession();
+  const wpub = sess ? (kind === 'phantom' ? sess.phantomPub : sess.solflarePub) : null;
+  const scheme = kind === 'phantom' ? PHANTOM_SCHEME : SOLFLARE_SCHEME;
+  const wname = kind === 'phantom' ? 'Phantom' : 'Solflare';
+  if (!sess) { (kind === 'phantom' ? phantomConnect : solflareConnect)(out); return; }
+  if (out) out.innerHTML = `<span class="text-gray-400">Opening ${wname}… approve the anchor in the app.</span>`;
+  const tx = await buildPublicAnchorTx(addr, label, dataHash); // fresh blockhash for the app
+  const b58 = bs58encode(tx.serialize({ requireAllSignatures: false, verifySignatures: false }));
+  const enc = encryptForWallet({ transaction: b58, session: sess.session }, wpub);
+  const dapp = getDappKeys();
+  const redirect = encodeURIComponent(phantomRedirect());
+  const q = `dapp_encryption_public_key=${dapp.pub}&nonce=${enc.nonceB58}&redirect_link=${redirect}&payload=${enc.payloadB58}`;
+  window.location.href = `${scheme}/signTransaction?${q}`; // straight into the app
+}
+function publicAnchorFlow(addr, label, dataHash, out, outId, kind) {
+  setPendingSign(addr, 'public:' + label, kind || 'solflare', { isPublic: true, label, dataHash, outId: outId || null });
+  try {
+    const sess = (kind === 'phantom') ? getPhantomSession() : getSolflareSession();
+    if (sess) publicSignRequest(addr, label, dataHash, out, kind || 'solflare');
+    else (kind === 'phantom' ? phantomConnect : solflareConnect)(out);
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span>`;
+  }
+}
+$('pubSolflareBtn').addEventListener('click', async () => {
+  const addr = $('mobileAddr').value.trim();
+  const out = $('pubOutM');
+  out.classList.remove('hidden');
+  if (!isValidAddress(addr)) { out.innerHTML = '<span class="text-amber-300">Enter your wallet address first.</span>'; return; }
+  const label = cleanLabel($('pubLabelM').value);
+  const data = $('pubDataM').value || '';
+  if (!label) { out.innerHTML = '<span class="text-amber-300">Give your anchor a label first.</span>'; return; }
+  if (!data.trim()) { out.innerHTML = '<span class="text-amber-300">Paste the data to anchor first.</span>'; return; }
+  try {
+    out.innerHTML = '<span class="text-gray-400">Hashing in your browser…</span>';
+    const dataHash = await sha256hex(data);
+    await publicAnchorFlow(addr, label, dataHash, out, 'pubOutM', 'solflare');
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span>`;
+  }
+});
+
 /* ---------- boot ---------- */
 pulse(); setInterval(pulse, 15000);
 mining(); setInterval(mining, 30000);
 (async () => {
   try { await loadLedger(); } catch (e) { /* snapshot stays null; anchor button guards it */ }
+  document.querySelectorAll('.pubFee').forEach(el => el.textContent = PUBLIC_ANCHOR_FEE_COOK + ' COOK');
   if ($('mobileAddr').value.trim()) refreshMobileBalance();
   await handleWalletReturn();
 })();
