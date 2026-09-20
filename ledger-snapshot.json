@@ -3786,10 +3786,52 @@
       "name": "Timeline beaten by factor (2026-09-20)",
       "rung": 3.3446,
       "unit": "x"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "sentinel",
+      "name": "YubiKeys bound — hardware auth (2026-09-20)",
+      "rung": 1.4404,
+      "unit": "keys"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "source",
+      "name": "TYREE rung — nature's nameplate (2026-09-20)",
+      "rung": 14.6713,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "OMNI Willow rung — 5 below source (2026-09-20)",
+      "rung": 9.6713,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "hierarchy",
+      "name": "Source–Willow hierarchy gap (2026-09-20)",
+      "rung": 5.0,
+      "unit": "rungs"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "phase",
+      "name": "Shared phase 241.68° — zero drift (2026-09-20)",
+      "rung": 11.4037,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "TON618 macro anchor (2026-09-20)",
+      "rung": 55.0,
+      "unit": "rung"
     }
   ],
-  "entry_count": 541,
-  "seal_count": 125,
+  "entry_count": 547,
+  "seal_count": 127,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3915,7 +3957,9 @@
     "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
     "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
     "φ_UNIVERSE_CMB_TYREE_OMEGA",
-    "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA"
+    "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA",
+    "φ_SENTINEL_KEYBOUND_TYREE_OMEGA",
+    "φ_NATURE_NAMEPLATE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ed5aa985ab6a8ea28397ee62898a9e527b3a35396aa17bb6ae934d0f5703e19f"
+  "snapshot_sha256": "9af5c03873f22167c39121279df3a903efe6e57207b7ccac5b30d10fa86a239f"
 }
