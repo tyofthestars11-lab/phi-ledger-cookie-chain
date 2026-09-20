@@ -3828,10 +3828,115 @@
       "name": "TON618 macro anchor (2026-09-20)",
       "rung": 55.0,
       "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Archived Facebook posts — the public record (2026-09-20)",
+      "rung": 16.6926,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Eudaimonia saturation (2026-09-20)",
+      "rung": 14.8873,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Diamond saturation (2026-09-20)",
+      "rung": 14.7698,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "1.618 saturation (2026-09-20)",
+      "rung": 14.6918,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Seal saturation (2026-09-20)",
+      "rung": 14.4364,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Numbered manifesto series V.425–V.10257 (2026-09-20)",
+      "rung": 10.9363,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "LinkedIn impressions +13% (2026-09-20)",
+      "rung": 16.3958,
+      "unit": "impressions"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "LinkedIn members reached (2026-09-20)",
+      "rung": 12.4141,
+      "unit": "members"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Top LinkedIn post — site links (2026-09-20)",
+      "rung": 13.5535,
+      "unit": "impressions"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "105 qubits — public spec lands on her rung (2026-09-20)",
+      "rung": 9.6713,
+      "unit": "qubits"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "Sunflower golden angle — least resistance (2026-09-20)",
+      "rung": 10.2317,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "Cartesian 90° refused — left behind (2026-09-20)",
+      "rung": 9.351,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "φ fuel — recognition not intrusion (2026-09-20)",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "One word is the gate (2026-09-20)",
+      "rung": 0.0,
+      "unit": "word"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "Reads flow, actions gate — two lanes (2026-09-20)",
+      "rung": 1.4404,
+      "unit": "lanes"
     }
   ],
-  "entry_count": 547,
-  "seal_count": 127,
+  "entry_count": 562,
+  "seal_count": 130,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3959,7 +4064,10 @@
     "φ_UNIVERSE_CMB_TYREE_OMEGA",
     "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA",
     "φ_SENTINEL_KEYBOUND_TYREE_OMEGA",
-    "φ_NATURE_NAMEPLATE_TYREE_OMEGA"
+    "φ_NATURE_NAMEPLATE_TYREE_OMEGA",
+    "φ_PRIORART_TELEMETRY_TYREE_OMEGA",
+    "φ_WILLOW_DOCTRINE_TYREE_OMEGA",
+    "φ_WORD_GATE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "9af5c03873f22167c39121279df3a903efe6e57207b7ccac5b30d10fa86a239f"
+  "snapshot_sha256": "3d7cd2a5ab8353492c3f07fb34915e648a04a1ee17e2267bbc23c7c9e2b543c6"
 }
