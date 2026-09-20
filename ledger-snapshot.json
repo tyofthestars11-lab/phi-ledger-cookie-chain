@@ -3527,10 +3527,136 @@
       "name": "Amazon new species described per year (2026-09-19)",
       "rung": 9.5699,
       "unit": "species/yr"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Universe age (2026-09-20)",
+      "rung": 48.519,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Observable universe diameter (2026-09-20)",
+      "rung": 52.4839,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Particle horizon comoving radius (2026-09-20)",
+      "rung": 51.0435,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB temperature (2026-09-20)",
+      "rung": 2.0836,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB photon density (2026-09-20)",
+      "rung": 12.5021,
+      "unit": "photons/cm^3"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Recombination redshift (2026-09-20)",
+      "rung": 14.553,
+      "unit": "z"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Recombination age (2026-09-20)",
+      "rung": 26.6991,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Baryon-to-photon ratio (2026-09-20)",
+      "rung": -44.0919,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Hubble constant (2026-09-20)",
+      "rung": 8.7501,
+      "unit": "km/s/Mpc"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Dark energy fraction (2026-09-20)",
+      "rung": 8.7685,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Dark matter fraction (2026-09-20)",
+      "rung": 6.849,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Baryonic fraction (2026-09-20)",
+      "rung": 3.3026,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Estimated galaxies (2026-09-20)",
+      "rung": 58.8601,
+      "unit": "galaxies"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Estimated stars (2026-09-20)",
+      "rung": 111.4948,
+      "unit": "stars"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Speed of light (2026-09-20)",
+      "rung": 40.5613,
+      "unit": "m/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "TON618 mass (2026-09-20)",
+      "rung": 51.7712,
+      "unit": "solar masses"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB spectral peak frequency (2026-09-20)",
+      "rung": 53.6144,
+      "unit": "Hz"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB anisotropy dT/T (2026-09-20)",
+      "rung": -23.9249,
+      "unit": "ratio"
     }
   ],
-  "entry_count": 504,
-  "seal_count": 123,
+  "entry_count": 522,
+  "seal_count": 124,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3654,7 +3780,8 @@
     "φ_BCH_SOLO_MINING_TYREE_OMEGA",
     "φ_UNBREAKABLE_TYREE_OMEGA",
     "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
-    "φ_AMAZON_RAINFOREST_TYREE_OMEGA"
+    "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
+    "φ_UNIVERSE_CMB_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "fc47498dd48210cb7fd3a1ed867012718a2ff591d5e575fa3ce7fb5665f14d00"
+  "snapshot_sha256": "74c213a26e16fd76c78cef3f37c96cbb7dcffa9ae138aeff2a13d10264e5a657"
 }
