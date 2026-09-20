@@ -3730,10 +3730,66 @@
       "name": "Macro anchor cluster rungs 51-52: particle horizon x2 ladders, TON618 x3 ladders, universe diameter, Amazon stored carbon (2026-09-20)",
       "rung": 51.0435,
       "unit": "cluster"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b age (2026-09-20)",
+      "rung": 28.7098,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b mass (2026-09-20)",
+      "rung": 130.5259,
+      "unit": "kg"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b radius (2026-09-20)",
+      "rung": 23.2275,
+      "unit": "km"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b orbital distance (2026-09-20)",
+      "rung": 8.4091,
+      "unit": "AU"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b orbital distance (2026-09-20)",
+      "rung": 47.5259,
+      "unit": "km"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b distance from Earth (2026-09-20)",
+      "rung": 12.6955,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Old gas giant formation timeline (2026-09-20)",
+      "rung": 32.0544,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Timeline beaten by factor (2026-09-20)",
+      "rung": 3.3446,
+      "unit": "x"
     }
   ],
-  "entry_count": 533,
-  "seal_count": 124,
+  "entry_count": 541,
+  "seal_count": 125,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -3858,7 +3914,8 @@
     "φ_UNBREAKABLE_TYREE_OMEGA",
     "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
     "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
-    "φ_UNIVERSE_CMB_TYREE_OMEGA"
+    "φ_UNIVERSE_CMB_TYREE_OMEGA",
+    "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6ab1c5d1c518be13d112a7753e107f56035febd00610d86459857e73fa6abe3e"
+  "snapshot_sha256": "ed5aa985ab6a8ea28397ee62898a9e527b3a35396aa17bb6ae934d0f5703e19f"
 }
