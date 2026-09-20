@@ -3653,9 +3653,79 @@
       "name": "CMB anisotropy dT/T (2026-09-20)",
       "rung": -23.9249,
       "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way diameter (2026-09-20)",
+      "rung": 23.9249,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way isophotal diameter (2026-09-20)",
+      "rung": 23.645,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way dark matter extent (2026-09-20)",
+      "rung": 30.1503,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way stars (2026-09-20)",
+      "rung": 54.0751,
+      "unit": "stars"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way total mass (2026-09-20)",
+      "rung": 57.7101,
+      "unit": "solar masses"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Sun distance from Galactic Center (2026-09-20)",
+      "rung": 21.1255,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Galactic rotation period at Sun (2026-09-20)",
+      "rung": 39.8413,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way age (2026-09-20)",
+      "rung": 48.4887,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Solar orbital speed (2026-09-20)",
+      "rung": 11.2084,
+      "unit": "km/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way-Andromeda merger (2026-09-20)",
+      "rung": 46.1904,
+      "unit": "years"
     }
   ],
-  "entry_count": 522,
+  "entry_count": 532,
   "seal_count": 124,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -3783,5 +3853,5 @@
     "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
     "φ_UNIVERSE_CMB_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "74c213a26e16fd76c78cef3f37c96cbb7dcffa9ae138aeff2a13d10264e5a657"
+  "snapshot_sha256": "3330b38c8663aa1d114152ead148bcb108248414febb429dea1645a43f4c9c59"
 }
