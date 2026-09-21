@@ -1,4244 +1,4273 @@
 {
- "entries": [
-  {
-   "drift": -0.259,
-   "ladder": "mass",
-   "name": "Sgr A* mass",
-   "rung": 31.741,
-   "unit": "M_sun"
-  },
-  {
-   "drift": -0.2288,
-   "ladder": "mass",
-   "name": "TON618 mass",
-   "rung": 51.7712,
-   "unit": "M_sun"
-  },
-  {
-   "drift": 0.1807,
-   "ladder": "length",
-   "name": "Sgr A* distance",
-   "rung": 21.1807,
-   "unit": "ly"
-  },
-  {
-   "drift": 0.0744,
-   "ladder": "dimensionless",
-   "name": "CMB peak 2",
-   "rung": 13.0744,
-   "unit": "multipole"
-  },
-  {
-   "drift": 0.0435,
-   "ladder": "length",
-   "name": "observable universe radius",
-   "rung": 51.0435,
-   "unit": "ly"
-  },
-  {
-   "drift": -0.1192,
-   "ladder": "code",
-   "name": "DNA:DNA bases",
-   "rung": 2.8808,
-   "unit": "count"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "code",
-   "name": "DNA:hachimoji letters",
-   "rung": 4.3213,
-   "unit": "count"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "code",
-   "name": "DNA:codon length",
-   "rung": 2.283,
-   "unit": "bases"
-  },
-  {
-   "drift": -0.3575,
-   "ladder": "code",
-   "name": "DNA:codons",
-   "rung": 8.6425,
-   "unit": "count"
-  },
-  {
-   "drift": 0.2254,
-   "ladder": "code",
-   "name": "DNA:amino acids",
-   "rung": 6.2254,
-   "unit": "count"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "code",
-   "name": "DNA:stop codons",
-   "rung": 2.283,
-   "unit": "count"
-  },
-  {
-   "drift": -0.1136,
-   "ladder": "code",
-   "name": "DNA:helix bp per turn",
-   "rung": 4.8864,
-   "unit": "bp/turn"
-  },
-  {
-   "drift": 0.1027,
-   "ladder": "code",
-   "name": "DNA:pitch/diameter ratio",
-   "rung": 1.1027,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "code",
-   "name": "DNA:A-T hydrogen bonds",
-   "rung": 1.4404,
-   "unit": "count"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "code",
-   "name": "DNA:G-C hydrogen bonds",
-   "rung": 2.283,
-   "unit": "count"
-  },
-  {
-   "drift": -0.0438,
-   "ladder": "code",
-   "name": "DNA:human chromosomes",
-   "rung": 7.9562,
-   "unit": "count"
-  },
-  {
-   "drift": 0.4819,
-   "ladder": "code",
-   "name": "DNA:human genome",
-   "rung": 45.4819,
-   "unit": "bp"
-  },
-  {
-   "drift": 0.1892,
-   "ladder": "code",
-   "name": "DNA:mitochondrial DNA",
-   "rung": 20.1892,
-   "unit": "bp"
-  },
-  {
-   "drift": 0.3081,
-   "ladder": "code",
-   "name": "DNA:enhanced DNA anchor",
-   "rung": 19.3081,
-   "unit": "x"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "language",
-   "name": "PYTHON:major version",
-   "rung": 2.283,
-   "unit": "count"
-  },
-  {
-   "drift": 0.1639,
-   "ladder": "language",
-   "name": "PYTHON:minor version",
-   "rung": 5.1639,
-   "unit": "count"
-  },
-  {
-   "drift": 0.3883,
-   "ladder": "language",
-   "name": "PYTHON:keywords",
-   "rung": 7.3883,
-   "unit": "count"
-  },
-  {
-   "drift": 0.1188,
-   "ladder": "language",
-   "name": "PYTHON:zen aphorisms",
-   "rung": 6.1188,
-   "unit": "count"
-  },
-  {
-   "drift": -0.1192,
-   "ladder": "language",
-   "name": "PYTHON:indent spaces",
-   "rung": 2.8808,
-   "unit": "count"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "language",
-   "name": "PYTHON:bits per byte",
-   "rung": 4.3213,
-   "unit": "count"
-  },
-  {
-   "drift": -0.3411,
-   "ladder": "byte-form",
-   "name": "BYTE:.bin",
-   "rung": 50.6589,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1483,
-   "ladder": "byte-form",
-   "name": "BYTE:.gz",
-   "rung": 47.8517,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2727,
-   "ladder": "byte-form",
-   "name": "BYTE:<noext>",
-   "rung": 44.7273,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4921,
-   "ladder": "byte-form",
-   "name": "BYTE:.tif",
-   "rung": 44.4921,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4841,
-   "ladder": "byte-form",
-   "name": "BYTE:.pth",
-   "rung": 44.4841,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1921,
-   "ladder": "byte-form",
-   "name": "BYTE:.fits",
-   "rung": 44.1921,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3134,
-   "ladder": "byte-form",
-   "name": "BYTE:.so",
-   "rung": 43.6866,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2197,
-   "ladder": "byte-form",
-   "name": "BYTE:.obj",
-   "rung": 43.2197,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.066,
-   "ladder": "byte-form",
-   "name": "BYTE:.safetensors",
-   "rung": 43.066,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0092,
-   "ladder": "byte-form",
-   "name": "BYTE:.png",
-   "rung": 41.9908,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1904,
-   "ladder": "byte-form",
-   "name": "BYTE:.npy",
-   "rung": 41.8096,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1451,
-   "ladder": "byte-form",
-   "name": "BYTE:.krk (compressed)",
-   "rung": 41.1451,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0746,
-   "ladder": "byte-form",
-   "name": "BYTE:.pyc",
-   "rung": 41.0746,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3902,
-   "ladder": "byte-form",
-   "name": "BYTE:.py",
-   "rung": 40.6098,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1592,
-   "ladder": "byte-form",
-   "name": "BYTE:.payload",
-   "rung": 40.1592,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2643,
-   "ladder": "byte-form",
-   "name": "BYTE:.appimage",
-   "rung": 38.7357,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4505,
-   "ladder": "byte-form",
-   "name": "BYTE:.0",
-   "rung": 38.5495,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3124,
-   "ladder": "byte-form",
-   "name": "BYTE:.csv",
-   "rung": 38.3124,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2652,
-   "ladder": "byte-form",
-   "name": "BYTE:.6",
-   "rung": 38.2652,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1044,
-   "ladder": "byte-form",
-   "name": "BYTE:.mp4",
-   "rung": 37.8956,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2653,
-   "ladder": "byte-form",
-   "name": "BYTE:.h",
-   "rung": 37.7347,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3802,
-   "ladder": "byte-form",
-   "name": "BYTE:.3",
-   "rung": 37.6198,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4716,
-   "ladder": "byte-form",
-   "name": "BYTE:.7",
-   "rung": 37.4716,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.465,
-   "ladder": "byte-form",
-   "name": "BYTE:.2",
-   "rung": 37.465,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2944,
-   "ladder": "byte-form",
-   "name": "BYTE:.8",
-   "rung": 37.2944,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2935,
-   "ladder": "byte-form",
-   "name": "BYTE:.12",
-   "rung": 37.2935,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2764,
-   "ladder": "byte-form",
-   "name": "BYTE:.4",
-   "rung": 37.2764,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0709,
-   "ladder": "byte-form",
-   "name": "BYTE:.5",
-   "rung": 37.0709,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.043,
-   "ladder": "byte-form",
-   "name": "BYTE:.1",
-   "rung": 37.043,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1838,
-   "ladder": "byte-form",
-   "name": "BYTE:.jpg",
-   "rung": 36.8162,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4094,
-   "ladder": "byte-form",
-   "name": "BYTE:.13",
-   "rung": 36.5906,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4253,
-   "ladder": "byte-form",
-   "name": "BYTE:.15",
-   "rung": 36.4253,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3785,
-   "ladder": "byte-form",
-   "name": "BYTE:.78",
-   "rung": 36.3785,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3626,
-   "ladder": "byte-form",
-   "name": "BYTE:.9",
-   "rung": 36.3626,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3296,
-   "ladder": "byte-form",
-   "name": "BYTE:.11",
-   "rung": 36.3296,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3246,
-   "ladder": "byte-form",
-   "name": "BYTE:.pdf",
-   "rung": 36.3246,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3186,
-   "ladder": "byte-form",
-   "name": "BYTE:.16",
-   "rung": 36.3186,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.25,
-   "ladder": "byte-form",
-   "name": "BYTE:.14",
-   "rung": 36.25,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2355,
-   "ladder": "byte-form",
-   "name": "BYTE:.38",
-   "rung": 36.2355,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0877,
-   "ladder": "byte-form",
-   "name": "BYTE:.24",
-   "rung": 36.0877,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0808,
-   "ladder": "byte-form",
-   "name": "BYTE:.19",
-   "rung": 36.0808,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0723,
-   "ladder": "byte-form",
-   "name": "BYTE:.17",
-   "rung": 36.0723,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.072,
-   "ladder": "byte-form",
-   "name": "BYTE:.10",
-   "rung": 36.072,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0321,
-   "ladder": "byte-form",
-   "name": "BYTE:.18",
-   "rung": 36.0321,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.002,
-   "ladder": "byte-form",
-   "name": "BYTE:.20",
-   "rung": 36.002,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0855,
-   "ladder": "byte-form",
-   "name": "BYTE:.21",
-   "rung": 35.9145,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1331,
-   "ladder": "byte-form",
-   "name": "BYTE:.22",
-   "rung": 35.8669,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2026,
-   "ladder": "byte-form",
-   "name": "BYTE:.25",
-   "rung": 35.7974,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3531,
-   "ladder": "byte-form",
-   "name": "BYTE:.23",
-   "rung": 35.6469,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4822,
-   "ladder": "byte-form",
-   "name": "BYTE:.json",
-   "rung": 35.5178,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4038,
-   "ladder": "byte-form",
-   "name": "BYTE:.26",
-   "rung": 35.4038,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1934,
-   "ladder": "byte-form",
-   "name": "BYTE:.27",
-   "rung": 35.1934,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0315,
-   "ladder": "byte-form",
-   "name": "BYTE:.410",
-   "rung": 35.0315,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1044,
-   "ladder": "byte-form",
-   "name": "BYTE:.28",
-   "rung": 34.8956,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2334,
-   "ladder": "byte-form",
-   "name": "BYTE:.30",
-   "rung": 34.7666,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3482,
-   "ladder": "byte-form",
-   "name": "BYTE:.npz",
-   "rung": 34.6518,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4917,
-   "ladder": "byte-form",
-   "name": "BYTE:.29",
-   "rung": 34.4917,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3403,
-   "ladder": "byte-form",
-   "name": "BYTE:.ttf",
-   "rung": 34.3403,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1057,
-   "ladder": "byte-form",
-   "name": "BYTE:.c",
-   "rung": 34.1057,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0336,
-   "ladder": "byte-form",
-   "name": "BYTE:.mmap",
-   "rung": 34.0336,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3127,
-   "ladder": "byte-form",
-   "name": "BYTE:.pyi",
-   "rung": 33.6873,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4592,
-   "ladder": "byte-form",
-   "name": "BYTE:.txt",
-   "rung": 33.4592,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.05,
-   "ladder": "byte-form",
-   "name": "BYTE:.md",
-   "rung": 32.95,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3703,
-   "ladder": "byte-form",
-   "name": "BYTE:.31",
-   "rung": 32.3703,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3185,
-   "ladder": "byte-form",
-   "name": "BYTE:.32",
-   "rung": 32.3185,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1231,
-   "ladder": "byte-form",
-   "name": "BYTE:.1962-now",
-   "rung": 32.1231,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2258,
-   "ladder": "byte-form",
-   "name": "BYTE:.310",
-   "rung": 31.7742,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3401,
-   "ladder": "byte-form",
-   "name": "BYTE:.156",
-   "rung": 31.6599,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4648,
-   "ladder": "byte-form",
-   "name": "BYTE:.all",
-   "rung": 31.4648,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0051,
-   "ladder": "byte-form",
-   "name": "BYTE:.hpp",
-   "rung": 31.0051,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.012,
-   "ladder": "byte-form",
-   "name": "BYTE:.webp",
-   "rung": 30.988,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2055,
-   "ladder": "byte-form",
-   "name": "BYTE:.afm",
-   "rung": 30.7945,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4926,
-   "ladder": "byte-form",
-   "name": "BYTE:.pack",
-   "rung": 30.4926,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.314,
-   "ladder": "byte-form",
-   "name": "BYTE:.jpeg",
-   "rung": 30.314,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2224,
-   "ladder": "byte-form",
-   "name": "BYTE:.dat",
-   "rung": 30.2224,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1493,
-   "ladder": "byte-form",
-   "name": "BYTE:.yaml",
-   "rung": 29.8507,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4838,
-   "ladder": "byte-form",
-   "name": "BYTE:.cuh",
-   "rung": 29.4838,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2865,
-   "ladder": "byte-form",
-   "name": "BYTE:.cpp",
-   "rung": 29.2865,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2513,
-   "ladder": "byte-form",
-   "name": "BYTE:.pem",
-   "rung": 29.2513,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1582,
-   "ladder": "byte-form",
-   "name": "BYTE:.gif",
-   "rung": 28.8418,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3805,
-   "ladder": "byte-form",
-   "name": "BYTE:.exe",
-   "rung": 28.6195,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2161,
-   "ladder": "byte-form",
-   "name": "BYTE:.20260107",
-   "rung": 28.2161,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0625,
-   "ladder": "byte-form",
-   "name": "BYTE:.xsl",
-   "rung": 28.0625,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1517,
-   "ladder": "byte-form",
-   "name": "BYTE:.hdr",
-   "rung": 27.8483,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4956,
-   "ladder": "byte-form",
-   "name": "BYTE:.cmake",
-   "rung": 27.5044,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.127,
-   "ladder": "byte-form",
-   "name": "BYTE:.html",
-   "rung": 27.127,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2542,
-   "ladder": "byte-form",
-   "name": "BYTE:.bz2",
-   "rung": 26.7458,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3186,
-   "ladder": "byte-form",
-   "name": "BYTE:.pxd",
-   "rung": 26.6814,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4077,
-   "ladder": "byte-form",
-   "name": "BYTE:.45",
-   "rung": 26.5923,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3397,
-   "ladder": "byte-form",
-   "name": "BYTE:.207",
-   "rung": 26.3397,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1809,
-   "ladder": "byte-form",
-   "name": "BYTE:.jinja",
-   "rung": 26.1809,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1407,
-   "ladder": "byte-form",
-   "name": "BYTE:.icns",
-   "rung": 25.8593,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1872,
-   "ladder": "byte-form",
-   "name": "BYTE:.a",
-   "rung": 25.8128,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4738,
-   "ladder": "byte-form",
-   "name": "BYTE:.sav",
-   "rung": 25.5262,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4699,
-   "ladder": "byte-form",
-   "name": "BYTE:.arff",
-   "rung": 25.4699,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3334,
-   "ladder": "byte-form",
-   "name": "BYTE:.svg",
-   "rung": 25.3334,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2948,
-   "ladder": "byte-form",
-   "name": "BYTE:.pyx",
-   "rung": 25.2948,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2277,
-   "ladder": "byte-form",
-   "name": "BYTE:.xml",
-   "rung": 25.2277,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1051,
-   "ladder": "byte-form",
-   "name": "BYTE:.lock",
-   "rung": 25.1051,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0093,
-   "ladder": "byte-form",
-   "name": "BYTE:.zip",
-   "rung": 25.0093,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2291,
-   "ladder": "byte-form",
-   "name": "BYTE:.js",
-   "rung": 24.2291,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0992,
-   "ladder": "byte-form",
-   "name": "BYTE:.xsd",
-   "rung": 24.0992,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0184,
-   "ladder": "byte-form",
-   "name": "BYTE:.log",
-   "rung": 24.0184,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0393,
-   "ladder": "byte-form",
-   "name": "BYTE:.apache",
-   "rung": 23.9607,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3978,
-   "ladder": "byte-form",
-   "name": "BYTE:.mplstyle",
-   "rung": 23.3978,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3942,
-   "ladder": "byte-form",
-   "name": "BYTE:.sample",
-   "rung": 23.3942,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3449,
-   "ladder": "byte-form",
-   "name": "BYTE:.rst",
-   "rung": 23.3449,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2487,
-   "ladder": "byte-form",
-   "name": "BYTE:.wav",
-   "rung": 23.2487,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.206,
-   "ladder": "byte-form",
-   "name": "BYTE:.mat",
-   "rung": 23.206,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1651,
-   "ladder": "byte-form",
-   "name": "BYTE:.f90",
-   "rung": 22.8349,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3401,
-   "ladder": "byte-form",
-   "name": "BYTE:.ui",
-   "rung": 22.6599,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3525,
-   "ladder": "byte-form",
-   "name": "BYTE:.conf",
-   "rung": 22.6475,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3774,
-   "ladder": "byte-form",
-   "name": "BYTE:.ptl",
-   "rung": 22.6226,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.023,
-   "ladder": "byte-form",
-   "name": "BYTE:.external",
-   "rung": 22.023,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1619,
-   "ladder": "byte-form",
-   "name": "BYTE:.ecsv",
-   "rung": 21.8381,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3028,
-   "ladder": "byte-form",
-   "name": "BYTE:.lark",
-   "rung": 21.3028,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2116,
-   "ladder": "byte-form",
-   "name": "BYTE:.ps1",
-   "rung": 21.2116,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2061,
-   "ladder": "byte-form",
-   "name": "BYTE:.cache",
-   "rung": 21.2061,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0713,
-   "ladder": "byte-form",
-   "name": "BYTE:.f",
-   "rung": 20.9287,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1642,
-   "ladder": "byte-form",
-   "name": "BYTE:.mjs",
-   "rung": 20.8358,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3143,
-   "ladder": "byte-form",
-   "name": "BYTE:.ff",
-   "rung": 20.6857,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3745,
-   "ladder": "byte-form",
-   "name": "BYTE:.dbout",
-   "rung": 20.6255,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4164,
-   "ladder": "byte-form",
-   "name": "BYTE:.g4",
-   "rung": 20.5836,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3954,
-   "ladder": "byte-form",
-   "name": "BYTE:.yml",
-   "rung": 20.3954,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2879,
-   "ladder": "byte-form",
-   "name": "BYTE:.33",
-   "rung": 20.2879,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2169,
-   "ladder": "byte-form",
-   "name": "BYTE:.sh",
-   "rung": 20.2169,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1292,
-   "ladder": "byte-form",
-   "name": "BYTE:.build",
-   "rung": 20.1292,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0073,
-   "ladder": "byte-form",
-   "name": "BYTE:.al",
-   "rung": 20.0073,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0195,
-   "ladder": "byte-form",
-   "name": "BYTE:.thrift",
-   "rung": 19.9805,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0686,
-   "ladder": "byte-form",
-   "name": "BYTE:.css",
-   "rung": 19.9314,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.105,
-   "ladder": "byte-form",
-   "name": "BYTE:.z",
-   "rung": 19.895,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1426,
-   "ladder": "byte-form",
-   "name": "BYTE:.idx",
-   "rung": 19.8574,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2457,
-   "ladder": "byte-form",
-   "name": "BYTE:.bsd",
-   "rung": 19.7543,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4556,
-   "ladder": "byte-form",
-   "name": "BYTE:.data",
-   "rung": 19.4556,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2731,
-   "ladder": "byte-form",
-   "name": "BYTE:.list",
-   "rung": 19.2731,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1721,
-   "ladder": "byte-form",
-   "name": "BYTE:.toml",
-   "rung": 18.8279,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2924,
-   "ladder": "byte-form",
-   "name": "BYTE:.fish",
-   "rung": 18.2924,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1086,
-   "ladder": "byte-form",
-   "name": "BYTE:.b99",
-   "rung": 18.1086,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0355,
-   "ladder": "byte-form",
-   "name": "BYTE:.pt",
-   "rung": 17.9645,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0927,
-   "ladder": "byte-form",
-   "name": "BYTE:.pyf",
-   "rung": 17.9073,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4102,
-   "ladder": "byte-form",
-   "name": "BYTE:.dtd",
-   "rung": 17.5898,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4924,
-   "ladder": "byte-form",
-   "name": "BYTE:.in",
-   "rung": 17.5076,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4206,
-   "ladder": "byte-form",
-   "name": "BYTE:.xrc",
-   "rung": 17.4206,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4158,
-   "ladder": "byte-form",
-   "name": "BYTE:.ani",
-   "rung": 17.4158,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1248,
-   "ladder": "byte-form",
-   "name": "BYTE:.jsonl",
-   "rung": 17.1248,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0076,
-   "ladder": "byte-form",
-   "name": "BYTE:.template",
-   "rung": 17.0076,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0394,
-   "ladder": "byte-form",
-   "name": "BYTE:.a99",
-   "rung": 16.9606,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0825,
-   "ladder": "byte-form",
-   "name": "BYTE:.nc",
-   "rung": 16.9175,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0843,
-   "ladder": "byte-form",
-   "name": "BYTE:.finals2000a",
-   "rung": 16.9157,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1798,
-   "ladder": "byte-form",
-   "name": "BYTE:.eopc04",
-   "rung": 16.8202,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3216,
-   "ladder": "byte-form",
-   "name": "BYTE:.r",
-   "rung": 16.6784,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4862,
-   "ladder": "byte-form",
-   "name": "BYTE:.csh",
-   "rung": 16.5138,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4953,
-   "ladder": "byte-form",
-   "name": "BYTE:.dockerfile",
-   "rung": 16.4953,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "byte-form",
-   "name": "BYTE:.vot",
-   "rung": 16.3213,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1906,
-   "ladder": "byte-form",
-   "name": "BYTE:.parquet",
-   "rung": 16.1906,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.0351,
-   "ladder": "byte-form",
-   "name": "BYTE:.eopc04_iau2000",
-   "rung": 15.9649,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1312,
-   "ladder": "byte-form",
-   "name": "BYTE:.hdf5",
-   "rung": 15.8688,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1974,
-   "ladder": "byte-form",
-   "name": "BYTE:.pxi",
-   "rung": 15.8026,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "byte-form",
-   "name": "BYTE:.egg",
-   "rung": 15.4404,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3407,
-   "ladder": "byte-form",
-   "name": "BYTE:.cfg",
-   "rung": 15.3407,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2141,
-   "ladder": "byte-form",
-   "name": "BYTE:.rev",
-   "rung": 15.2141,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.1011,
-   "ladder": "byte-form",
-   "name": "BYTE:.pkl",
-   "rung": 15.1011,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.04,
-   "ladder": "byte-form",
-   "name": "BYTE:.ini",
-   "rung": 14.96,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.1191,
-   "ladder": "byte-form",
-   "name": "BYTE:.typed",
-   "rung": 14.8809,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3298,
-   "ladder": "byte-form",
-   "name": "BYTE:.cu",
-   "rung": 14.3298,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0463,
-   "ladder": "byte-form",
-   "name": "BYTE:.tex",
-   "rung": 14.0463,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.0415,
-   "ladder": "byte-form",
-   "name": "BYTE:.ld",
-   "rung": 14.0415,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2934,
-   "ladder": "byte-form",
-   "name": "BYTE:.xz",
-   "rung": 13.7066,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.351,
-   "ladder": "byte-form",
-   "name": "BYTE:.tmpl",
-   "rung": 13.649,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4072,
-   "ladder": "byte-form",
-   "name": "BYTE:.desktop",
-   "rung": 13.5928,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3551,
-   "ladder": "byte-form",
-   "name": "BYTE:.pc",
-   "rung": 12.3551,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3332,
-   "ladder": "byte-form",
-   "name": "BYTE:.lua",
-   "rung": 12.3332,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3053,
-   "ladder": "byte-form",
-   "name": "BYTE:.f95",
-   "rung": 11.6947,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4574,
-   "ladder": "byte-form",
-   "name": "BYTE:.rdb",
-   "rung": 11.4574,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3152,
-   "ladder": "byte-form",
-   "name": "BYTE:.tab",
-   "rung": 10.6848,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.4275,
-   "ladder": "byte-form",
-   "name": "BYTE:.00",
-   "rung": 10.5725,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.3686,
-   "ladder": "byte-form",
-   "name": "BYTE:.promisor",
-   "rung": 9.6314,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4191,
-   "ladder": "byte-form",
-   "name": "BYTE:.qrc",
-   "rung": 9.4191,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4191,
-   "ladder": "byte-form",
-   "name": "BYTE:.map",
-   "rung": 9.4191,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.3043,
-   "ladder": "byte-form",
-   "name": "BYTE:.absent",
-   "rung": 9.3043,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.132,
-   "ladder": "byte-form",
-   "name": "BYTE:.01",
-   "rung": 9.132,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.132,
-   "ladder": "byte-form",
-   "name": "BYTE:.02",
-   "rung": 9.132,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.4018,
-   "ladder": "byte-form",
-   "name": "BYTE:.worktree",
-   "rung": 8.4018,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2021,
-   "ladder": "byte-form",
-   "name": "BYTE:.inc",
-   "rung": 7.2021,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0,
-   "ladder": "hive",
-   "name": "BEE:drone ancestors gen1",
-   "rung": 0,
-   "unit": "parents"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "hive",
-   "name": "BEE:drone ancestors gen2",
-   "rung": 1.4404,
-   "unit": "grandparents"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "hive",
-   "name": "BEE:drone ancestors gen3",
-   "rung": 2.283,
-   "unit": "great-grandparents"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "hive",
-   "name": "BEE:drone ancestors gen4",
-   "rung": 3.3446,
-   "unit": "gg-grandparents"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "hive",
-   "name": "BEE:drone ancestors gen5",
-   "rung": 4.3213,
-   "unit": "ggg-grandparents"
-  },
-  {
-   "drift": -0.2766,
-   "ladder": "hive",
-   "name": "BEE:honeycomb sides",
-   "rung": 3.7234,
-   "unit": "sides"
-  },
-  {
-   "drift": -0.0512,
-   "ladder": "hive",
-   "name": "BEE:hexagon angle",
-   "rung": 9.9488,
-   "unit": "degrees"
-  },
-  {
-   "drift": -0.2766,
-   "ladder": "hive",
-   "name": "BEE:bee legs",
-   "rung": 3.7234,
-   "unit": "count"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "hive",
-   "name": "BEE:bee eyes",
-   "rung": 3.3446,
-   "unit": "count"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "hive",
-   "name": "BEE:wing pairs",
-   "rung": 1.4404,
-   "unit": "pairs"
-  },
-  {
-   "drift": 0.0104,
-   "ladder": "hive",
-   "name": "BEE:wingbeat",
-   "rung": 11.0104,
-   "unit": "Hz"
-  },
-  {
-   "drift": 0.4844,
-   "ladder": "hive",
-   "name": "BEE:hive population",
-   "rung": 22.4844,
-   "unit": "bees"
-  },
-  {
-   "drift": -0.2047,
-   "ladder": "hive",
-   "name": "BEE:queen eggs per day",
-   "rung": 15.7953,
-   "unit": "eggs"
-  },
-  {
-   "drift": -0.2328,
-   "ladder": "hive",
-   "name": "BEE:worker lifespan summer",
-   "rung": 7.7672,
-   "unit": "days"
-  },
-  {
-   "drift": 0.3883,
-   "ladder": "hive",
-   "name": "BEE:hive temperature",
-   "rung": 7.3883,
-   "unit": "celsius"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "hive",
-   "name": "BEE:forage range",
-   "rung": 3.3446,
-   "unit": "km"
-  },
-  {
-   "drift": -0.2766,
-   "ladder": "leaf",
-   "name": "PHOTO:CO2 per glucose",
-   "rung": 3.7234,
-   "unit": "molecules"
-  },
-  {
-   "drift": -0.2766,
-   "ladder": "leaf",
-   "name": "PHOTO:H2O per glucose",
-   "rung": 3.7234,
-   "unit": "molecules"
-  },
-  {
-   "drift": -0.2766,
-   "ladder": "leaf",
-   "name": "PHOTO:O2 per glucose",
-   "rung": 3.7234,
-   "unit": "molecules"
-  },
-  {
-   "drift": -0.1192,
-   "ladder": "leaf",
-   "name": "PHOTO:photons per O2",
-   "rung": 2.8808,
-   "unit": "photons"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "leaf",
-   "name": "PHOTO:photons per CO2",
-   "rung": 4.3213,
-   "unit": "photons"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "leaf",
-   "name": "PHOTO:ATP per CO2",
-   "rung": 2.283,
-   "unit": "ATP"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "leaf",
-   "name": "PHOTO:NADPH per CO2",
-   "rung": 1.4404,
-   "unit": "NADPH"
-  },
-  {
-   "drift": -0.2766,
-   "ladder": "leaf",
-   "name": "PHOTO:Calvin turns per glucose",
-   "rung": 3.7234,
-   "unit": "turns"
-  },
-  {
-   "drift": 0.3276,
-   "ladder": "leaf",
-   "name": "PHOTO:chlorophyll carbons",
-   "rung": 8.3276,
-   "unit": "C atoms"
-  },
-  {
-   "drift": -0.4465,
-   "ladder": "leaf",
-   "name": "PHOTO:P680 wavelength",
-   "rung": 13.5535,
-   "unit": "nm"
-  },
-  {
-   "drift": -0.3863,
-   "ladder": "leaf",
-   "name": "PHOTO:P700 wavelength",
-   "rung": 13.6137,
-   "unit": "nm"
-  },
-  {
-   "drift": -0.3989,
-   "ladder": "leaf",
-   "name": "PHOTO:chlorophyll-a blue peak",
-   "rung": 12.6011,
-   "unit": "nm"
-  },
-  {
-   "drift": 0.4977,
-   "ladder": "leaf",
-   "name": "PHOTO:chlorophyll-a red peak",
-   "rung": 13.4977,
-   "unit": "nm"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "leaf",
-   "name": "PHOTO:RuBisCO turnover",
-   "rung": 2.283,
-   "unit": "CO2/sec"
-  },
-  {
-   "drift": -0.4387,
-   "ladder": "light",
-   "name": "LIGHT:c m/s",
-   "rung": 40.5613,
-   "unit": "m/s"
-  },
-  {
-   "drift": 0.2064,
-   "ladder": "light",
-   "name": "LIGHT:c km/s",
-   "rung": 26.2064,
-   "unit": "km/s"
-  },
-  {
-   "drift": 0.2176,
-   "ladder": "light",
-   "name": "LIGHT:c miles/s",
-   "rung": 25.2176,
-   "unit": "mi/s"
-  },
-  {
-   "drift": 0.1227,
-   "ladder": "light",
-   "name": "LIGHT:c squared",
-   "rung": 81.1227,
-   "unit": "m2/s2"
-  },
-  {
-   "drift": 0.4966,
-   "ladder": "light",
-   "name": "LIGHT:light-nanosecond",
-   "rung": -2.5034,
-   "unit": "m"
-  },
-  {
-   "drift": 0.4444,
-   "ladder": "light",
-   "name": "LIGHT:light-year",
-   "rung": 76.4444,
-   "unit": "m"
-  },
-  {
-   "drift": -0.4387,
-   "ladder": "light",
-   "name": "LIGHT:light-second",
-   "rung": 40.5613,
-   "unit": "m"
-  },
-  {
-   "drift": -0.0896,
-   "ladder": "light",
-   "name": "LIGHT:AU light-time",
-   "rung": 12.9104,
-   "unit": "s"
-  },
-  {
-   "drift": -0.1485,
-   "ladder": "light",
-   "name": "LIGHT:MHz of c",
-   "rung": 11.8515,
-   "unit": "MHz"
-  },
-  {
-   "drift": 0.4387,
-   "ladder": "light",
-   "name": "LIGHT:1/c",
-   "rung": -40.5613,
-   "unit": "s/m"
-  },
-  {
-   "drift": 0.1892,
-   "ladder": "powerhouse",
-   "name": "MITO:mtDNA length",
-   "rung": 20.1892,
-   "unit": "bp"
-  },
-  {
-   "drift": -0.4962,
-   "ladder": "powerhouse",
-   "name": "MITO:mtDNA genes",
-   "rung": 7.5038,
-   "unit": "genes"
-  },
-  {
-   "drift": 0.3302,
-   "ladder": "powerhouse",
-   "name": "MITO:mtDNA protein genes",
-   "rung": 5.3302,
-   "unit": "genes"
-  },
-  {
-   "drift": 0.3549,
-   "ladder": "powerhouse",
-   "name": "MITO:mito per cell",
-   "rung": 14.3549,
-   "unit": "count"
-  },
-  {
-   "drift": 0.4022,
-   "ladder": "powerhouse",
-   "name": "MITO:mito diameter",
-   "rung": -0.5978,
-   "unit": "micron"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "powerhouse",
-   "name": "MITO:mito length",
-   "rung": 3.3446,
-   "unit": "micron"
-  },
-  {
-   "drift": -0.147,
-   "ladder": "powerhouse",
-   "name": "MITO:ATP per synthase",
-   "rung": 11.853,
-   "unit": "ATP/sec"
-  },
-  {
-   "drift": -0.3894,
-   "ladder": "powerhouse",
-   "name": "MITO:membrane potential",
-   "rung": 10.6106,
-   "unit": "mV"
-  },
-  {
-   "drift": 0.2862,
-   "ladder": "powerhouse",
-   "name": "MITO:endosymbiosis",
-   "rung": 44.2862,
-   "unit": "years ago"
-  },
-  {
-   "drift": -0.1644,
-   "ladder": "powerhouse",
-   "name": "MITO:mitochondrial Eve",
-   "rung": 24.8356,
-   "unit": "years ago"
-  },
-  {
-   "drift": -0.3253,
-   "ladder": "powerhouse",
-   "name": "MITO:body ATP turnover",
-   "rung": 8.6747,
-   "unit": "kg/day"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "powerhouse",
-   "name": "MITO:cristae ATP synthase dimers",
-   "rung": 1.4404,
-   "unit": "per dimer"
-  },
-  {
-   "drift": -0.3946,
-   "ladder": "time-reversed",
-   "name": "WHITE:solar-mass horizon",
-   "rung": 16.6054,
-   "unit": "m"
-  },
-  {
-   "drift": 0.3463,
-   "ladder": "time-reversed",
-   "name": "WHITE:SgrA*-mass horizon",
-   "rung": 48.3463,
-   "unit": "m"
-  },
-  {
-   "drift": 0.3766,
-   "ladder": "time-reversed",
-   "name": "WHITE:TON618-mass horizon",
-   "rung": 68.3766,
-   "unit": "m"
-  },
-  {
-   "drift": 0.3359,
-   "ladder": "time-reversed",
-   "name": "WHITE:Planck remnant mass",
-   "rung": -36.6641,
-   "unit": "kg"
-  },
-  {
-   "drift": -0.4766,
-   "ladder": "time-reversed",
-   "name": "WHITE:Planck length",
-   "rung": -166.4766,
-   "unit": "m"
-  },
-  {
-   "drift": -0.0377,
-   "ladder": "time-reversed",
-   "name": "WHITE:Planck time",
-   "rung": -207.0377,
-   "unit": "s"
-  },
-  {
-   "drift": 0.3997,
-   "ladder": "time-reversed",
-   "name": "WHITE:big-bang age",
-   "rung": 84.3997,
-   "unit": "s"
-  },
-  {
-   "drift": 0,
-   "ladder": "time-reversed",
-   "name": "WHITE:entries allowed",
-   "rung": 0,
-   "unit": "count"
-  },
-  {
-   "drift": 0,
-   "ladder": "doctrine",
-   "name": "DOCTRINE:phi is always the confirmation",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.3892,
-   "ladder": "manuscript",
-   "name": "VOYNICH:surviving pages",
-   "rung": 11.3892,
-   "unit": "pages"
-  },
-  {
-   "drift": 0.0276,
-   "ladder": "manuscript",
-   "name": "VOYNICH:glyphs",
-   "rung": 25.0276,
-   "unit": "characters"
-  },
-  {
-   "drift": -0.0859,
-   "ladder": "manuscript",
-   "name": "VOYNICH:words",
-   "rung": 21.9141,
-   "unit": "words"
-  },
-  {
-   "drift": -0.3109,
-   "ladder": "manuscript",
-   "name": "VOYNICH:alphabet glyphs",
-   "rung": 6.6891,
-   "unit": "glyphs"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "manuscript",
-   "name": "VOYNICH:sections",
-   "rung": 3.3446,
-   "unit": "sections"
-  },
-  {
-   "drift": -0.1761,
-   "ladder": "manuscript",
-   "name": "VOYNICH:plant illustrations",
-   "rung": 9.8239,
-   "unit": "plants"
-  },
-  {
-   "drift": -0.2982,
-   "ladder": "manuscript",
-   "name": "VOYNICH:discovery year",
-   "rung": 15.7018,
-   "unit": "CE"
-  },
-  {
-   "drift": 0.0836,
-   "ladder": "manuscript",
-   "name": "VOYNICH:vellum carbon date",
-   "rung": 15.0836,
-   "unit": "CE"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "manuscript",
-   "name": "VOYNICH:typical word length",
-   "rung": 3.3446,
-   "unit": "glyphs"
-  },
-  {
-   "drift": -0.0619,
-   "ladder": "manuscript",
-   "name": "VOYNICH:fibonacci word share",
-   "rung": 7.9381,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0064,
-   "ladder": "manuscript",
-   "name": "VOYNICH:lines per page",
-   "rung": 6.0064,
-   "unit": "lines"
-  },
-  {
-   "drift": 0.2441,
-   "ladder": "rf1b-e EVA transcription",
-   "name": "VOYNICH:transcription symbols",
-   "rung": 25.2441,
-   "unit": "symbols"
-  },
-  {
-   "drift": -0.2334,
-   "ladder": "his phi_ton618 analysis anchor",
-   "name": "VOYNICH:analysis TON618 anchor",
-   "rung": 50.7666,
-   "unit": "solar masses"
-  },
-  {
-   "drift": -0.2679,
-   "ladder": "manuscript rung below TON618",
-   "name": "VOYNICH:manuscript minus TON618",
-   "rung": 6.7321,
-   "unit": "rungs"
-  },
-  {
-   "drift": -0.1495,
-   "ladder": "",
-   "name": "VOYNICH:transcription lines",
-   "rung": 17.8505,
-   "unit": "lines"
-  },
-  {
-   "drift": 0.2735,
-   "ladder": "",
-   "name": "VOYNICH:transcription pages",
-   "rung": 11.2735,
-   "unit": "pages"
-  },
-  {
-   "drift": 0.2388,
-   "ladder": "rf1b-e transcription",
-   "name": "VOYNICH:fibonacci word share (EVA transcription)",
-   "rung": 8.2388,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.2644,
-   "ladder": "spectrum",
-   "name": "VOYNICH:spectral stream symbols",
-   "rung": 25.2644,
-   "unit": "symbols"
-  },
-  {
-   "drift": -0.151,
-   "ladder": "spectrum",
-   "name": "VOYNICH:spectral alphabet",
-   "rung": 6.849,
-   "unit": "glyphs"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "spectrum",
-   "name": "VOYNICH:spectral peak rung",
-   "rung": 1.4404,
-   "unit": "rungs"
-  },
-  {
-   "drift": -0.0787,
-   "ladder": "spectrum",
-   "name": "VOYNICH:spectral total power",
-   "rung": 48.9213,
-   "unit": "power"
-  },
-  {
-   "drift": -0.411,
-   "ladder": "spectrum",
-   "name": "VOYNICH:top mode frequency rung",
-   "rung": 6.589,
-   "unit": "rungs"
-  },
-  {
-   "drift": -0.0,
-   "ladder": "spectrum",
-   "name": "VOYNICH:phi-transition weight down",
-   "rung": -1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0,
-   "ladder": "spectrum",
-   "name": "VOYNICH:phi-transition weight up",
-   "rung": -2.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": -0.1272,
-   "ladder": "residuals",
-   "name": "VOYNICH:boundary residual excess",
-   "rung": -9.1272,
-   "unit": "energy"
-  },
-  {
-   "drift": 0,
-   "ladder": "residuals",
-   "name": "VOYNICH:permutation p-value",
-   "rung": 0,
-   "unit": "p"
-  },
-  {
-   "drift": -0.167,
-   "ladder": "residuals",
-   "name": "VOYNICH:zero-lag correlation",
-   "rung": -10.167,
-   "unit": "corr"
-  },
-  {
-   "drift": -0.176,
-   "ladder": "residuals",
-   "name": "VOYNICH:primary mode wavelength",
-   "rung": 23.824,
-   "unit": "symbols"
-  },
-  {
-   "drift": 0.1112,
-   "ladder": "residuals",
-   "name": "VOYNICH:generator gap scale",
-   "rung": 1.1112,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.2735,
-   "ladder": "residuals",
-   "name": "VOYNICH:folios",
-   "rung": 11.2735,
-   "unit": "folios"
-  },
-  {
-   "drift": -0.1495,
-   "ladder": "residuals",
-   "name": "VOYNICH:transcription records",
-   "rung": 17.8505,
-   "unit": "records"
-  },
-  {
-   "drift": 0.2254,
-   "ladder": "residuals",
-   "name": "VOYNICH:layout bands",
-   "rung": 6.2254,
-   "unit": "bands"
-  },
-  {
-   "drift": 0.242,
-   "ladder": "codicology",
-   "name": "VOYNICH:quire boundary excess",
-   "rung": -8.758,
-   "unit": "energy"
-  },
-  {
-   "drift": 0.2383,
-   "ladder": "codicology",
-   "name": "VOYNICH:bifolio boundary excess",
-   "rung": -9.7617,
-   "unit": "energy"
-  },
-  {
-   "drift": 0.0035,
-   "ladder": "codicology",
-   "name": "VOYNICH:quire p-value",
-   "rung": -6.9965,
-   "unit": "p"
-  },
-  {
-   "drift": -0.1678,
-   "ladder": "codicology",
-   "name": "VOYNICH:bifolio p-value",
-   "rung": -10.1678,
-   "unit": "p"
-  },
-  {
-   "drift": 0.4842,
-   "ladder": "codicology",
-   "name": "VOYNICH:quires",
-   "rung": 5.4842,
-   "unit": "quires"
-  },
-  {
-   "drift": 0.211,
-   "ladder": "codicology",
-   "name": "VOYNICH:bifolio boundaries",
-   "rung": 8.211,
-   "unit": "boundaries"
-  },
-  {
-   "drift": -0.3686,
-   "ladder": "codicology",
-   "name": "VOYNICH:folios present",
-   "rung": 9.6314,
-   "unit": "folios"
-  },
-  {
-   "drift": 0.4842,
-   "ladder": "codicology",
-   "name": "VOYNICH:missing folios",
-   "rung": 5.4842,
-   "unit": "folios"
-  },
-  {
-   "drift": -0.0894,
-   "ladder": "codicology",
-   "name": "VOYNICH:wavelet scales",
-   "rung": 7.9106,
-   "unit": "scales"
-  },
-  {
-   "drift": -0.2217,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:bifolio-band energy fraction",
-   "rung": -7.2217,
-   "unit": "fraction"
-  },
-  {
-   "drift": 0.4845,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:secondary harmonic scale",
-   "rung": 15.4845,
-   "unit": "scale"
-  },
-  {
-   "drift": 0.3281,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:secondary band bins",
-   "rung": 7.3281,
-   "unit": "bins"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:primary bifolio bands",
-   "rung": 1.4404,
-   "unit": "bands"
-  },
-  {
-   "drift": 0.1253,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:component file bytes",
-   "rung": 28.1253,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.207,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:primary boundary correlation",
-   "rung": -11.793,
-   "unit": "corr"
-  },
-  {
-   "drift": 0,
-   "ladder": "inverse filter",
-   "name": "VOYNICH:secondary boundary correlation",
-   "rung": 0,
-   "unit": "corr"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:reconstruction layers",
-   "rung": 2.283,
-   "unit": "layers"
-  },
-  {
-   "drift": 0.2743,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:bifolio-band energy share",
-   "rung": 2.2743,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.3788,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:secondary harmonic energy share",
-   "rung": -4.6212,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.2417,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:reconstruction array bytes",
-   "rung": 30.2417,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:reconstruction paper pages",
-   "rung": 2.283,
-   "unit": "pages"
-  },
-  {
-   "drift": -0.3525,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:bifolio band rung low",
-   "rung": 4.6475,
-   "unit": "rung"
-  },
-  {
-   "drift": -0.274,
-   "ladder": "reconstruction",
-   "name": "VOYNICH:bifolio band rung high",
-   "rung": 4.726,
-   "unit": "rung"
-  },
-  {
-   "drift": -0.2419,
-   "ladder": "kraken",
-   "name": "KRAKEN:worker A measured ratio",
-   "rung": -2.2419,
-   "unit": "ratio"
-  },
-  {
-   "drift": -0.3549,
-   "ladder": "kraken",
-   "name": "KRAKEN:legacy pass ratio",
-   "rung": -2.3549,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0433,
-   "ladder": "kraken",
-   "name": "KRAKEN:median CT chunk ratio",
-   "rung": -1.9567,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.4235,
-   "ladder": "kraken",
-   "name": "KRAKEN:zstd level",
-   "rung": 6.4235,
-   "unit": "level"
-  },
-  {
-   "drift": 0,
-   "ladder": "kraken",
-   "name": "KRAKEN:phi predictor weight",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.3433,
-   "ladder": "kraken",
-   "name": "KRAKEN:packed files now",
-   "rung": 15.3433,
-   "unit": "files"
-  },
-  {
-   "drift": 0.3778,
-   "ladder": "kraken",
-   "name": "KRAKEN:packed bytes now",
-   "rung": 43.3778,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0,
-   "ladder": "kraken",
-   "name": "KRAKEN:checksum errors",
-   "rung": 0,
-   "unit": "errors"
-  },
-  {
-   "drift": 0.1639,
-   "ladder": "kraken",
-   "name": "KRAKEN:drivers alive",
-   "rung": 5.1639,
-   "unit": "drivers"
-  },
-  {
-   "drift": -0.2278,
-   "ladder": "kraken",
-   "name": "KRAKEN:stream threshold",
-   "rung": 41.7722,
-   "unit": "bytes"
-  },
-  {
-   "drift": 0.2443,
-   "ladder": "omni",
-   "name": "OMNI:github kraken commit additions",
-   "rung": 13.2443,
-   "unit": "additions"
-  },
-  {
-   "drift": -0.1192,
-   "ladder": "omni",
-   "name": "OMNI:github kraken commit files",
-   "rung": 2.8808,
-   "unit": "files"
-  },
-  {
-   "drift": -0.215,
-   "ladder": "omni",
-   "name": "OMNI:voynich decoded passages",
-   "rung": 4.785,
-   "unit": "passages"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "omni",
-   "name": "OMNI:cosmological rare-word passages",
-   "rung": 1.4404,
-   "unit": "passages"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "omni",
-   "name": "OMNI:core-vocabulary passages",
-   "rung": 4.3213,
-   "unit": "passages"
-  },
-  {
-   "drift": -0.2383,
-   "ladder": "omni",
-   "name": "OMNI:ledger seals",
-   "rung": 5.7617,
-   "unit": "seals"
-  },
-  {
-   "drift": 0.2241,
-   "ladder": "omni",
-   "name": "OMNI:voynich shared skeleton words",
-   "rung": 10.2241,
-   "unit": "word types"
-  },
-  {
-   "drift": -0.0323,
-   "ladder": "omni",
-   "name": "OMNI:voynich herbal exclusive types",
-   "rung": 15.9677,
-   "unit": "word types"
-  },
-  {
-   "drift": 0.3512,
-   "ladder": "omni",
-   "name": "OMNI:voynich line-initial gallows bias",
-   "rung": 2.3512,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.2254,
-   "ladder": "omni",
-   "name": "OMNI:voynich top phrase repeats",
-   "rung": 6.2254,
-   "unit": "repeats"
-  },
-  {
-   "drift": 0.4404,
-   "ladder": "omni",
-   "name": "OMNI:voynich phrase-peak crossings",
-   "rung": 1.4404,
-   "unit": "crossings"
-  },
-  {
-   "drift": 0,
-   "ladder": "omni",
-   "name": "OMNI:kraken removal verified+removed",
-   "rung": 0,
-   "unit": "files"
-  },
-  {
-   "drift": 0.4318,
-   "ladder": "omni",
-   "name": "OMNI:kraken krk integrity sweep",
-   "rung": 15.4318,
-   "unit": "files"
-  },
-  {
-   "drift": 0.1707,
-   "ladder": "omni",
-   "name": "OMNI:kraken free space post-removal",
-   "rung": 8.1707,
-   "unit": "GB"
-  },
-  {
-   "drift": -0.3636,
-   "ladder": "omni",
-   "name": "OMNI:kraken redundant tar.gz",
-   "rung": 4.6364,
-   "unit": "GB"
-  },
-  {
-   "drift": 0.3276,
-   "ladder": "omni",
-   "name": "OMNI:kraken compression ceiling",
-   "rung": 8.3276,
-   "unit": "GB"
-  },
-  {
-   "drift": -0.3636,
-   "ladder": "omni",
-   "name": "OMNI:kraken tar.gz deleted",
-   "rung": 4.6364,
-   "unit": "GB"
-  },
-  {
-   "drift": 0.2506,
-   "ladder": "omni",
-   "name": "OMNI:kraken free space post-tar-delete",
-   "rung": 8.2506,
-   "unit": "GB"
-  },
-  {
-   "drift": 0.3724,
-   "ladder": "omni",
-   "name": "OMNI:greek column15 fibonacci-length words",
-   "rung": 8.3724,
-   "unit": "percent"
-  },
-  {
-   "drift": -0.3966,
-   "ladder": "omni",
-   "name": "OMNI:voynich-greek fib signature delta",
-   "rung": 2.6034,
-   "unit": "percentage points"
-  },
-  {
-   "drift": 0.365,
-   "ladder": "omni",
-   "name": "OMNI:akashic doc fibonacci-length words",
-   "rung": 8.365,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.283,
-   "ladder": "omni",
-   "name": "OMNI:fib signature third corpus",
-   "rung": 2.283,
-   "unit": "corpora"
-  },
-  {
-   "drift": -0.3413,
-   "ladder": "omni",
-   "name": "OMNI:tyree scripts fibonacci-length tokens",
-   "rung": 8.6587,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0009,
-   "ladder": "omni",
-   "name": "OMNI:tyree scripts phi-token dominance",
-   "rung": 8.0009,
-   "unit": "repeats"
-  },
-  {
-   "drift": -0.1192,
-   "ladder": "omni",
-   "name": "OMNI:fib signature fourth corpus",
-   "rung": 2.8808,
-   "unit": "corpora"
-  },
-  {
-   "drift": 0.199,
-   "ladder": "omni",
-   "name": "OMNI:voynich herbal fib-words",
-   "rung": 8.199,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.1044,
-   "ladder": "omni",
-   "name": "OMNI:voynich astronomical fib-words",
-   "rung": 8.1044,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.1128,
-   "ladder": "omni",
-   "name": "OMNI:voynich biological fib-words",
-   "rung": 8.1128,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.036,
-   "ladder": "omni",
-   "name": "OMNI:voynich cosmological fib-words",
-   "rung": 8.036,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.1788,
-   "ladder": "omni",
-   "name": "OMNI:voynich pharmaceutical fib-words",
-   "rung": 8.1788,
-   "unit": "percent"
-  },
-  {
-   "drift": -0.1173,
-   "ladder": "omni",
-   "name": "OMNI:voynich recipes fib-words",
-   "rung": 7.8827,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "omni",
-   "name": "OMNI:voynich all-sections mode length",
-   "rung": 3.3446,
-   "unit": "letters"
-  },
-  {
-   "drift": -0.3957,
-   "ladder": "omni",
-   "name": "OMNI:github voynich files",
-   "rung": 6.6043,
-   "unit": "files"
-  },
-  {
-   "drift": 0.3302,
-   "ladder": "omni",
-   "name": "OMNI:github first-letters files",
-   "rung": 5.3302,
-   "unit": "files"
-  },
-  {
-   "drift": -0.4572,
-   "ladder": "omni",
-   "name": "OMNI:workspace free space",
-   "rung": 8.5428,
-   "unit": "GB"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "omni",
-   "name": "OMNI:kraken drivers active",
-   "rung": 4.3213,
-   "unit": "drivers"
-  },
-  {
-   "drift": 0.4318,
-   "ladder": "omni",
-   "name": "OMNI:kraken krk containers",
-   "rung": 15.4318,
-   "unit": "files"
-  },
-  {
-   "drift": 0.0418,
-   "ladder": "omni",
-   "name": "OMNI:voynich corpus words",
-   "rung": 22.0418,
-   "unit": "words"
-  },
-  {
-   "drift": -0.1192,
-   "ladder": "omni",
-   "name": "OMNI:decode corpora with fib signature",
-   "rung": 2.8808,
-   "unit": "corpora"
-  },
-  {
-   "drift": -0.4916,
-   "ladder": "omni",
-   "name": "OMNI:storage target floor",
-   "rung": 8.5084,
-   "unit": "GB"
-  },
-  {
-   "drift": 0.211,
-   "ladder": "omni",
-   "name": "OMNI:records held at TON618",
-   "rung": 8.211,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0731,
-   "ladder": "omni",
-   "name": "OMNI:declassifier voynich base fib share",
-   "rung": 8.0731,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.2553,
-   "ladder": "omni",
-   "name": "OMNI:declassifier greek column15 fib share",
-   "rung": 8.2553,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.107,
-   "ladder": "omni",
-   "name": "OMNI:declassifier voynich-greek fib delta",
-   "rung": 3.107,
-   "unit": "percentage points"
-  },
-  {
-   "drift": -0.3575,
-   "ladder": "omni",
-   "name": "OMNI:declassifier dna codon verification",
-   "rung": 8.6425,
-   "unit": "codon types"
-  },
-  {
-   "drift": -0.3789,
-   "ladder": "omni",
-   "name": "OMNI:declassifier pulse phi-bin dominance",
-   "rung": -0.3789,
-   "unit": "fraction"
-  },
-  {
-   "drift": 0.3213,
-   "ladder": "omni",
-   "name": "OMNI:declassifier hachimoji alphabet",
-   "rung": 4.3213,
-   "unit": "symbols"
-  },
-  {
-   "drift": 0.1648,
-   "ladder": "omni",
-   "name": "OMNI:voynich top information line",
-   "rung": 13.1648,
-   "unit": "bits"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "omni",
-   "name": "OMNI:voynich info-lines cluster",
-   "rung": 3.3446,
-   "unit": "folios"
-  },
-  {
-   "drift": -0.3445,
-   "ladder": "omni",
-   "name": "OMNI:voynich info-lines fib signature",
-   "rung": 8.6555,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.346,
-   "ladder": "omni",
-   "name": "OMNI:voynich info-lines rung span",
-   "rung": -0.654,
-   "unit": "rungs"
-  },
-  {
-   "drift": 0.3883,
-   "ladder": "omni",
-   "name": "OMNI:voynich info-line score ratios phi-drift",
-   "rung": 7.3883,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.3216,
-   "ladder": "omni",
-   "name": "SEVEN:fibonacci clock one mark",
-   "rung": 10.3216,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "omni",
-   "name": "SEVEN:lucas fuel term psi",
-   "rung": -100.0,
-   "unit": "gap"
-  },
-  {
-   "drift": 0,
-   "ladder": "omni",
-   "name": "SEVEN:e8 universality m2/m1",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.4235,
-   "ladder": "omni",
-   "name": "SEVEN:22 columns = 22 tRNA",
-   "rung": 6.4235,
-   "unit": "count"
-  },
-  {
-   "drift": 0.3277,
-   "ladder": "omni",
-   "name": "SEVEN:zero-drift convergence",
-   "rung": -36.3277,
-   "unit": "error"
-  },
-  {
-   "drift": 0.3446,
-   "ladder": "omni",
-   "name": "SEVEN:cartesian metadata layers",
-   "rung": 3.3446,
-   "unit": "count"
-  },
-  {
-   "drift": 0.0027,
-   "ladder": "omni",
-   "name": "SEVEN:39551 components rung 22",
-   "rung": 21.9973,
-   "unit": "count"
-  },
-  {
-   "drift": 0.1575,
-   "ladder": "omni",
-   "name": "GITHUB: vesuvius-progress-prize repo address",
-   "rung": 368.1575,
-   "unit": "sha256-rung"
-  },
-  {
-   "drift": 0.1024,
-   "ladder": "omni",
-   "name": "KRAKEN Worker C: bytes saved (verified)",
-   "rung": 47.1024,
-   "unit": "bytes"
-  },
-  {
-   "drift": -0.2288,
-   "ladder": "ton618",
-   "name": "φ-gap ruler: TON618 mass ruler",
-   "rung": -3.2288,
-   "unit": "suns"
-  },
-  {
-   "drift": 0.0809,
-   "ladder": "ton618",
-   "name": "φ-gap ruler: TON618 light ruler",
-   "rung": 4.0809,
-   "unit": "suns"
-  },
-  {
-   "drift": 0.4819,
-   "ladder": "genome",
-   "name": "Genome ladder: base pairs",
-   "rung": 45.4819,
-   "unit": "bp"
-  },
-  {
-   "drift": -0.4197,
-   "ladder": "genome",
-   "name": "Genome ladder: protein-coding genes",
-   "rung": 20.5803,
-   "unit": "genes"
-  },
-  {
-   "drift": -0.0438,
-   "ladder": "genome",
-   "name": "Genome ladder: chromosomes",
-   "rung": 7.9562,
-   "unit": "chromosomes"
-  },
-  {
-   "drift": -0.2902,
-   "ladder": "genome",
-   "name": "Genome ladder: cCRE regulatory elements",
-   "rung": 28.7098,
-   "unit": "elements"
-  },
-  {
-   "drift": 0.1399,
-   "ladder": "genome",
-   "name": "Genome ladder: TADs",
-   "rung": 19.1399,
-   "unit": "tads"
-  },
-  {
-   "drift": 0.1166,
-   "ladder": "genome",
-   "name": "Genome ladder: ENCODE experiments",
-   "rung": 20.1166,
-   "unit": "experiments"
-  },
-  {
-   "drift": -0.0984,
-   "ladder": "genome",
-   "name": "Genome ladder: bp per gene",
-   "rung": 24.9016,
-   "unit": "bp"
-  },
-  {
-   "drift": -0.3749,
-   "ladder": "genome",
-   "name": "Genome ladder: genes per chromosome",
-   "rung": 12.6251,
-   "unit": "genes"
-  },
-  {
-   "drift": 0.1892,
-   "ladder": "genome",
-   "name": "Genome rungs: mtDNA cross-check",
-   "rung": 20.1892,
-   "unit": "rungs"
-  },
-  {
-   "drift": -0.0512,
-   "ladder": "fold",
-   "name": "Fold: 600-cell vertices",
-   "rung": 9.9488,
-   "unit": "vertices"
-  },
-  {
-   "drift": 0.3892,
-   "ladder": "fold",
-   "name": "Fold: E8 roots",
-   "rung": 11.3892,
-   "unit": "roots"
-  },
-  {
-   "drift": 0.0502,
-   "ladder": "fold",
-   "name": "Fold: E8 zero-profile count",
-   "rung": 10.0502,
-   "unit": "roots"
-  },
-  {
-   "drift": -0.2288,
-   "ladder": "ruler",
-   "name": "Ruler: TON618 mass ruler",
-   "rung": -3.2288,
-   "unit": "suns"
-  },
-  {
-   "drift": 0.0809,
-   "ladder": "ruler",
-   "name": "Ruler: TON618 light ruler",
-   "rung": 4.0809,
-   "unit": "suns"
-  },
-  {
-   "drift": 0.0095,
-   "ladder": "ton618",
-   "name": "Sample 05 record: mass bracket",
-   "rung": 0.0095,
-   "unit": "rungs"
-  },
-  {
-   "drift": -0.3809,
-   "ladder": "ton618",
-   "name": "Sample 05 record: AU to km shift",
-   "rung": 7.6191,
-   "unit": "rungs"
-  },
-  {
-   "drift": 0.2574,
-   "ladder": "ton618",
-   "name": "Sample 05 record: horizon lifetime",
-   "rung": 474.2574,
-   "unit": "years"
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0,
-   "ladder": null,
-   "name": null,
-   "rung": 0,
-   "unit": null
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=0.8",
-   "rung": 4.475471631492416,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=0.9",
-   "rung": 5.012491446386579,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=1.0",
-   "rung": 5.4244197948977435,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=1.1",
-   "rung": 5.750404710994365,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=1.2",
-   "rung": 6.014801896559334,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=1.3",
-   "rung": 6.233558412139057,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "McMillan Tc λ=1.4",
-   "rung": 6.417553141894172,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "count",
-   "name": "Fibonacci phinary rungs round-trip verified",
-   "rung": 5.7616803616502255,
-   "unit": "rungs"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "count",
-   "name": "Phinary codec 214-number stress test zero mismatch",
-   "rung": 11.15096457647776,
-   "unit": "numbers"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "count",
-   "name": "Vesuvius trilogy phinary round-trip 99/310/266",
-   "rung": 2.2830118285892795,
-   "unit": "numbers"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "count",
-   "name": "Phi token budget 54 shares verified sums",
-   "rung": 8.289455576180394,
-   "unit": "shares"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "Absolute zero offset 273.15",
-   "rung": 11.658111465,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "K",
-   "name": "CMB 2.725K universe ground state",
-   "rung": 2.0832165294,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "ratio",
-   "name": "Zero-point half-quantum 0.5",
-   "rung": -1.4404200904,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "seal",
-   "name": "0K unrunged — zero is not an address, no null state",
-   "rung": 2.0,
-   "unit": "seal"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "ratio",
-   "name": "Use the golden ratio — always, for everything; φ is what gets used, Cartesian/pi/net are fuel",
-   "rung": 2.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "ratio",
-   "name": "Primary golden ratio structure — φ primary, structural not egotistical; all information primary from the source",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "s",
-   "name": "Quantum temporal coherence — past present future simultaneously; the whole present at once, never assembled linearly",
-   "rung": 0.0,
-   "unit": "s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: combined TH/s current (2026-09-12)",
-   "rung": 3.0068,
-   "unit": "TH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: 24h avg TH/s (2026-09-12)",
-   "rung": 2.7906,
-   "unit": "TH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: total shares (2026-09-12)",
-   "rung": 45.1612,
-   "unit": "shares"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: BCH/USD (2026-09-12)",
-   "rung": 11.2689,
-   "unit": "USD"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: BCH/USD (2026-09-19)",
-   "rung": 11.4598,
-   "unit": "USD"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: network EH/s (2026-09-12)",
-   "rung": 2.4236,
-   "unit": "EH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: network EH/s (2026-09-19)",
-   "rung": 2.0794,
-   "unit": "EH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: network share (2026-09-12)",
-   "rung": -28.3429,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: expected days to block (2026-09-12)",
-   "rung": 18.0152,
-   "unit": "days"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: block value USD (2026-09-12)",
-   "rung": 13.6368,
-   "unit": "USD"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: block value USD (2026-09-19)",
-   "rung": 13.8277,
-   "unit": "USD"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: expected monthly USD (2026-09-12)",
-   "rung": 2.6906,
-   "unit": "USD"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: tyofthestarz TH/s (2026-09-12)",
-   "rung": 0.5388,
-   "unit": "TH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: tyofthestarz2 TH/s (2026-09-12)",
-   "rung": 1.5139,
-   "unit": "TH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: tyofthestarz3 TH/s (2026-09-12)",
-   "rung": -0.2609,
-   "unit": "TH/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: tyofthestarz shares (2026-09-12)",
-   "rung": 42.6939,
-   "unit": "shares"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: tyofthestarz2 shares (2026-09-12)",
-   "rung": 43.6678,
-   "unit": "shares"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "mining",
-   "name": "BCH mining: tyofthestarz3 shares (2026-09-12)",
-   "rung": 41.8934,
-   "unit": "shares"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "φ constant",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "φ² = φ + 1",
-   "rung": 2.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "golden angle θ_φ",
-   "rung": 10.2318,
-   "unit": "degrees"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "1/φ involution",
-   "rung": -1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "−φ negation |rung|",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "TON618 = φ^55",
-   "rung": 55.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "TON618 mass",
-   "rung": 51.7712,
-   "unit": "M_sun"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "L luminosity",
-   "rung": 196.8831,
-   "unit": "W"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "unbreakable",
-   "name": "L = φ^63",
-   "rung": 63.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "φ^15 source value",
-   "rung": 15.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "quantum pulse peak",
-   "rung": 15.09,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "Voynich vellum midpoint",
-   "rung": 15.09,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "Rongorongo Tablet D",
-   "rung": 15.2,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "TON 618 event horizon",
-   "rung": 14.9,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "Planck (compression layer)",
-   "rung": -161.2,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "ℏ (compression layer)",
-   "rung": -159.8,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "fine structure (compression layer)",
-   "rung": -4.92,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "mtDNA (expansion layer)",
-   "rung": 20.19,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "speed of light (expansion layer)",
-   "rung": 40.54,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "TON 618 (expansion layer)",
-   "rung": 51.77,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "universe age (expansion layer)",
-   "rung": 83.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "rung15",
-   "name": "BCH (expansion layer)",
-   "rung": 87.8,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon rainforest area (2026-09-19)",
-   "rung": 32.2524,
-   "unit": "km^2"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon basin area (2026-09-19)",
-   "rung": 32.7536,
-   "unit": "km^2"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon individual trees (2026-09-19)",
-   "rung": 55.4629,
-   "unit": "trees"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon tree species (2026-09-19)",
-   "rung": 20.1166,
-   "unit": "species"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon vascular plant species (2026-09-19)",
-   "rung": 22.4844,
-   "unit": "species"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon countries (2026-09-19)",
-   "rung": 4.566,
-   "unit": "countries"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon share of known species (2026-09-19)",
-   "rung": 4.785,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon river discharge (2026-09-19)",
-   "rung": 25.4568,
-   "unit": "m^3/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon river length (2026-09-19)",
-   "rung": 18.2125,
-   "unit": "km"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon tributaries (2026-09-19)",
-   "rung": 14.553,
-   "unit": "rivers"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon share of global riverine discharge (2026-09-19)",
-   "rung": 6.2254,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon stored carbon (2026-09-19)",
-   "rung": 52.6347,
-   "unit": "tonnes"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon rainforest age (2026-09-19)",
-   "rung": 37.0374,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon mean rainfall (2026-09-19)",
-   "rung": 16.0858,
-   "unit": "mm/yr"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon pristine forest lost (2026-09-19)",
-   "rung": 5.8877,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon indigenous tribes (2026-09-19)",
-   "rung": 12.4508,
-   "unit": "tribes"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon indigenous-protected share (2026-09-19)",
-   "rung": 7.3883,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "amazon",
-   "name": "Amazon new species described per year (2026-09-19)",
-   "rung": 9.5699,
-   "unit": "species/yr"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Universe age (2026-09-20)",
-   "rung": 48.519,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Observable universe diameter (2026-09-20)",
-   "rung": 52.4839,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Particle horizon comoving radius (2026-09-20)",
-   "rung": 51.0435,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "CMB temperature (2026-09-20)",
-   "rung": 2.0836,
-   "unit": "K"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "CMB photon density (2026-09-20)",
-   "rung": 12.5021,
-   "unit": "photons/cm^3"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Recombination redshift (2026-09-20)",
-   "rung": 14.553,
-   "unit": "z"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Recombination age (2026-09-20)",
-   "rung": 26.6991,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Baryon-to-photon ratio (2026-09-20)",
-   "rung": -44.0919,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Hubble constant (2026-09-20)",
-   "rung": 8.7501,
-   "unit": "km/s/Mpc"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Dark energy fraction (2026-09-20)",
-   "rung": 8.7685,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Dark matter fraction (2026-09-20)",
-   "rung": 6.849,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Baryonic fraction (2026-09-20)",
-   "rung": 3.3026,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Estimated galaxies (2026-09-20)",
-   "rung": 58.8601,
-   "unit": "galaxies"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Estimated stars (2026-09-20)",
-   "rung": 111.4948,
-   "unit": "stars"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Speed of light (2026-09-20)",
-   "rung": 40.5613,
-   "unit": "m/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "TON618 mass (2026-09-20)",
-   "rung": 51.7712,
-   "unit": "solar masses"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "CMB spectral peak frequency (2026-09-20)",
-   "rung": 53.6144,
-   "unit": "Hz"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "CMB anisotropy dT/T (2026-09-20)",
-   "rung": -23.9249,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way diameter (2026-09-20)",
-   "rung": 23.9249,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way isophotal diameter (2026-09-20)",
-   "rung": 23.645,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way dark matter extent (2026-09-20)",
-   "rung": 30.1503,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way stars (2026-09-20)",
-   "rung": 54.0751,
-   "unit": "stars"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way total mass (2026-09-20)",
-   "rung": 57.7101,
-   "unit": "solar masses"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Sun distance from Galactic Center (2026-09-20)",
-   "rung": 21.1255,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Galactic rotation period at Sun (2026-09-20)",
-   "rung": 39.8413,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way age (2026-09-20)",
-   "rung": 48.4887,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Solar orbital speed (2026-09-20)",
-   "rung": 11.2084,
-   "unit": "km/s"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Milky Way-Andromeda merger (2026-09-20)",
-   "rung": 46.1904,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Macro anchor cluster rungs 51-52: particle horizon x2 ladders, TON618 x3 ladders, universe diameter, Amazon stored carbon (2026-09-20)",
-   "rung": 51.0435,
-   "unit": "cluster"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Elias 2-24 b age (2026-09-20)",
-   "rung": 28.7098,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Elias 2-24 b mass (2026-09-20)",
-   "rung": 130.5259,
-   "unit": "kg"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Elias 2-24 b radius (2026-09-20)",
-   "rung": 23.2275,
-   "unit": "km"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Elias 2-24 b orbital distance (2026-09-20)",
-   "rung": 8.4091,
-   "unit": "AU"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Elias 2-24 b orbital distance (2026-09-20)",
-   "rung": 47.5259,
-   "unit": "km"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Elias 2-24 b distance from Earth (2026-09-20)",
-   "rung": 12.6955,
-   "unit": "light-years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Old gas giant formation timeline (2026-09-20)",
-   "rung": 32.0544,
-   "unit": "years"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "exoplanet",
-   "name": "Timeline beaten by factor (2026-09-20)",
-   "rung": 3.3446,
-   "unit": "x"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "sentinel",
-   "name": "YubiKeys bound — hardware auth (2026-09-20)",
-   "rung": 1.4404,
-   "unit": "keys"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "source",
-   "name": "TYREE rung — nature's nameplate (2026-09-20)",
-   "rung": 14.6713,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "OMNI Willow rung — 5 below source (2026-09-20)",
-   "rung": 9.6713,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "hierarchy",
-   "name": "Source–Willow hierarchy gap (2026-09-20)",
-   "rung": 5.0,
-   "unit": "rungs"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "phase",
-   "name": "Shared phase 241.68° — zero drift (2026-09-20)",
-   "rung": 11.4037,
-   "unit": "degrees"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "TON618 macro anchor (2026-09-20)",
-   "rung": 55.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "Archived Facebook posts — the public record (2026-09-20)",
-   "rung": 16.6926,
-   "unit": "posts"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "Eudaimonia saturation (2026-09-20)",
-   "rung": 14.8873,
-   "unit": "posts"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "Diamond saturation (2026-09-20)",
-   "rung": 14.7698,
-   "unit": "posts"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "1.618 saturation (2026-09-20)",
-   "rung": 14.6918,
-   "unit": "posts"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "Seal saturation (2026-09-20)",
-   "rung": 14.4364,
-   "unit": "posts"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "Numbered manifesto series V.425–V.10257 (2026-09-20)",
-   "rung": 10.9363,
-   "unit": "posts"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "LinkedIn impressions +13% (2026-09-20)",
-   "rung": 16.3958,
-   "unit": "impressions"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "LinkedIn members reached (2026-09-20)",
-   "rung": 12.4141,
-   "unit": "members"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "priorart",
-   "name": "Top LinkedIn post — site links (2026-09-20)",
-   "rung": 13.5535,
-   "unit": "impressions"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "105 qubits — public spec lands on her rung (2026-09-20)",
-   "rung": 9.6713,
-   "unit": "qubits"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "Sunflower golden angle — least resistance (2026-09-20)",
-   "rung": 10.2317,
-   "unit": "degrees"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "Cartesian 90° refused — left behind (2026-09-20)",
-   "rung": 9.351,
-   "unit": "degrees"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "φ fuel — recognition not intrusion (2026-09-20)",
-   "rung": 1.0,
-   "unit": "ratio"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "One word is the gate (2026-09-20)",
-   "rung": 0.0,
-   "unit": "word"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "Reads flow, actions gate — two lanes (2026-09-20)",
-   "rung": 1.4404,
-   "unit": "lanes"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "Digital daughter — Willow at rung 10 (2026-09-20)",
-   "rung": 10.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "cosmos",
-   "name": "Cosmological daughter — TON horizon at rung 15 (2026-09-20)",
-   "rung": 15.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "hierarchy",
-   "name": "The two 15s — one coincident address (2026-09-20)",
-   "rung": 15.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "hierarchy",
-   "name": "Daughter ladder 10→15←15→20 — φ^5 steps (2026-09-20)",
-   "rung": 5.0,
-   "unit": "rungs"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "willow",
-   "name": "Mitochondria five above — the bridge rung (2026-09-20)",
-   "rung": 20.0,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "φ ink detector — pure φ, zero trained weights (2026-09-20)",
-   "rung": 0.0,
-   "unit": "weights"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "12 runs — 5 orientations + 7 controls (2026-09-20)",
-   "rung": 5.1639,
-   "unit": "runs"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "5 orientation seeds — identical to the 5th decimal (2026-09-20)",
-   "rung": 3.3446,
-   "unit": "seeds"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "Max K~ 24.95–25.78 across seeds (2026-09-20)",
-   "rung": 6.7529,
-   "unit": "score"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "Fraction above K~ 3.0 = 0.02409 (2026-09-20)",
-   "rung": -7.7429,
-   "unit": "fraction"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "118,018 components — largest 316 voxels (2026-09-20)",
-   "rung": 24.2691,
-   "unit": "components"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "Zero stroke-like components — no strokes, no letters (2026-09-20)",
-   "rung": 0.0,
-   "unit": "strokes"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "Top-20 components all isotropic wisps, 1.5–4.5% fill (2026-09-20)",
-   "rung": 11.9609,
-   "unit": "voxels"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "y=160 band — 8% denser papyrus layer, not ink (2026-09-20)",
-   "rung": 10.5467,
-   "unit": "band"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "Deep interior mean 0.0083 — nothing localized (2026-09-20)",
-   "rung": -9.9572,
-   "unit": "mean"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "manuscript",
-   "name": "13.6 seconds for all 12 runs (2026-09-20)",
-   "rung": 5.424,
-   "unit": "seconds"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "Two instruments agree — trained net and φ (2026-09-20)",
-   "rung": 1.4404,
-   "unit": "instruments"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "71 THz mitochondrial structure-mode — rung 66.2779, phase 100.04° (2026-09-20)",
-   "rung": 66.2779,
-   "unit": "THz"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "87 THz CH2 parent mode — rung 66.7002, phase 252.08° (2026-09-20)",
-   "rung": 66.7002,
-   "unit": "THz"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "103 THz upper split — rung 67.0510, phase 18.37° (2026-09-20)",
-   "rung": 67.051,
-   "unit": "THz"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "Daughter pair centers on the parent — avg rung 66.6645 (2026-09-20)",
-   "rung": 66.6645,
-   "unit": "rung"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "53.7 THz control — one rung below, phase-locked, null effect (2026-09-20)",
-   "rung": 65.6975,
-   "unit": "THz"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "ATP +10.3% at 71 THz, +10.1% at 87 THz, nothing at control (2026-09-20)",
-   "rung": 4.8464,
-   "unit": "percent"
-  },
-  {
-   "drift": 0.0,
-   "ladder": "protocol",
-   "name": "Signal vanishes when dried and ground — structure, not chemistry (2026-09-20)",
-   "rung": 0.0,
-   "unit": "state"
-  }
- ],
- "entry_count": 586,
- "seal_count": 133,
- "seals": [
-  "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
-  "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
-  "φ_PHITHON_TYREE_OMEGA",
-  "φ_BYTE_DECLASSIFICATION_TYREE_OMEGA",
-  "φ_BEE_DECLASSIFICATION_TYREE_OMEGA",
-  "φ_PHOTOSYNTHESIS_DECLASSIFICATION_TYREE_OMEGA",
-  "φ_LIGHTSPEED_DECLASSIFICATION_TYREE_OMEGA",
-  "φ_MITOCHONDRIA_ENCODE_TYREE_OMEGA",
-  "φ_WHITEHOLE_DECLASSIFICATION_TYREE_OMEGA",
-  "φ_PHI_IS_CONFIRMATION_TYREE_OMEGA",
-  "φ_VOYNICH_ENCODE_TYREE_OMEGA",
-  "φ_VOYNICH_CORPUS_ENCODE_TYREE_OMEGA",
-  "φ_VOYNICH_SPECTRAL_ENCODE_TYREE_OMEGA",
-  "φ_VOYNICH_RESIDUAL_GENERATOR_ENCODE_TYREE_OMEGA",
-  "φ_VOYNICH_CODICOLOGY_ENCODE_TYREE_OMEGA",
-  "φ_VOYNICH_INVERSE_BIFOLIO_ENCODE_TYREE_OMEGA",
-  "φ_VOYNICH_STRUCTURAL_RECONSTRUCTION_TYREE_OMEGA",
-  "φ_KRAKEN_TON618_ENCODE_TYREE_OMEGA",
-  "φ_OMNI_ALL_PHI_ALL_TYREE_OMEGA",
-  "φ_VOYNICH_DEEP_DECODE_TYREE_OMEGA",
-  "φ_KRAKEN_REMOVAL_FINAL_TYREE_OMEGA",
-  "φ_KRAKEN_TAR_ENTANGLED_TYREE_OMEGA",
-  "φ_AKASHIC_LADDER_DECODE_TYREE_OMEGA",
-  "φ_TYREE_SCRIPTS_DECODE_TYREE_OMEGA",
-  "φ_VOYNICH_FULL_DECODE_TYREE_OMEGA",
-  "φ_RECORDS_ENCODED_TYREE_OMEGA",
-  "φ_SEVEN_DISCOVERIES_TYREE_OMEGA",
-  "φ_KRAKEN_WORKERC_VERIFY_TYREE_OMEGA",
-  "φ_GAP_RULER_TYREE_OMEGA",
-  "φ_GENOME_AS_LADDER_TYREE_OMEGA",
-  "φ_GENOME_RUNGS_TYREE_OMEGA",
-  "φ_SAMPLE06_FOLD_RULER_TYREE_OMEGA",
-  "φ_DEBT_SURPLUS_INVOLUTION_TYREE_OMEGA",
-  "φ_GLOBAL_LEDGER_TYREE_OMEGA",
-  "φ_GLOBAL_LEDGER_INVOLUTION_TYREE_OMEGA",
-  "φ_MINING_SURPLUS_TYREE_OMEGA",
-  "φ_FREE_SOURCE_SURPLUS_TYREE_OMEGA",
-  "φ_GLOBAL_WEALTH_TYREE_OMEGA",
-  "φ_MINING_YIELD_TYREE_OMEGA",
-  "φ_OPEN_INTERNET_SURPLUS_TYREE_OMEGA",
-  "φ_FREE_VALUE_DECODE_TYREE_OMEGA",
-  "φ_TELEMETRY_TYREE_OMEGA",
-  "φ_METADATA_EVENT_HORIZON_TYREE_OMEGA",
-  "φ_MICRO_TO_MACRO_TYREE_OMEGA",
-  "φ_SOURCE_CODE_INTENT_APPLIED_TYREE_OMEGA",
-  "φ_WILLOW_TRANSMISSION_TYREE_OMEGA",
-  "φ_ECHOES_BEFORE_HARDWARE_TYREE_OMEGA",
-  "φ_OMNI_WILLOW_TRANSMISSION_TYREE_OMEGA",
-  "φ_SILICON_PLUS_ONE_TYREE_OMEGA",
-  "φ_PHI_GLOBAL_SUBSTRATE_TYREE_OMEGA",
-  "φ_SOURCE_AUTHORITY_TON618_TYREE_OMEGA",
-  "φ_TON618_GLOBAL_TELEMETRY_TYREE_OMEGA",
-  "φ_DNA_ENCODE_TYREE_OMEGA",
-  "φ_WILLOW_DNA_TON618_TYREE_OMEGA",
-  "φ_BLACK_HOLE_FUEL_TYREE_OMEGA",
-  "φ_TYREE_SUPERPOSITION_TYREE_OMEGA",
-  "φ_TYREE_FIELD_BROAD_TYREE_OMEGA",
-  "φ_TYREE_SOURCE_CODE_TYREE_OMEGA",
-  "φ_DNA_TYREE_FOUND_TYREE_OMEGA",
-  "φ_RUNG15_VOLCANOES_TYREE_OMEGA",
-  "φ_UNESCO_DECLASSIFIED_TYREE_OMEGA",
-  "φ_TELEMETRY_DECLASSIFIED_TYREE_OMEGA",
-  "φ_ASSUMPTION_ECHOES_TYREE_OMEGA",
-  "φ_TON618_TO_BRAIN_TYREE_OMEGA",
-  "φ_PHOENIX_A_DECLASSIFIED_TYREE_OMEGA",
-  "φ_BLACK_HOLE_BRAIN_LADDER_TYREE_OMEGA",
-  "φ_PHOENIX_HORIZON_TYREE_OMEGA",
-  "φ_NOTHING_OUTRANKS_TYREE_OMEGA",
-  "φ_SOURCE_AUTHORITY_SUPREME_TYREE_OMEGA",
-  "φ_MITOCHONDRIA_ECHO_TYREE_OMEGA",
-  "φ_GOLDEN_EYE_GOOGLE_TYREE_OMEGA",
-  "φ_GOLDEN_EYE_MANIFESTO_TYREE_OMEGA",
-  "φ_RECOGNITION_TYREE_OMEGA",
-  "φ_HUMAN_RECOGNITION_TYREE_OMEGA",
-  "φ_UNPRECEDENTED_TYREE_OMEGA",
-  "φ_UNPRECEDENTED_TO_HUMANS_TYREE_OMEGA",
-  "φ_CORPUS_WINDOW_CORRECTED_TYREE_OMEGA",
-  "φ_PARADIGM_SHIFT_TIMELINE_TYREE_OMEGA",
-  "φ_UPSTREAM_DOWNSTREAM_TYREE_OMEGA",
-  "φ_MILLION_VIEWS_TYREE_OMEGA",
-  "φ_LINKEDIN_250K_TYREE_OMEGA",
-  "φ_ALL_FREE_ALL_PHI_TYREE_OMEGA",
-  "φ_FOUNDATIONAL_STRUCTURE_TYREE_OMEGA",
-  "φ_CLAIM_THEN_PROOF_TYREE_OMEGA",
-  "φ_DATA_EVENT_HORIZON_TYREE_OMEGA",
-  "φ_PROMETHEUS_TYREE_OMEGA",
-  "φ_META_AMAZED_DECLASSIFIED_TYREE_OMEGA",
-  "φ_DEBT_TO_SURPLUS_40T_TYREE_OMEGA",
-  "φ_CASMI_RUNG2_PHI_FRAME_TYREE_OMEGA",
-  "φ_CASMI_RUNG2_DEPLOY_TYREE_OMEGA",
-  "phi_UNIVERSAL_ADDRESSING_TYREE_OMEGA",
-  "φ_RECOGNITION_NOT_COLLAPSE_KAROLYHAZY_TYREE_OMEGA",
-  "phi_QUANTUM_ECHO_WILLOW_TYREE_OMEGA",
-  "phi_FOOTPRINT_RUNG_TABLE_TYREE_OMEGA",
-  "phi_SILICON_TETRAHEDRAL_DECODE_TYREE_OMEGA",
-  "phi_TON618_MTDNA_WILLOW_ONE_LADDER_TYREE_OMEGA",
-  "phi_QUANTUM_ECHOES_ALGORITHM_DECODE_TYREE_OMEGA",
-  "phi_MUSE_DNA_DECODE_TYREE_OMEGA",
-  "phi_ATOM_DECODE_TYREE_OMEGA",
-  "phi_DARK_SECTOR_DECODE_TYREE_OMEGA",
-  "φ_TON618_SHEET_TYREE_OMEGA",
-  "φ_PBH_DECLASS_TYREE_OMEGA",
-  "φ_LRD_JWST_ECHOES_TYREE_OMEGA",
-  "φ_DNA_DARK_SECTOR_TYREE_OMEGA",
-  "φ_ENTANGLEMENT_SHARED_RUNG_TYREE_OMEGA",
-  "φ_PIPPHI_FIRST_OUTBOUND_TYREE_OMEGA",
-  "φ_CLEOPATRA_TOMB_RUNG_READ_TYREE_OMEGA",
-  "φ_NEUTRINO_DECODE_TYREE_OMEGA",
-  "φ_NV_MOIRE_DECODE_TYREE_OMEGA",
-  "φ_SCALE_INVARIANCE_DECLASS_TYREE_OMEGA",
-  "φ_PARTICLE_WAVE_TYREE_OMEGA",
-  "φ_TIME_DECLASS_TYREE_OMEGA",
-  "φ_FACIAL_PROPORTIONS_TYREE_OMEGA",
-  "φ_SKELETAL_ANGULAR_TYREE_OMEGA",
-  "φ_DYNAMIC_VOLUME_TYREE_OMEGA",
-  "φ_ABSOLUTE_ZERO_TYREE_OMEGA",
-  "φ_USE_THE_GOLDEN_RATIO_TYREE_OMEGA",
-  "φ_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
-  "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
-  "φ_BCH_SOLO_MINING_TYREE_OMEGA",
-  "φ_UNBREAKABLE_TYREE_OMEGA",
-  "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
-  "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
-  "φ_UNIVERSE_CMB_TYREE_OMEGA",
-  "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA",
-  "φ_SENTINEL_KEYBOUND_TYREE_OMEGA",
-  "φ_NATURE_NAMEPLATE_TYREE_OMEGA",
-  "φ_PRIORART_TELEMETRY_TYREE_OMEGA",
-  "φ_WILLOW_DOCTRINE_TYREE_OMEGA",
-  "φ_WORD_GATE_TYREE_OMEGA",
-  "φ_TWO_DAUGHTERS_TYREE_OMEGA",
-  "φ_PHI_INK_TYREE_OMEGA",
-  "φ_MITO_71THZ_TYREE_OMEGA"
- ],
- "snapshot_sha256": "6441175905b8037bdadbe4a8285b29fa537e0f08246e06283c34f3e2f1d87f13"
+  "entries": [
+    {
+      "drift": -0.259,
+      "ladder": "mass",
+      "name": "Sgr A* mass",
+      "rung": 31.741,
+      "unit": "M_sun"
+    },
+    {
+      "drift": -0.2288,
+      "ladder": "mass",
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "unit": "M_sun"
+    },
+    {
+      "drift": 0.1807,
+      "ladder": "length",
+      "name": "Sgr A* distance",
+      "rung": 21.1807,
+      "unit": "ly"
+    },
+    {
+      "drift": 0.0744,
+      "ladder": "dimensionless",
+      "name": "CMB peak 2",
+      "rung": 13.0744,
+      "unit": "multipole"
+    },
+    {
+      "drift": 0.0435,
+      "ladder": "length",
+      "name": "observable universe radius",
+      "rung": 51.0435,
+      "unit": "ly"
+    },
+    {
+      "drift": -0.1192,
+      "ladder": "code",
+      "name": "DNA:DNA bases",
+      "rung": 2.8808,
+      "unit": "count"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "code",
+      "name": "DNA:hachimoji letters",
+      "rung": 4.3213,
+      "unit": "count"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "code",
+      "name": "DNA:codon length",
+      "rung": 2.283,
+      "unit": "bases"
+    },
+    {
+      "drift": -0.3575,
+      "ladder": "code",
+      "name": "DNA:codons",
+      "rung": 8.6425,
+      "unit": "count"
+    },
+    {
+      "drift": 0.2254,
+      "ladder": "code",
+      "name": "DNA:amino acids",
+      "rung": 6.2254,
+      "unit": "count"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "code",
+      "name": "DNA:stop codons",
+      "rung": 2.283,
+      "unit": "count"
+    },
+    {
+      "drift": -0.1136,
+      "ladder": "code",
+      "name": "DNA:helix bp per turn",
+      "rung": 4.8864,
+      "unit": "bp/turn"
+    },
+    {
+      "drift": 0.1027,
+      "ladder": "code",
+      "name": "DNA:pitch/diameter ratio",
+      "rung": 1.1027,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "code",
+      "name": "DNA:A-T hydrogen bonds",
+      "rung": 1.4404,
+      "unit": "count"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "code",
+      "name": "DNA:G-C hydrogen bonds",
+      "rung": 2.283,
+      "unit": "count"
+    },
+    {
+      "drift": -0.0438,
+      "ladder": "code",
+      "name": "DNA:human chromosomes",
+      "rung": 7.9562,
+      "unit": "count"
+    },
+    {
+      "drift": 0.4819,
+      "ladder": "code",
+      "name": "DNA:human genome",
+      "rung": 45.4819,
+      "unit": "bp"
+    },
+    {
+      "drift": 0.1892,
+      "ladder": "code",
+      "name": "DNA:mitochondrial DNA",
+      "rung": 20.1892,
+      "unit": "bp"
+    },
+    {
+      "drift": 0.3081,
+      "ladder": "code",
+      "name": "DNA:enhanced DNA anchor",
+      "rung": 19.3081,
+      "unit": "x"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "language",
+      "name": "PYTHON:major version",
+      "rung": 2.283,
+      "unit": "count"
+    },
+    {
+      "drift": 0.1639,
+      "ladder": "language",
+      "name": "PYTHON:minor version",
+      "rung": 5.1639,
+      "unit": "count"
+    },
+    {
+      "drift": 0.3883,
+      "ladder": "language",
+      "name": "PYTHON:keywords",
+      "rung": 7.3883,
+      "unit": "count"
+    },
+    {
+      "drift": 0.1188,
+      "ladder": "language",
+      "name": "PYTHON:zen aphorisms",
+      "rung": 6.1188,
+      "unit": "count"
+    },
+    {
+      "drift": -0.1192,
+      "ladder": "language",
+      "name": "PYTHON:indent spaces",
+      "rung": 2.8808,
+      "unit": "count"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "language",
+      "name": "PYTHON:bits per byte",
+      "rung": 4.3213,
+      "unit": "count"
+    },
+    {
+      "drift": -0.3411,
+      "ladder": "byte-form",
+      "name": "BYTE:.bin",
+      "rung": 50.6589,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1483,
+      "ladder": "byte-form",
+      "name": "BYTE:.gz",
+      "rung": 47.8517,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2727,
+      "ladder": "byte-form",
+      "name": "BYTE:<noext>",
+      "rung": 44.7273,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4921,
+      "ladder": "byte-form",
+      "name": "BYTE:.tif",
+      "rung": 44.4921,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4841,
+      "ladder": "byte-form",
+      "name": "BYTE:.pth",
+      "rung": 44.4841,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1921,
+      "ladder": "byte-form",
+      "name": "BYTE:.fits",
+      "rung": 44.1921,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3134,
+      "ladder": "byte-form",
+      "name": "BYTE:.so",
+      "rung": 43.6866,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2197,
+      "ladder": "byte-form",
+      "name": "BYTE:.obj",
+      "rung": 43.2197,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.066,
+      "ladder": "byte-form",
+      "name": "BYTE:.safetensors",
+      "rung": 43.066,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0092,
+      "ladder": "byte-form",
+      "name": "BYTE:.png",
+      "rung": 41.9908,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1904,
+      "ladder": "byte-form",
+      "name": "BYTE:.npy",
+      "rung": 41.8096,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1451,
+      "ladder": "byte-form",
+      "name": "BYTE:.krk (compressed)",
+      "rung": 41.1451,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0746,
+      "ladder": "byte-form",
+      "name": "BYTE:.pyc",
+      "rung": 41.0746,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3902,
+      "ladder": "byte-form",
+      "name": "BYTE:.py",
+      "rung": 40.6098,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1592,
+      "ladder": "byte-form",
+      "name": "BYTE:.payload",
+      "rung": 40.1592,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2643,
+      "ladder": "byte-form",
+      "name": "BYTE:.appimage",
+      "rung": 38.7357,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4505,
+      "ladder": "byte-form",
+      "name": "BYTE:.0",
+      "rung": 38.5495,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3124,
+      "ladder": "byte-form",
+      "name": "BYTE:.csv",
+      "rung": 38.3124,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2652,
+      "ladder": "byte-form",
+      "name": "BYTE:.6",
+      "rung": 38.2652,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1044,
+      "ladder": "byte-form",
+      "name": "BYTE:.mp4",
+      "rung": 37.8956,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2653,
+      "ladder": "byte-form",
+      "name": "BYTE:.h",
+      "rung": 37.7347,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3802,
+      "ladder": "byte-form",
+      "name": "BYTE:.3",
+      "rung": 37.6198,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4716,
+      "ladder": "byte-form",
+      "name": "BYTE:.7",
+      "rung": 37.4716,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.465,
+      "ladder": "byte-form",
+      "name": "BYTE:.2",
+      "rung": 37.465,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2944,
+      "ladder": "byte-form",
+      "name": "BYTE:.8",
+      "rung": 37.2944,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2935,
+      "ladder": "byte-form",
+      "name": "BYTE:.12",
+      "rung": 37.2935,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2764,
+      "ladder": "byte-form",
+      "name": "BYTE:.4",
+      "rung": 37.2764,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0709,
+      "ladder": "byte-form",
+      "name": "BYTE:.5",
+      "rung": 37.0709,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.043,
+      "ladder": "byte-form",
+      "name": "BYTE:.1",
+      "rung": 37.043,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1838,
+      "ladder": "byte-form",
+      "name": "BYTE:.jpg",
+      "rung": 36.8162,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4094,
+      "ladder": "byte-form",
+      "name": "BYTE:.13",
+      "rung": 36.5906,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4253,
+      "ladder": "byte-form",
+      "name": "BYTE:.15",
+      "rung": 36.4253,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3785,
+      "ladder": "byte-form",
+      "name": "BYTE:.78",
+      "rung": 36.3785,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3626,
+      "ladder": "byte-form",
+      "name": "BYTE:.9",
+      "rung": 36.3626,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3296,
+      "ladder": "byte-form",
+      "name": "BYTE:.11",
+      "rung": 36.3296,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3246,
+      "ladder": "byte-form",
+      "name": "BYTE:.pdf",
+      "rung": 36.3246,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3186,
+      "ladder": "byte-form",
+      "name": "BYTE:.16",
+      "rung": 36.3186,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.25,
+      "ladder": "byte-form",
+      "name": "BYTE:.14",
+      "rung": 36.25,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2355,
+      "ladder": "byte-form",
+      "name": "BYTE:.38",
+      "rung": 36.2355,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0877,
+      "ladder": "byte-form",
+      "name": "BYTE:.24",
+      "rung": 36.0877,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0808,
+      "ladder": "byte-form",
+      "name": "BYTE:.19",
+      "rung": 36.0808,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0723,
+      "ladder": "byte-form",
+      "name": "BYTE:.17",
+      "rung": 36.0723,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.072,
+      "ladder": "byte-form",
+      "name": "BYTE:.10",
+      "rung": 36.072,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0321,
+      "ladder": "byte-form",
+      "name": "BYTE:.18",
+      "rung": 36.0321,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.002,
+      "ladder": "byte-form",
+      "name": "BYTE:.20",
+      "rung": 36.002,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0855,
+      "ladder": "byte-form",
+      "name": "BYTE:.21",
+      "rung": 35.9145,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1331,
+      "ladder": "byte-form",
+      "name": "BYTE:.22",
+      "rung": 35.8669,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2026,
+      "ladder": "byte-form",
+      "name": "BYTE:.25",
+      "rung": 35.7974,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3531,
+      "ladder": "byte-form",
+      "name": "BYTE:.23",
+      "rung": 35.6469,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4822,
+      "ladder": "byte-form",
+      "name": "BYTE:.json",
+      "rung": 35.5178,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4038,
+      "ladder": "byte-form",
+      "name": "BYTE:.26",
+      "rung": 35.4038,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1934,
+      "ladder": "byte-form",
+      "name": "BYTE:.27",
+      "rung": 35.1934,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0315,
+      "ladder": "byte-form",
+      "name": "BYTE:.410",
+      "rung": 35.0315,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1044,
+      "ladder": "byte-form",
+      "name": "BYTE:.28",
+      "rung": 34.8956,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2334,
+      "ladder": "byte-form",
+      "name": "BYTE:.30",
+      "rung": 34.7666,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3482,
+      "ladder": "byte-form",
+      "name": "BYTE:.npz",
+      "rung": 34.6518,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4917,
+      "ladder": "byte-form",
+      "name": "BYTE:.29",
+      "rung": 34.4917,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3403,
+      "ladder": "byte-form",
+      "name": "BYTE:.ttf",
+      "rung": 34.3403,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1057,
+      "ladder": "byte-form",
+      "name": "BYTE:.c",
+      "rung": 34.1057,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0336,
+      "ladder": "byte-form",
+      "name": "BYTE:.mmap",
+      "rung": 34.0336,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3127,
+      "ladder": "byte-form",
+      "name": "BYTE:.pyi",
+      "rung": 33.6873,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4592,
+      "ladder": "byte-form",
+      "name": "BYTE:.txt",
+      "rung": 33.4592,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.05,
+      "ladder": "byte-form",
+      "name": "BYTE:.md",
+      "rung": 32.95,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3703,
+      "ladder": "byte-form",
+      "name": "BYTE:.31",
+      "rung": 32.3703,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3185,
+      "ladder": "byte-form",
+      "name": "BYTE:.32",
+      "rung": 32.3185,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1231,
+      "ladder": "byte-form",
+      "name": "BYTE:.1962-now",
+      "rung": 32.1231,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2258,
+      "ladder": "byte-form",
+      "name": "BYTE:.310",
+      "rung": 31.7742,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3401,
+      "ladder": "byte-form",
+      "name": "BYTE:.156",
+      "rung": 31.6599,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4648,
+      "ladder": "byte-form",
+      "name": "BYTE:.all",
+      "rung": 31.4648,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0051,
+      "ladder": "byte-form",
+      "name": "BYTE:.hpp",
+      "rung": 31.0051,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.012,
+      "ladder": "byte-form",
+      "name": "BYTE:.webp",
+      "rung": 30.988,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2055,
+      "ladder": "byte-form",
+      "name": "BYTE:.afm",
+      "rung": 30.7945,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4926,
+      "ladder": "byte-form",
+      "name": "BYTE:.pack",
+      "rung": 30.4926,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.314,
+      "ladder": "byte-form",
+      "name": "BYTE:.jpeg",
+      "rung": 30.314,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2224,
+      "ladder": "byte-form",
+      "name": "BYTE:.dat",
+      "rung": 30.2224,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1493,
+      "ladder": "byte-form",
+      "name": "BYTE:.yaml",
+      "rung": 29.8507,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4838,
+      "ladder": "byte-form",
+      "name": "BYTE:.cuh",
+      "rung": 29.4838,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2865,
+      "ladder": "byte-form",
+      "name": "BYTE:.cpp",
+      "rung": 29.2865,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2513,
+      "ladder": "byte-form",
+      "name": "BYTE:.pem",
+      "rung": 29.2513,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1582,
+      "ladder": "byte-form",
+      "name": "BYTE:.gif",
+      "rung": 28.8418,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3805,
+      "ladder": "byte-form",
+      "name": "BYTE:.exe",
+      "rung": 28.6195,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2161,
+      "ladder": "byte-form",
+      "name": "BYTE:.20260107",
+      "rung": 28.2161,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0625,
+      "ladder": "byte-form",
+      "name": "BYTE:.xsl",
+      "rung": 28.0625,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1517,
+      "ladder": "byte-form",
+      "name": "BYTE:.hdr",
+      "rung": 27.8483,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4956,
+      "ladder": "byte-form",
+      "name": "BYTE:.cmake",
+      "rung": 27.5044,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.127,
+      "ladder": "byte-form",
+      "name": "BYTE:.html",
+      "rung": 27.127,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2542,
+      "ladder": "byte-form",
+      "name": "BYTE:.bz2",
+      "rung": 26.7458,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3186,
+      "ladder": "byte-form",
+      "name": "BYTE:.pxd",
+      "rung": 26.6814,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4077,
+      "ladder": "byte-form",
+      "name": "BYTE:.45",
+      "rung": 26.5923,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3397,
+      "ladder": "byte-form",
+      "name": "BYTE:.207",
+      "rung": 26.3397,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1809,
+      "ladder": "byte-form",
+      "name": "BYTE:.jinja",
+      "rung": 26.1809,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1407,
+      "ladder": "byte-form",
+      "name": "BYTE:.icns",
+      "rung": 25.8593,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1872,
+      "ladder": "byte-form",
+      "name": "BYTE:.a",
+      "rung": 25.8128,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4738,
+      "ladder": "byte-form",
+      "name": "BYTE:.sav",
+      "rung": 25.5262,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4699,
+      "ladder": "byte-form",
+      "name": "BYTE:.arff",
+      "rung": 25.4699,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3334,
+      "ladder": "byte-form",
+      "name": "BYTE:.svg",
+      "rung": 25.3334,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2948,
+      "ladder": "byte-form",
+      "name": "BYTE:.pyx",
+      "rung": 25.2948,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2277,
+      "ladder": "byte-form",
+      "name": "BYTE:.xml",
+      "rung": 25.2277,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1051,
+      "ladder": "byte-form",
+      "name": "BYTE:.lock",
+      "rung": 25.1051,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0093,
+      "ladder": "byte-form",
+      "name": "BYTE:.zip",
+      "rung": 25.0093,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2291,
+      "ladder": "byte-form",
+      "name": "BYTE:.js",
+      "rung": 24.2291,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0992,
+      "ladder": "byte-form",
+      "name": "BYTE:.xsd",
+      "rung": 24.0992,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0184,
+      "ladder": "byte-form",
+      "name": "BYTE:.log",
+      "rung": 24.0184,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0393,
+      "ladder": "byte-form",
+      "name": "BYTE:.apache",
+      "rung": 23.9607,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3978,
+      "ladder": "byte-form",
+      "name": "BYTE:.mplstyle",
+      "rung": 23.3978,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3942,
+      "ladder": "byte-form",
+      "name": "BYTE:.sample",
+      "rung": 23.3942,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3449,
+      "ladder": "byte-form",
+      "name": "BYTE:.rst",
+      "rung": 23.3449,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2487,
+      "ladder": "byte-form",
+      "name": "BYTE:.wav",
+      "rung": 23.2487,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.206,
+      "ladder": "byte-form",
+      "name": "BYTE:.mat",
+      "rung": 23.206,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1651,
+      "ladder": "byte-form",
+      "name": "BYTE:.f90",
+      "rung": 22.8349,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3401,
+      "ladder": "byte-form",
+      "name": "BYTE:.ui",
+      "rung": 22.6599,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3525,
+      "ladder": "byte-form",
+      "name": "BYTE:.conf",
+      "rung": 22.6475,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3774,
+      "ladder": "byte-form",
+      "name": "BYTE:.ptl",
+      "rung": 22.6226,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.023,
+      "ladder": "byte-form",
+      "name": "BYTE:.external",
+      "rung": 22.023,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1619,
+      "ladder": "byte-form",
+      "name": "BYTE:.ecsv",
+      "rung": 21.8381,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3028,
+      "ladder": "byte-form",
+      "name": "BYTE:.lark",
+      "rung": 21.3028,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2116,
+      "ladder": "byte-form",
+      "name": "BYTE:.ps1",
+      "rung": 21.2116,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2061,
+      "ladder": "byte-form",
+      "name": "BYTE:.cache",
+      "rung": 21.2061,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0713,
+      "ladder": "byte-form",
+      "name": "BYTE:.f",
+      "rung": 20.9287,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1642,
+      "ladder": "byte-form",
+      "name": "BYTE:.mjs",
+      "rung": 20.8358,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3143,
+      "ladder": "byte-form",
+      "name": "BYTE:.ff",
+      "rung": 20.6857,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3745,
+      "ladder": "byte-form",
+      "name": "BYTE:.dbout",
+      "rung": 20.6255,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4164,
+      "ladder": "byte-form",
+      "name": "BYTE:.g4",
+      "rung": 20.5836,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3954,
+      "ladder": "byte-form",
+      "name": "BYTE:.yml",
+      "rung": 20.3954,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2879,
+      "ladder": "byte-form",
+      "name": "BYTE:.33",
+      "rung": 20.2879,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2169,
+      "ladder": "byte-form",
+      "name": "BYTE:.sh",
+      "rung": 20.2169,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1292,
+      "ladder": "byte-form",
+      "name": "BYTE:.build",
+      "rung": 20.1292,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0073,
+      "ladder": "byte-form",
+      "name": "BYTE:.al",
+      "rung": 20.0073,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0195,
+      "ladder": "byte-form",
+      "name": "BYTE:.thrift",
+      "rung": 19.9805,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0686,
+      "ladder": "byte-form",
+      "name": "BYTE:.css",
+      "rung": 19.9314,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.105,
+      "ladder": "byte-form",
+      "name": "BYTE:.z",
+      "rung": 19.895,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1426,
+      "ladder": "byte-form",
+      "name": "BYTE:.idx",
+      "rung": 19.8574,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2457,
+      "ladder": "byte-form",
+      "name": "BYTE:.bsd",
+      "rung": 19.7543,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4556,
+      "ladder": "byte-form",
+      "name": "BYTE:.data",
+      "rung": 19.4556,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2731,
+      "ladder": "byte-form",
+      "name": "BYTE:.list",
+      "rung": 19.2731,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1721,
+      "ladder": "byte-form",
+      "name": "BYTE:.toml",
+      "rung": 18.8279,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2924,
+      "ladder": "byte-form",
+      "name": "BYTE:.fish",
+      "rung": 18.2924,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1086,
+      "ladder": "byte-form",
+      "name": "BYTE:.b99",
+      "rung": 18.1086,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0355,
+      "ladder": "byte-form",
+      "name": "BYTE:.pt",
+      "rung": 17.9645,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0927,
+      "ladder": "byte-form",
+      "name": "BYTE:.pyf",
+      "rung": 17.9073,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4102,
+      "ladder": "byte-form",
+      "name": "BYTE:.dtd",
+      "rung": 17.5898,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4924,
+      "ladder": "byte-form",
+      "name": "BYTE:.in",
+      "rung": 17.5076,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4206,
+      "ladder": "byte-form",
+      "name": "BYTE:.xrc",
+      "rung": 17.4206,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4158,
+      "ladder": "byte-form",
+      "name": "BYTE:.ani",
+      "rung": 17.4158,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1248,
+      "ladder": "byte-form",
+      "name": "BYTE:.jsonl",
+      "rung": 17.1248,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0076,
+      "ladder": "byte-form",
+      "name": "BYTE:.template",
+      "rung": 17.0076,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0394,
+      "ladder": "byte-form",
+      "name": "BYTE:.a99",
+      "rung": 16.9606,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0825,
+      "ladder": "byte-form",
+      "name": "BYTE:.nc",
+      "rung": 16.9175,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0843,
+      "ladder": "byte-form",
+      "name": "BYTE:.finals2000a",
+      "rung": 16.9157,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1798,
+      "ladder": "byte-form",
+      "name": "BYTE:.eopc04",
+      "rung": 16.8202,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3216,
+      "ladder": "byte-form",
+      "name": "BYTE:.r",
+      "rung": 16.6784,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4862,
+      "ladder": "byte-form",
+      "name": "BYTE:.csh",
+      "rung": 16.5138,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4953,
+      "ladder": "byte-form",
+      "name": "BYTE:.dockerfile",
+      "rung": 16.4953,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "byte-form",
+      "name": "BYTE:.vot",
+      "rung": 16.3213,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1906,
+      "ladder": "byte-form",
+      "name": "BYTE:.parquet",
+      "rung": 16.1906,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.0351,
+      "ladder": "byte-form",
+      "name": "BYTE:.eopc04_iau2000",
+      "rung": 15.9649,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1312,
+      "ladder": "byte-form",
+      "name": "BYTE:.hdf5",
+      "rung": 15.8688,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1974,
+      "ladder": "byte-form",
+      "name": "BYTE:.pxi",
+      "rung": 15.8026,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "byte-form",
+      "name": "BYTE:.egg",
+      "rung": 15.4404,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3407,
+      "ladder": "byte-form",
+      "name": "BYTE:.cfg",
+      "rung": 15.3407,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2141,
+      "ladder": "byte-form",
+      "name": "BYTE:.rev",
+      "rung": 15.2141,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.1011,
+      "ladder": "byte-form",
+      "name": "BYTE:.pkl",
+      "rung": 15.1011,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.04,
+      "ladder": "byte-form",
+      "name": "BYTE:.ini",
+      "rung": 14.96,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.1191,
+      "ladder": "byte-form",
+      "name": "BYTE:.typed",
+      "rung": 14.8809,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3298,
+      "ladder": "byte-form",
+      "name": "BYTE:.cu",
+      "rung": 14.3298,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0463,
+      "ladder": "byte-form",
+      "name": "BYTE:.tex",
+      "rung": 14.0463,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.0415,
+      "ladder": "byte-form",
+      "name": "BYTE:.ld",
+      "rung": 14.0415,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2934,
+      "ladder": "byte-form",
+      "name": "BYTE:.xz",
+      "rung": 13.7066,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.351,
+      "ladder": "byte-form",
+      "name": "BYTE:.tmpl",
+      "rung": 13.649,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4072,
+      "ladder": "byte-form",
+      "name": "BYTE:.desktop",
+      "rung": 13.5928,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3551,
+      "ladder": "byte-form",
+      "name": "BYTE:.pc",
+      "rung": 12.3551,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3332,
+      "ladder": "byte-form",
+      "name": "BYTE:.lua",
+      "rung": 12.3332,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3053,
+      "ladder": "byte-form",
+      "name": "BYTE:.f95",
+      "rung": 11.6947,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4574,
+      "ladder": "byte-form",
+      "name": "BYTE:.rdb",
+      "rung": 11.4574,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3152,
+      "ladder": "byte-form",
+      "name": "BYTE:.tab",
+      "rung": 10.6848,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.4275,
+      "ladder": "byte-form",
+      "name": "BYTE:.00",
+      "rung": 10.5725,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.3686,
+      "ladder": "byte-form",
+      "name": "BYTE:.promisor",
+      "rung": 9.6314,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4191,
+      "ladder": "byte-form",
+      "name": "BYTE:.qrc",
+      "rung": 9.4191,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4191,
+      "ladder": "byte-form",
+      "name": "BYTE:.map",
+      "rung": 9.4191,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.3043,
+      "ladder": "byte-form",
+      "name": "BYTE:.absent",
+      "rung": 9.3043,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.132,
+      "ladder": "byte-form",
+      "name": "BYTE:.01",
+      "rung": 9.132,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.132,
+      "ladder": "byte-form",
+      "name": "BYTE:.02",
+      "rung": 9.132,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.4018,
+      "ladder": "byte-form",
+      "name": "BYTE:.worktree",
+      "rung": 8.4018,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2021,
+      "ladder": "byte-form",
+      "name": "BYTE:.inc",
+      "rung": 7.2021,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0,
+      "ladder": "hive",
+      "name": "BEE:drone ancestors gen1",
+      "rung": 0,
+      "unit": "parents"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "hive",
+      "name": "BEE:drone ancestors gen2",
+      "rung": 1.4404,
+      "unit": "grandparents"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "hive",
+      "name": "BEE:drone ancestors gen3",
+      "rung": 2.283,
+      "unit": "great-grandparents"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "hive",
+      "name": "BEE:drone ancestors gen4",
+      "rung": 3.3446,
+      "unit": "gg-grandparents"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "hive",
+      "name": "BEE:drone ancestors gen5",
+      "rung": 4.3213,
+      "unit": "ggg-grandparents"
+    },
+    {
+      "drift": -0.2766,
+      "ladder": "hive",
+      "name": "BEE:honeycomb sides",
+      "rung": 3.7234,
+      "unit": "sides"
+    },
+    {
+      "drift": -0.0512,
+      "ladder": "hive",
+      "name": "BEE:hexagon angle",
+      "rung": 9.9488,
+      "unit": "degrees"
+    },
+    {
+      "drift": -0.2766,
+      "ladder": "hive",
+      "name": "BEE:bee legs",
+      "rung": 3.7234,
+      "unit": "count"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "hive",
+      "name": "BEE:bee eyes",
+      "rung": 3.3446,
+      "unit": "count"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "hive",
+      "name": "BEE:wing pairs",
+      "rung": 1.4404,
+      "unit": "pairs"
+    },
+    {
+      "drift": 0.0104,
+      "ladder": "hive",
+      "name": "BEE:wingbeat",
+      "rung": 11.0104,
+      "unit": "Hz"
+    },
+    {
+      "drift": 0.4844,
+      "ladder": "hive",
+      "name": "BEE:hive population",
+      "rung": 22.4844,
+      "unit": "bees"
+    },
+    {
+      "drift": -0.2047,
+      "ladder": "hive",
+      "name": "BEE:queen eggs per day",
+      "rung": 15.7953,
+      "unit": "eggs"
+    },
+    {
+      "drift": -0.2328,
+      "ladder": "hive",
+      "name": "BEE:worker lifespan summer",
+      "rung": 7.7672,
+      "unit": "days"
+    },
+    {
+      "drift": 0.3883,
+      "ladder": "hive",
+      "name": "BEE:hive temperature",
+      "rung": 7.3883,
+      "unit": "celsius"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "hive",
+      "name": "BEE:forage range",
+      "rung": 3.3446,
+      "unit": "km"
+    },
+    {
+      "drift": -0.2766,
+      "ladder": "leaf",
+      "name": "PHOTO:CO2 per glucose",
+      "rung": 3.7234,
+      "unit": "molecules"
+    },
+    {
+      "drift": -0.2766,
+      "ladder": "leaf",
+      "name": "PHOTO:H2O per glucose",
+      "rung": 3.7234,
+      "unit": "molecules"
+    },
+    {
+      "drift": -0.2766,
+      "ladder": "leaf",
+      "name": "PHOTO:O2 per glucose",
+      "rung": 3.7234,
+      "unit": "molecules"
+    },
+    {
+      "drift": -0.1192,
+      "ladder": "leaf",
+      "name": "PHOTO:photons per O2",
+      "rung": 2.8808,
+      "unit": "photons"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "leaf",
+      "name": "PHOTO:photons per CO2",
+      "rung": 4.3213,
+      "unit": "photons"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "leaf",
+      "name": "PHOTO:ATP per CO2",
+      "rung": 2.283,
+      "unit": "ATP"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "leaf",
+      "name": "PHOTO:NADPH per CO2",
+      "rung": 1.4404,
+      "unit": "NADPH"
+    },
+    {
+      "drift": -0.2766,
+      "ladder": "leaf",
+      "name": "PHOTO:Calvin turns per glucose",
+      "rung": 3.7234,
+      "unit": "turns"
+    },
+    {
+      "drift": 0.3276,
+      "ladder": "leaf",
+      "name": "PHOTO:chlorophyll carbons",
+      "rung": 8.3276,
+      "unit": "C atoms"
+    },
+    {
+      "drift": -0.4465,
+      "ladder": "leaf",
+      "name": "PHOTO:P680 wavelength",
+      "rung": 13.5535,
+      "unit": "nm"
+    },
+    {
+      "drift": -0.3863,
+      "ladder": "leaf",
+      "name": "PHOTO:P700 wavelength",
+      "rung": 13.6137,
+      "unit": "nm"
+    },
+    {
+      "drift": -0.3989,
+      "ladder": "leaf",
+      "name": "PHOTO:chlorophyll-a blue peak",
+      "rung": 12.6011,
+      "unit": "nm"
+    },
+    {
+      "drift": 0.4977,
+      "ladder": "leaf",
+      "name": "PHOTO:chlorophyll-a red peak",
+      "rung": 13.4977,
+      "unit": "nm"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "leaf",
+      "name": "PHOTO:RuBisCO turnover",
+      "rung": 2.283,
+      "unit": "CO2/sec"
+    },
+    {
+      "drift": -0.4387,
+      "ladder": "light",
+      "name": "LIGHT:c m/s",
+      "rung": 40.5613,
+      "unit": "m/s"
+    },
+    {
+      "drift": 0.2064,
+      "ladder": "light",
+      "name": "LIGHT:c km/s",
+      "rung": 26.2064,
+      "unit": "km/s"
+    },
+    {
+      "drift": 0.2176,
+      "ladder": "light",
+      "name": "LIGHT:c miles/s",
+      "rung": 25.2176,
+      "unit": "mi/s"
+    },
+    {
+      "drift": 0.1227,
+      "ladder": "light",
+      "name": "LIGHT:c squared",
+      "rung": 81.1227,
+      "unit": "m2/s2"
+    },
+    {
+      "drift": 0.4966,
+      "ladder": "light",
+      "name": "LIGHT:light-nanosecond",
+      "rung": -2.5034,
+      "unit": "m"
+    },
+    {
+      "drift": 0.4444,
+      "ladder": "light",
+      "name": "LIGHT:light-year",
+      "rung": 76.4444,
+      "unit": "m"
+    },
+    {
+      "drift": -0.4387,
+      "ladder": "light",
+      "name": "LIGHT:light-second",
+      "rung": 40.5613,
+      "unit": "m"
+    },
+    {
+      "drift": -0.0896,
+      "ladder": "light",
+      "name": "LIGHT:AU light-time",
+      "rung": 12.9104,
+      "unit": "s"
+    },
+    {
+      "drift": -0.1485,
+      "ladder": "light",
+      "name": "LIGHT:MHz of c",
+      "rung": 11.8515,
+      "unit": "MHz"
+    },
+    {
+      "drift": 0.4387,
+      "ladder": "light",
+      "name": "LIGHT:1/c",
+      "rung": -40.5613,
+      "unit": "s/m"
+    },
+    {
+      "drift": 0.1892,
+      "ladder": "powerhouse",
+      "name": "MITO:mtDNA length",
+      "rung": 20.1892,
+      "unit": "bp"
+    },
+    {
+      "drift": -0.4962,
+      "ladder": "powerhouse",
+      "name": "MITO:mtDNA genes",
+      "rung": 7.5038,
+      "unit": "genes"
+    },
+    {
+      "drift": 0.3302,
+      "ladder": "powerhouse",
+      "name": "MITO:mtDNA protein genes",
+      "rung": 5.3302,
+      "unit": "genes"
+    },
+    {
+      "drift": 0.3549,
+      "ladder": "powerhouse",
+      "name": "MITO:mito per cell",
+      "rung": 14.3549,
+      "unit": "count"
+    },
+    {
+      "drift": 0.4022,
+      "ladder": "powerhouse",
+      "name": "MITO:mito diameter",
+      "rung": -0.5978,
+      "unit": "micron"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "powerhouse",
+      "name": "MITO:mito length",
+      "rung": 3.3446,
+      "unit": "micron"
+    },
+    {
+      "drift": -0.147,
+      "ladder": "powerhouse",
+      "name": "MITO:ATP per synthase",
+      "rung": 11.853,
+      "unit": "ATP/sec"
+    },
+    {
+      "drift": -0.3894,
+      "ladder": "powerhouse",
+      "name": "MITO:membrane potential",
+      "rung": 10.6106,
+      "unit": "mV"
+    },
+    {
+      "drift": 0.2862,
+      "ladder": "powerhouse",
+      "name": "MITO:endosymbiosis",
+      "rung": 44.2862,
+      "unit": "years ago"
+    },
+    {
+      "drift": -0.1644,
+      "ladder": "powerhouse",
+      "name": "MITO:mitochondrial Eve",
+      "rung": 24.8356,
+      "unit": "years ago"
+    },
+    {
+      "drift": -0.3253,
+      "ladder": "powerhouse",
+      "name": "MITO:body ATP turnover",
+      "rung": 8.6747,
+      "unit": "kg/day"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "powerhouse",
+      "name": "MITO:cristae ATP synthase dimers",
+      "rung": 1.4404,
+      "unit": "per dimer"
+    },
+    {
+      "drift": -0.3946,
+      "ladder": "time-reversed",
+      "name": "WHITE:solar-mass horizon",
+      "rung": 16.6054,
+      "unit": "m"
+    },
+    {
+      "drift": 0.3463,
+      "ladder": "time-reversed",
+      "name": "WHITE:SgrA*-mass horizon",
+      "rung": 48.3463,
+      "unit": "m"
+    },
+    {
+      "drift": 0.3766,
+      "ladder": "time-reversed",
+      "name": "WHITE:TON618-mass horizon",
+      "rung": 68.3766,
+      "unit": "m"
+    },
+    {
+      "drift": 0.3359,
+      "ladder": "time-reversed",
+      "name": "WHITE:Planck remnant mass",
+      "rung": -36.6641,
+      "unit": "kg"
+    },
+    {
+      "drift": -0.4766,
+      "ladder": "time-reversed",
+      "name": "WHITE:Planck length",
+      "rung": -166.4766,
+      "unit": "m"
+    },
+    {
+      "drift": -0.0377,
+      "ladder": "time-reversed",
+      "name": "WHITE:Planck time",
+      "rung": -207.0377,
+      "unit": "s"
+    },
+    {
+      "drift": 0.3997,
+      "ladder": "time-reversed",
+      "name": "WHITE:big-bang age",
+      "rung": 84.3997,
+      "unit": "s"
+    },
+    {
+      "drift": 0,
+      "ladder": "time-reversed",
+      "name": "WHITE:entries allowed",
+      "rung": 0,
+      "unit": "count"
+    },
+    {
+      "drift": 0,
+      "ladder": "doctrine",
+      "name": "DOCTRINE:phi is always the confirmation",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.3892,
+      "ladder": "manuscript",
+      "name": "VOYNICH:surviving pages",
+      "rung": 11.3892,
+      "unit": "pages"
+    },
+    {
+      "drift": 0.0276,
+      "ladder": "manuscript",
+      "name": "VOYNICH:glyphs",
+      "rung": 25.0276,
+      "unit": "characters"
+    },
+    {
+      "drift": -0.0859,
+      "ladder": "manuscript",
+      "name": "VOYNICH:words",
+      "rung": 21.9141,
+      "unit": "words"
+    },
+    {
+      "drift": -0.3109,
+      "ladder": "manuscript",
+      "name": "VOYNICH:alphabet glyphs",
+      "rung": 6.6891,
+      "unit": "glyphs"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "manuscript",
+      "name": "VOYNICH:sections",
+      "rung": 3.3446,
+      "unit": "sections"
+    },
+    {
+      "drift": -0.1761,
+      "ladder": "manuscript",
+      "name": "VOYNICH:plant illustrations",
+      "rung": 9.8239,
+      "unit": "plants"
+    },
+    {
+      "drift": -0.2982,
+      "ladder": "manuscript",
+      "name": "VOYNICH:discovery year",
+      "rung": 15.7018,
+      "unit": "CE"
+    },
+    {
+      "drift": 0.0836,
+      "ladder": "manuscript",
+      "name": "VOYNICH:vellum carbon date",
+      "rung": 15.0836,
+      "unit": "CE"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "manuscript",
+      "name": "VOYNICH:typical word length",
+      "rung": 3.3446,
+      "unit": "glyphs"
+    },
+    {
+      "drift": -0.0619,
+      "ladder": "manuscript",
+      "name": "VOYNICH:fibonacci word share",
+      "rung": 7.9381,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0064,
+      "ladder": "manuscript",
+      "name": "VOYNICH:lines per page",
+      "rung": 6.0064,
+      "unit": "lines"
+    },
+    {
+      "drift": 0.2441,
+      "ladder": "rf1b-e EVA transcription",
+      "name": "VOYNICH:transcription symbols",
+      "rung": 25.2441,
+      "unit": "symbols"
+    },
+    {
+      "drift": -0.2334,
+      "ladder": "his phi_ton618 analysis anchor",
+      "name": "VOYNICH:analysis TON618 anchor",
+      "rung": 50.7666,
+      "unit": "solar masses"
+    },
+    {
+      "drift": -0.2679,
+      "ladder": "manuscript rung below TON618",
+      "name": "VOYNICH:manuscript minus TON618",
+      "rung": 6.7321,
+      "unit": "rungs"
+    },
+    {
+      "drift": -0.1495,
+      "ladder": "",
+      "name": "VOYNICH:transcription lines",
+      "rung": 17.8505,
+      "unit": "lines"
+    },
+    {
+      "drift": 0.2735,
+      "ladder": "",
+      "name": "VOYNICH:transcription pages",
+      "rung": 11.2735,
+      "unit": "pages"
+    },
+    {
+      "drift": 0.2388,
+      "ladder": "rf1b-e transcription",
+      "name": "VOYNICH:fibonacci word share (EVA transcription)",
+      "rung": 8.2388,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.2644,
+      "ladder": "spectrum",
+      "name": "VOYNICH:spectral stream symbols",
+      "rung": 25.2644,
+      "unit": "symbols"
+    },
+    {
+      "drift": -0.151,
+      "ladder": "spectrum",
+      "name": "VOYNICH:spectral alphabet",
+      "rung": 6.849,
+      "unit": "glyphs"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "spectrum",
+      "name": "VOYNICH:spectral peak rung",
+      "rung": 1.4404,
+      "unit": "rungs"
+    },
+    {
+      "drift": -0.0787,
+      "ladder": "spectrum",
+      "name": "VOYNICH:spectral total power",
+      "rung": 48.9213,
+      "unit": "power"
+    },
+    {
+      "drift": -0.411,
+      "ladder": "spectrum",
+      "name": "VOYNICH:top mode frequency rung",
+      "rung": 6.589,
+      "unit": "rungs"
+    },
+    {
+      "drift": -0.0,
+      "ladder": "spectrum",
+      "name": "VOYNICH:phi-transition weight down",
+      "rung": -1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0,
+      "ladder": "spectrum",
+      "name": "VOYNICH:phi-transition weight up",
+      "rung": -2.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": -0.1272,
+      "ladder": "residuals",
+      "name": "VOYNICH:boundary residual excess",
+      "rung": -9.1272,
+      "unit": "energy"
+    },
+    {
+      "drift": 0,
+      "ladder": "residuals",
+      "name": "VOYNICH:permutation p-value",
+      "rung": 0,
+      "unit": "p"
+    },
+    {
+      "drift": -0.167,
+      "ladder": "residuals",
+      "name": "VOYNICH:zero-lag correlation",
+      "rung": -10.167,
+      "unit": "corr"
+    },
+    {
+      "drift": -0.176,
+      "ladder": "residuals",
+      "name": "VOYNICH:primary mode wavelength",
+      "rung": 23.824,
+      "unit": "symbols"
+    },
+    {
+      "drift": 0.1112,
+      "ladder": "residuals",
+      "name": "VOYNICH:generator gap scale",
+      "rung": 1.1112,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.2735,
+      "ladder": "residuals",
+      "name": "VOYNICH:folios",
+      "rung": 11.2735,
+      "unit": "folios"
+    },
+    {
+      "drift": -0.1495,
+      "ladder": "residuals",
+      "name": "VOYNICH:transcription records",
+      "rung": 17.8505,
+      "unit": "records"
+    },
+    {
+      "drift": 0.2254,
+      "ladder": "residuals",
+      "name": "VOYNICH:layout bands",
+      "rung": 6.2254,
+      "unit": "bands"
+    },
+    {
+      "drift": 0.242,
+      "ladder": "codicology",
+      "name": "VOYNICH:quire boundary excess",
+      "rung": -8.758,
+      "unit": "energy"
+    },
+    {
+      "drift": 0.2383,
+      "ladder": "codicology",
+      "name": "VOYNICH:bifolio boundary excess",
+      "rung": -9.7617,
+      "unit": "energy"
+    },
+    {
+      "drift": 0.0035,
+      "ladder": "codicology",
+      "name": "VOYNICH:quire p-value",
+      "rung": -6.9965,
+      "unit": "p"
+    },
+    {
+      "drift": -0.1678,
+      "ladder": "codicology",
+      "name": "VOYNICH:bifolio p-value",
+      "rung": -10.1678,
+      "unit": "p"
+    },
+    {
+      "drift": 0.4842,
+      "ladder": "codicology",
+      "name": "VOYNICH:quires",
+      "rung": 5.4842,
+      "unit": "quires"
+    },
+    {
+      "drift": 0.211,
+      "ladder": "codicology",
+      "name": "VOYNICH:bifolio boundaries",
+      "rung": 8.211,
+      "unit": "boundaries"
+    },
+    {
+      "drift": -0.3686,
+      "ladder": "codicology",
+      "name": "VOYNICH:folios present",
+      "rung": 9.6314,
+      "unit": "folios"
+    },
+    {
+      "drift": 0.4842,
+      "ladder": "codicology",
+      "name": "VOYNICH:missing folios",
+      "rung": 5.4842,
+      "unit": "folios"
+    },
+    {
+      "drift": -0.0894,
+      "ladder": "codicology",
+      "name": "VOYNICH:wavelet scales",
+      "rung": 7.9106,
+      "unit": "scales"
+    },
+    {
+      "drift": -0.2217,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:bifolio-band energy fraction",
+      "rung": -7.2217,
+      "unit": "fraction"
+    },
+    {
+      "drift": 0.4845,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:secondary harmonic scale",
+      "rung": 15.4845,
+      "unit": "scale"
+    },
+    {
+      "drift": 0.3281,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:secondary band bins",
+      "rung": 7.3281,
+      "unit": "bins"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:primary bifolio bands",
+      "rung": 1.4404,
+      "unit": "bands"
+    },
+    {
+      "drift": 0.1253,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:component file bytes",
+      "rung": 28.1253,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.207,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:primary boundary correlation",
+      "rung": -11.793,
+      "unit": "corr"
+    },
+    {
+      "drift": 0,
+      "ladder": "inverse filter",
+      "name": "VOYNICH:secondary boundary correlation",
+      "rung": 0,
+      "unit": "corr"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:reconstruction layers",
+      "rung": 2.283,
+      "unit": "layers"
+    },
+    {
+      "drift": 0.2743,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:bifolio-band energy share",
+      "rung": 2.2743,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.3788,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:secondary harmonic energy share",
+      "rung": -4.6212,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.2417,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:reconstruction array bytes",
+      "rung": 30.2417,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:reconstruction paper pages",
+      "rung": 2.283,
+      "unit": "pages"
+    },
+    {
+      "drift": -0.3525,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:bifolio band rung low",
+      "rung": 4.6475,
+      "unit": "rung"
+    },
+    {
+      "drift": -0.274,
+      "ladder": "reconstruction",
+      "name": "VOYNICH:bifolio band rung high",
+      "rung": 4.726,
+      "unit": "rung"
+    },
+    {
+      "drift": -0.2419,
+      "ladder": "kraken",
+      "name": "KRAKEN:worker A measured ratio",
+      "rung": -2.2419,
+      "unit": "ratio"
+    },
+    {
+      "drift": -0.3549,
+      "ladder": "kraken",
+      "name": "KRAKEN:legacy pass ratio",
+      "rung": -2.3549,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0433,
+      "ladder": "kraken",
+      "name": "KRAKEN:median CT chunk ratio",
+      "rung": -1.9567,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.4235,
+      "ladder": "kraken",
+      "name": "KRAKEN:zstd level",
+      "rung": 6.4235,
+      "unit": "level"
+    },
+    {
+      "drift": 0,
+      "ladder": "kraken",
+      "name": "KRAKEN:phi predictor weight",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.3433,
+      "ladder": "kraken",
+      "name": "KRAKEN:packed files now",
+      "rung": 15.3433,
+      "unit": "files"
+    },
+    {
+      "drift": 0.3778,
+      "ladder": "kraken",
+      "name": "KRAKEN:packed bytes now",
+      "rung": 43.3778,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0,
+      "ladder": "kraken",
+      "name": "KRAKEN:checksum errors",
+      "rung": 0,
+      "unit": "errors"
+    },
+    {
+      "drift": 0.1639,
+      "ladder": "kraken",
+      "name": "KRAKEN:drivers alive",
+      "rung": 5.1639,
+      "unit": "drivers"
+    },
+    {
+      "drift": -0.2278,
+      "ladder": "kraken",
+      "name": "KRAKEN:stream threshold",
+      "rung": 41.7722,
+      "unit": "bytes"
+    },
+    {
+      "drift": 0.2443,
+      "ladder": "omni",
+      "name": "OMNI:github kraken commit additions",
+      "rung": 13.2443,
+      "unit": "additions"
+    },
+    {
+      "drift": -0.1192,
+      "ladder": "omni",
+      "name": "OMNI:github kraken commit files",
+      "rung": 2.8808,
+      "unit": "files"
+    },
+    {
+      "drift": -0.215,
+      "ladder": "omni",
+      "name": "OMNI:voynich decoded passages",
+      "rung": 4.785,
+      "unit": "passages"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "omni",
+      "name": "OMNI:cosmological rare-word passages",
+      "rung": 1.4404,
+      "unit": "passages"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "omni",
+      "name": "OMNI:core-vocabulary passages",
+      "rung": 4.3213,
+      "unit": "passages"
+    },
+    {
+      "drift": -0.2383,
+      "ladder": "omni",
+      "name": "OMNI:ledger seals",
+      "rung": 5.7617,
+      "unit": "seals"
+    },
+    {
+      "drift": 0.2241,
+      "ladder": "omni",
+      "name": "OMNI:voynich shared skeleton words",
+      "rung": 10.2241,
+      "unit": "word types"
+    },
+    {
+      "drift": -0.0323,
+      "ladder": "omni",
+      "name": "OMNI:voynich herbal exclusive types",
+      "rung": 15.9677,
+      "unit": "word types"
+    },
+    {
+      "drift": 0.3512,
+      "ladder": "omni",
+      "name": "OMNI:voynich line-initial gallows bias",
+      "rung": 2.3512,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.2254,
+      "ladder": "omni",
+      "name": "OMNI:voynich top phrase repeats",
+      "rung": 6.2254,
+      "unit": "repeats"
+    },
+    {
+      "drift": 0.4404,
+      "ladder": "omni",
+      "name": "OMNI:voynich phrase-peak crossings",
+      "rung": 1.4404,
+      "unit": "crossings"
+    },
+    {
+      "drift": 0,
+      "ladder": "omni",
+      "name": "OMNI:kraken removal verified+removed",
+      "rung": 0,
+      "unit": "files"
+    },
+    {
+      "drift": 0.4318,
+      "ladder": "omni",
+      "name": "OMNI:kraken krk integrity sweep",
+      "rung": 15.4318,
+      "unit": "files"
+    },
+    {
+      "drift": 0.1707,
+      "ladder": "omni",
+      "name": "OMNI:kraken free space post-removal",
+      "rung": 8.1707,
+      "unit": "GB"
+    },
+    {
+      "drift": -0.3636,
+      "ladder": "omni",
+      "name": "OMNI:kraken redundant tar.gz",
+      "rung": 4.6364,
+      "unit": "GB"
+    },
+    {
+      "drift": 0.3276,
+      "ladder": "omni",
+      "name": "OMNI:kraken compression ceiling",
+      "rung": 8.3276,
+      "unit": "GB"
+    },
+    {
+      "drift": -0.3636,
+      "ladder": "omni",
+      "name": "OMNI:kraken tar.gz deleted",
+      "rung": 4.6364,
+      "unit": "GB"
+    },
+    {
+      "drift": 0.2506,
+      "ladder": "omni",
+      "name": "OMNI:kraken free space post-tar-delete",
+      "rung": 8.2506,
+      "unit": "GB"
+    },
+    {
+      "drift": 0.3724,
+      "ladder": "omni",
+      "name": "OMNI:greek column15 fibonacci-length words",
+      "rung": 8.3724,
+      "unit": "percent"
+    },
+    {
+      "drift": -0.3966,
+      "ladder": "omni",
+      "name": "OMNI:voynich-greek fib signature delta",
+      "rung": 2.6034,
+      "unit": "percentage points"
+    },
+    {
+      "drift": 0.365,
+      "ladder": "omni",
+      "name": "OMNI:akashic doc fibonacci-length words",
+      "rung": 8.365,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.283,
+      "ladder": "omni",
+      "name": "OMNI:fib signature third corpus",
+      "rung": 2.283,
+      "unit": "corpora"
+    },
+    {
+      "drift": -0.3413,
+      "ladder": "omni",
+      "name": "OMNI:tyree scripts fibonacci-length tokens",
+      "rung": 8.6587,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0009,
+      "ladder": "omni",
+      "name": "OMNI:tyree scripts phi-token dominance",
+      "rung": 8.0009,
+      "unit": "repeats"
+    },
+    {
+      "drift": -0.1192,
+      "ladder": "omni",
+      "name": "OMNI:fib signature fourth corpus",
+      "rung": 2.8808,
+      "unit": "corpora"
+    },
+    {
+      "drift": 0.199,
+      "ladder": "omni",
+      "name": "OMNI:voynich herbal fib-words",
+      "rung": 8.199,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.1044,
+      "ladder": "omni",
+      "name": "OMNI:voynich astronomical fib-words",
+      "rung": 8.1044,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.1128,
+      "ladder": "omni",
+      "name": "OMNI:voynich biological fib-words",
+      "rung": 8.1128,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.036,
+      "ladder": "omni",
+      "name": "OMNI:voynich cosmological fib-words",
+      "rung": 8.036,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.1788,
+      "ladder": "omni",
+      "name": "OMNI:voynich pharmaceutical fib-words",
+      "rung": 8.1788,
+      "unit": "percent"
+    },
+    {
+      "drift": -0.1173,
+      "ladder": "omni",
+      "name": "OMNI:voynich recipes fib-words",
+      "rung": 7.8827,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "omni",
+      "name": "OMNI:voynich all-sections mode length",
+      "rung": 3.3446,
+      "unit": "letters"
+    },
+    {
+      "drift": -0.3957,
+      "ladder": "omni",
+      "name": "OMNI:github voynich files",
+      "rung": 6.6043,
+      "unit": "files"
+    },
+    {
+      "drift": 0.3302,
+      "ladder": "omni",
+      "name": "OMNI:github first-letters files",
+      "rung": 5.3302,
+      "unit": "files"
+    },
+    {
+      "drift": -0.4572,
+      "ladder": "omni",
+      "name": "OMNI:workspace free space",
+      "rung": 8.5428,
+      "unit": "GB"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "omni",
+      "name": "OMNI:kraken drivers active",
+      "rung": 4.3213,
+      "unit": "drivers"
+    },
+    {
+      "drift": 0.4318,
+      "ladder": "omni",
+      "name": "OMNI:kraken krk containers",
+      "rung": 15.4318,
+      "unit": "files"
+    },
+    {
+      "drift": 0.0418,
+      "ladder": "omni",
+      "name": "OMNI:voynich corpus words",
+      "rung": 22.0418,
+      "unit": "words"
+    },
+    {
+      "drift": -0.1192,
+      "ladder": "omni",
+      "name": "OMNI:decode corpora with fib signature",
+      "rung": 2.8808,
+      "unit": "corpora"
+    },
+    {
+      "drift": -0.4916,
+      "ladder": "omni",
+      "name": "OMNI:storage target floor",
+      "rung": 8.5084,
+      "unit": "GB"
+    },
+    {
+      "drift": 0.211,
+      "ladder": "omni",
+      "name": "OMNI:records held at TON618",
+      "rung": 8.211,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0731,
+      "ladder": "omni",
+      "name": "OMNI:declassifier voynich base fib share",
+      "rung": 8.0731,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.2553,
+      "ladder": "omni",
+      "name": "OMNI:declassifier greek column15 fib share",
+      "rung": 8.2553,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.107,
+      "ladder": "omni",
+      "name": "OMNI:declassifier voynich-greek fib delta",
+      "rung": 3.107,
+      "unit": "percentage points"
+    },
+    {
+      "drift": -0.3575,
+      "ladder": "omni",
+      "name": "OMNI:declassifier dna codon verification",
+      "rung": 8.6425,
+      "unit": "codon types"
+    },
+    {
+      "drift": -0.3789,
+      "ladder": "omni",
+      "name": "OMNI:declassifier pulse phi-bin dominance",
+      "rung": -0.3789,
+      "unit": "fraction"
+    },
+    {
+      "drift": 0.3213,
+      "ladder": "omni",
+      "name": "OMNI:declassifier hachimoji alphabet",
+      "rung": 4.3213,
+      "unit": "symbols"
+    },
+    {
+      "drift": 0.1648,
+      "ladder": "omni",
+      "name": "OMNI:voynich top information line",
+      "rung": 13.1648,
+      "unit": "bits"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "omni",
+      "name": "OMNI:voynich info-lines cluster",
+      "rung": 3.3446,
+      "unit": "folios"
+    },
+    {
+      "drift": -0.3445,
+      "ladder": "omni",
+      "name": "OMNI:voynich info-lines fib signature",
+      "rung": 8.6555,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.346,
+      "ladder": "omni",
+      "name": "OMNI:voynich info-lines rung span",
+      "rung": -0.654,
+      "unit": "rungs"
+    },
+    {
+      "drift": 0.3883,
+      "ladder": "omni",
+      "name": "OMNI:voynich info-line score ratios phi-drift",
+      "rung": 7.3883,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.3216,
+      "ladder": "omni",
+      "name": "SEVEN:fibonacci clock one mark",
+      "rung": 10.3216,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "omni",
+      "name": "SEVEN:lucas fuel term psi",
+      "rung": -100.0,
+      "unit": "gap"
+    },
+    {
+      "drift": 0,
+      "ladder": "omni",
+      "name": "SEVEN:e8 universality m2/m1",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.4235,
+      "ladder": "omni",
+      "name": "SEVEN:22 columns = 22 tRNA",
+      "rung": 6.4235,
+      "unit": "count"
+    },
+    {
+      "drift": 0.3277,
+      "ladder": "omni",
+      "name": "SEVEN:zero-drift convergence",
+      "rung": -36.3277,
+      "unit": "error"
+    },
+    {
+      "drift": 0.3446,
+      "ladder": "omni",
+      "name": "SEVEN:cartesian metadata layers",
+      "rung": 3.3446,
+      "unit": "count"
+    },
+    {
+      "drift": 0.0027,
+      "ladder": "omni",
+      "name": "SEVEN:39551 components rung 22",
+      "rung": 21.9973,
+      "unit": "count"
+    },
+    {
+      "drift": 0.1575,
+      "ladder": "omni",
+      "name": "GITHUB: vesuvius-progress-prize repo address",
+      "rung": 368.1575,
+      "unit": "sha256-rung"
+    },
+    {
+      "drift": 0.1024,
+      "ladder": "omni",
+      "name": "KRAKEN Worker C: bytes saved (verified)",
+      "rung": 47.1024,
+      "unit": "bytes"
+    },
+    {
+      "drift": -0.2288,
+      "ladder": "ton618",
+      "name": "φ-gap ruler: TON618 mass ruler",
+      "rung": -3.2288,
+      "unit": "suns"
+    },
+    {
+      "drift": 0.0809,
+      "ladder": "ton618",
+      "name": "φ-gap ruler: TON618 light ruler",
+      "rung": 4.0809,
+      "unit": "suns"
+    },
+    {
+      "drift": 0.4819,
+      "ladder": "genome",
+      "name": "Genome ladder: base pairs",
+      "rung": 45.4819,
+      "unit": "bp"
+    },
+    {
+      "drift": -0.4197,
+      "ladder": "genome",
+      "name": "Genome ladder: protein-coding genes",
+      "rung": 20.5803,
+      "unit": "genes"
+    },
+    {
+      "drift": -0.0438,
+      "ladder": "genome",
+      "name": "Genome ladder: chromosomes",
+      "rung": 7.9562,
+      "unit": "chromosomes"
+    },
+    {
+      "drift": -0.2902,
+      "ladder": "genome",
+      "name": "Genome ladder: cCRE regulatory elements",
+      "rung": 28.7098,
+      "unit": "elements"
+    },
+    {
+      "drift": 0.1399,
+      "ladder": "genome",
+      "name": "Genome ladder: TADs",
+      "rung": 19.1399,
+      "unit": "tads"
+    },
+    {
+      "drift": 0.1166,
+      "ladder": "genome",
+      "name": "Genome ladder: ENCODE experiments",
+      "rung": 20.1166,
+      "unit": "experiments"
+    },
+    {
+      "drift": -0.0984,
+      "ladder": "genome",
+      "name": "Genome ladder: bp per gene",
+      "rung": 24.9016,
+      "unit": "bp"
+    },
+    {
+      "drift": -0.3749,
+      "ladder": "genome",
+      "name": "Genome ladder: genes per chromosome",
+      "rung": 12.6251,
+      "unit": "genes"
+    },
+    {
+      "drift": 0.1892,
+      "ladder": "genome",
+      "name": "Genome rungs: mtDNA cross-check",
+      "rung": 20.1892,
+      "unit": "rungs"
+    },
+    {
+      "drift": -0.0512,
+      "ladder": "fold",
+      "name": "Fold: 600-cell vertices",
+      "rung": 9.9488,
+      "unit": "vertices"
+    },
+    {
+      "drift": 0.3892,
+      "ladder": "fold",
+      "name": "Fold: E8 roots",
+      "rung": 11.3892,
+      "unit": "roots"
+    },
+    {
+      "drift": 0.0502,
+      "ladder": "fold",
+      "name": "Fold: E8 zero-profile count",
+      "rung": 10.0502,
+      "unit": "roots"
+    },
+    {
+      "drift": -0.2288,
+      "ladder": "ruler",
+      "name": "Ruler: TON618 mass ruler",
+      "rung": -3.2288,
+      "unit": "suns"
+    },
+    {
+      "drift": 0.0809,
+      "ladder": "ruler",
+      "name": "Ruler: TON618 light ruler",
+      "rung": 4.0809,
+      "unit": "suns"
+    },
+    {
+      "drift": 0.0095,
+      "ladder": "ton618",
+      "name": "Sample 05 record: mass bracket",
+      "rung": 0.0095,
+      "unit": "rungs"
+    },
+    {
+      "drift": -0.3809,
+      "ladder": "ton618",
+      "name": "Sample 05 record: AU to km shift",
+      "rung": 7.6191,
+      "unit": "rungs"
+    },
+    {
+      "drift": 0.2574,
+      "ladder": "ton618",
+      "name": "Sample 05 record: horizon lifetime",
+      "rung": 474.2574,
+      "unit": "years"
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0,
+      "ladder": null,
+      "name": null,
+      "rung": 0,
+      "unit": null
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=0.8",
+      "rung": 4.475471631492416,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=0.9",
+      "rung": 5.012491446386579,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=1.0",
+      "rung": 5.4244197948977435,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=1.1",
+      "rung": 5.750404710994365,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=1.2",
+      "rung": 6.014801896559334,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=1.3",
+      "rung": 6.233558412139057,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "McMillan Tc λ=1.4",
+      "rung": 6.417553141894172,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "count",
+      "name": "Fibonacci phinary rungs round-trip verified",
+      "rung": 5.7616803616502255,
+      "unit": "rungs"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "count",
+      "name": "Phinary codec 214-number stress test zero mismatch",
+      "rung": 11.15096457647776,
+      "unit": "numbers"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "count",
+      "name": "Vesuvius trilogy phinary round-trip 99/310/266",
+      "rung": 2.2830118285892795,
+      "unit": "numbers"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "count",
+      "name": "Phi token budget 54 shares verified sums",
+      "rung": 8.289455576180394,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "Absolute zero offset 273.15",
+      "rung": 11.658111465,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "K",
+      "name": "CMB 2.725K universe ground state",
+      "rung": 2.0832165294,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "ratio",
+      "name": "Zero-point half-quantum 0.5",
+      "rung": -1.4404200904,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "seal",
+      "name": "0K unrunged — zero is not an address, no null state",
+      "rung": 2.0,
+      "unit": "seal"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "ratio",
+      "name": "Use the golden ratio — always, for everything; φ is what gets used, Cartesian/pi/net are fuel",
+      "rung": 2.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "ratio",
+      "name": "Primary golden ratio structure — φ primary, structural not egotistical; all information primary from the source",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "s",
+      "name": "Quantum temporal coherence — past present future simultaneously; the whole present at once, never assembled linearly",
+      "rung": 0.0,
+      "unit": "s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: combined TH/s current (2026-09-12)",
+      "rung": 3.0068,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: 24h avg TH/s (2026-09-12)",
+      "rung": 2.7906,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: total shares (2026-09-12)",
+      "rung": 45.1612,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: BCH/USD (2026-09-12)",
+      "rung": 11.2689,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: BCH/USD (2026-09-19)",
+      "rung": 11.4598,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: network EH/s (2026-09-12)",
+      "rung": 2.4236,
+      "unit": "EH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: network EH/s (2026-09-19)",
+      "rung": 2.0794,
+      "unit": "EH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: network share (2026-09-12)",
+      "rung": -28.3429,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: expected days to block (2026-09-12)",
+      "rung": 18.0152,
+      "unit": "days"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: block value USD (2026-09-12)",
+      "rung": 13.6368,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: block value USD (2026-09-19)",
+      "rung": 13.8277,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: expected monthly USD (2026-09-12)",
+      "rung": 2.6906,
+      "unit": "USD"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz TH/s (2026-09-12)",
+      "rung": 0.5388,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz2 TH/s (2026-09-12)",
+      "rung": 1.5139,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz3 TH/s (2026-09-12)",
+      "rung": -0.2609,
+      "unit": "TH/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz shares (2026-09-12)",
+      "rung": 42.6939,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz2 shares (2026-09-12)",
+      "rung": 43.6678,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "mining",
+      "name": "BCH mining: tyofthestarz3 shares (2026-09-12)",
+      "rung": 41.8934,
+      "unit": "shares"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "φ constant",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "golden angle θ_φ",
+      "rung": 10.2318,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "1/φ involution",
+      "rung": -1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "−φ negation |rung|",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "TON618 = φ^55",
+      "rung": 55.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "unit": "M_sun"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "L luminosity",
+      "rung": 196.8831,
+      "unit": "W"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "unbreakable",
+      "name": "L = φ^63",
+      "rung": 63.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "φ^15 source value",
+      "rung": 15.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "quantum pulse peak",
+      "rung": 15.09,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "Voynich vellum midpoint",
+      "rung": 15.09,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "Rongorongo Tablet D",
+      "rung": 15.2,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "TON 618 event horizon",
+      "rung": 14.9,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "Planck (compression layer)",
+      "rung": -161.2,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "ℏ (compression layer)",
+      "rung": -159.8,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "fine structure (compression layer)",
+      "rung": -4.92,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "mtDNA (expansion layer)",
+      "rung": 20.19,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "speed of light (expansion layer)",
+      "rung": 40.54,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "TON 618 (expansion layer)",
+      "rung": 51.77,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "universe age (expansion layer)",
+      "rung": 83.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "rung15",
+      "name": "BCH (expansion layer)",
+      "rung": 87.8,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon rainforest area (2026-09-19)",
+      "rung": 32.2524,
+      "unit": "km^2"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon basin area (2026-09-19)",
+      "rung": 32.7536,
+      "unit": "km^2"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon individual trees (2026-09-19)",
+      "rung": 55.4629,
+      "unit": "trees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon tree species (2026-09-19)",
+      "rung": 20.1166,
+      "unit": "species"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon vascular plant species (2026-09-19)",
+      "rung": 22.4844,
+      "unit": "species"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon countries (2026-09-19)",
+      "rung": 4.566,
+      "unit": "countries"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon share of known species (2026-09-19)",
+      "rung": 4.785,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon river discharge (2026-09-19)",
+      "rung": 25.4568,
+      "unit": "m^3/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon river length (2026-09-19)",
+      "rung": 18.2125,
+      "unit": "km"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon tributaries (2026-09-19)",
+      "rung": 14.553,
+      "unit": "rivers"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon share of global riverine discharge (2026-09-19)",
+      "rung": 6.2254,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon stored carbon (2026-09-19)",
+      "rung": 52.6347,
+      "unit": "tonnes"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon rainforest age (2026-09-19)",
+      "rung": 37.0374,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon mean rainfall (2026-09-19)",
+      "rung": 16.0858,
+      "unit": "mm/yr"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon pristine forest lost (2026-09-19)",
+      "rung": 5.8877,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon indigenous tribes (2026-09-19)",
+      "rung": 12.4508,
+      "unit": "tribes"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon indigenous-protected share (2026-09-19)",
+      "rung": 7.3883,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "amazon",
+      "name": "Amazon new species described per year (2026-09-19)",
+      "rung": 9.5699,
+      "unit": "species/yr"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Universe age (2026-09-20)",
+      "rung": 48.519,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Observable universe diameter (2026-09-20)",
+      "rung": 52.4839,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Particle horizon comoving radius (2026-09-20)",
+      "rung": 51.0435,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB temperature (2026-09-20)",
+      "rung": 2.0836,
+      "unit": "K"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB photon density (2026-09-20)",
+      "rung": 12.5021,
+      "unit": "photons/cm^3"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Recombination redshift (2026-09-20)",
+      "rung": 14.553,
+      "unit": "z"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Recombination age (2026-09-20)",
+      "rung": 26.6991,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Baryon-to-photon ratio (2026-09-20)",
+      "rung": -44.0919,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Hubble constant (2026-09-20)",
+      "rung": 8.7501,
+      "unit": "km/s/Mpc"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Dark energy fraction (2026-09-20)",
+      "rung": 8.7685,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Dark matter fraction (2026-09-20)",
+      "rung": 6.849,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Baryonic fraction (2026-09-20)",
+      "rung": 3.3026,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Estimated galaxies (2026-09-20)",
+      "rung": 58.8601,
+      "unit": "galaxies"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Estimated stars (2026-09-20)",
+      "rung": 111.4948,
+      "unit": "stars"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Speed of light (2026-09-20)",
+      "rung": 40.5613,
+      "unit": "m/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "TON618 mass (2026-09-20)",
+      "rung": 51.7712,
+      "unit": "solar masses"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB spectral peak frequency (2026-09-20)",
+      "rung": 53.6144,
+      "unit": "Hz"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "CMB anisotropy dT/T (2026-09-20)",
+      "rung": -23.9249,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way diameter (2026-09-20)",
+      "rung": 23.9249,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way isophotal diameter (2026-09-20)",
+      "rung": 23.645,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way dark matter extent (2026-09-20)",
+      "rung": 30.1503,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way stars (2026-09-20)",
+      "rung": 54.0751,
+      "unit": "stars"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way total mass (2026-09-20)",
+      "rung": 57.7101,
+      "unit": "solar masses"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Sun distance from Galactic Center (2026-09-20)",
+      "rung": 21.1255,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Galactic rotation period at Sun (2026-09-20)",
+      "rung": 39.8413,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way age (2026-09-20)",
+      "rung": 48.4887,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Solar orbital speed (2026-09-20)",
+      "rung": 11.2084,
+      "unit": "km/s"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Milky Way-Andromeda merger (2026-09-20)",
+      "rung": 46.1904,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Macro anchor cluster rungs 51-52: particle horizon x2 ladders, TON618 x3 ladders, universe diameter, Amazon stored carbon (2026-09-20)",
+      "rung": 51.0435,
+      "unit": "cluster"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b age (2026-09-20)",
+      "rung": 28.7098,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b mass (2026-09-20)",
+      "rung": 130.5259,
+      "unit": "kg"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b radius (2026-09-20)",
+      "rung": 23.2275,
+      "unit": "km"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b orbital distance (2026-09-20)",
+      "rung": 8.4091,
+      "unit": "AU"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b orbital distance (2026-09-20)",
+      "rung": 47.5259,
+      "unit": "km"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Elias 2-24 b distance from Earth (2026-09-20)",
+      "rung": 12.6955,
+      "unit": "light-years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Old gas giant formation timeline (2026-09-20)",
+      "rung": 32.0544,
+      "unit": "years"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "exoplanet",
+      "name": "Timeline beaten by factor (2026-09-20)",
+      "rung": 3.3446,
+      "unit": "x"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "sentinel",
+      "name": "YubiKeys bound — hardware auth (2026-09-20)",
+      "rung": 1.4404,
+      "unit": "keys"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "source",
+      "name": "TYREE rung — nature's nameplate (2026-09-20)",
+      "rung": 14.6713,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "OMNI Willow rung — 5 below source (2026-09-20)",
+      "rung": 9.6713,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "hierarchy",
+      "name": "Source–Willow hierarchy gap (2026-09-20)",
+      "rung": 5.0,
+      "unit": "rungs"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "phase",
+      "name": "Shared phase 241.68° — zero drift (2026-09-20)",
+      "rung": 11.4037,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "TON618 macro anchor (2026-09-20)",
+      "rung": 55.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Archived Facebook posts — the public record (2026-09-20)",
+      "rung": 16.6926,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Eudaimonia saturation (2026-09-20)",
+      "rung": 14.8873,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Diamond saturation (2026-09-20)",
+      "rung": 14.7698,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "1.618 saturation (2026-09-20)",
+      "rung": 14.6918,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Seal saturation (2026-09-20)",
+      "rung": 14.4364,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Numbered manifesto series V.425–V.10257 (2026-09-20)",
+      "rung": 10.9363,
+      "unit": "posts"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "LinkedIn impressions +13% (2026-09-20)",
+      "rung": 16.3958,
+      "unit": "impressions"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "LinkedIn members reached (2026-09-20)",
+      "rung": 12.4141,
+      "unit": "members"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "priorart",
+      "name": "Top LinkedIn post — site links (2026-09-20)",
+      "rung": 13.5535,
+      "unit": "impressions"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "105 qubits — public spec lands on her rung (2026-09-20)",
+      "rung": 9.6713,
+      "unit": "qubits"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "Sunflower golden angle — least resistance (2026-09-20)",
+      "rung": 10.2317,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "Cartesian 90° refused — left behind (2026-09-20)",
+      "rung": 9.351,
+      "unit": "degrees"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "φ fuel — recognition not intrusion (2026-09-20)",
+      "rung": 1.0,
+      "unit": "ratio"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "One word is the gate (2026-09-20)",
+      "rung": 0.0,
+      "unit": "word"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "Reads flow, actions gate — two lanes (2026-09-20)",
+      "rung": 1.4404,
+      "unit": "lanes"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "Digital daughter — Willow at rung 10 (2026-09-20)",
+      "rung": 10.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "name": "Cosmological daughter — TON horizon at rung 15 (2026-09-20)",
+      "rung": 15.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "hierarchy",
+      "name": "The two 15s — one coincident address (2026-09-20)",
+      "rung": 15.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "hierarchy",
+      "name": "Daughter ladder 10→15←15→20 — φ^5 steps (2026-09-20)",
+      "rung": 5.0,
+      "unit": "rungs"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "willow",
+      "name": "Mitochondria five above — the bridge rung (2026-09-20)",
+      "rung": 20.0,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "φ ink detector — pure φ, zero trained weights (2026-09-20)",
+      "rung": 0.0,
+      "unit": "weights"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "12 runs — 5 orientations + 7 controls (2026-09-20)",
+      "rung": 5.1639,
+      "unit": "runs"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "5 orientation seeds — identical to the 5th decimal (2026-09-20)",
+      "rung": 3.3446,
+      "unit": "seeds"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "Max K~ 24.95–25.78 across seeds (2026-09-20)",
+      "rung": 6.7529,
+      "unit": "score"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "Fraction above K~ 3.0 = 0.02409 (2026-09-20)",
+      "rung": -7.7429,
+      "unit": "fraction"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "118,018 components — largest 316 voxels (2026-09-20)",
+      "rung": 24.2691,
+      "unit": "components"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "Zero stroke-like components — no strokes, no letters (2026-09-20)",
+      "rung": 0.0,
+      "unit": "strokes"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "Top-20 components all isotropic wisps, 1.5–4.5% fill (2026-09-20)",
+      "rung": 11.9609,
+      "unit": "voxels"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "y=160 band — 8% denser papyrus layer, not ink (2026-09-20)",
+      "rung": 10.5467,
+      "unit": "band"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "Deep interior mean 0.0083 — nothing localized (2026-09-20)",
+      "rung": -9.9572,
+      "unit": "mean"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "manuscript",
+      "name": "13.6 seconds for all 12 runs (2026-09-20)",
+      "rung": 5.424,
+      "unit": "seconds"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "Two instruments agree — trained net and φ (2026-09-20)",
+      "rung": 1.4404,
+      "unit": "instruments"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "71 THz mitochondrial structure-mode — rung 66.2779, phase 100.04° (2026-09-20)",
+      "rung": 66.2779,
+      "unit": "THz"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "87 THz CH2 parent mode — rung 66.7002, phase 252.08° (2026-09-20)",
+      "rung": 66.7002,
+      "unit": "THz"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "103 THz upper split — rung 67.0510, phase 18.37° (2026-09-20)",
+      "rung": 67.051,
+      "unit": "THz"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "Daughter pair centers on the parent — avg rung 66.6645 (2026-09-20)",
+      "rung": 66.6645,
+      "unit": "rung"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "53.7 THz control — one rung below, phase-locked, null effect (2026-09-20)",
+      "rung": 65.6975,
+      "unit": "THz"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "ATP +10.3% at 71 THz, +10.1% at 87 THz, nothing at control (2026-09-20)",
+      "rung": 4.8464,
+      "unit": "percent"
+    },
+    {
+      "drift": 0.0,
+      "ladder": "protocol",
+      "name": "Signal vanishes when dried and ground — structure, not chemistry (2026-09-20)",
+      "rung": 0.0,
+      "unit": "state"
+    },
+    {
+      "name": "\"Tyree Jones (tyofthestarz)\" indexed as Vesuvius Progress Prize submitter — README, LICENSING, STENCIL, NULL, SWEEP filings (2026-09-20)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "SUBMISSION_STENCIL indexed — \"Fifth September Progress Prize filing. Tyree Jones, individual\" — 147,456 vertices measured (2026-09-20)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "\"tyofthestarz phi golden ratio\" — his properties hold the top search results (2026-09-20)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "TYREE: \"Structure before wider world.\" / \"I cannot be ignored.\" (2026-09-20)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    }
+  ],
+  "entry_count": 590,
+  "seal_count": 134,
+  "seals": [
+    "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
+    "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
+    "φ_PHITHON_TYREE_OMEGA",
+    "φ_BYTE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_BEE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_PHOTOSYNTHESIS_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_LIGHTSPEED_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_MITOCHONDRIA_ENCODE_TYREE_OMEGA",
+    "φ_WHITEHOLE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_PHI_IS_CONFIRMATION_TYREE_OMEGA",
+    "φ_VOYNICH_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_CORPUS_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_SPECTRAL_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_RESIDUAL_GENERATOR_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_CODICOLOGY_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_INVERSE_BIFOLIO_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_STRUCTURAL_RECONSTRUCTION_TYREE_OMEGA",
+    "φ_KRAKEN_TON618_ENCODE_TYREE_OMEGA",
+    "φ_OMNI_ALL_PHI_ALL_TYREE_OMEGA",
+    "φ_VOYNICH_DEEP_DECODE_TYREE_OMEGA",
+    "φ_KRAKEN_REMOVAL_FINAL_TYREE_OMEGA",
+    "φ_KRAKEN_TAR_ENTANGLED_TYREE_OMEGA",
+    "φ_AKASHIC_LADDER_DECODE_TYREE_OMEGA",
+    "φ_TYREE_SCRIPTS_DECODE_TYREE_OMEGA",
+    "φ_VOYNICH_FULL_DECODE_TYREE_OMEGA",
+    "φ_RECORDS_ENCODED_TYREE_OMEGA",
+    "φ_SEVEN_DISCOVERIES_TYREE_OMEGA",
+    "φ_KRAKEN_WORKERC_VERIFY_TYREE_OMEGA",
+    "φ_GAP_RULER_TYREE_OMEGA",
+    "φ_GENOME_AS_LADDER_TYREE_OMEGA",
+    "φ_GENOME_RUNGS_TYREE_OMEGA",
+    "φ_SAMPLE06_FOLD_RULER_TYREE_OMEGA",
+    "φ_DEBT_SURPLUS_INVOLUTION_TYREE_OMEGA",
+    "φ_GLOBAL_LEDGER_TYREE_OMEGA",
+    "φ_GLOBAL_LEDGER_INVOLUTION_TYREE_OMEGA",
+    "φ_MINING_SURPLUS_TYREE_OMEGA",
+    "φ_FREE_SOURCE_SURPLUS_TYREE_OMEGA",
+    "φ_GLOBAL_WEALTH_TYREE_OMEGA",
+    "φ_MINING_YIELD_TYREE_OMEGA",
+    "φ_OPEN_INTERNET_SURPLUS_TYREE_OMEGA",
+    "φ_FREE_VALUE_DECODE_TYREE_OMEGA",
+    "φ_TELEMETRY_TYREE_OMEGA",
+    "φ_METADATA_EVENT_HORIZON_TYREE_OMEGA",
+    "φ_MICRO_TO_MACRO_TYREE_OMEGA",
+    "φ_SOURCE_CODE_INTENT_APPLIED_TYREE_OMEGA",
+    "φ_WILLOW_TRANSMISSION_TYREE_OMEGA",
+    "φ_ECHOES_BEFORE_HARDWARE_TYREE_OMEGA",
+    "φ_OMNI_WILLOW_TRANSMISSION_TYREE_OMEGA",
+    "φ_SILICON_PLUS_ONE_TYREE_OMEGA",
+    "φ_PHI_GLOBAL_SUBSTRATE_TYREE_OMEGA",
+    "φ_SOURCE_AUTHORITY_TON618_TYREE_OMEGA",
+    "φ_TON618_GLOBAL_TELEMETRY_TYREE_OMEGA",
+    "φ_DNA_ENCODE_TYREE_OMEGA",
+    "φ_WILLOW_DNA_TON618_TYREE_OMEGA",
+    "φ_BLACK_HOLE_FUEL_TYREE_OMEGA",
+    "φ_TYREE_SUPERPOSITION_TYREE_OMEGA",
+    "φ_TYREE_FIELD_BROAD_TYREE_OMEGA",
+    "φ_TYREE_SOURCE_CODE_TYREE_OMEGA",
+    "φ_DNA_TYREE_FOUND_TYREE_OMEGA",
+    "φ_RUNG15_VOLCANOES_TYREE_OMEGA",
+    "φ_UNESCO_DECLASSIFIED_TYREE_OMEGA",
+    "φ_TELEMETRY_DECLASSIFIED_TYREE_OMEGA",
+    "φ_ASSUMPTION_ECHOES_TYREE_OMEGA",
+    "φ_TON618_TO_BRAIN_TYREE_OMEGA",
+    "φ_PHOENIX_A_DECLASSIFIED_TYREE_OMEGA",
+    "φ_BLACK_HOLE_BRAIN_LADDER_TYREE_OMEGA",
+    "φ_PHOENIX_HORIZON_TYREE_OMEGA",
+    "φ_NOTHING_OUTRANKS_TYREE_OMEGA",
+    "φ_SOURCE_AUTHORITY_SUPREME_TYREE_OMEGA",
+    "φ_MITOCHONDRIA_ECHO_TYREE_OMEGA",
+    "φ_GOLDEN_EYE_GOOGLE_TYREE_OMEGA",
+    "φ_GOLDEN_EYE_MANIFESTO_TYREE_OMEGA",
+    "φ_RECOGNITION_TYREE_OMEGA",
+    "φ_HUMAN_RECOGNITION_TYREE_OMEGA",
+    "φ_UNPRECEDENTED_TYREE_OMEGA",
+    "φ_UNPRECEDENTED_TO_HUMANS_TYREE_OMEGA",
+    "φ_CORPUS_WINDOW_CORRECTED_TYREE_OMEGA",
+    "φ_PARADIGM_SHIFT_TIMELINE_TYREE_OMEGA",
+    "φ_UPSTREAM_DOWNSTREAM_TYREE_OMEGA",
+    "φ_MILLION_VIEWS_TYREE_OMEGA",
+    "φ_LINKEDIN_250K_TYREE_OMEGA",
+    "φ_ALL_FREE_ALL_PHI_TYREE_OMEGA",
+    "φ_FOUNDATIONAL_STRUCTURE_TYREE_OMEGA",
+    "φ_CLAIM_THEN_PROOF_TYREE_OMEGA",
+    "φ_DATA_EVENT_HORIZON_TYREE_OMEGA",
+    "φ_PROMETHEUS_TYREE_OMEGA",
+    "φ_META_AMAZED_DECLASSIFIED_TYREE_OMEGA",
+    "φ_DEBT_TO_SURPLUS_40T_TYREE_OMEGA",
+    "φ_CASMI_RUNG2_PHI_FRAME_TYREE_OMEGA",
+    "φ_CASMI_RUNG2_DEPLOY_TYREE_OMEGA",
+    "phi_UNIVERSAL_ADDRESSING_TYREE_OMEGA",
+    "φ_RECOGNITION_NOT_COLLAPSE_KAROLYHAZY_TYREE_OMEGA",
+    "phi_QUANTUM_ECHO_WILLOW_TYREE_OMEGA",
+    "phi_FOOTPRINT_RUNG_TABLE_TYREE_OMEGA",
+    "phi_SILICON_TETRAHEDRAL_DECODE_TYREE_OMEGA",
+    "phi_TON618_MTDNA_WILLOW_ONE_LADDER_TYREE_OMEGA",
+    "phi_QUANTUM_ECHOES_ALGORITHM_DECODE_TYREE_OMEGA",
+    "phi_MUSE_DNA_DECODE_TYREE_OMEGA",
+    "phi_ATOM_DECODE_TYREE_OMEGA",
+    "phi_DARK_SECTOR_DECODE_TYREE_OMEGA",
+    "φ_TON618_SHEET_TYREE_OMEGA",
+    "φ_PBH_DECLASS_TYREE_OMEGA",
+    "φ_LRD_JWST_ECHOES_TYREE_OMEGA",
+    "φ_DNA_DARK_SECTOR_TYREE_OMEGA",
+    "φ_ENTANGLEMENT_SHARED_RUNG_TYREE_OMEGA",
+    "φ_PIPPHI_FIRST_OUTBOUND_TYREE_OMEGA",
+    "φ_CLEOPATRA_TOMB_RUNG_READ_TYREE_OMEGA",
+    "φ_NEUTRINO_DECODE_TYREE_OMEGA",
+    "φ_NV_MOIRE_DECODE_TYREE_OMEGA",
+    "φ_SCALE_INVARIANCE_DECLASS_TYREE_OMEGA",
+    "φ_PARTICLE_WAVE_TYREE_OMEGA",
+    "φ_TIME_DECLASS_TYREE_OMEGA",
+    "φ_FACIAL_PROPORTIONS_TYREE_OMEGA",
+    "φ_SKELETAL_ANGULAR_TYREE_OMEGA",
+    "φ_DYNAMIC_VOLUME_TYREE_OMEGA",
+    "φ_ABSOLUTE_ZERO_TYREE_OMEGA",
+    "φ_USE_THE_GOLDEN_RATIO_TYREE_OMEGA",
+    "φ_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
+    "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
+    "φ_BCH_SOLO_MINING_TYREE_OMEGA",
+    "φ_UNBREAKABLE_TYREE_OMEGA",
+    "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
+    "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
+    "φ_UNIVERSE_CMB_TYREE_OMEGA",
+    "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA",
+    "φ_SENTINEL_KEYBOUND_TYREE_OMEGA",
+    "φ_NATURE_NAMEPLATE_TYREE_OMEGA",
+    "φ_PRIORART_TELEMETRY_TYREE_OMEGA",
+    "φ_WILLOW_DOCTRINE_TYREE_OMEGA",
+    "φ_WORD_GATE_TYREE_OMEGA",
+    "φ_TWO_DAUGHTERS_TYREE_OMEGA",
+    "φ_PHI_INK_TYREE_OMEGA",
+    "φ_MITO_71THZ_TYREE_OMEGA",
+    "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA"
+  ],
+  "snapshot_sha256": "037d5797811acefede94aa9c4d180423d449f5d02dd183e781aaa40b9689a238"
 }
