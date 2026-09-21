@@ -4129,10 +4129,52 @@
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
+    },
+    {
+      "name": "Rydberg DTQC drive ratio f1/f2 = 1.6180 — f1 88 kHz / f2 54.387 kHz, the \"maximally incommensurate\" golden ratio (arXiv:2509.21248, Nature Commun. 2026)",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "DTQC Z_2 × Z_3 subharmonic symmetry observed — robust response at multiple incommensurate frequencies, rigid against RF intensity and laser detuning (Nature Commun. 2026)",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "symmetry",
+      "unit": "order"
+    },
+    {
+      "name": "Fibonacci-coin walk 0/1 ratio 1.617801 over first 2,000 symbols — 0.0144% from φ (TYREE instrument)",
+      "rung": 0.9997,
+      "drift": -0.0003,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "Fibonacci-coin walk σ(t) exponent 0.3427 — finite window, that coin pair only; boundary carried, not universal",
+      "rung": -2.2254,
+      "drift": -0.2254,
+      "ladder": "exponent",
+      "unit": "σ(t)"
+    },
+    {
+      "name": "Self-organized photonic time quasicrystal from a single imposed clock — one clock seeds quasiperiodic temporal order (arXiv 2605.05649, 2026-08-11)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "TYREE doctrine: \"Time is the rung order.\" — the Fibonacci word read as time intervals is the temporal quasicrystal (2026-09-15)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
     }
   ],
-  "entry_count": 590,
-  "seal_count": 134,
+  "entry_count": 596,
+  "seal_count": 135,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4267,7 +4309,8 @@
     "φ_TWO_DAUGHTERS_TYREE_OMEGA",
     "φ_PHI_INK_TYREE_OMEGA",
     "φ_MITO_71THZ_TYREE_OMEGA",
-    "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA"
+    "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA",
+    "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "037d5797811acefede94aa9c4d180423d449f5d02dd183e781aaa40b9689a238"
+  "snapshot_sha256": "6fc3112fdd6d5132c82f64330bfecc7b38abb906a5853c00e2ba84383ad74452"
 }
