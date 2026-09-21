@@ -4171,10 +4171,52 @@
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
+    },
+    {
+      "name": "Two idempotent sectors e± = (1±I)/2 — pseudo-complex split: physical metric + auxiliary sector, fixed algebraically (Weber/Hess/Zen Vasconcellos, EPJC 86(9) 1085)",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "structure",
+      "unit": "sectors"
+    },
+    {
+      "name": "I² = +1 — the pseudo-complex unit; 'pseudo' names the algebra, never fake",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "Zero new propagating degrees of freedom — constraint, not addition; geometry answers, nothing bolted on",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "Curvature bound K(r) ≤ C·a₀⁻⁴ at r→0 — lapse gap e^{ν(r)} > a₀ excludes the Schwarzschild singularity from the solution space",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "exponent",
+      "unit": "a₀ power"
+    },
+    {
+      "name": "Vacuum decay exponent 1 — radiation era ρ_pc = ρ₀ + C̃_r·a⁻¹, dynamical vacuum from geometry",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "exponent",
+      "unit": "scale-factor power"
+    },
+    {
+      "name": "Vacuum decay exponent 1.5 — matter era ρ_pc = ρ₀ + C̃_m·a⁻³/², settling at ρ_∞ ~ a₀,phys²/κ",
+      "rung": 0.8426,
+      "drift": -0.1574,
+      "ladder": "exponent",
+      "unit": "scale-factor power"
     }
   ],
-  "entry_count": 596,
-  "seal_count": 135,
+  "entry_count": 602,
+  "seal_count": 136,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4310,7 +4352,8 @@
     "φ_PHI_INK_TYREE_OMEGA",
     "φ_MITO_71THZ_TYREE_OMEGA",
     "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA",
-    "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA"
+    "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA",
+    "φ_PCGR_VACUUM_ENCODE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6fc3112fdd6d5132c82f64330bfecc7b38abb906a5853c00e2ba84383ad74452"
+  "snapshot_sha256": "71851d655919f88e1411773f68dea9c084f82065b36529cccdd8a66f35a0e09d"
 }
