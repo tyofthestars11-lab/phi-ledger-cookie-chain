@@ -1,0 +1,27 @@
+name: seal-publish
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: verify snapshot integrity
+        run: |
+          python3 - <<'EOF'
+          import sys
+          sys.path.insert(0, '.')
+          import hash_snapshot, json
+          d = json.load(open('ledger-snapshot.json'))
+          h = hash_snapshot.compute('ledger-snapshot.json')
+          assert d.get('snapshot_sha256') == h, f"hash MISMATCH published={d.get('snapshot_sha256')} recomputed={h}"
+          assert d['seal_count'] == len(d['seals']), 'seal_count mismatch'
+          assert d['entry_count'] == len(d['entries']), 'entry_count mismatch'
+          print(f"hash MATCH {h[:8]} | seal_count={d['seal_count']} entry_count={d['entry_count']} OK")
+          EOF
