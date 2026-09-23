@@ -4325,10 +4325,80 @@
       "drift": -0.0378,
       "ladder": "date",
       "unit": "YYYYMMDD"
+    },
+    {
+      "name": "Trilayer quantum Hall system: 3 layers, each ν1=ν2=ν3=1/3 — inter-layer spacing d is the sole tuning dial (Wang & Zhang, arXiv:2508.00058)",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "layers"
+    },
+    {
+      "name": "Filling factor per layer ν=1/3 — the fractional rung; rung 2.2832, phase 101.9°",
+      "rung": -2.283,
+      "drift": -0.283,
+      "ladder": "filling",
+      "unit": "filling factor ν"
+    },
+    {
+      "name": "Surviving topological order in the intermediate phase: ν=2/3 Laughlin order stays intact while neutral bi-excitons condense — rung −0.8426, phase 56.7°",
+      "rung": -0.8426,
+      "drift": 0.1574,
+      "ladder": "filling",
+      "unit": "filling factor ν"
+    },
+    {
+      "name": "Predicted experimental read: layer-resolved Hall resistance 5h/2e² plus vanishing double-counter-flow resistance — the fractional address of the coexistence phase; rung 1.9042, phase 325.5°",
+      "rung": 1.9041,
+      "drift": -0.0959,
+      "ladder": "resistance",
+      "unit": "h/e²"
+    },
+    {
+      "name": "Fibonacci anyon τ: fusion τ × τ = I + τ, quantum dimension = φ itself — HIS structural read, not the paper's claim; rung 1.0000 exact",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "quantum dimension",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "φ² = φ+1 = 2.618 — gapless and topological at once; the Goldstone mode (wave, phase) and the fractionalized anyons (rung, address) in one body (his manifesto)",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "constant",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "θ_φ = 137.5° golden angle — his constant, the frame of the manifesto",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "ν_tot=1 at d→0: the exciton condensate whole — rung 0.0000 exact; d→∞: three decoupled Laughlin liquids; the intermediate anyon-exciton condensate is the involution site",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "filling",
+      "unit": "filling factor ν_tot"
+    },
+    {
+      "name": "TON618 law: TON618 = φ^55 = 66B solar masses; L = 1.4×10^41 W = φ^63 — his seal law, the macro frame; ∀ anyon entangled via φ² holds fractional wholeness",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "cosmological",
+      "unit": "φ-power"
+    },
+    {
+      "name": "arXiv:2508.00058 'Anyon superfluid in trilayer quantum Hall systems' submitted 2025-07-31 — DMRG + Chern-Simons + Ginzburg-Landau; PREDICTION, not experimentally confirmed — pending +1 fuel; this seal encodes the paper's predicted numbers and his manifesto declarations, not a measured result",
+      "rung": 34.9611,
+      "drift": -0.0389,
+      "ladder": "date",
+      "unit": "YYYYMMDD"
     }
   ],
-  "entry_count": 618,
-  "seal_count": 138,
+  "entry_count": 628,
+  "seal_count": 139,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4467,7 +4537,8 @@
     "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA",
     "φ_PCGR_VACUUM_ENCODE_TYREE_OMEGA",
     "φ_DENOVO_PHI_DECODE_TYREE_OMEGA",
-    "φ_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA"
+    "φ_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA",
+    "φ_ANYON_CONDENSATE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "14cd0fc167f97a43d39f79657871896f91bf87d49e65ead4d86b5e6f446b05a2"
+  "snapshot_sha256": "ef70fb1deccda82fdaf81e7463c6739f3a6f6be32abf1c4df302bf9de3411dba"
 }
