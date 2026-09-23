@@ -4255,10 +4255,80 @@
       "drift": 0.0857,
       "ladder": "time",
       "unit": "seconds"
+    },
+    {
+      "name": "IBM Brisbane backend governing the trial: 127 qubits — first quantum-hardware-in-the-loop clinical trial on the consciousness question (Cell, The Innovation 7(9):101355)",
+      "rung": 10.0666,
+      "drift": 0.0666,
+      "ladder": "qubit count",
+      "unit": "qubits"
+    },
+    {
+      "name": "Multicenter trial: 13 hospitals across the UK and Spain — first large-scale randomized double-blind quantum consciousness trial",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "hospitals"
+    },
+    {
+      "name": "Survivors completing forced-choice recall + NDE scales: 142 — 47 group A entangled-natural, 49 group B entangled-neutral, 46 group C random-neutral",
+      "rung": 10.2986,
+      "drift": 0.2986,
+      "ladder": "count",
+      "unit": "survivors"
+    },
+    {
+      "name": "Stimulus delivery began 120 s after arrest onset; 10-qubit EM1/CM1 circuits on the backend; recall lucidity rose momentarily as NIRS dropped",
+      "rung": 9.9488,
+      "drift": -0.0512,
+      "ladder": "time",
+      "unit": "seconds"
+    },
+    {
+      "name": "Biomarker models explained up to 56.8% of recall variance (group A adjusted R² = 0.568); entangled groups A and B beat chance, control C at chance",
+      "rung": 8.3945,
+      "drift": 0.3945,
+      "ladder": "variance",
+      "unit": "percent"
+    },
+    {
+      "name": "Nonlocal perception predicted 32% of Greyson NDE-scale variance (SEM); expectation bias ruled out via overlap coefficient",
+      "rung": 7.2021,
+      "drift": 0.2021,
+      "ladder": "variance",
+      "unit": "percent"
+    },
+    {
+      "name": "Overlap coefficient between entangled groups A and B: 0.843 — above the 0.7 equivalence threshold (A-C 0.584, B-C 0.683 below)",
+      "rung": -0.3549,
+      "drift": -0.3549,
+      "ladder": "coefficient",
+      "unit": "OVL"
+    },
+    {
+      "name": "Mermin-GHZ inequality values 368.7117 (A) and 347.6603 (B) — above the 23 entanglement threshold; 512 is the theoretical GHZ limit for 10 qubits",
+      "rung": 12.2815,
+      "drift": 0.2815,
+      "ladder": "mermin",
+      "unit": "M10"
+    },
+    {
+      "name": "Fisher-Escolà Q: 0.4985 (A), 0.5212 (B) vs 0.459 critical at α=0.0001 — structured deviation from randomness; the paper itself says not direct evidence of quantum causation",
+      "rung": -1.4467,
+      "drift": -0.4467,
+      "ladder": "coefficient",
+      "unit": "Q"
+    },
+    {
+      "name": "Fabrication allegation: For Better Science 2026-09-22 calls the trial fabricated/papermill slop — UNADJUDICATED, pending +1 fuel; this seal encodes the reported numbers, not the claim's truth",
+      "rung": 34.9622,
+      "drift": -0.0378,
+      "ladder": "date",
+      "unit": "YYYYMMDD"
     }
   ],
-  "entry_count": 608,
-  "seal_count": 137,
+  "entry_count": 618,
+  "seal_count": 138,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4396,7 +4466,8 @@
     "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA",
     "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA",
     "φ_PCGR_VACUUM_ENCODE_TYREE_OMEGA",
-    "φ_DENOVO_PHI_DECODE_TYREE_OMEGA"
+    "φ_DENOVO_PHI_DECODE_TYREE_OMEGA",
+    "φ_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c711cd42c3d49aebf841c176d51c3fcd849f17daed6dd9ec77fa182ebc54056c"
+  "snapshot_sha256": "14cd0fc167f97a43d39f79657871896f91bf87d49e65ead4d86b5e6f446b05a2"
 }
