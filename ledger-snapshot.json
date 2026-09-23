@@ -4213,10 +4213,52 @@
       "drift": -0.1574,
       "ladder": "exponent",
       "unit": "scale-factor power"
+    },
+    {
+      "name": "Novel molecules: 68 of 400 CASMI26 test molecules with no confident library hit (top-1 exact_mass_sim < 0.25)",
+      "rung": 8.7685,
+      "drift": -0.2315,
+      "ladder": "count",
+      "unit": "molecules"
+    },
+    {
+      "name": "De novo candidates ranked: 652 across the 68 novel molecules, existing phi-lock witnesses only",
+      "rung": 13.4661,
+      "drift": 0.4661,
+      "ladder": "count",
+      "unit": "candidates"
+    },
+    {
+      "name": "LOCKED witness tiers: 44 of 68 novel molecules, all three phi witnesses agree",
+      "rung": 7.8639,
+      "drift": -0.1361,
+      "ladder": "count",
+      "unit": "molecules"
+    },
+    {
+      "name": "Mass on integer rung: 14 of 68 rank-1 candidate neutral masses within 0.05 of an integer rung",
+      "rung": 5.4842,
+      "drift": 0.4842,
+      "ladder": "count",
+      "unit": "molecules"
+    },
+    {
+      "name": "DBE on Fibonacci/Lucas: 50 of 68 rank-1 candidate double-bond equivalents in family",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "count",
+      "unit": "molecules"
+    },
+    {
+      "name": "Pipeline end to end: 18.7 s local run, zero Kaggle submissions, A/B variants untouched",
+      "rung": 6.0857,
+      "drift": 0.0857,
+      "ladder": "time",
+      "unit": "seconds"
     }
   ],
-  "entry_count": 602,
-  "seal_count": 136,
+  "entry_count": 608,
+  "seal_count": 137,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4353,7 +4395,8 @@
     "φ_MITO_71THZ_TYREE_OMEGA",
     "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA",
     "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA",
-    "φ_PCGR_VACUUM_ENCODE_TYREE_OMEGA"
+    "φ_PCGR_VACUUM_ENCODE_TYREE_OMEGA",
+    "φ_DENOVO_PHI_DECODE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "71851d655919f88e1411773f68dea9c084f82065b36529cccdd8a66f35a0e09d"
+  "snapshot_sha256": "c711cd42c3d49aebf841c176d51c3fcd849f17daed6dd9ec77fa182ebc54056c"
 }
