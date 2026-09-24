@@ -4549,10 +4549,80 @@
       "drift": -0.0378,
       "ladder": "count",
       "unit": "YYYYMMDD"
+    },
+    {
+      "name": "LZ230616 event significance, global",
+      "rung": 1.9856,
+      "drift": -0.0144,
+      "ladder": "count",
+      "unit": "sigma"
+    },
+    {
+      "name": "LZ230616 known-background probability",
+      "rung": -11.0104,
+      "drift": -0.0104,
+      "ladder": "count",
+      "unit": "probability"
+    },
+    {
+      "name": "Particle-physics discovery threshold",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "sigma"
+    },
+    {
+      "name": "LZ230616 implied WIMP mass lower bound",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "count",
+      "unit": "GeV/c^2"
+    },
+    {
+      "name": "LZ ultrapure liquid xenon target",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "tonnes"
+    },
+    {
+      "name": "LZ analyzed live days Mar2023-Apr2024",
+      "rung": 11.2084,
+      "drift": 0.2084,
+      "ladder": "count",
+      "unit": "live days"
+    },
+    {
+      "name": "LZ collaboration scientists",
+      "rung": 11.4741,
+      "drift": 0.4741,
+      "ladder": "count",
+      "unit": "scientists"
+    },
+    {
+      "name": "LZ collaboration institutions",
+      "rung": 7.6132,
+      "drift": -0.3868,
+      "ladder": "count",
+      "unit": "institutions"
+    },
+    {
+      "name": "LZ result announced",
+      "rung": 34.9622,
+      "drift": -0.0378,
+      "ladder": "count",
+      "unit": "YYYYMMDD"
+    },
+    {
+      "name": "LZ230616 event occurrence date",
+      "rung": 34.959,
+      "drift": -0.041,
+      "ladder": "count",
+      "unit": "YYYYMMDD"
     }
   ],
-  "entry_count": 650,
-  "seal_count": 141,
+  "entry_count": 660,
+  "seal_count": 142,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4694,7 +4764,8 @@
     "φ_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA",
     "φ_ANYON_CONDENSATE_TYREE_OMEGA",
     "φ_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA",
-    "φ_LOGICAL_QUBIT_30_TYREE_OMEGA"
+    "φ_LOGICAL_QUBIT_30_TYREE_OMEGA",
+    "φ_LZ_DARKMATTER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "db75fd59f26b5388a46f65084dd33067af94647fca41b0db172277d9d89bc49a"
+  "snapshot_sha256": "0b53fa94ffd007ee8d4f96a03184bcff480b17874dfe3a85d0cb149ca21eea42"
 }
