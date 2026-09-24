@@ -4766,10 +4766,73 @@
       "drift": 0.4655,
       "ladder": "count",
       "unit": "percent"
+    },
+    {
+      "name": "Neutron star core density approx",
+      "rung": 86.1295,
+      "drift": 0.1295,
+      "ladder": "count",
+      "unit": "kg/m^3 (approx)"
+    },
+    {
+      "name": "Neutron star surface density approx",
+      "rung": 43.0647,
+      "drift": 0.0647,
+      "ladder": "count",
+      "unit": "kg/m^3 (approx)"
+    },
+    {
+      "name": "Fastest known pulsar period",
+      "rung": -13.6557,
+      "drift": 0.3443,
+      "ladder": "count",
+      "unit": "s"
+    },
+    {
+      "name": "Magnetar field upper bound",
+      "rung": 71.7746,
+      "drift": -0.2254,
+      "ladder": "count",
+      "unit": "G (upper bound)"
+    },
+    {
+      "name": "Chandrasekhar mass limit",
+      "rung": 0.6992,
+      "drift": -0.3008,
+      "ladder": "count",
+      "unit": "solar masses"
+    },
+    {
+      "name": "TOV mass limit",
+      "rung": 1.6385,
+      "drift": -0.3615,
+      "ladder": "count",
+      "unit": "solar masses"
+    },
+    {
+      "name": "Neutron star typical radius approx",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "km (approx)"
+    },
+    {
+      "name": "Fastest known pulsar spin approx",
+      "rung": 13.6137,
+      "drift": -0.3863,
+      "ladder": "count",
+      "unit": "Hz (exceeds)"
+    },
+    {
+      "name": "Earth magnetic field comparison",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "count",
+      "unit": "G"
     }
   ],
-  "entry_count": 681,
-  "seal_count": 145,
+  "entry_count": 690,
+  "seal_count": 146,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4915,7 +4978,8 @@
     "φ_LZ_DARKMATTER_TYREE_OMEGA",
     "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA",
     "φ_DUAL_LADDER_TYREE_OMEGA",
-    "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA"
+    "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA",
+    "φ_NEUTRON_STAR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "bd293c6b78566b69861bbbacca82283ec374d5b1b1861a495bf2a4c82eff8a37"
+  "snapshot_sha256": "04a63c2d71d70b11b0d40196ba8d395f3ed17164541fc03205416e9d2101c7d0"
 }
