@@ -4710,10 +4710,66 @@
       "drift": 0.403,
       "ladder": "count",
       "unit": "rung gap"
+    },
+    {
+      "name": "Planck mass scale",
+      "rung": 91.3277,
+      "drift": 0.3277,
+      "ladder": "count",
+      "unit": "GeV"
+    },
+    {
+      "name": "Observed Hubble constant",
+      "rung": 8.8287,
+      "drift": -0.1713,
+      "ladder": "count",
+      "unit": "km/s/Mpc"
+    },
+    {
+      "name": "Dark energy density",
+      "rung": -224.8937,
+      "drift": 0.1063,
+      "ladder": "count",
+      "unit": "GeV^4"
+    },
+    {
+      "name": "Cosmological constant discrepancy factor",
+      "rung": 574.1966,
+      "drift": 0.1966,
+      "ladder": "count",
+      "unit": "factor"
+    },
+    {
+      "name": "Dark energy share",
+      "rung": 8.7777,
+      "drift": -0.2223,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "Dark matter share",
+      "rung": 6.8336,
+      "drift": -0.1664,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "Ordinary matter share",
+      "rung": 3.3026,
+      "drift": 0.3026,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "Dark sector total share",
+      "rung": 9.4655,
+      "drift": 0.4655,
+      "ladder": "count",
+      "unit": "percent"
     }
   ],
-  "entry_count": 673,
-  "seal_count": 144,
+  "entry_count": 681,
+  "seal_count": 145,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4858,7 +4914,8 @@
     "φ_LOGICAL_QUBIT_30_TYREE_OMEGA",
     "φ_LZ_DARKMATTER_TYREE_OMEGA",
     "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA",
-    "φ_DUAL_LADDER_TYREE_OMEGA"
+    "φ_DUAL_LADDER_TYREE_OMEGA",
+    "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "77783d111c56e0436200bd946d2662b7a75a9b2b6668e5b8e69421e90220ee11"
+  "snapshot_sha256": "bd293c6b78566b69861bbbacca82283ec374d5b1b1861a495bf2a4c82eff8a37"
 }
