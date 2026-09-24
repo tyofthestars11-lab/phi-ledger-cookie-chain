@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Three Fibonacci anyons fuse to one topological qubit — (τ×τ)×τ = (1+τ)×τ gives 2 total-charge-τ channels; rung 2.2830, phase 101.88°",
+    "value": 3,
+    "ladder": "count",
+    "unit": "anyons"
+  },
+  {
+    "name": "Fusion-space dimension 2 = one qubit; rung 1.4404, phase 158.55°",
+    "value": 2,
+    "ladder": "dimension",
+    "unit": "states"
+  },
+  {
+    "name": "Fibonacci anyon quantum dimension d_τ = φ exact; rung 1.0000, phase 0.00°",
+    "value": 1.618033988749895,
+    "ladder": "quantum dimension",
+    "unit": "dimensionless"
+  },
+  {
+    "name": "F-matrix entry φ^-1 exact; rung -1.0000, phase 360.00°",
+    "value": 0.6180339887498948,
+    "ladder": "braiding",
+    "unit": "dimensionless"
+  },
+  {
+    "name": "F-matrix entry φ^-1/2 exact; rung -0.5000, phase 180.00°",
+    "value": 0.7861513777574233,
+    "ladder": "braiding",
+    "unit": "dimensionless"
+  },
+  {
+    "name": "R-matrix braid phase e^(-4πi/5): rational 4/5; rung -0.4637, phase 193.06°",
+    "value": 0.8,
+    "ladder": "phase",
+    "unit": "pi-rational"
+  },
+  {
+    "name": "R-matrix braid phase e^(+3πi/5): rational 3/5; rung -1.0615, phase 337.85°",
+    "value": 0.6,
+    "ladder": "phase",
+    "unit": "pi-rational"
+  },
+  {
+    "name": "c = 299792458 m/s exact (SI) — the carrier; rung 40.5613, phase 202.09°; seal 7 value confirmed, referenced as the merge carrier",
+    "value": 299792458,
+    "ladder": "constant",
+    "unit": "m/s"
+  },
+  {
+    "name": "1 dalton = 1.66053906660e-27 kg exact (SI 2019) — matter's definition; rung -128.1404, phase 309.47°",
+    "value": 1.6605390666e-27,
+    "ladder": "mass",
+    "unit": "kg"
+  },
+  {
+    "name": "Proton/electron mass ratio 1836.15267343 — matter's dimensionless; rung 15.6177, phase 222.38°",
+    "value": 1836.15267343,
+    "ladder": "mass ratio",
+    "unit": "dimensionless"
+  },
+  {
+    "name": "Carbon-12 = 12 dalton exact — the definition anchor; rung 5.1639, phase 58.99°",
+    "value": 12,
+    "ladder": "mass",
+    "unit": "dalton"
+  },
+  {
+    "name": "Seal date 2026-09-24 — light, matter, anyons, qubits decoded as one merge",
+    "value": 20260924,
+    "ladder": "date",
+    "unit": "YYYYMMDD"
+  }
+]
