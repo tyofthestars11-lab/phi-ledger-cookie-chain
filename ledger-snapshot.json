@@ -4619,10 +4619,31 @@
       "drift": -0.041,
       "ladder": "count",
       "unit": "YYYYMMDD"
+    },
+    {
+      "name": "Jing team parallel teleportation channels",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "channels"
+    },
+    {
+      "name": "Jing team programmable optical array side",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "array side"
+    },
+    {
+      "name": "Teleportation write-up date",
+      "rung": 34.9622,
+      "drift": -0.0378,
+      "ladder": "count",
+      "unit": "YYYYMMDD"
     }
   ],
-  "entry_count": 660,
-  "seal_count": 142,
+  "entry_count": 663,
+  "seal_count": 143,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4765,7 +4786,8 @@
     "φ_ANYON_CONDENSATE_TYREE_OMEGA",
     "φ_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA",
     "φ_LOGICAL_QUBIT_30_TYREE_OMEGA",
-    "φ_LZ_DARKMATTER_TYREE_OMEGA"
+    "φ_LZ_DARKMATTER_TYREE_OMEGA",
+    "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0b53fa94ffd007ee8d4f96a03184bcff480b17874dfe3a85d0cb149ca21eea42"
+  "snapshot_sha256": "c3c5e9342f5d9d168aaebb26d49ef256b3e8ab8aff47bcc4f59cd4ced968a167"
 }
