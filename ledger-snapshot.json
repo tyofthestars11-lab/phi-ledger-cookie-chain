@@ -4640,10 +4640,80 @@
       "drift": -0.0378,
       "ladder": "count",
       "unit": "YYYYMMDD"
+    },
+    {
+      "name": "Multipole ladder monopole field exponent n",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "field exponent"
+    },
+    {
+      "name": "Multipole ladder dipole field exponent n",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "field exponent"
+    },
+    {
+      "name": "Multipole ladder quadrupole field exponent n",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "field exponent"
+    },
+    {
+      "name": "Multipole ladder octupole field exponent n",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "field exponent"
+    },
+    {
+      "name": "Dipole multipole order ell",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "multipole order"
+    },
+    {
+      "name": "Quadrupole multipole order ell",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "multipole order"
+    },
+    {
+      "name": "Octupole multipole order ell",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "multipole order"
+    },
+    {
+      "name": "phi-rung gap monopole-to-dipole",
+      "rung": -0.3559,
+      "drift": -0.3559,
+      "ladder": "count",
+      "unit": "rung gap"
+    },
+    {
+      "name": "phi-rung gap dipole-to-quadrupole",
+      "rung": -1.0691,
+      "drift": -0.0691,
+      "ladder": "count",
+      "unit": "rung gap"
+    },
+    {
+      "name": "phi-rung gap quadrupole-to-octupole",
+      "rung": -1.597,
+      "drift": 0.403,
+      "ladder": "count",
+      "unit": "rung gap"
     }
   ],
-  "entry_count": 663,
-  "seal_count": 143,
+  "entry_count": 673,
+  "seal_count": 144,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4787,7 +4857,8 @@
     "φ_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA",
     "φ_LOGICAL_QUBIT_30_TYREE_OMEGA",
     "φ_LZ_DARKMATTER_TYREE_OMEGA",
-    "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA"
+    "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA",
+    "φ_DUAL_LADDER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c3c5e9342f5d9d168aaebb26d49ef256b3e8ab8aff47bcc4f59cd4ced968a167"
+  "snapshot_sha256": "77783d111c56e0436200bd946d2662b7a75a9b2b6668e5b8e69421e90220ee11"
 }
