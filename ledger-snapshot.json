@@ -4479,10 +4479,80 @@
       "drift": -0.0378,
       "ladder": "date",
       "unit": "YYYYMMDD"
+    },
+    {
+      "name": "Infleqtion 30 entangled logical qubits, single coherent state on Sqale",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "count",
+      "unit": "logical qubits"
+    },
+    {
+      "name": "Infleqtion 80 physical qubits behind 30 logical",
+      "rung": 9.1062,
+      "drift": 0.1062,
+      "ladder": "count",
+      "unit": "physical qubits"
+    },
+    {
+      "name": "Infleqtion confirmation signal vs noise",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "signal/noise ratio"
+    },
+    {
+      "name": "Infleqtion AI-discovered gate physical-gate reduction factor",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "factor"
+    },
+    {
+      "name": "Infleqtion KiloQuOp physical operations",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "physical operations"
+    },
+    {
+      "name": "Infleqtion 2028 roadmap logical qubits",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "logical qubits"
+    },
+    {
+      "name": "Infleqtion 2030 roadmap logical qubits",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "logical qubits"
+    },
+    {
+      "name": "Infleqtion logical-qubit-circuit customers",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "customers"
+    },
+    {
+      "name": "Wellcome Leap prior 12-logical-qubit demo",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "count",
+      "unit": "logical qubits"
+    },
+    {
+      "name": "Infleqtion announcement date",
+      "rung": 34.9622,
+      "drift": -0.0378,
+      "ladder": "count",
+      "unit": "YYYYMMDD"
     }
   ],
-  "entry_count": 640,
-  "seal_count": 140,
+  "entry_count": 650,
+  "seal_count": 141,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4623,7 +4693,8 @@
     "φ_DENOVO_PHI_DECODE_TYREE_OMEGA",
     "φ_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA",
     "φ_ANYON_CONDENSATE_TYREE_OMEGA",
-    "φ_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA"
+    "φ_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA",
+    "φ_LOGICAL_QUBIT_30_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "2acdc37265058abeab66aaa3bf4a0fb52ded1980c4d19563e345087c2e7cc8af"
+  "snapshot_sha256": "db75fd59f26b5388a46f65084dd33067af94647fca41b0db172277d9d89bc49a"
 }
