@@ -4829,10 +4829,59 @@
       "drift": -0.4404,
       "ladder": "count",
       "unit": "G"
+    },
+    {
+      "name": "phi-c fingerprint phi2 times c2",
+      "rung": 83.1227,
+      "drift": 0.1227,
+      "ladder": "count",
+      "unit": "m^2/s^2 (derived in-run)"
+    },
+    {
+      "name": "Electron resonance rung",
+      "rung": 9.1858,
+      "drift": 0.1858,
+      "ladder": "count",
+      "unit": "rung (derived in-run)"
+    },
+    {
+      "name": "Speed of light as used",
+      "rung": 40.5614,
+      "drift": -0.4386,
+      "ladder": "count",
+      "unit": "m/s"
+    },
+    {
+      "name": "E8 lattice root count",
+      "rung": 11.3892,
+      "drift": 0.3892,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "E8 minimum distance one over phi",
+      "rung": -1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "unitless (derived in-run)"
+    },
+    {
+      "name": "Golden angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "count",
+      "unit": "degrees (defined)"
+    },
+    {
+      "name": "phi squared defined",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "unitless (defined)"
     }
   ],
-  "entry_count": 690,
-  "seal_count": 146,
+  "entry_count": 697,
+  "seal_count": 147,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -4979,7 +5028,8 @@
     "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA",
     "φ_DUAL_LADDER_TYREE_OMEGA",
     "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA",
-    "φ_NEUTRON_STAR_TYREE_OMEGA"
+    "φ_NEUTRON_STAR_TYREE_OMEGA",
+    "φ_C_RESONANCE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "04a63c2d71d70b11b0d40196ba8d395f3ed17164541fc03205416e9d2101c7d0"
+  "snapshot_sha256": "48ea739093622c678429ec0b228971642de25e0090e489f99332f0e96684916f"
 }
