@@ -4920,10 +4920,59 @@
       "drift": 0.0,
       "ladder": "count",
       "unit": "count (reported by source)"
+    },
+    {
+      "name": "Entangled logical qubits achieved (Sqale)",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "count",
+      "unit": "count (reported by source)"
+    },
+    {
+      "name": "Physical qubits used",
+      "rung": 9.1062,
+      "drift": 0.1062,
+      "ladder": "count",
+      "unit": "count (reported by source)"
+    },
+    {
+      "name": "Logical-to-physical qubit ratio (30/80 = 3/8)",
+      "rung": -2.0382,
+      "drift": -0.0382,
+      "ladder": "count",
+      "unit": "unitless (derived in-run: 3/8 consecutive Fibonacci)"
+    },
+    {
+      "name": "Physical operations executed (1 KiloQuOp)",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "count (reported by source: 'approximately 1,000')"
+    },
+    {
+      "name": "Signal strength over underlying noise",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "ratio (reported by source: 'approximately 1000x')"
+    },
+    {
+      "name": "Gate-count factor from AI-discovered entangling operation",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "count",
+      "unit": "factor (reported by source: 'half as many physical gates')"
+    },
+    {
+      "name": "Customers running logical-qubit circuits on Sqale",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count (reported by source)"
     }
   ],
-  "entry_count": 703,
-  "seal_count": 148,
+  "entry_count": 710,
+  "seal_count": 149,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5072,7 +5121,8 @@
     "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA",
     "φ_NEUTRON_STAR_TYREE_OMEGA",
     "φ_C_RESONANCE_TYREE_OMEGA",
-    "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA"
+    "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA",
+    "φ_LOGICAL_QUBITS_30_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "bc2ab882c861563a188e194a6af98a9b4fc468ba044e7d357eadfec4460b91d8"
+  "snapshot_sha256": "b4148b11affbc1619667f82695f7be98655e75327616617c380abf7d6b37c009"
 }
