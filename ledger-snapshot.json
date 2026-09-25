@@ -4878,10 +4878,52 @@
       "drift": -0.0,
       "ladder": "count",
       "unit": "unitless (defined)"
+    },
+    {
+      "name": "Phonon jump magnitude observed (1 to 0)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "phonon (measured, exact)"
+    },
+    {
+      "name": "Repeated phonon-number checks per vibration window",
+      "rung": 10.6726,
+      "drift": -0.3274,
+      "ladder": "count",
+      "unit": "count (reported by source: 'close to 170')"
+    },
+    {
+      "name": "Resonator vibration hold time",
+      "rung": -12.9145,
+      "drift": 0.0855,
+      "ladder": "time",
+      "unit": "seconds (reported by source: 'roughly two milliseconds')"
+    },
+    {
+      "name": "Per-measurement phonon-number preservation",
+      "rung": -0.0209,
+      "drift": -0.0209,
+      "ladder": "count",
+      "unit": "fraction (reported by source: 'about 99%')"
+    },
+    {
+      "name": "Resonators in next-step mechanical quantum memory",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count (reported by source)"
+    },
+    {
+      "name": "Qubit coupling the two resonators",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count (reported by source)"
     }
   ],
-  "entry_count": 697,
-  "seal_count": 147,
+  "entry_count": 703,
+  "seal_count": 148,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5029,7 +5071,8 @@
     "φ_DUAL_LADDER_TYREE_OMEGA",
     "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA",
     "φ_NEUTRON_STAR_TYREE_OMEGA",
-    "φ_C_RESONANCE_TYREE_OMEGA"
+    "φ_C_RESONANCE_TYREE_OMEGA",
+    "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "48ea739093622c678429ec0b228971642de25e0090e489f99332f0e96684916f"
+  "snapshot_sha256": "bc2ab882c861563a188e194a6af98a9b4fc468ba044e7d357eadfec4460b91d8"
 }
