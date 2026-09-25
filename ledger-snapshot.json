@@ -4969,10 +4969,66 @@
       "drift": 0.283,
       "ladder": "count",
       "unit": "count (reported by source)"
+    },
+    {
+      "name": "Diamond-spin prototype operating temperature",
+      "rung": 0.9107,
+      "drift": -0.0893,
+      "ladder": "temperature",
+      "unit": "kelvin (reported by source: -271.6 C)"
+    },
+    {
+      "name": "Superconducting operating temperature (comparison)",
+      "rung": -8.1295,
+      "drift": -0.1295,
+      "ladder": "temperature",
+      "unit": "kelvin (reported by source: -273.13 C, ~20 mK)"
+    },
+    {
+      "name": "Operating-temperature factor over superconducting",
+      "rung": 9.0403,
+      "drift": 0.0403,
+      "ladder": "count",
+      "unit": "factor (derived in-run: 1.55 / 0.02)"
+    },
+    {
+      "name": "Modules in current prototype",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count (reported by source: single module)"
+    },
+    {
+      "name": "Multi-module prototype target year",
+      "rung": 15.8232,
+      "drift": -0.1768,
+      "ladder": "count",
+      "unit": "year (reported by source)"
+    },
+    {
+      "name": "Roadmap logical qubits FY2030",
+      "rung": 11.4741,
+      "drift": 0.4741,
+      "ladder": "count",
+      "unit": "count (reported by source: roadmap target)"
+    },
+    {
+      "name": "Roadmap logical qubits FY2035",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "count (reported by source: roadmap target)"
+    },
+    {
+      "name": "Research collaborators (Fujitsu, TU Delft, QuTech)",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count (reported by source)"
     }
   ],
-  "entry_count": 710,
-  "seal_count": 149,
+  "entry_count": 718,
+  "seal_count": 150,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5122,7 +5178,8 @@
     "φ_NEUTRON_STAR_TYREE_OMEGA",
     "φ_C_RESONANCE_TYREE_OMEGA",
     "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA",
-    "φ_LOGICAL_QUBITS_30_TYREE_OMEGA"
+    "φ_LOGICAL_QUBITS_30_TYREE_OMEGA",
+    "φ_DIAMOND_SPIN_SNV_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "b4148b11affbc1619667f82695f7be98655e75327616617c380abf7d6b37c009"
+  "snapshot_sha256": "02f307334948cb3727253dc92cc005c3983a86dcd904180f221c034184fb9cb0"
 }
