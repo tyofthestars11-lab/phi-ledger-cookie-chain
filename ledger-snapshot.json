@@ -5557,10 +5557,87 @@
       "drift": -0.4664,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "integrand exponent a-1",
+      "rung": 14.3756,
+      "drift": 0.3756,
+      "ladder": "count",
+      "unit": "exponent"
+    },
+    {
+      "name": "integrand exponent a+b",
+      "rung": 15.8181,
+      "drift": -0.1819,
+      "ladder": "count",
+      "unit": "exponent"
+    },
+    {
+      "name": "beta parameter a",
+      "rung": 14.3777,
+      "drift": 0.3777,
+      "ladder": "count",
+      "unit": "parameter"
+    },
+    {
+      "name": "beta parameter b",
+      "rung": 14.3777,
+      "drift": 0.3777,
+      "ladder": "count",
+      "unit": "parameter"
+    },
+    {
+      "name": "compact form lines",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "lines"
+    },
+    {
+      "name": "TON618 φ-power",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "unit": "φ^55"
+    },
+    {
+      "name": "luminosity L φ-power",
+      "rung": 63.0,
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "unit": "φ^63"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.5467,
+      "drift": -0.4533,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 794,
-  "seal_count": 159,
+  "entry_count": 805,
+  "seal_count": 160,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5720,7 +5797,8 @@
     "φ_CARTESIAN_FUEL_TYREE_OMEGA",
     "φ_CARTESIAN_FUEL_H4_TYREE_OMEGA",
     "φ_QUANTUM_METRIC_TYREE_OMEGA",
-    "φ_PHYLLOTAXIS_TYREE_OMEGA"
+    "φ_PHYLLOTAXIS_TYREE_OMEGA",
+    "φ_INTEGRATION_CHALLENGE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "4361a85ca890f3cd614a9571599b891f43af6c4b56f7e64624fbd94dcb8c9016"
+  "snapshot_sha256": "d7fe67389d5fb732efe95b7c0eda054d0a8124ccbea1e06771fd2022013357e6"
 }
