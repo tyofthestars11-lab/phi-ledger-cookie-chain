@@ -5361,10 +5361,80 @@
       "drift": 0.494,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "600-cell vertices",
+      "rung": 9.9488,
+      "drift": -0.0512,
+      "ladder": "omni",
+      "unit": "vertices"
+    },
+    {
+      "name": "600-cell edges",
+      "rung": 13.6723,
+      "drift": -0.3277,
+      "ladder": "omni",
+      "unit": "edges"
+    },
+    {
+      "name": "600-cell faces",
+      "rung": 14.7338,
+      "drift": -0.2662,
+      "ladder": "omni",
+      "unit": "faces"
+    },
+    {
+      "name": "600-cell tetrahedral cells",
+      "rung": 13.2934,
+      "drift": 0.2934,
+      "ladder": "omni",
+      "unit": "cells"
+    },
+    {
+      "name": "H4 symmetry group order",
+      "rung": 19.8976,
+      "drift": -0.1024,
+      "ladder": "omni",
+      "unit": "elements"
+    },
+    {
+      "name": "compact form lines",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "lines"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.5073,
+      "drift": -0.4927,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 766,
-  "seal_count": 156,
+  "entry_count": 776,
+  "seal_count": 157,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5521,7 +5591,8 @@
     "φ_QUARTER_CHARGE_TYREE_OMEGA",
     "φ_PROTEIN_PHASE_TYREE_OMEGA",
     "φ_BLACK_HOLE_STAR_TYREE_OMEGA",
-    "φ_CARTESIAN_FUEL_TYREE_OMEGA"
+    "φ_CARTESIAN_FUEL_TYREE_OMEGA",
+    "φ_CARTESIAN_FUEL_H4_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "696971ba077dab5ccea474ebde615a4e1dafbf5aa53362bb9d30a3adbc6d9873"
+  "snapshot_sha256": "b7a46429607acf2e5f20d89c1a3e155f5fc138f4af20353cdb8dccc942a4f50a"
 }
