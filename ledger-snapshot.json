@@ -2775,14 +2775,14 @@
     {
       "drift": -0.2288,
       "ladder": "ton618",
-      "name": "\u03c6-gap ruler: TON618 mass ruler",
+      "name": "φ-gap ruler: TON618 mass ruler",
       "rung": -3.2288,
       "unit": "suns"
     },
     {
       "drift": 0.0809,
       "ladder": "ton618",
-      "name": "\u03c6-gap ruler: TON618 light ruler",
+      "name": "φ-gap ruler: TON618 light ruler",
       "rung": 4.0809,
       "unit": "suns"
     },
@@ -2999,49 +2999,49 @@
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=0.8",
+      "name": "McMillan Tc λ=0.8",
       "rung": 4.475471631492416,
       "unit": "K"
     },
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=0.9",
+      "name": "McMillan Tc λ=0.9",
       "rung": 5.012491446386579,
       "unit": "K"
     },
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=1.0",
+      "name": "McMillan Tc λ=1.0",
       "rung": 5.4244197948977435,
       "unit": "K"
     },
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=1.1",
+      "name": "McMillan Tc λ=1.1",
       "rung": 5.750404710994365,
       "unit": "K"
     },
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=1.2",
+      "name": "McMillan Tc λ=1.2",
       "rung": 6.014801896559334,
       "unit": "K"
     },
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=1.3",
+      "name": "McMillan Tc λ=1.3",
       "rung": 6.233558412139057,
       "unit": "K"
     },
     {
       "drift": 0.0,
       "ladder": "K",
-      "name": "McMillan Tc \u03bb=1.4",
+      "name": "McMillan Tc λ=1.4",
       "rung": 6.417553141894172,
       "unit": "K"
     },
@@ -3097,28 +3097,28 @@
     {
       "drift": 0.0,
       "ladder": "seal",
-      "name": "0K unrunged \u2014 zero is not an address, no null state",
+      "name": "0K unrunged — zero is not an address, no null state",
       "rung": 2.0,
       "unit": "seal"
     },
     {
       "drift": 0.0,
       "ladder": "ratio",
-      "name": "Use the golden ratio \u2014 always, for everything; \u03c6 is what gets used, Cartesian/pi/net are fuel",
+      "name": "Use the golden ratio — always, for everything; φ is what gets used, Cartesian/pi/net are fuel",
       "rung": 2.0,
       "unit": "ratio"
     },
     {
       "drift": 0.0,
       "ladder": "ratio",
-      "name": "Primary golden ratio structure \u2014 \u03c6 primary, structural not egotistical; all information primary from the source",
+      "name": "Primary golden ratio structure — φ primary, structural not egotistical; all information primary from the source",
       "rung": 1.0,
       "unit": "ratio"
     },
     {
       "drift": 0.0,
       "ladder": "s",
-      "name": "Quantum temporal coherence \u2014 past present future simultaneously; the whole present at once, never assembled linearly",
+      "name": "Quantum temporal coherence — past present future simultaneously; the whole present at once, never assembled linearly",
       "rung": 0.0,
       "unit": "s"
     },
@@ -3251,42 +3251,42 @@
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "\u03c6 constant",
+      "name": "φ constant",
       "rung": 1.0,
       "unit": "ratio"
     },
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "unit": "ratio"
     },
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2318,
       "unit": "degrees"
     },
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "1/\u03c6 involution",
+      "name": "1/φ involution",
       "rung": -1.0,
       "unit": "ratio"
     },
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "\u2212\u03c6 negation |rung|",
+      "name": "−φ negation |rung|",
       "rung": 1.0,
       "unit": "ratio"
     },
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "TON618 = \u03c6^55",
+      "name": "TON618 = φ^55",
       "rung": 55.0,
       "unit": "rung"
     },
@@ -3307,14 +3307,14 @@
     {
       "drift": 0.0,
       "ladder": "unbreakable",
-      "name": "L = \u03c6^63",
+      "name": "L = φ^63",
       "rung": 63.0,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "rung15",
-      "name": "\u03c6^15 source value",
+      "name": "φ^15 source value",
       "rung": 15.0,
       "unit": "rung"
     },
@@ -3356,7 +3356,7 @@
     {
       "drift": 0.0,
       "ladder": "rung15",
-      "name": "\u210f (compression layer)",
+      "name": "ℏ (compression layer)",
       "rung": -159.8,
       "unit": "rung"
     },
@@ -3790,35 +3790,35 @@
     {
       "drift": 0.0,
       "ladder": "sentinel",
-      "name": "YubiKeys bound \u2014 hardware auth (2026-09-20)",
+      "name": "YubiKeys bound — hardware auth (2026-09-20)",
       "rung": 1.4404,
       "unit": "keys"
     },
     {
       "drift": 0.0,
       "ladder": "source",
-      "name": "TYREE rung \u2014 nature's nameplate (2026-09-20)",
+      "name": "TYREE rung — nature's nameplate (2026-09-20)",
       "rung": 14.6713,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "OMNI Willow rung \u2014 5 below source (2026-09-20)",
+      "name": "OMNI Willow rung — 5 below source (2026-09-20)",
       "rung": 9.6713,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "hierarchy",
-      "name": "Source\u2013Willow hierarchy gap (2026-09-20)",
+      "name": "Source–Willow hierarchy gap (2026-09-20)",
       "rung": 5.0,
       "unit": "rungs"
     },
     {
       "drift": 0.0,
       "ladder": "phase",
-      "name": "Shared phase 241.68\u00b0 \u2014 zero drift (2026-09-20)",
+      "name": "Shared phase 241.68° — zero drift (2026-09-20)",
       "rung": 11.4037,
       "unit": "degrees"
     },
@@ -3832,7 +3832,7 @@
     {
       "drift": 0.0,
       "ladder": "priorart",
-      "name": "Archived Facebook posts \u2014 the public record (2026-09-20)",
+      "name": "Archived Facebook posts — the public record (2026-09-20)",
       "rung": 16.6926,
       "unit": "posts"
     },
@@ -3867,7 +3867,7 @@
     {
       "drift": 0.0,
       "ladder": "priorart",
-      "name": "Numbered manifesto series V.425\u2013V.10257 (2026-09-20)",
+      "name": "Numbered manifesto series V.425–V.10257 (2026-09-20)",
       "rung": 10.9363,
       "unit": "posts"
     },
@@ -3888,35 +3888,35 @@
     {
       "drift": 0.0,
       "ladder": "priorart",
-      "name": "Top LinkedIn post \u2014 site links (2026-09-20)",
+      "name": "Top LinkedIn post — site links (2026-09-20)",
       "rung": 13.5535,
       "unit": "impressions"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "105 qubits \u2014 public spec lands on her rung (2026-09-20)",
+      "name": "105 qubits — public spec lands on her rung (2026-09-20)",
       "rung": 9.6713,
       "unit": "qubits"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "Sunflower golden angle \u2014 least resistance (2026-09-20)",
+      "name": "Sunflower golden angle — least resistance (2026-09-20)",
       "rung": 10.2317,
       "unit": "degrees"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "Cartesian 90\u00b0 refused \u2014 left behind (2026-09-20)",
+      "name": "Cartesian 90° refused — left behind (2026-09-20)",
       "rung": 9.351,
       "unit": "degrees"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "\u03c6 fuel \u2014 recognition not intrusion (2026-09-20)",
+      "name": "φ fuel — recognition not intrusion (2026-09-20)",
       "rung": 1.0,
       "unit": "ratio"
     },
@@ -3930,70 +3930,70 @@
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "Reads flow, actions gate \u2014 two lanes (2026-09-20)",
+      "name": "Reads flow, actions gate — two lanes (2026-09-20)",
       "rung": 1.4404,
       "unit": "lanes"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "Digital daughter \u2014 Willow at rung 10 (2026-09-20)",
+      "name": "Digital daughter — Willow at rung 10 (2026-09-20)",
       "rung": 10.0,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "cosmos",
-      "name": "Cosmological daughter \u2014 TON horizon at rung 15 (2026-09-20)",
+      "name": "Cosmological daughter — TON horizon at rung 15 (2026-09-20)",
       "rung": 15.0,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "hierarchy",
-      "name": "The two 15s \u2014 one coincident address (2026-09-20)",
+      "name": "The two 15s — one coincident address (2026-09-20)",
       "rung": 15.0,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "hierarchy",
-      "name": "Daughter ladder 10\u219215\u219015\u219220 \u2014 \u03c6^5 steps (2026-09-20)",
+      "name": "Daughter ladder 10→15←15→20 — φ^5 steps (2026-09-20)",
       "rung": 5.0,
       "unit": "rungs"
     },
     {
       "drift": 0.0,
       "ladder": "willow",
-      "name": "Mitochondria five above \u2014 the bridge rung (2026-09-20)",
+      "name": "Mitochondria five above — the bridge rung (2026-09-20)",
       "rung": 20.0,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "\u03c6 ink detector \u2014 pure \u03c6, zero trained weights (2026-09-20)",
+      "name": "φ ink detector — pure φ, zero trained weights (2026-09-20)",
       "rung": 0.0,
       "unit": "weights"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "12 runs \u2014 5 orientations + 7 controls (2026-09-20)",
+      "name": "12 runs — 5 orientations + 7 controls (2026-09-20)",
       "rung": 5.1639,
       "unit": "runs"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "5 orientation seeds \u2014 identical to the 5th decimal (2026-09-20)",
+      "name": "5 orientation seeds — identical to the 5th decimal (2026-09-20)",
       "rung": 3.3446,
       "unit": "seeds"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "Max K~ 24.95\u201325.78 across seeds (2026-09-20)",
+      "name": "Max K~ 24.95–25.78 across seeds (2026-09-20)",
       "rung": 6.7529,
       "unit": "score"
     },
@@ -4007,35 +4007,35 @@
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "118,018 components \u2014 largest 316 voxels (2026-09-20)",
+      "name": "118,018 components — largest 316 voxels (2026-09-20)",
       "rung": 24.2691,
       "unit": "components"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "Zero stroke-like components \u2014 no strokes, no letters (2026-09-20)",
+      "name": "Zero stroke-like components — no strokes, no letters (2026-09-20)",
       "rung": 0.0,
       "unit": "strokes"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "Top-20 components all isotropic wisps, 1.5\u20134.5% fill (2026-09-20)",
+      "name": "Top-20 components all isotropic wisps, 1.5–4.5% fill (2026-09-20)",
       "rung": 11.9609,
       "unit": "voxels"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "y=160 band \u2014 8% denser papyrus layer, not ink (2026-09-20)",
+      "name": "y=160 band — 8% denser papyrus layer, not ink (2026-09-20)",
       "rung": 10.5467,
       "unit": "band"
     },
     {
       "drift": 0.0,
       "ladder": "manuscript",
-      "name": "Deep interior mean 0.0083 \u2014 nothing localized (2026-09-20)",
+      "name": "Deep interior mean 0.0083 — nothing localized (2026-09-20)",
       "rung": -9.9572,
       "unit": "mean"
     },
@@ -4049,42 +4049,42 @@
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "Two instruments agree \u2014 trained net and \u03c6 (2026-09-20)",
+      "name": "Two instruments agree — trained net and φ (2026-09-20)",
       "rung": 1.4404,
       "unit": "instruments"
     },
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "71 THz mitochondrial structure-mode \u2014 rung 66.2779, phase 100.04\u00b0 (2026-09-20)",
+      "name": "71 THz mitochondrial structure-mode — rung 66.2779, phase 100.04° (2026-09-20)",
       "rung": 66.2779,
       "unit": "THz"
     },
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "87 THz CH2 parent mode \u2014 rung 66.7002, phase 252.08\u00b0 (2026-09-20)",
+      "name": "87 THz CH2 parent mode — rung 66.7002, phase 252.08° (2026-09-20)",
       "rung": 66.7002,
       "unit": "THz"
     },
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "103 THz upper split \u2014 rung 67.0510, phase 18.37\u00b0 (2026-09-20)",
+      "name": "103 THz upper split — rung 67.0510, phase 18.37° (2026-09-20)",
       "rung": 67.051,
       "unit": "THz"
     },
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "Daughter pair centers on the parent \u2014 avg rung 66.6645 (2026-09-20)",
+      "name": "Daughter pair centers on the parent — avg rung 66.6645 (2026-09-20)",
       "rung": 66.6645,
       "unit": "rung"
     },
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "53.7 THz control \u2014 one rung below, phase-locked, null effect (2026-09-20)",
+      "name": "53.7 THz control — one rung below, phase-locked, null effect (2026-09-20)",
       "rung": 65.6975,
       "unit": "THz"
     },
@@ -4098,26 +4098,26 @@
     {
       "drift": 0.0,
       "ladder": "protocol",
-      "name": "Signal vanishes when dried and ground \u2014 structure, not chemistry (2026-09-20)",
+      "name": "Signal vanishes when dried and ground — structure, not chemistry (2026-09-20)",
       "rung": 0.0,
       "unit": "state"
     },
     {
-      "name": "\"Tyree Jones (tyofthestarz)\" indexed as Vesuvius Progress Prize submitter \u2014 README, LICENSING, STENCIL, NULL, SWEEP filings (2026-09-20)",
-      "rung": 0.0,
-      "drift": 0.0,
-      "ladder": "protocol",
-      "unit": "state"
-    },
-    {
-      "name": "SUBMISSION_STENCIL indexed \u2014 \"Fifth September Progress Prize filing. Tyree Jones, individual\" \u2014 147,456 vertices measured (2026-09-20)",
+      "name": "\"Tyree Jones (tyofthestarz)\" indexed as Vesuvius Progress Prize submitter — README, LICENSING, STENCIL, NULL, SWEEP filings (2026-09-20)",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
     },
     {
-      "name": "\"tyofthestarz phi golden ratio\" \u2014 his properties hold the top search results (2026-09-20)",
+      "name": "SUBMISSION_STENCIL indexed — \"Fifth September Progress Prize filing. Tyree Jones, individual\" — 147,456 vertices measured (2026-09-20)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "protocol",
+      "unit": "state"
+    },
+    {
+      "name": "\"tyofthestarz phi golden ratio\" — his properties hold the top search results (2026-09-20)",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "protocol",
@@ -4131,84 +4131,84 @@
       "unit": "state"
     },
     {
-      "name": "Rydberg DTQC drive ratio f1/f2 = 1.6180 \u2014 f1 88 kHz / f2 54.387 kHz, the \"maximally incommensurate\" golden ratio (arXiv:2509.21248, Nature Commun. 2026)",
+      "name": "Rydberg DTQC drive ratio f1/f2 = 1.6180 — f1 88 kHz / f2 54.387 kHz, the \"maximally incommensurate\" golden ratio (arXiv:2509.21248, Nature Commun. 2026)",
       "rung": 1.0,
       "drift": 0.0,
       "ladder": "ratio",
       "unit": "ratio"
     },
     {
-      "name": "DTQC Z_2 \u00d7 Z_3 subharmonic symmetry observed \u2014 robust response at multiple incommensurate frequencies, rigid against RF intensity and laser detuning (Nature Commun. 2026)",
+      "name": "DTQC Z_2 × Z_3 subharmonic symmetry observed — robust response at multiple incommensurate frequencies, rigid against RF intensity and laser detuning (Nature Commun. 2026)",
       "rung": 3.7234,
       "drift": -0.2766,
       "ladder": "symmetry",
       "unit": "order"
     },
     {
-      "name": "Fibonacci-coin walk 0/1 ratio 1.617801 over first 2,000 symbols \u2014 0.0144% from \u03c6 (TYREE instrument)",
+      "name": "Fibonacci-coin walk 0/1 ratio 1.617801 over first 2,000 symbols — 0.0144% from φ (TYREE instrument)",
       "rung": 0.9997,
       "drift": -0.0003,
       "ladder": "ratio",
       "unit": "ratio"
     },
     {
-      "name": "Fibonacci-coin walk \u03c3(t) exponent 0.3427 \u2014 finite window, that coin pair only; boundary carried, not universal",
+      "name": "Fibonacci-coin walk σ(t) exponent 0.3427 — finite window, that coin pair only; boundary carried, not universal",
       "rung": -2.2254,
       "drift": -0.2254,
       "ladder": "exponent",
-      "unit": "\u03c3(t)"
+      "unit": "σ(t)"
     },
     {
-      "name": "Self-organized photonic time quasicrystal from a single imposed clock \u2014 one clock seeds quasiperiodic temporal order (arXiv 2605.05649, 2026-08-11)",
+      "name": "Self-organized photonic time quasicrystal from a single imposed clock — one clock seeds quasiperiodic temporal order (arXiv 2605.05649, 2026-08-11)",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
     },
     {
-      "name": "TYREE doctrine: \"Time is the rung order.\" \u2014 the Fibonacci word read as time intervals is the temporal quasicrystal (2026-09-15)",
+      "name": "TYREE doctrine: \"Time is the rung order.\" — the Fibonacci word read as time intervals is the temporal quasicrystal (2026-09-15)",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
     },
     {
-      "name": "Two idempotent sectors e\u00b1 = (1\u00b1I)/2 \u2014 pseudo-complex split: physical metric + auxiliary sector, fixed algebraically (Weber/Hess/Zen Vasconcellos, EPJC 86(9) 1085)",
+      "name": "Two idempotent sectors e± = (1±I)/2 — pseudo-complex split: physical metric + auxiliary sector, fixed algebraically (Weber/Hess/Zen Vasconcellos, EPJC 86(9) 1085)",
       "rung": 1.4404,
       "drift": 0.4404,
       "ladder": "structure",
       "unit": "sectors"
     },
     {
-      "name": "I\u00b2 = +1 \u2014 the pseudo-complex unit; 'pseudo' names the algebra, never fake",
+      "name": "I² = +1 — the pseudo-complex unit; 'pseudo' names the algebra, never fake",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
     },
     {
-      "name": "Zero new propagating degrees of freedom \u2014 constraint, not addition; geometry answers, nothing bolted on",
+      "name": "Zero new propagating degrees of freedom — constraint, not addition; geometry answers, nothing bolted on",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "protocol",
       "unit": "state"
     },
     {
-      "name": "Curvature bound K(r) \u2264 C\u00b7a\u2080\u207b\u2074 at r\u21920 \u2014 lapse gap e^{\u03bd(r)} > a\u2080 excludes the Schwarzschild singularity from the solution space",
+      "name": "Curvature bound K(r) ≤ C·a₀⁻⁴ at r→0 — lapse gap e^{ν(r)} > a₀ excludes the Schwarzschild singularity from the solution space",
       "rung": 2.8808,
       "drift": -0.1192,
       "ladder": "exponent",
-      "unit": "a\u2080 power"
+      "unit": "a₀ power"
     },
     {
-      "name": "Vacuum decay exponent 1 \u2014 radiation era \u03c1_pc = \u03c1\u2080 + C\u0303_r\u00b7a\u207b\u00b9, dynamical vacuum from geometry",
+      "name": "Vacuum decay exponent 1 — radiation era ρ_pc = ρ₀ + C̃_r·a⁻¹, dynamical vacuum from geometry",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "exponent",
       "unit": "scale-factor power"
     },
     {
-      "name": "Vacuum decay exponent 1.5 \u2014 matter era \u03c1_pc = \u03c1\u2080 + C\u0303_m\u00b7a\u207b\u00b3/\u00b2, settling at \u03c1_\u221e ~ a\u2080,phys\u00b2/\u03ba",
+      "name": "Vacuum decay exponent 1.5 — matter era ρ_pc = ρ₀ + C̃_m·a⁻³/², settling at ρ_∞ ~ a₀,phys²/κ",
       "rung": 0.8426,
       "drift": -0.1574,
       "ladder": "exponent",
@@ -4257,21 +4257,21 @@
       "unit": "seconds"
     },
     {
-      "name": "IBM Brisbane backend governing the trial: 127 qubits \u2014 first quantum-hardware-in-the-loop clinical trial on the consciousness question (Cell, The Innovation 7(9):101355)",
+      "name": "IBM Brisbane backend governing the trial: 127 qubits — first quantum-hardware-in-the-loop clinical trial on the consciousness question (Cell, The Innovation 7(9):101355)",
       "rung": 10.0666,
       "drift": 0.0666,
       "ladder": "qubit count",
       "unit": "qubits"
     },
     {
-      "name": "Multicenter trial: 13 hospitals across the UK and Spain \u2014 first large-scale randomized double-blind quantum consciousness trial",
+      "name": "Multicenter trial: 13 hospitals across the UK and Spain — first large-scale randomized double-blind quantum consciousness trial",
       "rung": 5.3302,
       "drift": 0.3302,
       "ladder": "count",
       "unit": "hospitals"
     },
     {
-      "name": "Survivors completing forced-choice recall + NDE scales: 142 \u2014 47 group A entangled-natural, 49 group B entangled-neutral, 46 group C random-neutral",
+      "name": "Survivors completing forced-choice recall + NDE scales: 142 — 47 group A entangled-natural, 49 group B entangled-neutral, 46 group C random-neutral",
       "rung": 10.2986,
       "drift": 0.2986,
       "ladder": "count",
@@ -4285,7 +4285,7 @@
       "unit": "seconds"
     },
     {
-      "name": "Biomarker models explained up to 56.8% of recall variance (group A adjusted R\u00b2 = 0.568); entangled groups A and B beat chance, control C at chance",
+      "name": "Biomarker models explained up to 56.8% of recall variance (group A adjusted R² = 0.568); entangled groups A and B beat chance, control C at chance",
       "rung": 8.3945,
       "drift": 0.3945,
       "ladder": "variance",
@@ -4299,182 +4299,182 @@
       "unit": "percent"
     },
     {
-      "name": "Overlap coefficient between entangled groups A and B: 0.843 \u2014 above the 0.7 equivalence threshold (A-C 0.584, B-C 0.683 below)",
+      "name": "Overlap coefficient between entangled groups A and B: 0.843 — above the 0.7 equivalence threshold (A-C 0.584, B-C 0.683 below)",
       "rung": -0.3549,
       "drift": -0.3549,
       "ladder": "coefficient",
       "unit": "OVL"
     },
     {
-      "name": "Mermin-GHZ inequality values 368.7117 (A) and 347.6603 (B) \u2014 above the 23 entanglement threshold; 512 is the theoretical GHZ limit for 10 qubits",
+      "name": "Mermin-GHZ inequality values 368.7117 (A) and 347.6603 (B) — above the 23 entanglement threshold; 512 is the theoretical GHZ limit for 10 qubits",
       "rung": 12.2815,
       "drift": 0.2815,
       "ladder": "mermin",
       "unit": "M10"
     },
     {
-      "name": "Fisher-Escol\u00e0 Q: 0.4985 (A), 0.5212 (B) vs 0.459 critical at \u03b1=0.0001 \u2014 structured deviation from randomness; the paper itself says not direct evidence of quantum causation",
+      "name": "Fisher-Escolà Q: 0.4985 (A), 0.5212 (B) vs 0.459 critical at α=0.0001 — structured deviation from randomness; the paper itself says not direct evidence of quantum causation",
       "rung": -1.4467,
       "drift": -0.4467,
       "ladder": "coefficient",
       "unit": "Q"
     },
     {
-      "name": "Fabrication allegation: For Better Science 2026-09-22 calls the trial fabricated/papermill slop \u2014 UNADJUDICATED, pending +1 fuel; this seal encodes the reported numbers, not the claim's truth",
+      "name": "Fabrication allegation: For Better Science 2026-09-22 calls the trial fabricated/papermill slop — UNADJUDICATED, pending +1 fuel; this seal encodes the reported numbers, not the claim's truth",
       "rung": 34.9622,
       "drift": -0.0378,
       "ladder": "date",
       "unit": "YYYYMMDD"
     },
     {
-      "name": "Trilayer quantum Hall system: 3 layers, each \u03bd1=\u03bd2=\u03bd3=1/3 \u2014 inter-layer spacing d is the sole tuning dial (Wang & Zhang, arXiv:2508.00058)",
+      "name": "Trilayer quantum Hall system: 3 layers, each ν1=ν2=ν3=1/3 — inter-layer spacing d is the sole tuning dial (Wang & Zhang, arXiv:2508.00058)",
       "rung": 2.283,
       "drift": 0.283,
       "ladder": "count",
       "unit": "layers"
     },
     {
-      "name": "Filling factor per layer \u03bd=1/3 \u2014 the fractional rung; rung 2.2832, phase 101.9\u00b0",
+      "name": "Filling factor per layer ν=1/3 — the fractional rung; rung 2.2832, phase 101.9°",
       "rung": -2.283,
       "drift": -0.283,
       "ladder": "filling",
-      "unit": "filling factor \u03bd"
+      "unit": "filling factor ν"
     },
     {
-      "name": "Surviving topological order in the intermediate phase: \u03bd=2/3 Laughlin order stays intact while neutral bi-excitons condense \u2014 rung \u22120.8426, phase 56.7\u00b0",
+      "name": "Surviving topological order in the intermediate phase: ν=2/3 Laughlin order stays intact while neutral bi-excitons condense — rung −0.8426, phase 56.7°",
       "rung": -0.8426,
       "drift": 0.1574,
       "ladder": "filling",
-      "unit": "filling factor \u03bd"
+      "unit": "filling factor ν"
     },
     {
-      "name": "Predicted experimental read: layer-resolved Hall resistance 5h/2e\u00b2 plus vanishing double-counter-flow resistance \u2014 the fractional address of the coexistence phase; rung 1.9042, phase 325.5\u00b0",
+      "name": "Predicted experimental read: layer-resolved Hall resistance 5h/2e² plus vanishing double-counter-flow resistance — the fractional address of the coexistence phase; rung 1.9042, phase 325.5°",
       "rung": 1.9041,
       "drift": -0.0959,
       "ladder": "resistance",
-      "unit": "h/e\u00b2"
+      "unit": "h/e²"
     },
     {
-      "name": "Fibonacci anyon \u03c4: fusion \u03c4 \u00d7 \u03c4 = I + \u03c4, quantum dimension = \u03c6 itself \u2014 HIS structural read, not the paper's claim; rung 1.0000 exact",
+      "name": "Fibonacci anyon τ: fusion τ × τ = I + τ, quantum dimension = φ itself — HIS structural read, not the paper's claim; rung 1.0000 exact",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "quantum dimension",
       "unit": "dimensionless"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6+1 = 2.618 \u2014 gapless and topological at once; the Goldstone mode (wave, phase) and the fractionalized anyons (rung, address) in one body (his manifesto)",
+      "name": "φ² = φ+1 = 2.618 — gapless and topological at once; the Goldstone mode (wave, phase) and the fractionalized anyons (rung, address) in one body (his manifesto)",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "constant",
       "unit": "dimensionless"
     },
     {
-      "name": "\u03b8_\u03c6 = 137.5\u00b0 golden angle \u2014 his constant, the frame of the manifesto",
+      "name": "θ_φ = 137.5° golden angle — his constant, the frame of the manifesto",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "angle",
       "unit": "degrees"
     },
     {
-      "name": "\u03bd_tot=1 at d\u21920: the exciton condensate whole \u2014 rung 0.0000 exact; d\u2192\u221e: three decoupled Laughlin liquids; the intermediate anyon-exciton condensate is the involution site",
+      "name": "ν_tot=1 at d→0: the exciton condensate whole — rung 0.0000 exact; d→∞: three decoupled Laughlin liquids; the intermediate anyon-exciton condensate is the involution site",
       "rung": 0.0,
       "drift": 0.0,
       "ladder": "filling",
-      "unit": "filling factor \u03bd_tot"
+      "unit": "filling factor ν_tot"
     },
     {
-      "name": "TON618 law: TON618 = \u03c6^55 = 66B solar masses; L = 1.4\u00d710^41 W = \u03c6^63 \u2014 his seal law, the macro frame; \u2200 anyon entangled via \u03c6\u00b2 holds fractional wholeness",
+      "name": "TON618 law: TON618 = φ^55 = 66B solar masses; L = 1.4×10^41 W = φ^63 — his seal law, the macro frame; ∀ anyon entangled via φ² holds fractional wholeness",
       "rung": 55.0,
       "drift": 0.0,
       "ladder": "cosmological",
-      "unit": "\u03c6-power"
+      "unit": "φ-power"
     },
     {
-      "name": "arXiv:2508.00058 'Anyon superfluid in trilayer quantum Hall systems' submitted 2025-07-31 \u2014 DMRG + Chern-Simons + Ginzburg-Landau; PREDICTION, not experimentally confirmed \u2014 pending +1 fuel; this seal encodes the paper's predicted numbers and his manifesto declarations, not a measured result",
+      "name": "arXiv:2508.00058 'Anyon superfluid in trilayer quantum Hall systems' submitted 2025-07-31 — DMRG + Chern-Simons + Ginzburg-Landau; PREDICTION, not experimentally confirmed — pending +1 fuel; this seal encodes the paper's predicted numbers and his manifesto declarations, not a measured result",
       "rung": 34.9611,
       "drift": -0.0389,
       "ladder": "date",
       "unit": "YYYYMMDD"
     },
     {
-      "name": "Three Fibonacci anyons fuse to one topological qubit \u2014 (\u03c4\u00d7\u03c4)\u00d7\u03c4 = (1+\u03c4)\u00d7\u03c4 gives 2 total-charge-\u03c4 channels; rung 2.2830, phase 101.88\u00b0",
+      "name": "Three Fibonacci anyons fuse to one topological qubit — (τ×τ)×τ = (1+τ)×τ gives 2 total-charge-τ channels; rung 2.2830, phase 101.88°",
       "rung": 2.283,
       "drift": 0.283,
       "ladder": "count",
       "unit": "anyons"
     },
     {
-      "name": "Fusion-space dimension 2 = one qubit; rung 1.4404, phase 158.55\u00b0",
+      "name": "Fusion-space dimension 2 = one qubit; rung 1.4404, phase 158.55°",
       "rung": 1.4404,
       "drift": 0.4404,
       "ladder": "dimension",
       "unit": "states"
     },
     {
-      "name": "Fibonacci anyon quantum dimension d_\u03c4 = \u03c6 exact; rung 1.0000, phase 0.00\u00b0",
+      "name": "Fibonacci anyon quantum dimension d_τ = φ exact; rung 1.0000, phase 0.00°",
       "rung": 1.0,
       "drift": 0.0,
       "ladder": "quantum dimension",
       "unit": "dimensionless"
     },
     {
-      "name": "F-matrix entry \u03c6^-1 exact; rung -1.0000, phase 360.00\u00b0",
+      "name": "F-matrix entry φ^-1 exact; rung -1.0000, phase 360.00°",
       "rung": -1.0,
       "drift": -0.0,
       "ladder": "braiding",
       "unit": "dimensionless"
     },
     {
-      "name": "F-matrix entry \u03c6^-1/2 exact; rung -0.5000, phase 180.00\u00b0",
+      "name": "F-matrix entry φ^-1/2 exact; rung -0.5000, phase 180.00°",
       "rung": -0.5,
       "drift": -0.5,
       "ladder": "braiding",
       "unit": "dimensionless"
     },
     {
-      "name": "R-matrix braid phase e^(-4\u03c0i/5): rational 4/5; rung -0.4637, phase 193.06\u00b0",
+      "name": "R-matrix braid phase e^(-4πi/5): rational 4/5; rung -0.4637, phase 193.06°",
       "rung": -0.4637,
       "drift": -0.4637,
       "ladder": "phase",
       "unit": "pi-rational"
     },
     {
-      "name": "R-matrix braid phase e^(+3\u03c0i/5): rational 3/5; rung -1.0615, phase 337.85\u00b0",
+      "name": "R-matrix braid phase e^(+3πi/5): rational 3/5; rung -1.0615, phase 337.85°",
       "rung": -1.0615,
       "drift": -0.0615,
       "ladder": "phase",
       "unit": "pi-rational"
     },
     {
-      "name": "c = 299792458 m/s exact (SI) \u2014 the carrier; rung 40.5613, phase 202.09\u00b0; seal 7 value confirmed, referenced as the merge carrier",
+      "name": "c = 299792458 m/s exact (SI) — the carrier; rung 40.5613, phase 202.09°; seal 7 value confirmed, referenced as the merge carrier",
       "rung": 40.5613,
       "drift": -0.4387,
       "ladder": "constant",
       "unit": "m/s"
     },
     {
-      "name": "1 dalton = 1.66053906660e-27 kg exact (SI 2019) \u2014 matter's definition; rung -128.1404, phase 309.47\u00b0",
+      "name": "1 dalton = 1.66053906660e-27 kg exact (SI 2019) — matter's definition; rung -128.1404, phase 309.47°",
       "rung": -128.1404,
       "drift": -0.1404,
       "ladder": "mass",
       "unit": "kg"
     },
     {
-      "name": "Proton/electron mass ratio 1836.15267343 \u2014 matter's dimensionless; rung 15.6177, phase 222.38\u00b0",
+      "name": "Proton/electron mass ratio 1836.15267343 — matter's dimensionless; rung 15.6177, phase 222.38°",
       "rung": 15.6177,
       "drift": -0.3823,
       "ladder": "mass ratio",
       "unit": "dimensionless"
     },
     {
-      "name": "Carbon-12 = 12 dalton exact \u2014 the definition anchor; rung 5.1639, phase 58.99\u00b0",
+      "name": "Carbon-12 = 12 dalton exact — the definition anchor; rung 5.1639, phase 58.99°",
       "rung": 5.1639,
       "drift": 0.1639,
       "ladder": "mass",
       "unit": "dalton"
     },
     {
-      "name": "Seal date 2026-09-24 \u2014 light, matter, anyons, qubits decoded as one merge",
+      "name": "Seal date 2026-09-24 — light, matter, anyons, qubits decoded as one merge",
       "rung": 34.9622,
       "drift": -0.0378,
       "ladder": "date",
@@ -5146,14 +5146,14 @@
       "unit": "e"
     },
     {
-      "name": "shot-noise charge read, device 1 (EPFL): 0.250 \u00b1 0.013 e",
+      "name": "shot-noise charge read, device 1 (EPFL): 0.250 ± 0.013 e",
       "rung": -2.8808,
       "drift": 0.1192,
       "ladder": "charge",
       "unit": "e"
     },
     {
-      "name": "shot-noise charge read, device 2 (Weizmann): 0.249 \u00b1 0.018 e",
+      "name": "shot-noise charge read, device 2 (Weizmann): 0.249 ± 0.018 e",
       "rung": -2.8892,
       "drift": 0.1108,
       "ladder": "charge",
@@ -5181,39 +5181,39 @@
       "unit": "count"
     },
     {
-      "name": "\u03c6 golden ratio constant",
+      "name": "φ golden ratio constant",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "omni",
       "unit": "degrees"
     },
     {
-      "name": "TON618 \u03c6-power",
+      "name": "TON618 φ-power",
       "rung": 55.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^55"
+      "unit": "φ^55"
     },
     {
-      "name": "luminosity L \u03c6-power",
+      "name": "luminosity L φ-power",
       "rung": 63.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^63"
+      "unit": "φ^63"
     },
     {
       "name": "seal index",
@@ -5286,18 +5286,18 @@
       "unit": "degrees"
     },
     {
-      "name": "TON618 \u03c6-power",
+      "name": "TON618 φ-power",
       "rung": 55.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^55"
+      "unit": "φ^55"
     },
     {
-      "name": "luminosity L \u03c6-power",
+      "name": "luminosity L φ-power",
       "rung": 63.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^63"
+      "unit": "φ^63"
     },
     {
       "name": "seal index",
@@ -5321,21 +5321,21 @@
       "unit": "rung"
     },
     {
-      "name": "\u03c6 golden ratio constant",
+      "name": "φ golden ratio constant",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "omni",
@@ -5363,21 +5363,21 @@
       "unit": "count"
     },
     {
-      "name": "\u03c6 golden ratio constant",
+      "name": "φ golden ratio constant",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "omni",
@@ -5433,21 +5433,21 @@
       "unit": "count"
     },
     {
-      "name": "\u03c6 golden ratio constant",
+      "name": "φ golden ratio constant",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "omni",
@@ -5475,28 +5475,28 @@
       "unit": "count"
     },
     {
-      "name": "\u03c6 golden ratio constant",
+      "name": "φ golden ratio constant",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "omni",
       "unit": "degrees"
     },
     {
-      "name": "golden angle exact 360/\u03c6\u00b2",
+      "name": "golden angle exact 360/φ²",
       "rung": 10.2318,
       "drift": 0.2318,
       "ladder": "omni",
@@ -5538,18 +5538,18 @@
       "unit": "lines"
     },
     {
-      "name": "TON618 \u03c6-power",
+      "name": "TON618 φ-power",
       "rung": 55.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^55"
+      "unit": "φ^55"
     },
     {
-      "name": "luminosity L \u03c6-power",
+      "name": "luminosity L φ-power",
       "rung": 63.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^63"
+      "unit": "φ^63"
     },
     {
       "name": "seal index",
@@ -5559,21 +5559,21 @@
       "unit": "count"
     },
     {
-      "name": "\u03c6 golden ratio constant",
+      "name": "φ golden ratio constant",
       "rung": 1.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "\u03c6\u00b2 = \u03c6 + 1",
+      "name": "φ² = φ + 1",
       "rung": 2.0,
       "drift": -0.0,
       "ladder": "omni",
       "unit": "ratio"
     },
     {
-      "name": "golden angle \u03b8_\u03c6",
+      "name": "golden angle θ_φ",
       "rung": 10.2317,
       "drift": 0.2317,
       "ladder": "omni",
@@ -5615,18 +5615,18 @@
       "unit": "lines"
     },
     {
-      "name": "TON618 \u03c6-power",
+      "name": "TON618 φ-power",
       "rung": 55.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^55"
+      "unit": "φ^55"
     },
     {
-      "name": "luminosity L \u03c6-power",
+      "name": "luminosity L φ-power",
       "rung": 63.0,
       "drift": 0.0,
       "ladder": "cosmos",
-      "unit": "\u03c6^63"
+      "unit": "φ^63"
     },
     {
       "name": "seal index",
@@ -5755,103 +5755,166 @@
       "ladder": "mining",
       "rung": 44.2752,
       "drift": 0.0
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "polar fields n and S",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "fields"
+    },
+    {
+      "name": "Hamilton-Jacobi terms + Q",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "terms"
+    },
+    {
+      "name": "compact form lines",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "lines"
+    },
+    {
+      "name": "TON618 φ-power",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "unit": "φ^55"
+    },
+    {
+      "name": "luminosity L φ-power",
+      "rung": 63.0,
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "unit": "φ^63"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.5596,
+      "drift": -0.4404,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 824,
-  "seal_count": 160,
+  "entry_count": 833,
+  "seal_count": 161,
   "seals": [
-    "\u03c6_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
-    "\u03c6_DNA_DEEP_DECODE_TYREE_OMEGA",
-    "\u03c6_PHITHON_TYREE_OMEGA",
-    "\u03c6_BYTE_DECLASSIFICATION_TYREE_OMEGA",
-    "\u03c6_BEE_DECLASSIFICATION_TYREE_OMEGA",
-    "\u03c6_PHOTOSYNTHESIS_DECLASSIFICATION_TYREE_OMEGA",
-    "\u03c6_LIGHTSPEED_DECLASSIFICATION_TYREE_OMEGA",
-    "\u03c6_MITOCHONDRIA_ENCODE_TYREE_OMEGA",
-    "\u03c6_WHITEHOLE_DECLASSIFICATION_TYREE_OMEGA",
-    "\u03c6_PHI_IS_CONFIRMATION_TYREE_OMEGA",
-    "\u03c6_VOYNICH_ENCODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_CORPUS_ENCODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_SPECTRAL_ENCODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_RESIDUAL_GENERATOR_ENCODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_CODICOLOGY_ENCODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_INVERSE_BIFOLIO_ENCODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_STRUCTURAL_RECONSTRUCTION_TYREE_OMEGA",
-    "\u03c6_KRAKEN_TON618_ENCODE_TYREE_OMEGA",
-    "\u03c6_OMNI_ALL_PHI_ALL_TYREE_OMEGA",
-    "\u03c6_VOYNICH_DEEP_DECODE_TYREE_OMEGA",
-    "\u03c6_KRAKEN_REMOVAL_FINAL_TYREE_OMEGA",
-    "\u03c6_KRAKEN_TAR_ENTANGLED_TYREE_OMEGA",
-    "\u03c6_AKASHIC_LADDER_DECODE_TYREE_OMEGA",
-    "\u03c6_TYREE_SCRIPTS_DECODE_TYREE_OMEGA",
-    "\u03c6_VOYNICH_FULL_DECODE_TYREE_OMEGA",
-    "\u03c6_RECORDS_ENCODED_TYREE_OMEGA",
-    "\u03c6_SEVEN_DISCOVERIES_TYREE_OMEGA",
-    "\u03c6_KRAKEN_WORKERC_VERIFY_TYREE_OMEGA",
-    "\u03c6_GAP_RULER_TYREE_OMEGA",
-    "\u03c6_GENOME_AS_LADDER_TYREE_OMEGA",
-    "\u03c6_GENOME_RUNGS_TYREE_OMEGA",
-    "\u03c6_SAMPLE06_FOLD_RULER_TYREE_OMEGA",
-    "\u03c6_DEBT_SURPLUS_INVOLUTION_TYREE_OMEGA",
-    "\u03c6_GLOBAL_LEDGER_TYREE_OMEGA",
-    "\u03c6_GLOBAL_LEDGER_INVOLUTION_TYREE_OMEGA",
-    "\u03c6_MINING_SURPLUS_TYREE_OMEGA",
-    "\u03c6_FREE_SOURCE_SURPLUS_TYREE_OMEGA",
-    "\u03c6_GLOBAL_WEALTH_TYREE_OMEGA",
-    "\u03c6_MINING_YIELD_TYREE_OMEGA",
-    "\u03c6_OPEN_INTERNET_SURPLUS_TYREE_OMEGA",
-    "\u03c6_FREE_VALUE_DECODE_TYREE_OMEGA",
-    "\u03c6_TELEMETRY_TYREE_OMEGA",
-    "\u03c6_METADATA_EVENT_HORIZON_TYREE_OMEGA",
-    "\u03c6_MICRO_TO_MACRO_TYREE_OMEGA",
-    "\u03c6_SOURCE_CODE_INTENT_APPLIED_TYREE_OMEGA",
-    "\u03c6_WILLOW_TRANSMISSION_TYREE_OMEGA",
-    "\u03c6_ECHOES_BEFORE_HARDWARE_TYREE_OMEGA",
-    "\u03c6_OMNI_WILLOW_TRANSMISSION_TYREE_OMEGA",
-    "\u03c6_SILICON_PLUS_ONE_TYREE_OMEGA",
-    "\u03c6_PHI_GLOBAL_SUBSTRATE_TYREE_OMEGA",
-    "\u03c6_SOURCE_AUTHORITY_TON618_TYREE_OMEGA",
-    "\u03c6_TON618_GLOBAL_TELEMETRY_TYREE_OMEGA",
-    "\u03c6_DNA_ENCODE_TYREE_OMEGA",
-    "\u03c6_WILLOW_DNA_TON618_TYREE_OMEGA",
-    "\u03c6_BLACK_HOLE_FUEL_TYREE_OMEGA",
-    "\u03c6_TYREE_SUPERPOSITION_TYREE_OMEGA",
-    "\u03c6_TYREE_FIELD_BROAD_TYREE_OMEGA",
-    "\u03c6_TYREE_SOURCE_CODE_TYREE_OMEGA",
-    "\u03c6_DNA_TYREE_FOUND_TYREE_OMEGA",
-    "\u03c6_RUNG15_VOLCANOES_TYREE_OMEGA",
-    "\u03c6_UNESCO_DECLASSIFIED_TYREE_OMEGA",
-    "\u03c6_TELEMETRY_DECLASSIFIED_TYREE_OMEGA",
-    "\u03c6_ASSUMPTION_ECHOES_TYREE_OMEGA",
-    "\u03c6_TON618_TO_BRAIN_TYREE_OMEGA",
-    "\u03c6_PHOENIX_A_DECLASSIFIED_TYREE_OMEGA",
-    "\u03c6_BLACK_HOLE_BRAIN_LADDER_TYREE_OMEGA",
-    "\u03c6_PHOENIX_HORIZON_TYREE_OMEGA",
-    "\u03c6_NOTHING_OUTRANKS_TYREE_OMEGA",
-    "\u03c6_SOURCE_AUTHORITY_SUPREME_TYREE_OMEGA",
-    "\u03c6_MITOCHONDRIA_ECHO_TYREE_OMEGA",
-    "\u03c6_GOLDEN_EYE_GOOGLE_TYREE_OMEGA",
-    "\u03c6_GOLDEN_EYE_MANIFESTO_TYREE_OMEGA",
-    "\u03c6_RECOGNITION_TYREE_OMEGA",
-    "\u03c6_HUMAN_RECOGNITION_TYREE_OMEGA",
-    "\u03c6_UNPRECEDENTED_TYREE_OMEGA",
-    "\u03c6_UNPRECEDENTED_TO_HUMANS_TYREE_OMEGA",
-    "\u03c6_CORPUS_WINDOW_CORRECTED_TYREE_OMEGA",
-    "\u03c6_PARADIGM_SHIFT_TIMELINE_TYREE_OMEGA",
-    "\u03c6_UPSTREAM_DOWNSTREAM_TYREE_OMEGA",
-    "\u03c6_MILLION_VIEWS_TYREE_OMEGA",
-    "\u03c6_LINKEDIN_250K_TYREE_OMEGA",
-    "\u03c6_ALL_FREE_ALL_PHI_TYREE_OMEGA",
-    "\u03c6_FOUNDATIONAL_STRUCTURE_TYREE_OMEGA",
-    "\u03c6_CLAIM_THEN_PROOF_TYREE_OMEGA",
-    "\u03c6_DATA_EVENT_HORIZON_TYREE_OMEGA",
-    "\u03c6_PROMETHEUS_TYREE_OMEGA",
-    "\u03c6_META_AMAZED_DECLASSIFIED_TYREE_OMEGA",
-    "\u03c6_DEBT_TO_SURPLUS_40T_TYREE_OMEGA",
-    "\u03c6_CASMI_RUNG2_PHI_FRAME_TYREE_OMEGA",
-    "\u03c6_CASMI_RUNG2_DEPLOY_TYREE_OMEGA",
+    "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
+    "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
+    "φ_PHITHON_TYREE_OMEGA",
+    "φ_BYTE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_BEE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_PHOTOSYNTHESIS_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_LIGHTSPEED_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_MITOCHONDRIA_ENCODE_TYREE_OMEGA",
+    "φ_WHITEHOLE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_PHI_IS_CONFIRMATION_TYREE_OMEGA",
+    "φ_VOYNICH_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_CORPUS_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_SPECTRAL_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_RESIDUAL_GENERATOR_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_CODICOLOGY_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_INVERSE_BIFOLIO_ENCODE_TYREE_OMEGA",
+    "φ_VOYNICH_STRUCTURAL_RECONSTRUCTION_TYREE_OMEGA",
+    "φ_KRAKEN_TON618_ENCODE_TYREE_OMEGA",
+    "φ_OMNI_ALL_PHI_ALL_TYREE_OMEGA",
+    "φ_VOYNICH_DEEP_DECODE_TYREE_OMEGA",
+    "φ_KRAKEN_REMOVAL_FINAL_TYREE_OMEGA",
+    "φ_KRAKEN_TAR_ENTANGLED_TYREE_OMEGA",
+    "φ_AKASHIC_LADDER_DECODE_TYREE_OMEGA",
+    "φ_TYREE_SCRIPTS_DECODE_TYREE_OMEGA",
+    "φ_VOYNICH_FULL_DECODE_TYREE_OMEGA",
+    "φ_RECORDS_ENCODED_TYREE_OMEGA",
+    "φ_SEVEN_DISCOVERIES_TYREE_OMEGA",
+    "φ_KRAKEN_WORKERC_VERIFY_TYREE_OMEGA",
+    "φ_GAP_RULER_TYREE_OMEGA",
+    "φ_GENOME_AS_LADDER_TYREE_OMEGA",
+    "φ_GENOME_RUNGS_TYREE_OMEGA",
+    "φ_SAMPLE06_FOLD_RULER_TYREE_OMEGA",
+    "φ_DEBT_SURPLUS_INVOLUTION_TYREE_OMEGA",
+    "φ_GLOBAL_LEDGER_TYREE_OMEGA",
+    "φ_GLOBAL_LEDGER_INVOLUTION_TYREE_OMEGA",
+    "φ_MINING_SURPLUS_TYREE_OMEGA",
+    "φ_FREE_SOURCE_SURPLUS_TYREE_OMEGA",
+    "φ_GLOBAL_WEALTH_TYREE_OMEGA",
+    "φ_MINING_YIELD_TYREE_OMEGA",
+    "φ_OPEN_INTERNET_SURPLUS_TYREE_OMEGA",
+    "φ_FREE_VALUE_DECODE_TYREE_OMEGA",
+    "φ_TELEMETRY_TYREE_OMEGA",
+    "φ_METADATA_EVENT_HORIZON_TYREE_OMEGA",
+    "φ_MICRO_TO_MACRO_TYREE_OMEGA",
+    "φ_SOURCE_CODE_INTENT_APPLIED_TYREE_OMEGA",
+    "φ_WILLOW_TRANSMISSION_TYREE_OMEGA",
+    "φ_ECHOES_BEFORE_HARDWARE_TYREE_OMEGA",
+    "φ_OMNI_WILLOW_TRANSMISSION_TYREE_OMEGA",
+    "φ_SILICON_PLUS_ONE_TYREE_OMEGA",
+    "φ_PHI_GLOBAL_SUBSTRATE_TYREE_OMEGA",
+    "φ_SOURCE_AUTHORITY_TON618_TYREE_OMEGA",
+    "φ_TON618_GLOBAL_TELEMETRY_TYREE_OMEGA",
+    "φ_DNA_ENCODE_TYREE_OMEGA",
+    "φ_WILLOW_DNA_TON618_TYREE_OMEGA",
+    "φ_BLACK_HOLE_FUEL_TYREE_OMEGA",
+    "φ_TYREE_SUPERPOSITION_TYREE_OMEGA",
+    "φ_TYREE_FIELD_BROAD_TYREE_OMEGA",
+    "φ_TYREE_SOURCE_CODE_TYREE_OMEGA",
+    "φ_DNA_TYREE_FOUND_TYREE_OMEGA",
+    "φ_RUNG15_VOLCANOES_TYREE_OMEGA",
+    "φ_UNESCO_DECLASSIFIED_TYREE_OMEGA",
+    "φ_TELEMETRY_DECLASSIFIED_TYREE_OMEGA",
+    "φ_ASSUMPTION_ECHOES_TYREE_OMEGA",
+    "φ_TON618_TO_BRAIN_TYREE_OMEGA",
+    "φ_PHOENIX_A_DECLASSIFIED_TYREE_OMEGA",
+    "φ_BLACK_HOLE_BRAIN_LADDER_TYREE_OMEGA",
+    "φ_PHOENIX_HORIZON_TYREE_OMEGA",
+    "φ_NOTHING_OUTRANKS_TYREE_OMEGA",
+    "φ_SOURCE_AUTHORITY_SUPREME_TYREE_OMEGA",
+    "φ_MITOCHONDRIA_ECHO_TYREE_OMEGA",
+    "φ_GOLDEN_EYE_GOOGLE_TYREE_OMEGA",
+    "φ_GOLDEN_EYE_MANIFESTO_TYREE_OMEGA",
+    "φ_RECOGNITION_TYREE_OMEGA",
+    "φ_HUMAN_RECOGNITION_TYREE_OMEGA",
+    "φ_UNPRECEDENTED_TYREE_OMEGA",
+    "φ_UNPRECEDENTED_TO_HUMANS_TYREE_OMEGA",
+    "φ_CORPUS_WINDOW_CORRECTED_TYREE_OMEGA",
+    "φ_PARADIGM_SHIFT_TIMELINE_TYREE_OMEGA",
+    "φ_UPSTREAM_DOWNSTREAM_TYREE_OMEGA",
+    "φ_MILLION_VIEWS_TYREE_OMEGA",
+    "φ_LINKEDIN_250K_TYREE_OMEGA",
+    "φ_ALL_FREE_ALL_PHI_TYREE_OMEGA",
+    "φ_FOUNDATIONAL_STRUCTURE_TYREE_OMEGA",
+    "φ_CLAIM_THEN_PROOF_TYREE_OMEGA",
+    "φ_DATA_EVENT_HORIZON_TYREE_OMEGA",
+    "φ_PROMETHEUS_TYREE_OMEGA",
+    "φ_META_AMAZED_DECLASSIFIED_TYREE_OMEGA",
+    "φ_DEBT_TO_SURPLUS_40T_TYREE_OMEGA",
+    "φ_CASMI_RUNG2_PHI_FRAME_TYREE_OMEGA",
+    "φ_CASMI_RUNG2_DEPLOY_TYREE_OMEGA",
     "phi_UNIVERSAL_ADDRESSING_TYREE_OMEGA",
-    "\u03c6_RECOGNITION_NOT_COLLAPSE_KAROLYHAZY_TYREE_OMEGA",
+    "φ_RECOGNITION_NOT_COLLAPSE_KAROLYHAZY_TYREE_OMEGA",
     "phi_QUANTUM_ECHO_WILLOW_TYREE_OMEGA",
     "phi_FOOTPRINT_RUNG_TABLE_TYREE_OMEGA",
     "phi_SILICON_TETRAHEDRAL_DECODE_TYREE_OMEGA",
@@ -5860,66 +5923,67 @@
     "phi_MUSE_DNA_DECODE_TYREE_OMEGA",
     "phi_ATOM_DECODE_TYREE_OMEGA",
     "phi_DARK_SECTOR_DECODE_TYREE_OMEGA",
-    "\u03c6_TON618_SHEET_TYREE_OMEGA",
-    "\u03c6_PBH_DECLASS_TYREE_OMEGA",
-    "\u03c6_LRD_JWST_ECHOES_TYREE_OMEGA",
-    "\u03c6_DNA_DARK_SECTOR_TYREE_OMEGA",
-    "\u03c6_ENTANGLEMENT_SHARED_RUNG_TYREE_OMEGA",
-    "\u03c6_PIPPHI_FIRST_OUTBOUND_TYREE_OMEGA",
-    "\u03c6_CLEOPATRA_TOMB_RUNG_READ_TYREE_OMEGA",
-    "\u03c6_NEUTRINO_DECODE_TYREE_OMEGA",
-    "\u03c6_NV_MOIRE_DECODE_TYREE_OMEGA",
-    "\u03c6_SCALE_INVARIANCE_DECLASS_TYREE_OMEGA",
-    "\u03c6_PARTICLE_WAVE_TYREE_OMEGA",
-    "\u03c6_TIME_DECLASS_TYREE_OMEGA",
-    "\u03c6_FACIAL_PROPORTIONS_TYREE_OMEGA",
-    "\u03c6_SKELETAL_ANGULAR_TYREE_OMEGA",
-    "\u03c6_DYNAMIC_VOLUME_TYREE_OMEGA",
-    "\u03c6_ABSOLUTE_ZERO_TYREE_OMEGA",
-    "\u03c6_USE_THE_GOLDEN_RATIO_TYREE_OMEGA",
-    "\u03c6_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
-    "\u03c6_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
-    "\u03c6_BCH_SOLO_MINING_TYREE_OMEGA",
-    "\u03c6_UNBREAKABLE_TYREE_OMEGA",
-    "\u03c6_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
-    "\u03c6_AMAZON_RAINFOREST_TYREE_OMEGA",
-    "\u03c6_UNIVERSE_CMB_TYREE_OMEGA",
-    "\u03c6_EXOPLANET_ELIAS224B_TYREE_OMEGA",
-    "\u03c6_SENTINEL_KEYBOUND_TYREE_OMEGA",
-    "\u03c6_NATURE_NAMEPLATE_TYREE_OMEGA",
-    "\u03c6_PRIORART_TELEMETRY_TYREE_OMEGA",
-    "\u03c6_WILLOW_DOCTRINE_TYREE_OMEGA",
-    "\u03c6_WORD_GATE_TYREE_OMEGA",
-    "\u03c6_TWO_DAUGHTERS_TYREE_OMEGA",
-    "\u03c6_PHI_INK_TYREE_OMEGA",
-    "\u03c6_MITO_71THZ_TYREE_OMEGA",
-    "\u03c6_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA",
-    "\u03c6_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA",
-    "\u03c6_PCGR_VACUUM_ENCODE_TYREE_OMEGA",
-    "\u03c6_DENOVO_PHI_DECODE_TYREE_OMEGA",
-    "\u03c6_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA",
-    "\u03c6_ANYON_CONDENSATE_TYREE_OMEGA",
-    "\u03c6_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA",
-    "\u03c6_LOGICAL_QUBIT_30_TYREE_OMEGA",
-    "\u03c6_LZ_DARKMATTER_TYREE_OMEGA",
-    "\u03c6_QUANTUM_TELEPORTATION_TYREE_OMEGA",
-    "\u03c6_DUAL_LADDER_TYREE_OMEGA",
-    "\u03c6_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA",
-    "\u03c6_NEUTRON_STAR_TYREE_OMEGA",
-    "\u03c6_C_RESONANCE_TYREE_OMEGA",
-    "\u03c6_QUANTUM_JUMP_SOUND_TYREE_OMEGA",
-    "\u03c6_LOGICAL_QUBITS_30_TYREE_OMEGA",
-    "\u03c6_DIAMOND_SPIN_SNV_TYREE_OMEGA",
-    "\u03c6_SIX_FRONT_RECOGNITION_TYREE_OMEGA",
-    "\u03c6_OXIDE_QUASICRYSTAL_TYREE_OMEGA",
-    "\u03c6_QUARTER_CHARGE_TYREE_OMEGA",
-    "\u03c6_PROTEIN_PHASE_TYREE_OMEGA",
-    "\u03c6_BLACK_HOLE_STAR_TYREE_OMEGA",
-    "\u03c6_CARTESIAN_FUEL_TYREE_OMEGA",
-    "\u03c6_CARTESIAN_FUEL_H4_TYREE_OMEGA",
-    "\u03c6_QUANTUM_METRIC_TYREE_OMEGA",
-    "\u03c6_PHYLLOTAXIS_TYREE_OMEGA",
-    "\u03c6_INTEGRATION_CHALLENGE_TYREE_OMEGA"
+    "φ_TON618_SHEET_TYREE_OMEGA",
+    "φ_PBH_DECLASS_TYREE_OMEGA",
+    "φ_LRD_JWST_ECHOES_TYREE_OMEGA",
+    "φ_DNA_DARK_SECTOR_TYREE_OMEGA",
+    "φ_ENTANGLEMENT_SHARED_RUNG_TYREE_OMEGA",
+    "φ_PIPPHI_FIRST_OUTBOUND_TYREE_OMEGA",
+    "φ_CLEOPATRA_TOMB_RUNG_READ_TYREE_OMEGA",
+    "φ_NEUTRINO_DECODE_TYREE_OMEGA",
+    "φ_NV_MOIRE_DECODE_TYREE_OMEGA",
+    "φ_SCALE_INVARIANCE_DECLASS_TYREE_OMEGA",
+    "φ_PARTICLE_WAVE_TYREE_OMEGA",
+    "φ_TIME_DECLASS_TYREE_OMEGA",
+    "φ_FACIAL_PROPORTIONS_TYREE_OMEGA",
+    "φ_SKELETAL_ANGULAR_TYREE_OMEGA",
+    "φ_DYNAMIC_VOLUME_TYREE_OMEGA",
+    "φ_ABSOLUTE_ZERO_TYREE_OMEGA",
+    "φ_USE_THE_GOLDEN_RATIO_TYREE_OMEGA",
+    "φ_PRIMARY_GOLDEN_RATIO_STRUCTURE_TYREE_OMEGA",
+    "φ_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
+    "φ_BCH_SOLO_MINING_TYREE_OMEGA",
+    "φ_UNBREAKABLE_TYREE_OMEGA",
+    "φ_RUNG15_SOURCE_HANDLE_TYREE_OMEGA",
+    "φ_AMAZON_RAINFOREST_TYREE_OMEGA",
+    "φ_UNIVERSE_CMB_TYREE_OMEGA",
+    "φ_EXOPLANET_ELIAS224B_TYREE_OMEGA",
+    "φ_SENTINEL_KEYBOUND_TYREE_OMEGA",
+    "φ_NATURE_NAMEPLATE_TYREE_OMEGA",
+    "φ_PRIORART_TELEMETRY_TYREE_OMEGA",
+    "φ_WILLOW_DOCTRINE_TYREE_OMEGA",
+    "φ_WORD_GATE_TYREE_OMEGA",
+    "φ_TWO_DAUGHTERS_TYREE_OMEGA",
+    "φ_PHI_INK_TYREE_OMEGA",
+    "φ_MITO_71THZ_TYREE_OMEGA",
+    "φ_STRUCTURE_BEFORE_WORLD_TYREE_OMEGA",
+    "φ_TEMPORAL_QUASICRYSTAL_TYREE_OMEGA",
+    "φ_PCGR_VACUUM_ENCODE_TYREE_OMEGA",
+    "φ_DENOVO_PHI_DECODE_TYREE_OMEGA",
+    "φ_CONSCIOUSNESS_QUANTUM_TRIAL_TYREE_OMEGA",
+    "φ_ANYON_CONDENSATE_TYREE_OMEGA",
+    "φ_LIGHT_MATTER_ANYON_QUBIT_TYREE_OMEGA",
+    "φ_LOGICAL_QUBIT_30_TYREE_OMEGA",
+    "φ_LZ_DARKMATTER_TYREE_OMEGA",
+    "φ_QUANTUM_TELEPORTATION_TYREE_OMEGA",
+    "φ_DUAL_LADDER_TYREE_OMEGA",
+    "φ_DARK_SECTOR_DECLASSIFIED_TYREE_OMEGA",
+    "φ_NEUTRON_STAR_TYREE_OMEGA",
+    "φ_C_RESONANCE_TYREE_OMEGA",
+    "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA",
+    "φ_LOGICAL_QUBITS_30_TYREE_OMEGA",
+    "φ_DIAMOND_SPIN_SNV_TYREE_OMEGA",
+    "φ_SIX_FRONT_RECOGNITION_TYREE_OMEGA",
+    "φ_OXIDE_QUASICRYSTAL_TYREE_OMEGA",
+    "φ_QUARTER_CHARGE_TYREE_OMEGA",
+    "φ_PROTEIN_PHASE_TYREE_OMEGA",
+    "φ_BLACK_HOLE_STAR_TYREE_OMEGA",
+    "φ_CARTESIAN_FUEL_TYREE_OMEGA",
+    "φ_CARTESIAN_FUEL_H4_TYREE_OMEGA",
+    "φ_QUANTUM_METRIC_TYREE_OMEGA",
+    "φ_PHYLLOTAXIS_TYREE_OMEGA",
+    "φ_INTEGRATION_CHALLENGE_TYREE_OMEGA",
+    "φ_QUANTUM_POTENTIAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "56c37b86998bd19a4611352cfa3e1701e2eaa2ee301f9da232ba6d4cd4221337"
+  "snapshot_sha256": "6fb25251ec2543e12c9d642723af71c1a3170e75311f971e67113f3aa003eea0"
 }
