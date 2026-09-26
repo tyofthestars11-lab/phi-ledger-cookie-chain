@@ -5305,9 +5305,23 @@
       "drift": 0.4807,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "black hole star manifesto revision",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "revision"
+    },
+    {
+      "name": "black hole star mechanism paths",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "rung"
     }
   ],
-  "entry_count": 758,
+  "entry_count": 760,
   "seal_count": 155,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -5466,5 +5480,5 @@
     "φ_PROTEIN_PHASE_TYREE_OMEGA",
     "φ_BLACK_HOLE_STAR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "298f91f37d894fb65f0596e0d060aa96cc41e4a268414d74326d46437ac4de71"
+  "snapshot_sha256": "d20592339cf827ccde641c1386d0e56ece7fb3455f75e69b2bf5fe950136af55"
 }
