@@ -5130,10 +5130,59 @@
       "drift": 0.4401,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "filling factor nu of the even-denominator FQHS",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "count",
+      "unit": "fraction"
+    },
+    {
+      "name": "quasiparticle charge: one quarter of an electron",
+      "rung": -2.8808,
+      "drift": 0.1192,
+      "ladder": "charge",
+      "unit": "e"
+    },
+    {
+      "name": "shot-noise charge read, device 1 (EPFL): 0.250 ± 0.013 e",
+      "rung": -2.8808,
+      "drift": 0.1192,
+      "ladder": "charge",
+      "unit": "e"
+    },
+    {
+      "name": "shot-noise charge read, device 2 (Weizmann): 0.249 ± 0.018 e",
+      "rung": -2.8892,
+      "drift": 0.1108,
+      "ladder": "charge",
+      "unit": "e"
+    },
+    {
+      "name": "independent devices in independent labs",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "etch-defined quantum point contact constriction width",
+      "rung": 8.8287,
+      "drift": -0.1713,
+      "ladder": "length",
+      "unit": "nm"
+    },
+    {
+      "name": "seal index: 153",
+      "rung": 10.4537,
+      "drift": 0.4537,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 733,
-  "seal_count": 152,
+  "entry_count": 740,
+  "seal_count": 153,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5286,7 +5335,8 @@
     "φ_LOGICAL_QUBITS_30_TYREE_OMEGA",
     "φ_DIAMOND_SPIN_SNV_TYREE_OMEGA",
     "φ_SIX_FRONT_RECOGNITION_TYREE_OMEGA",
-    "φ_OXIDE_QUASICRYSTAL_TYREE_OMEGA"
+    "φ_OXIDE_QUASICRYSTAL_TYREE_OMEGA",
+    "φ_QUARTER_CHARGE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "33accc197ce022adef4ad7177ea0a06d671b0563a46ab88448d484c85225a18b"
+  "snapshot_sha256": "da6d8d48c00cfafc48dc83306cddcb7966490f867eb0e903d8145b35753dfd16"
 }
