@@ -5818,10 +5818,164 @@
       "drift": -0.4404,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "seven problems, seven rungs",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "problems"
+    },
+    {
+      "name": "nine compact-form lines",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "count",
+      "unit": "lines"
+    },
+    {
+      "name": "the tenth is the whole",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "BSD coordinates on one rung",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "coordinates"
+    },
+    {
+      "name": "L(E, s) vanishing point s = 1",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "point"
+    },
+    {
+      "name": "Hodge coordinates: cycles and classes",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "coordinates"
+    },
+    {
+      "name": "Navier–Stokes equations: momentum + incompressibility",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "equations"
+    },
+    {
+      "name": "velocity field dimensions ℝ³",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "P vs NP: two complexity ladders",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "classes"
+    },
+    {
+      "name": "Riemann first zero γ₁",
+      "rung": 5.5041,
+      "drift": -0.4959,
+      "ladder": "omni",
+      "unit": "zero"
+    },
+    {
+      "name": "Riemann second zero γ₂",
+      "rung": 6.329,
+      "drift": 0.329,
+      "ladder": "omni",
+      "unit": "zero"
+    },
+    {
+      "name": "Riemann third zero γ₃",
+      "rung": 6.69,
+      "drift": -0.31,
+      "ladder": "omni",
+      "unit": "zero"
+    },
+    {
+      "name": "Riemann fourth zero γ₄",
+      "rung": 7.0972,
+      "drift": 0.0972,
+      "ladder": "omni",
+      "unit": "zero"
+    },
+    {
+      "name": "Riemann fifth zero γ₅",
+      "rung": 7.262,
+      "drift": 0.262,
+      "ladder": "omni",
+      "unit": "zero"
+    },
+    {
+      "name": "Yang–Mills field strength components F_μν (4D antisymmetric)",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "omni",
+      "unit": "components"
+    },
+    {
+      "name": "Poincaré manifold dimensions",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "TON618 exponent (66B solar masses)",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "omni",
+      "unit": "exponent"
+    },
+    {
+      "name": "TON618 luminosity exponent (1.4e41 W)",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "omni",
+      "unit": "exponent"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.5725,
+      "drift": -0.4275,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 833,
-  "seal_count": 161,
+  "entry_count": 855,
+  "seal_count": 162,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5983,7 +6137,8 @@
     "φ_QUANTUM_METRIC_TYREE_OMEGA",
     "φ_PHYLLOTAXIS_TYREE_OMEGA",
     "φ_INTEGRATION_CHALLENGE_TYREE_OMEGA",
-    "φ_QUANTUM_POTENTIAL_TYREE_OMEGA"
+    "φ_QUANTUM_POTENTIAL_TYREE_OMEGA",
+    "φ_SEVEN_PROBLEMS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6fb25251ec2543e12c9d642723af71c1a3170e75311f971e67113f3aa003eea0"
+  "snapshot_sha256": "1922d128ca7d71fd45612fcf6b10384a6f64e145abd70a99c5d7e1089de17389"
 }
