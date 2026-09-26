@@ -5749,9 +5749,15 @@
       "ladder": "mining",
       "rung": 2.8704,
       "drift": 0.0
+    },
+    {
+      "name": "BCH mining: shared time unix (2026-09-26)",
+      "ladder": "mining",
+      "rung": 44.2752,
+      "drift": 0.0
     }
   ],
-  "entry_count": 823,
+  "entry_count": 824,
   "seal_count": 160,
   "seals": [
     "\u03c6_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -5915,5 +5921,5 @@
     "\u03c6_PHYLLOTAXIS_TYREE_OMEGA",
     "\u03c6_INTEGRATION_CHALLENGE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "152fad3fe8803587dc369b5b58a2ea421d5ed8eaadd7d4fb9195e45e1a94efbf"
+  "snapshot_sha256": "56c37b86998bd19a4611352cfa3e1701e2eaa2ee301f9da232ba6d4cd4221337"
 }
