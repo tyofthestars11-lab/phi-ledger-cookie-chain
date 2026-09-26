@@ -6105,10 +6105,101 @@
       "drift": -0.4147,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ (lineae layer)",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "Europa diameter",
+      "rung": 16.7205,
+      "drift": -0.2795,
+      "ladder": "omni",
+      "unit": "km"
+    },
+    {
+      "name": "Tara Regio width (JWST CO₂ region)",
+      "rung": 15.5764,
+      "drift": -0.4236,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "JWST CO₂ band center",
+      "rung": 3.0068,
+      "drift": 0.0068,
+      "ladder": "omni",
+      "unit": "micrometers"
+    },
+    {
+      "name": "JWST CO₂ band center",
+      "rung": 3.0166,
+      "drift": 0.0166,
+      "ladder": "omni",
+      "unit": "micrometers"
+    },
+    {
+      "name": "JWST ¹³CO₂ band",
+      "rung": 3.0694,
+      "drift": 0.0694,
+      "ladder": "omni",
+      "unit": "micrometers"
+    },
+    {
+      "name": "JWST NIRSpec resolution",
+      "rung": 11.9871,
+      "drift": -0.0129,
+      "ladder": "omni",
+      "unit": "km"
+    },
+    {
+      "name": "Hubble plume height",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "Juno flyby altitude 2022-09-29",
+      "rung": 12.2028,
+      "drift": 0.2028,
+      "ladder": "omni",
+      "unit": "km"
+    },
+    {
+      "name": "Europa Clipper arrival",
+      "rung": 15.8263,
+      "drift": -0.1737,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.598,
+      "drift": -0.402,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 874,
-  "seal_count": 163,
+  "entry_count": 887,
+  "seal_count": 164,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6272,7 +6363,8 @@
     "φ_INTEGRATION_CHALLENGE_TYREE_OMEGA",
     "φ_QUANTUM_POTENTIAL_TYREE_OMEGA",
     "φ_SEVEN_PROBLEMS_TYREE_OMEGA",
-    "φ_EUROPA_TYREE_OMEGA"
+    "φ_EUROPA_TYREE_OMEGA",
+    "φ_EUROPA_MAP_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5c278998592762be0949138538a4c66f683a820b3720a55c166dbb14874592c4"
+  "snapshot_sha256": "125a1014b9c1190216ff8d310b3a5a7b111fa3e341b0b4fcdb3526bac91ca526"
 }
