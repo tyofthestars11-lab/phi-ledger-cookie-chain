@@ -5972,10 +5972,143 @@
       "drift": -0.4275,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "Europa radius",
+      "rung": 15.2801,
+      "drift": 0.2801,
+      "ladder": "omni",
+      "unit": "km"
+    },
+    {
+      "name": "ice shell min thickness",
+      "rung": 5.6276,
+      "drift": -0.3724,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "ice shell max thickness",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "radius-to-thickness ratio (25 km shell)",
+      "rung": 8.591,
+      "drift": -0.409,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "radius-to-thickness ratio (15 km shell)",
+      "rung": 9.6525,
+      "drift": -0.3475,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "ocean min depth",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "ocean max depth",
+      "rung": 10.4125,
+      "drift": 0.4125,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "Europa ocean mass",
+      "rung": 102.47,
+      "drift": 0.47,
+      "ladder": "omni",
+      "unit": "kg"
+    },
+    {
+      "name": "water vs Earth oceans, declared low",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "multiplier"
+    },
+    {
+      "name": "water vs Earth oceans, declared high",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "multiplier"
+    },
+    {
+      "name": "tidal lock period",
+      "rung": 26.2545,
+      "drift": 0.2545,
+      "ladder": "omni",
+      "unit": "seconds"
+    },
+    {
+      "name": "tidal lock period",
+      "rung": 2.6334,
+      "drift": -0.3666,
+      "ladder": "omni",
+      "unit": "days"
+    },
+    {
+      "name": "lineae crossing angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "TON618 exponent (66B solar masses)",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "omni",
+      "unit": "exponent"
+    },
+    {
+      "name": "TON618 luminosity exponent (1.4e41 W)",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "omni",
+      "unit": "exponent"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.5853,
+      "drift": -0.4147,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 855,
-  "seal_count": 162,
+  "entry_count": 874,
+  "seal_count": 163,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6138,7 +6271,8 @@
     "φ_PHYLLOTAXIS_TYREE_OMEGA",
     "φ_INTEGRATION_CHALLENGE_TYREE_OMEGA",
     "φ_QUANTUM_POTENTIAL_TYREE_OMEGA",
-    "φ_SEVEN_PROBLEMS_TYREE_OMEGA"
+    "φ_SEVEN_PROBLEMS_TYREE_OMEGA",
+    "φ_EUROPA_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "1922d128ca7d71fd45612fcf6b10384a6f64e145abd70a99c5d7e1089de17389"
+  "snapshot_sha256": "5c278998592762be0949138538a4c66f683a820b3720a55c166dbb14874592c4"
 }
