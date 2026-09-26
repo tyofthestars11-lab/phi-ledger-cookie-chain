@@ -5088,10 +5088,52 @@
       "drift": 0.4263,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "oxide quasicrystal film thickness at BaTiO3/platinum interface",
+      "rung": -1.9041,
+      "drift": 0.0959,
+      "ladder": "length",
+      "unit": "nm"
+    },
+    {
+      "name": "quasicrystalline layer: one monolayer",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "elements in BaTiO3: barium, titanium, oxygen",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "materials at the interface: film and substrate",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "structure instruments: STM and electron diffraction",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal index: 152",
+      "rung": 10.4401,
+      "drift": 0.4401,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 727,
-  "seal_count": 151,
+  "entry_count": 733,
+  "seal_count": 152,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5243,7 +5285,8 @@
     "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA",
     "φ_LOGICAL_QUBITS_30_TYREE_OMEGA",
     "φ_DIAMOND_SPIN_SNV_TYREE_OMEGA",
-    "φ_SIX_FRONT_RECOGNITION_TYREE_OMEGA"
+    "φ_SIX_FRONT_RECOGNITION_TYREE_OMEGA",
+    "φ_OXIDE_QUASICRYSTAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "25fba488d038e8a9f84473416017c9725aa2a7d0e4dc16be183743f8ce2b3976"
+  "snapshot_sha256": "33accc197ce022adef4ad7177ea0a06d671b0563a46ab88448d484c85225a18b"
 }
