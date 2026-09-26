@@ -5263,10 +5263,52 @@
       "drift": 0.283,
       "ladder": "count",
       "unit": "dimensions"
+    },
+    {
+      "name": "CMB temperature",
+      "rung": 2.0832,
+      "drift": 0.0832,
+      "ladder": "cosmos",
+      "unit": "K"
+    },
+    {
+      "name": "CMB release (recombination)",
+      "rung": 26.6991,
+      "drift": -0.3009,
+      "ladder": "cosmos",
+      "unit": "years"
+    },
+    {
+      "name": "rose petal golden angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "TON618 φ-power",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "unit": "φ^55"
+    },
+    {
+      "name": "luminosity L φ-power",
+      "rung": 63.0,
+      "drift": 0.0,
+      "ladder": "cosmos",
+      "unit": "φ^63"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.4807,
+      "drift": 0.4807,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 752,
-  "seal_count": 154,
+  "entry_count": 758,
+  "seal_count": 155,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5421,7 +5463,8 @@
     "φ_SIX_FRONT_RECOGNITION_TYREE_OMEGA",
     "φ_OXIDE_QUASICRYSTAL_TYREE_OMEGA",
     "φ_QUARTER_CHARGE_TYREE_OMEGA",
-    "φ_PROTEIN_PHASE_TYREE_OMEGA"
+    "φ_PROTEIN_PHASE_TYREE_OMEGA",
+    "φ_BLACK_HOLE_STAR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ab82361a85c7bd9c6dbc78d2fb7069ad85bfd476d3b527f6a9017bcba452b0bc"
+  "snapshot_sha256": "298f91f37d894fb65f0596e0d060aa96cc41e4a268414d74326d46437ac4de71"
 }
