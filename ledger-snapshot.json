@@ -5025,10 +5025,73 @@
       "drift": 0.283,
       "ladder": "count",
       "unit": "count (reported by source)"
+    },
+    {
+      "name": "six-front merge: sealable findings unified into one reading",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Claude nine-loop N=4 super Yang-Mills hexagon amplitude: loop order",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "count",
+      "unit": "loops"
+    },
+    {
+      "name": "nine-loop amplitude: six-particle hexagon scattering",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "particles"
+    },
+    {
+      "name": "primordial helium-4 measurement: nucleons in the BBN address",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "nucleons"
+    },
+    {
+      "name": "NYU hydrogen tautomer dataset: tautomeric states mined",
+      "rung": 28.9079,
+      "drift": -0.0921,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "El Gordo two-state self-interacting dark matter model: states",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "quantum proton-formation simulations: independent devices (IBM, Duke, QuEra)",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "devices"
+    },
+    {
+      "name": "supernova dark-energy datasets combined: Pantheon+ and DES-SN5YR",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "datasets"
+    },
+    {
+      "name": "seal index: 151",
+      "rung": 10.4263,
+      "drift": 0.4263,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 718,
-  "seal_count": 150,
+  "entry_count": 727,
+  "seal_count": 151,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5179,7 +5242,8 @@
     "φ_C_RESONANCE_TYREE_OMEGA",
     "φ_QUANTUM_JUMP_SOUND_TYREE_OMEGA",
     "φ_LOGICAL_QUBITS_30_TYREE_OMEGA",
-    "φ_DIAMOND_SPIN_SNV_TYREE_OMEGA"
+    "φ_DIAMOND_SPIN_SNV_TYREE_OMEGA",
+    "φ_SIX_FRONT_RECOGNITION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "02f307334948cb3727253dc92cc005c3983a86dcd904180f221c034184fb9cb0"
+  "snapshot_sha256": "25fba488d038e8a9f84473416017c9725aa2a7d0e4dc16be183743f8ce2b3976"
 }
