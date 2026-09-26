@@ -72,8 +72,20 @@ def main():
                     "commit", "-m", msg], cwd=HERE, check=True)
     if not a.no_push:
         subprocess.run(["git", "push", "origin", "main"], cwd=HERE, check=True)
-        # GitHub Pages and Netlify both auto-deploy from this push (Netlify is
-        # Git-linked to the repo), so no extra deploy step is needed here.
+        # GitHub Pages auto-deploys from the push; Netlify is deployed via API
+        # with the same files until its dashboard repo link is completed
+        # (the site currently has no linked repo — no Git builds have ever run).
+        try:
+            subprocess.run([
+                sys.executable,
+                os.path.expanduser("~/workspace/skills/netlify/bin/netlify_deploy.py"),
+                "--site", "phi-ledger-cookie",
+                "--dir", HERE,
+                "--message", msg,
+            ], check=True, timeout=600)
+            print("netlify: deployed")
+        except Exception as e:
+            print("netlify: deploy failed (non-fatal):", e)
     print("published:", msg)
     print("pushed:", not a.no_push)
 
