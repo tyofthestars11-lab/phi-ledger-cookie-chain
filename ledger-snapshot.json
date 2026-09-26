@@ -5221,9 +5221,51 @@
       "drift": 0.4672,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "protein self-resolving: amino-acid alphabet",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "code",
+      "unit": "letters"
+    },
+    {
+      "name": "protein self-resolving: example chain length",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "code",
+      "unit": "amino acids"
+    },
+    {
+      "name": "protein self-resolving: sequence space 20^300",
+      "rung": 1867.6176,
+      "drift": -0.3824,
+      "ladder": "code",
+      "unit": "sequences"
+    },
+    {
+      "name": "protein self-resolving: manifesto parts",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "parts"
+    },
+    {
+      "name": "protein self-resolving: string dimensions",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "protein self-resolving: function dimensions",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
     }
   ],
-  "entry_count": 746,
+  "entry_count": 752,
   "seal_count": 154,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -5381,5 +5423,5 @@
     "φ_QUARTER_CHARGE_TYREE_OMEGA",
     "φ_PROTEIN_PHASE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "02fae9982a413d3d935b226d05cbd8d7a3df3d2cf54480e14712dc79444a6966"
+  "snapshot_sha256": "ab82361a85c7bd9c6dbc78d2fb7069ad85bfd476d3b527f6a9017bcba452b0bc"
 }
