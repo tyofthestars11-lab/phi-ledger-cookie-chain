@@ -5431,10 +5431,52 @@
       "drift": -0.4927,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "quantum geometric tensor components",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "components"
+    },
+    {
+      "name": "compact form lines",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "lines"
+    },
+    {
+      "name": "seal index",
+      "rung": 10.5205,
+      "drift": -0.4795,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 776,
-  "seal_count": 157,
+  "entry_count": 782,
+  "seal_count": 158,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -5592,7 +5634,8 @@
     "φ_PROTEIN_PHASE_TYREE_OMEGA",
     "φ_BLACK_HOLE_STAR_TYREE_OMEGA",
     "φ_CARTESIAN_FUEL_TYREE_OMEGA",
-    "φ_CARTESIAN_FUEL_H4_TYREE_OMEGA"
+    "φ_CARTESIAN_FUEL_H4_TYREE_OMEGA",
+    "φ_QUANTUM_METRIC_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "b7a46429607acf2e5f20d89c1a3e155f5fc138f4af20353cdb8dccc942a4f50a"
+  "snapshot_sha256": "fe9a33d0abf4d024c5163a728fdeee35742046469c3ec08112ffb9d04ec0d68d"
 }
