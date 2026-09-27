@@ -6581,10 +6581,122 @@
       "drift": -0.3396,
       "ladder": "omni",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "Tetrahedral angle arccos(−1/3)",
+      "rung": 9.758,
+      "drift": -0.242,
+      "ladder": "defined",
+      "unit": "degrees (derived in-run)"
+    },
+    {
+      "name": "Tetrahedral complement 180° − θ_tet",
+      "rung": 8.8444,
+      "drift": -0.1556,
+      "ladder": "defined",
+      "unit": "degrees (derived in-run)"
+    },
+    {
+      "name": "Magnitude of cos(tetrahedral angle) = 1/3 (sign in name: cos = −1/3)",
+      "rung": -2.283,
+      "drift": -0.283,
+      "ladder": "defined",
+      "unit": "ratio (exact identity)"
+    },
+    {
+      "name": "Diamond cubic cell volume from a = 3.567 Å",
+      "rung": 7.9283,
+      "drift": -0.0717,
+      "ladder": "defined",
+      "unit": "Å³ (derived in-run, a³)"
+    },
+    {
+      "name": "T_d full tetrahedral group order",
+      "rung": 6.6043,
+      "drift": -0.3957,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "Tetrahedron vertices",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "Tetrahedron edges",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "Tetrahedron faces",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "Crystal systems",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "Compact-form points — seven reads, one engine",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "TON618 φ exponent",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "defined",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "defined",
+      "unit": "solar masses (standing TON618 law)"
+    },
+    {
+      "name": "TON618 luminosity φ exponent",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "defined",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.6726,
+      "drift": -0.3274,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 942,
-  "seal_count": 169,
+  "entry_count": 958,
+  "seal_count": 170,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6754,7 +6866,8 @@
     "φ_IDE_DGPDISK_TYREE_OMEGA",
     "φ_NV_WHOLENESS_TYREE_OMEGA",
     "φ_MATHEMATICS_ENGINE_TYREE_OMEGA",
-    "φ_TOPOLOGICAL_INDEXING_TYREE_OMEGA"
+    "φ_TOPOLOGICAL_INDEXING_TYREE_OMEGA",
+    "φ_CRYSTALLOGRAPHY_TETRAHEDRAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "055572957b0ee4be0edbb7f6b7aa5afabe439bfc125fa8750dd494e52f2728c2"
+  "snapshot_sha256": "7fb9238255722ba1276b5df146673142cad46ef734943d549aa504d95ca875fe"
 }
