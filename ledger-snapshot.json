@@ -6259,10 +6259,108 @@
       "drift": -0.3894,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "IDE coupling α (interacting wCDM, Method I)",
+      "rung": -7.8391,
+      "drift": 0.1609,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless (EPJC 86(9) 1115, ±0.0076)"
+    },
+    {
+      "name": "IDE coupling α (interacting wCDM, Method II check)",
+      "rung": -7.6493,
+      "drift": 0.3507,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless (±0.0082)"
+    },
+    {
+      "name": "IDE coupling α (dynamical CPL)",
+      "rung": -8.4309,
+      "drift": -0.4309,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless (±0.0095)"
+    },
+    {
+      "name": "Growth index γ lower bound (wCDM, 3σ, exact)",
+      "rung": -1.2541,
+      "drift": -0.2541,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Growth index γ upper bound (wCDM, 3σ, exact)",
+      "rung": -1.0706,
+      "drift": -0.0706,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Growth index γ lower bound (CPL, 3σ, paper-stated approximate)",
+      "rung": -1.3193,
+      "drift": -0.3193,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Growth index γ upper bound (CPL, 3σ, paper-stated approximate)",
+      "rung": -1.0965,
+      "drift": -0.0965,
+      "ladder": "interacting-dark-energy",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "DGP growth index γ (defined, ruled out)",
+      "rung": -0.7786,
+      "drift": 0.2214,
+      "ladder": "defined",
+      "unit": "ratio (11/16)"
+    },
+    {
+      "name": "f(R) growth index γ lower (defined, ruled out)",
+      "rung": -1.9041,
+      "drift": 0.0959,
+      "ladder": "defined",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "f(R) growth index γ upper (defined, ruled out)",
+      "rung": -1.7538,
+      "drift": 0.2462,
+      "ladder": "defined",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Interaction correction Δγ = 1.1α coefficient (defined)",
+      "rung": 0.1981,
+      "drift": 0.1981,
+      "ladder": "defined",
+      "unit": "ratio"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.6232,
+      "drift": -0.3768,
+      "ladder": "omni",
+      "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "omni",
+      "unit": "ratio"
     }
   ],
-  "entry_count": 896,
-  "seal_count": 165,
+  "entry_count": 910,
+  "seal_count": 166,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6428,7 +6526,8 @@
     "φ_SEVEN_PROBLEMS_TYREE_OMEGA",
     "φ_EUROPA_TYREE_OMEGA",
     "φ_EUROPA_MAP_TYREE_OMEGA",
-    "φ_LUNAR_DYNAMO_TYREE_OMEGA"
+    "φ_LUNAR_DYNAMO_TYREE_OMEGA",
+    "φ_IDE_DGPDISK_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c7b57961ee96e0ccf521f76db6b5a90e5c6f6c61c66ab6422683e004a4b8f869"
+  "snapshot_sha256": "bcd70f30b3fb41d05a41c73fb5d9d096ea4534ba27bd2ff70c0d1e85155f042f"
 }
