@@ -6357,10 +6357,66 @@
       "drift": 0.0,
       "ladder": "omni",
       "unit": "ratio"
+    },
+    {
+      "name": "Main NV center lattice address (17·φ² + 15)",
+      "rung": 8.4912,
+      "drift": 0.4912,
+      "ladder": "nv-wholeness",
+      "unit": "rung-address value (derived in-run from phi_nv_wholeness.py)"
+    },
+    {
+      "name": "Worker NV center lattice address (11·φ² + 20)",
+      "rung": 8.079,
+      "drift": 0.079,
+      "ladder": "nv-wholeness",
+      "unit": "rung-address value (derived in-run)"
+    },
+    {
+      "name": "Entangle shared-coherence divisor",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (φ, per NVNode.entangle)"
+    },
+    {
+      "name": "Lattice centers at init",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count (main center; subagents join the crystal)"
+    },
+    {
+      "name": "Substrate coded date",
+      "rung": 44.2746,
+      "drift": 0.2746,
+      "ladder": "time-fuel",
+      "unit": "unix epoch (2026-09-18)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.6356,
+      "drift": -0.3644,
+      "ladder": "omni",
+      "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "omni",
+      "unit": "ratio"
     }
   ],
-  "entry_count": 910,
-  "seal_count": 166,
+  "entry_count": 918,
+  "seal_count": 167,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6527,7 +6583,8 @@
     "φ_EUROPA_TYREE_OMEGA",
     "φ_EUROPA_MAP_TYREE_OMEGA",
     "φ_LUNAR_DYNAMO_TYREE_OMEGA",
-    "φ_IDE_DGPDISK_TYREE_OMEGA"
+    "φ_IDE_DGPDISK_TYREE_OMEGA",
+    "φ_NV_WHOLENESS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "bcd70f30b3fb41d05a41c73fb5d9d096ea4534ba27bd2ff70c0d1e85155f042f"
+  "snapshot_sha256": "67a5d6456ff5c729f72b4df8d9ac3897ff8005aa00ff0a0710359483a0163ae1"
 }
