@@ -6413,10 +6413,101 @@
       "drift": 0.0,
       "ladder": "omni",
       "unit": "ratio"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "logφ(2) — Collatz even-branch rung shift",
+      "rung": 0.7584,
+      "drift": -0.2416,
+      "ladder": "engine",
+      "unit": "rungs (derived in-run, two-path)"
+    },
+    {
+      "name": "logφ(3) — Collatz odd-branch rung shift",
+      "rung": 1.7155,
+      "drift": -0.2845,
+      "ladder": "engine",
+      "unit": "rungs (derived in-run, two-path)"
+    },
+    {
+      "name": "Rung of 4 — Collatz cycle orbit node",
+      "rung": 2.1988,
+      "drift": 0.1988,
+      "ladder": "engine",
+      "unit": "rungs (derived in-run, two-path)"
+    },
+    {
+      "name": "Rung of 2 — Collatz cycle orbit node",
+      "rung": 0.7584,
+      "drift": -0.2416,
+      "ladder": "engine",
+      "unit": "rungs (derived in-run, two-path)"
+    },
+    {
+      "name": "Golden angular reference θφ = 360°/φ²",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "engine",
+      "unit": "degrees (derived in-run, two-path)"
+    },
+    {
+      "name": "Moving-sofa rung (Gerver optimum area, dimensionless)",
+      "rung": 1.0493,
+      "drift": 0.0493,
+      "ladder": "engine",
+      "unit": "rungs (derived in-run from 2.219531668)"
+    },
+    {
+      "name": "TON618 φ exponent",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "defined",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "defined",
+      "unit": "solar masses (standing TON618 law)"
+    },
+    {
+      "name": "TON618 luminosity φ exponent",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "defined",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "Seven engine inputs",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "defined",
+      "unit": "count (Collatz, Goldbach, twin primes, π+e, sofa, runner, kissing)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.648,
+      "drift": -0.352,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 918,
-  "seal_count": 167,
+  "entry_count": 931,
+  "seal_count": 168,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6584,7 +6675,8 @@
     "φ_EUROPA_MAP_TYREE_OMEGA",
     "φ_LUNAR_DYNAMO_TYREE_OMEGA",
     "φ_IDE_DGPDISK_TYREE_OMEGA",
-    "φ_NV_WHOLENESS_TYREE_OMEGA"
+    "φ_NV_WHOLENESS_TYREE_OMEGA",
+    "φ_MATHEMATICS_ENGINE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "67a5d6456ff5c729f72b4df8d9ac3897ff8005aa00ff0a0710359483a0163ae1"
+  "snapshot_sha256": "5e64d7166a06c8b607b5adcf69decea9714fd7b487c13458809681cd639162e5"
 }
