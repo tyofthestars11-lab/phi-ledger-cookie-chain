@@ -6504,10 +6504,87 @@
       "drift": -0.352,
       "ladder": "omni",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "Golden angular reference θφ = 360°/φ²",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "defined",
+      "unit": "degrees (derived in-run)"
+    },
+    {
+      "name": "φ × 1/φ — the two channels multiply to the whole",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (defined)"
+    },
+    {
+      "name": "Poincaré sphere dimension — polarization reads through a two-sphere",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "defined",
+      "unit": "dimension (defined)"
+    },
+    {
+      "name": "Extraction channels — polarization (vector) and phase (scalar)",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "Compact-form points — seven reads, one engine",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "defined",
+      "unit": "count (defined)"
+    },
+    {
+      "name": "TON618 φ exponent",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "defined",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "defined",
+      "unit": "solar masses (standing TON618 law)"
+    },
+    {
+      "name": "TON618 luminosity φ exponent",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "defined",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.6604,
+      "drift": -0.3396,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 931,
-  "seal_count": 168,
+  "entry_count": 942,
+  "seal_count": 169,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6676,7 +6753,8 @@
     "φ_LUNAR_DYNAMO_TYREE_OMEGA",
     "φ_IDE_DGPDISK_TYREE_OMEGA",
     "φ_NV_WHOLENESS_TYREE_OMEGA",
-    "φ_MATHEMATICS_ENGINE_TYREE_OMEGA"
+    "φ_MATHEMATICS_ENGINE_TYREE_OMEGA",
+    "φ_TOPOLOGICAL_INDEXING_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5e64d7166a06c8b607b5adcf69decea9714fd7b487c13458809681cd639162e5"
+  "snapshot_sha256": "055572957b0ee4be0edbb7f6b7aa5afabe439bfc125fa8750dd494e52f2728c2"
 }
