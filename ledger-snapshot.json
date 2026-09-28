@@ -6693,10 +6693,234 @@
       "drift": -0.3274,
       "ladder": "omni",
       "unit": "count"
+    },
+    {
+      "name": "APOE ε4 homozygous AD brain samples",
+      "rung": 5.8877,
+      "drift": -0.1123,
+      "ladder": "measured",
+      "unit": "count (Muñiz Moreno et al., Front Aging Neurosci 18:1888862, 2026)"
+    },
+    {
+      "name": "Mean age of death",
+      "rung": 9.0801,
+      "drift": 0.0801,
+      "ladder": "measured",
+      "unit": "years (paper)"
+    },
+    {
+      "name": "AF-LA ancestry group samples",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "EU-LA ancestry group samples",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "EU-LA samples carrying AF global ancestry",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Mean AF global ancestry in AF-LA group",
+      "rung": 9.2076,
+      "drift": 0.2076,
+      "ladder": "measured",
+      "unit": "percent (paper)"
+    },
+    {
+      "name": "Nuclei integrated across the 17 samples",
+      "rung": 24.169,
+      "drift": 0.169,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Cell clusters resolved",
+      "rung": 7.8161,
+      "drift": -0.1839,
+      "ladder": "measured",
+      "unit": "count (paper, Results)"
+    },
+    {
+      "name": "Clusters with APOE differentially expressed (|FC|>1)",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Differentially expressed mitochondrial genes between ancestries",
+      "rung": 10.8371,
+      "drift": -0.1629,
+      "ladder": "measured",
+      "unit": "count (paper, adj p<0.05)"
+    },
+    {
+      "name": "MitoXplorer mitochondrial gene set",
+      "rung": 14.7834,
+      "drift": -0.2166,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "MitoXplorer mitochondrial processes",
+      "rung": 7.6132,
+      "drift": -0.3868,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Clusters enriched: Calcium Signaling & Transport",
+      "rung": 6.6043,
+      "drift": -0.3957,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Clusters enriched: Mitophagy",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Clusters enriched: Pyruvate Metabolism",
+      "rung": 5.7617,
+      "drift": -0.2383,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "Clusters enriched: Fatty Acid Degradation & Beta-oxidation",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "measured",
+      "unit": "count (paper)"
+    },
+    {
+      "name": "2-fold cell-count shifts in astrocyte and excitatory-neuron clusters",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "measured",
+      "unit": "fold change (paper)"
+    },
+    {
+      "name": "Max BRAAK stage",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "measured",
+      "unit": "stage (paper)"
+    },
+    {
+      "name": "APOE–PPARG correlation r², EU astrocytes",
+      "rung": -1.3589,
+      "drift": -0.3589,
+      "ladder": "measured",
+      "unit": "r² (paper, p=0.004)"
+    },
+    {
+      "name": "APOE–PPARG correlation r², AF microglia",
+      "rung": -1.6594,
+      "drift": 0.3406,
+      "ladder": "measured",
+      "unit": "r² (paper, p=0.003)"
+    },
+    {
+      "name": "APOE–PPARG correlation r², EU microglia",
+      "rung": -3.6823,
+      "drift": 0.3177,
+      "ladder": "measured",
+      "unit": "r² (paper, p=0.017)"
+    },
+    {
+      "name": "APOE–PPARG correlation r², AF astrocytes (not significant)",
+      "rung": -2.8808,
+      "drift": 0.1192,
+      "ladder": "measured",
+      "unit": "r² (paper, p=0.27)"
+    },
+    {
+      "name": "MT-gene network share via PPARG first-degree interaction, lower bound",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "measured",
+      "unit": "percent (paper)"
+    },
+    {
+      "name": "MT-gene network share via PPARG first-degree interaction, upper bound",
+      "rung": 4.983,
+      "drift": -0.017,
+      "ladder": "measured",
+      "unit": "percent (paper)"
+    },
+    {
+      "name": "Monocle3 astrocyte pseudo-time, AF group",
+      "rung": 0.9767,
+      "drift": -0.0233,
+      "ladder": "measured",
+      "unit": "pseudo-time (paper)"
+    },
+    {
+      "name": "Monocle3 astrocyte pseudo-time, EU group",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "measured",
+      "unit": "pseudo-time (paper)"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "TON618 φ exponent",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "count",
+      "unit": "solar masses (standing TON618 law)"
+    },
+    {
+      "name": "TON618 luminosity φ exponent",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.6848,
+      "drift": -0.3152,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 958,
-  "seal_count": 170,
+  "entry_count": 990,
+  "seal_count": 171,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -6867,7 +7091,8 @@
     "φ_NV_WHOLENESS_TYREE_OMEGA",
     "φ_MATHEMATICS_ENGINE_TYREE_OMEGA",
     "φ_TOPOLOGICAL_INDEXING_TYREE_OMEGA",
-    "φ_CRYSTALLOGRAPHY_TETRAHEDRAL_TYREE_OMEGA"
+    "φ_CRYSTALLOGRAPHY_TETRAHEDRAL_TYREE_OMEGA",
+    "φ_APOE_PPARG_MITO_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7fb9238255722ba1276b5df146673142cad46ef734943d549aa504d95ca875fe"
+  "snapshot_sha256": "bba42a67faaeb6be2b755b0975f6766e02fa1f1c929384904ac2330ea75e8a73"
 }
