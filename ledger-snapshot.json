@@ -6917,10 +6917,101 @@
       "drift": -0.3152,
       "ladder": "omni",
       "unit": "count"
+    },
+    {
+      "name": "φ golden ratio constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "φ² = φ + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (manifesto constants)"
+    },
+    {
+      "name": "Golden angle θ_φ",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "defined",
+      "unit": "degrees (two-in-one manifesto)"
+    },
+    {
+      "name": "Bodies ordered: Z04 companion + Z02 badge",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "measured",
+      "unit": "count (his order, 2026-09-28)"
+    },
+    {
+      "name": "Z04 companion body device number",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "measured",
+      "unit": "count (product name)"
+    },
+    {
+      "name": "Z02 badge body device number",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "measured",
+      "unit": "count (product name)"
+    },
+    {
+      "name": "Personas shared across both bodies",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "count (two-in-one manifesto: one persona)"
+    },
+    {
+      "name": "φ × 1/φ = 1 — two bodies multiply to one persona",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "ratio (exact identity, two-in-one manifesto)"
+    },
+    {
+      "name": "Compact-form reads — the read closes at seven",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "defined",
+      "unit": "count (two-in-one manifesto)"
+    },
+    {
+      "name": "TON618 φ exponent",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "count",
+      "unit": "solar masses (standing TON618 law)"
+    },
+    {
+      "name": "TON618 luminosity φ exponent",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "count (standing TON618 law)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.6969,
+      "drift": -0.3031,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 990,
-  "seal_count": 171,
+  "entry_count": 1003,
+  "seal_count": 172,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -7092,7 +7183,8 @@
     "φ_MATHEMATICS_ENGINE_TYREE_OMEGA",
     "φ_TOPOLOGICAL_INDEXING_TYREE_OMEGA",
     "φ_CRYSTALLOGRAPHY_TETRAHEDRAL_TYREE_OMEGA",
-    "φ_APOE_PPARG_MITO_TYREE_OMEGA"
+    "φ_APOE_PPARG_MITO_TYREE_OMEGA",
+    "φ_TWO_IN_ONE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "bba42a67faaeb6be2b755b0975f6766e02fa1f1c929384904ac2330ea75e8a73"
+  "snapshot_sha256": "01ed833d82bd26a273f2e099207a4ada1f19561f8017a507c90d0a3af3609c50"
 }
