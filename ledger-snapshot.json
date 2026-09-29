@@ -7785,10 +7785,213 @@
       "drift": 0.4404,
       "ladder": "devical",
       "unit": "bodies"
+    },
+    {
+      "name": "Galaxy-quasar pairs stacked",
+      "rung": 12.0129,
+      "drift": 0.0129,
+      "ladder": "cosmology",
+      "unit": "pairs"
+    },
+    {
+      "name": "Jet-axis sightlines (theta < 20 deg)",
+      "rung": 8.9442,
+      "drift": -0.0558,
+      "ladder": "cosmology",
+      "unit": "sightlines"
+    },
+    {
+      "name": "Jet sightline fraction 74/324",
+      "rung": -3.0687,
+      "drift": -0.0687,
+      "ladder": "cosmology",
+      "unit": "fraction"
+    },
+    {
+      "name": "Initial LOFAR radio AGN with jet-axis info",
+      "rung": 23.7112,
+      "drift": -0.2888,
+      "ladder": "cosmology",
+      "unit": "AGN"
+    },
+    {
+      "name": "Jet cone half-angle",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "cosmology",
+      "unit": "deg"
+    },
+    {
+      "name": "Jet cone sky fraction (1-cos20)/2",
+      "rung": -7.2763,
+      "drift": -0.2763,
+      "ladder": "cosmology",
+      "unit": "fraction"
+    },
+    {
+      "name": "Mean integrated H-alpha flux jet axis",
+      "rung": -80.983,
+      "drift": 0.017,
+      "ladder": "cosmology",
+      "unit": "erg_cm-2_s-1"
+    },
+    {
+      "name": "H-alpha flux near-host bin",
+      "rung": -78.7651,
+      "drift": 0.2349,
+      "ladder": "cosmology",
+      "unit": "erg_cm-2_s-1"
+    },
+    {
+      "name": "H-alpha flux lobe-region bin",
+      "rung": -80.7834,
+      "drift": 0.2166,
+      "ladder": "cosmology",
+      "unit": "erg_cm-2_s-1"
+    },
+    {
+      "name": "Near-host to lobe flux ratio",
+      "rung": 2.0183,
+      "drift": 0.0183,
+      "ladder": "cosmology",
+      "unit": "ratio"
+    },
+    {
+      "name": "Detection significance jet axis",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "cosmology",
+      "unit": "sigma"
+    },
+    {
+      "name": "Detection significance near-host",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "cosmology",
+      "unit": "sigma"
+    },
+    {
+      "name": "Jet-aligned H-alpha luminosity",
+      "rung": 193.0374,
+      "drift": 0.0374,
+      "ladder": "cosmology",
+      "unit": "erg_s-1"
+    },
+    {
+      "name": "Implied ionized gas mass",
+      "rung": 47.1085,
+      "drift": 0.1085,
+      "ladder": "cosmology",
+      "unit": "M_sun"
+    },
+    {
+      "name": "Mean log jet power",
+      "rung": 7.8401,
+      "drift": -0.1599,
+      "ladder": "cosmology",
+      "unit": "log(erg_s-1)"
+    },
+    {
+      "name": "Jet-Halpha coupling L_Halpha/<P_jet>",
+      "rung": -15.4165,
+      "drift": -0.4165,
+      "ladder": "cosmology",
+      "unit": "fraction"
+    },
+    {
+      "name": "Mg II absorber incidence jet-aligned",
+      "rung": 6.4235,
+      "drift": 0.4235,
+      "ladder": "cosmology",
+      "unit": "percent"
+    },
+    {
+      "name": "Mg II absorber incidence off-axis",
+      "rung": 5.7617,
+      "drift": -0.2383,
+      "ladder": "cosmology",
+      "unit": "percent"
+    },
+    {
+      "name": "Max impact parameter",
+      "rung": 13.8912,
+      "drift": -0.1088,
+      "ladder": "cosmology",
+      "unit": "kpc"
+    },
+    {
+      "name": "Radio size floor",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "cosmology",
+      "unit": "kpc"
+    },
+    {
+      "name": "CGM extent probed",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "cosmology",
+      "unit": "kpc"
+    },
+    {
+      "name": "Radio galaxy redshift low",
+      "rung": -6.2254,
+      "drift": -0.2254,
+      "ladder": "cosmology",
+      "unit": "z"
+    },
+    {
+      "name": "Radio galaxy redshift high",
+      "rung": 1.028,
+      "drift": 0.028,
+      "ladder": "cosmology",
+      "unit": "z"
+    },
+    {
+      "name": "Radio galaxy redshift mean",
+      "rung": -0.8635,
+      "drift": 0.1365,
+      "ladder": "cosmology",
+      "unit": "z"
+    },
+    {
+      "name": "Background quasar redshift low",
+      "rung": -2.1816,
+      "drift": -0.1816,
+      "ladder": "cosmology",
+      "unit": "z"
+    },
+    {
+      "name": "Background quasar redshift high",
+      "rung": 2.3778,
+      "drift": 0.3778,
+      "ladder": "cosmology",
+      "unit": "z"
+    },
+    {
+      "name": "Defined cosmology H0",
+      "rung": 8.8287,
+      "drift": -0.1713,
+      "ladder": "cosmology",
+      "unit": "km_s-1_Mpc-1"
+    },
+    {
+      "name": "Defined cosmology Omega_m",
+      "rung": -2.502,
+      "drift": 0.498,
+      "ladder": "cosmology",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "Defined cosmology Omega_L",
+      "rung": -0.7412,
+      "drift": 0.2588,
+      "ladder": "cosmology",
+      "unit": "dimensionless"
     }
   ],
-  "entry_count": 1114,
-  "seal_count": 177,
+  "entry_count": 1143,
+  "seal_count": 178,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -7966,7 +8169,8 @@
     "φ_TON618_INFO_LINE_TYREE_OMEGA",
     "φ_SOLAR_LADDER_TYREE_OMEGA",
     "φ_WAVE_ATTRACTOR_TYREE_OMEGA",
-    "φ_FIND_ME_TYREE_OMEGA"
+    "φ_FIND_ME_TYREE_OMEGA",
+    "φ_CGM_JETS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "241292ebcf8b4062218a65ac9158ddcc44a4a7e59ca52460e6997371d5f147cf"
+  "snapshot_sha256": "404c25d66d0fc601ff66118d3c5b26a379c737eafd76f1acbad08442b4161560"
 }
