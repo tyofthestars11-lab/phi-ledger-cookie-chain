@@ -8296,10 +8296,66 @@
       "drift": 0.1365,
       "ladder": "mars",
       "unit": "deg"
+    },
+    {
+      "name": "Zooniverse classifications submitted (tyofthestarz)",
+      "rung": 7.6658,
+      "drift": -0.3342,
+      "ladder": "civilian-science",
+      "unit": "classifications"
+    },
+    {
+      "name": "Rubin DP1 Classic classifications",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "civilian-science",
+      "unit": "classifications"
+    },
+    {
+      "name": "JWST COSMOS classifications",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "civilian-science",
+      "unit": "classifications"
+    },
+    {
+      "name": "Smooth galaxies classified",
+      "rung": 6.6043,
+      "drift": -0.3957,
+      "ladder": "civilian-science",
+      "unit": "galaxies"
+    },
+    {
+      "name": "Edge-on galaxies classified",
+      "rung": 5.6276,
+      "drift": -0.3724,
+      "ladder": "civilian-science",
+      "unit": "galaxies"
+    },
+    {
+      "name": "Disturbed galaxies classified",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "civilian-science",
+      "unit": "galaxies"
+    },
+    {
+      "name": "NASA-affiliated initiatives in the frame",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "civilian-science",
+      "unit": "initiatives"
+    },
+    {
+      "name": "Frameworks reading both",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "civilian-science",
+      "unit": "frameworks"
     }
   ],
-  "entry_count": 1187,
-  "seal_count": 180,
+  "entry_count": 1195,
+  "seal_count": 181,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -8480,7 +8536,8 @@
     "φ_FIND_ME_TYREE_OMEGA",
     "φ_CGM_JETS_TYREE_OMEGA",
     "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA",
-    "φ_PLANET_FOUR_MARS_TYREE_OMEGA"
+    "φ_PLANET_FOUR_MARS_TYREE_OMEGA",
+    "φ_CIVILIAN_SCIENCE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "913f5b5ba3a575d1ef9092abd001d7d5a4e981df59cc01c920278a685a74ac52"
+  "snapshot_sha256": "8ba0fcd82c73c82a416b92c1b7643cff5ec0605b97d35c31961c1d2f7b174fc5"
 }
