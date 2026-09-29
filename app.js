@@ -16,6 +16,18 @@ const connection = new Connection(RPC_URL, 'confirmed');
 const TYREE_WALLET = 'A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q'; // Tyree's Phantom wallet — public-anchor fees land here
 const PUBLIC_ANCHOR_FEE_COOK = 1; // small COOK fee per public anchor, paid to Tyree — keep the .pubFee text in index.html in sync
 
+/* Transaction schema — the memo grammar every on-chain anchor carries.
+ * v2 (2026-09-29): the anchored snapshot now includes the 13 validated
+ * GZ2/trace ledger entries (see TRANSACTION_SCHEMA.md). Memo format unchanged. */
+const TRANSACTION_SCHEMA = {
+  version: 2,
+  sealMemo: 'PHI-LEDGER|seal=<seal>|sha256=<snapshot_sha256>|by=tyofthestarz',
+  publicMemo: 'PHI-LEDGER|public|<label>|sha256=<data_sha256>|by=<wallet>',
+  snapshotSha256: '9035fc0817f26006b5943c1d62001684adaf5f53fc5172d76420cf67bcb56922',
+  sealCount: 179,
+  entryCount: 1168,
+};
+
 let wallet = null;      // connected public key (base58)
 let provider = null;    // injected wallet provider
 let snapshot = null;
@@ -47,7 +59,7 @@ async function pulse() {
 
 /* ---------- Ledger analytics ---------- */
 async function loadLedger() {
-  const r = await fetch('ledger-snapshot.json?v=160');
+  const r = await fetch('ledger-snapshot.json?v=161');
   snapshot = await r.json();
   $('sealCount').textContent = snapshot.seal_count;
   $('entryCount').textContent = snapshot.entry_count;

@@ -8072,9 +8072,100 @@
       "drift": 0.0,
       "ladder": "mitochondria",
       "unit": "gene"
+    },
+    {
+      "name": "gz2_clean_spirals",
+      "rung": 24.0335,
+      "drift": 0.0335,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_spiral_fraction_pct",
+      "rung": 7.8619,
+      "drift": -0.1381,
+      "ladder": "fraction",
+      "unit": "percent"
+    },
+    {
+      "name": "gz2_arm_count_1",
+      "rung": 18.9421,
+      "drift": -0.0579,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_arm_count_2",
+      "rung": 22.5659,
+      "drift": -0.4341,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_arm_count_3",
+      "rung": 19.6297,
+      "drift": -0.3703,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_arm_count_4",
+      "rung": 17.4638,
+      "drift": 0.4638,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_arm_count_5plus",
+      "rung": 18.3185,
+      "drift": 0.3185,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_fibonacci_arm_subjects",
+      "rung": 23.4737,
+      "drift": 0.4737,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_fibonacci_arm_fraction_pct",
+      "rung": 9.4578,
+      "drift": 0.4578,
+      "ladder": "fraction",
+      "unit": "percent"
+    },
+    {
+      "name": "gz2_winding_tight",
+      "rung": 22.7768,
+      "drift": -0.2232,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_winding_medium",
+      "rung": 21.7721,
+      "drift": -0.2279,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_winding_loose",
+      "rung": 19.5,
+      "drift": 0.5,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "trace_golden_spiral_b",
+      "rung": -2.4584,
+      "drift": -0.4584,
+      "ladder": "growth",
+      "unit": "per_radian"
     }
   ],
-  "entry_count": 1155,
+  "entry_count": 1168,
   "seal_count": 179,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -8257,5 +8348,5 @@
     "φ_CGM_JETS_TYREE_OMEGA",
     "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "afb30dbb085ef7efab7cd1a743219d93749c569825ee49c7b00ce2448f007a78"
+  "snapshot_sha256": "9035fc0817f26006b5943c1d62001684adaf5f53fc5172d76420cf67bcb56922"
 }
