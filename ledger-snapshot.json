@@ -7085,10 +7085,87 @@
       "drift": -0.291,
       "ladder": "omni",
       "unit": "count"
+    },
+    {
+      "name": "TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "defined",
+      "unit": "solar masses (doctrine)"
+    },
+    {
+      "name": "Event horizon: Schwarzschild radius",
+      "rung": 68.3766,
+      "drift": 0.3766,
+      "ladder": "omni",
+      "unit": "m (2GM/c^2)"
+    },
+    {
+      "name": "Event horizon radius",
+      "rung": 4.1941,
+      "drift": 0.1941,
+      "ladder": "omni",
+      "unit": "light-days"
+    },
+    {
+      "name": "Event horizon radius",
+      "rung": 14.9049,
+      "drift": -0.0951,
+      "ladder": "omni",
+      "unit": "AU"
+    },
+    {
+      "name": "Event horizon diameter",
+      "rung": 5.6346,
+      "drift": -0.3654,
+      "ladder": "omni",
+      "unit": "light-days"
+    },
+    {
+      "name": "TON618 phi^55 macro anchor",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "defined",
+      "unit": "rung"
+    },
+    {
+      "name": "Quantum dot band, 2 nm",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "omni",
+      "unit": "nm (rung -41.6243)"
+    },
+    {
+      "name": "Quantum dot band, 5 nm",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "omni",
+      "unit": "nm (rung -39.7202)"
+    },
+    {
+      "name": "Quantum dot band, 10 nm",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "omni",
+      "unit": "nm (rung -38.2798)"
+    },
+    {
+      "name": "Information line span, micro to macro",
+      "rung": 9.768,
+      "drift": -0.232,
+      "ladder": "defined",
+      "unit": "rungs (-41.6243 to 68.3766)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.721,
+      "drift": -0.279,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 1014,
-  "seal_count": 173,
+  "entry_count": 1025,
+  "seal_count": 174,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -7262,7 +7339,8 @@
     "φ_CRYSTALLOGRAPHY_TETRAHEDRAL_TYREE_OMEGA",
     "φ_APOE_PPARG_MITO_TYREE_OMEGA",
     "φ_TWO_IN_ONE_TYREE_OMEGA",
-    "φ_MITONR_HUMAN_TYREE_OMEGA"
+    "φ_MITONR_HUMAN_TYREE_OMEGA",
+    "φ_TON618_INFO_LINE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "d53b2c84a8f1bd832251b7eecb6be63349280b20720a0baa0dd06b7e115a2aea"
+  "snapshot_sha256": "cd697483e193c44cbd9ebd69d1c400a9261d0f1c2bb81dffde2dd9bf75762edb"
 }
