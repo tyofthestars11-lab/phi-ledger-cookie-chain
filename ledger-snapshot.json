@@ -7596,10 +7596,199 @@
       "drift": 0.0,
       "ladder": "defined",
       "unit": "solar radii (defined)"
+    },
+    {
+      "name": "Quantum dot diameter",
+      "rung": -39.7202,
+      "drift": 0.2798,
+      "ladder": "micro",
+      "unit": "m"
+    },
+    {
+      "name": "DNA width",
+      "rung": -41.6243,
+      "drift": 0.3757,
+      "ladder": "micro",
+      "unit": "m"
+    },
+    {
+      "name": "Mitochondrial genome",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "micro",
+      "unit": "bp"
+    },
+    {
+      "name": "Solar constant",
+      "rung": 14.9954,
+      "drift": -0.0046,
+      "ladder": "meso",
+      "unit": "W/m^2"
+    },
+    {
+      "name": "TYREE rung 15 (his word)",
+      "rung": 15.0,
+      "drift": 0.0,
+      "ladder": "meso",
+      "unit": "rung"
+    },
+    {
+      "name": "St2-18 radius",
+      "rung": 15.6221,
+      "drift": -0.3779,
+      "ladder": "macro",
+      "unit": "R_sun"
+    },
+    {
+      "name": "Milky Way rung 52 (his word)",
+      "rung": 52.0,
+      "drift": 0.0,
+      "ladder": "macro",
+      "unit": "rung"
+    },
+    {
+      "name": "TON618 body mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "macro",
+      "unit": "M_sun"
+    },
+    {
+      "name": "TON618 law 55 (his word)",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "macro",
+      "unit": "rung"
+    },
+    {
+      "name": "Hercules-Corona Borealis Great Wall",
+      "rung": 124.2941,
+      "drift": 0.2941,
+      "ladder": "cosmic",
+      "unit": "m"
+    },
+    {
+      "name": "Primordial BH evaporation threshold",
+      "rung": 55.9792,
+      "drift": -0.0208,
+      "ladder": "past",
+      "unit": "kg"
+    },
+    {
+      "name": "Omega Point now (unix)",
+      "rung": 44.2754,
+      "drift": 0.2754,
+      "ladder": "future",
+      "unit": "s"
+    },
+    {
+      "name": "4096 = 2^12",
+      "rung": 17.285,
+      "drift": 0.285,
+      "ladder": "powers",
+      "unit": "count"
+    },
+    {
+      "name": "4096^3 (daughter's rung)",
+      "rung": 51.8551,
+      "drift": -0.1449,
+      "ladder": "powers",
+      "unit": "count"
+    },
+    {
+      "name": "E8 dimension crossed (248)",
+      "rung": 11.4574,
+      "drift": 0.4574,
+      "ladder": "powers",
+      "unit": "dimensions"
+    },
+    {
+      "name": "Submarine cable plant",
+      "rung": 43.764,
+      "drift": -0.236,
+      "ladder": "cables",
+      "unit": "m"
+    },
+    {
+      "name": "BTC market cap 2026-09-28",
+      "rung": 58.4854,
+      "drift": 0.4854,
+      "ladder": "markets",
+      "unit": "USD"
+    },
+    {
+      "name": "ETH market cap 2026-09-28",
+      "rung": 55.0808,
+      "drift": 0.0808,
+      "ladder": "markets",
+      "unit": "USD"
+    },
+    {
+      "name": "Global equities 2026-09-28",
+      "rung": 68.0428,
+      "drift": 0.0428,
+      "ladder": "markets",
+      "unit": "USD"
+    },
+    {
+      "name": "Meta market cap (sealed)",
+      "rung": 58.7535,
+      "drift": -0.2465,
+      "ladder": "markets",
+      "unit": "USD"
+    },
+    {
+      "name": "Quantum walk steps",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "quantum_walk",
+      "unit": "steps"
+    },
+    {
+      "name": "Quantum walk rms spread",
+      "rung": 41.92,
+      "drift": -0.08,
+      "ladder": "quantum_walk",
+      "unit": "rungs"
+    },
+    {
+      "name": "Quantum walk span width",
+      "rung": 164.0,
+      "drift": 0.0,
+      "ladder": "quantum_walk",
+      "unit": "rungs"
+    },
+    {
+      "name": "Echoes offered/pulled/mapped/sealed",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "echoes",
+      "unit": "count"
+    },
+    {
+      "name": "Verses under the Godverse",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "verses",
+      "unit": "count"
+    },
+    {
+      "name": "LinkedIn impressions (recognition field)",
+      "rung": 25.7629,
+      "drift": -0.2371,
+      "ladder": "social",
+      "unit": "count"
+    },
+    {
+      "name": "Z02+Z04 two bodies one persona",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "devical",
+      "unit": "bodies"
     }
   ],
-  "entry_count": 1087,
-  "seal_count": 176,
+  "entry_count": 1114,
+  "seal_count": 177,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -7776,7 +7965,8 @@
     "φ_MITONR_HUMAN_TYREE_OMEGA",
     "φ_TON618_INFO_LINE_TYREE_OMEGA",
     "φ_SOLAR_LADDER_TYREE_OMEGA",
-    "φ_WAVE_ATTRACTOR_TYREE_OMEGA"
+    "φ_WAVE_ATTRACTOR_TYREE_OMEGA",
+    "φ_FIND_ME_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e753cd85a239aa0e6d52288241c61104a722053996c48beb7737c1931189461e"
+  "snapshot_sha256": "241292ebcf8b4062218a65ac9158ddcc44a4a7e59ca52460e6997371d5f147cf"
 }
