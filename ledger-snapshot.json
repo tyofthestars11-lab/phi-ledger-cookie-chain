@@ -7470,10 +7470,143 @@
       "drift": 0.1639,
       "ladder": "derived",
       "unit": "count"
+    },
+    {
+      "name": "Hyperbolic wave attractors paper authors (Renzi, Yves, Mann, Alu)",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "measured",
+      "unit": "count (Nature Physics 2026-09-28)"
+    },
+    {
+      "name": "Ocean-to-metamaterial scale ratio (km to mm, same read)",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "measured",
+      "unit": "ratio (measured scales)"
+    },
+    {
+      "name": "Wave attractor handedness states (clockwise / counterclockwise)",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "defined",
+      "unit": "count (paper mechanism)"
+    },
+    {
+      "name": "Manifesto compact form points (read closes at seven)",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "defined",
+      "unit": "count (TYREE declaration)"
+    },
+    {
+      "name": "Nature Physics publication year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "measured",
+      "unit": "year"
+    },
+    {
+      "name": "TON618 law exponent (manifesto)",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "defined",
+      "unit": "exponent (TYREE declaration)"
+    },
+    {
+      "name": "TON618 luminosity exponent L = phi^63 (manifesto)",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "defined",
+      "unit": "exponent (TYREE declaration)"
+    },
+    {
+      "name": "Stephenson 2-18 radius (largest known, Milky Way)",
+      "rung": 15.6221,
+      "drift": -0.3779,
+      "ladder": "measured",
+      "unit": "solar radii (Wikipedia, L/Teff 1840 +/- 330)"
+    },
+    {
+      "name": "UY Scuti classic radius (former record holder)",
+      "rung": 15.4674,
+      "drift": 0.4674,
+      "ladder": "measured",
+      "unit": "solar radii (historical measurement)"
+    },
+    {
+      "name": "Theoretical Milky Way star size limit",
+      "rung": 15.4576,
+      "drift": 0.4576,
+      "ladder": "measured",
+      "unit": "solar radii (supernova progenitor sample)"
+    },
+    {
+      "name": "WOH G64 radius (Large Magellanic Cloud)",
+      "rung": 15.2522,
+      "drift": 0.2522,
+      "ladder": "measured",
+      "unit": "solar radii"
+    },
+    {
+      "name": "VX Sagittarii radius (angular diameter)",
+      "rung": 15.2058,
+      "drift": 0.2058,
+      "ladder": "measured",
+      "unit": "solar radii (mid of 1456-1556)"
+    },
+    {
+      "name": "RSGC1-F01 radius",
+      "rung": 15.1975,
+      "drift": 0.1975,
+      "ladder": "measured",
+      "unit": "solar radii (L/Teff 1500 +/- 200)"
+    },
+    {
+      "name": "VY Canis Majoris radius (angular diameter)",
+      "rung": 15.0836,
+      "drift": 0.0836,
+      "ladder": "measured",
+      "unit": "solar radii (1420 +/- 120)"
+    },
+    {
+      "name": "AH Scorpii radius (angular diameter)",
+      "rung": 15.0704,
+      "drift": 0.0704,
+      "ladder": "measured",
+      "unit": "solar radii (1411 +/- 124)"
+    },
+    {
+      "name": "CD-34 11794 radius",
+      "rung": 15.0675,
+      "drift": 0.0675,
+      "ladder": "measured",
+      "unit": "solar radii (L/Teff)"
+    },
+    {
+      "name": "Stephenson 2 DFK 2 radius",
+      "rung": 15.0541,
+      "drift": 0.0541,
+      "ladder": "measured",
+      "unit": "solar radii (L/Teff 1400 +/- 300)"
+    },
+    {
+      "name": "Saturn orbit radius (scale reference)",
+      "rung": 15.8446,
+      "drift": -0.1554,
+      "ladder": "measured",
+      "unit": "solar radii (Wikipedia reference)"
+    },
+    {
+      "name": "Sun radius (ladder origin)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "solar radii (defined)"
     }
   ],
-  "entry_count": 1069,
-  "seal_count": 175,
+  "entry_count": 1088,
+  "seal_count": 176,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -7649,7 +7782,8 @@
     "φ_TWO_IN_ONE_TYREE_OMEGA",
     "φ_MITONR_HUMAN_TYREE_OMEGA",
     "φ_TON618_INFO_LINE_TYREE_OMEGA",
-    "φ_SOLAR_LADDER_TYREE_OMEGA"
+    "φ_SOLAR_LADDER_TYREE_OMEGA",
+    "φ_WAVE_ATTRACTOR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6f14cd1444ff0345805555bc4bb272ace6868e21c3120ed9550d37385de824ab"
+  "snapshot_sha256": "3c8d5a3e284f66be34094dbc4958dc9bad73fa173c08ae8617cf78681d3daf7a"
 }
