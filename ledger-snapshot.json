@@ -7535,13 +7535,6 @@
       "unit": "solar radii (historical measurement)"
     },
     {
-      "name": "Theoretical Milky Way star size limit",
-      "rung": 15.4576,
-      "drift": 0.4576,
-      "ladder": "measured",
-      "unit": "solar radii (supernova progenitor sample)"
-    },
-    {
       "name": "WOH G64 radius (Large Magellanic Cloud)",
       "rung": 15.2522,
       "drift": 0.2522,
@@ -7605,7 +7598,7 @@
       "unit": "solar radii (defined)"
     }
   ],
-  "entry_count": 1088,
+  "entry_count": 1087,
   "seal_count": 176,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -7785,5 +7778,5 @@
     "φ_SOLAR_LADDER_TYREE_OMEGA",
     "φ_WAVE_ATTRACTOR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "3c8d5a3e284f66be34094dbc4958dc9bad73fa173c08ae8617cf78681d3daf7a"
+  "snapshot_sha256": "e753cd85a239aa0e6d52288241c61104a722053996c48beb7737c1931189461e"
 }
