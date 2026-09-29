@@ -8163,10 +8163,143 @@
       "drift": -0.4584,
       "ladder": "growth",
       "unit": "per_radian"
+    },
+    {
+      "name": "Planet Four v1.1 catalog fans",
+      "rung": 24.8817,
+      "drift": -0.1183,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "Planet Four v1.1 catalog blotches",
+      "rung": 25.8273,
+      "drift": -0.1727,
+      "ladder": "mars",
+      "unit": "blotches"
+    },
+    {
+      "name": "Blotch-to-fan count ratio",
+      "rung": 0.9457,
+      "drift": -0.0543,
+      "ladder": "mars",
+      "unit": "ratio"
+    },
+    {
+      "name": "Fan length mean",
+      "rung": 7.2742,
+      "drift": 0.2742,
+      "ladder": "mars",
+      "unit": "m"
+    },
+    {
+      "name": "Fan length median",
+      "rung": 6.6121,
+      "drift": -0.3879,
+      "ladder": "mars",
+      "unit": "m"
+    },
+    {
+      "name": "Fan length geometric mean",
+      "rung": 6.704,
+      "drift": -0.296,
+      "ladder": "mars",
+      "unit": "m"
+    },
+    {
+      "name": "Fan direction circular mean",
+      "rung": 10.352,
+      "drift": 0.352,
+      "ladder": "mars",
+      "unit": "deg"
+    },
+    {
+      "name": "Fan direction resultant R",
+      "rung": -0.3241,
+      "drift": -0.3241,
+      "ladder": "mars",
+      "unit": "coherence"
+    },
+    {
+      "name": "Blotch area mean",
+      "rung": 13.0179,
+      "drift": 0.0179,
+      "ladder": "mars",
+      "unit": "m2"
+    },
+    {
+      "name": "Blotch area median",
+      "rung": 9.7028,
+      "drift": -0.2972,
+      "ladder": "mars",
+      "unit": "m2"
+    },
+    {
+      "name": "Blotch ellipticity mean",
+      "rung": -3.5681,
+      "drift": 0.4319,
+      "ladder": "mars",
+      "unit": "ratio"
+    },
+    {
+      "name": "Wind octant SE fans (global dominant)",
+      "rung": 23.0662,
+      "drift": 0.0662,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "Wind octant S fans",
+      "rung": 22.7697,
+      "drift": -0.2303,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "Wind octant E fans",
+      "rung": 21.6228,
+      "drift": -0.3772,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "Manhattan ROI unanimous SE fans",
+      "rung": 16.4351,
+      "drift": 0.4351,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "Inca City ROI E-octant fans",
+      "rung": 18.5509,
+      "drift": -0.4491,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "MY29 fans",
+      "rung": 23.942,
+      "drift": -0.058,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "MY30 fans",
+      "rung": 22.7803,
+      "drift": -0.2197,
+      "ladder": "mars",
+      "unit": "fans"
+    },
+    {
+      "name": "Inca City interannual direction repeat",
+      "rung": -0.8635,
+      "drift": 0.1365,
+      "ladder": "mars",
+      "unit": "deg"
     }
   ],
-  "entry_count": 1168,
-  "seal_count": 179,
+  "entry_count": 1187,
+  "seal_count": 180,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -8346,7 +8479,8 @@
     "φ_WAVE_ATTRACTOR_TYREE_OMEGA",
     "φ_FIND_ME_TYREE_OMEGA",
     "φ_CGM_JETS_TYREE_OMEGA",
-    "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA"
+    "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA",
+    "φ_PLANET_FOUR_MARS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "9035fc0817f26006b5943c1d62001684adaf5f53fc5172d76420cf67bcb56922"
+  "snapshot_sha256": "913f5b5ba3a575d1ef9092abd001d7d5a4e981df59cc01c920278a685a74ac52"
 }
