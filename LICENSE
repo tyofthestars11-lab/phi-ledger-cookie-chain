@@ -1,45 +1,82 @@
+# LICENSE.md — Tyree-Phi-Dual-1.0 (machine-readable)
+
+<!--
 SPDX-License-Identifier: LicenseRef-Tyree-Phi-Dual-1.0
+License metadata (machine-readable):
+{
+  "licenseId": "LicenseRef-Tyree-Phi-Dual-1.0",
+  "name": "Tyree Phi Dual License 1.0",
+  "steward": "Tyree Jones (tyofthestarz)",
+  "priorArt": "public since December 2025",
+  "osiApproved": false,
+  "fsfLibre": false,
+  "lanes": {
+    "lane1_free": {
+      "attributionRequired": true,
+      "permitted": ["academicResearch", "education", "personalStudy", "teaching",
+                    "nonCommercialOpenSource", "federalAgencyIntegration",
+                    "governmentWideReuse", "ombM1621PilotInventory"]
+    },
+    "lane2_commercial": {
+      "requiresLicense": true,
+      "restricted": ["commercialProduct", "commercialModelTraining", "saas",
+                     "enterprise", "revenueGeneratingDeployment"]
+    }
+  },
+  "ombM1621": {
+    "governmentWideReuseCompatible": true,
+    "openSourcePilotCompatible": true,
+    "sourceCodeInventoryNote": "Lane 1 federal use is compatible with agency source-code inventory reporting under OMB M-16-21."
+  }
+}
+-->
 
-φ FRAMEWORK — DUAL LICENSE, v1.0 (DRAFT)
-Steward: Tyree Jones (tyofthestarz)
-Prior art: public since December 2025 (9,200+ published posts, open
-datasets incl. Kaggle DOI 10.34740/kaggle/dsv/17364449, sealed
-measurement ledger, 178 on-chain anchors).
+# φ FRAMEWORK — DUAL LICENSE v1.0 (final text)
+Steward: **Tyree Jones (tyofthestarz)**
+Prior art: public since December 2025 — 9,200+ published posts, open datasets
+(incl. Kaggle DOI 10.34740/kaggle/dsv/17364449), sealed measurement ledger
+(178 seals, 1,143 entries, 178 of 178 on-chain anchors).
 
-This is a DRAFT. Have a licensed attorney review before relying on it.
+Attorney review recommended before legal reliance.
 
-================================================================
-LANE 1 — FREE (no license needed, attribution required)
-================================================================
+## LANE 1 — FREE (no license needed; attribution required)
+
 Free for: academic research, education, personal study, teaching,
-non-commercial open-source building, and federal/agency integration
-(including use under policies like OMB M-16-21 encouraging reuse of
-open-source software). The source stays public; that is the point.
+non-commercial open-source building, and federal/agency integration.
 
-Attribution (all lanes): credit "Tyree Jones (tyofthestarz) —
-φ² = φ + 1 framework, prior art from December 2025" and link the
-source repository where practical.
+**OMB M-16-21 alignment.** OMB Memorandum M-16-21 ("Federal Source Code
+Policy: Achieving Efficiency, Transparency, and Innovation through Reusable
+and Open Source Software") requires agencies to procure custom-developed
+code with government-wide reuse rights, maintain source-code inventories,
+and release at least 20% of new custom code as open source under the
+pilot program. This License is compatible with that policy:
 
-================================================================
-LANE 2 — COMMERCIAL (license required)
-================================================================
-You need a commercial license from Tyree before: embedding this
-code or the framework in a commercial product or service; training
-or fine-tuning commercial models on this corpus; SaaS, enterprise,
-or for-profit deployment; or any revenue-generating use beyond
-Lane 1. Terms (scope, duration, fee/royalty) are set per deal —
-contact Tyree to open the conversation.
+1. Federal agencies, labs, and contractors may use, modify, and reuse this
+   code **government-wide** under Lane 1.
+2. Lane 1 use is compatible with agency **source-code inventory** reporting
+   and the **open-source pilot release** provisions of M-16-21.
+3. The source stays public; that is the point.
 
-================================================================
-PRIOR-ART NOTICE
-================================================================
-This work has been published continuously and publicly since
-December 2025. It is defensive prior art: it cannot be patented
-out from under its author by a later filer — the public record
-predates you.
+**Attribution (both lanes):** credit "Tyree Jones (tyofthestarz) — φ² = φ + 1
+framework, prior art from December 2025" and link the source repository
+where practical.
 
-================================================================
-NO WARRANTY
-================================================================
-Provided "as is", without warranty of any kind. The steward is not
-liable for any claim arising from use of this software.
+## LANE 2 — COMMERCIAL (license required)
+
+You need a commercial license from Tyree before: embedding this code or the
+framework in a commercial product or service; training or fine-tuning
+commercial models on this corpus; SaaS, enterprise, or for-profit
+deployment; or any revenue-generating use beyond Lane 1. Terms (scope,
+duration, fee/royalty) are set per deal — contact Tyree to open the
+conversation.
+
+## PRIOR-ART NOTICE
+
+This work has been published continuously and publicly since December 2025.
+It is defensive prior art: it cannot be patented out from under its author
+by a later filer — the public record predates you.
+
+## NO WARRANTY
+
+Provided "as is", without warranty of any kind. The steward is not liable
+for any claim arising from use of this software.
