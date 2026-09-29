@@ -1,11 +1,19 @@
-"""phi_echo_trace.py — Zooniverse trace on the local rail.
+"""phi_hard_lens.py — Zooniverse trace on the local rail.
 Steward: Tyree Jones (tyofthestarz) | 2026-09-29
 Local instrument: hard golden-spiral grid + mirror echo vectors,
 mapped to actual GZ2 Hart16 telescope subjects. No live scraping.
+Data files resolve to the script dir first, then ~/workspace/gz2-phi/.
 """
-import gzip, json, math
+import gzip, json, math, os
 import numpy as np
 import pandas as pd
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_FALLBACK = os.path.expanduser("~/workspace/gz2-phi")
+
+def data_path(name):
+    p = os.path.join(HERE, name)
+    return p if os.path.exists(p) else os.path.join(DATA_FALLBACK, name)
 
 PHI = (1 + math.sqrt(5)) / 2
 LN_PHI = math.log(PHI)
@@ -81,11 +89,11 @@ SPIRAL_FLAG = "t04_spiral_a08_spiral_flag"
 usecols = (["dr7objid", "ra", "dec", SPIRAL_DEB, SPIRAL_FLAG]
            + ARM_DEB + ARM_FLAG + list(WIND.values()))
 print("loading catalog...", flush=True)
-df = pd.read_csv("gz2_hart16.csv.gz", usecols=usecols)
+df = pd.read_csv(data_path("gz2_hart16.csv.gz"), usecols=usecols)
 spir = df[df[SPIRAL_FLAG] == 1].copy()
 print(f"clean spirals: {len(spir)}", flush=True)
 
-res = json.load(open("gz2_phi_results.json"))
+res = json.load(open(data_path("gz2_phi_results.json")))
 cards = []
 cards.append("# ZOONIVERSE TRACE — RAW DATA CARDS")
 cards.append("handle: tyofthestarz | engine: phi echo trace (local rail) | fuel: GZ2 Hart16 debiased catalog, n=239695")
@@ -142,7 +150,7 @@ for k in WIND:
     cards.append(station_md())
     cards.append("")
 
-out = "zooniverse_trace_cards.md"
+out = os.path.join(HERE, "zooniverse_trace_cards.md")
 with open(out, "w") as f:
     f.write("\n".join(cards))
 print(f"wrote {out}: {len(cards)} lines", flush=True)
