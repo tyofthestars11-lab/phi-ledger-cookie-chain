@@ -18,7 +18,7 @@ Field note: 83 submissions already — differentiation is the ledger + the ancho
 - Live Cookie Chain data: slot, epoch, block height, TPS from `rpc.cookiescan.io`
 - Wallet connect: Phantom / Nightly / Solflare (injected provider, keys never leave browser)
 - On-chain interaction: **Anchor a Seal** — user-signed SPL Memo transaction writing the ledger snapshot hash + seal name to Cookie Chain, linked to CookieScan
-- Zero build, static, MIT-licensed, no secrets
+- Zero build, static, dual-licensed (Tyree-Phi-Dual-1.0), no secrets
 
 ## Demo script (2–3 min video, if needed)
 
@@ -27,14 +27,14 @@ Field note: 83 submissions already — differentiation is the ledger + the ancho
 3. Mining panel → live hashrate/shares/workers from SoloPool, auto-refreshes. (1:15–1:40)
 4. Connect wallet (Phantom/Nightly) → COOK balance appears. (1:40–2:00)
 5. Pick a seal → Anchor on Cookie Chain → approve → confirmed signature → open in CookieScan. (2:00–2:45)
-6. Close: "Open source, MIT, built on Cookie Chain's SVM with standard web3.js." (2:45–3:00)
+6. Close: "Open source, dual-licensed (Tyree-Phi-Dual-1.0), built on Cookie Chain's SVM with standard web3.js." (2:45–3:00)
 
 ## Exact submission text (paste into the Earn listing)
 
 > **φ PHI LEDGER — golden-ratio ledger analytics anchored on Cookie Chain**
 >
 > Live app: <LIVE-URL>
-> GitHub: <GITHUB-URL> (MIT)
+> GitHub: <GITHUB-URL> (LicenseRef-Tyree-Phi-Dual-1.0)
 >
 > An analytics dashboard over my public golden-ratio research ledger (45 seals, 428 rung-encoded entries, SHA-256 11f521a7…) plus live Bitcoin Cash mining telemetry from my 3 SoloPool workers — all running against Cookie Chain's SVM.
 >

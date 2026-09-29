@@ -37,4 +37,16 @@ See [DEPLOY.md](DEPLOY.md) — push to GitHub, then Netlify Drop, Vercel import,
 
 ## License
 
-MIT — Tyree Jones (tyofthestarz)
+SPDX-License-Identifier: `LicenseRef-Tyree-Phi-Dual-1.0` — Tyree Phi Dual License 1.0.
+Steward: Tyree Jones (tyofthestarz); prior art public since December 2025.
+Not OSI-approved. Attorney review recommended before legal reliance.
+
+- **Lane 1 — free with attribution:** academic research, education, personal
+  study, teaching, non-commercial open-source work, and federal/agency
+  integration.
+- **Lane 2 — commercial license required:** commercial products, commercial
+  model training — including AI scraping of this repository to train or
+  fine-tune commercial models — SaaS, enterprise, or any revenue-generating
+  deployment. Terms per deal; contact Tyree to open the conversation.
+
+Full license text and machine-readable metadata: [LICENSE](LICENSE).
