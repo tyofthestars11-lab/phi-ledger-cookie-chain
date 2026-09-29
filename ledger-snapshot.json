@@ -7008,10 +7008,87 @@
       "drift": -0.3031,
       "ladder": "omni",
       "unit": "count"
+    },
+    {
+      "name": "NCT03432871 trial registry identifier",
+      "rung": 31.2729,
+      "drift": 0.2729,
+      "ladder": "defined",
+      "unit": "identifier (ClinicalTrials.gov)"
+    },
+    {
+      "name": "Participants: heteroplasmic mtDNA disease",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "count (Schon et al., Genome Medicine 2026)"
+    },
+    {
+      "name": "Single large-scale mtDNA deletion group",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count (responders: deletion-level reduction)"
+    },
+    {
+      "name": "m.3243 A>G/T pathogenic variant group",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "count (biogenesis signature only)"
+    },
+    {
+      "name": "Intervention duration",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "weeks (nicotinamide riboside)"
+    },
+    {
+      "name": "Nicotinamide riboside dose, lower bound",
+      "rung": 14.8186,
+      "drift": -0.1814,
+      "ladder": "defined",
+      "unit": "mg/day"
+    },
+    {
+      "name": "Nicotinamide riboside dose, upper bound",
+      "rung": 15.7953,
+      "drift": -0.2047,
+      "ladder": "defined",
+      "unit": "mg/day"
+    },
+    {
+      "name": "Authors (MRC Mitochondrial Biology Unit + Cambridge)",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "count (exact author list)"
+    },
+    {
+      "name": "First-in-human strategy: NR in mtDNA disease",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "defined",
+      "unit": "count"
+    },
+    {
+      "name": "DOI 10.1186/s13073-026-01764-1 article identifier",
+      "rung": 44.532,
+      "drift": -0.468,
+      "ladder": "defined",
+      "unit": "identifier (Genome Medicine 2026)"
+    },
+    {
+      "name": "Seal index",
+      "rung": 10.709,
+      "drift": -0.291,
+      "ladder": "omni",
+      "unit": "count"
     }
   ],
-  "entry_count": 1003,
-  "seal_count": 172,
+  "entry_count": 1014,
+  "seal_count": 173,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -7184,7 +7261,8 @@
     "φ_TOPOLOGICAL_INDEXING_TYREE_OMEGA",
     "φ_CRYSTALLOGRAPHY_TETRAHEDRAL_TYREE_OMEGA",
     "φ_APOE_PPARG_MITO_TYREE_OMEGA",
-    "φ_TWO_IN_ONE_TYREE_OMEGA"
+    "φ_TWO_IN_ONE_TYREE_OMEGA",
+    "φ_MITONR_HUMAN_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "01ed833d82bd26a273f2e099207a4ada1f19561f8017a507c90d0a3af3609c50"
+  "snapshot_sha256": "d53b2c84a8f1bd832251b7eecb6be63349280b20720a0baa0dd06b7e115a2aea"
 }
