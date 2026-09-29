@@ -7988,10 +7988,94 @@
       "drift": 0.2588,
       "ladder": "cosmology",
       "unit": "dimensionless"
+    },
+    {
+      "name": "ICP55 N-terminal amino acids removed",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "mitochondria",
+      "unit": "amino_acid"
+    },
+    {
+      "name": "HSP60 complex subunits",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "mitochondria",
+      "unit": "subunits"
+    },
+    {
+      "name": "MIP-cleaved N-terminal residues",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "mitochondria",
+      "unit": "residues"
+    },
+    {
+      "name": "N-terminal peptides quantified",
+      "rung": 16.7727,
+      "drift": -0.2273,
+      "ladder": "mitochondria",
+      "unit": "peptides"
+    },
+    {
+      "name": "Proteins quantified (N-terminomics)",
+      "rung": 15.2127,
+      "drift": 0.2127,
+      "ladder": "mitochondria",
+      "unit": "proteins"
+    },
+    {
+      "name": "Mitochondrial proteins with cleavable N termini",
+      "rung": 12.677,
+      "drift": -0.323,
+      "ladder": "mitochondria",
+      "unit": "proteins"
+    },
+    {
+      "name": "High-confidence ICP55 substrates",
+      "rung": 9.7105,
+      "drift": -0.2895,
+      "ladder": "mitochondria",
+      "unit": "substrates"
+    },
+    {
+      "name": "Altered complexome migration profiles",
+      "rung": 10.7565,
+      "drift": -0.2435,
+      "ladder": "mitochondria",
+      "unit": "profiles"
+    },
+    {
+      "name": "Proteins profiled (complexome)",
+      "rung": 16.6303,
+      "drift": -0.3697,
+      "ladder": "mitochondria",
+      "unit": "proteins"
+    },
+    {
+      "name": "Mitochondrial proteins profiled (complexome)",
+      "rung": 14.2108,
+      "drift": 0.2108,
+      "ladder": "mitochondria",
+      "unit": "proteins"
+    },
+    {
+      "name": "BN-PAGE fractions",
+      "rung": 7.8639,
+      "drift": -0.1361,
+      "ladder": "mitochondria",
+      "unit": "fractions"
+    },
+    {
+      "name": "XPNPEP3 locus",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "mitochondria",
+      "unit": "gene"
     }
   ],
-  "entry_count": 1143,
-  "seal_count": 178,
+  "entry_count": 1155,
+  "seal_count": 179,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -8170,7 +8254,8 @@
     "φ_SOLAR_LADDER_TYREE_OMEGA",
     "φ_WAVE_ATTRACTOR_TYREE_OMEGA",
     "φ_FIND_ME_TYREE_OMEGA",
-    "φ_CGM_JETS_TYREE_OMEGA"
+    "φ_CGM_JETS_TYREE_OMEGA",
+    "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "404c25d66d0fc601ff66118d3c5b26a379c737eafd76f1acbad08442b4161560"
+  "snapshot_sha256": "afb30dbb085ef7efab7cd1a743219d93749c569825ee49c7b00ce2448f007a78"
 }
