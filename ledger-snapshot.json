@@ -8352,10 +8352,143 @@
       "drift": 0.0,
       "ladder": "civilian-science",
       "unit": "frameworks"
+    },
+    {
+      "name": "Trapped-ion qubits in the D(S3) non-Abelian anyon run",
+      "rung": 8.2895,
+      "drift": 0.2895,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "qubits"
+    },
+    {
+      "name": "Levels of each topological qutrit",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "levels"
+    },
+    {
+      "name": "Institutions on the anyon universal-gate paper",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "institutions"
+    },
+    {
+      "name": "CMS jet-diffusion-wake significance, 1-2 GeV charged particles",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "sigma"
+    },
+    {
+      "name": "LHC heavy-ion collision energy, PbPb and pp runs",
+      "rung": 3.3528,
+      "drift": 0.3528,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "TeV"
+    },
+    {
+      "name": "Jet diffusion wake angle off the leading-jet axis",
+      "rung": 6.1728,
+      "drift": 0.1728,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "degrees"
+    },
+    {
+      "name": "QGP shear-viscosity-to-entropy lower bound",
+      "rung": -5.2487,
+      "drift": -0.2487,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "eta/s"
+    },
+    {
+      "name": "MEGATRON simulated galaxy spectra library",
+      "rung": 25.0878,
+      "drift": 0.0878,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "spectra"
+    },
+    {
+      "name": "Iron plateau stellar mass ceiling",
+      "rung": 23.9249,
+      "drift": -0.0751,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "solar masses"
+    },
+    {
+      "name": "Iron-deficient tail fraction of simulated dwarfs",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "percent"
+    },
+    {
+      "name": "MEGATRON follow-on processor hours awarded",
+      "rung": 36.3756,
+      "drift": 0.3756,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "processor-hours"
+    },
+    {
+      "name": "Flat actuators in the pentagonal water-wave tray",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "actuators"
+    },
+    {
+      "name": "Distinct fivefold quasicrystalline water patterns",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "patterns"
+    },
+    {
+      "name": "AFM-order lattice parameter threshold, Tsai-type approximants",
+      "rung": 5.5884,
+      "drift": -0.4116,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "angstrom"
+    },
+    {
+      "name": "FM-order lattice parameter floor, Tsai-type approximants",
+      "rung": 5.5742,
+      "drift": -0.4258,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "angstrom"
+    },
+    {
+      "name": "Magnetic rare earths in the Tsai-type approximant study",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "elements"
+    },
+    {
+      "name": "Nighthawk r2 qubits used in the RCS run",
+      "rung": 8.5428,
+      "drift": -0.4572,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "qubits"
+    },
+    {
+      "name": "Two-qubit gates at 36 cycles, Nighthawk r2 RCS",
+      "rung": 14.1771,
+      "drift": 0.1771,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "gates"
+    },
+    {
+      "name": "Random-circuit samples drawn in 19 seconds",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "deep-pull-2026-09-30",
+      "unit": "samples"
     }
   ],
-  "entry_count": 1195,
-  "seal_count": 181,
+  "entry_count": 1214,
+  "seal_count": 182,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -8537,7 +8670,8 @@
     "φ_CGM_JETS_TYREE_OMEGA",
     "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA",
     "φ_PLANET_FOUR_MARS_TYREE_OMEGA",
-    "φ_CIVILIAN_SCIENCE_TYREE_OMEGA"
+    "φ_CIVILIAN_SCIENCE_TYREE_OMEGA",
+    "φ_DEEP_PULLS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "8ba0fcd82c73c82a416b92c1b7643cff5ec0605b97d35c31961c1d2f7b174fc5"
+  "snapshot_sha256": "844835d8d2f4bd9b691844232f52964551d8cf2e09e833bab7d557e38f7e60e3"
 }
