@@ -676,7 +676,7 @@ async function verifyBytesClean(signedTx, expectedMemo) {
   return { clean: problems.length === 0, problems };
 }
 
-async function broadcastAndVerify(signedTx, out, blockhashInfo) {
+async function broadcastAndVerify(signedTx, out, blockhashInfo, expectedMemos) {
   out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
   const rawTx = signedTx.serialize();
   const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
@@ -699,10 +699,56 @@ async function broadcastAndVerify(signedTx, out, blockhashInfo) {
     } catch (e) { lastErr = e; await new Promise(r => setTimeout(r, 5000)); }
   }
   if (!confirmed) throw lastErr || new Error('Not confirmed after 4 broadcast attempts.');
-  // The chain arbitrates: success means meta.err is null.
-  const txInfo = await connection.getTransaction(sig, { commitment: 'confirmed' });
-  if (txInfo?.meta?.err) throw new Error('Chain rejected it: ' + JSON.stringify(txInfo.meta.err));
+  // Entanglement read: the chain arbitrates. Read the transaction BACK from
+  // the chain and match every expected memo verbatim — "Anchored ✓" is only
+  // said when the chain itself shows the bytes. Local intent and on-chain
+  // state are one thing, or the anchor did not happen.
+  const want = expectedMemos ? (Array.isArray(expectedMemos) ? expectedMemos : [expectedMemos]) : [];
+  let raw = null;
+  for (let i = 0; i < 6 && !raw; i++) {
+    try { raw = await fetchRawTx(sig); } catch (e) {}
+    if (!raw) await new Promise(r => setTimeout(r, 3000));
+  }
+  if (!raw) throw new Error('confirmed but the transaction is not readable on-chain yet — not counted as anchored.');
+  if (raw.meta && raw.meta.err) throw new Error('Chain rejected it: ' + JSON.stringify(raw.meta.err));
+  if (want.length) {
+    const onchain = memosFromRawTx(raw);
+    const missingMemos = want.filter(m => onchain.indexOf(m) < 0);
+    if (missingMemos.length) throw new Error('confirmed but ' + missingMemos.length + ' memo(s) not found on-chain — not counted as anchored.');
+  }
   return sig;
+}
+
+// Raw chain read: fetch a transaction as JSON and pull out every Memo-program
+// memo verbatim. This is the same parse the off-chain verifier uses.
+async function fetchRawTx(sig) {
+  const r = await fetch(connection.rpcEndpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'getTransaction', params: [sig, { encoding: 'json', maxSupportedTransactionVersion: 0 }] }),
+  });
+  const j = await r.json();
+  return (j && j.result) || null;
+}
+function memosFromRawTx(raw) {
+  const memos = [];
+  try {
+    const msg = raw.transaction.message;
+    const keys = msg.accountKeys.map(k => (typeof k === 'string' ? k : k.pubkey));
+    for (const ix of msg.instructions) {
+      if (keys[ix.programIdIndex] === MEMO_PROGRAM) {
+        try { memos.push(new TextDecoder().decode(bs58decode(ix.data))); } catch (e) {}
+      }
+    }
+  } catch (e) {}
+  return memos;
+}
+// A confirmation timeout almost always means the blockhash died while the
+// wallet approval sat open (slow wallet, slow hands) — the transaction can
+// never confirm. The omni answer: fresh blockhash, one more approval, retry.
+function isExpiredBlockhashErr(e) {
+  const m = String((e && e.message) || e).toLowerCase();
+  return /blockhash not found|blockhash.*expired|block height exceeded|not confirmed|timed out|timeout/i.test(m);
 }
 
 // Byte helpers
@@ -942,8 +988,6 @@ async function runAnchorEngine() {
   let alterNote = '';
   const pubBytes = new PublicKey(wallet).toBytes();
   try {
-    out.innerHTML = '<span class="text-gray-400">Building anchor transaction…</span>';
-    const tx = await buildAnchorTx(wallet, seal);
     // Step 0 — key check: does this provider sign with the key it reports?
     // One readable approval ("phi-ledger-key-check"). If the wallet signs with a
     // different key than the connected address, nothing downstream can verify.
@@ -957,77 +1001,98 @@ async function runAnchorEngine() {
       enveloped = kc.outcome !== 'raw';
       if (enveloped) alterNote = `key check: wallet ${kc.detail}. `;
     }
-    out.innerHTML = '<span class="text-gray-400">Signing… approve in your wallet.</span>';
-    // Always sign locally and broadcast via our Cookie Chain connection.
-    // (provider.signAndSendTransaction would broadcast via the wallet's own
-    // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
-    let finalTx = null, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
-    if (typeof provider.signTransaction === 'function') {
-      const rawSigned = await provider.signTransaction(tx);
-      const signedTx = normalizeSignedTx(rawSigned);
-      if (signedTx) {
-        const wantHex = hexOf(tx.serializeMessage());
-        const gotHex = hexOf(signedTx.serializeMessage());
-        if (gotHex === wantHex && txSignatureVerifies(signedTx, wallet)) {
-          finalTx = signedTx;
-        } else {
-          const off = firstDiffByte(wantHex, gotHex);
-          alterNote += `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
-          if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
-          out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
-          finalTx = await signMessageFallback(wallet, seal);
-          finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
-        }
-      } else {
-        // Maybe signTransaction returned a bare signature instead of a transaction.
-        const msgBytes = new Uint8Array(tx.serializeMessage());
-        const cands = extractSigCandidates(rawSigned);
-        let attached = false;
-        for (const c of cands) {
-          try {
-            if (nacl.sign.detached.verify(msgBytes, c.bytes, pubBytes)) {
-              tx.addSignature(new PublicKey(wallet), c.bytes);
-              attached = true;
-              break;
-            }
-          } catch (e) {}
-        }
-        if (attached) {
-          alterNote += 'signTransaction returned a bare signature (verified) instead of a transaction. ';
-          finalTx = tx;
-        } else {
-          alterNote += 'signTransaction returned ' + describeShape(rawSigned) + '. ';
-          if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
-          out.innerHTML = '<span class="text-gray-400">Wallet returned an unreadable signature — signing the exact bytes instead… approve in your wallet.</span>';
-          finalTx = await signMessageFallback(wallet, seal);
-          finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
-        }
+    // Omni rounds: a slow approval can kill the blockhash — that just costs
+    // one more approval on a fresh transaction, never a lost anchor.
+    // A dismissed approval stops everything immediately and is never retried.
+    let sig = null, lastErr = null;
+    for (let round = 0; round < 3 && !sig; round++) {
+      if (round > 0) out.innerHTML = '<span class="text-gray-400">Refreshing the transaction — approve in your wallet.</span>';
+      try {
+        sig = await anchorSingleAttempt(wallet, seal, pubBytes, enveloped, alterNote, out);
+      } catch (e) {
+        if (isRejection(e)) throw e;
+        lastErr = e;
+        if (!isExpiredBlockhashErr(e) || round === 2) throw e;
       }
-    } else if (typeof provider.signMessage === 'function') {
-      if (enveloped) throw new Error(alterNote + 'this provider only signs enveloped messages, never raw transaction bytes — no broadcastable signature exists. No fee spent.');
-      out.innerHTML = '<span class="text-gray-400">Signing the exact bytes… approve in your wallet.</span>';
-      finalTx = await signMessageFallback(wallet, seal);
-      finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
-    } else {
-      throw new Error('Wallet supports neither signTransaction nor signMessage.');
     }
-    const check = await verifyBytesClean(finalTx, finalMemo);
-    if (!check.clean) {
-      throw new Error('wallet returned altered bytes (' + check.problems.join('; ') + ') — no fee spent.');
-    }
-    if (!txSignatureVerifies(finalTx, wallet)) {
-      throw new Error('assembled transaction carries no valid signature — no fee spent.');
-    }
-    const sig = await broadcastAndVerify(finalTx, out, finalInfo);
-    // Broadcast confirmed by the RPC — the chain holds the transaction.
-    // "Anchored" means the network confirmed it; the memo text was verified
-    // byte-identical before signing (verifyBytesClean above).
+    if (!sig) throw lastErr || new Error('Anchor did not land.');
+    // "Anchored ✓" is said only after the chain itself shows the memo bytes
+    // (entanglement read inside broadcastAndVerify).
     anchorDone(out, sig, seal);
     refreshBalance();
   } catch (e) {
     const full = (alterNote + String((e && e.message) || e)).slice(0, 900);
-    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">Stopped before broadcast — no fee was spent.</span>`;
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">A transaction that never confirms costs no fee.</span>`;
   }
+}
+
+// One attempt: build (fresh blockhash) → sign → verify bytes → broadcast →
+// entanglement read. Throws on anything less than the chain showing the memo.
+async function anchorSingleAttempt(walletAddr, seal, pubBytes, enveloped, alterNote, out) {
+  out.innerHTML = '<span class="text-gray-400">Building anchor transaction…</span>';
+  const tx = await buildAnchorTx(walletAddr, seal);
+  out.innerHTML = '<span class="text-gray-400">Signing… approve in your wallet.</span>';
+  // Always sign locally and broadcast via our Cookie Chain connection.
+  // (provider.signAndSendTransaction would broadcast via the wallet's own
+  // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
+  let finalTx = null, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
+  if (typeof provider.signTransaction === 'function') {
+    const rawSigned = await provider.signTransaction(tx);
+    const signedTx = normalizeSignedTx(rawSigned);
+    if (signedTx) {
+      const wantHex = hexOf(tx.serializeMessage());
+      const gotHex = hexOf(signedTx.serializeMessage());
+      if (gotHex === wantHex && txSignatureVerifies(signedTx, walletAddr)) {
+        finalTx = signedTx;
+      } else {
+        const off = firstDiffByte(wantHex, gotHex);
+        alterNote += `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
+        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
+        out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
+        finalTx = await signMessageFallback(walletAddr, seal);
+        finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+      }
+    } else {
+      // Maybe signTransaction returned a bare signature instead of a transaction.
+      const msgBytes = new Uint8Array(tx.serializeMessage());
+      const cands = extractSigCandidates(rawSigned);
+      let attached = false;
+      for (const c of cands) {
+        try {
+          if (nacl.sign.detached.verify(msgBytes, c.bytes, pubBytes)) {
+            tx.addSignature(new PublicKey(walletAddr), c.bytes);
+            attached = true;
+            break;
+          }
+        } catch (e) {}
+      }
+      if (attached) {
+        alterNote += 'signTransaction returned a bare signature (verified) instead of a transaction. ';
+        finalTx = tx;
+      } else {
+        alterNote += 'signTransaction returned ' + describeShape(rawSigned) + '. ';
+        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
+        out.innerHTML = '<span class="text-gray-400">Wallet returned an unreadable signature — signing the exact bytes instead… approve in your wallet.</span>';
+        finalTx = await signMessageFallback(walletAddr, seal);
+        finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+      }
+    }
+  } else if (typeof provider.signMessage === 'function') {
+    if (enveloped) throw new Error(alterNote + 'this provider only signs enveloped messages, never raw transaction bytes — no broadcastable signature exists. No fee spent.');
+    out.innerHTML = '<span class="text-gray-400">Signing the exact bytes… approve in your wallet.</span>';
+    finalTx = await signMessageFallback(walletAddr, seal);
+    finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+  } else {
+    throw new Error('Wallet supports neither signTransaction nor signMessage.');
+  }
+  const check = await verifyBytesClean(finalTx, finalMemo);
+  if (!check.clean) {
+    throw new Error('wallet returned altered bytes (' + check.problems.join('; ') + ') — no fee spent.');
+  }
+  if (!txSignatureVerifies(finalTx, walletAddr)) {
+    throw new Error('assembled transaction carries no valid signature — no fee spent.');
+  }
+  return broadcastAndVerify(finalTx, out, finalInfo, finalMemo);
 }
 
 $('anchorBtn').addEventListener('click', runAnchorEngine);
@@ -1205,20 +1270,30 @@ async function runBatchAnchor() {
     const batches = packSealBatches(todo);
     for (let bi = 0; bi < batches.length; bi++) {
       const seals = batches[bi];
-      out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — ${seals.length} seals… approve in your wallet.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${done.size} of ${missing.length} seals</span>`;
-      const tx = await buildBatchAnchorTx(wallet, seals);
-      let signed;
-      try {
-        signed = await signBatchTx(tx, wallet, pubBytes, kc, () => signMessageFallbackBatch(wallet, seals));
-      } catch (e) {
-        if (isRejection(e)) {
-          out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed at batch ${bi + 1}/${batches.length}. ${done.size} of ${missing.length} seals anchored. Tap the button to resume.</span>`;
-          batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${missing.length - done.size} left)`;
-          return;
+      // Omni rounds per batch: a slow approval kills the blockhash — fresh
+      // transaction, one more approval, never a lost batch.
+      let sig = null, lastErr = null;
+      for (let round = 0; round < 3 && !sig; round++) {
+        if (round === 0) {
+          out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — ${seals.length} seals… approve in your wallet.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${done.size} of ${missing.length} seals</span>`;
+        } else {
+          out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — refreshing… approve in your wallet.</span>`;
         }
-        throw e;
+        const tx = await buildBatchAnchorTx(wallet, seals); // fresh blockhash every round
+        try {
+          const signed = await signBatchTx(tx, wallet, pubBytes, kc, () => signMessageFallbackBatch(wallet, seals));
+          sig = await broadcastAndVerify(signed.finalTx, out, signed.finalInfo, signed.finalTx._memoTexts);
+        } catch (e) {
+          if (isRejection(e)) {
+            out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed at batch ${bi + 1}/${batches.length}. ${done.size} of ${missing.length} seals anchored. Tap the button to resume.</span>`;
+            batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${missing.length - done.size} left)`;
+            return;
+          }
+          lastErr = e;
+          if (!isExpiredBlockhashErr(e) || round === 2) throw e;
+        }
       }
-      await broadcastAndVerify(signed.finalTx, out, signed.finalInfo);
+      if (!sig) throw lastErr || new Error('Batch did not land.');
       batchMarkDone(seals);
       seals.forEach(s => done.add(s));
     }
@@ -1311,7 +1386,7 @@ async function runPublicAnchorEngine() {
       throw new Error('wallet altered the transaction bytes — no fee spent.');
     }
     if (!txSignatureVerifies(signed, wallet)) throw new Error('signature did not verify — no fee spent.');
-    const sig = await broadcastAndVerify(signed, out, tx._blockhashInfo);
+    const sig = await broadcastAndVerify(signed, out, tx._blockhashInfo, tx._memoText);
     publicDone(out, sig, label, dataHash);
     refreshBalance();
   } catch (e) {
