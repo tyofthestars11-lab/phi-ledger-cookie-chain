@@ -8912,10 +8912,59 @@
       "drift": -0.4353,
       "ladder": "cmb-quantum-echoes-2026-10-01",
       "unit": "amplitude"
+    },
+    {
+      "name": "φ (golden ratio)",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "ratio"
+    },
+    {
+      "name": "φ² (phi squared)",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden angle (theta_phi)",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "degrees"
+    },
+    {
+      "name": "d-wave order parameter (four-fold sign structure)",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "fold"
+    },
+    {
+      "name": "compact read-closing number (seven)",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "count"
+    },
+    {
+      "name": "TON618 black hole mass (TON618 mass)",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "solar masses"
+    },
+    {
+      "name": "TON618 luminosity (TON618 luminosity)",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "many-body-phase-microscope-2026-10-01",
+      "unit": "W"
     }
   ],
-  "entry_count": 1275,
-  "seal_count": 183,
+  "entry_count": 1282,
+  "seal_count": 184,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9099,7 +9148,8 @@
     "φ_PLANET_FOUR_MARS_TYREE_OMEGA",
     "φ_CIVILIAN_SCIENCE_TYREE_OMEGA",
     "φ_DEEP_PULLS_TYREE_OMEGA",
-    "φ_ENCELADUS_MICROBIAL_QUANTUM_TYREE_OMEGA"
+    "φ_ENCELADUS_MICROBIAL_QUANTUM_TYREE_OMEGA",
+    "φ_MANY_BODY_PHASE_MICROSCOPE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "696beddec754144c2956d2ecda6d0de5fc6fe495a1680df93842c3870f658cae"
+  "snapshot_sha256": "95ec5358ba9918e28e6ec4e816ca15a9c6cbe27ebbb86ff570fea6d6416c4ef0"
 }
