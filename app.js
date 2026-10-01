@@ -219,6 +219,8 @@ $('connectBtn').addEventListener('click', async () => {
     $('connectBtn').textContent = 'Connected';
     $('connectBtn').disabled = true;
     $('anchorBtn').disabled = false;
+    $('batchAnchorBtn').disabled = false;
+    refreshBatchLabel();
     $('pubAnchorBtn').disabled = false;
     refreshBalance();
     // Nightly on custom network: remind user
@@ -655,16 +657,20 @@ async function handleWalletReturn() {
 /* ---------- Anchor engine ---------- */
 function shortErr(e) { return String((e && e.message) || e).slice(0, 220); }
 
-// The byte rung: signed bytes must be EXACTLY what we built — one memo
-// instruction, our data verbatim, every program present on-chain.
-async function verifyBytesClean(signedTx, expectedMemoText) {
+// The byte rung: signed bytes must be EXACTLY what we built — our memo
+// instruction(s), our data verbatim, every program present on-chain.
+// expectedMemo: one string (single anchor) or an array (batch anchor).
+async function verifyBytesClean(signedTx, expectedMemo) {
+  const expected = Array.isArray(expectedMemo) ? expectedMemo : [expectedMemo];
   const problems = [];
-  if (signedTx.instructions.length !== 1) problems.push('instruction count ' + signedTx.instructions.length + ' (expected 1)');
-  const ix = signedTx.instructions[0];
-  if (!ix || ix.programId.toString() !== MEMO_PROGRAM) problems.push('foreign program ' + short(ix ? ix.programId.toString() : '?', 8));
-  let dataText = '';
-  try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
-  if (dataText !== expectedMemoText) problems.push('memo data altered');
+  if (signedTx.instructions.length !== expected.length) problems.push('instruction count ' + signedTx.instructions.length + ' (expected ' + expected.length + ')');
+  for (let i = 0; i < signedTx.instructions.length; i++) {
+    const ix = signedTx.instructions[i];
+    if (!ix || ix.programId.toString() !== MEMO_PROGRAM) { problems.push('foreign program at ix ' + i); continue; }
+    let dataText = '';
+    try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
+    if (dataText !== expected[i]) problems.push('memo data altered at ix ' + i);
+  }
   const { missing } = await missingPrograms(signedTx);
   if (missing.length > 0) problems.push('missing program ' + missing.map(m => short(m, 8)).join(','));
   return { clean: problems.length === 0, problems };
@@ -1025,6 +1031,217 @@ async function runAnchorEngine() {
 }
 
 $('anchorBtn').addEventListener('click', runAnchorEngine);
+
+/* ---------- Batch anchor: every missing seal, a few approvals ----------
+ * "All 185 should be anchored." One transaction carries several seal memos
+ * (packed under the 1232-byte wire limit), so 123 missing seals land in ~18
+ * wallet approvals instead of 123 — and ~18 tiny fees instead of 123.
+ * Same byte-rung discipline as the single anchor: every memo verified
+ * verbatim before signing, the signature verified before broadcast, chain
+ * confirmation per transaction. Progress persists in localStorage — pause
+ * any time (including a dismissed approval), resume where it stopped.
+ * The memo grammar is unchanged: one PHI-LEDGER|seal memo per seal, several
+ * memos per transaction. */
+const BATCH_MSG_CAP = 1150; // serialized-message ceiling; +65B signature stays under 1232
+function batchMemoText(seal) {
+  return `PHI-LEDGER|seal=${seal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
+}
+async function buildBatchAnchorTx(walletAddr, seals) {
+  if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
+  const tx = new Transaction();
+  const memoTexts = seals.map(batchMemoText);
+  for (const memoText of memoTexts) {
+    tx.add(new TransactionInstruction({
+      keys: [{ pubkey: new PublicKey(walletAddr), isSigner: true, isWritable: false }],
+      programId: new PublicKey(MEMO_PROGRAM),
+      data: new TextEncoder().encode(memoText),
+    }));
+  }
+  tx.feePayer = new PublicKey(walletAddr);
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
+  tx.recentBlockhash = blockhash;
+  tx._blockhashInfo = { blockhash, lastValidBlockHeight };
+  tx._memoTexts = memoTexts;
+  return tx;
+}
+function packSealBatches(seals) {
+  // Greedy pack: keep adding seal memos while the estimated serialized
+  // message stays under cap. Deterministic — same list, same batches.
+  const est = arr => 3 + 65 + 32 + arr.reduce((n, s) => n + 5 + new TextEncoder().encode(batchMemoText(s)).length, 0);
+  const batches = [];
+  let cur = [];
+  for (const s of seals) {
+    if (cur.length && est(cur.concat([s])) > BATCH_MSG_CAP) { batches.push(cur); cur = []; }
+    cur.push(s);
+  }
+  if (cur.length) batches.push(cur);
+  return batches;
+}
+async function signMessageFallbackBatch(walletAddr, seals) {
+  // The wallet signs the EXACT message bytes; the signature is verified with
+  // ed25519 before it is ever attached. Fresh transaction, fresh blockhash.
+  if (typeof provider.signMessage !== 'function') {
+    throw new Error('Wallet rewrote the transaction bytes and does not support raw message signing.');
+  }
+  const tx2 = await buildBatchAnchorTx(walletAddr, seals);
+  const msgBytes = new Uint8Array(tx2.serializeMessage());
+  const r = await provider.signMessage(msgBytes);
+  const cands = extractSigCandidates(r);
+  const pub = new PublicKey(walletAddr).toBytes();
+  for (const c of cands) {
+    let ok = false;
+    try { ok = nacl.sign.detached.verify(msgBytes, c.bytes, pub); } catch (e) {}
+    if (ok) {
+      tx2.addSignature(new PublicKey(walletAddr), c.bytes); // pre-verified: cannot throw
+      return tx2;
+    }
+  }
+  throw new Error(divergenceReport(msgBytes, cands, r, pub));
+}
+// Sign one batch transaction with the same dispatch as the single anchor:
+// signTransaction when it behaves, exact-bytes fallback when it rewrites.
+// buildFresh rebuilds the transaction (fresh blockhash) for the fallback path.
+async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
+  let alterNote = '';
+  const enveloped = kc && kc.outcome !== 'raw';
+  let finalTx = null, finalInfo = tx._blockhashInfo;
+  if (typeof provider.signTransaction === 'function') {
+    const rawSigned = await provider.signTransaction(tx);
+    const signedTx = normalizeSignedTx(rawSigned);
+    if (signedTx) {
+      const wantHex = hexOf(tx.serializeMessage());
+      const gotHex = hexOf(signedTx.serializeMessage());
+      if (gotHex === wantHex && txSignatureVerifies(signedTx, walletAddr)) {
+        finalTx = signedTx;
+      } else {
+        const off = firstDiffByte(wantHex, gotHex);
+        alterNote += `signTransaction altered the bytes (first diff at byte ${off}). `;
+        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too — no broadcastable signature exists. No fee spent.');
+        finalTx = await buildFresh();
+        finalInfo = finalTx._blockhashInfo;
+      }
+    } else {
+      const msgBytes = new Uint8Array(tx.serializeMessage());
+      const cands = extractSigCandidates(rawSigned);
+      let attached = false;
+      for (const c of cands) {
+        try {
+          if (nacl.sign.detached.verify(msgBytes, c.bytes, pubBytes)) {
+            tx.addSignature(new PublicKey(walletAddr), c.bytes);
+            attached = true;
+            break;
+          }
+        } catch (e) {}
+      }
+      if (attached) {
+        alterNote += 'signTransaction returned a bare signature (verified). ';
+        finalTx = tx;
+      } else {
+        alterNote += 'signTransaction returned ' + describeShape(rawSigned) + '. ';
+        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too — no broadcastable signature exists. No fee spent.');
+        finalTx = await buildFresh();
+        finalInfo = finalTx._blockhashInfo;
+      }
+    }
+  } else if (typeof provider.signMessage === 'function') {
+    if (enveloped) throw new Error(alterNote + 'this provider only signs enveloped messages — no broadcastable signature exists. No fee spent.');
+    finalTx = await buildFresh();
+    finalInfo = finalTx._blockhashInfo;
+  } else {
+    throw new Error('Wallet supports neither signTransaction nor signMessage.');
+  }
+  const check = await verifyBytesClean(finalTx, finalTx._memoTexts || tx._memoTexts);
+  if (!check.clean) throw new Error(alterNote + 'wallet returned altered bytes (' + check.problems.join('; ') + ') — no fee spent.');
+  if (!txSignatureVerifies(finalTx, walletAddr)) throw new Error(alterNote + 'assembled transaction carries no valid signature — no fee spent.');
+  return { finalTx, finalInfo, alterNote };
+}
+let batchRunning = false;
+function batchDoneList() {
+  try { const v = JSON.parse(lsGet('batchAnchoredV1') || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; }
+}
+function batchMarkDone(seals) {
+  const done = new Set(batchDoneList());
+  seals.forEach(s => done.add(s));
+  lsSet('batchAnchoredV1', JSON.stringify([...done]));
+}
+async function loadMissingSeals() {
+  if (window._missingSeals) return window._missingSeals;
+  const r = await fetch('missing_seals.json?v=1');
+  if (!r.ok) throw new Error('missing_seals.json not found — reload the page.');
+  window._missingSeals = await r.json();
+  return window._missingSeals;
+}
+function isRejection(e) {
+  const m = String((e && e.message) || e).toLowerCase();
+  return /reject|denied|cancel|dismiss|user closed|declined/.test(m);
+}
+async function runBatchAnchor() {
+  if (!provider || !wallet) return;
+  if (batchRunning) return;
+  const out = $('batchOut');
+  out.classList.remove('hidden');
+  const btn = $('batchAnchorBtn');
+  batchRunning = true;
+  btn.disabled = true;
+  const pubBytes = new PublicKey(wallet).toBytes();
+  try {
+    if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
+    const missing = await loadMissingSeals();
+    const done = new Set(batchDoneList());
+    const todo = missing.filter(s => !done.has(s));
+    if (!todo.length) {
+      out.innerHTML = '<span class="text-green-400">All missing seals already anchored ✓</span>';
+      batchRunning = false; btn.disabled = false; btn.textContent = 'Anchor all missing';
+      return;
+    }
+    // Key check once for the whole run — one approval, not one per batch.
+    let kc = window._batchKeyCheck || null;
+    if (!kc && typeof provider.signMessage === 'function') {
+      out.innerHTML = '<span class="text-gray-400">Checking the wallet key… approve once in your wallet.</span>';
+      kc = await walletKeyCheck(pubBytes);
+      if (kc.outcome === 'none') throw new Error('key check FAILED: ' + kc.detail + ' — no fee spent.');
+      window._batchKeyCheck = kc;
+    }
+    const batches = packSealBatches(todo);
+    for (let bi = 0; bi < batches.length; bi++) {
+      const seals = batches[bi];
+      out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — ${seals.length} seals… approve in your wallet.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${done.size} of ${missing.length} seals</span>`;
+      const tx = await buildBatchAnchorTx(wallet, seals);
+      let signed;
+      try {
+        signed = await signBatchTx(tx, wallet, pubBytes, kc, () => signMessageFallbackBatch(wallet, seals));
+      } catch (e) {
+        if (isRejection(e)) {
+          out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed at batch ${bi + 1}/${batches.length}. ${done.size} of ${missing.length} seals anchored. Tap the button to resume.</span>`;
+          batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${missing.length - done.size} left)`;
+          return;
+        }
+        throw e;
+      }
+      await broadcastAndVerify(signed.finalTx, out, signed.finalInfo);
+      batchMarkDone(seals);
+      seals.forEach(s => done.add(s));
+    }
+    const left = missing.length - done.size;
+    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${done.size} of ${missing.length} seals on-chain in ${batches.length} transactions.</span>` + (left === 0 ? '<br><span class="gold">All 185 seals anchored.</span>' : '');
+    refreshBalance();
+    batchRunning = false; btn.disabled = false;
+    btn.textContent = left ? `Resume anchoring (${left} left)` : 'Anchor all missing';
+  } catch (e) {
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">Progress is saved — tap the button to resume. No fee was spent on the stopped batch.</span>`;
+    batchRunning = false; btn.disabled = false; btn.textContent = 'Resume anchoring';
+  }
+}
+async function refreshBatchLabel() {
+  const btn = $('batchAnchorBtn');
+  if (!btn) return;
+  try {
+    const missing = await loadMissingSeals();
+    const left = missing.filter(s => !batchDoneList().includes(s)).length;
+    btn.textContent = left ? `Anchor all missing (${left})` : 'Anchor all missing';
+  } catch (e) { btn.textContent = 'Anchor all missing'; }
+}
+$('batchAnchorBtn').addEventListener('click', runBatchAnchor);
 
 /* ---------- Public anchors: anyone anchors their data for a small COOK fee ----------
  * The visitor's text is hashed (SHA-256) in their browser — never sent anywhere.
