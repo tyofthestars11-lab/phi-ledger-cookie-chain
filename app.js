@@ -1228,6 +1228,12 @@ function batchMarkDone(seals) {
   const done = new Set(batchDoneList());
   seals.forEach(s => done.add(s));
   lsSet('batchAnchoredV1', JSON.stringify([...done]));
+  // Cumulative transaction count across sessions, so the final message
+  // never mixes this-run batches with all-time seals.
+  try { lsSet('batchTxTotalV1', String((parseInt(lsGet('batchTxTotalV1') || '0', 10) || 0) + 1)); } catch (e) {}
+}
+function batchTxTotal() {
+  try { return parseInt(lsGet('batchTxTotalV1') || '0', 10) || 0; } catch (e) { return 0; }
 }
 async function loadMissingSeals() {
   if (window._missingSeals) return window._missingSeals;
@@ -1298,7 +1304,7 @@ async function runBatchAnchor() {
       seals.forEach(s => done.add(s));
     }
     const left = missing.length - done.size;
-    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${done.size} of ${missing.length} seals on-chain in ${batches.length} transactions.</span>` + (left === 0 ? '<br><span class="gold">All 185 seals anchored.</span>' : '');
+    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${done.size} of ${missing.length} seals on-chain in ${batchTxTotal()} transactions.</span>` + (left === 0 ? '<br><span class="gold">All 185 seals anchored.</span>' : '');
     refreshBalance();
     batchRunning = false; btn.disabled = false;
     btn.textContent = left ? `Resume anchoring (${left} left)` : 'Anchor all missing';
