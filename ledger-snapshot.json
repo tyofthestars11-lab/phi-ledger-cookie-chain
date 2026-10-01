@@ -8723,9 +8723,198 @@
       "drift": 0.3625,
       "ladder": "morning-brief-2026-10-01",
       "unit": "percent"
+    },
+    {
+      "name": "JWST Enceladus plume extent (Villanueva et al. 2023)",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "km"
+    },
+    {
+      "name": "JWST Enceladus plume span in Enceladus radii",
+      "rung": 7.6658,
+      "drift": -0.3342,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "radii"
+    },
+    {
+      "name": "JWST Enceladus plume cryogenic temperature",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "K"
+    },
+    {
+      "name": "JWST Enceladus outgassing rate",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "kg/s"
+    },
+    {
+      "name": "JWST Enceladus torus water column density",
+      "rung": 84.4701,
+      "drift": 0.4701,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "m^-2"
+    },
+    {
+      "name": "Cassini outgassing baseline showing decadal stability",
+      "rung": 5.6276,
+      "drift": -0.3724,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "years"
+    },
+    {
+      "name": "Herschel torus-density baseline",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "years"
+    },
+    {
+      "name": "JWST Europa Tara Regio CO2 concentration width (Trumbo & Brown 2023)",
+      "rung": 15.5764,
+      "drift": -0.4236,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "km"
+    },
+    {
+      "name": "Europa diameter",
+      "rung": 16.7254,
+      "drift": -0.2746,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "km"
+    },
+    {
+      "name": "JWST NIRSpec surface resolution on Europa",
+      "rung": 11.9871,
+      "drift": -0.0129,
+      "ladder": "jwst-ocean-worlds-2026-10-01",
+      "unit": "km"
+    },
+    {
+      "name": "Khawaja et al. 2025 fresh grain collection altitude",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "enceladus-fresh-organics-2025",
+      "unit": "km"
+    },
+    {
+      "name": "E5 2008 flyby speed through the plume",
+      "rung": 6.0064,
+      "drift": 0.0064,
+      "ladder": "enceladus-fresh-organics-2025",
+      "unit": "km/s"
+    },
+    {
+      "name": "Tiger stripe fracture length",
+      "rung": 10.1936,
+      "drift": 0.1936,
+      "ladder": "enceladus-fresh-organics-2025",
+      "unit": "km"
+    },
+    {
+      "name": "Tiger stripe fractures at the south pole",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "enceladus-fresh-organics-2025",
+      "unit": "fractures"
+    },
+    {
+      "name": "LUCA age (Moody et al. 2024 Nature Ecology & Evolution)",
+      "rung": 2.9822,
+      "drift": -0.0178,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "Ga"
+    },
+    {
+      "name": "LUCA genome floor",
+      "rung": 1.9041,
+      "drift": -0.0959,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "Mb"
+    },
+    {
+      "name": "LUCA encoded proteins",
+      "rung": 16.3406,
+      "drift": 0.3406,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "proteins"
+    },
+    {
+      "name": "Pre-LUCA duplicated gene sets in the clock",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "sets"
+    },
+    {
+      "name": "Fossil and geochemical clock calibrations",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "markers"
+    },
+    {
+      "name": "Dresser Formation microbial mats",
+      "rung": 2.5914,
+      "drift": -0.4086,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "Ga"
+    },
+    {
+      "name": "Strelley Pool Chert cellular structures",
+      "rung": 2.5123,
+      "drift": -0.4877,
+      "ladder": "microbial-record-2026-10-01",
+      "unit": "Ga"
+    },
+    {
+      "name": "CMB mean temperature",
+      "rung": 2.0836,
+      "drift": 0.0836,
+      "ladder": "cmb-quantum-echoes-2026-10-01",
+      "unit": "K"
+    },
+    {
+      "name": "Decoupling temperature of the primordial plasma",
+      "rung": 16.6379,
+      "drift": -0.3621,
+      "ladder": "cmb-quantum-echoes-2026-10-01",
+      "unit": "K"
+    },
+    {
+      "name": "Tensor-to-scalar ratio upper bound 95% CL (Planck PR4 + BICEP/Keck)",
+      "rung": -6.8511,
+      "drift": 0.1489,
+      "ladder": "cmb-quantum-echoes-2026-10-01",
+      "unit": "ratio"
+    },
+    {
+      "name": "Baryon density Omega_b h^2 (Planck 2018)",
+      "rung": -7.8968,
+      "drift": 0.1032,
+      "ladder": "cmb-quantum-echoes-2026-10-01",
+      "unit": "density"
+    },
+    {
+      "name": "Scalar spectral index n_s (Planck 2018)",
+      "rung": -0.0743,
+      "drift": -0.0743,
+      "ladder": "cmb-quantum-echoes-2026-10-01",
+      "unit": "index"
+    },
+    {
+      "name": "Fluctuation amplitude sigma_8",
+      "rung": -0.4353,
+      "drift": -0.4353,
+      "ladder": "cmb-quantum-echoes-2026-10-01",
+      "unit": "amplitude"
     }
   ],
-  "entry_count": 1248,
+  "entry_count": 1275,
   "seal_count": 183,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -8912,5 +9101,5 @@
     "φ_DEEP_PULLS_TYREE_OMEGA",
     "φ_ENCELADUS_MICROBIAL_QUANTUM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "642a1b6a0b7fc1a9933fe860be997eb5536e619ed6a87843335c463cee12d377"
+  "snapshot_sha256": "696beddec754144c2956d2ecda6d0de5fc6fe495a1680df93842c3870f658cae"
 }
