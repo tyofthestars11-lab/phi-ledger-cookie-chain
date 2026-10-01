@@ -9038,10 +9038,129 @@
       "drift": 0.0,
       "ladder": "count",
       "unit": "corrections"
+    },
+    {
+      "name": "seal187_trna_records_human_nuclear",
+      "rung": 12.5472,
+      "drift": -0.4528,
+      "ladder": "count",
+      "unit": "records"
+    },
+    {
+      "name": "seal187_trna_primary_band_lo_bp",
+      "rung": 8.8287,
+      "drift": -0.1713,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_primary_band_hi_bp",
+      "rung": 8.9442,
+      "drift": -0.0558,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_primary_band_records",
+      "rung": 12.1008,
+      "drift": 0.1008,
+      "ladder": "count",
+      "unit": "records"
+    },
+    {
+      "name": "seal187_trna_extended_band_lo_bp",
+      "rung": 9.1575,
+      "drift": 0.1575,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_extended_band_hi_bp",
+      "rung": 9.4414,
+      "drift": 0.4414,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_extended_band_records",
+      "rung": 8.9996,
+      "drift": -0.0004,
+      "ladder": "count",
+      "unit": "records"
+    },
+    {
+      "name": "seal187_trna_upper_band_lo_bp",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_upper_band_hi_bp",
+      "rung": 9.7299,
+      "drift": -0.2701,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_upper_band_records",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "records"
+    },
+    {
+      "name": "seal187_trna_yeast_mature_CAA_bp",
+      "rung": 9.1575,
+      "drift": 0.1575,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_fly_mature_CAA_bp",
+      "rung": 9.1827,
+      "drift": 0.1827,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_human_mature_CAA_bp",
+      "rung": 9.2076,
+      "drift": 0.2076,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_species_converged",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "species"
+    },
+    {
+      "name": "seal187_trna_leucine_codons",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "codons"
+    },
+    {
+      "name": "seal187_trna_mature_field_lo_bp",
+      "rung": 9.1575,
+      "drift": 0.1575,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal187_trna_mature_field_hi_bp",
+      "rung": 9.2076,
+      "drift": 0.2076,
+      "ladder": "length",
+      "unit": "bp"
     }
   ],
-  "entry_count": 1293,
-  "seal_count": 186,
+  "entry_count": 1310,
+  "seal_count": 187,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9228,7 +9347,8 @@
     "φ_ENCELADUS_MICROBIAL_QUANTUM_TYREE_OMEGA",
     "φ_MANY_BODY_PHASE_MICROSCOPE_TYREE_OMEGA",
     "φ_SPEED_OF_LIGHT_ACCESS_TYREE_OMEGA",
-    "φ_TON618_LAW_OVER_ERRORS_TYREE_OMEGA"
+    "φ_TON618_LAW_OVER_ERRORS_TYREE_OMEGA",
+    "φ_TRNA_RUNG_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7d73dc0b6e1d00da4a261d6ce60d091e5f633f62589949626581374e77be7ee8"
+  "snapshot_sha256": "cb3398ce9db576d12f1e49e2a1a40518b2e7d5c7adf46ca7266dc05c9f706d83"
 }
