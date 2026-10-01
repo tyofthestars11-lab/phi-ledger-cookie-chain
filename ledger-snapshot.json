@@ -8485,10 +8485,248 @@
       "drift": -0.2902,
       "ladder": "deep-pull-2026-09-30",
       "unit": "samples"
+    },
+    {
+      "name": "Enceladus plume water vapor fraction, Cassini deep pass",
+      "rung": 9.528,
+      "drift": -0.472,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "percent"
+    },
+    {
+      "name": "Enceladus plume molecular hydrogen fraction",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "percent"
+    },
+    {
+      "name": "Enceladus dissolved orthophosphate enrichment over Earth oceans",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "fold"
+    },
+    {
+      "name": "Salt-rich ice grains with sodium phosphates, Cassini CDA",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "grains"
+    },
+    {
+      "name": "Enceladus diameter",
+      "rung": 12.9145,
+      "drift": -0.0855,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "km"
+    },
+    {
+      "name": "Hydrothermal seafloor temperature from nanosilica",
+      "rung": 9.351,
+      "drift": 0.351,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "degC"
+    },
+    {
+      "name": "Named candidate ocean worlds (Enceladus Titan Europa Ganymede Callisto Triton)",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "enceladus-ocean-worlds-2026-10-01",
+      "unit": "moons"
+    },
+    {
+      "name": "Bacteria cavity-coupled in the Marletto et al. entanglement experiment",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "microbial-quantum-2026-10-01",
+      "unit": "bacteria"
+    },
+    {
+      "name": "Quantum beats in cryptophyte algae at ambient temperature",
+      "rung": -4.785,
+      "drift": 0.215,
+      "ladder": "microbial-quantum-2026-10-01",
+      "unit": "ps"
+    },
+    {
+      "name": "Photosynthetic reaction-center energy transfer efficiency",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "microbial-quantum-2026-10-01",
+      "unit": "percent"
+    },
+    {
+      "name": "Cholesterol mitophagy lane: PI4KIIα OSBP SREBP-2 DGAT1 nodes",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "nodes"
+    },
+    {
+      "name": "ART discovery: Claude agents in the search swarm",
+      "rung": 14.2483,
+      "drift": 0.2483,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "agents"
+    },
+    {
+      "name": "ART discovery: autonomous search run duration",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "hours"
+    },
+    {
+      "name": "ART discovery: tokens processed by the swarm",
+      "rung": 39.8216,
+      "drift": -0.1784,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "tokens"
+    },
+    {
+      "name": "ART discovery: reverse-transcriptase sequences surfaced",
+      "rung": 25.3653,
+      "drift": 0.3653,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "genes"
+    },
+    {
+      "name": "ART discovery: candidate systems assembled",
+      "rung": 16.9583,
+      "drift": -0.0417,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "candidates"
+    },
+    {
+      "name": "ART discovery: candidates selected for deep analysis",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "candidates"
+    },
+    {
+      "name": "Octupolar magnetism: poles in the eightfold pattern",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "poles"
+    },
+    {
+      "name": "Octupolar magnetism: named study authors (Sutcliffe Chaudhary Hart)",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "authors"
+    },
+    {
+      "name": "C2QA tantalum transmon lifetime record",
+      "rung": 1.0781,
+      "drift": 0.0781,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "ms"
+    },
+    {
+      "name": "C2QA transmon improvement over previous state of the art",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "fold"
+    },
+    {
+      "name": "C2QA member institutions",
+      "rung": 6.9246,
+      "drift": -0.0754,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "institutions"
+    },
+    {
+      "name": "Orbital photonic processor: photons in the six-path circuit",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "photons"
+    },
+    {
+      "name": "Orbital photonic processor: optical paths in the circuit",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "paths"
+    },
+    {
+      "name": "Orbital photonic processor: SPAD detectors surviving launch",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "detectors"
+    },
+    {
+      "name": "Orbital photonic processor: launch shock endured",
+      "rung": 15.1975,
+      "drift": 0.1975,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "G"
+    },
+    {
+      "name": "Orbital photonic processor: laser output after vacuum degradation",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "mW"
+    },
+    {
+      "name": "Orbital photonic processor: crystal temperature at the Hong-Ou-Mandel dip",
+      "rung": 7.2343,
+      "drift": 0.2343,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "degC"
+    },
+    {
+      "name": "Orbital photonic processor: months of in-orbit experiments reported",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "months"
+    },
+    {
+      "name": "Orbital photonic processor: orbit altitude",
+      "rung": 12.9556,
+      "drift": -0.0444,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "km"
+    },
+    {
+      "name": "ER calcium actin cages: named study authors (Feng Ruark Burkewitz)",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "authors"
+    },
+    {
+      "name": "Innopolis mass-spec decoder: spectrum–molecule pairs trained",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "pairs"
+    },
+    {
+      "name": "Innopolis mass-spec decoder: decode speed",
+      "rung": -5.0039,
+      "drift": -0.0039,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "s-per-spectrum"
+    },
+    {
+      "name": "Innopolis mass-spec decoder: top-100 accuracy",
+      "rung": 9.3625,
+      "drift": 0.3625,
+      "ladder": "morning-brief-2026-10-01",
+      "unit": "percent"
     }
   ],
-  "entry_count": 1214,
-  "seal_count": 182,
+  "entry_count": 1248,
+  "seal_count": 183,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -8671,7 +8909,8 @@
     "φ_MITOCHONDRIAL_PROTEOSTASIS_TYREE_OMEGA",
     "φ_PLANET_FOUR_MARS_TYREE_OMEGA",
     "φ_CIVILIAN_SCIENCE_TYREE_OMEGA",
-    "φ_DEEP_PULLS_TYREE_OMEGA"
+    "φ_DEEP_PULLS_TYREE_OMEGA",
+    "φ_ENCELADUS_MICROBIAL_QUANTUM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "844835d8d2f4bd9b691844232f52964551d8cf2e09e833bab7d557e38f7e60e3"
+  "snapshot_sha256": "642a1b6a0b7fc1a9933fe860be997eb5536e619ed6a87843335c463cee12d377"
 }
