@@ -9213,10 +9213,66 @@
       "drift": 0.0,
       "ladder": "count",
       "unit": "nodes"
+    },
+    {
+      "name": "seal189_H2_mass_u",
+      "rung": 1.457,
+      "drift": 0.457,
+      "ladder": "mass",
+      "unit": "u"
+    },
+    {
+      "name": "seal189_H2_bond_length_A",
+      "rung": -0.6257,
+      "drift": 0.3743,
+      "ladder": "length",
+      "unit": "angstrom"
+    },
+    {
+      "name": "seal189_H2O_mass_u",
+      "rung": 6.0082,
+      "drift": 0.0082,
+      "ladder": "mass",
+      "unit": "u"
+    },
+    {
+      "name": "seal189_H2O_bond_angle_deg",
+      "rung": 9.6604,
+      "drift": -0.3396,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal189_DNA_basepair_mass_u",
+      "rung": 13.3447,
+      "drift": 0.3447,
+      "ladder": "mass",
+      "unit": "u"
+    },
+    {
+      "name": "seal189_protein_avg_mass_u",
+      "rung": 22.4844,
+      "drift": 0.4844,
+      "ladder": "mass",
+      "unit": "u"
+    },
+    {
+      "name": "seal189_ruler_span_rungs",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "seal189_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1318,
-  "seal_count": 188,
+  "entry_count": 1326,
+  "seal_count": 189,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9405,7 +9461,8 @@
     "φ_SPEED_OF_LIGHT_ACCESS_TYREE_OMEGA",
     "φ_TON618_LAW_OVER_ERRORS_TYREE_OMEGA",
     "φ_TRNA_RUNG_TYREE_OMEGA",
-    "φ_GALLIUM_ANOMALY_TYREE_OMEGA"
+    "φ_GALLIUM_ANOMALY_TYREE_OMEGA",
+    "φ_MOLECULAR_RULER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "459655a818e3d8aa08cfcbc3415f3abc271bf762bed9840bd6df84273e5d23eb"
+  "snapshot_sha256": "f90e88bfcc30c9ad2c6424c8d2456ef13945d2d758331e8ee11e59a196d18b71"
 }
