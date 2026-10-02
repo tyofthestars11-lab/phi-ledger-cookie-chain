@@ -9318,10 +9318,94 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal191_string_break_driven_ions",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "ions"
+    },
+    {
+      "name": "seal191_string_break_repetitions",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "count",
+      "unit": "repetitions"
+    },
+    {
+      "name": "seal191_mito_proteins",
+      "rung": 18.8311,
+      "drift": -0.1689,
+      "ladder": "count",
+      "unit": "proteins"
+    },
+    {
+      "name": "seal191_mito_orthogroups",
+      "rung": 16.7714,
+      "drift": -0.2286,
+      "ladder": "count",
+      "unit": "orthogroups"
+    },
+    {
+      "name": "seal191_mito_universal_orthogroups",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "orthogroups"
+    },
+    {
+      "name": "seal191_biexciton_visibility_XX",
+      "rung": 9.351,
+      "drift": 0.351,
+      "ladder": "percent",
+      "unit": "percent"
+    },
+    {
+      "name": "seal191_majorana_parity_coherence",
+      "rung": 1.2784,
+      "drift": 0.2784,
+      "ladder": "time",
+      "unit": "ms"
+    },
+    {
+      "name": "seal191_NV_heart_noise_floor",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "field",
+      "unit": "pT_per_sqrtHz"
+    },
+    {
+      "name": "seal191_NV_heart_ECG_beats",
+      "rung": 19.5188,
+      "drift": -0.4812,
+      "ladder": "count",
+      "unit": "beats"
+    },
+    {
+      "name": "seal191_altermagnet_TN",
+      "rung": 10.7682,
+      "drift": -0.2318,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal191_altermagnet_Co_moment",
+      "rung": 0.6236,
+      "drift": -0.3764,
+      "ladder": "moment",
+      "unit": "muB"
+    },
+    {
+      "name": "seal191_SQC_forecast_avg_gain_PR",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "percent",
+      "unit": "percent_PR_reported"
     }
   ],
-  "entry_count": 1333,
-  "seal_count": 190,
+  "entry_count": 1345,
+  "seal_count": 191,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9512,7 +9596,8 @@
     "φ_TRNA_RUNG_TYREE_OMEGA",
     "φ_GALLIUM_ANOMALY_TYREE_OMEGA",
     "φ_MOLECULAR_RULER_TYREE_OMEGA",
-    "φ_ART_TYREE_OMEGA"
+    "φ_ART_TYREE_OMEGA",
+    "φ_SEVEN_PULLS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "47ad173960d9c247274a0421ad68f41d07229bc9c9ecedfd44375a6ce09972e4"
+  "snapshot_sha256": "49297ad33a745a4b251925876d70a2030c6f1e7743974d0a9782c5b3d4fdef8a"
 }

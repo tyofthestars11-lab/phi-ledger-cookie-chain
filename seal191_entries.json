@@ -1,0 +1,74 @@
+[
+  {
+    "ladder": "count",
+    "name": "seal191_string_break_driven_ions",
+    "unit": "ions",
+    "value": 13
+  },
+  {
+    "ladder": "count",
+    "name": "seal191_string_break_repetitions",
+    "unit": "repetitions",
+    "value": 300
+  },
+  {
+    "ladder": "count",
+    "name": "seal191_mito_proteins",
+    "unit": "proteins",
+    "value": 8619
+  },
+  {
+    "ladder": "count",
+    "name": "seal191_mito_orthogroups",
+    "unit": "orthogroups",
+    "value": 3199
+  },
+  {
+    "ladder": "count",
+    "name": "seal191_mito_universal_orthogroups",
+    "unit": "orthogroups",
+    "value": 13
+  },
+  {
+    "ladder": "percent",
+    "name": "seal191_biexciton_visibility_XX",
+    "unit": "percent",
+    "value": 90
+  },
+  {
+    "ladder": "time",
+    "name": "seal191_majorana_parity_coherence",
+    "unit": "ms",
+    "value": 1.85
+  },
+  {
+    "ladder": "field",
+    "name": "seal191_NV_heart_noise_floor",
+    "unit": "pT_per_sqrtHz",
+    "value": 13
+  },
+  {
+    "ladder": "count",
+    "name": "seal191_NV_heart_ECG_beats",
+    "unit": "beats",
+    "value": 12000
+  },
+  {
+    "ladder": "temperature",
+    "name": "seal191_altermagnet_TN",
+    "unit": "K",
+    "value": 178
+  },
+  {
+    "ladder": "moment",
+    "name": "seal191_altermagnet_Co_moment",
+    "unit": "muB",
+    "value": 1.35
+  },
+  {
+    "ladder": "percent",
+    "name": "seal191_SQC_forecast_avg_gain_PR",
+    "unit": "percent_PR_reported",
+    "value": 20
+  }
+]
