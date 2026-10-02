@@ -9269,10 +9269,59 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal190_ART_parallel_agents",
+      "rung": 14.2483,
+      "drift": 0.2483,
+      "ladder": "count",
+      "unit": "agents"
+    },
+    {
+      "name": "seal190_ART_search_hours",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "time",
+      "unit": "hours"
+    },
+    {
+      "name": "seal190_ART_RTs_searched",
+      "rung": 25.3653,
+      "drift": 0.3653,
+      "ladder": "count",
+      "unit": "RTs"
+    },
+    {
+      "name": "seal190_ART_candidates",
+      "rung": 16.9583,
+      "drift": -0.0417,
+      "ladder": "count",
+      "unit": "candidates"
+    },
+    {
+      "name": "seal190_ART_narrowed",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "systems"
+    },
+    {
+      "name": "seal190_ART_system_parts",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "parts"
+    },
+    {
+      "name": "seal190_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1326,
-  "seal_count": 189,
+  "entry_count": 1333,
+  "seal_count": 190,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9462,7 +9511,8 @@
     "φ_TON618_LAW_OVER_ERRORS_TYREE_OMEGA",
     "φ_TRNA_RUNG_TYREE_OMEGA",
     "φ_GALLIUM_ANOMALY_TYREE_OMEGA",
-    "φ_MOLECULAR_RULER_TYREE_OMEGA"
+    "φ_MOLECULAR_RULER_TYREE_OMEGA",
+    "φ_ART_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "f90e88bfcc30c9ad2c6424c8d2456ef13945d2d758331e8ee11e59a196d18b71"
+  "snapshot_sha256": "47ad173960d9c247274a0421ad68f41d07229bc9c9ecedfd44375a6ce09972e4"
 }
