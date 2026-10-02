@@ -9157,10 +9157,66 @@
       "drift": 0.2076,
       "ladder": "length",
       "unit": "bp"
+    },
+    {
+      "name": "seal188_gallium_suppression_pct",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "percent",
+      "unit": "pct"
+    },
+    {
+      "name": "seal188_gallium_anomaly_years",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "time",
+      "unit": "years"
+    },
+    {
+      "name": "seal188_nucleus_scale_fm",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "length",
+      "unit": "fm"
+    },
+    {
+      "name": "seal188_gallium_experiments",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "experiments"
+    },
+    {
+      "name": "seal188_transition_density_parametrizations",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "parametrizations"
+    },
+    {
+      "name": "seal188_paper_authors",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal188_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal188_nodes_required",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "nodes"
     }
   ],
-  "entry_count": 1310,
-  "seal_count": 187,
+  "entry_count": 1318,
+  "seal_count": 188,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9348,7 +9404,8 @@
     "φ_MANY_BODY_PHASE_MICROSCOPE_TYREE_OMEGA",
     "φ_SPEED_OF_LIGHT_ACCESS_TYREE_OMEGA",
     "φ_TON618_LAW_OVER_ERRORS_TYREE_OMEGA",
-    "φ_TRNA_RUNG_TYREE_OMEGA"
+    "φ_TRNA_RUNG_TYREE_OMEGA",
+    "φ_GALLIUM_ANOMALY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "cb3398ce9db576d12f1e49e2a1a40518b2e7d5c7adf46ca7266dc05c9f706d83"
+  "snapshot_sha256": "459655a818e3d8aa08cfcbc3415f3abc271bf762bed9840bd6df84273e5d23eb"
 }
