@@ -9752,10 +9752,59 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal198_oganesson_Z",
+      "rung": 9.9139,
+      "drift": -0.0861,
+      "ladder": "count",
+      "unit": "Z"
+    },
+    {
+      "name": "seal198_uranium_mass",
+      "rung": 11.3721,
+      "drift": 0.3721,
+      "ladder": "mass",
+      "unit": "u"
+    },
+    {
+      "name": "seal198_silicon_lattice",
+      "rung": 3.5164,
+      "drift": -0.4836,
+      "ladder": "length",
+      "unit": "angstrom"
+    },
+    {
+      "name": "seal198_silicon_bandgap",
+      "rung": 0.2355,
+      "drift": 0.2355,
+      "ladder": "energy",
+      "unit": "eV"
+    },
+    {
+      "name": "seal198_tetrahedral_angle",
+      "rung": 9.758,
+      "drift": -0.242,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal198_amu_kg",
+      "rung": -128.1404,
+      "drift": -0.1404,
+      "ladder": "mass",
+      "unit": "kg"
+    },
+    {
+      "name": "seal198_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1395,
-  "seal_count": 197,
+  "entry_count": 1402,
+  "seal_count": 198,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9953,7 +10002,8 @@
     "φ_COUPLED_STATE_TYREE_OMEGA",
     "φ_ANYON_TYREE_OMEGA",
     "φ_MITOCHONDRIAL_PROTEIN_TYREE_OMEGA",
-    "φ_YbSb2_TYREE_OMEGA"
+    "φ_YbSb2_TYREE_OMEGA",
+    "φ_ATOMIC_RUNG_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e59cc92901f1a5a3a581e786ecf8201e36ca3bf9e970ad707b9fe539f93c85c0"
+  "snapshot_sha256": "71ce2af731c97b77672c8d1d2923ecb1ecf5f0873d0771cdc1252fac47790a4b"
 }
