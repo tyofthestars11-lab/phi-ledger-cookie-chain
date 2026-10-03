@@ -9556,10 +9556,59 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal195_nu_1_3",
+      "rung": -2.283,
+      "drift": -0.283,
+      "ladder": "ratio",
+      "unit": "filling_factor"
+    },
+    {
+      "name": "seal195_nu_2_5",
+      "rung": -1.9041,
+      "drift": 0.0959,
+      "ladder": "ratio",
+      "unit": "filling_factor"
+    },
+    {
+      "name": "seal195_nu_5_2",
+      "rung": 1.9041,
+      "drift": -0.0959,
+      "ladder": "ratio",
+      "unit": "filling_factor"
+    },
+    {
+      "name": "seal195_anyon_charge_e4",
+      "rung": -2.8808,
+      "drift": 0.1192,
+      "ladder": "charge",
+      "unit": "charge_fraction"
+    },
+    {
+      "name": "seal195_total_quantum_dimension",
+      "rung": 1.336,
+      "drift": 0.336,
+      "ladder": "dimension",
+      "unit": "dimension"
+    },
+    {
+      "name": "seal195_ising_exchange_phase",
+      "rung": -1.9424,
+      "drift": 0.0576,
+      "ladder": "angle",
+      "unit": "radians"
+    },
+    {
+      "name": "seal195_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1367,
-  "seal_count": 194,
+  "entry_count": 1374,
+  "seal_count": 195,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9754,7 +9803,8 @@
     "φ_SEVEN_PULLS_TYREE_OMEGA",
     "φ_SEVEN_PULLS_II_TYREE_OMEGA",
     "φ_COMPACTION_DECLASSIFIED_TYREE_OMEGA",
-    "φ_COUPLED_STATE_TYREE_OMEGA"
+    "φ_COUPLED_STATE_TYREE_OMEGA",
+    "φ_ANYON_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "aa2327b255411218717ff4d5e5a74b29e67bf331198b58a0604436fa835dc632"
+  "snapshot_sha256": "623a888834c82ad760eab7b160ffeb2b30ec1c722cac5cceb1eca4f0b11c54a7"
 }
