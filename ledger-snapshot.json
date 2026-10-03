@@ -9654,10 +9654,59 @@
       "name": "BCH mining: luck percent (2026-10-03)",
       "rung": 9.5699,
       "unit": "percent"
+    },
+    {
+      "name": "seal196_complex_I_bp",
+      "rung": 18.1981,
+      "drift": 0.1981,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "seal196_complex_IV_bp",
+      "rung": 16.6448,
+      "drift": -0.3552,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "seal196_complex_III_bp",
+      "rung": 14.629,
+      "drift": -0.371,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "seal196_complex_V_bp",
+      "rung": 14.1081,
+      "drift": 0.1081,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "seal196_coding_mass_bp",
+      "rung": 19.4113,
+      "drift": 0.4113,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "seal196_whole_mtDNA_bp",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "seal196_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1381,
-  "seal_count": 195,
+  "entry_count": 1388,
+  "seal_count": 196,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9853,7 +9902,8 @@
     "φ_SEVEN_PULLS_II_TYREE_OMEGA",
     "φ_COMPACTION_DECLASSIFIED_TYREE_OMEGA",
     "φ_COUPLED_STATE_TYREE_OMEGA",
-    "φ_ANYON_TYREE_OMEGA"
+    "φ_ANYON_TYREE_OMEGA",
+    "φ_MITOCHONDRIAL_PROTEIN_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7f803e9ce9c8c8956e7c023983dc5dae0d05414321fa68962c310272ade05caa"
+  "snapshot_sha256": "5b45321ae098ed3bc93b2f883cdf83fd9af2ad9c188cf1d176b74b0f8b3c5d98"
 }
