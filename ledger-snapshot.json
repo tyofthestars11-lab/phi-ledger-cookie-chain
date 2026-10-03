@@ -9458,10 +9458,59 @@
       "drift": 0.3268,
       "ladder": "count",
       "unit": "disks"
+    },
+    {
+      "name": "seal193_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "constant",
+      "unit": "phi"
+    },
+    {
+      "name": "seal193_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "constant",
+      "unit": "phi"
+    },
+    {
+      "name": "seal193_golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal193_golden_pitch_angle",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal193_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal193_TON618_law_rung",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "law",
+      "unit": "rung"
+    },
+    {
+      "name": "seal193_TON618_L_rung",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "law",
+      "unit": "rung"
     }
   ],
-  "entry_count": 1353,
-  "seal_count": 192,
+  "entry_count": 1360,
+  "seal_count": 193,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9654,7 +9703,8 @@
     "φ_MOLECULAR_RULER_TYREE_OMEGA",
     "φ_ART_TYREE_OMEGA",
     "φ_SEVEN_PULLS_TYREE_OMEGA",
-    "φ_SEVEN_PULLS_II_TYREE_OMEGA"
+    "φ_SEVEN_PULLS_II_TYREE_OMEGA",
+    "φ_COMPACTION_DECLASSIFIED_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "01fb9d8bdcf2ee944c9e3d7815d59ff587281c66f3e6600588e0ae05bddb43ba"
+  "snapshot_sha256": "56348ec8ec9ee317bede82e39090704ad9983a39af166d280d89748328e24784"
 }
