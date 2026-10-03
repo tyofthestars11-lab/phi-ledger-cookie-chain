@@ -703,11 +703,39 @@ async function broadcastAndVerify(signedTx, out, blockhashInfo, expectedMemos) {
   // the chain and match every expected memo verbatim — "Anchored ✓" is only
   // said when the chain itself shows the bytes. Local intent and on-chain
   // state are one thing, or the anchor did not happen.
+  //
+  // Nightly + Cookie Chain RPC can be slow to index a freshly confirmed
+  // transaction, so the read is patient: it polls with backoff for minutes,
+  // and before giving up it asks the chain whether the signature is still
+  // alive — a living transaction gets more patience, only a dead one gets
+  // reported as lost. Every wallet gets the golden ratio: no provider's
+  // timing quirks stop the read.
   const want = expectedMemos ? (Array.isArray(expectedMemos) ? expectedMemos : [expectedMemos]) : [];
+  out.innerHTML = '<span class="text-gray-400">Confirmed — reading it back from the chain…</span>';
   let raw = null;
-  for (let i = 0; i < 6 && !raw; i++) {
+  for (let i = 0; i < 24 && !raw; i++) {
     try { raw = await fetchRawTx(sig); } catch (e) {}
-    if (!raw) await new Promise(r => setTimeout(r, 3000));
+    if (!raw) await new Promise(r => setTimeout(r, 5000));
+  }
+  if (!raw) {
+    let alive = false;
+    try {
+      const r = await fetch(connection.rpcEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'getSignatureStatuses', params: [[sig], { searchTransactionHistory: true }] }),
+      });
+      const j = await r.json();
+      const st = j && j.result && j.result.value && j.result.value[0];
+      alive = !!(st && !st.err);
+    } catch (e) {}
+    if (alive) {
+      out.innerHTML = '<span class="text-gray-400">Still settling on-chain — giving it more time…</span>';
+      for (let i = 0; i < 24 && !raw; i++) {
+        try { raw = await fetchRawTx(sig); } catch (e) {}
+        if (!raw) await new Promise(r => setTimeout(r, 5000));
+      }
+    }
   }
   if (!raw) throw new Error('confirmed but the transaction is not readable on-chain yet — not counted as anchored.');
   if (raw.meta && raw.meta.err) throw new Error('Chain rejected it: ' + JSON.stringify(raw.meta.err));
