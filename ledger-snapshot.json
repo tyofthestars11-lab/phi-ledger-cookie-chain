@@ -9402,10 +9402,66 @@
       "drift": 0.2254,
       "ladder": "percent",
       "unit": "percent_PR_reported"
+    },
+    {
+      "name": "seal192_herculaneum_lead_absorption",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "count",
+      "unit": "x"
+    },
+    {
+      "name": "seal192_herculaneum_XRF_detection_floor",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "concentration",
+      "unit": "ug_per_cm2"
+    },
+    {
+      "name": "seal192_caltech_ladder_atoms",
+      "rung": 7.3883,
+      "drift": 0.3883,
+      "ladder": "count",
+      "unit": "atoms"
+    },
+    {
+      "name": "seal192_DESI_disk_galaxies",
+      "rung": 16.2043,
+      "drift": 0.2043,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "seal192_DESI_bulgeless_galaxies",
+      "rung": 13.0974,
+      "drift": 0.0974,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "seal192_UTe2_STM_temperature",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "temperature",
+      "unit": "mK"
+    },
+    {
+      "name": "seal192_3D_light_field_directions",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "seal192_extreme_debris_disks",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "count",
+      "unit": "disks"
     }
   ],
-  "entry_count": 1345,
-  "seal_count": 191,
+  "entry_count": 1353,
+  "seal_count": 192,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9597,7 +9653,8 @@
     "φ_GALLIUM_ANOMALY_TYREE_OMEGA",
     "φ_MOLECULAR_RULER_TYREE_OMEGA",
     "φ_ART_TYREE_OMEGA",
-    "φ_SEVEN_PULLS_TYREE_OMEGA"
+    "φ_SEVEN_PULLS_TYREE_OMEGA",
+    "φ_SEVEN_PULLS_II_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "49297ad33a745a4b251925876d70a2030c6f1e7743974d0a9782c5b3d4fdef8a"
+  "snapshot_sha256": "01fb9d8bdcf2ee944c9e3d7815d59ff587281c66f3e6600588e0ae05bddb43ba"
 }
