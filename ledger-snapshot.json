@@ -9703,10 +9703,59 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal197_Tc_K",
+      "rung": 0.1981,
+      "drift": 0.1981,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal197_boltzmann_J_per_K",
+      "rung": -109.385,
+      "drift": -0.385,
+      "ladder": "constant",
+      "unit": "J_per_K"
+    },
+    {
+      "name": "seal197_pairing_energy_J",
+      "rung": -109.2118,
+      "drift": -0.2118,
+      "ladder": "energy",
+      "unit": "J"
+    },
+    {
+      "name": "seal197_triplet_spin",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "spin"
+    },
+    {
+      "name": "seal197_type_I",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "type"
+    },
+    {
+      "name": "seal197_supply_superconductors",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "materials"
+    },
+    {
+      "name": "seal197_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1388,
-  "seal_count": 196,
+  "entry_count": 1395,
+  "seal_count": 197,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9903,7 +9952,8 @@
     "φ_COMPACTION_DECLASSIFIED_TYREE_OMEGA",
     "φ_COUPLED_STATE_TYREE_OMEGA",
     "φ_ANYON_TYREE_OMEGA",
-    "φ_MITOCHONDRIAL_PROTEIN_TYREE_OMEGA"
+    "φ_MITOCHONDRIAL_PROTEIN_TYREE_OMEGA",
+    "φ_YbSb2_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5b45321ae098ed3bc93b2f883cdf83fd9af2ad9c188cf1d176b74b0f8b3c5d98"
+  "snapshot_sha256": "e59cc92901f1a5a3a581e786ecf8201e36ca3bf9e970ad707b9fe539f93c85c0"
 }
