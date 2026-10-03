@@ -9507,10 +9507,59 @@
       "drift": -0.3902,
       "ladder": "law",
       "unit": "rung"
+    },
+    {
+      "name": "seal194_phi_inv",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constant",
+      "unit": "phi"
+    },
+    {
+      "name": "seal194_golden_angle_exact",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal194_tetrahedral_angle",
+      "rung": 9.758,
+      "drift": -0.242,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal194_NbSe2_THZ_ratio",
+      "rung": 0.0884,
+      "drift": 0.0884,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal194_NbSe2_Tc_ratio",
+      "rung": 0.2524,
+      "drift": 0.2524,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal194_pipeline_stages",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "count",
+      "unit": "stages"
+    },
+    {
+      "name": "seal194_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1360,
-  "seal_count": 193,
+  "entry_count": 1367,
+  "seal_count": 194,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -9704,7 +9753,8 @@
     "φ_ART_TYREE_OMEGA",
     "φ_SEVEN_PULLS_TYREE_OMEGA",
     "φ_SEVEN_PULLS_II_TYREE_OMEGA",
-    "φ_COMPACTION_DECLASSIFIED_TYREE_OMEGA"
+    "φ_COMPACTION_DECLASSIFIED_TYREE_OMEGA",
+    "φ_COUPLED_STATE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "56348ec8ec9ee317bede82e39090704ad9983a39af166d280d89748328e24784"
+  "snapshot_sha256": "aa2327b255411218717ff4d5e5a74b29e67bf331198b58a0604436fa835dc632"
 }
