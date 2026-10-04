@@ -9850,10 +9850,59 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal200_linearA_simple_signs",
+      "rung": 10.7914,
+      "drift": -0.2086,
+      "ladder": "count",
+      "unit": "signs"
+    },
+    {
+      "name": "seal200_linearA_complex_signs",
+      "rung": 10.598,
+      "drift": -0.402,
+      "ladder": "count",
+      "unit": "signs"
+    },
+    {
+      "name": "seal200_linearA_fractional_signs",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "count",
+      "unit": "signs"
+    },
+    {
+      "name": "seal200_phaistos_total_signs",
+      "rung": 11.3979,
+      "drift": 0.3979,
+      "ladder": "count",
+      "unit": "signs"
+    },
+    {
+      "name": "seal200_phaistos_groups",
+      "rung": 8.5428,
+      "drift": -0.4572,
+      "ladder": "count",
+      "unit": "groups"
+    },
+    {
+      "name": "seal200_phaistos_distinct_signs",
+      "rung": 7.9106,
+      "drift": -0.0894,
+      "ladder": "count",
+      "unit": "signs"
+    },
+    {
+      "name": "seal200_compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1409,
-  "seal_count": 199,
+  "entry_count": 1416,
+  "seal_count": 200,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10053,7 +10102,8 @@
     "φ_MITOCHONDRIAL_PROTEIN_TYREE_OMEGA",
     "φ_YbSb2_TYREE_OMEGA",
     "φ_ATOMIC_RUNG_TYREE_OMEGA",
-    "φ_ATOMIC_CLOCK_TYREE_OMEGA"
+    "φ_ATOMIC_CLOCK_TYREE_OMEGA",
+    "φ_AEGEAN_RUNG_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c2a559cd0f5672b00b1d10199b73197aad48be2885de8141fc3708949c5f5da8"
+  "snapshot_sha256": "944ce16ca347c02de30c3e21cb08501af3ea7a5d7ab3350f4c6f421d3d28582f"
 }
