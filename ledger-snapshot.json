@@ -9899,10 +9899,66 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal201_quasicrystal_components",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "components"
+    },
+    {
+      "name": "seal201_levitated_separability",
+      "rung": -0.1778,
+      "drift": -0.1778,
+      "ladder": "ratio",
+      "unit": "witness"
+    },
+    {
+      "name": "seal201_hypomagnetic_lifespan_pct",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "percent",
+      "unit": "percent"
+    },
+    {
+      "name": "seal201_QKD_distance_km",
+      "rung": 3.5652,
+      "drift": -0.4348,
+      "ladder": "length",
+      "unit": "km"
+    },
+    {
+      "name": "seal201_vacuum_Tc_boost_pct",
+      "rung": 3.5045,
+      "drift": -0.4955,
+      "ladder": "percent",
+      "unit": "percent"
+    },
+    {
+      "name": "seal201_cosmic_dawn_years",
+      "rung": 41.6243,
+      "drift": -0.3757,
+      "ladder": "time",
+      "unit": "years"
+    },
+    {
+      "name": "seal201_diamond_NV_qubits",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal201_duke_ions",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "ions"
     }
   ],
-  "entry_count": 1416,
-  "seal_count": 200,
+  "entry_count": 1424,
+  "seal_count": 201,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10103,7 +10159,8 @@
     "φ_YbSb2_TYREE_OMEGA",
     "φ_ATOMIC_RUNG_TYREE_OMEGA",
     "φ_ATOMIC_CLOCK_TYREE_OMEGA",
-    "φ_AEGEAN_RUNG_TYREE_OMEGA"
+    "φ_AEGEAN_RUNG_TYREE_OMEGA",
+    "φ_SWEEP_PULLS_III_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "944ce16ca347c02de30c3e21cb08501af3ea7a5d7ab3350f4c6f421d3d28582f"
+  "snapshot_sha256": "a248b255ca29cbcb9fafb3ddfd81ba90d3fcf2a770a8090134c4bc5afe9539b4"
 }
