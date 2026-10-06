@@ -10242,10 +10242,94 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "items"
+    },
+    {
+      "name": "seal204_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal204_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal204_CMB_temperature_K",
+      "rung": 2.0832,
+      "drift": 0.0832,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal204_CMB_peak_wavelength_m",
+      "rung": -14.228,
+      "drift": -0.228,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal204_CMB_peak_frequency_Hz",
+      "rung": 53.6144,
+      "drift": -0.3856,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal204_CMB_photon_density_per_m3",
+      "rung": 41.217,
+      "drift": 0.217,
+      "ladder": "density",
+      "unit": "photons_per_m3"
+    },
+    {
+      "name": "seal204_CMB_energy_density_J_per_m3",
+      "rung": -64.0223,
+      "drift": -0.0223,
+      "ladder": "energy_density",
+      "unit": "J_per_m3"
+    },
+    {
+      "name": "seal204_CMB_anisotropy_dT_over_T",
+      "rung": -23.9249,
+      "drift": 0.0751,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal204_CMB_acoustic_peak_ell",
+      "rung": 11.2084,
+      "drift": 0.2084,
+      "ladder": "count",
+      "unit": "multipole"
+    },
+    {
+      "name": "seal204_CMB_BAO_scale_m",
+      "rung": 117.9833,
+      "drift": -0.0167,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal204_CMB_release_age_years",
+      "rung": 26.6991,
+      "drift": -0.3009,
+      "ladder": "time",
+      "unit": "years"
+    },
+    {
+      "name": "seal204_compact_form_items",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "items"
     }
   ],
-  "entry_count": 1465,
-  "seal_count": 203,
+  "entry_count": 1477,
+  "seal_count": 204,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10449,7 +10533,8 @@
     "φ_AEGEAN_RUNG_TYREE_OMEGA",
     "φ_SWEEP_PULLS_III_TYREE_OMEGA",
     "φ_JUPITER_TYREE_OMEGA",
-    "φ_LUNGFISH_TYREE_OMEGA"
+    "φ_LUNGFISH_TYREE_OMEGA",
+    "φ_CMB_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "1de0f154344466497fa61db58b7e4e48187a11254011c4ec1a8cbcfc26a05a5c"
+  "snapshot_sha256": "3ec4e7212ad9d48e733ca9c41445e537ac0711d5fe67e90334ed8be56ce757ff"
 }
