@@ -10326,10 +10326,59 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "items"
+    },
+    {
+      "name": "seal205_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal205_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal205_willow_qubits_used",
+      "rung": 8.6747,
+      "drift": -0.3253,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal205_willow_qubits_total",
+      "rung": 9.6314,
+      "drift": -0.3686,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal205_google_echoes_speedup",
+      "rung": 19.6851,
+      "drift": -0.3149,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal205_classical_time_frontier_years",
+      "rung": 2.4171,
+      "drift": 0.4171,
+      "ladder": "time",
+      "unit": "years"
+    },
+    {
+      "name": "seal205_quantum_time_willow_hours",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "time",
+      "unit": "hours"
     }
   ],
-  "entry_count": 1477,
-  "seal_count": 204,
+  "entry_count": 1484,
+  "seal_count": 205,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10534,7 +10583,8 @@
     "φ_SWEEP_PULLS_III_TYREE_OMEGA",
     "φ_JUPITER_TYREE_OMEGA",
     "φ_LUNGFISH_TYREE_OMEGA",
-    "φ_CMB_TYREE_OMEGA"
+    "φ_CMB_TYREE_OMEGA",
+    "φ_WILLOW_ECHOES_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "3ec4e7212ad9d48e733ca9c41445e537ac0711d5fe67e90334ed8be56ce757ff"
+  "snapshot_sha256": "df7597df9f3b0db967bf9562b6c890c13d1c910cdd129697a15face022517427"
 }
