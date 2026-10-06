@@ -10116,10 +10116,136 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "items"
+    },
+    {
+      "name": "seal203_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal203_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal203_genome_bases",
+      "rung": 52.4387,
+      "drift": 0.4387,
+      "ladder": "count",
+      "unit": "bases"
+    },
+    {
+      "name": "seal203_repeat_pct",
+      "rung": 9.351,
+      "drift": 0.351,
+      "ladder": "percent",
+      "unit": "percent"
+    },
+    {
+      "name": "seal203_gene_count",
+      "rung": 20.5803,
+      "drift": -0.4197,
+      "ladder": "count",
+      "unit": "genes"
+    },
+    {
+      "name": "seal203_human_genome_bases",
+      "rung": 45.3478,
+      "drift": 0.3478,
+      "ladder": "count",
+      "unit": "bases"
+    },
+    {
+      "name": "seal203_genome_size_ratio",
+      "rung": 7.0909,
+      "drift": 0.0909,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal203_repeat_bases",
+      "rung": 52.2198,
+      "drift": 0.2198,
+      "ladder": "count",
+      "unit": "bases"
+    },
+    {
+      "name": "seal203_nonrepeat_bases",
+      "rung": 47.6537,
+      "drift": -0.3463,
+      "ladder": "count",
+      "unit": "bases"
+    },
+    {
+      "name": "seal203_repeat_to_nonrepeat_ratio",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal203_bases_per_gene",
+      "rung": 31.8584,
+      "drift": -0.1416,
+      "ladder": "count",
+      "unit": "bases_per_gene"
+    },
+    {
+      "name": "seal203_human_mtdna_bases",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "count",
+      "unit": "bases"
+    },
+    {
+      "name": "seal203_expansion_rate_bases_per_year",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "rate",
+      "unit": "bases_per_year"
+    },
+    {
+      "name": "seal203_expansion_rate_bases_per_myr",
+      "rung": 40.5628,
+      "drift": -0.4372,
+      "ladder": "rate",
+      "unit": "bases_per_myr"
+    },
+    {
+      "name": "seal203_genome_add_interval_years",
+      "rung": 33.4948,
+      "drift": 0.4948,
+      "ladder": "time",
+      "unit": "years"
+    },
+    {
+      "name": "seal203_expansion_span_years",
+      "rung": 38.2798,
+      "drift": 0.2798,
+      "ladder": "time",
+      "unit": "years"
+    },
+    {
+      "name": "seal203_golden_angle_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal203_compact_form_items",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "items"
     }
   ],
-  "entry_count": 1447,
-  "seal_count": 202,
+  "entry_count": 1465,
+  "seal_count": 203,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10322,7 +10448,8 @@
     "φ_ATOMIC_CLOCK_TYREE_OMEGA",
     "φ_AEGEAN_RUNG_TYREE_OMEGA",
     "φ_SWEEP_PULLS_III_TYREE_OMEGA",
-    "φ_JUPITER_TYREE_OMEGA"
+    "φ_JUPITER_TYREE_OMEGA",
+    "φ_LUNGFISH_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "773a53c257a3326983dec472cc2986a1c6a8c403d66ceec4447f3d6c2a6e7722"
+  "snapshot_sha256": "1de0f154344466497fa61db58b7e4e48187a11254011c4ec1a8cbcfc26a05a5c"
 }
