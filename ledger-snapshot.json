@@ -10529,10 +10529,38 @@
       "drift": -0.1788,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal209_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal209_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal209_h2_rate_BVR19Zn_umol_per_h_per_g",
+      "rung": 14.2219,
+      "drift": 0.2219,
+      "ladder": "count",
+      "unit": "micromol_per_h_per_g"
+    },
+    {
+      "name": "seal209_report_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1506,
-  "seal_count": 208,
+  "entry_count": 1510,
+  "seal_count": 209,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10741,7 +10769,8 @@
     "φ_WILLOW_ECHOES_TYREE_OMEGA",
     "φ_OPTOGENETICS_NOBEL_TYREE_OMEGA",
     "φ_ORDER_IN_CHAOS_TYREE_OMEGA",
-    "φ_PRIMORDIAL_MAGNETISM_HUBBLE_TYREE_OMEGA"
+    "φ_PRIMORDIAL_MAGNETISM_HUBBLE_TYREE_OMEGA",
+    "φ_METALFREE_MOF_HYDROGEN_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6a6c5d0d8ba4afaf96ea9eac07d6a1a99aa3227af54630fffa3c68c8e42e9ef7"
+  "snapshot_sha256": "1a1e16a562e25449b8997eb38ad8e1f7709c8ad7def57e9b3accf7cda6cf5118"
 }
