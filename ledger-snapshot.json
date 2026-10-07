@@ -10641,10 +10641,52 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal212_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal212_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal212_accuracy_gain_vs_classical",
+      "rung": 7.7171,
+      "drift": -0.2829,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "seal212_watermelon_launch_year",
+      "rung": 15.8212,
+      "drift": -0.1788,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal212_next_big_things_list_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal212_SQC_founded",
+      "rung": 15.8129,
+      "drift": -0.1871,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1522,
-  "seal_count": 211,
+  "entry_count": 1528,
+  "seal_count": 212,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10856,7 +10898,8 @@
     "φ_PRIMORDIAL_MAGNETISM_HUBBLE_TYREE_OMEGA",
     "φ_METALFREE_MOF_HYDROGEN_TYREE_OMEGA",
     "φ_FIVED_BLACK_HOLES_TYREE_OMEGA",
-    "φ_INDENTICAL_PHOTONS_TYREE_OMEGA"
+    "φ_INDENTICAL_PHOTONS_TYREE_OMEGA",
+    "φ_WATERMELON_RESERVOIR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "1759a1c070366288675b80f2ce08a4dbf7d29bd032f9b5fab314833dbe70fb80"
+  "snapshot_sha256": "68654fdcf4ff4dbb31cdd6b16812a716830ce0f5cf65fd1d08dbae8278b58d0a"
 }
