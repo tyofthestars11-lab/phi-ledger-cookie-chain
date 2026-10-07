@@ -11096,10 +11096,66 @@
       "drift": 0.0064,
       "ladder": "time",
       "unit": "months"
+    },
+    {
+      "name": "seal222_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal222_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal222_interface_channels",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal222_atoms_used",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal222_waveguide_channels_total",
+      "rung": 7.2021,
+      "drift": 0.2021,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal222_scalable_channels",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal222_expected_atom_arrays",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal222_moonshot_goal_year",
+      "rung": 15.8466,
+      "drift": -0.1534,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1587,
-  "seal_count": 221,
+  "entry_count": 1595,
+  "seal_count": 222,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11321,7 +11377,8 @@
     "φ_K21_MITOPHAGY_LIFESPAN_TYREE_OMEGA",
     "φ_MICOS_MIC60_MIC19_TYREE_OMEGA",
     "φ_R2_GENE_WRITERS_TYREE_OMEGA",
-    "φ_PASQAL_PHOTONIC_TRAP_TYREE_OMEGA"
+    "φ_PASQAL_PHOTONIC_TRAP_TYREE_OMEGA",
+    "φ_TEN_CHANNEL_INTERFACE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "40f124d015a273b084af630e9fa0256da08ebe4910036f62275fa1ead1e5558d"
+  "snapshot_sha256": "e9c6c81b5b647e0853cf43451af118d8852a9f112519a646a2e443ec2b536772"
 }
