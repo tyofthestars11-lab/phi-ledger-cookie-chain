@@ -10683,10 +10683,59 @@
       "drift": -0.1871,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal213_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal213_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal213_hot_H_altitude_km",
+      "rung": 11.4741,
+      "drift": 0.4741,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "seal213_hot_H_altitude_mi",
+      "rung": 10.4807,
+      "drift": 0.4807,
+      "ladder": "count",
+      "unit": "mi"
+    },
+    {
+      "name": "seal213_thermosphere_lower_km",
+      "rung": 9.2322,
+      "drift": 0.2322,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "seal213_thermosphere_upper_km",
+      "rung": 12.9145,
+      "drift": -0.0855,
+      "ladder": "count",
+      "unit": "km"
+    },
+    {
+      "name": "seal213_nature_comms_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1528,
-  "seal_count": 212,
+  "entry_count": 1535,
+  "seal_count": 213,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10899,7 +10948,8 @@
     "φ_METALFREE_MOF_HYDROGEN_TYREE_OMEGA",
     "φ_FIVED_BLACK_HOLES_TYREE_OMEGA",
     "φ_INDENTICAL_PHOTONS_TYREE_OMEGA",
-    "φ_WATERMELON_RESERVOIR_TYREE_OMEGA"
+    "φ_WATERMELON_RESERVOIR_TYREE_OMEGA",
+    "φ_HOT_H_THERMOSPHERE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "68654fdcf4ff4dbb31cdd6b16812a716830ce0f5cf65fd1d08dbae8278b58d0a"
+  "snapshot_sha256": "9aae3e701106d5bd93b85ca3f4589752c1c2a66fd0a8342c44b85b5ce4398d4d"
 }
