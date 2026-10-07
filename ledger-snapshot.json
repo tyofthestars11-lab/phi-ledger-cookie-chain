@@ -11397,10 +11397,38 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal226_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal226_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal226_collaborating_parties",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "parties"
+    },
+    {
+      "name": "seal226_press_release_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1630,
-  "seal_count": 225,
+  "entry_count": 1634,
+  "seal_count": 226,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11626,7 +11654,8 @@
     "φ_TEN_CHANNEL_INTERFACE_TYREE_OMEGA",
     "φ_DIAMOND_T2STAR_TYREE_OMEGA",
     "φ_YBCU2_HEAVY_FERMION_TYREE_OMEGA",
-    "φ_PHONONIC_LINKS_TYREE_OMEGA"
+    "φ_PHONONIC_LINKS_TYREE_OMEGA",
+    "φ_OPTICAL_CAVITY_SENSOR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c89f90aa28eb272bd1fce5f804c03894f745308c5f678af29c5d1b493d637744"
+  "snapshot_sha256": "0ea4199cecf7dcfc66f95b9f1f92a977a182785c11d50487705eae8452a1c64b"
 }
