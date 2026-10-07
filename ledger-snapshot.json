@@ -10375,10 +10375,66 @@
       "drift": 0.4404,
       "ladder": "time",
       "unit": "hours"
+    },
+    {
+      "name": "seal206_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal206_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal206_nobel_medicine_laureates",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "laureates"
+    },
+    {
+      "name": "seal206_nobel_prize_SEK",
+      "rung": 33.8737,
+      "drift": -0.1263,
+      "ladder": "count",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal206_nobel_share_per_laureate_SEK",
+      "rung": 31.5907,
+      "drift": -0.4093,
+      "ladder": "count",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal206_optogenetics_neuron_paper_year",
+      "rung": 15.8005,
+      "drift": -0.1995,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal206_nobel_announcement_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal206_nobel_ceremony_day",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "time",
+      "unit": "day"
     }
   ],
-  "entry_count": 1484,
-  "seal_count": 205,
+  "entry_count": 1492,
+  "seal_count": 206,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10584,7 +10640,8 @@
     "φ_JUPITER_TYREE_OMEGA",
     "φ_LUNGFISH_TYREE_OMEGA",
     "φ_CMB_TYREE_OMEGA",
-    "φ_WILLOW_ECHOES_TYREE_OMEGA"
+    "φ_WILLOW_ECHOES_TYREE_OMEGA",
+    "φ_OPTOGENETICS_NOBEL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "df7597df9f3b0db967bf9562b6c890c13d1c910cdd129697a15face022517427"
+  "snapshot_sha256": "4209e45dfff921cb87e1116c74170cd3ef2b74415f088fcc505fad0d9540866d"
 }
