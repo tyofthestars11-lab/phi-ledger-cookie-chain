@@ -11509,10 +11509,115 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal229_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal229_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal229_manuscript_count",
+      "rung": 13.678,
+      "drift": -0.322,
+      "ladder": "count",
+      "unit": "manuscripts"
+    },
+    {
+      "name": "seal229_family_count",
+      "rung": 12.3,
+      "drift": 0.3,
+      "ladder": "count",
+      "unit": "families"
+    },
+    {
+      "name": "seal229_bsd_family_manuscripts",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "manuscripts"
+    },
+    {
+      "name": "seal229_goldfeld_manuscripts",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "manuscripts"
+    },
+    {
+      "name": "seal229_bsd_pages_read",
+      "rung": 12.9597,
+      "drift": -0.0403,
+      "ladder": "count",
+      "unit": "pages"
+    },
+    {
+      "name": "seal229_yaml_formalized_sources",
+      "rung": 10.5725,
+      "drift": -0.4275,
+      "ladder": "count",
+      "unit": "sources"
+    },
+    {
+      "name": "seal229_yaml_formalized_families",
+      "rung": 10.0666,
+      "drift": 0.0666,
+      "ladder": "count",
+      "unit": "families"
+    },
+    {
+      "name": "seal229_doc_families",
+      "rung": 11.3455,
+      "drift": 0.3455,
+      "ladder": "count",
+      "unit": "families"
+    },
+    {
+      "name": "seal229_comparator_challenges",
+      "rung": 12.4766,
+      "drift": 0.4766,
+      "ladder": "count",
+      "unit": "challenges"
+    },
+    {
+      "name": "seal229_kernel_accepted_modules",
+      "rung": 10.0829,
+      "drift": 0.0829,
+      "ladder": "count",
+      "unit": "modules"
+    },
+    {
+      "name": "seal229_hardware_blocked_modules",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "modules"
+    },
+    {
+      "name": "seal229_repo_size_kb",
+      "rung": 28.2434,
+      "drift": 0.2434,
+      "ladder": "count",
+      "unit": "KB"
+    },
+    {
+      "name": "seal229_release_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1646,
-  "seal_count": 228,
+  "entry_count": 1661,
+  "seal_count": 229,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11741,7 +11846,8 @@
     "φ_PHONONIC_LINKS_TYREE_OMEGA",
     "φ_OPTICAL_CAVITY_SENSOR_TYREE_OMEGA",
     "φ_NOBEL_CHEMISTRY_TYREE_OMEGA",
-    "φ_NOBEL_PHYSICS_HALZEN_TYREE_OMEGA"
+    "φ_NOBEL_PHYSICS_HALZEN_TYREE_OMEGA",
+    "φ_OPENAI_MATH_RELEASE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7a2d0d862c785ab86939f35f4e27311a895b1e31b32a7bcce467f844ab37318d"
+  "snapshot_sha256": "b0ebbffe622f7b4be6d668d97af40d818a9c8b9cd4a7a48496454300da58e941"
 }
