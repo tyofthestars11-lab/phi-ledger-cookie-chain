@@ -10900,10 +10900,24 @@
       "drift": -0.0,
       "ladder": "ratio",
       "unit": "phi2"
+    },
+    {
+      "name": "seal217_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal217_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
     }
   ],
-  "entry_count": 1559,
-  "seal_count": 216,
+  "entry_count": 1561,
+  "seal_count": 217,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11120,7 +11134,8 @@
     "φ_HOT_H_THERMOSPHERE_TYREE_OMEGA",
     "φ_PA30_PEARL_KNOTS_TYREE_OMEGA",
     "φ_JWST_EARLY_SEEDING_TYREE_OMEGA",
-    "φ_ANTIPODAL_HAWKING_TYREE_OMEGA"
+    "φ_ANTIPODAL_HAWKING_TYREE_OMEGA",
+    "φ_LAPTM5_MITOPHAGY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "79860db08d8c747a9180208bbd67a0c2ace6c115540914d2aa12eb5966030be8"
+  "snapshot_sha256": "e9629c350f642ceaa53ed044f9ca3df1fff36128bd04cee1bf79b5f29cc421f1"
 }
