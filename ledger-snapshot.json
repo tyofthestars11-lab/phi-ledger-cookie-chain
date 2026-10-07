@@ -11614,10 +11614,108 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal230_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal230_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal230_bohr_radius_m",
+      "rung": -49.1723,
+      "drift": -0.1723,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal230_principal_n",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "n"
+    },
+    {
+      "name": "seal230_radius_factor",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "count",
+      "unit": "n2"
+    },
+    {
+      "name": "seal230_r100_m",
+      "rung": -30.0324,
+      "drift": -0.0324,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal230_r2_m",
+      "rung": -46.2914,
+      "drift": -0.2914,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal230_r3_m",
+      "rung": -44.6063,
+      "drift": 0.3937,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal230_r101_m",
+      "rung": -29.991,
+      "drift": 0.009,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal230_ground_energy_eV",
+      "rung": 5.424,
+      "drift": 0.424,
+      "ladder": "energy",
+      "unit": "eV"
+    },
+    {
+      "name": "seal230_rydberg_energy_eV",
+      "rung": -13.7159,
+      "drift": 0.2841,
+      "ladder": "energy",
+      "unit": "eV"
+    },
+    {
+      "name": "seal230_blockade_power",
+      "rung": 4.983,
+      "drift": -0.017,
+      "ladder": "count",
+      "unit": "power"
+    },
+    {
+      "name": "seal230_blockade_root",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "root"
+    },
+    {
+      "name": "seal230_compact_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 1661,
-  "seal_count": 229,
+  "entry_count": 1675,
+  "seal_count": 230,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11847,7 +11945,8 @@
     "φ_OPTICAL_CAVITY_SENSOR_TYREE_OMEGA",
     "φ_NOBEL_CHEMISTRY_TYREE_OMEGA",
     "φ_NOBEL_PHYSICS_HALZEN_TYREE_OMEGA",
-    "φ_OPENAI_MATH_RELEASE_TYREE_OMEGA"
+    "φ_OPENAI_MATH_RELEASE_TYREE_OMEGA",
+    "φ_RYDBERG_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "b0ebbffe622f7b4be6d668d97af40d818a9c8b9cd4a7a48496454300da58e941"
+  "snapshot_sha256": "668f4af4b7361ced2df3fa47f5845eb7f46c785479e0427c48bdd28adf6699c7"
 }
