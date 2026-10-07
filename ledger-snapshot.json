@@ -10977,10 +10977,66 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal220_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal220_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal220_r2_retrotransposons",
+      "rung": 10.5336,
+      "drift": -0.4664,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal220_bird_genomes",
+      "rung": 14.6254,
+      "drift": -0.3746,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal220_integration_efficiency_primary_cells",
+      "rung": -1.0615,
+      "drift": -0.0615,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal220_indel_redelivery",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal220_ribozymes_modeled",
+      "rung": 10.6106,
+      "drift": -0.3894,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal220_car_t_positive_day",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "time",
+      "unit": "days"
     }
   ],
-  "entry_count": 1570,
-  "seal_count": 219,
+  "entry_count": 1578,
+  "seal_count": 220,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11200,7 +11256,8 @@
     "φ_ANTIPODAL_HAWKING_TYREE_OMEGA",
     "φ_LAPTM5_MITOPHAGY_TYREE_OMEGA",
     "φ_K21_MITOPHAGY_LIFESPAN_TYREE_OMEGA",
-    "φ_MICOS_MIC60_MIC19_TYREE_OMEGA"
+    "φ_MICOS_MIC60_MIC19_TYREE_OMEGA",
+    "φ_R2_GENE_WRITERS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "806d02567f5af3b5be183995b0fabbbcdcacb9ccdc128dae9679bfa930eb7b5c"
+  "snapshot_sha256": "ff3451069a1daed25542b373195ee65da562ace1bc447f4aaf1a574cd259d2d0"
 }
