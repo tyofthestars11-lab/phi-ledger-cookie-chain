@@ -34,15 +34,7 @@ def main():
     new_entries = json.load(open(a.entries))
 
     for e in new_entries:
-        v = e["value"]
-        if not (isinstance(v, (int, float)) and v > 0):
-            # A zero (or non-positive) count is a real measured read, but it has
-            # no rung address: ln(0) is undefined. It stays in the seal's entries
-            # file (committed alongside); only rung-addressable values enter the
-            # snapshot.
-            print(f"note: {e['name']} = {v} has no rung address; kept in entries file only")
-            continue
-        r, dr = rung_of(v)
+        r, dr = rung_of(e["value"])
         d["entries"].append({
             "name": e["name"],
             "rung": r,
