@@ -11425,10 +11425,52 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal227_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal227_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal227_laureate_count",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "laureates"
+    },
+    {
+      "name": "seal227_prize_total",
+      "rung": 33.8737,
+      "drift": -0.1263,
+      "ladder": "count",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal227_share_per_laureate",
+      "rung": 32.4333,
+      "drift": 0.4333,
+      "ladder": "count",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal227_announcement_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1634,
-  "seal_count": 226,
+  "entry_count": 1640,
+  "seal_count": 227,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11655,7 +11697,8 @@
     "φ_DIAMOND_T2STAR_TYREE_OMEGA",
     "φ_YBCU2_HEAVY_FERMION_TYREE_OMEGA",
     "φ_PHONONIC_LINKS_TYREE_OMEGA",
-    "φ_OPTICAL_CAVITY_SENSOR_TYREE_OMEGA"
+    "φ_OPTICAL_CAVITY_SENSOR_TYREE_OMEGA",
+    "φ_NOBEL_CHEMISTRY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0ea4199cecf7dcfc66f95b9f1f92a977a182785c11d50487705eae8452a1c64b"
+  "snapshot_sha256": "7c1a41b74454713d180b33a08bab29de1bb16409784d604058eba0d83b109223"
 }
