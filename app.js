@@ -1340,6 +1340,9 @@ async function runBatchAnchor() {
     const missing = await loadMissingSeals(true); // fresh chain read every run — resume still works via the done list
     const done = new Set(batchDoneList());
     const todo = missing.filter(s => !done.has(s));
+    // This-run counters only: the all-time done list must never leak into
+    // this run's progress display (that was the "150 of 27" / "-123 left" bug).
+    let runAnchored = 0, runTx = 0;
     if (!todo.length) {
       out.innerHTML = '<span class="text-green-400">All missing seals already anchored ✓</span>';
       batchRunning = false; btn.disabled = false; btn.textContent = 'Anchor all missing';
@@ -1361,7 +1364,7 @@ async function runBatchAnchor() {
       let sig = null, lastErr = null;
       for (let round = 0; round < 3 && !sig; round++) {
         if (round === 0) {
-          out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — ${seals.length} seals… approve in your wallet.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${done.size} of ${missing.length} seals</span>`;
+          out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — ${seals.length} seals… approve in your wallet.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${runAnchored} of ${todo.length} seals</span>`;
         } else {
           out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — refreshing… approve in your wallet.</span>`;
         }
@@ -1371,8 +1374,8 @@ async function runBatchAnchor() {
           sig = await broadcastAndVerify(signed.finalTx, out, signed.finalInfo, signed.finalTx._memoTexts);
         } catch (e) {
           if (isRejection(e)) {
-            out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed at batch ${bi + 1}/${batches.length}. ${done.size} of ${missing.length} seals anchored. Tap the button to resume.</span>`;
-            batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${missing.length - done.size} left)`;
+            out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed at batch ${bi + 1}/${batches.length}. ${runAnchored} of ${todo.length} seals anchored. Tap the button to resume.</span>`;
+            batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${todo.length - runAnchored} left)`;
             return;
           }
           lastErr = e;
@@ -1382,13 +1385,14 @@ async function runBatchAnchor() {
       if (!sig) throw lastErr || new Error('Batch did not land.');
       batchMarkDone(seals);
       seals.forEach(s => done.add(s));
+      runAnchored += seals.length; runTx += 1;
       // Same cadence as the single anchor: Confirmed → read back → Anchored ✓.
       // broadcastAndVerify already showed "Confirmed — reading it back…";
       // this lands the per-batch Anchored line before the next approval.
-      out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">batch ${bi + 1}/${batches.length} — ${seals.length} seals verified on-chain.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${done.size} of ${missing.length} seals</span><br><a class="underline text-gray-500 text-xs" href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+      out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">batch ${bi + 1}/${batches.length} — ${seals.length} seals verified on-chain.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${runAnchored} of ${todo.length} seals</span><br><a class="underline text-gray-500 text-xs" href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     }
-    const left = missing.length - done.size;
-    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${done.size} of ${missing.length} seals on-chain in ${batchTxTotal()} transactions.</span>` + (left === 0 ? `<br><span class="gold">All ${missing.length} seals anchored.</span>` : '');
+    const left = todo.length - runAnchored;
+    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${runAnchored} of ${todo.length} seals on-chain in ${runTx} transactions.</span>` + (left === 0 ? `<br><span class="gold">All ${todo.length} seals anchored.</span>` : '');
     refreshBalance();
     batchRunning = false; btn.disabled = false;
     btn.textContent = left ? `Resume anchoring (${left} left)` : 'Anchor all missing';
