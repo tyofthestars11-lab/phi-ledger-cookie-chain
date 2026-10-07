@@ -788,6 +788,13 @@ function hexOf(u8) {
 
 function anchorDone(out, sig, seal) {
   out.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">seal:</span> ${seal}<br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+  // A single anchor also counts for "Anchor all missing": record it, drop the
+  // cached missing list, and refresh the button count.
+  try {
+    batchMarkDone([seal]);
+    invalidateMissingSeals();
+    refreshBatchLabel();
+  } catch (e) {}
 }
 
 function wireCopyButton(id) {
@@ -1263,13 +1270,58 @@ function batchMarkDone(seals) {
 function batchTxTotal() {
   try { return parseInt(lsGet('batchTxTotalV1') || '0', 10) || 0; } catch (e) { return 0; }
 }
-async function loadMissingSeals() {
-  if (window._missingSeals) return window._missingSeals;
-  const r = await fetch('missing_seals.json?v=1');
-  if (!r.ok) throw new Error('missing_seals.json not found — reload the page.');
-  window._missingSeals = await r.json();
+/* Live missing-seal read: the chain is the record. The old static
+ * missing_seals.json was a dead empty list, which made "Anchor all
+ * missing" claim everything was already anchored. This walks the wallet's
+ * real transaction history over RPC (paginated getSignaturesForAddress),
+ * reads every transaction's Memo-program memos, and reports the snapshot
+ * seals with no on-chain PHI-LEDGER memo as missing. Anything the wallet
+ * anchored — single or batch, any session — counts. */
+async function rpcCall(method, params) {
+  const r = await fetch(connection.rpcEndpoint, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }),
+  });
+  const j = await r.json();
+  if (j.error) throw new Error('RPC ' + method + ': ' + (j.error.message || 'error'));
+  return j.result;
+}
+async function loadMissingSeals(force) {
+  if (window._missingSeals && !force) return window._missingSeals;
+  if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
+  if (!wallet) throw new Error('Connect your wallet first — missing seals are read from the chain.');
+  const anchored = new Set();
+  const need = new Set(snapshot.seals);
+  let before = null;
+  for (let page = 0; page < 20 && need.size > 0; page++) {
+    const opts = { limit: 1000, commitment: 'confirmed' };
+    if (before) opts.before = before;
+    const sigs = await rpcCall('getSignaturesForAddress', [wallet, opts]);
+    if (!sigs || !sigs.length) break;
+    before = sigs[sigs.length - 1].signature;
+    // Read memos in parallel — a few hundred ms per wave, not per tx.
+    const CONC = 8;
+    for (let i = 0; i < sigs.length && need.size > 0; i += CONC) {
+      const wave = sigs.slice(i, i + CONC);
+      const raws = await Promise.all(wave.map(async s => {
+        if (s.err) return null;
+        try { return await fetchRawTx(s.signature); } catch (e) { return null; }
+      }));
+      for (const raw of raws) {
+        if (!raw) continue;
+        for (const memo of memosFromRawTx(raw)) {
+          const m = memo.match(/PHI-LEDGER\|seal=([^|]+)\|/);
+          if (m) { anchored.add(m[1]); need.delete(m[1]); }
+        }
+      }
+    }
+    if (sigs.length < 1000) break;
+  }
+  window._missingSeals = snapshot.seals.filter(s => !anchored.has(s));
   return window._missingSeals;
 }
+function invalidateMissingSeals() { window._missingSeals = null; }
 function isRejection(e) {
   const m = String((e && e.message) || e).toLowerCase();
   return /reject|denied|cancel|dismiss|user closed|declined/.test(m);
@@ -1285,7 +1337,7 @@ async function runBatchAnchor() {
   const pubBytes = new PublicKey(wallet).toBytes();
   try {
     if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
-    const missing = await loadMissingSeals();
+    const missing = await loadMissingSeals(true); // fresh chain read every run — resume still works via the done list
     const done = new Set(batchDoneList());
     const todo = missing.filter(s => !done.has(s));
     if (!todo.length) {
@@ -1330,9 +1382,13 @@ async function runBatchAnchor() {
       if (!sig) throw lastErr || new Error('Batch did not land.');
       batchMarkDone(seals);
       seals.forEach(s => done.add(s));
+      // Same cadence as the single anchor: Confirmed → read back → Anchored ✓.
+      // broadcastAndVerify already showed "Confirmed — reading it back…";
+      // this lands the per-batch Anchored line before the next approval.
+      out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">batch ${bi + 1}/${batches.length} — ${seals.length} seals verified on-chain.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${done.size} of ${missing.length} seals</span><br><a class="underline text-gray-500 text-xs" href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
     }
     const left = missing.length - done.size;
-    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${done.size} of ${missing.length} seals on-chain in ${batchTxTotal()} transactions.</span>` + (left === 0 ? '<br><span class="gold">All 185 seals anchored.</span>' : '');
+    out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${done.size} of ${missing.length} seals on-chain in ${batchTxTotal()} transactions.</span>` + (left === 0 ? `<br><span class="gold">All ${missing.length} seals anchored.</span>` : '');
     refreshBalance();
     batchRunning = false; btn.disabled = false;
     btn.textContent = left ? `Resume anchoring (${left} left)` : 'Anchor all missing';
