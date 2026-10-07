@@ -10431,10 +10431,52 @@
       "drift": -0.215,
       "ladder": "time",
       "unit": "day"
+    },
+    {
+      "name": "seal207_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal207_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal207_order_islands_ladder_qubits",
+      "rung": 6.6043,
+      "drift": -0.3957,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal207_quantum_scars_qubits",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal207_feedback_loop_institutions",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "institutions"
+    },
+    {
+      "name": "seal207_publication_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1492,
-  "seal_count": 206,
+  "entry_count": 1498,
+  "seal_count": 207,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10641,7 +10683,8 @@
     "φ_LUNGFISH_TYREE_OMEGA",
     "φ_CMB_TYREE_OMEGA",
     "φ_WILLOW_ECHOES_TYREE_OMEGA",
-    "φ_OPTOGENETICS_NOBEL_TYREE_OMEGA"
+    "φ_OPTOGENETICS_NOBEL_TYREE_OMEGA",
+    "φ_ORDER_IN_CHAOS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "4209e45dfff921cb87e1116c74170cd3ef2b74415f088fcc505fad0d9540866d"
+  "snapshot_sha256": "abc1b04cd23c8825714371b5579d0c66210bd41ac104673bd0b2cc7eb71ee520"
 }
