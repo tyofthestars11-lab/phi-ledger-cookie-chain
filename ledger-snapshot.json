@@ -11467,10 +11467,52 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal228_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal228_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal228_laureate_count",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "laureates"
+    },
+    {
+      "name": "seal228_prize_total",
+      "rung": 33.8737,
+      "drift": -0.1263,
+      "ladder": "count",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal228_share_per_laureate",
+      "rung": 33.8737,
+      "drift": -0.1263,
+      "ladder": "count",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal228_announcement_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1640,
-  "seal_count": 227,
+  "entry_count": 1646,
+  "seal_count": 228,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11698,7 +11740,8 @@
     "φ_YBCU2_HEAVY_FERMION_TYREE_OMEGA",
     "φ_PHONONIC_LINKS_TYREE_OMEGA",
     "φ_OPTICAL_CAVITY_SENSOR_TYREE_OMEGA",
-    "φ_NOBEL_CHEMISTRY_TYREE_OMEGA"
+    "φ_NOBEL_CHEMISTRY_TYREE_OMEGA",
+    "φ_NOBEL_PHYSICS_HALZEN_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7c1a41b74454713d180b33a08bab29de1bb16409784d604058eba0d83b109223"
+  "snapshot_sha256": "7a2d0d862c785ab86939f35f4e27311a895b1e31b32a7bcce467f844ab37318d"
 }
