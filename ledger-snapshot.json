@@ -11152,10 +11152,115 @@
       "drift": -0.1534,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal223_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal223_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal223_t2star_us",
+      "rung": 3.4735,
+      "drift": 0.4735,
+      "ladder": "time",
+      "unit": "us"
+    },
+    {
+      "name": "seal223_volume_fraction_percent",
+      "rung": -3.0541,
+      "drift": -0.0541,
+      "ladder": "ratio",
+      "unit": "percent"
+    },
+    {
+      "name": "seal223_magnet_assembly_cm",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "cm"
+    },
+    {
+      "name": "seal223_sample_thickness_um",
+      "rung": 12.2888,
+      "drift": 0.2888,
+      "ladder": "count",
+      "unit": "um"
+    },
+    {
+      "name": "seal223_dephasing_rate_kHz",
+      "rung": 10.8818,
+      "drift": -0.1182,
+      "ladder": "count",
+      "unit": "kHz"
+    },
+    {
+      "name": "seal223_field_uniformity_uT",
+      "rung": 1.2215,
+      "drift": 0.2215,
+      "ladder": "count",
+      "unit": "uT"
+    },
+    {
+      "name": "seal223_uniformity_ppm",
+      "rung": 13.6723,
+      "drift": -0.3277,
+      "ladder": "count",
+      "unit": "ppm"
+    },
+    {
+      "name": "seal223_bias_field_mT",
+      "rung": 1.9041,
+      "drift": -0.0959,
+      "ladder": "count",
+      "unit": "mT"
+    },
+    {
+      "name": "seal223_helmholtz_coil_mm",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "count",
+      "unit": "mm"
+    },
+    {
+      "name": "seal223_p1_concentration_ppm",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "count",
+      "unit": "ppm"
+    },
+    {
+      "name": "seal223_dephasing_limit_kHz",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "count",
+      "unit": "kHz"
+    },
+    {
+      "name": "seal223_zeeman_shift_kHz",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "kHz"
+    },
+    {
+      "name": "seal223_pub_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1595,
-  "seal_count": 222,
+  "entry_count": 1610,
+  "seal_count": 223,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11378,7 +11483,8 @@
     "φ_MICOS_MIC60_MIC19_TYREE_OMEGA",
     "φ_R2_GENE_WRITERS_TYREE_OMEGA",
     "φ_PASQAL_PHOTONIC_TRAP_TYREE_OMEGA",
-    "φ_TEN_CHANNEL_INTERFACE_TYREE_OMEGA"
+    "φ_TEN_CHANNEL_INTERFACE_TYREE_OMEGA",
+    "φ_DIAMOND_T2STAR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e9c6c81b5b647e0853cf43451af118d8852a9f112519a646a2e443ec2b536772"
+  "snapshot_sha256": "a096ba532ef268036d34c59081a9f866ffe1289d8c5d7d47de50765245bc3f0b"
 }
