@@ -11355,10 +11355,52 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal225_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal225_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal225_wafer_diameter_mm",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "count",
+      "unit": "mm"
+    },
+    {
+      "name": "seal225_target_qubit_count",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal225_min_link_um",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "um"
+    },
+    {
+      "name": "seal225_pub_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1624,
-  "seal_count": 224,
+  "entry_count": 1630,
+  "seal_count": 225,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11583,7 +11625,8 @@
     "φ_PASQAL_PHOTONIC_TRAP_TYREE_OMEGA",
     "φ_TEN_CHANNEL_INTERFACE_TYREE_OMEGA",
     "φ_DIAMOND_T2STAR_TYREE_OMEGA",
-    "φ_YBCU2_HEAVY_FERMION_TYREE_OMEGA"
+    "φ_YBCU2_HEAVY_FERMION_TYREE_OMEGA",
+    "φ_PHONONIC_LINKS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ab29bf59be4da47c35be846c0a653953eaed0ef62681a1265e616b17b2453a3a"
+  "snapshot_sha256": "c89f90aa28eb272bd1fce5f804c03894f745308c5f678af29c5d1b493d637744"
 }
