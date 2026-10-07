@@ -10928,10 +10928,59 @@
       "drift": -0.0,
       "ladder": "ratio",
       "unit": "phi2"
+    },
+    {
+      "name": "seal219_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal219_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal219_model_correspondence",
+      "rung": 9.5066,
+      "drift": -0.4934,
+      "ladder": "ratio",
+      "unit": "percent"
+    },
+    {
+      "name": "seal219_diffusion_cutoff_radius",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "nm"
+    },
+    {
+      "name": "seal219_simulated_spheres",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal219_simulated_sphere_radius",
+      "rung": 0.8426,
+      "drift": -0.1574,
+      "ladder": "count",
+      "unit": "nm"
+    },
+    {
+      "name": "seal219_publication_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1563,
-  "seal_count": 218,
+  "entry_count": 1570,
+  "seal_count": 219,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11150,7 +11199,8 @@
     "φ_JWST_EARLY_SEEDING_TYREE_OMEGA",
     "φ_ANTIPODAL_HAWKING_TYREE_OMEGA",
     "φ_LAPTM5_MITOPHAGY_TYREE_OMEGA",
-    "φ_K21_MITOPHAGY_LIFESPAN_TYREE_OMEGA"
+    "φ_K21_MITOPHAGY_LIFESPAN_TYREE_OMEGA",
+    "φ_MICOS_MIC60_MIC19_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7ef0a3f393b166243e2a0384b438c63e02abf8481bb49f5063b00b1d277ce9c4"
+  "snapshot_sha256": "806d02567f5af3b5be183995b0fabbbcdcacb9ccdc128dae9679bfa930eb7b5c"
 }
