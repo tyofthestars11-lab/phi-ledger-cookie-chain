@@ -11257,10 +11257,108 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal224_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal224_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal224_hf_states_observed",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "seal224_layer_thickness_atoms",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "atoms"
+    },
+    {
+      "name": "seal224_coherence_temp_K",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "count",
+      "unit": "K"
+    },
+    {
+      "name": "seal224_moire_period_angstrom",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "count",
+      "unit": "angstrom"
+    },
+    {
+      "name": "seal224_layer_lattice_distance_angstrom",
+      "rung": 3.1713,
+      "drift": 0.1713,
+      "ladder": "count",
+      "unit": "angstrom"
+    },
+    {
+      "name": "seal224_arpes_temp_K",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "K"
+    },
+    {
+      "name": "seal224_stm_temp_K",
+      "rung": 9.1062,
+      "drift": 0.1062,
+      "ladder": "count",
+      "unit": "K"
+    },
+    {
+      "name": "seal224_leed_temp_K",
+      "rung": 8.8287,
+      "drift": -0.1713,
+      "ladder": "count",
+      "unit": "K"
+    },
+    {
+      "name": "seal224_fermi_wavenumber_Ainv",
+      "rung": -3.3446,
+      "drift": -0.3446,
+      "ladder": "count",
+      "unit": "A^-1"
+    },
+    {
+      "name": "seal224_f72_shift_meV",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "meV"
+    },
+    {
+      "name": "seal224_lattice_constant_angstrom",
+      "rung": 3.2597,
+      "drift": 0.2597,
+      "ladder": "count",
+      "unit": "angstrom"
+    },
+    {
+      "name": "seal224_pub_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1610,
-  "seal_count": 223,
+  "entry_count": 1624,
+  "seal_count": 224,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11484,7 +11582,8 @@
     "φ_R2_GENE_WRITERS_TYREE_OMEGA",
     "φ_PASQAL_PHOTONIC_TRAP_TYREE_OMEGA",
     "φ_TEN_CHANNEL_INTERFACE_TYREE_OMEGA",
-    "φ_DIAMOND_T2STAR_TYREE_OMEGA"
+    "φ_DIAMOND_T2STAR_TYREE_OMEGA",
+    "φ_YBCU2_HEAVY_FERMION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "a096ba532ef268036d34c59081a9f866ffe1289d8c5d7d47de50765245bc3f0b"
+  "snapshot_sha256": "ab29bf59be4da47c35be846c0a653953eaed0ef62681a1265e616b17b2453a3a"
 }
