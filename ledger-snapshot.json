@@ -10473,10 +10473,66 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal208_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal208_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal208_sim_dimensions",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "seal208_field_strength_low_pG",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "picoGauss"
+    },
+    {
+      "name": "seal208_field_strength_high_pG",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "picoGauss"
+    },
+    {
+      "name": "seal208_sigma_preference_low",
+      "rung": 0.8426,
+      "drift": -0.1574,
+      "ladder": "count",
+      "unit": "sigma"
+    },
+    {
+      "name": "seal208_sigma_preference_high",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "sigma"
+    },
+    {
+      "name": "seal208_nature_astronomy_paper_year",
+      "rung": 15.8212,
+      "drift": -0.1788,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1498,
-  "seal_count": 207,
+  "entry_count": 1506,
+  "seal_count": 208,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10684,7 +10740,8 @@
     "φ_CMB_TYREE_OMEGA",
     "φ_WILLOW_ECHOES_TYREE_OMEGA",
     "φ_OPTOGENETICS_NOBEL_TYREE_OMEGA",
-    "φ_ORDER_IN_CHAOS_TYREE_OMEGA"
+    "φ_ORDER_IN_CHAOS_TYREE_OMEGA",
+    "φ_PRIMORDIAL_MAGNETISM_HUBBLE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "abc1b04cd23c8825714371b5579d0c66210bd41ac104673bd0b2cc7eb71ee520"
+  "snapshot_sha256": "6a6c5d0d8ba4afaf96ea9eac07d6a1a99aa3227af54630fffa3c68c8e42e9ef7"
 }
