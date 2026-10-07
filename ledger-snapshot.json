@@ -10599,10 +10599,52 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal211_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal211_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal211_photon_indistinguishability_new",
+      "rung": 9.351,
+      "drift": 0.351,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "seal211_photon_indistinguishability_prior",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "seal211_collaborating_universities",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "universities"
+    },
+    {
+      "name": "seal211_PR_applied_paper_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1516,
-  "seal_count": 210,
+  "entry_count": 1522,
+  "seal_count": 211,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10813,7 +10855,8 @@
     "φ_ORDER_IN_CHAOS_TYREE_OMEGA",
     "φ_PRIMORDIAL_MAGNETISM_HUBBLE_TYREE_OMEGA",
     "φ_METALFREE_MOF_HYDROGEN_TYREE_OMEGA",
-    "φ_FIVED_BLACK_HOLES_TYREE_OMEGA"
+    "φ_FIVED_BLACK_HOLES_TYREE_OMEGA",
+    "φ_INDENTICAL_PHOTONS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c6624ea0530eb9d4d4c23f5a45b0a0c947a29fa8286960b9effa80f0fb0b18bf"
+  "snapshot_sha256": "1759a1c070366288675b80f2ce08a4dbf7d29bd032f9b5fab314833dbe70fb80"
 }
