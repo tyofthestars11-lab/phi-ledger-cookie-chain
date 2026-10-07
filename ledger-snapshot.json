@@ -10732,10 +10732,59 @@
       "drift": -0.1778,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal214_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal214_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal214_Pa30_distance_lightyears",
+      "rung": 18.5421,
+      "drift": -0.4579,
+      "ladder": "count",
+      "unit": "lightyears"
+    },
+    {
+      "name": "seal214_knot_width_neptune_orbits",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "neptune_orbits"
+    },
+    {
+      "name": "seal214_filament_feature_factor",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "x"
+    },
+    {
+      "name": "seal214_historical_SN_year",
+      "rung": 14.7006,
+      "drift": -0.2994,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal214_Pa30_identified_year",
+      "rung": 15.8088,
+      "drift": -0.1912,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 1535,
-  "seal_count": 213,
+  "entry_count": 1542,
+  "seal_count": 214,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -10949,7 +10998,8 @@
     "φ_FIVED_BLACK_HOLES_TYREE_OMEGA",
     "φ_INDENTICAL_PHOTONS_TYREE_OMEGA",
     "φ_WATERMELON_RESERVOIR_TYREE_OMEGA",
-    "φ_HOT_H_THERMOSPHERE_TYREE_OMEGA"
+    "φ_HOT_H_THERMOSPHERE_TYREE_OMEGA",
+    "φ_PA30_PEARL_KNOTS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "9aae3e701106d5bd93b85ca3f4589752c1c2a66fd0a8342c44b85b5ce4398d4d"
+  "snapshot_sha256": "164c58a599e9f7532981a7ab12908e752c204e1b31cb214b81882ed181cc0830"
 }
