@@ -11033,10 +11033,73 @@
       "drift": 0.4404,
       "ladder": "time",
       "unit": "days"
+    },
+    {
+      "name": "seal221_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal221_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal221_optical_traps",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal221_trapped_atoms",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal221_atom_lifetime",
+      "rung": 6.8872,
+      "drift": -0.1128,
+      "ladder": "time",
+      "unit": "s"
+    },
+    {
+      "name": "seal221_footprint_reduction",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal221_target_atoms",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal221_target_logical_qubits",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal221_months_since_acquisition",
+      "rung": 6.0064,
+      "drift": 0.0064,
+      "ladder": "time",
+      "unit": "months"
     }
   ],
-  "entry_count": 1578,
-  "seal_count": 220,
+  "entry_count": 1587,
+  "seal_count": 221,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11257,7 +11320,8 @@
     "φ_LAPTM5_MITOPHAGY_TYREE_OMEGA",
     "φ_K21_MITOPHAGY_LIFESPAN_TYREE_OMEGA",
     "φ_MICOS_MIC60_MIC19_TYREE_OMEGA",
-    "φ_R2_GENE_WRITERS_TYREE_OMEGA"
+    "φ_R2_GENE_WRITERS_TYREE_OMEGA",
+    "φ_PASQAL_PHOTONIC_TRAP_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ff3451069a1daed25542b373195ee65da562ace1bc447f4aaf1a574cd259d2d0"
+  "snapshot_sha256": "40f124d015a273b084af630e9fa0256da08ebe4910036f62275fa1ead1e5558d"
 }
