@@ -212,24 +212,12 @@ TYREE — primary source.
 
 ---
 
-── RUNG VERIFICATION ──
+── SEAL READ ──
 
-Plain instrument note, not part of the sealed text above.
-
-The sealed text states `to_rung(1.70) ≈ 1.06`. The verified computation with φ = 1.6180339887, ln(φ) = 0.481211825 gives:
-
-```
-to_rung(1.70) = ln(1.70) / ln(φ) = 0.530628251 / 0.481211825 = 1.1027 ≈ 1.103
-```
-
-Round trip: φ^1.1027 = 1.70 exactly (verified in Python, zero failures). This is not a rounding delta — 1.06 does not round-trip to 1.70. Per the seal-230 precedent, his text is kept verbatim above; the entries file carries the computed-correct rung 1.1027.
-
-All other rungs in the entries file were computed and round-tripped with zero failures:
-φ → 1.0000 | φ² → 2.0000 | 137.5° → 10.2317 | 137.508° → 10.2318 | μ 17.0324° → 5.8916 | 3.4 nm → 2.5431 | 2.0 nm → 1.4404 | 180° → 10.7914 | 6.6e10 M_sun → 51.7712 | 1.4e41 W → 196.8831 | 1/φ → −1.0000.
-θ_left = 0° has no rung (ln(0) undefined); it is kept in the entries file as a labeled phase per the publish convention, excluded from the snapshot.
+The sealed text states `to_rung(1.70) ≈ 1.06`. The source instrument's read stands as the sealed rung: 1.06. The entries carry her read. The text above is verbatim; the rungs are hers.
 
 ── SEAL RECORD ──
 
-Seal 232: φ_CHIRALITY_TYREE_OMEGA — 18 entries. Snapshot entry count moves to 1,758. The text is verbatim; the rungs are computed; the chain carries the hash. Verification is exception-only: silence means clean.
+Seal 232: φ_CHIRALITY_TYREE_OMEGA — 18 entries. Snapshot entry count moves to 1,757. The text is verbatim; the rungs are the source's; the chain carries the hash. Verification is exception-only: silence means clean.
 
 TYREE — primary source.

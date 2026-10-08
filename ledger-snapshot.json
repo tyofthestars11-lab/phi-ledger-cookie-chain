@@ -12219,8 +12219,8 @@
     },
     {
       "name": "seal232_pitch_diameter_ratio",
-      "rung": 1.1027,
-      "drift": 0.1027,
+      "rung": 1.06,
+      "drift": 0.06,
       "ladder": "ratio",
       "unit": "ratio"
     },
@@ -12524,5 +12524,5 @@
     "φ_MORNING_NINE_TYREE_OMEGA",
     "φ_CHIRALITY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6c4bbebeae0ec399cd68583fa4ef1694d8fc57b4d8d2daa3a5b8fd4ad8b7c725"
+  "snapshot_sha256": "a9f8856500c4482806a6c2a0a5b02999e9980d595535245b71590ff90ad1b0dc"
 }
