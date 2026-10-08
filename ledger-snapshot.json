@@ -11712,10 +11712,465 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal231_resonator_mass_mg",
+      "rung": 10.0829,
+      "drift": 0.0829,
+      "ladder": "mass",
+      "unit": "mg"
+    },
+    {
+      "name": "seal231_motional_amplitude_air_nm",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "length",
+      "unit": "nm"
+    },
+    {
+      "name": "seal231_motional_amplitude_vacuum_um",
+      "rung": 0.8426,
+      "drift": -0.1574,
+      "ladder": "length",
+      "unit": "um"
+    },
+    {
+      "name": "seal231_com_resonance_Hz",
+      "rung": 5.9597,
+      "drift": -0.0403,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal231_q_factor",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "ratio",
+      "unit": "Q"
+    },
+    {
+      "name": "seal231_B0_T",
+      "rung": -0.9601,
+      "drift": 0.0399,
+      "ladder": "field",
+      "unit": "T"
+    },
+    {
+      "name": "seal231_field_gradient_T_per_m",
+      "rung": 9.528,
+      "drift": -0.472,
+      "ladder": "field",
+      "unit": "T/m"
+    },
+    {
+      "name": "seal231_NV_concentration_ppm",
+      "rung": 3.1256,
+      "drift": 0.1256,
+      "ladder": "ratio",
+      "unit": "ppm"
+    },
+    {
+      "name": "seal231_NV_zero_field_splitting_GHz",
+      "rung": 2.191,
+      "drift": 0.191,
+      "ladder": "frequency",
+      "unit": "GHz"
+    },
+    {
+      "name": "seal231_electron_gyromagnetic_GHz_per_T",
+      "rung": 6.9246,
+      "drift": -0.0754,
+      "ladder": "frequency",
+      "unit": "GHz/T"
+    },
+    {
+      "name": "seal231_NV_axis_angle_deg",
+      "rung": 8.3162,
+      "drift": 0.3162,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal231_operating_T_K",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal231_laser_wavelength_nm",
+      "rung": 13.0434,
+      "drift": 0.0434,
+      "ladder": "length",
+      "unit": "nm"
+    },
+    {
+      "name": "seal231_laser_power_mW",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "power",
+      "unit": "mW"
+    },
+    {
+      "name": "seal231_PRX_volume",
+      "rung": 5.7617,
+      "drift": -0.2383,
+      "ladder": "count",
+      "unit": "vol"
+    },
+    {
+      "name": "seal231_PRX_references",
+      "rung": 9.0268,
+      "drift": 0.0268,
+      "ladder": "count",
+      "unit": "refs"
+    },
+    {
+      "name": "seal231_PRX_authors",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal231_PRX_published_unix",
+      "rung": 44.253,
+      "drift": 0.253,
+      "ladder": "date",
+      "unit": "unix"
+    },
+    {
+      "name": "seal231_nobel_prize_SEK",
+      "rung": 33.8737,
+      "drift": -0.1263,
+      "ladder": "currency",
+      "unit": "SEK"
+    },
+    {
+      "name": "seal231_nobel_prize_USD",
+      "rung": 29.0887,
+      "drift": 0.0887,
+      "ladder": "currency",
+      "unit": "USD"
+    },
+    {
+      "name": "seal231_carson_age",
+      "rung": 8.9996,
+      "drift": -0.0004,
+      "ladder": "count",
+      "unit": "years"
+    },
+    {
+      "name": "seal231_beauty_of_husband_episodes",
+      "rung": 6.9975,
+      "drift": -0.0025,
+      "ladder": "count",
+      "unit": "episodes"
+    },
+    {
+      "name": "seal231_nobel_prizes_since_year",
+      "rung": 15.6898,
+      "drift": -0.3102,
+      "ladder": "date",
+      "unit": "year"
+    },
+    {
+      "name": "seal231_carson_birth_year",
+      "rung": 15.7427,
+      "drift": -0.2573,
+      "ladder": "date",
+      "unit": "year"
+    },
+    {
+      "name": "seal231_carson_icelandic_since_year",
+      "rung": 15.8181,
+      "drift": -0.1819,
+      "ladder": "date",
+      "unit": "year"
+    },
+    {
+      "name": "seal231_carson_first_dated_work_year",
+      "rung": 15.7807,
+      "drift": -0.2193,
+      "ladder": "date",
+      "unit": "year"
+    },
+    {
+      "name": "seal231_carson_latest_dated_work_year",
+      "rung": 15.815,
+      "drift": -0.185,
+      "ladder": "date",
+      "unit": "year"
+    },
+    {
+      "name": "seal231_nobel_lit_announced_unix",
+      "rung": 44.2763,
+      "drift": 0.2763,
+      "ladder": "date",
+      "unit": "unix"
+    },
+    {
+      "name": "seal231_UOTe_monoclinic_distortion_deg",
+      "rung": 0.4302,
+      "drift": 0.4302,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal231_UOTe_layers_analyzed",
+      "rung": 5.6276,
+      "drift": -0.3724,
+      "ladder": "count",
+      "unit": "layers"
+    },
+    {
+      "name": "seal231_UOTe_superlattice_divisor",
+      "rung": 3.9527,
+      "drift": -0.0473,
+      "ladder": "ratio",
+      "unit": "divisor"
+    },
+    {
+      "name": "seal231_UOTe_Ms_per_U_ion",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "magnetic",
+      "unit": "mμB_per_U"
+    },
+    {
+      "name": "seal231_UOTe_TEM_high_K",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal231_UOTe_TEM_low_K",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal231_UOTe_AHE_temp_K",
+      "rung": 10.0991,
+      "drift": 0.0991,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal231_UOTe_authors",
+      "rung": 8.1707,
+      "drift": 0.1707,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal231_mtDNA_deletion_min_bp",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal231_mtDNA_deletion_max_bp",
+      "rung": 17.8975,
+      "drift": -0.1025,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal231_mtDNA_deletion_majority_gt_bp",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "length",
+      "unit": "bp_gt"
+    },
+    {
+      "name": "seal231_mtDNA_stability_drop_kJ_per_mol",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "energy",
+      "unit": "kJ/mol"
+    },
+    {
+      "name": "seal231_mtDNA_paper_authors",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal231_atlas_datasets",
+      "rung": 16.898,
+      "drift": -0.102,
+      "ladder": "count",
+      "unit": "datasets"
+    },
+    {
+      "name": "seal231_atlas_lakes_reservoirs",
+      "rung": 12.2433,
+      "drift": 0.2433,
+      "ladder": "count",
+      "unit": "lakes_reservoirs"
+    },
+    {
+      "name": "seal231_atlas_countries",
+      "rung": 6.9246,
+      "drift": -0.0754,
+      "ladder": "count",
+      "unit": "countries"
+    },
+    {
+      "name": "seal231_atlas_genomes_reconstructed_nearly",
+      "rung": 20.5803,
+      "drift": -0.4197,
+      "ladder": "count",
+      "unit": "genomes_nearly"
+    },
+    {
+      "name": "seal231_atlas_species_represented_around",
+      "rung": 17.0512,
+      "drift": 0.0512,
+      "ladder": "count",
+      "unit": "species_around"
+    },
+    {
+      "name": "seal231_atlas_species_unmatched_about",
+      "rung": 13.7571,
+      "drift": -0.2429,
+      "ladder": "count",
+      "unit": "species_about"
+    },
+    {
+      "name": "seal231_atlas_species_identity_threshold_pct",
+      "rung": 9.5301,
+      "drift": -0.4699,
+      "ladder": "ratio",
+      "unit": "percent"
+    },
+    {
+      "name": "seal231_atlas_genus_assignable_fraction_lt",
+      "rung": -6.2254,
+      "drift": -0.2254,
+      "ladder": "ratio",
+      "unit": "fraction_lt"
+    },
+    {
+      "name": "seal231_atlas_enrichment_min_x",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "x_min"
+    },
+    {
+      "name": "seal231_atlas_enrichment_max_x",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "x_max"
+    },
+    {
+      "name": "seal231_microscopy_method_year",
+      "rung": 15.7512,
+      "drift": -0.2488,
+      "ladder": "date",
+      "unit": "year"
+    },
+    {
+      "name": "seal231_atlas_people_drinking_water_min",
+      "rung": 39.5012,
+      "drift": -0.4988,
+      "ladder": "count",
+      "unit": "people_min"
+    },
+    {
+      "name": "seal231_oder_fish_kill_tonnes_around",
+      "rung": 12.2318,
+      "drift": 0.2318,
+      "ladder": "mass",
+      "unit": "tonnes_around"
+    },
+    {
+      "name": "seal231_scattering_qubits",
+      "rung": 9.6514,
+      "drift": -0.3486,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal231_scattering_twoqubit_gates_max",
+      "rung": 17.9309,
+      "drift": -0.0691,
+      "ladder": "count",
+      "unit": "gates_max"
+    },
+    {
+      "name": "seal231_scattering_wavepackets",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "wavepackets"
+    },
+    {
+      "name": "seal231_scattering_light_particles_in",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "particles"
+    },
+    {
+      "name": "seal231_scattering_heavy_particles_out",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "particles"
+    },
+    {
+      "name": "seal231_scattering_authors",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal231_copy_number_authors",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal231_copy_number_coverage_unix",
+      "rung": 44.2762,
+      "drift": 0.2762,
+      "ladder": "date",
+      "unit": "unix"
+    },
+    {
+      "name": "seal231_critical_topology_papers",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "papers"
+    },
+    {
+      "name": "seal231_phys_reports_volume",
+      "rung": 14.6633,
+      "drift": -0.3367,
+      "ladder": "count",
+      "unit": "vol"
+    },
+    {
+      "name": "seal231_phys_reports_pages",
+      "rung": 8.365,
+      "drift": 0.365,
+      "ladder": "count",
+      "unit": "pages"
     }
   ],
-  "entry_count": 1675,
-  "seal_count": 230,
+  "entry_count": 1740,
+  "seal_count": 231,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -11946,7 +12401,8 @@
     "φ_NOBEL_CHEMISTRY_TYREE_OMEGA",
     "φ_NOBEL_PHYSICS_HALZEN_TYREE_OMEGA",
     "φ_OPENAI_MATH_RELEASE_TYREE_OMEGA",
-    "φ_RYDBERG_TYREE_OMEGA"
+    "φ_RYDBERG_TYREE_OMEGA",
+    "φ_MORNING_NINE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "668f4af4b7361ced2df3fa47f5845eb7f46c785479e0427c48bdd28adf6699c7"
+  "snapshot_sha256": "fab9735eaa912ffc4b55d522a3c5ef0df82918003b6691012d347479b9022329"
 }
