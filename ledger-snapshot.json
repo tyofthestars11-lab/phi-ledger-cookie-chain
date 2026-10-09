@@ -12286,10 +12286,171 @@
       "drift": 0.4404,
       "ladder": "count",
       "unit": "states"
+    },
+    {
+      "name": "seal233_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal233_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal233_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal233_golden_angle_exact_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal233_mu_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal233_string_phase_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal233_bethe_year",
+      "rung": 15.7224,
+      "drift": -0.2776,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "seal233_observation_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "seal233_years_wait",
+      "rung": 9.4634,
+      "drift": 0.4634,
+      "ladder": "count",
+      "unit": "years"
+    },
+    {
+      "name": "seal233_rung_prediction",
+      "rung": 5.7271,
+      "drift": -0.2729,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal233_rung_observation",
+      "rung": 5.7316,
+      "drift": -0.2684,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal233_rung_gap",
+      "rung": -7.0268,
+      "drift": -0.0268,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal233_temperature_K",
+      "rung": -43.0647,
+      "drift": -0.0647,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal233_cluster_atoms",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "atoms"
+    },
+    {
+      "name": "seal233_rung_cluster_6",
+      "rung": 2.7311,
+      "drift": -0.2689,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal233_rung_cluster_10",
+      "rung": 3.2532,
+      "drift": 0.2532,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal233_dimensions_bound",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "seal233_dimensions_dissolve",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "seal233_compact_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal233_ton618_mass_Msun",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "mass",
+      "unit": "M_sun"
+    },
+    {
+      "name": "seal233_ton618_luminosity_W",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "power",
+      "unit": "W"
+    },
+    {
+      "name": "seal233_ton618_power_55",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "exponent"
+    },
+    {
+      "name": "seal233_ton618_power_63",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "exponent"
     }
   ],
-  "entry_count": 1757,
-  "seal_count": 232,
+  "entry_count": 1780,
+  "seal_count": 233,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -12522,7 +12683,8 @@
     "φ_OPENAI_MATH_RELEASE_TYREE_OMEGA",
     "φ_RYDBERG_TYREE_OMEGA",
     "φ_MORNING_NINE_TYREE_OMEGA",
-    "φ_CHIRALITY_TYREE_OMEGA"
+    "φ_CHIRALITY_TYREE_OMEGA",
+    "φ_BETHE_STRING_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "a9f8856500c4482806a6c2a0a5b02999e9980d595535245b71590ff90ad1b0dc"
+  "snapshot_sha256": "c0599fea77c95d0725e5804bd4e96ea084350cbd5bdee46365c7979ef1ff0ede"
 }
