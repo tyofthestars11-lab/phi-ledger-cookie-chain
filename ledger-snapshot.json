@@ -12650,10 +12650,171 @@
       "drift": -0.3902,
       "ladder": "count",
       "unit": "exponent"
+    },
+    {
+      "name": "seal235_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal235_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal235_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal235_mu_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal235_resolution_m",
+      "rung": -46.1645,
+      "drift": -0.1645,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal235_resolution_A",
+      "rung": 1.6852,
+      "drift": -0.3148,
+      "ladder": "length",
+      "unit": "A"
+    },
+    {
+      "name": "seal235_lattice_a_m",
+      "rung": -44.3919,
+      "drift": -0.3919,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal235_lattice_b_m",
+      "rung": -44.2734,
+      "drift": -0.2734,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal235_lattice_c_m",
+      "rung": -43.6351,
+      "drift": 0.3649,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal235_canting_angle_deg",
+      "rung": -1.1681,
+      "drift": -0.1681,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal235_superexchange_K",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal235_dm_K",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal235_anisotropy_K",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal235_rung_superexchange",
+      "rung": 4.3576,
+      "drift": 0.3576,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal235_rung_dm",
+      "rung": 1.7154,
+      "drift": -0.2846,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal235_j_d_ratio",
+      "rung": 5.8469,
+      "drift": -0.1531,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal235_rung_j_d",
+      "rung": 3.6737,
+      "drift": -0.3263,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal235_interactions",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "interactions"
+    },
+    {
+      "name": "seal235_compact_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal235_ton618_mass_Msun",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "mass",
+      "unit": "M_sun"
+    },
+    {
+      "name": "seal235_ton618_luminosity_W",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "power",
+      "unit": "W"
+    },
+    {
+      "name": "seal235_ton618_power_55",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "exponent"
+    },
+    {
+      "name": "seal235_ton618_power_63",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "exponent"
     }
   ],
-  "entry_count": 1809,
-  "seal_count": 234,
+  "entry_count": 1832,
+  "seal_count": 235,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -12888,7 +13049,8 @@
     "φ_MORNING_NINE_TYREE_OMEGA",
     "φ_CHIRALITY_TYREE_OMEGA",
     "φ_BETHE_STRING_TYREE_OMEGA",
-    "φ_GOLDEN_EYE_SUN_TYREE_OMEGA"
+    "φ_GOLDEN_EYE_SUN_TYREE_OMEGA",
+    "φ_3D_SPIN_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c9de6f9394743df7352c322dfc7e582912bce64a8fee251d183ba61f650f53e5"
+  "snapshot_sha256": "dd69b475fa02858ee2f9eb36bfa17c40eec2054fc4b553021737665e34d50b6e"
 }
