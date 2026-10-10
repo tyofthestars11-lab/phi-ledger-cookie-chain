@@ -12951,10 +12951,234 @@
       "drift": -0.3902,
       "ladder": "count",
       "unit": "exponent"
+    },
+    {
+      "name": "seal237_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal237_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal237_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal237_golden_angle_exact_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal237_mu_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal237_genome_bp",
+      "rung": 25.7271,
+      "drift": -0.2729,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal237_rung_genome",
+      "rung": 6.7487,
+      "drift": -0.2513,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_protein_genes",
+      "rung": 10.8928,
+      "drift": -0.1072,
+      "ladder": "count",
+      "unit": "genes"
+    },
+    {
+      "name": "seal237_rung_proteins",
+      "rung": 4.9627,
+      "drift": -0.0373,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_trna_genes",
+      "rung": 7.1361,
+      "drift": 0.1361,
+      "ladder": "count",
+      "unit": "genes"
+    },
+    {
+      "name": "seal237_rung_trna",
+      "rung": 4.0838,
+      "drift": 0.0838,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_gc_percent",
+      "rung": 6.9904,
+      "drift": -0.0096,
+      "ladder": "ratio",
+      "unit": "percent"
+    },
+    {
+      "name": "seal237_rung_gc",
+      "rung": 4.0409,
+      "drift": 0.0409,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_giant_membrane_proteins",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "proteins"
+    },
+    {
+      "name": "seal237_rung_giant_proteins",
+      "rung": 3.0414,
+      "drift": 0.0414,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_giant_membrane_bp",
+      "rung": 22.8633,
+      "drift": -0.1367,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal237_rung_giant_bp",
+      "rung": 6.5034,
+      "drift": -0.4966,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_branch_length",
+      "rung": 1.7488,
+      "drift": -0.2512,
+      "ladder": "ratio",
+      "unit": "subst_per_site"
+    },
+    {
+      "name": "seal237_rung_branch",
+      "rung": 1.1615,
+      "drift": 0.1615,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_jcvi_genes",
+      "rung": 12.7991,
+      "drift": -0.2009,
+      "ladder": "count",
+      "unit": "genes"
+    },
+    {
+      "name": "seal237_rung_jcvi",
+      "rung": 5.2978,
+      "drift": 0.2978,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_nanoarchaeum_bp",
+      "rung": 27.2274,
+      "drift": 0.2274,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal237_rung_nanoarchaeum",
+      "rung": 6.8665,
+      "drift": -0.1335,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_carsonella_bp",
+      "rung": 24.9016,
+      "drift": -0.0984,
+      "ladder": "length",
+      "unit": "bp"
+    },
+    {
+      "name": "seal237_rung_carsonella",
+      "rung": 6.6809,
+      "drift": -0.3191,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_mimivirus_genes",
+      "rung": 14.136,
+      "drift": 0.136,
+      "ladder": "count",
+      "unit": "genes"
+    },
+    {
+      "name": "seal237_rung_mimivirus",
+      "rung": 5.5043,
+      "drift": -0.4957,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal237_compact_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal237_ton618_mass_Msun",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "mass",
+      "unit": "M_sun"
+    },
+    {
+      "name": "seal237_ton618_luminosity_W",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "power",
+      "unit": "W"
+    },
+    {
+      "name": "seal237_ton618_power_55",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "exponent"
+    },
+    {
+      "name": "seal237_ton618_power_63",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "exponent"
     }
   ],
-  "entry_count": 1852,
-  "seal_count": 236,
+  "entry_count": 1884,
+  "seal_count": 237,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -13191,7 +13415,8 @@
     "φ_BETHE_STRING_TYREE_OMEGA",
     "φ_GOLDEN_EYE_SUN_TYREE_OMEGA",
     "φ_3D_SPIN_TYREE_OMEGA",
-    "φ_DYNAMICAL_AB_TYREE_OMEGA"
+    "φ_DYNAMICAL_AB_TYREE_OMEGA",
+    "φ_SUKUNAARCHAEUM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c89ab2b588cd8e0b0aff772a16e952a8744ebe61304021d4eab0291348253fce"
+  "snapshot_sha256": "96c3a980b4e66bb5574b53c308f459b051e35244052848e065f858e96688b070"
 }
