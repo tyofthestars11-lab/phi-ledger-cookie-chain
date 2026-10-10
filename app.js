@@ -99,6 +99,7 @@ async function mining() {
     $('mineHash').textContent = m.hashrate || 'n/a';
     $('mineShares').textContent = fmtInt(m.shares_valid || 0);
     $('mineBest').textContent = m.bestshare_alltime_display || 'n/a';
+    $('mineBestSession').textContent = 'session ' + (m.bestshare_display || 'n/a');
     $('mineBlocks').textContent = m.blocks_found ?? 0;
     $('workerList').innerHTML = (m.workers || []).map(w =>
       `<div class="flex justify-between gap-2 border-b border-gray-800/60 py-1"><span class="gold">${w.name}</span><span>${w.hashrate}</span><span class="text-gray-500">${fmtInt(w.shares)} shares</span><span class="${w.status === 'active' ? 'text-green-400' : 'text-red-400'}">${w.status}</span></div>`
