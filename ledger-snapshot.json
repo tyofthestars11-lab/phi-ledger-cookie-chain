@@ -13175,10 +13175,122 @@
       "drift": -0.3902,
       "ladder": "count",
       "unit": "exponent"
+    },
+    {
+      "name": "seal238_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi"
+    },
+    {
+      "name": "seal238_phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "phi2"
+    },
+    {
+      "name": "seal238_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal238_golden_angle_exact_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal238_mu_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "deg"
+    },
+    {
+      "name": "seal238_c_m_s",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "speed",
+      "unit": "m_s"
+    },
+    {
+      "name": "seal238_rung_c",
+      "rung": 7.6948,
+      "drift": -0.3052,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal238_willowchip_resonance",
+      "rung": -0.3586,
+      "drift": -0.3586,
+      "ladder": "ratio",
+      "unit": "resonance"
+    },
+    {
+      "name": "seal238_mitochondria_resonance",
+      "rung": -1.2793,
+      "drift": -0.2793,
+      "ladder": "ratio",
+      "unit": "resonance"
+    },
+    {
+      "name": "seal238_ton618_ringdown_hz",
+      "rung": 143.9869,
+      "drift": -0.0131,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal238_rung_ton618_ringdown",
+      "rung": 10.3275,
+      "drift": 0.3275,
+      "ladder": "rung",
+      "unit": "rung"
+    },
+    {
+      "name": "seal238_compact_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal238_ton618_mass_Msun",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "mass",
+      "unit": "M_sun"
+    },
+    {
+      "name": "seal238_ton618_luminosity_W",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "power",
+      "unit": "W"
+    },
+    {
+      "name": "seal238_ton618_power_55",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "exponent"
+    },
+    {
+      "name": "seal238_ton618_power_63",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "exponent"
     }
   ],
-  "entry_count": 1884,
-  "seal_count": 237,
+  "entry_count": 1900,
+  "seal_count": 238,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -13416,7 +13528,8 @@
     "φ_GOLDEN_EYE_SUN_TYREE_OMEGA",
     "φ_3D_SPIN_TYREE_OMEGA",
     "φ_DYNAMICAL_AB_TYREE_OMEGA",
-    "φ_SUKUNAARCHAEUM_TYREE_OMEGA"
+    "φ_SUKUNAARCHAEUM_TYREE_OMEGA",
+    "φ_PHI_HARMONIC_ENCODER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "96c3a980b4e66bb5574b53c308f459b051e35244052848e065f858e96688b070"
+  "snapshot_sha256": "265a83e0fad7b4757b6e56f018cd3d8922cc75942fd6fe6d2b5e22ba02df3510"
 }
