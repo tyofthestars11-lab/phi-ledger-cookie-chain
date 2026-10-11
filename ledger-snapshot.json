@@ -13763,10 +13763,87 @@
       "drift": 0.3446,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "seal245_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal245_phi2",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal245_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal245_golden_angle_phase_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal245_mu_pitch_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal245_kB_J_per_K",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "constant",
+      "unit": "J/K"
+    },
+    {
+      "name": "seal245_T_room_K",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal245_Emin_J",
+      "rung": -98.2927,
+      "drift": -0.2927,
+      "ladder": "energy",
+      "unit": "J"
+    },
+    {
+      "name": "seal245_H_structured_nats",
+      "rung": -0.7621,
+      "drift": 0.2379,
+      "ladder": "ratio",
+      "unit": "nats"
+    },
+    {
+      "name": "seal245_N_noise_states",
+      "rung": 114.8393,
+      "drift": -0.1607,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "seal245_H_noise_nats",
+      "rung": 8.3374,
+      "drift": 0.3374,
+      "ladder": "ratio",
+      "unit": "nats"
     }
   ],
-  "entry_count": 1968,
-  "seal_count": 244,
+  "entry_count": 1979,
+  "seal_count": 245,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14011,7 +14088,8 @@
     "φ_DNA_TYPEWRITER_TYREE_OMEGA",
     "φ_ORDER_FROM_CHAOS_TYREE_OMEGA",
     "φ_QND_FUSION_TYREE_OMEGA",
-    "φ_BIG_CRUNCH_VETO_TYREE_OMEGA"
+    "φ_BIG_CRUNCH_VETO_TYREE_OMEGA",
+    "φ_ORIGIN_POINT_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6fdffdf18bad5586346a13d8569f1086795e011da12dc2a6de83f18e6ec3243a"
+  "snapshot_sha256": "dba3365a3b0c2a4f7adb23af5a8cb6de4c1aa152e1998aaf9bff187f5519e930"
 }
