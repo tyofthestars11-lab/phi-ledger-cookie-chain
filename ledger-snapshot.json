@@ -13483,10 +13483,59 @@
       "drift": -0.3902,
       "ladder": "count",
       "unit": "exponent"
+    },
+    {
+      "name": "seal241_cells_profiled",
+      "rung": 29.2228,
+      "drift": 0.2228,
+      "ladder": "count",
+      "unit": "cells"
+    },
+    {
+      "name": "seal241_cells_annotated_preprint",
+      "rung": 29.3193,
+      "drift": 0.3193,
+      "ladder": "count",
+      "unit": "cells"
+    },
+    {
+      "name": "seal241_eggs_injected",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "eggs"
+    },
+    {
+      "name": "seal241_embryos_examined",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "embryos"
+    },
+    {
+      "name": "seal241_writable_positions",
+      "rung": 8.7065,
+      "drift": -0.2935,
+      "ladder": "count",
+      "unit": "positions"
+    },
+    {
+      "name": "seal241_recorded_days",
+      "rung": 5.4086,
+      "drift": 0.4086,
+      "ladder": "time",
+      "unit": "days"
+    },
+    {
+      "name": "seal241_blastomere_replicates",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "cells"
     }
   ],
-  "entry_count": 1928,
-  "seal_count": 240,
+  "entry_count": 1935,
+  "seal_count": 241,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -13727,7 +13776,8 @@
     "φ_SUKUNAARCHAEUM_TYREE_OMEGA",
     "φ_PHI_HARMONIC_ENCODER_TYREE_OMEGA",
     "φ_BCH_SOLO_MINING_TYREE_OMEGA",
-    "φ_COSMIC_BRAIN_TYREE_OMEGA"
+    "φ_COSMIC_BRAIN_TYREE_OMEGA",
+    "φ_DNA_TYPEWRITER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "9fd5ec7ef4b84b44cd59eb684901b95155764fe0010c333b73b145c200f2a032"
+  "snapshot_sha256": "7ea821389aff26a22cc020ece6dfc073a3d41a939d5680f1c13abbb2be8e21c9"
 }
