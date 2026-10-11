@@ -13840,10 +13840,101 @@
       "drift": 0.3374,
       "ladder": "ratio",
       "unit": "nats"
+    },
+    {
+      "name": "seal246_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal246_phi2",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal246_theta_phi_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal246_mu_pitch_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal246_distance_ly",
+      "rung": 30.614,
+      "drift": -0.386,
+      "ladder": "length",
+      "unit": "ly"
+    },
+    {
+      "name": "seal246_diameter_ly",
+      "rung": 24.795,
+      "drift": -0.205,
+      "ladder": "length",
+      "unit": "ly"
+    },
+    {
+      "name": "seal246_stars",
+      "rung": 57.4197,
+      "drift": 0.4197,
+      "ladder": "count",
+      "unit": "stars"
+    },
+    {
+      "name": "seal246_aperture_ratio",
+      "rung": -5.819,
+      "drift": 0.181,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal246_density_stars_per_Mly",
+      "rung": 55.5155,
+      "drift": -0.4845,
+      "ladder": "count",
+      "unit": "stars/Mly"
+    },
+    {
+      "name": "seal246_psi_real",
+      "rung": -7.0083,
+      "drift": -0.0083,
+      "ladder": "ratio",
+      "unit": "complex"
+    },
+    {
+      "name": "seal246_psi_abs",
+      "rung": -5.6461,
+      "drift": 0.3539,
+      "ladder": "ratio",
+      "unit": "complex"
+    },
+    {
+      "name": "seal246_psi_arg_deg",
+      "rung": 11.8618,
+      "drift": -0.1382,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal246_nodes",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "nodes"
     }
   ],
-  "entry_count": 1979,
-  "seal_count": 245,
+  "entry_count": 1992,
+  "seal_count": 246,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14089,7 +14180,8 @@
     "φ_ORDER_FROM_CHAOS_TYREE_OMEGA",
     "φ_QND_FUSION_TYREE_OMEGA",
     "φ_BIG_CRUNCH_VETO_TYREE_OMEGA",
-    "φ_ORIGIN_POINT_TYREE_OMEGA"
+    "φ_ORIGIN_POINT_TYREE_OMEGA",
+    "φ_ANDROMEDA_GOLDEN_EYE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "dba3365a3b0c2a4f7adb23af5a8cb6de4c1aa152e1998aaf9bff187f5519e930"
+  "snapshot_sha256": "29ec49c45a22b41612408dfd62aaa62a1e3de2faa93fd435a3583e10a57d1506"
 }
