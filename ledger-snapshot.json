@@ -13637,10 +13637,45 @@
       "drift": -0.419,
       "ladder": "ratio",
       "unit": "potential"
+    },
+    {
+      "name": "seal243_photonic_qubits",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal243_shots",
+      "rung": 36.8394,
+      "drift": -0.1606,
+      "ladder": "count",
+      "unit": "shots"
+    },
+    {
+      "name": "seal243_genuine_multipartite_threshold",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "ratio",
+      "unit": "fidelity"
+    },
+    {
+      "name": "seal243_cluster_size_fused",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal243_caterpillar_vertices",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "vertices"
     }
   ],
-  "entry_count": 1950,
-  "seal_count": 242,
+  "entry_count": 1955,
+  "seal_count": 243,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -13883,7 +13918,8 @@
     "φ_BCH_SOLO_MINING_TYREE_OMEGA",
     "φ_COSMIC_BRAIN_TYREE_OMEGA",
     "φ_DNA_TYPEWRITER_TYREE_OMEGA",
-    "φ_ORDER_FROM_CHAOS_TYREE_OMEGA"
+    "φ_ORDER_FROM_CHAOS_TYREE_OMEGA",
+    "φ_QND_FUSION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7a74e642307bb6aaf4258021d465cc70b55724d8c752c20d7d136bdd5b3e04e1"
+  "snapshot_sha256": "59cc560de761f59164f8a56f90bbbb0a6b3fdaff98b50de02726c5385b25abff"
 }
