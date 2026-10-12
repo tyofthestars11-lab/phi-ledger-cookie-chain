@@ -13931,10 +13931,157 @@
       "drift": 0.3213,
       "ladder": "count",
       "unit": "nodes"
+    },
+    {
+      "name": "seal247_Mch_standard_Msun",
+      "rung": 0.7578,
+      "drift": -0.2422,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_carbon_ignition_nonmag_Msun",
+      "rung": 0.6693,
+      "drift": -0.3307,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_super_chandra_limit_Msun",
+      "rung": 1.8193,
+      "drift": -0.1807,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_central_field_final_G",
+      "rung": 66.5259,
+      "drift": -0.4741,
+      "ladder": "field",
+      "unit": "G"
+    },
+    {
+      "name": "seal247_B0_G",
+      "rung": 66.9896,
+      "drift": -0.0104,
+      "ladder": "field",
+      "unit": "G"
+    },
+    {
+      "name": "seal247_dormant_threshold_G",
+      "rung": 65.5492,
+      "drift": -0.4508,
+      "ladder": "field",
+      "unit": "G"
+    },
+    {
+      "name": "seal247_initial_WD_Msun",
+      "rung": 0.0412,
+      "drift": 0.0412,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_ZAMS_Msun",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_accretion_rate_Msun_per_yr",
+      "rung": -43.0647,
+      "drift": -0.0647,
+      "ladder": "rate",
+      "unit": "Msun/yr"
+    },
+    {
+      "name": "seal247_eta_profile",
+      "rung": 0.5452,
+      "drift": -0.4548,
+      "ladder": "ratio",
+      "unit": "param"
+    },
+    {
+      "name": "seal247_gamma_profile",
+      "rung": -0.2189,
+      "drift": -0.2189,
+      "ladder": "ratio",
+      "unit": "param"
+    },
+    {
+      "name": "seal247_rho0_g_cm3",
+      "rung": 43.0647,
+      "drift": 0.0647,
+      "ladder": "density",
+      "unit": "g/cm3"
+    },
+    {
+      "name": "seal247_progenitor_high_Msun",
+      "rung": 2.1396,
+      "drift": 0.1396,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_progenitor_low_Msun",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_SDSS_fit_error_pct",
+      "rung": -0.7412,
+      "drift": 0.2588,
+      "ladder": "ratio",
+      "unit": "percent"
+    },
+    {
+      "name": "seal247_SDSS_fit_error_temp_only_pct",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "ratio",
+      "unit": "percent"
+    },
+    {
+      "name": "seal247_ZTF_J1901_Msun",
+      "rung": 0.6236,
+      "drift": -0.3764,
+      "ladder": "mass",
+      "unit": "Msun"
+    },
+    {
+      "name": "seal247_ZTF_J1901_Bs_G",
+      "rung": 42.601,
+      "drift": -0.399,
+      "ladder": "field",
+      "unit": "G"
+    },
+    {
+      "name": "seal247_ZTF_J1901_Te_K",
+      "rung": 22.3112,
+      "drift": 0.3112,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal247_field_decay_Gyr",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "time",
+      "unit": "Gyr"
+    },
+    {
+      "name": "seal247_nuclear_reactions",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "count",
+      "unit": "reactions"
     }
   ],
-  "entry_count": 1992,
-  "seal_count": 246,
+  "entry_count": 2013,
+  "seal_count": 247,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14181,7 +14328,8 @@
     "φ_QND_FUSION_TYREE_OMEGA",
     "φ_BIG_CRUNCH_VETO_TYREE_OMEGA",
     "φ_ORIGIN_POINT_TYREE_OMEGA",
-    "φ_ANDROMEDA_GOLDEN_EYE_TYREE_OMEGA"
+    "φ_ANDROMEDA_GOLDEN_EYE_TYREE_OMEGA",
+    "φ_SUPER_CHANDRASEKHAR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "29ec49c45a22b41612408dfd62aaa62a1e3de2faa93fd435a3583e10a57d1506"
+  "snapshot_sha256": "44e94722c813cce44f4198d7384ea45791b265d162bbccd5980e8df6c1a92557"
 }
