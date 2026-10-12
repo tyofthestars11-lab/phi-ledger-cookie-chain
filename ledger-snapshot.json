@@ -14274,10 +14274,108 @@
       "drift": -0.2325,
       "ladder": "ratio",
       "unit": "x"
+    },
+    {
+      "name": "seal250_phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal250_phi2",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal250_theta_phi_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal250_golden_angle_phase_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal250_mu_pitch_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal250_xi_coherence_m",
+      "rung": -41.1606,
+      "drift": -0.1606,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal250_lambda_stripe_m",
+      "rung": -42.2222,
+      "drift": -0.2222,
+      "ladder": "length",
+      "unit": "m"
+    },
+    {
+      "name": "seal250_xi_over_lambda",
+      "rung": 1.062,
+      "drift": 0.062,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal250_T_K",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "temperature",
+      "unit": "K"
+    },
+    {
+      "name": "seal250_B_mid_T",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "field",
+      "unit": "T"
+    },
+    {
+      "name": "seal250_B_high_T",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "field",
+      "unit": "T"
+    },
+    {
+      "name": "seal250_Fe_fraction",
+      "rung": -0.1286,
+      "drift": -0.1286,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal250_Co_fraction",
+      "rung": -5.8465,
+      "drift": 0.1535,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal250_vortex_states",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "states"
     }
   ],
-  "entry_count": 2041,
-  "seal_count": 249,
+  "entry_count": 2055,
+  "seal_count": 250,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14527,7 +14625,8 @@
     "φ_ANDROMEDA_GOLDEN_EYE_TYREE_OMEGA",
     "φ_SUPER_CHANDRASEKHAR_TYREE_OMEGA",
     "φ_DARK_MATTER_NATURALNESS_TYREE_OMEGA",
-    "φ_STOPPED_LIGHT_GRAVITY_TYREE_OMEGA"
+    "φ_STOPPED_LIGHT_GRAVITY_TYREE_OMEGA",
+    "φ_VORTEX_STRIPE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "10bfb59f0e783affedc8e7e25f742a52683de6085579eace093183e7e077d912"
+  "snapshot_sha256": "7a8e2b4f980721f89b711eb6e0ac58f38caa05f860b17913a0fc975100237084"
 }
