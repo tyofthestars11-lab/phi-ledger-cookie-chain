@@ -14078,10 +14078,150 @@
       "drift": 0.3268,
       "ladder": "count",
       "unit": "reactions"
+    },
+    {
+      "name": "seal248_OmegaDM_h2",
+      "rung": -4.4061,
+      "drift": -0.4061,
+      "ladder": "ratio",
+      "unit": "density"
+    },
+    {
+      "name": "seal248_Delta_ADM",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_axion_postinfl",
+      "rung": 0.3615,
+      "drift": 0.3615,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_PBH_DW_gravity",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_WIMP_offres",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_FIMP",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_axion_misalign",
+      "rung": 1.6385,
+      "drift": -0.3615,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_PBH_DW_free",
+      "rung": 3.1256,
+      "drift": 0.1256,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_PBH_EMD",
+      "rung": 5.4842,
+      "drift": 0.4842,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_PBH_FOPT",
+      "rung": 7.3883,
+      "drift": 0.3883,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_PBH_FOPT_corrected",
+      "rung": 11.5952,
+      "drift": -0.4048,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_coannihilation",
+      "rung": 8.0447,
+      "drift": 0.0447,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_Higgs_funnel",
+      "rung": 18.2447,
+      "drift": 0.2447,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_Delta_PBH_inflationary_min",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "ratio",
+      "unit": "BG"
+    },
+    {
+      "name": "seal248_PBH_window_low_g",
+      "rung": 81.3445,
+      "drift": 0.3445,
+      "ladder": "mass",
+      "unit": "g"
+    },
+    {
+      "name": "seal248_PBH_window_high_g",
+      "rung": 105.2694,
+      "drift": 0.2694,
+      "ladder": "mass",
+      "unit": "g"
+    },
+    {
+      "name": "seal248_scenarios_ranked",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "count",
+      "unit": "scenarios"
+    },
+    {
+      "name": "seal248_constructions",
+      "rung": 5.7617,
+      "drift": -0.2383,
+      "ladder": "count",
+      "unit": "constructions"
+    },
+    {
+      "name": "seal248_Higgs_funnel_MS_GeV",
+      "rung": 8.5325,
+      "drift": -0.4675,
+      "ladder": "mass",
+      "unit": "GeV"
+    },
+    {
+      "name": "seal248_classes",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "classes"
     }
   ],
-  "entry_count": 2013,
-  "seal_count": 247,
+  "entry_count": 2033,
+  "seal_count": 248,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14329,7 +14469,8 @@
     "φ_BIG_CRUNCH_VETO_TYREE_OMEGA",
     "φ_ORIGIN_POINT_TYREE_OMEGA",
     "φ_ANDROMEDA_GOLDEN_EYE_TYREE_OMEGA",
-    "φ_SUPER_CHANDRASEKHAR_TYREE_OMEGA"
+    "φ_SUPER_CHANDRASEKHAR_TYREE_OMEGA",
+    "φ_DARK_MATTER_NATURALNESS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "44e94722c813cce44f4198d7384ea45791b265d162bbccd5980e8df6c1a92557"
+  "snapshot_sha256": "f4f0efd335c0e892533e8d3370fd5bf3e9b8f157079c4a755150fd30fc3dfec5"
 }
