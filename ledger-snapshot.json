@@ -14218,10 +14218,66 @@
       "drift": 0.283,
       "ladder": "count",
       "unit": "classes"
+    },
+    {
+      "name": "seal249_source_mass_g",
+      "rung": 0.3789,
+      "drift": 0.3789,
+      "ladder": "mass",
+      "unit": "g"
+    },
+    {
+      "name": "seal249_source_diameter_mm",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "length",
+      "unit": "mm"
+    },
+    {
+      "name": "seal249_min_force_change_N",
+      "rung": -74.2627,
+      "drift": -0.2627,
+      "ladder": "force",
+      "unit": "N"
+    },
+    {
+      "name": "seal249_group_velocity_m_per_s",
+      "rung": 15.7953,
+      "drift": -0.2047,
+      "ladder": "rate",
+      "unit": "m/s"
+    },
+    {
+      "name": "seal249_displacement_sensitivity_pm_per_sqrtHz",
+      "rung": 4.2819,
+      "drift": 0.2819,
+      "ladder": "length",
+      "unit": "pm/sqrtHz"
+    },
+    {
+      "name": "seal249_accel_sensitivity_g",
+      "rung": -74.2354,
+      "drift": -0.2354,
+      "ladder": "ratio",
+      "unit": "g"
+    },
+    {
+      "name": "seal249_coupling_gap_nm",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "length",
+      "unit": "nm"
+    },
+    {
+      "name": "seal249_slowdown_factor",
+      "rung": 24.7675,
+      "drift": -0.2325,
+      "ladder": "ratio",
+      "unit": "x"
     }
   ],
-  "entry_count": 2033,
-  "seal_count": 248,
+  "entry_count": 2041,
+  "seal_count": 249,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14470,7 +14526,8 @@
     "φ_ORIGIN_POINT_TYREE_OMEGA",
     "φ_ANDROMEDA_GOLDEN_EYE_TYREE_OMEGA",
     "φ_SUPER_CHANDRASEKHAR_TYREE_OMEGA",
-    "φ_DARK_MATTER_NATURALNESS_TYREE_OMEGA"
+    "φ_DARK_MATTER_NATURALNESS_TYREE_OMEGA",
+    "φ_STOPPED_LIGHT_GRAVITY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "f4f0efd335c0e892533e8d3370fd5bf3e9b8f157079c4a755150fd30fc3dfec5"
+  "snapshot_sha256": "10bfb59f0e783affedc8e7e25f742a52683de6085579eace093183e7e077d912"
 }
