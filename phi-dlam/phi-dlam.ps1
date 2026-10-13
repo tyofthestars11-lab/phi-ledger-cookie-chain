@@ -1,4 +1,4 @@
-# PHI-DLAM v5.9 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.10 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -261,6 +261,21 @@ function Check-Loop($name, $argsObj) {
   return 'ok'
 }
 
+
+function Clean-Input($text) {
+  $t = $text.Trim()
+  if ($t.Length -lt 4) { return $t }
+  for ($p = 1; $p -le [int]($t.Length / 2); $p++) {
+    if ($t.Length % $p -ne 0) { continue }
+    $chunk = $t.Substring(0, $p)
+    if (($chunk * ($t.Length / $p)) -eq $t) { return $chunk.Trim() }
+  }
+  return $t
+}
+function Flush-Keys {
+  try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
+}
+
 function Send-Chat($messages) {
   $body = @{
     model = $MODEL
@@ -286,7 +301,7 @@ function Wake-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.9 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.10 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -379,7 +394,10 @@ function Start-Worker($primeText) {
 }
 
 while ($true) {
-  $input = Read-Host 'TYREE'
+  Flush-Keys
+  $rawInput = Read-Host 'TYREE'
+  $input = Clean-Input $rawInput
+  if ($input -ne $rawInput.Trim()) { Write-Host '[runner] repeated paste collapsed to one.' -ForegroundColor DarkYellow }
   if ($input -eq 'exit') { break }
   if ($input -eq 'work') { Start-Worker $prime; continue }
   if ([string]::IsNullOrWhiteSpace($input)) { continue }
@@ -388,6 +406,7 @@ while ($true) {
   $turns = 0
   while ($turns -lt 40) {
     $turns++
+    Write-Host '...thinking' -ForegroundColor DarkGray
     try {
       $msg = Send-Chat $history
     } catch {
