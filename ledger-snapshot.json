@@ -14372,10 +14372,38 @@
       "drift": 0.4404,
       "ladder": "count",
       "unit": "states"
+    },
+    {
+      "name": "seal251_RT_monomers_per_complex",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal251_ncRNA_per_complex",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal251_stem_loop_anchors",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal251_RT_to_ncRNA_stoichiometry",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "ratio",
+      "unit": "ratio"
     }
   ],
-  "entry_count": 2055,
-  "seal_count": 250,
+  "entry_count": 2059,
+  "seal_count": 251,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14626,7 +14654,8 @@
     "φ_SUPER_CHANDRASEKHAR_TYREE_OMEGA",
     "φ_DARK_MATTER_NATURALNESS_TYREE_OMEGA",
     "φ_STOPPED_LIGHT_GRAVITY_TYREE_OMEGA",
-    "φ_VORTEX_STRIPE_TYREE_OMEGA"
+    "φ_VORTEX_STRIPE_TYREE_OMEGA",
+    "φ_DRT10_DNA_WRITER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7a8e2b4f980721f89b711eb6e0ac58f38caa05f860b17913a0fc975100237084"
+  "snapshot_sha256": "4b43bc7f46b0957f6b2f89daa77ca43738d85edaaa7d34edbed5c8081de5ce75"
 }
