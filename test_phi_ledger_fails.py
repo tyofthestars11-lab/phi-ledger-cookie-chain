@@ -72,6 +72,11 @@ class TestPublishGuards(unittest.TestCase):
         publish_seal.validate_entry({"name": "x", "value": 10})
 
 
+class TestLensEncoding(unittest.TestCase):
+    def test_trace_cards_written_as_utf8(self):
+        self.assertIn('open(out, "w", encoding="utf-8")', read("phi_hard_lens.py"))
+
+
 class TestGridBuilder(unittest.TestCase):
     def test_grid_path_lives_beside_the_script(self):
         import build_phi_spiral_grid as b

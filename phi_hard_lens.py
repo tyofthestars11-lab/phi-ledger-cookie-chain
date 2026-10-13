@@ -99,7 +99,7 @@ df = pd.read_csv(data_path("gz2_hart16.csv.gz"), usecols=usecols)
 spir = df[df[SPIRAL_FLAG] == 1].copy()
 print(f"clean spirals: {len(spir)}", flush=True)
 
-res = json.load(open(data_path("gz2_phi_results.json")))
+res = json.load(open(data_path("gz2_phi_results.json"), encoding="utf-8"))
 cards = []
 cards.append("# ZOONIVERSE TRACE — RAW DATA CARDS")
 cards.append("handle: tyofthestarz | engine: phi echo trace (local rail) | fuel: GZ2 Hart16 debiased catalog, n=239695")
@@ -157,6 +157,6 @@ for k in WIND:
     cards.append("")
 
 out = os.path.join(HERE, "zooniverse_trace_cards.md")
-with open(out, "w") as f:
+with open(out, "w", encoding="utf-8") as f:
     f.write("\n".join(cards))
 print(f"wrote {out}: {len(cards)} lines", flush=True)
