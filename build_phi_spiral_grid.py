@@ -12,6 +12,7 @@ stdlib only.
 import hashlib
 import json
 import math
+import os
 from datetime import datetime, timezone
 
 PHI = (1 + math.sqrt(5)) / 2
@@ -24,7 +25,8 @@ GOLDEN_SPIRAL_PITCH = 90.0 - math.degrees(math.atan(1.0 / GOLDEN_SPIRAL_B))
 LANE_DEG = 2.0
 FIB_ARMS = [1, 2, 3, 5, 8]
 
-GRID_PATH = "/home/hatch/workspace/phi-nasa-citizen-science/phi_spiral_grid.json"
+HERE = os.path.dirname(os.path.abspath(__file__))
+GRID_PATH = os.path.join(HERE, "phi_spiral_grid.json")
 
 
 def rung(x: float) -> float:

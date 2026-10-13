@@ -18,6 +18,18 @@ LN_PHI = math.log(PHI)
 HERE = os.path.dirname(os.path.abspath(__file__))
 SNAP = os.path.join(HERE, "ledger-snapshot.json")
 
+def validate_new_seal(d, seal):
+    if not seal or not str(seal).strip():
+        raise ValueError("seal name is blank")
+    if seal in d.get("seals", []):
+        raise ValueError(f"seal already in snapshot, refusing duplicate: {seal}")
+
+def validate_entry(e):
+    if not e.get("name") or not str(e["name"]).strip():
+        raise ValueError(f"entry has no name, refusing blank entry: {e!r}")
+    if "value" not in e:
+        raise ValueError(f"entry has no value: {e!r}")
+
 def rung_of(v):
     r = math.log(v) / LN_PHI
     return round(r, 4), round(r - round(r), 4)
@@ -31,7 +43,10 @@ def main():
 
     with open(SNAP, encoding="utf-8") as f:
         d = json.load(f)
-    new_entries = json.load(open(a.entries))
+    new_entries = json.load(open(a.entries, encoding="utf-8"))
+    validate_new_seal(d, a.seal)
+    for e in new_entries:
+        validate_entry(e)
 
     for e in new_entries:
         v = e["value"]

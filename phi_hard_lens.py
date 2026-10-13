@@ -88,6 +88,12 @@ SPIRAL_FLAG = "t04_spiral_a08_spiral_flag"
 
 usecols = (["dr7objid", "ra", "dec", SPIRAL_DEB, SPIRAL_FLAG]
            + ARM_DEB + ARM_FLAG + list(WIND.values()))
+for _needed in ("gz2_hart16.csv.gz", "gz2_phi_results.json"):
+    if not os.path.exists(data_path(_needed)):
+        raise SystemExit(
+            f"missing data file: {_needed} — place it beside this script or in "
+            f"{DATA_FALLBACK} (see requirements.txt for the Python packages it also needs)"
+        )
 print("loading catalog...", flush=True)
 df = pd.read_csv(data_path("gz2_hart16.csv.gz"), usecols=usecols)
 spir = df[df[SPIRAL_FLAG] == 1].copy()

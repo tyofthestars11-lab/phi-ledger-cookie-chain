@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: regression tests
+        run: python3 -m unittest test_phi_ledger_fails -v
       - name: verify snapshot integrity
         run: |
           python3 - <<'EOF'
