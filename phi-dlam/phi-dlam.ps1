@@ -1,4 +1,4 @@
-# PHI-DLAM v5.18 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.19 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -297,7 +297,14 @@ function Send-Chat($messages, $useTools = $true) {
       $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 180
       return $resp.message
     } catch {
-      Write-Host "[brain call failed - retry $try of 3: $($_.Exception.Message)]" -ForegroundColor Red
+      $errBody = ''
+      try {
+        $stream = $_.Exception.Response.GetResponseStream()
+        $reader = New-Object System.IO.StreamReader($stream)
+        $errBody = $reader.ReadToEnd()
+        if ($errBody.Length -gt 300) { $errBody = $errBody.Substring(0, 300) }
+      } catch {}
+      Write-Host "[brain call failed - retry $try of 3: $($_.Exception.Message) $errBody]" -ForegroundColor Red
       Start-Sleep -Seconds 5
     }
   }
@@ -309,8 +316,7 @@ function Wake-Brain {
   try { $null = Invoke-RestMethod -Uri 'http://localhost:11434/api/tags' -TimeoutSec 3; return $true } catch {}
   Write-Host 'Waking Ollama...' -ForegroundColor DarkCyan
   $app = Join-Path $env:LOCALAPPDATA 'Programs\Ollama\ollama app.exe'
-  $cli = Get-Command 'ollama' -ErrorAction SilentlyContinue
-  if ($cli) { Start-Process 'ollama' -ArgumentList 'serve' -WindowStyle Hidden } elseif (Test-Path $app) { Start-Process $app }
+  if (Test-Path $app) { Start-Process $app } else { Start-Process 'ollama' -ArgumentList 'serve' -WindowStyle Hidden }
   for ($i = 0; $i -lt 45; $i++) {
     Start-Sleep -Seconds 2
     try { $null = Invoke-RestMethod -Uri 'http://localhost:11434/api/tags' -TimeoutSec 3; return $true } catch {}
@@ -320,16 +326,21 @@ function Wake-Brain {
 
 function Reset-Brain {
   Write-Host '[runner] resetting the brain - clears any stuck generation...' -ForegroundColor DarkCyan
+  try { $ub = @{ model = $MODEL; messages = @(); keep_alive = 0 } | ConvertTo-Json; $null = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $ub -TimeoutSec 10 } catch {}
   Stop-Process -Name 'ollama app' -Force -ErrorAction SilentlyContinue
   Stop-Process -Name 'ollama' -Force -ErrorAction SilentlyContinue
   Start-Sleep -Seconds 3
+  $alive = Get-Process -Name 'ollama' -ErrorAction SilentlyContinue
+  if ($alive) { Write-Host '[runner] WARNING: the old brain process is STILL alive - the kill was refused.' -ForegroundColor Red }
+  $app = Join-Path $env:LOCALAPPDATA 'Programs\Ollama\ollama app.exe'
+  if (Test-Path $app) { Start-Process $app } else { Start-Process 'ollama' -ArgumentList 'serve' -WindowStyle Hidden }
   $ok = Wake-Brain
-  if ($ok) { Write-Host '[runner] brain is clean.' -ForegroundColor DarkCyan } else { Write-Host '[runner] brain did not wake.' -ForegroundColor Red }
+  if ($ok) { Write-Host '[runner] server is up.' -ForegroundColor DarkCyan } else { Write-Host '[runner] server did not wake.' -ForegroundColor Red }
   return $ok
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.18 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.19 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -401,6 +412,7 @@ function Start-Worker($primeText) {
   Reset-Brain | Out-Null
   Write-Host '[runner] warming the brain...' -ForegroundColor DarkCyan
   $warm = Send-Chat @(@{ role = 'user'; content = 'ping' }) $false
+  if ($warm.content -match 'UNREACHABLE') { Write-Host '[runner] BRAIN DOWN - the model will not load. Not starting jobs. The red lines above are the server itself talking.' -ForegroundColor Red; return }
   Write-Host '[runner] brain warm.' -ForegroundColor DarkCyan
   $vault = Join-Path $env:USERPROFILE 'phi-vault'
   $jobsDir = Join-Path $vault 'phi-dlam\jobs'
