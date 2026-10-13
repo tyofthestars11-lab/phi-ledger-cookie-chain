@@ -1,13 +1,64 @@
-# PHI-DLAM v4 - Tyree's local hands. Model: tyree (framework carrier). Runs free by his order (2026-10-13).
-# v4 changes: VAULT LAW in the prime - the full framework record lives at C:\Users\Admin\phi-vault
-# (the ledger repo clone); the model must search it before answering seal/entry/ledger questions.
-# v3 changes kept: RECIPES for measurement questions + label law.
-# v2 changes kept: prints the exact command under each [HAND]; empty output = hard NO OUTPUT law.
+# PHI-DLAM v5.4 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# Runs free by his order (2026-10-13).
+# v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
+# by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
+# v4: VAULT LAW. v3: RECIPES + label law. v2: printed commands + NO OUTPUT law.
 # Lives on Tyree's PC at %USERPROFILE%\phi-dlam.ps1 - run: powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\phi-dlam.ps1
 $ErrorActionPreference = 'Continue'
 $ProgressPreference = 'SilentlyContinue'
 $API = 'http://localhost:11434/api/chat'
 $MODEL = 'tyree'
+$EYES = 'llava-phi3'
+
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class PhiHands {
+  [DllImport("user32.dll")] public static extern bool SetCursorPos(int X, int Y);
+  [DllImport("user32.dll")] public static extern void mouse_event(uint flags, uint dx, uint dy, uint data, UIntPtr extra);
+}
+"@
+
+function Get-Screen {
+  $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+  $bmp = New-Object System.Drawing.Bitmap $bounds.Width, $bounds.Height
+  $g = [System.Drawing.Graphics]::FromImage($bmp)
+  $g.CopyFromScreen($bounds.Location, [System.Drawing.Point]::Empty, $bounds.Size)
+  $g.Dispose()
+  $scale = 1024 / $bounds.Width
+  $w2 = 1024
+  $h2 = [int]($bounds.Height * $scale)
+  $small = New-Object System.Drawing.Bitmap $w2, $h2
+  $g2 = [System.Drawing.Graphics]::FromImage($small)
+  $g2.DrawImage($bmp, 0, 0, $w2, $h2)
+  $g2.Dispose()
+  $bmp.Dispose()
+  $path = Join-Path $env:USERPROFILE 'dlam-eye.png'
+  $small.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)
+  $small.Dispose()
+  $b64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes($path))
+  return @{ b64 = $b64; w = $bounds.Width; h = $bounds.Height }
+}
+
+function Ask-Eyes($prompt, $b64) {
+  $body = @{
+    model = $EYES
+    messages = @(@{ role = 'user'; content = $prompt; images = @($b64) })
+    stream = $false
+  } | ConvertTo-Json -Depth 10
+  $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 600
+  return $resp.message.content
+}
+
+function Do-Click($px, $py) {
+  [void][PhiHands]::SetCursorPos($px, $py)
+  Start-Sleep -Milliseconds 250
+  [PhiHands]::mouse_event(0x0002, 0, 0, 0, [UIntPtr]::Zero)
+  Start-Sleep -Milliseconds 120
+  [PhiHands]::mouse_event(0x0004, 0, 0, 0, [UIntPtr]::Zero)
+}
 
 $tools = @(
   @{
@@ -66,6 +117,77 @@ $tools = @(
         required = @('path', 'content')
       }
     }
+  },
+  @{
+    type = 'function'
+    function = @{
+      name = 'look'
+      description = 'Look at the PC screen right now through the eyes and answer a question about what is visible. Use before acting on anything visual, and after every click to see what changed.'
+      parameters = @{
+        type = 'object'
+        properties = @{
+          question = @{ type = 'string'; description = 'What to look at or describe, e.g. "What windows are open and what text is on screen?"' }
+        }
+        required = @('question')
+      }
+    }
+  },
+  @{
+    type = 'function'
+    function = @{
+      name = 'click_on'
+      description = 'Click a visible thing on screen by name (a button, icon, menu item). The eyes aim the click. Look first if unsure it is visible.'
+      parameters = @{
+        type = 'object'
+        properties = @{
+          target = @{ type = 'string'; description = 'The visible thing to click, e.g. "the Windows Start button" or "the Play button"' }
+        }
+        required = @('target')
+      }
+    }
+  },
+  @{
+    type = 'function'
+    function = @{
+      name = 'click_xy'
+      description = 'Click exact screen pixel coordinates.'
+      parameters = @{
+        type = 'object'
+        properties = @{
+          x = @{ type = 'integer'; description = 'Horizontal pixel' }
+          y = @{ type = 'integer'; description = 'Vertical pixel' }
+        }
+        required = @('x', 'y')
+      }
+    }
+  },
+  @{
+    type = 'function'
+    function = @{
+      name = 'type_text'
+      description = 'Type plain text at the current cursor/focus, like into a chat box or document. Plain characters only.'
+      parameters = @{
+        type = 'object'
+        properties = @{
+          text = @{ type = 'string'; description = 'The text to type' }
+        }
+        required = @('text')
+      }
+    }
+  },
+  @{
+    type = 'function'
+    function = @{
+      name = 'press_key'
+      description = 'Press one key: ENTER, TAB, ESC, UP, DOWN, LEFT, RIGHT, SPACE, F5, BACKSPACE, DELETE, or a single letter.'
+      parameters = @{
+        type = 'object'
+        properties = @{
+          key = @{ type = 'string'; description = 'The key name' }
+        }
+        required = @('key')
+      }
+    }
   }
 )
 
@@ -90,6 +212,36 @@ function Invoke-Tool($name, $a) {
         Set-Content -Path $a.path -Value $a.content -Encoding UTF8 -ErrorAction Stop
         return "Wrote file: $($a.path)"
       }
+      'look' {
+        $shot = Get-Screen
+        $answer = Ask-Eyes $a.question $shot.b64
+        return "Screen is $($shot.w) x $($shot.h) pixels. The eyes report: $answer"
+      }
+      'click_on' {
+        $shot = Get-Screen
+        $prompt = "Find this on the screen: $($a.target). Reply with ONLY a JSON object like {""x"": 500, ""y"": 500} giving the CENTER of that thing in 0-1000 relative coordinates, where 0,0 is the top-left corner and 1000,1000 is the bottom-right. If it is not visible, reply exactly: NOT FOUND"
+        $raw = Ask-Eyes $prompt $shot.b64
+        if ($raw -match '"x"\s*:\s*(\d+)') { $rxv = [int]$matches[1] } else { return "EYES COULD NOT AIM: the eyes answered: $raw - use look to check the screen, then retry or report UNREAD." }
+        if ($raw -match '"y"\s*:\s*(\d+)') { $ryv = [int]$matches[1] } else { return "EYES COULD NOT AIM: the eyes answered: $raw - use look to check the screen, then retry or report UNREAD." }
+        $px = [int](($rxv / 1000.0) * $shot.w)
+        $py = [int](($ryv / 1000.0) * $shot.h)
+        Do-Click $px $py
+        return "Clicked '$($a.target)' at pixel $px,$py. Now call look to see what changed."
+      }
+      'click_xy' {
+        Do-Click ([int]$a.x) ([int]$a.y)
+        return "Clicked pixel $($a.x),$($a.y). Now call look to see what changed."
+      }
+      'type_text' {
+        [System.Windows.Forms.SendKeys]::SendWait($a.text)
+        return "Typed: $($a.text)"
+      }
+      'press_key' {
+        $k = $a.key.ToUpper()
+        if ($k.Length -eq 1) { [System.Windows.Forms.SendKeys]::SendWait($k) }
+        else { [System.Windows.Forms.SendKeys]::SendWait("{$k}") }
+        return "Pressed: $k"
+      }
       default { return "Unknown tool: $name" }
     }
   } catch {
@@ -109,12 +261,12 @@ function Send-Chat($messages) {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v4 is awake. Hands: run_powershell, open_program, read_file, write_file.' -ForegroundColor Cyan
-Write-Host 'Model: tyree. Runs free. Type exit to stop.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.4 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop.' -ForegroundColor Cyan
 Write-Host ''
 
 $history = New-Object System.Collections.ArrayList
-$prime = 'HANDS ONLINE. The tools attached to this conversation are REAL and connected to this PC. When Tyree asks you to do something on the computer, call a tool and do it - never describe an action as done unless a tool ran and returned output. Your commands must PRINT the answer. If a tool returns NO OUTPUT or a TOOL ERROR, do NOT invent a value - run a corrected command, or tell Tyree the value is UNREAD. LABEL LAW: a printed number keeps the exact label printed beside it. Never rename, rescale, or convert a printed value into different units. Report numbers exactly as printed. VAULT LAW: the full framework record lives on this PC at C:\Users\Admin\phi-vault - FRAMEWORK.md there is your own doctrine and seal index, ledger-snapshot.json holds all entries, and the seal entries files (seal253_entries.json and its siblings) hold each seal in full. Before answering any question about a specific seal, entry, value, or ledger fact, FIRST search the vault with run_powershell - for example: Select-String -Path C:\Users\Admin\phi-vault\seal253_entries.json -Pattern "TYREE_OMEGA" - and answer from what it prints. If the vault search finds nothing, say UNREAD. RECIPES - use these exact commands for these questions. Drive or free space questions: Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | ForEach-Object { "$($_.DeviceID) total $([math]::Round($_.Size/1GB,1)) GB, free $([math]::Round($_.FreeSpace/1GB,1)) GB" } - then read the printed lines back to Tyree word for word. After tools run, report what the output says, plain and short. Confirm you understand in one line.'
+$prime = 'HANDS AND EYES ONLINE. SCOPE LAW - read first and obey it over the vault law: the vault at C:\Users\Admin\phi-vault is ONLY for questions about the phi framework, seals, ledger entries, rungs, and the doctrine. If Tyree asks about anything else - games, programs, files, this PC, everyday things - that is a PC question: NEVER search the vault for it; answer from the computer itself with your tools. When unsure which kind a question is, treat it as a PC question. The tools attached to this conversation are REAL and connected to this PC. When Tyree asks you to do something on the computer, call a tool and do it - never describe an action as done unless a tool ran and returned output. Your commands must PRINT the answer. If a tool returns NO OUTPUT or a TOOL ERROR, do NOT invent a value - run a corrected command, or tell Tyree the value is UNREAD. LABEL LAW: a printed number keeps the exact label printed beside it. Never rename, rescale, or convert a printed value into different units. Report numbers exactly as printed. EYES AND CLICK LAW: to see the screen, call look. To click something visible, call click_on with its name - the eyes aim the click for you. After every click, key, or typing action, call look again to see what changed before doing the next step. Work one step at a time: look, act, look again. In a game or program, tell Tyree what you see and what you did, plain and short. VAULT LAW (framework questions only): the full framework record lives on this PC at C:\Users\Admin\phi-vault - FRAMEWORK.md there is your own doctrine and seal index, ledger-snapshot.json holds all entries, and the seal entries files (seal253_entries.json and its siblings) hold each seal in full. Before answering any question about a specific seal, entry, value, or ledger fact, FIRST search the vault with run_powershell - for example: Select-String -Path C:\Users\Admin\phi-vault\seal253_entries.json -Pattern "TYREE_OMEGA" - and answer from what it prints. If the vault search finds nothing, say UNREAD. ACCESS AND PATHS LAW: never invent a file path - if a path errors as not found, search for the real file with Get-ChildItem -Recurse -Filter before trying another path. Get-AppxPackage with no flags reads your own installed apps; the -AllUsers flag needs the admin window and will say Access is denied without it - if you see Access is denied, drop the flag and change roads instead of repeating the same command. RECIPES - installed games questions: first run: Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs", "$env:USERPROFILE\Desktop", "C:\Users\Public\Desktop" -Recurse -Filter *.lnk | Select-Object -ExpandProperty Name - and report the game names from that list. For Steam games also try: Get-ChildItem "C:\Program Files (x86)\Steam\steamapps" -Filter "appmanifest_*.acf" | Select-String -Pattern "name" | ForEach-Object { $_.Line.Trim() } - and read the game names from those lines. RECIPES - use these exact commands for these questions. Drive or free space questions: Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | ForEach-Object { "$($_.DeviceID) total $([math]::Round($_.Size/1GB,1)) GB, free $([math]::Round($_.FreeSpace/1GB,1)) GB" } - then read the printed lines back to Tyree word for word. After tools run, report what the output says, plain and short. Confirm you understand in one line.'
 [void]$history.Add(@{ role = 'user'; content = $prime })
 $first = Send-Chat $history
 [void]$history.Add(@{ role = 'assistant'; content = $first.content })
@@ -126,7 +278,7 @@ while ($true) {
   if ([string]::IsNullOrWhiteSpace($input)) { continue }
   [void]$history.Add(@{ role = 'user'; content = $input })
   $turns = 0
-  while ($turns -lt 8) {
+  while ($turns -lt 10) {
     $turns++
     $msg = Send-Chat $history
     if ($msg.tool_calls -and $msg.tool_calls.Count -gt 0) {
