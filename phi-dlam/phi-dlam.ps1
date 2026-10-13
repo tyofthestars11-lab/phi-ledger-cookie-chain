@@ -1,4 +1,4 @@
-# PHI-DLAM v5.15 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.16 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -316,8 +316,18 @@ function Wake-Brain {
   return $false
 }
 
+function Reset-Brain {
+  Write-Host '[runner] resetting the brain - clears any stuck generation...' -ForegroundColor DarkCyan
+  Stop-Process -Name 'ollama app' -Force -ErrorAction SilentlyContinue
+  Stop-Process -Name 'ollama' -Force -ErrorAction SilentlyContinue
+  Start-Sleep -Seconds 3
+  $ok = Wake-Brain
+  if ($ok) { Write-Host '[runner] brain is clean.' -ForegroundColor DarkCyan } else { Write-Host '[runner] brain did not wake.' -ForegroundColor Red }
+  return $ok
+}
+
 Write-Host ''
-Write-Host 'PHI-DLAM v5.15 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.16 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -341,6 +351,7 @@ function Invoke-Job($jobText, $primeText) {
   $h = New-Object System.Collections.ArrayList
   [void]$h.Add(@{ role = 'user'; content = ($primeText + ' WORKER MODE: the next message is a JOB from the queue. Work it to done over as many steps as it takes. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary.') })
   $boot = Send-Chat $h
+  if ($boot.content -match 'BRAIN UNREACHABLE') { Write-Host '[runner] boot found a stuck brain - resetting and retrying.' -ForegroundColor DarkYellow; Reset-Brain | Out-Null; $boot = Send-Chat $h }
   [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
   [void]$h.Add(@{ role = 'user'; content = $jobText })
   $steps = 0
@@ -386,6 +397,7 @@ function Start-Worker($primeText) {
   Write-Host ''
   Write-Host 'WORKER MODE. Working the job queue solo. Ctrl+C or close the window to stop me.' -ForegroundColor Magenta
   $env:GIT_TERMINAL_PROMPT = '0'
+  Reset-Brain | Out-Null
   $vault = Join-Path $env:USERPROFILE 'phi-vault'
   $jobsDir = Join-Path $vault 'phi-dlam\jobs'
   $resultsDir = Join-Path $vault 'phi-dlam\results'
