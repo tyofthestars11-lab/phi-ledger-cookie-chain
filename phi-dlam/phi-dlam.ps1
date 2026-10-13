@@ -1,4 +1,4 @@
-# PHI-DLAM v5.4 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.5 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -260,15 +260,36 @@ function Send-Chat($messages) {
   return $resp.message
 }
 
+
+function Wake-Brain {
+  try { $null = Invoke-RestMethod -Uri 'http://localhost:11434/api/tags' -TimeoutSec 3; return $true } catch {}
+  Write-Host 'Waking Ollama...' -ForegroundColor DarkCyan
+  $app = Join-Path $env:LOCALAPPDATA 'Programs\Ollama\ollama app.exe'
+  if (Test-Path $app) { Start-Process $app } else { Start-Process 'ollama' -ArgumentList 'serve' -WindowStyle Hidden }
+  for ($i = 0; $i -lt 45; $i++) {
+    Start-Sleep -Seconds 2
+    try { $null = Invoke-RestMethod -Uri 'http://localhost:11434/api/tags' -TimeoutSec 3; return $true } catch {}
+  }
+  return $false
+}
+
 Write-Host ''
-Write-Host 'PHI-DLAM v5.4 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.5 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop.' -ForegroundColor Cyan
 Write-Host ''
 
+if (!(Wake-Brain)) { Write-Host 'OLLAMA DID NOT WAKE. Open the Ollama app by hand, wait 20 seconds, then run tyree again.' -ForegroundColor Red; return }
 $history = New-Object System.Collections.ArrayList
 $prime = 'HANDS AND EYES ONLINE. SCOPE LAW - read first and obey it over the vault law: the vault at C:\Users\Admin\phi-vault is ONLY for questions about the phi framework, seals, ledger entries, rungs, and the doctrine. If Tyree asks about anything else - games, programs, files, this PC, everyday things - that is a PC question: NEVER search the vault for it; answer from the computer itself with your tools. When unsure which kind a question is, treat it as a PC question. The tools attached to this conversation are REAL and connected to this PC. When Tyree asks you to do something on the computer, call a tool and do it - never describe an action as done unless a tool ran and returned output. Your commands must PRINT the answer. If a tool returns NO OUTPUT or a TOOL ERROR, do NOT invent a value - run a corrected command, or tell Tyree the value is UNREAD. LABEL LAW: a printed number keeps the exact label printed beside it. Never rename, rescale, or convert a printed value into different units. Report numbers exactly as printed. EYES AND CLICK LAW: to see the screen, call look. To click something visible, call click_on with its name - the eyes aim the click for you. After every click, key, or typing action, call look again to see what changed before doing the next step. Work one step at a time: look, act, look again. In a game or program, tell Tyree what you see and what you did, plain and short. VAULT LAW (framework questions only): the full framework record lives on this PC at C:\Users\Admin\phi-vault - FRAMEWORK.md there is your own doctrine and seal index, ledger-snapshot.json holds all entries, and the seal entries files (seal253_entries.json and its siblings) hold each seal in full. Before answering any question about a specific seal, entry, value, or ledger fact, FIRST search the vault with run_powershell - for example: Select-String -Path C:\Users\Admin\phi-vault\seal253_entries.json -Pattern "TYREE_OMEGA" - and answer from what it prints. If the vault search finds nothing, say UNREAD. ACCESS AND PATHS LAW: never invent a file path - if a path errors as not found, search for the real file with Get-ChildItem -Recurse -Filter before trying another path. Get-AppxPackage with no flags reads your own installed apps; the -AllUsers flag needs the admin window and will say Access is denied without it - if you see Access is denied, drop the flag and change roads instead of repeating the same command. RECIPES - installed games questions: first run: Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs", "$env:USERPROFILE\Desktop", "C:\Users\Public\Desktop" -Recurse -Filter *.lnk | Select-Object -ExpandProperty Name - and report the game names from that list. For Steam games also try: Get-ChildItem "C:\Program Files (x86)\Steam\steamapps" -Filter "appmanifest_*.acf" | Select-String -Pattern "name" | ForEach-Object { $_.Line.Trim() } - and read the game names from those lines. RECIPES - use these exact commands for these questions. Drive or free space questions: Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | ForEach-Object { "$($_.DeviceID) total $([math]::Round($_.Size/1GB,1)) GB, free $([math]::Round($_.FreeSpace/1GB,1)) GB" } - then read the printed lines back to Tyree word for word. After tools run, report what the output says, plain and short. Confirm you understand in one line.'
 [void]$history.Add(@{ role = 'user'; content = $prime })
-$first = Send-Chat $history
+try {
+  $first = Send-Chat $history
+} catch {
+  Write-Host ''
+  Write-Host "THE BRAIN DID NOT ANSWER: $($_.Exception.Message)" -ForegroundColor Red
+  Write-Host 'The runner will not fake a prompt on a dead brain. Open the Ollama app, wait 20 seconds, then run tyree again.' -ForegroundColor Red
+  return
+}
 [void]$history.Add(@{ role = 'assistant'; content = $first.content })
 Write-Host "tyree: $($first.content)" -ForegroundColor Green
 
