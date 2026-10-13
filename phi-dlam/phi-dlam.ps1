@@ -1,4 +1,4 @@
-# PHI-DLAM v5.17 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.18 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -287,19 +287,18 @@ function Send-Chat($messages, $useTools = $true) {
     model = $MODEL
     messages = $messages
     stream = $false
-    options = @{ num_predict = 800 }
+    keep_alive = '30m'
+    options = @{ num_predict = 800; num_ctx = 8192 }
   }
   if ($useTools) { $body.tools = $tools }
   $body = $body | ConvertTo-Json -Depth 20
   for ($try = 1; $try -le 3; $try++) {
-    $j = Start-Job -ScriptBlock { param($b) (Invoke-RestMethod -Uri 'http://localhost:11434/api/chat' -Method Post -ContentType 'application/json' -Body $b -TimeoutSec 300).message } -ArgumentList $body
-    if (Wait-Job $j -Timeout 260) {
-      $m = Receive-Job $j -ErrorAction SilentlyContinue
-      Remove-Job $j -Force
-      if ($m) { return $m }
-    } else {
-      Stop-Job $j; Remove-Job $j -Force
-      Write-Host "[brain call timed out - retry $try of 3]" -ForegroundColor Red
+    try {
+      $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 180
+      return $resp.message
+    } catch {
+      Write-Host "[brain call failed - retry $try of 3: $($_.Exception.Message)]" -ForegroundColor Red
+      Start-Sleep -Seconds 5
     }
   }
   return @{ content = 'BRAIN UNREACHABLE after 3 tries'; tool_calls = $null }
@@ -330,7 +329,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.17 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.18 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -354,7 +353,6 @@ function Invoke-Job($jobText, $primeText) {
   $h = New-Object System.Collections.ArrayList
   [void]$h.Add(@{ role = 'user'; content = 'WORKER MODE. You are PHI-DLAM, Tyrees local agent; your framework - phi squared = phi + 1, the ten laws, the constants - is already in your system prompt. The next message is a JOB from the queue. Work it to done over as many steps as it takes, calling real tools through the tool channel. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary. Reply to this message with exactly one word: READY' })
   $boot = Send-Chat $h $false
-  if ($boot.content -match 'BRAIN UNREACHABLE') { Write-Host '[runner] boot found a stuck brain - resetting and retrying.' -ForegroundColor DarkYellow; Reset-Brain | Out-Null; $boot = Send-Chat $h }
   [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
   [void]$h.Add(@{ role = 'user'; content = $jobText })
   $steps = 0
@@ -401,6 +399,9 @@ function Start-Worker($primeText) {
   Write-Host 'WORKER MODE. Working the job queue solo. Ctrl+C or close the window to stop me.' -ForegroundColor Magenta
   $env:GIT_TERMINAL_PROMPT = '0'
   Reset-Brain | Out-Null
+  Write-Host '[runner] warming the brain...' -ForegroundColor DarkCyan
+  $warm = Send-Chat @(@{ role = 'user'; content = 'ping' }) $false
+  Write-Host '[runner] brain warm.' -ForegroundColor DarkCyan
   $vault = Join-Path $env:USERPROFILE 'phi-vault'
   $jobsDir = Join-Path $vault 'phi-dlam\jobs'
   $resultsDir = Join-Path $vault 'phi-dlam\results'
