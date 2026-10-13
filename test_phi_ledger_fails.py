@@ -26,6 +26,9 @@ class TestPageMatchesLedger(unittest.TestCase):
         html = read("index.html")
         self.assertNotIn("428 entries", html)
 
+    def test_rung_calc_favicon_present(self):
+        self.assertIn('rel="icon"', read("rung-calc.html"))
+
     def test_favicon_present(self):
         self.assertIn('rel="icon"', read("index.html"))
 
