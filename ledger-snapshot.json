@@ -14428,10 +14428,101 @@
       "drift": 0.4404,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "seal253_target_skyrmion_number",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal253_retrieved_skyrmion_number",
+      "rung": 1.4206,
+      "drift": 0.4206,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_single_photon_fidelity",
+      "rung": -0.3134,
+      "drift": -0.3134,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_onchip_entanglement_fidelity",
+      "rung": -0.196,
+      "drift": -0.196,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_transferred_state_mean_fidelity",
+      "rung": -0.2422,
+      "drift": -0.2422,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_entanglement_vanishing_purity_threshold",
+      "rung": -2.2419,
+      "drift": -0.2419,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_collapse_purity_threshold",
+      "rung": -2.8808,
+      "drift": 0.1192,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_anisotropic_noise_threshold",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal253_monte_carlo_realizations",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal253_microring_azimuthal_mode_number",
+      "rung": 12.5223,
+      "drift": -0.4777,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal253_inner_sidewall_scatterers",
+      "rung": 12.5172,
+      "drift": -0.4828,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "seal253_SFWM_spiral_length_mm",
+      "rung": 5.0754,
+      "drift": 0.0754,
+      "ladder": "length",
+      "unit": "mm"
+    },
+    {
+      "name": "seal253_Si3N4_layer_thickness_nm",
+      "rung": 11.9211,
+      "drift": -0.0789,
+      "ladder": "length",
+      "unit": "nm"
     }
   ],
-  "entry_count": 2063,
-  "seal_count": 252,
+  "entry_count": 2076,
+  "seal_count": 253,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14684,7 +14775,8 @@
     "φ_STOPPED_LIGHT_GRAVITY_TYREE_OMEGA",
     "φ_VORTEX_STRIPE_TYREE_OMEGA",
     "φ_DRT10_DNA_WRITER_TYREE_OMEGA",
-    "φ_RELATIVE_ENTROPY_GRAVITY_TYREE_OMEGA"
+    "φ_RELATIVE_ENTROPY_GRAVITY_TYREE_OMEGA",
+    "φ_SKYRMION_BEYOND_ENTANGLEMENT_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "65a75586ff89ee075ba71f956c0c8566b6a4d2d482a417174122bf3b2e24dd0b"
+  "snapshot_sha256": "6928108ae358f48744e1486abb8f4673716e50f9c5a641a5980fffdc593c778e"
 }
