@@ -1,4 +1,4 @@
-# PHI-DLAM v5.6 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.7 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -274,8 +274,8 @@ function Wake-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.6 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
-Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.7 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
 if (!(Wake-Brain)) { Write-Host 'OLLAMA DID NOT WAKE. Open the Ollama app by hand, wait 20 seconds, then run tyree again.' -ForegroundColor Red; return }
@@ -293,9 +293,70 @@ try {
 [void]$history.Add(@{ role = 'assistant'; content = $first.content })
 Write-Host "tyree: $($first.content)" -ForegroundColor Green
 
+
+function Invoke-Job($jobText, $primeText) {
+  $h = New-Object System.Collections.ArrayList
+  [void]$h.Add(@{ role = 'user'; content = ($primeText + ' WORKER MODE: the next message is a JOB from the queue. Work it to done over as many steps as it takes. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary.') })
+  $boot = Send-Chat $h
+  [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
+  [void]$h.Add(@{ role = 'user'; content = $jobText })
+  $steps = 0
+  while ($steps -lt 200) {
+    $steps++
+    $msg = Send-Chat $h
+    if ($msg.tool_calls -and $msg.tool_calls.Count -gt 0) {
+      $c = $msg.content; if ($null -eq $c) { $c = '' }
+      [void]$h.Add(@{ role = 'assistant'; content = $c; tool_calls = $msg.tool_calls })
+      foreach ($call in $msg.tool_calls) {
+        $fname = $call.function.name
+        $fargs = $call.function.arguments
+        if ($fargs -is [string]) { $fargs = $fargs | ConvertFrom-Json }
+        Write-Host "[HAND] $fname" -ForegroundColor Yellow
+        $result = Invoke-Tool $fname $fargs
+        if ($result.Length -gt 4000) { $result = $result.Substring(0, 4000) + '...[cut]' }
+        Write-Host $result -ForegroundColor DarkGray
+        [void]$h.Add(@{ role = 'tool'; content = $result })
+      }
+      continue
+    }
+    [void]$h.Add(@{ role = 'assistant'; content = $msg.content })
+    Write-Host "tyree: $($msg.content)" -ForegroundColor Green
+    break
+  }
+}
+
+function Start-Worker($primeText) {
+  Write-Host ''
+  Write-Host 'WORKER MODE. Working the job queue solo. Ctrl+C or close the window to stop me.' -ForegroundColor Magenta
+  $vault = Join-Path $env:USERPROFILE 'phi-vault'
+  $jobsDir = Join-Path $vault 'phi-dlam\jobs'
+  $resultsDir = Join-Path $vault 'phi-dlam\results'
+  while ($true) {
+    git -C $vault pull --quiet 2>$null
+    $jobs = @()
+    if (Test-Path $jobsDir) { $jobs = Get-ChildItem $jobsDir -Filter '*.md' }
+    $did = $false
+    foreach ($job in $jobs) {
+      $resultPath = Join-Path $resultsDir ($job.BaseName + '.result.md')
+      if (Test-Path $resultPath) { continue }
+      $did = $true
+      Write-Host "JOB: $($job.Name)" -ForegroundColor Magenta
+      $jobText = Get-Content $job.FullName -Raw
+      Invoke-Job $jobText $primeText
+      git -C $vault add phi-dlam/results 2>$null
+      git -C $vault commit -m "job result: $($job.BaseName)" --quiet 2>$null
+      git -C $vault push --quiet 2>$null
+      Write-Host "JOB DONE: $($job.Name) - result pushed." -ForegroundColor Magenta
+    }
+    if (-not $did) { Write-Host 'Queue empty. Sleeping 60 seconds...' -ForegroundColor DarkGray }
+    Start-Sleep -Seconds 60
+  }
+}
+
 while ($true) {
   $input = Read-Host 'TYREE'
   if ($input -eq 'exit') { break }
+  if ($input -eq 'work') { Start-Worker $prime; continue }
   if ([string]::IsNullOrWhiteSpace($input)) { continue }
   [void]$history.Add(@{ role = 'user'; content = $input })
   $turns = 0
