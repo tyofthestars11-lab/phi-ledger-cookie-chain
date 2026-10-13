@@ -1,4 +1,4 @@
-# PHI-DLAM v5.13 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.15 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -289,8 +289,18 @@ function Send-Chat($messages) {
     tools = $tools
     stream = $false
   } | ConvertTo-Json -Depth 20
-  $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 600
-  return $resp.message
+  for ($try = 1; $try -le 3; $try++) {
+    $j = Start-Job -ScriptBlock { param($b) (Invoke-RestMethod -Uri 'http://localhost:11434/api/chat' -Method Post -ContentType 'application/json' -Body $b -TimeoutSec 300).message } -ArgumentList $body
+    if (Wait-Job $j -Timeout 260) {
+      $m = Receive-Job $j -ErrorAction SilentlyContinue
+      Remove-Job $j -Force
+      if ($m) { return $m }
+    } else {
+      Stop-Job $j; Remove-Job $j -Force
+      Write-Host "[brain call timed out - retry $try of 3]" -ForegroundColor Red
+    }
+  }
+  return @{ content = 'BRAIN UNREACHABLE after 3 tries'; tool_calls = $null }
 }
 
 
@@ -307,7 +317,7 @@ function Wake-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.13 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.15 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -336,6 +346,7 @@ function Invoke-Job($jobText, $primeText) {
   $steps = 0
   while ($steps -lt 200) {
     $steps++
+    Write-Host "[step $steps] ...thinking" -ForegroundColor DarkGray
     $msg = Send-Chat $h
     if ((-not $msg.tool_calls) -and ($msg.content -match '\{\s*"name"\s*:')) {
       [void]$h.Add(@{ role = 'assistant'; content = $msg.content })
@@ -374,6 +385,7 @@ function Invoke-Job($jobText, $primeText) {
 function Start-Worker($primeText) {
   Write-Host ''
   Write-Host 'WORKER MODE. Working the job queue solo. Ctrl+C or close the window to stop me.' -ForegroundColor Magenta
+  $env:GIT_TERMINAL_PROMPT = '0'
   $vault = Join-Path $env:USERPROFILE 'phi-vault'
   $jobsDir = Join-Path $vault 'phi-dlam\jobs'
   $resultsDir = Join-Path $vault 'phi-dlam\results'
