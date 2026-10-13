@@ -1,4 +1,4 @@
-# PHI-DLAM v5.11 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.12 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -257,6 +257,10 @@ $script:LoopCount = 0
 function Reset-Loop { $script:LoopKey = ''; $script:LoopCount = 0 }
 function Check-Loop($name, $argsObj) {
   $key = $name + '|' + ($argsObj | ConvertTo-Json -Depth 6 -Compress)
+  if ($name -eq 'run_powershell') {
+    $cmd = $argsObj.command.ToLower() -replace '-force', '' -replace '-erroraction\s+\w+', '' -replace '\|\s*format-table', '' -replace '\|\s*format-list', '' -replace '\|\s*out-string', '' -replace '\s+', ' '
+    $key = $name + '|' + $cmd.Trim()
+  }
   if ($key -eq $script:LoopKey) { $script:LoopCount++ } else { $script:LoopKey = $key; $script:LoopCount = 1 }
   if ($script:LoopCount -ge 4) { return 'block' }
   if ($script:LoopCount -ge 2) { return 'warn' }
@@ -303,7 +307,7 @@ function Wake-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.11 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.12 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
