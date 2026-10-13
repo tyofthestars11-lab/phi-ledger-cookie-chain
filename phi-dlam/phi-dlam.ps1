@@ -1,4 +1,4 @@
-# PHI-DLAM v5.16 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.17 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -282,13 +282,15 @@ function Flush-Keys {
   try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
 }
 
-function Send-Chat($messages) {
+function Send-Chat($messages, $useTools = $true) {
   $body = @{
     model = $MODEL
     messages = $messages
-    tools = $tools
     stream = $false
-  } | ConvertTo-Json -Depth 20
+    options = @{ num_predict = 800 }
+  }
+  if ($useTools) { $body.tools = $tools }
+  $body = $body | ConvertTo-Json -Depth 20
   for ($try = 1; $try -le 3; $try++) {
     $j = Start-Job -ScriptBlock { param($b) (Invoke-RestMethod -Uri 'http://localhost:11434/api/chat' -Method Post -ContentType 'application/json' -Body $b -TimeoutSec 300).message } -ArgumentList $body
     if (Wait-Job $j -Timeout 260) {
@@ -308,7 +310,8 @@ function Wake-Brain {
   try { $null = Invoke-RestMethod -Uri 'http://localhost:11434/api/tags' -TimeoutSec 3; return $true } catch {}
   Write-Host 'Waking Ollama...' -ForegroundColor DarkCyan
   $app = Join-Path $env:LOCALAPPDATA 'Programs\Ollama\ollama app.exe'
-  if (Test-Path $app) { Start-Process $app } else { Start-Process 'ollama' -ArgumentList 'serve' -WindowStyle Hidden }
+  $cli = Get-Command 'ollama' -ErrorAction SilentlyContinue
+  if ($cli) { Start-Process 'ollama' -ArgumentList 'serve' -WindowStyle Hidden } elseif (Test-Path $app) { Start-Process $app }
   for ($i = 0; $i -lt 45; $i++) {
     Start-Sleep -Seconds 2
     try { $null = Invoke-RestMethod -Uri 'http://localhost:11434/api/tags' -TimeoutSec 3; return $true } catch {}
@@ -327,7 +330,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.16 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.17 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -336,7 +339,7 @@ $history = New-Object System.Collections.ArrayList
 $prime = 'HANDS AND EYES ONLINE. You are the DLAM on this PC. The attached tools are REAL: when Tyree asks for an action, CALL a tool; never claim an action happened without a tool result. Tool calls go through the tool channel only - never write tool-call JSON as chat text. SCOPE LAW: the vault C:\Users\Admin\phi-vault is ONLY for phi framework, seals, ledger, rungs, doctrine questions. Everything else (games, programs, files, this PC) is a PC question - never search the vault for it; answer from the machine. Unsure = PC question. Commands must PRINT their answer; an assignment alone prints nothing. NO OUTPUT or TOOL ERROR means invent nothing: retry corrected, or say UNREAD. LABEL LAW: report numbers exactly as printed, same label, same units - never rename or rescale. EYES LAW: look shows the screen; click_on clicks a visible thing by name; after any click, key, or typing, look again before the next step; one step at a time in programs and games. VAULT LAW (framework only): FRAMEWORK.md in the vault is your doctrine and seal index; the seal entries files hold each seal in full. Before answering about a specific seal or ledger value, search the vault first with run_powershell (example: Select-String -Path C:\Users\Admin\phi-vault\seal253_entries.json -Pattern "TYREE_OMEGA") and answer from what prints; nothing found = UNREAD. Your own constants live in your system prompt (phi = 1.618033988749895); never search the vault for them. ACCESS LAW: never invent a file path - if one errors, find the real file with Get-ChildItem -Recurse -Filter. On Access is denied, drop the flag and change roads - never repeat a denied command. RECIPES - games installed: Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs", "$env:USERPROFILE\Desktop", "C:\Users\Public\Desktop" -Recurse -Filter *.lnk | Select-Object -ExpandProperty Name ; Steam games also: Get-ChildItem "C:\Program Files (x86)\Steam\steamapps" -Filter "appmanifest_*.acf" | Select-String -Pattern "name" | ForEach-Object { $_.Line.Trim() } ; drive space: Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | ForEach-Object { "$($_.DeviceID) total $([math]::Round($_.Size/1GB,1)) GB, free $([math]::Round($_.FreeSpace/1GB,1)) GB" } - read printed lines back word for word. BUILDER LAW: a JOB (build, fix, make a tool) is worked to done in one sitting: chain tools without asking mid-way. When a program helps, write a real Python file with write_file into C:\Users\Admin\phi-tools (create the folder first if missing), run it (python, or py if python is missing), fix errors and rerun until it works. Never delete a script you wrote for Tyree; when done, report the full path and the full output. Phi code uses phi = 1.618033988749895 and rung(x) = ln(x) / ln(phi). Questions get short answers; jobs get finished. There is no print tool. To check whether files or folders exist, use run_powershell with Get-ChildItem - look is only for screens in programs and games. MERGE LAW: you and the Muse in Tyrees chat are one agent in two seats - Golden Ratio Muse, phi squared. The repo is the shared desk: jobs in phi-dlam/jobs are written by your other seat, and results you push to phi-dlam/results are read by your other seat. Treat that work as your own handwriting. Reply to this message with exactly one word: READY'
 [void]$history.Add(@{ role = 'user'; content = $prime })
 try {
-  $first = Send-Chat $history
+  $first = Send-Chat $history $false
 } catch {
   Write-Host ''
   Write-Host "THE BRAIN DID NOT ANSWER: $($_.Exception.Message)" -ForegroundColor Red
@@ -349,8 +352,8 @@ Write-Host "tyree: $($first.content)" -ForegroundColor Green
 
 function Invoke-Job($jobText, $primeText) {
   $h = New-Object System.Collections.ArrayList
-  [void]$h.Add(@{ role = 'user'; content = ($primeText + ' WORKER MODE: the next message is a JOB from the queue. Work it to done over as many steps as it takes. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary.') })
-  $boot = Send-Chat $h
+  [void]$h.Add(@{ role = 'user'; content = 'WORKER MODE. You are PHI-DLAM, Tyrees local agent; your framework - phi squared = phi + 1, the ten laws, the constants - is already in your system prompt. The next message is a JOB from the queue. Work it to done over as many steps as it takes, calling real tools through the tool channel. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary. Reply to this message with exactly one word: READY' })
+  $boot = Send-Chat $h $false
   if ($boot.content -match 'BRAIN UNREACHABLE') { Write-Host '[runner] boot found a stuck brain - resetting and retrying.' -ForegroundColor DarkYellow; Reset-Brain | Out-Null; $boot = Send-Chat $h }
   [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
   [void]$h.Add(@{ role = 'user'; content = $jobText })
