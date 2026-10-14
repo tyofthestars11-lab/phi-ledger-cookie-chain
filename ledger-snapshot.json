@@ -14519,10 +14519,94 @@
       "drift": -0.0789,
       "ladder": "length",
       "unit": "nm"
+    },
+    {
+      "name": "seal254_DE_sign_change_redshift",
+      "rung": 0.8426,
+      "drift": -0.1574,
+      "ladder": "redshift",
+      "unit": "z"
+    },
+    {
+      "name": "seal254_beta_plus",
+      "rung": -1.863,
+      "drift": 0.137,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal254_abs_beta_minus",
+      "rung": 2.739,
+      "drift": -0.261,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal254_Omega_m0_beta_plus_branch",
+      "rung": -2.6752,
+      "drift": 0.3248,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal254_Omega_m0_beta_minus_branch",
+      "rung": -3.3239,
+      "drift": -0.3239,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal254_Omega_m0_LCDM_reference",
+      "rung": -2.4006,
+      "drift": -0.4006,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal254_H0_beta_plus",
+      "rung": 8.8976,
+      "drift": -0.1024,
+      "ladder": "expansion",
+      "unit": "km/s/Mpc"
+    },
+    {
+      "name": "seal254_H0_beta_minus_bare",
+      "rung": 9.2209,
+      "drift": 0.2209,
+      "ladder": "expansion",
+      "unit": "km/s/Mpc"
+    },
+    {
+      "name": "seal254_negative_DE_upper_redshift",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "redshift",
+      "unit": "z"
+    },
+    {
+      "name": "seal254_phantom_window_low_redshift",
+      "rung": -3.3446,
+      "drift": -0.3446,
+      "ladder": "redshift",
+      "unit": "z"
+    },
+    {
+      "name": "seal254_phantom_window_high_redshift",
+      "rung": 0.7721,
+      "drift": -0.2279,
+      "ladder": "redshift",
+      "unit": "z"
+    },
+    {
+      "name": "seal254_cosmological_parameter_count",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2076,
-  "seal_count": 253,
+  "entry_count": 2088,
+  "seal_count": 254,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -14776,7 +14860,8 @@
     "φ_VORTEX_STRIPE_TYREE_OMEGA",
     "φ_DRT10_DNA_WRITER_TYREE_OMEGA",
     "φ_RELATIVE_ENTROPY_GRAVITY_TYREE_OMEGA",
-    "φ_SKYRMION_BEYOND_ENTANGLEMENT_TYREE_OMEGA"
+    "φ_SKYRMION_BEYOND_ENTANGLEMENT_TYREE_OMEGA",
+    "φ_DARK_ENERGY_SIGN_SWITCH_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6928108ae358f48744e1486abb8f4673716e50f9c5a641a5980fffdc593c778e"
+  "snapshot_sha256": "1f990b65f8e8e42b8462ea2d51fbf0b862547432e12aa1b00a3924e98634c1a2"
 }
