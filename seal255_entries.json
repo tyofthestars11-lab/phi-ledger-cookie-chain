@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "time",
+  "name": "seal255_ammonoid_history",
+  "unit": "Ma",
+  "value": 450
+ },
+ {
+  "ladder": "time",
+  "name": "seal255_true_ammonite_interval",
+  "unit": "Ma",
+  "value": 200
+ },
+ {
+  "ladder": "time",
+  "name": "seal255_time_since_main_extinction",
+  "unit": "Ma",
+  "value": 66
+ },
+ {
+  "ladder": "length",
+  "name": "seal255_largest_shell_lower",
+  "unit": "m",
+  "value": 2.5
+ },
+ {
+  "ladder": "length",
+  "name": "seal255_largest_shell_upper",
+  "unit": "m",
+  "value": 3.5
+ },
+ {
+  "ladder": "count",
+  "name": "seal255_species_estimate_lower",
+  "unit": "species",
+  "value": 10000
+ },
+ {
+  "ladder": "count",
+  "name": "seal255_species_estimate_upper",
+  "unit": "species",
+  "value": 20000
+ },
+ {
+  "ladder": "angle",
+  "name": "seal255_golden_angle_theta",
+  "unit": "degrees",
+  "value": 137.507764050038
+ },
+ {
+  "ladder": "angle",
+  "name": "seal255_septa_sutures_phase",
+  "unit": "degrees",
+  "value": 275.015528
+ },
+ {
+  "ladder": "angle",
+  "name": "seal255_living_chamber_phase",
+  "unit": "degrees",
+  "value": 52.523292
+ },
+ {
+  "ladder": "angle",
+  "name": "seal255_extinction_boundary_phase",
+  "unit": "degrees",
+  "value": 327.53882
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal255_extinction_timing_separation",
+  "unit": "ratio",
+  "value": 6.818181818
+ }
+]
