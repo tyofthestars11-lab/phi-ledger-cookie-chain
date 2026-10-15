@@ -34,6 +34,37 @@ def rung_of(v):
     r = math.log(v) / LN_PHI
     return round(r, 4), round(r - round(r), 4)
 
+def sync_site_config(d):
+    """Keep the ledger site's anchor config (app.js TRANSACTION_SCHEMA) in
+    lockstep with the snapshot, in the same pass as the seal. The site widget
+    builds anchor memos from these constants; a stale hash there writes a
+    wrong, uneditable memo on-chain. Manual sync lagged twice (seal 253 and
+    seal 256 eras) — this step is wired in permanently (Tyree, 2026-10-14).
+    Fails loud if any pattern does not match exactly once: a silent skip is
+    how the lag happened."""
+    import re
+    app = os.path.join(HERE, "app.js")
+    with open(app, encoding="utf-8") as f:
+        s = f.read()
+    subs = [
+        (r"snapshotSha256: '[0-9a-f]{64}'",
+         f"snapshotSha256: '{d['snapshot_sha256']}'"),
+        (r"sealCount: \d+",
+         f"sealCount: {d['seal_count']}"),
+        (r"entryCount: \d+",
+         f"entryCount: {d['entry_count']}"),
+        (r"ledger-snapshot\.json\?v=\d+",
+         f"ledger-snapshot.json?v={d['seal_count']}"),
+    ]
+    for pat, rep in subs:
+        s, n = re.subn(pat, rep, s)
+        if n != 1:
+            raise ValueError(f"app.js sync: pattern matched {n} times (expected 1): {pat}")
+    with open(app, "w", encoding="utf-8") as f:
+        f.write(s)
+    print(f"site config synced: hash {d['snapshot_sha256'][:8]}, "
+          f"{d['seal_count']} seals, {d['entry_count']} entries, ?v={d['seal_count']}")
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seal", required=True)
@@ -88,8 +119,10 @@ def main():
     assert d2["seal_count"] == len(d2["seals"])
     assert d2["entry_count"] == len(d2["entries"])
 
+    sync_site_config(d2)
+
     msg = f"Seal {d2['seal_count']}: {a.seal} — snapshot {d2['entry_count']} entries, hash {h[:8]}"
-    subprocess.run(["git", "add", "ledger-snapshot.json", "publish_seal.py"], cwd=HERE, check=True)
+    subprocess.run(["git", "add", "ledger-snapshot.json", "publish_seal.py", "app.js"], cwd=HERE, check=True)
     subprocess.run(["git", "-c", "user.name=Tyree Jones",
                     "-c", "user.email=tyofthestars11@gmail.com",
                     "commit", "-m", msg], cwd=HERE, check=True)
