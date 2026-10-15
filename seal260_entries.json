@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "count",
+  "name": "seal260_honeycomb_units",
+  "unit": "units",
+  "value": 37
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_ring_units",
+  "unit": "units",
+  "value": 24
+ },
+ {
+  "ladder": "frequency",
+  "name": "seal260_unit_oscillation",
+  "unit": "Hz",
+  "value": 30
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_sensors_actuators_floor",
+  "unit": "devices",
+  "value": 100
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_glue_points_floor",
+  "unit": "points",
+  "value": 20
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_authors",
+  "unit": "authors",
+  "value": 9
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_forms",
+  "unit": "forms",
+  "value": 2
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_institutions",
+  "unit": "institutions",
+  "value": 6
+ },
+ {
+  "ladder": "count",
+  "name": "seal260_release_carriers",
+  "unit": "carriers",
+  "value": 4
+ },
+ {
+  "ladder": "time",
+  "name": "seal260_publication_year",
+  "unit": "year",
+  "value": 2026
+ },
+ {
+  "ladder": "time",
+  "name": "seal260_continuous_tc_year",
+  "unit": "year",
+  "value": 2022
+ },
+ {
+  "ladder": "time",
+  "name": "seal260_discrete_tc_year",
+  "unit": "year",
+  "value": 2017
+ }
+]

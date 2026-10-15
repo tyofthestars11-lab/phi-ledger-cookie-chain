@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "count",
+  "name": "seal258_corpus_spectra",
+  "unit": "spectra",
+  "value": 1540000000
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_psms",
+  "unit": "PSMs",
+  "value": 548000000
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_psms_global_fdr",
+  "unit": "PSMs",
+  "value": 501000000
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_unique_peptides",
+  "unit": "peptides",
+  "value": 2540000
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_proteins",
+  "unit": "proteins",
+  "value": 133422
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_projects",
+  "unit": "projects",
+  "value": 648
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_species",
+  "unit": "species",
+  "value": 35
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_lcms_runs",
+  "unit": "runs",
+  "value": 27643
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal258_human_recall",
+  "unit": "recall",
+  "value": 0.45
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal258_tomato_recall",
+  "unit": "recall",
+  "value": 0.25
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal258_rival_human_recall",
+  "unit": "recall",
+  "value": 0.32
+ },
+ {
+  "ladder": "count",
+  "name": "seal258_training_psms",
+  "unit": "PSMs",
+  "value": 100000000
+ }
+]

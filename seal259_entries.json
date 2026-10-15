@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "length",
+  "name": "seal259_pixel_size",
+  "unit": "micrometers",
+  "value": 0.55
+ },
+ {
+  "ladder": "length",
+  "name": "seal259_production_voxel",
+  "unit": "micrometers",
+  "value": 2.4
+ },
+ {
+  "ladder": "length",
+  "name": "seal259_clean_ink_resolution",
+  "unit": "micrometers",
+  "value": 1.1
+ },
+ {
+  "ladder": "length",
+  "name": "seal259_legacy_scan_resolution",
+  "unit": "micrometers",
+  "value": 7.91
+ },
+ {
+  "ladder": "length",
+  "name": "seal259_propagation_distance",
+  "unit": "centimeters",
+  "value": 22
+ },
+ {
+  "ladder": "energy",
+  "name": "seal259_beam_energy",
+  "unit": "keV",
+  "value": 78
+ },
+ {
+  "ladder": "length",
+  "name": "seal259_earlier_voxel",
+  "unit": "micrometers",
+  "value": 9
+ },
+ {
+  "ladder": "count",
+  "name": "seal259_grand_prize",
+  "unit": "USD",
+  "value": 1000000
+ },
+ {
+  "ladder": "count",
+  "name": "seal259_surface_prize_pool",
+  "unit": "USD",
+  "value": 200000
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal259_data_increase_8_to_2um",
+  "unit": "x",
+  "value": 64
+ },
+ {
+  "ladder": "count",
+  "name": "seal259_pseudo_label_checkpoints",
+  "unit": "checkpoints",
+  "value": 6
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal259_voxel_halving_multiplier",
+  "unit": "x",
+  "value": 8
+ }
+]
