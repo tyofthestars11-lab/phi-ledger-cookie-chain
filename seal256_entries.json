@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "constant",
+  "name": "seal256_phi",
+  "unit": "ratio",
+  "value": 1.618033988749895
+ },
+ {
+  "ladder": "constant",
+  "name": "seal256_phi_squared",
+  "unit": "ratio",
+  "value": 2.618033988749895
+ },
+ {
+  "ladder": "constant",
+  "name": "seal256_phi_reciprocal",
+  "unit": "ratio",
+  "value": 0.6180339887498948
+ },
+ {
+  "ladder": "angle",
+  "name": "seal256_golden_angle_theta",
+  "unit": "degrees",
+  "value": 137.507764050038
+ },
+ {
+  "ladder": "angle",
+  "name": "seal256_boundary_equalization_phase",
+  "unit": "degrees",
+  "value": 275.015528
+ },
+ {
+  "ladder": "angle",
+  "name": "seal256_coherence_alignment_phase",
+  "unit": "degrees",
+  "value": 52.523292
+ },
+ {
+  "ladder": "angle",
+  "name": "seal256_channels_open_phase",
+  "unit": "degrees",
+  "value": 190.031056
+ },
+ {
+  "ladder": "angle",
+  "name": "seal256_golden_pitch_mu",
+  "unit": "degrees",
+  "value": 17.0324
+ },
+ {
+  "ladder": "angle",
+  "name": "seal256_full_circle",
+  "unit": "degrees",
+  "value": 360
+ },
+ {
+  "ladder": "count",
+  "name": "seal256_mitigation_stations",
+  "unit": "stations",
+  "value": 5
+ },
+ {
+  "ladder": "count",
+  "name": "seal256_wholeness_rungs",
+  "unit": "rungs",
+  "value": 4
+ },
+ {
+  "ladder": "count",
+  "name": "seal256_compact_seven",
+  "unit": "count",
+  "value": 7
+ }
+]
