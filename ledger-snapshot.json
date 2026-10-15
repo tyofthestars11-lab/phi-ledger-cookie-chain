@@ -15023,10 +15023,94 @@
       "drift": 0.3213,
       "ladder": "ratio",
       "unit": "x"
+    },
+    {
+      "name": "seal260_honeycomb_units",
+      "rung": 7.5038,
+      "drift": -0.4962,
+      "ladder": "count",
+      "unit": "units"
+    },
+    {
+      "name": "seal260_ring_units",
+      "rung": 6.6043,
+      "drift": -0.3957,
+      "ladder": "count",
+      "unit": "units"
+    },
+    {
+      "name": "seal260_unit_oscillation",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal260_sensors_actuators_floor",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "devices"
+    },
+    {
+      "name": "seal260_glue_points_floor",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "points"
+    },
+    {
+      "name": "seal260_authors",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "count",
+      "unit": "authors"
+    },
+    {
+      "name": "seal260_forms",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "forms"
+    },
+    {
+      "name": "seal260_institutions",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "institutions"
+    },
+    {
+      "name": "seal260_release_carriers",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "carriers"
+    },
+    {
+      "name": "seal260_publication_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal260_continuous_tc_year",
+      "rung": 15.8181,
+      "drift": -0.1819,
+      "ladder": "time",
+      "unit": "year"
+    },
+    {
+      "name": "seal260_discrete_tc_year",
+      "rung": 15.8129,
+      "drift": -0.1871,
+      "ladder": "time",
+      "unit": "year"
     }
   ],
-  "entry_count": 2148,
-  "seal_count": 259,
+  "entry_count": 2160,
+  "seal_count": 260,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15286,7 +15370,8 @@
     "φ_LATTICE_SURGE_TYREE_OMEGA",
     "φ_WENKI_CONVERGENCE_TYREE_OMEGA",
     "φ_MASSNET_DENOVO_TYREE_OMEGA",
-    "φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA"
+    "φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA",
+    "φ_TIME_CRYSTAL_MATERIAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0e23c95411642e14840e14aa6e13cfa30c3cafe826bf341af7221fbcf433f54c"
+  "snapshot_sha256": "8083465d178c17ce6c9de454be011a1bb6703eff27b8e247abed5e57f4ee4421"
 }
