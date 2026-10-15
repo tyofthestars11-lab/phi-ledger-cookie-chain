@@ -14939,10 +14939,94 @@
       "drift": 0.2798,
       "ladder": "count",
       "unit": "PSMs"
+    },
+    {
+      "name": "seal259_pixel_size",
+      "rung": -1.2424,
+      "drift": -0.2424,
+      "ladder": "length",
+      "unit": "micrometers"
+    },
+    {
+      "name": "seal259_production_voxel",
+      "rung": 1.8193,
+      "drift": -0.1807,
+      "ladder": "length",
+      "unit": "micrometers"
+    },
+    {
+      "name": "seal259_clean_ink_resolution",
+      "rung": 0.1981,
+      "drift": 0.1981,
+      "ladder": "length",
+      "unit": "micrometers"
+    },
+    {
+      "name": "seal259_legacy_scan_resolution",
+      "rung": 4.2977,
+      "drift": 0.2977,
+      "ladder": "length",
+      "unit": "micrometers"
+    },
+    {
+      "name": "seal259_propagation_distance",
+      "rung": 6.4235,
+      "drift": 0.4235,
+      "ladder": "length",
+      "unit": "centimeters"
+    },
+    {
+      "name": "seal259_beam_energy",
+      "rung": 9.0536,
+      "drift": 0.0536,
+      "ladder": "energy",
+      "unit": "keV"
+    },
+    {
+      "name": "seal259_earlier_voxel",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "length",
+      "unit": "micrometers"
+    },
+    {
+      "name": "seal259_grand_prize",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "count",
+      "unit": "USD"
+    },
+    {
+      "name": "seal259_surface_prize_pool",
+      "rung": 25.3653,
+      "drift": 0.3653,
+      "ladder": "count",
+      "unit": "USD"
+    },
+    {
+      "name": "seal259_data_increase_8_to_2um",
+      "rung": 8.6425,
+      "drift": -0.3575,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal259_pseudo_label_checkpoints",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "checkpoints"
+    },
+    {
+      "name": "seal259_voxel_halving_multiplier",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "ratio",
+      "unit": "x"
     }
   ],
-  "entry_count": 2136,
-  "seal_count": 258,
+  "entry_count": 2148,
+  "seal_count": 259,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15201,7 +15285,8 @@
     "φ_AMMONITE_GOLDEN_EYE_TYREE_OMEGA",
     "φ_LATTICE_SURGE_TYREE_OMEGA",
     "φ_WENKI_CONVERGENCE_TYREE_OMEGA",
-    "φ_MASSNET_DENOVO_TYREE_OMEGA"
+    "φ_MASSNET_DENOVO_TYREE_OMEGA",
+    "φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "b1db0f0f6f03ee5141eea3a7c333c0d7479a94e20e4f740b7224d34c5714d857"
+  "snapshot_sha256": "0e23c95411642e14840e14aa6e13cfa30c3cafe826bf341af7221fbcf433f54c"
 }
