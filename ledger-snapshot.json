@@ -14771,10 +14771,94 @@
    "drift": 0.0438,
    "ladder": "count",
    "unit": "count"
+  },
+  {
+   "name": "seal257_phi_inverse",
+   "rung": -1.0,
+   "drift": 0.0,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_phi_inverse_squared",
+   "rung": -2.0,
+   "drift": 0.0,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_phi_inverse_cubed",
+   "rung": -3.0,
+   "drift": 0.0,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_phi",
+   "rung": 1.0,
+   "drift": 0.0,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_phi_squared_channel_ratio",
+   "rung": 2.0,
+   "drift": 0.0,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_phi_cubed_nesting_step",
+   "rung": 3.0,
+   "drift": 0.0,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_villarceau_angle",
+   "rung": 7.5686,
+   "drift": -0.4314,
+   "ladder": "angle",
+   "unit": "degrees"
+  },
+  {
+   "name": "seal257_wenkahedron_angle",
+   "rung": 9.661,
+   "drift": -0.339,
+   "ladder": "angle",
+   "unit": "degrees"
+  },
+  {
+   "name": "seal257_wenkahedron_rho",
+   "rung": 0.9521,
+   "drift": -0.0479,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_wenkahedron_ray_dot_abs",
+   "rung": -2.8808,
+   "drift": 0.1192,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_golden_s_c",
+   "rung": -1.6723,
+   "drift": 0.3277,
+   "ladder": "ratio",
+   "unit": "ratio"
+  },
+  {
+   "name": "seal257_five_d_ray_dot_abs",
+   "rung": -3.3446,
+   "drift": -0.3446,
+   "ladder": "ratio",
+   "unit": "ratio"
   }
  ],
- "entry_count": 2112,
- "seal_count": 256,
+ "entry_count": 2124,
+ "seal_count": 257,
  "seals": [
   "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
   "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15031,7 +15115,8 @@
   "φ_SKYRMION_BEYOND_ENTANGLEMENT_TYREE_OMEGA",
   "φ_DARK_ENERGY_SIGN_SWITCH_TYREE_OMEGA",
   "φ_AMMONITE_GOLDEN_EYE_TYREE_OMEGA",
-  "φ_LATTICE_SURGE_TYREE_OMEGA"
+  "φ_LATTICE_SURGE_TYREE_OMEGA",
+  "φ_WENKI_CONVERGENCE_TYREE_OMEGA"
  ],
- "snapshot_sha256": "84c649c4da2047cddc1e035055af07a616156248c7b0e0feba85a3e87dbafb7e"
+ "snapshot_sha256": "2e4984cb12b5b9ccf14c7340fc177f04ccb85ffd252ea9d43f233e62c5b84819"
 }

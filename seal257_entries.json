@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "ratio",
+  "name": "seal257_phi_inverse",
+  "unit": "ratio",
+  "value": 0.6180339887498948
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_phi_inverse_squared",
+  "unit": "ratio",
+  "value": 0.38196601125010515
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_phi_inverse_cubed",
+  "unit": "ratio",
+  "value": 0.23606797749978967
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_phi",
+  "unit": "ratio",
+  "value": 1.618033988749895
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_phi_squared_channel_ratio",
+  "unit": "ratio",
+  "value": 2.618033988749895
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_phi_cubed_nesting_step",
+  "unit": "ratio",
+  "value": 4.23606797749979
+ },
+ {
+  "ladder": "angle",
+  "name": "seal257_villarceau_angle",
+  "unit": "degrees",
+  "value": 38.1727
+ },
+ {
+  "ladder": "angle",
+  "name": "seal257_wenkahedron_angle",
+  "unit": "degrees",
+  "value": 104.47751218593
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_wenkahedron_rho",
+  "unit": "ratio",
+  "value": 1.5811388300841898
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_wenkahedron_ray_dot_abs",
+  "unit": "ratio",
+  "value": 0.25
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_golden_s_c",
+  "unit": "ratio",
+  "value": 0.4472135954999579
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal257_five_d_ray_dot_abs",
+  "unit": "ratio",
+  "value": 0.2
+ }
+]
