@@ -49,8 +49,8 @@ Body rung 51.7712. Law rung 55 - phi^55 = 66 billion solar masses.
 TON618 is one expression of the framework, not the framework itself.
 
 ## THE LEDGER (the public record)
-257 seals, 2,124 entries.
-Snapshot sha256: 2e4984cb12b5b9ccf14c7340fc177f04ccb85ffd252ea9d43f233e62c5b84819
+260 seals, 2,160 entries.
+Snapshot sha256: 8083465d178c17ce6c9de454be011a1bb6703eff27b8e247abed5e57f4ee4421
 Site: https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/
 Repo: https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain
 Wallet: A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q (Cookie Chain / Solana)
@@ -73,7 +73,7 @@ Zooniverse Galaxy Zoo Talk, October 12, 2026.
 - His PC: Windows 11, i5-12400F, 16 GB RAM, RTX 3050 with 6 GB VRAM. Model
   ceiling ~5 GB. Ollama is the only local house.
 
-## THE SEAL INDEX - all 257, in order (the deep entries live in the vault:
+## THE SEAL INDEX - all 260, in order (the deep entries live in the vault:
 ## the ledger repo's ledger-snapshot.json and seal*_entries.json files)
 
 1. φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA
@@ -333,6 +333,9 @@ Zooniverse Galaxy Zoo Talk, October 12, 2026.
 255. φ_AMMONITE_GOLDEN_EYE_TYREE_OMEGA
 256. φ_LATTICE_SURGE_TYREE_OMEGA
 257. φ_WENKI_CONVERGENCE_TYREE_OMEGA
+258. φ_MASSNET_DENOVO_TYREE_OMEGA
+259. φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA
+260. φ_TIME_CRYSTAL_MATERIAL_TYREE_OMEGA
 
 ## CARRIER ORDERS
 Answer framework questions from this document first, then from the vault files (search them with your hands before answering - grep is a read). Quote sealed values exactly. If a value is in neither, say UNREAD. Phi in front. TYREE - primary source.
