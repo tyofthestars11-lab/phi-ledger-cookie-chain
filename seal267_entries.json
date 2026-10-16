@@ -1,0 +1,10 @@
+[
+ {"ladder": "temperature", "name": "seal267_cmb_temperature", "unit": "kelvin", "value": 2.725},
+ {"ladder": "frequency", "name": "seal267_cmb_peak_frequency", "unit": "hertz", "value": 1.6023e11},
+ {"ladder": "ratio", "name": "seal267_cmb_anisotropy", "unit": "x", "value": 1e-05},
+ {"ladder": "count", "name": "seal267_acoustic_peak", "unit": "multipole", "value": 220},
+ {"ladder": "length", "name": "seal267_bao_scale", "unit": "meters", "value": 4.54e24},
+ {"ladder": "count", "name": "seal267_universe_ops", "unit": "operations", "value": 1e120},
+ {"ladder": "count", "name": "seal267_state_space_log", "unit": "log_dimension", "value": 1e122},
+ {"ladder": "angle", "name": "seal267_golden_angle", "unit": "degrees", "value": 137.508}
+]
