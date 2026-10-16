@@ -1,0 +1,11 @@
+[
+ {"ladder": "count", "name": "seal266_logical_qubits", "unit": "logical_qubits", "value": 408},
+ {"ladder": "count", "name": "seal266_blocks_factories", "unit": "blocks_and_factories", "value": 88},
+ {"ladder": "count", "name": "seal266_quantum_operations", "unit": "operations", "value": 31500000},
+ {"ladder": "ratio", "name": "seal266_stretch_standard", "unit": "percent", "value": 0.02},
+ {"ladder": "ratio", "name": "seal266_gate_error_rate", "unit": "rate", "value": 0.0001},
+ {"ladder": "count", "name": "seal266_physical_qubits_largest", "unit": "physical_qubits", "value": 11680},
+ {"ladder": "count", "name": "seal266_code_n", "unit": "physical_per_block", "value": 70},
+ {"ladder": "count", "name": "seal266_code_k", "unit": "logical_per_block", "value": 6},
+ {"ladder": "count", "name": "seal266_code_d", "unit": "distance", "value": 9}
+]
