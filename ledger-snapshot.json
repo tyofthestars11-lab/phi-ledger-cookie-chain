@@ -15618,10 +15618,66 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "degrees"
+    },
+    {
+      "name": "seal268_useful_power",
+      "rung": 27.8672,
+      "drift": -0.1328,
+      "ladder": "power",
+      "unit": "watts"
+    },
+    {
+      "name": "seal268_rejected_heat",
+      "rung": 26.4268,
+      "drift": 0.4268,
+      "ladder": "power",
+      "unit": "watts"
+    },
+    {
+      "name": "seal268_efficiency_gap",
+      "rung": 1.1002,
+      "drift": 0.1002,
+      "ladder": "rung",
+      "unit": "rungs"
+    },
+    {
+      "name": "seal268_radiator_capacity",
+      "rung": 23.9932,
+      "drift": -0.0068,
+      "ladder": "power",
+      "unit": "watts"
+    },
+    {
+      "name": "seal268_thermal_margin_magnitude",
+      "rung": 25.6556,
+      "drift": -0.3444,
+      "ladder": "power",
+      "unit": "watts"
+    },
+    {
+      "name": "seal268_radiator_area",
+      "rung": 13.9077,
+      "drift": -0.0923,
+      "ladder": "area",
+      "unit": "square_meters"
+    },
+    {
+      "name": "seal268_delta_v",
+      "rung": 16.0846,
+      "drift": 0.0846,
+      "ladder": "velocity",
+      "unit": "meters_per_second"
+    },
+    {
+      "name": "seal268_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 2233,
-  "seal_count": 267,
+  "entry_count": 2241,
+  "seal_count": 268,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15889,7 +15945,8 @@
     "φ_MITOCHONDRIAL_VASCULAR_TYREE_OMEGA",
     "φ_GALLIUM_ANOMALY_GOLDEN_EYE_TYREE_OMEGA",
     "φ_IONQ_REALTIME_DECODER_TYREE_OMEGA",
-    "φ_UNIVERSE_COMPUTER_TYREE_OMEGA"
+    "φ_UNIVERSE_COMPUTER_TYREE_OMEGA",
+    "φ_SPACECRAFT_THERMODYNAMIC_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ef0d18c99c6e224ed79bd58214458f4f8bf4831474072e853f8bc0754fb56194"
+  "snapshot_sha256": "d95618b12c29670556966bfd9a02d0120db4e7523a987f98576829c38d9ea8ab"
 }
