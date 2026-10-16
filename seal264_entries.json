@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "angle",
+  "name": "seal264_golden_angle",
+  "unit": "degrees",
+  "value": 137.507764
+ },
+ {
+  "ladder": "angle",
+  "name": "seal264_state2_angle",
+  "unit": "degrees",
+  "value": 275.015528
+ },
+ {
+  "ladder": "angle",
+  "name": "seal264_resultant_phase",
+  "unit": "degrees",
+  "value": 52.523292
+ },
+ {
+  "ladder": "angle",
+  "name": "seal264_state4_angle",
+  "unit": "degrees",
+  "value": 190.031056
+ },
+ {
+  "ladder": "angle",
+  "name": "seal264_state5_angle",
+  "unit": "degrees",
+  "value": 327.53882
+ },
+ {
+  "ladder": "angle",
+  "name": "seal264_state6_angle",
+  "unit": "degrees",
+  "value": 105.046584
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal264_superposition_magnitude",
+  "unit": "x",
+  "value": 0.346590177
+ },
+ {
+  "ladder": "concentration",
+  "name": "seal264_calcium",
+  "unit": "molar",
+  "value": 1e-06
+ },
+ {
+  "ladder": "concentration",
+  "name": "seal264_atp",
+  "unit": "molar",
+  "value": 0.001
+ },
+ {
+  "ladder": "concentration",
+  "name": "seal264_ros",
+  "unit": "molar",
+  "value": 1e-08
+ },
+ {
+  "ladder": "length",
+  "name": "seal264_clot_size",
+  "unit": "meters",
+  "value": 0.01
+ },
+ {
+  "ladder": "time",
+  "name": "seal264_resolution_time",
+  "unit": "seconds",
+  "value": 1000000.0
+ }
+]
