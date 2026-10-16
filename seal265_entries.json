@@ -1,0 +1,10 @@
+[
+ {"ladder": "energy", "name": "seal265_neutrino_energy", "unit": "joules", "value": 1.2e-13},
+ {"ladder": "length", "name": "seal265_nuclear_radius", "unit": "meters", "value": 5e-15},
+ {"ladder": "time", "name": "seal265_ge71_half_life", "unit": "seconds", "value": 987700.0},
+ {"ladder": "ratio", "name": "seal265_suppression", "unit": "x", "value": 0.2},
+ {"ladder": "wave_number", "name": "seal265_lepton_wave_number", "unit": "per_meter", "value": 3.8e12},
+ {"ladder": "ratio", "name": "seal265_kr_product", "unit": "x", "value": 0.019},
+ {"ladder": "rung", "name": "seal265_rung_gap", "unit": "rungs", "value": 0.348},
+ {"ladder": "angle", "name": "seal265_golden_angle", "unit": "degrees", "value": 137.508}
+]
