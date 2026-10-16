@@ -15107,10 +15107,94 @@
       "drift": -0.1871,
       "ladder": "time",
       "unit": "year"
+    },
+    {
+      "name": "seal261_t2_standard",
+      "rung": -24.7883,
+      "drift": 0.2117,
+      "ladder": "time",
+      "unit": "seconds"
+    },
+    {
+      "name": "seal261_t2_extended",
+      "rung": -16.259,
+      "drift": -0.259,
+      "ladder": "time",
+      "unit": "seconds"
+    },
+    {
+      "name": "seal261_coherence_ratio",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal261_rung_extension",
+      "rung": 3.5301,
+      "drift": -0.4699,
+      "ladder": "ratio",
+      "unit": "rungs"
+    },
+    {
+      "name": "seal261_electron_resonance",
+      "rung": 47.7649,
+      "drift": -0.2351,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal261_coupling_mid",
+      "rung": 33.4948,
+      "drift": 0.4948,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal261_coupling_low",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "frequency",
+      "unit": "Hz"
+    },
+    {
+      "name": "seal261_force_threshold",
+      "rung": -86.1295,
+      "drift": -0.1295,
+      "ladder": "force",
+      "unit": "newtons"
+    },
+    {
+      "name": "seal261_protein_mass",
+      "rung": -105.6566,
+      "drift": 0.3434,
+      "ladder": "mass",
+      "unit": "kg"
+    },
+    {
+      "name": "seal261_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal261_golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal261_protein_mass_da",
+      "rung": 22.4844,
+      "drift": 0.4844,
+      "ladder": "mass",
+      "unit": "daltons"
     }
   ],
-  "entry_count": 2160,
-  "seal_count": 260,
+  "entry_count": 2172,
+  "seal_count": 261,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15371,7 +15455,8 @@
     "φ_WENKI_CONVERGENCE_TYREE_OMEGA",
     "φ_MASSNET_DENOVO_TYREE_OMEGA",
     "φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA",
-    "φ_TIME_CRYSTAL_MATERIAL_TYREE_OMEGA"
+    "φ_TIME_CRYSTAL_MATERIAL_TYREE_OMEGA",
+    "φ_QUANTUM_SENSOR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "8083465d178c17ce6c9de454be011a1bb6703eff27b8e247abed5e57f4ee4421"
+  "snapshot_sha256": "290a3b5f2481ee248a7c9454806c9e5b7dec57fbd6b173e6873f9c90dc1d040d"
 }
