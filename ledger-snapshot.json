@@ -15191,10 +15191,94 @@
       "drift": 0.4844,
       "ladder": "mass",
       "unit": "daltons"
+    },
+    {
+      "name": "seal262_bulk_floor_vaf",
+      "rung": -10.0337,
+      "drift": -0.0337,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal262_deepest_subclone_vaf",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal262_vaf_cliff",
+      "rung": -8.1295,
+      "drift": -0.1295,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal262_colo829_truth_snvs",
+      "rung": 22.2192,
+      "drift": 0.2192,
+      "ladder": "count",
+      "unit": "SNVs"
+    },
+    {
+      "name": "seal262_donor_tissue_snvs",
+      "rung": 14.0607,
+      "drift": 0.0607,
+      "ladder": "count",
+      "unit": "SNVs"
+    },
+    {
+      "name": "seal262_l1_insertions",
+      "rung": 6.0064,
+      "drift": 0.0064,
+      "ladder": "count",
+      "unit": "insertions"
+    },
+    {
+      "name": "seal262_hapmap_truth_snvs",
+      "rung": 32.0544,
+      "drift": 0.0544,
+      "ladder": "count",
+      "unit": "SNVs"
+    },
+    {
+      "name": "seal262_raw_data",
+      "rung": 66.7707,
+      "drift": -0.2293,
+      "ladder": "data",
+      "unit": "bytes"
+    },
+    {
+      "name": "seal262_nih_funding",
+      "rung": 38.979,
+      "drift": -0.021,
+      "ladder": "value",
+      "unit": "USD"
+    },
+    {
+      "name": "seal262_production_donors",
+      "rung": 10.4125,
+      "drift": 0.4125,
+      "ladder": "count",
+      "unit": "donors"
+    },
+    {
+      "name": "seal262_tissue_sites",
+      "rung": 6.1188,
+      "drift": 0.1188,
+      "ladder": "count",
+      "unit": "tissues"
+    },
+    {
+      "name": "seal262_duplex_technologies",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "technologies"
     }
   ],
-  "entry_count": 2172,
-  "seal_count": 261,
+  "entry_count": 2184,
+  "seal_count": 262,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15456,7 +15540,8 @@
     "φ_MASSNET_DENOVO_TYREE_OMEGA",
     "φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA",
     "φ_TIME_CRYSTAL_MATERIAL_TYREE_OMEGA",
-    "φ_QUANTUM_SENSOR_TYREE_OMEGA"
+    "φ_QUANTUM_SENSOR_TYREE_OMEGA",
+    "φ_SOMATIC_MOSAICISM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "290a3b5f2481ee248a7c9454806c9e5b7dec57fbd6b173e6873f9c90dc1d040d"
+  "snapshot_sha256": "03d9fdf3687a5f8d44a06f14c45df35f63e83c2135f6b8a36ea55b552962751c"
 }
