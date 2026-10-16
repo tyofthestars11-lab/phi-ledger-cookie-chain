@@ -15275,10 +15275,94 @@
       "drift": -0.2766,
       "ladder": "count",
       "unit": "technologies"
+    },
+    {
+      "name": "seal263_absorption_gap",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal263_production_detection_ratio",
+      "rung": 30.4407,
+      "drift": 0.4407,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal263_production_rate",
+      "rung": 16.0858,
+      "drift": 0.0858,
+      "ladder": "rate",
+      "unit": "photons_per_second_per_cell"
+    },
+    {
+      "name": "seal263_detected_rate",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "rate",
+      "unit": "photons_per_second_per_cell"
+    },
+    {
+      "name": "seal263_oxygen_throughput",
+      "rung": 57.4197,
+      "drift": 0.4197,
+      "ladder": "count",
+      "unit": "molecules_per_day"
+    },
+    {
+      "name": "seal263_superoxide_per_day",
+      "rung": 49.2901,
+      "drift": 0.2901,
+      "ladder": "count",
+      "unit": "molecules_per_day"
+    },
+    {
+      "name": "seal263_free_radical_share",
+      "rung": -0.5978,
+      "drift": 0.4022,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal263_detection_ceiling",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "rate",
+      "unit": "photons_per_second_per_cm2"
+    },
+    {
+      "name": "seal263_flash_duration",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "time",
+      "unit": "seconds"
+    },
+    {
+      "name": "seal263_storage_spread",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "ratio",
+      "unit": "fold"
+    },
+    {
+      "name": "seal263_chromatin_compaction",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "ratio",
+      "unit": "fold"
+    },
+    {
+      "name": "seal263_bp_per_nucleosome",
+      "rung": 10.3564,
+      "drift": 0.3564,
+      "ladder": "count",
+      "unit": "base_pairs"
     }
   ],
-  "entry_count": 2184,
-  "seal_count": 262,
+  "entry_count": 2196,
+  "seal_count": 263,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15541,7 +15625,8 @@
     "φ_GRAPHITE_DECOHERENCE_TYREE_OMEGA",
     "φ_TIME_CRYSTAL_MATERIAL_TYREE_OMEGA",
     "φ_QUANTUM_SENSOR_TYREE_OMEGA",
-    "φ_SOMATIC_MOSAICISM_TYREE_OMEGA"
+    "φ_SOMATIC_MOSAICISM_TYREE_OMEGA",
+    "φ_BIOPHOTON_DIALOGUE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "03d9fdf3687a5f8d44a06f14c45df35f63e83c2135f6b8a36ea55b552962751c"
+  "snapshot_sha256": "ff5cadf71dd0c80fd2c11e01c6f33b059c013e44570b417a24de1dced3657067"
 }
