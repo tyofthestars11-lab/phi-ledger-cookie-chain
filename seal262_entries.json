@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "ratio",
+  "name": "seal262_bulk_floor_vaf",
+  "unit": "fraction",
+  "value": 0.008
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal262_deepest_subclone_vaf",
+  "unit": "fraction",
+  "value": 0.001
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal262_vaf_cliff",
+  "unit": "fraction",
+  "value": 0.02
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_colo829_truth_snvs",
+  "unit": "SNVs",
+  "value": 44008
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_donor_tissue_snvs",
+  "unit": "SNVs",
+  "value": 868
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_l1_insertions",
+  "unit": "insertions",
+  "value": 18
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_hapmap_truth_snvs",
+  "unit": "SNVs",
+  "value": 5000000
+ },
+ {
+  "ladder": "data",
+  "name": "seal262_raw_data",
+  "unit": "bytes",
+  "value": 90000000000000.0
+ },
+ {
+  "ladder": "value",
+  "name": "seal262_nih_funding",
+  "unit": "USD",
+  "value": 140000000
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_production_donors",
+  "unit": "donors",
+  "value": 150
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_tissue_sites",
+  "unit": "tissues",
+  "value": 19
+ },
+ {
+  "ladder": "count",
+  "name": "seal262_duplex_technologies",
+  "unit": "technologies",
+  "value": 6
+ }
+]

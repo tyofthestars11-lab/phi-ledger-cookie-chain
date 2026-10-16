@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "ratio",
+  "name": "seal263_absorption_gap",
+  "unit": "x",
+  "value": 1000000.0
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal263_production_detection_ratio",
+  "unit": "x",
+  "value": 2300000.0
+ },
+ {
+  "ladder": "rate",
+  "name": "seal263_production_rate",
+  "unit": "photons_per_second_per_cell",
+  "value": 2300
+ },
+ {
+  "ladder": "rate",
+  "name": "seal263_detected_rate",
+  "unit": "photons_per_second_per_cell",
+  "value": 0.001
+ },
+ {
+  "ladder": "count",
+  "name": "seal263_oxygen_throughput",
+  "unit": "molecules_per_day",
+  "value": 1000000000000.0
+ },
+ {
+  "ladder": "count",
+  "name": "seal263_superoxide_per_day",
+  "unit": "molecules_per_day",
+  "value": 20000000000.0
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal263_free_radical_share",
+  "unit": "fraction",
+  "value": 0.75
+ },
+ {
+  "ladder": "rate",
+  "name": "seal263_detection_ceiling",
+  "unit": "photons_per_second_per_cm2",
+  "value": 100
+ },
+ {
+  "ladder": "time",
+  "name": "seal263_flash_duration",
+  "unit": "seconds",
+  "value": 10
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal263_storage_spread",
+  "unit": "fold",
+  "value": 25
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal263_chromatin_compaction",
+  "unit": "fold",
+  "value": 1000
+ },
+ {
+  "ladder": "count",
+  "name": "seal263_bp_per_nucleosome",
+  "unit": "base_pairs",
+  "value": 146
+ }
+]
