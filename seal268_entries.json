@@ -1,0 +1,10 @@
+[
+ {"ladder": "power", "name": "seal268_useful_power", "unit": "watts", "value": 666666.667},
+ {"ladder": "power", "name": "seal268_rejected_heat", "unit": "watts", "value": 333333.333},
+ {"ladder": "rung", "name": "seal268_efficiency_gap", "unit": "rungs", "value": 1.698},
+ {"ladder": "power", "name": "seal268_radiator_capacity", "unit": "watts", "value": 103342.574},
+ {"ladder": "power", "name": "seal268_thermal_margin_magnitude", "unit": "watts", "value": 229990.76},
+ {"ladder": "area", "name": "seal268_radiator_area", "unit": "square_meters", "value": 806.38},
+ {"ladder": "velocity", "name": "seal268_delta_v", "unit": "meters_per_second", "value": 2298.715},
+ {"ladder": "angle", "name": "seal268_golden_angle", "unit": "degrees", "value": 137.508}
+]
