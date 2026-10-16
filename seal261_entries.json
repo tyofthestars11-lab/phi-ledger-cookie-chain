@@ -1,0 +1,74 @@
+[
+ {
+  "ladder": "time",
+  "name": "seal261_t2_standard",
+  "unit": "seconds",
+  "value": 6.6e-06
+ },
+ {
+  "ladder": "time",
+  "name": "seal261_t2_extended",
+  "unit": "seconds",
+  "value": 0.0004
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal261_coherence_ratio",
+  "unit": "x",
+  "value": 60
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal261_rung_extension",
+  "unit": "rungs",
+  "value": 5.467
+ },
+ {
+  "ladder": "frequency",
+  "name": "seal261_electron_resonance",
+  "unit": "Hz",
+  "value": 9600000000.0
+ },
+ {
+  "ladder": "frequency",
+  "name": "seal261_coupling_mid",
+  "unit": "Hz",
+  "value": 10000000.0
+ },
+ {
+  "ladder": "frequency",
+  "name": "seal261_coupling_low",
+  "unit": "Hz",
+  "value": 1000000.0
+ },
+ {
+  "ladder": "force",
+  "name": "seal261_force_threshold",
+  "unit": "newtons",
+  "value": 1e-18
+ },
+ {
+  "ladder": "mass",
+  "name": "seal261_protein_mass",
+  "unit": "kg",
+  "value": 8.3e-23
+ },
+ {
+  "ladder": "angle",
+  "name": "seal261_golden_angle",
+  "unit": "degrees",
+  "value": 137.507764050038
+ },
+ {
+  "ladder": "angle",
+  "name": "seal261_golden_pitch",
+  "unit": "degrees",
+  "value": 17.0324
+ },
+ {
+  "ladder": "mass",
+  "name": "seal261_protein_mass_da",
+  "unit": "daltons",
+  "value": 50000
+ }
+]
