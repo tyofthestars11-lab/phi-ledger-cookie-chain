@@ -1,0 +1,9 @@
+[
+ {"ladder": "power_flux", "name": "seal269_solar_constant", "unit": "watts_per_square_meter", "value": 1361},
+ {"ladder": "area", "name": "seal269_collector_area", "unit": "square_meters", "value": 10},
+ {"ladder": "ratio", "name": "seal269_conversion_efficiency", "unit": "x", "value": 0.25},
+ {"ladder": "power", "name": "seal269_useful_power", "unit": "watts", "value": 3402.5},
+ {"ladder": "power", "name": "seal269_hover_power", "unit": "watts", "value": 392000},
+ {"ladder": "rung", "name": "seal269_gap", "unit": "rungs", "value": 10.246},
+ {"ladder": "angle", "name": "seal269_golden_angle", "unit": "degrees", "value": 137.507764}
+]
