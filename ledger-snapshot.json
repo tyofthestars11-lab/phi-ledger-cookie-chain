@@ -15912,10 +15912,73 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "degrees"
+    },
+    {
+      "name": "seal273_mtdna_length",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "count",
+      "unit": "base_pairs"
+    },
+    {
+      "name": "seal273_human_genome_length",
+      "rung": 45.4819,
+      "drift": 0.4819,
+      "ladder": "count",
+      "unit": "base_pairs"
+    },
+    {
+      "name": "seal273_atp_concentration",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "concentration",
+      "unit": "molar"
+    },
+    {
+      "name": "seal273_cell_diameter",
+      "rung": -23.9249,
+      "drift": 0.0751,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal273_cell_cycle_duration",
+      "rung": 23.6211,
+      "drift": -0.3789,
+      "ladder": "duration",
+      "unit": "seconds"
+    },
+    {
+      "name": "seal273_cellular_states",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "seal273_successor_transitions",
+      "rung": 4.983,
+      "drift": -0.017,
+      "ladder": "count",
+      "unit": "transitions"
+    },
+    {
+      "name": "seal273_phase_advance",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal273_division_phase",
+      "rung": 8.9041,
+      "drift": -0.0959,
+      "ladder": "angle",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 2275,
-  "seal_count": 272,
+  "entry_count": 2284,
+  "seal_count": 273,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16188,7 +16251,8 @@
     "φ_FREE_ENERGY_GRADIENT_TYREE_OMEGA",
     "φ_YBSB2_TIME_REVERSAL_TYREE_OMEGA",
     "φ_MAGIC_STATE_CULTIVATION_TYREE_OMEGA",
-    "φ_SUPERIONIC_ICE_TYREE_OMEGA"
+    "φ_SUPERIONIC_ICE_TYREE_OMEGA",
+    "φ_CELLULAR_SYSTEM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e596040cc4e1b6063c527c6be87e4a81e831274a08097ef6425dd0cb301cf535"
+  "snapshot_sha256": "4455a744f9b4ed11b042a065d6274e1df264eab476af71057cdb00285852c6ff"
 }
