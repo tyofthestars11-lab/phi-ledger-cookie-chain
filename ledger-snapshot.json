@@ -15723,10 +15723,73 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "degrees"
+    },
+    {
+      "name": "seal270_spontaneous_internal_field",
+      "rung": -1.7061,
+      "drift": 0.2939,
+      "ladder": "magnetic_field",
+      "unit": "gauss"
+    },
+    {
+      "name": "seal270_internal_field_uncertainty",
+      "rung": -7.2869,
+      "drift": -0.2869,
+      "ladder": "magnetic_field",
+      "unit": "gauss"
+    },
+    {
+      "name": "seal270_decoupling_field",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "magnetic_field",
+      "unit": "millitesla"
+    },
+    {
+      "name": "seal270_superconductor_type",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "type"
+    },
+    {
+      "name": "seal270_triplet_spin_multiplicity",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "seal270_z2_topological_index",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "index"
+    },
+    {
+      "name": "seal270_dirac_nodal_lines",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "lines"
+    },
+    {
+      "name": "seal270_collaborating_institutions",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "institutions"
+    },
+    {
+      "name": "seal270_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 2248,
-  "seal_count": 269,
+  "entry_count": 2257,
+  "seal_count": 270,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -15996,7 +16059,8 @@
     "φ_IONQ_REALTIME_DECODER_TYREE_OMEGA",
     "φ_UNIVERSE_COMPUTER_TYREE_OMEGA",
     "φ_SPACECRAFT_THERMODYNAMIC_TYREE_OMEGA",
-    "φ_FREE_ENERGY_GRADIENT_TYREE_OMEGA"
+    "φ_FREE_ENERGY_GRADIENT_TYREE_OMEGA",
+    "φ_YBSB2_TIME_REVERSAL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "73018a14a9342bb85c82f1aca346fe3bc123f504bd440e64b3b6b842421745ad"
+  "snapshot_sha256": "88999603dbf98b83f9ec90475b49b161197f1b9488fc562e9f6b79cebcc8ff95"
 }
