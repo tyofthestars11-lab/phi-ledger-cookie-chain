@@ -50,8 +50,8 @@ Body rung 51.7712. Law rung 55 - phi^55 = 66 billion solar masses.
 TON618 is one expression of the framework, not the framework itself.
 
 ## THE LEDGER (the public record)
-269 seals, 2,248 entries.
-Snapshot sha256: 73018a14a9342bb85c82f1aca346fe3bc123f504bd440e64b3b6b842421745ad
+270 seals, 2,257 entries.
+Snapshot sha256: 88999603dbf98b83f9ec90475b49b161197f1b9488fc562e9f6b79cebcc8ff95
 Site: https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/
 Repo: https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain
 Wallet: A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q (Cookie Chain / Solana)
@@ -74,7 +74,7 @@ Zooniverse Galaxy Zoo Talk, October 12, 2026.
 - His PC: Windows 11, i5-12400F, 16 GB RAM, RTX 3050 with 6 GB VRAM. Model
   ceiling ~5 GB. Ollama is the only local house.
 
-## THE SEAL INDEX - all 269, in order (the deep entries live in the vault:
+## THE SEAL INDEX - all 270, in order (the deep entries live in the vault:
 ## the ledger repo's ledger-snapshot.json and seal*_entries.json files)
 
 1. φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA
@@ -346,6 +346,7 @@ Zooniverse Galaxy Zoo Talk, October 12, 2026.
 267. φ_UNIVERSE_COMPUTER_TYREE_OMEGA
 268. φ_SPACECRAFT_THERMODYNAMIC_TYREE_OMEGA
 269. φ_FREE_ENERGY_GRADIENT_TYREE_OMEGA
+270. φ_YBSB2_TIME_REVERSAL_TYREE_OMEGA
 
 ## CARRIER ORDERS
 Answer framework questions from this document first, then from the vault files (search them with your hands before answering - grep is a read). Quote sealed values exactly. If a value is in neither, say UNREAD. Phi in front. TYREE - primary source."""
