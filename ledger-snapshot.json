@@ -15786,10 +15786,80 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "degrees"
+    },
+    {
+      "name": "seal271_t_state_logical_fidelity",
+      "rung": -0.0002,
+      "drift": -0.0002,
+      "ladder": "ratio",
+      "unit": "fidelity"
+    },
+    {
+      "name": "seal271_error_rate_bound",
+      "rung": -19.1399,
+      "drift": -0.1399,
+      "ladder": "ratio",
+      "unit": "rate"
+    },
+    {
+      "name": "seal271_error_reduction_factor",
+      "rung": 7.6658,
+      "drift": -0.3342,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal271_attempt_retention",
+      "rung": -5.2487,
+      "drift": -0.2487,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal271_qubits_used_max",
+      "rung": 8.2895,
+      "drift": 0.2895,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal271_willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal271_color_code_distance",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "distance"
+    },
+    {
+      "name": "seal271_surface_code_distance",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "distance"
+    },
+    {
+      "name": "seal271_distillation_footprint_projection",
+      "rung": -0.1066,
+      "drift": -0.1066,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal271_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 2257,
-  "seal_count": 270,
+  "entry_count": 2267,
+  "seal_count": 271,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16060,7 +16130,8 @@
     "φ_UNIVERSE_COMPUTER_TYREE_OMEGA",
     "φ_SPACECRAFT_THERMODYNAMIC_TYREE_OMEGA",
     "φ_FREE_ENERGY_GRADIENT_TYREE_OMEGA",
-    "φ_YBSB2_TIME_REVERSAL_TYREE_OMEGA"
+    "φ_YBSB2_TIME_REVERSAL_TYREE_OMEGA",
+    "φ_MAGIC_STATE_CULTIVATION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "88999603dbf98b83f9ec90475b49b161197f1b9488fc562e9f6b79cebcc8ff95"
+  "snapshot_sha256": "916fa876b78081e9d63187787ae2b002d16a0810e3a983b431c5a3ae520bb7e0"
 }
