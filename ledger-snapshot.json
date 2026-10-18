@@ -16318,10 +16318,66 @@
       "drift": -0.1254,
       "ladder": "pressure",
       "unit": "pascals"
+    },
+    {
+      "name": "seal278_reynolds_number",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "seal278_mach_subsonic",
+      "rung": -2.502,
+      "drift": 0.498,
+      "ladder": "ratio",
+      "unit": "mach"
+    },
+    {
+      "name": "seal278_mach_supersonic",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "ratio",
+      "unit": "mach"
+    },
+    {
+      "name": "seal278_lift_coefficient",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "ratio",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "seal278_drag_coefficient",
+      "rung": -9.5699,
+      "drift": 0.4301,
+      "ladder": "ratio",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "seal278_lift_drag_ratio",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal278_boundary_layer_thickness",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal278_circulation",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "ratio",
+      "unit": "square_meters_per_second"
     }
   ],
-  "entry_count": 2333,
-  "seal_count": 277,
+  "entry_count": 2341,
+  "seal_count": 278,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16599,7 +16655,8 @@
     "φ_PYRAMIDAL_NEURON_TYREE_OMEGA",
     "φ_AI_QUANTUM_CIRCUIT_DESIGN_TYREE_OMEGA",
     "φ_DIFFRACTIVE_OPTICAL_TYREE_OMEGA",
-    "φ_EXOTIC_MATTER_PROPULSION_TYREE_OMEGA"
+    "φ_EXOTIC_MATTER_PROPULSION_TYREE_OMEGA",
+    "φ_AERODYNAMICS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "a7f91290c6c6f365d0590df18d29d0867a4d3bdd3c80cdc0bb4c39c64d1cd227"
+  "snapshot_sha256": "8b9c8b0dc67cc3f03e7fcd07bd3d0999f81dccee9172ab7b33f43468f0596781"
 }
