@@ -16269,10 +16269,59 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "degrees"
+    },
+    {
+      "name": "seal277_vacuum_energy_density",
+      "rung": -43.0647,
+      "drift": -0.0647,
+      "ladder": "density",
+      "unit": "joules_per_cubic_meter"
+    },
+    {
+      "name": "seal277_casimir_energy_density_magnitude",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "density",
+      "unit": "joules_per_cubic_meter"
+    },
+    {
+      "name": "seal277_alcubierre_energy_magnitude",
+      "rung": 215.3237,
+      "drift": 0.3237,
+      "ladder": "energy",
+      "unit": "joules"
+    },
+    {
+      "name": "seal277_casimir_alcubierre_gap",
+      "rung": 11.2956,
+      "drift": 0.2956,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "seal277_chemical_energy_density",
+      "rung": 33.4948,
+      "drift": 0.4948,
+      "ladder": "density",
+      "unit": "joules_per_kilogram"
+    },
+    {
+      "name": "seal277_ion_exhaust_velocity",
+      "rung": 21.4229,
+      "drift": 0.4229,
+      "ladder": "velocity",
+      "unit": "meters_per_second"
+    },
+    {
+      "name": "seal277_solar_radiation_pressure",
+      "rung": -24.1254,
+      "drift": -0.1254,
+      "ladder": "pressure",
+      "unit": "pascals"
     }
   ],
-  "entry_count": 2326,
-  "seal_count": 276,
+  "entry_count": 2333,
+  "seal_count": 277,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16549,7 +16598,8 @@
     "φ_CELLULAR_SYSTEM_TYREE_OMEGA",
     "φ_PYRAMIDAL_NEURON_TYREE_OMEGA",
     "φ_AI_QUANTUM_CIRCUIT_DESIGN_TYREE_OMEGA",
-    "φ_DIFFRACTIVE_OPTICAL_TYREE_OMEGA"
+    "φ_DIFFRACTIVE_OPTICAL_TYREE_OMEGA",
+    "φ_EXOTIC_MATTER_PROPULSION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "fb79bfdabadb39aa98dc0903c0334e5a2cff221acb30a97dcee3733ccb8aa8bc"
+  "snapshot_sha256": "a7f91290c6c6f365d0590df18d29d0867a4d3bdd3c80cdc0bb4c39c64d1cd227"
 }
