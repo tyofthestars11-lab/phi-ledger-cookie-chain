@@ -16143,10 +16143,87 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "degrees"
+    },
+    {
+      "name": "seal275_circuit_tasks",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "tasks"
+    },
+    {
+      "name": "seal275_tasks_cutting_both_counts",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "tasks"
+    },
+    {
+      "name": "seal275_best_cost_reduction",
+      "rung": 7.6132,
+      "drift": -0.3868,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal275_flagship_run_duration",
+      "rung": 8.2506,
+      "drift": 0.2506,
+      "ladder": "duration",
+      "unit": "hours"
+    },
+    {
+      "name": "seal275_point_addition_gate_reduction",
+      "rung": 5.8877,
+      "drift": -0.1123,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal275_decoder_gate_reduction",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal275_sample_decodings",
+      "rung": 41.1761,
+      "drift": 0.1761,
+      "ladder": "count",
+      "unit": "decodings"
+    },
+    {
+      "name": "seal275_reserved_qubits",
+      "rung": 6.1188,
+      "drift": 0.1188,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal275_worst_case_qubits",
+      "rung": 13.5071,
+      "drift": -0.4929,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal275_decoder_failure_rate",
+      "rung": -19.1399,
+      "drift": -0.1399,
+      "ladder": "ratio",
+      "unit": "rate"
+    },
+    {
+      "name": "seal275_paper_pages",
+      "rung": 7.9562,
+      "drift": -0.0438,
+      "ladder": "count",
+      "unit": "pages"
     }
   ],
-  "entry_count": 2308,
-  "seal_count": 274,
+  "entry_count": 2319,
+  "seal_count": 275,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16421,7 +16498,8 @@
     "φ_MAGIC_STATE_CULTIVATION_TYREE_OMEGA",
     "φ_SUPERIONIC_ICE_TYREE_OMEGA",
     "φ_CELLULAR_SYSTEM_TYREE_OMEGA",
-    "φ_PYRAMIDAL_NEURON_TYREE_OMEGA"
+    "φ_PYRAMIDAL_NEURON_TYREE_OMEGA",
+    "φ_AI_QUANTUM_CIRCUIT_DESIGN_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "228ffbcd078e14812d985298021e30782235bf7b0c455e25c23f34616babf3e1"
+  "snapshot_sha256": "e47df0b647b1917009caa39fd28d280fd5df3b0c234ae8cb7c485723c863f9b0"
 }
