@@ -16563,10 +16563,45 @@
       "drift": -0.3549,
       "ladder": "ratio",
       "unit": "fraction"
+    },
+    {
+      "name": "seal285_microtubule_length",
+      "rung": -23.9249,
+      "drift": 0.0751,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal285_synaptic_cleft",
+      "rung": -36.8394,
+      "drift": 0.1606,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal285_neural_activity_frequency",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "frequency",
+      "unit": "hertz"
+    },
+    {
+      "name": "seal285_atp_concentration",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "concentration",
+      "unit": "molar"
+    },
+    {
+      "name": "seal285_calcium_concentration",
+      "rung": -33.4948,
+      "drift": -0.4948,
+      "ladder": "concentration",
+      "unit": "molar"
     }
   ],
-  "entry_count": 2368,
-  "seal_count": 284,
+  "entry_count": 2373,
+  "seal_count": 285,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16851,7 +16886,8 @@
     "φ_PLANCKIAN_THERMALIZATION_BOUND_TYREE_OMEGA",
     "φ_SOMATIC_EPIMUTATION_TYREE_OMEGA",
     "φ_HELIOS_LOGICAL_FIDELITY_TYREE_OMEGA",
-    "φ_QUIPU_SUPERSTRUCTURE_TYREE_OMEGA"
+    "φ_QUIPU_SUPERSTRUCTURE_TYREE_OMEGA",
+    "φ_MICROTUBULE_NEURAL_FIELD_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "446521450048782f5b1b2920877abac05a8551a0417bd7c136f3336281359f9a"
+  "snapshot_sha256": "284b011a7ed29cb290ba9caabc7ea9b7801e1745c8c37a11fc92026013a3daf6"
 }
