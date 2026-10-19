@@ -16458,10 +16458,24 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "decimal_degrees"
+    },
+    {
+      "name": "seal282_epimutation_share_no_genetic_difference",
+      "rung": -1.9041,
+      "drift": 0.0959,
+      "ladder": "ratio",
+      "unit": "fraction"
+    },
+    {
+      "name": "seal282_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "decimal_degrees"
     }
   ],
-  "entry_count": 2353,
-  "seal_count": 281,
+  "entry_count": 2355,
+  "seal_count": 282,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16743,7 +16757,8 @@
     "φ_AERODYNAMICS_TYREE_OMEGA",
     "φ_RUNAWAY_BLACK_HOLE_TYREE_OMEGA",
     "φ_VECTOR_FIELD_TYREE_OMEGA",
-    "φ_PLANCKIAN_THERMALIZATION_BOUND_TYREE_OMEGA"
+    "φ_PLANCKIAN_THERMALIZATION_BOUND_TYREE_OMEGA",
+    "φ_SOMATIC_EPIMUTATION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "39099614b811a36124f9ad8d52420961d9ec5261dbe5ecf49917038df5d6c6fe"
+  "snapshot_sha256": "ca0f5f49c0335227a5d8f49494e55d41645d2e7dc874e2ef5fc85ff809405548"
 }
