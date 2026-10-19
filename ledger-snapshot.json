@@ -16409,10 +16409,45 @@
       "drift": 0.0974,
       "ladder": "duration",
       "unit": "seconds"
+    },
+    {
+      "name": "seal280_unit_magnitude",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "ratio",
+      "unit": "field_units"
+    },
+    {
+      "name": "seal280_strong_magnitude",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "ratio",
+      "unit": "field_units"
+    },
+    {
+      "name": "seal280_weak_magnitude",
+      "rung": -9.5699,
+      "drift": 0.4301,
+      "ladder": "ratio",
+      "unit": "field_units"
+    },
+    {
+      "name": "seal280_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal280_field_line_length",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "length",
+      "unit": "meters"
     }
   ],
-  "entry_count": 2346,
-  "seal_count": 279,
+  "entry_count": 2351,
+  "seal_count": 280,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16692,7 +16727,8 @@
     "φ_DIFFRACTIVE_OPTICAL_TYREE_OMEGA",
     "φ_EXOTIC_MATTER_PROPULSION_TYREE_OMEGA",
     "φ_AERODYNAMICS_TYREE_OMEGA",
-    "φ_RUNAWAY_BLACK_HOLE_TYREE_OMEGA"
+    "φ_RUNAWAY_BLACK_HOLE_TYREE_OMEGA",
+    "φ_VECTOR_FIELD_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "f588f5a4f1e5c760def70b4aeb1f179fa41cc7f821f65f7071a8fdba43938441"
+  "snapshot_sha256": "f6a679c1fe8fc7c4918614e4f061d80f01cdf4a3b8f5104a1d48dbd683837097"
 }
