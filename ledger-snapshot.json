@@ -16472,10 +16472,59 @@
       "drift": 0.2318,
       "ladder": "angle",
       "unit": "decimal_degrees"
+    },
+    {
+      "name": "seal283_logical_fidelity",
+      "rung": -0.0,
+      "drift": -0.0,
+      "ladder": "ratio",
+      "unit": "fidelity"
+    },
+    {
+      "name": "seal283_errors_per_million_ops",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "errors"
+    },
+    {
+      "name": "seal283_improvement_vs_own_record",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal283_improvement_vs_other_modalities",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal283_suppression_per_distance_step",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "ratio",
+      "unit": "x"
+    },
+    {
+      "name": "seal283_color_code_physical_per_logical",
+      "rung": 7.5038,
+      "drift": -0.4962,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "seal283_helix_physical_per_logical",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "qubits"
     }
   ],
-  "entry_count": 2355,
-  "seal_count": 282,
+  "entry_count": 2362,
+  "seal_count": 283,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16758,7 +16807,8 @@
     "φ_RUNAWAY_BLACK_HOLE_TYREE_OMEGA",
     "φ_VECTOR_FIELD_TYREE_OMEGA",
     "φ_PLANCKIAN_THERMALIZATION_BOUND_TYREE_OMEGA",
-    "φ_SOMATIC_EPIMUTATION_TYREE_OMEGA"
+    "φ_SOMATIC_EPIMUTATION_TYREE_OMEGA",
+    "φ_HELIOS_LOGICAL_FIDELITY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ca0f5f49c0335227a5d8f49494e55d41645d2e7dc874e2ef5fc85ff809405548"
+  "snapshot_sha256": "e183959859825993f19ca5de4b9756c7cb0457be43a006bdce11b6208d0cf100"
 }
