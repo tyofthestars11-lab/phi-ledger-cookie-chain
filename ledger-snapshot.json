@@ -16521,10 +16521,52 @@
       "drift": -0.215,
       "ladder": "count",
       "unit": "qubits"
+    },
+    {
+      "name": "seal284_length",
+      "rung": 120.2075,
+      "drift": 0.2075,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal284_distance_midpoint",
+      "rung": 118.6342,
+      "drift": -0.3658,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal284_cluster_count",
+      "rung": 8.7685,
+      "drift": -0.2315,
+      "ladder": "count",
+      "unit": "clusters"
+    },
+    {
+      "name": "seal284_mass",
+      "rung": 83.1638,
+      "drift": 0.1638,
+      "ladder": "mass",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "seal284_overdensity",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "ratio",
+      "unit": "ratio_to_cosmic_mean"
+    },
+    {
+      "name": "seal284_hubble_perturbation",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "ratio",
+      "unit": "fraction"
     }
   ],
-  "entry_count": 2362,
-  "seal_count": 283,
+  "entry_count": 2368,
+  "seal_count": 284,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16808,7 +16850,8 @@
     "φ_VECTOR_FIELD_TYREE_OMEGA",
     "φ_PLANCKIAN_THERMALIZATION_BOUND_TYREE_OMEGA",
     "φ_SOMATIC_EPIMUTATION_TYREE_OMEGA",
-    "φ_HELIOS_LOGICAL_FIDELITY_TYREE_OMEGA"
+    "φ_HELIOS_LOGICAL_FIDELITY_TYREE_OMEGA",
+    "φ_QUIPU_SUPERSTRUCTURE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e183959859825993f19ca5de4b9756c7cb0457be43a006bdce11b6208d0cf100"
+  "snapshot_sha256": "446521450048782f5b1b2920877abac05a8551a0417bd7c136f3336281359f9a"
 }
