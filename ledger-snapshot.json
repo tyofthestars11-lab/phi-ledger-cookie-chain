@@ -16374,10 +16374,45 @@
       "drift": -0.215,
       "ladder": "ratio",
       "unit": "square_meters_per_second"
+    },
+    {
+      "name": "seal279_black_hole_mass",
+      "rung": 34.3374,
+      "drift": 0.3374,
+      "ladder": "mass",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "seal279_velocity",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "velocity",
+      "unit": "meters_per_second"
+    },
+    {
+      "name": "seal279_wake_length",
+      "rung": 101.8073,
+      "drift": -0.1927,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal279_star_formation_rate",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "rate",
+      "unit": "solar_masses_per_year"
+    },
+    {
+      "name": "seal279_travel_time",
+      "rung": 73.0974,
+      "drift": 0.0974,
+      "ladder": "duration",
+      "unit": "seconds"
     }
   ],
-  "entry_count": 2341,
-  "seal_count": 278,
+  "entry_count": 2346,
+  "seal_count": 279,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16656,7 +16691,8 @@
     "φ_AI_QUANTUM_CIRCUIT_DESIGN_TYREE_OMEGA",
     "φ_DIFFRACTIVE_OPTICAL_TYREE_OMEGA",
     "φ_EXOTIC_MATTER_PROPULSION_TYREE_OMEGA",
-    "φ_AERODYNAMICS_TYREE_OMEGA"
+    "φ_AERODYNAMICS_TYREE_OMEGA",
+    "φ_RUNAWAY_BLACK_HOLE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "8b9c8b0dc67cc3f03e7fcd07bd3d0999f81dccee9172ab7b33f43468f0596781"
+  "snapshot_sha256": "f588f5a4f1e5c760def70b4aeb1f179fa41cc7f821f65f7071a8fdba43938441"
 }
