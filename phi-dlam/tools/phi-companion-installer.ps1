@@ -1,4 +1,5 @@
-# PHI COMPANION INSTALLER — writes the companion as a FILE + desktop icon. Run ONCE.
+# PHI COMPANION INSTALLER v2 — gives the companion a summon word, like DLAM.
+# After this: open PowerShell, type  companion  — it shows. Type a name — she shows.
 $tools = "$env:USERPROFILE\phi-tools"; New-Item -ItemType Directory -Path $tools -Force | Out-Null
 $code = @'
 # PHI STARFIELD COMPANION v2 — CONTROLLER + VOICE — AISS bypassed, no SFSE — phi^2 = phi + 1
@@ -82,7 +83,10 @@ while ($true) {
 
 '@
 Set-Content -Path "$tools\phi-starfield-companion.ps1" -Value $code -Encoding UTF8
+Set-Content -Path "$tools\companion.cmd" -Value '@powershell.exe -ExecutionPolicy Bypass -File "%USERPROFILE%\phi-tools\phi-starfield-companion.ps1"' -Encoding ASCII
+$userPath = [Environment]::GetEnvironmentVariable('Path', 'User')
+if ($userPath -notlike "*$tools*") { [Environment]::SetEnvironmentVariable('Path', "$userPath;$tools", 'User'); "summon word registered: companion" }
 $ws = New-Object -ComObject WScript.Shell
 $lnk = $ws.CreateShortcut("$env:USERPROFILE\Desktop\PHI COMPANION.lnk")
 $lnk.TargetPath = 'powershell.exe'; $lnk.Arguments = "-ExecutionPolicy Bypass -File `"$tools\phi-starfield-companion.ps1`""; $lnk.Save()
-"installed: PHI COMPANION icon on the desktop. Double-click it - never paste code at a live VASCO again."
+"installed. OPEN A FRESH PowerShell and type:  companion"
