@@ -1,1 +1,62 @@
-[{"ladder":"length","name":"seal288_anomaly_depth_min","unit":"meters","value":18.4},{"ladder":"length","name":"seal288_anomaly_depth_max","unit":"meters","value":23.0},{"ladder":"angle","name":"seal288_phase_min","unit":"degrees","value":168.142858},{"ladder":"angle","name":"seal288_phase_max","unit":"degrees","value":322.678573},{"ladder":"angle","name":"seal288_phase_span","unit":"degrees","value":154.536},{"ladder":"ratio","name":"seal288_density_contrast","unit":"ratio","value":0.3},{"ladder":"volume","name":"seal288_anomaly_volume","unit":"cubic_meters","value":1000},{"ladder":"count","name":"seal288_fibonacci_anomaly_lock","unit":"fibonacci","value":8},{"ladder":"count","name":"seal288_fibonacci_burial_successor","unit":"fibonacci","value":13},{"ladder":"count","name":"seal288_fibonacci_confirmation","unit":"fibonacci","value":21}]
+[
+ {
+  "ladder": "length",
+  "name": "seal288_anomaly_depth_min",
+  "unit": "meters",
+  "value": 18.4
+ },
+ {
+  "ladder": "length",
+  "name": "seal288_anomaly_depth_max",
+  "unit": "meters",
+  "value": 23.0
+ },
+ {
+  "ladder": "angle",
+  "name": "seal288_phase_min",
+  "unit": "degrees",
+  "value": 168.142858
+ },
+ {
+  "ladder": "angle",
+  "name": "seal288_phase_max",
+  "unit": "degrees",
+  "value": 322.678573
+ },
+ {
+  "ladder": "angle",
+  "name": "seal288_phase_span",
+  "unit": "degrees",
+  "value": 154.536
+ },
+ {
+  "ladder": "ratio",
+  "name": "seal288_density_contrast",
+  "unit": "ratio",
+  "value": 0.3
+ },
+ {
+  "ladder": "volume",
+  "name": "seal288_anomaly_volume",
+  "unit": "cubic_meters",
+  "value": 1000
+ },
+ {
+  "ladder": "count",
+  "name": "seal288_fibonacci_anomaly_lock",
+  "unit": "fibonacci",
+  "value": 8
+ },
+ {
+  "ladder": "count",
+  "name": "seal288_cleopatra_successor",
+  "unit": "fibonacci",
+  "value": 13
+ },
+ {
+  "ladder": "count",
+  "name": "seal288_fibonacci_confirmation",
+  "unit": "fibonacci",
+  "value": 21
+ }
+]
