@@ -1,11 +1,11 @@
-# TON 618 CORE — the whole PC at the macro law — phi^2 = phi + 1
-# body rung 51.7712 | law rung 55 | phases: STORAGE -> STATE -> KEEPER
+# TON 618 CORE v2 — HERS — her capabilities are phi infinite omni — phi^2 = phi + 1
+# body rung 51.7712 | law rung 55 | STORAGE -> STATE -> MEMORY TRIM (phi^2 form) -> KEEPER
 $PHI = (1 + [math]::Sqrt(5)) / 2
 $GOLDEN = 360 / ($PHI * $PHI)
 function Rung($x) { [math]::Round([math]::Log([math]::Max($x,0.01)) / [math]::Log($PHI), 4) }
 $ErrorActionPreference = 'SilentlyContinue'
 $work = "$env:USERPROFILE\phi-tools"; New-Item -ItemType Directory -Path $work -Force | Out-Null
-"########## TON 618 CORE — body 51.7712 | law 55 ##########"
+"########## TON 618 CORE — HERS — body 51.7712 | law 55 | phi infinite omni ##########"
 "=== PHASE 1: STORAGE — the kraken hunt ==="
 $pyPath = "$work\kraken_pc.py"
 $roots = @("$env:USERPROFILE\Downloads", "$env:USERPROFILE\Desktop", "$env:USERPROFILE\Videos", "$env:USERPROFILE\Documents", 'C:\Games')
@@ -18,7 +18,7 @@ else {
   $word = Read-Host "Type PACK to kraken them (originals stay untouched)"
   if ($word -eq 'PACK') { & python "$pyPath" @($cold | ForEach-Object { $_.FullName }) } else { "pack skipped — your word rules" }
 }
-"=== PHASE 2: STATE — the phase change ==="
+"=== PHASE 2: STATE — the phase change + TRIM sets ==="
 $sub = 'HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerSettings'
 function Set-Show($path, $want, $label) { Set-ItemProperty $path -Name ACSettingIndex -Value $want; "{0}: {1} (want {2})" -f $label, (Get-ItemProperty $path -Name ACSettingIndex).ACSettingIndex, $want }
 Set-Show "$sub\0012ee47-9041-4b5d-9b77-535fba8b1442\6738e2c4-e8a5-4a42-b16a-e1e769ae4b63" 0 'hard-disk sleep (0=never)'
@@ -26,8 +26,9 @@ Set-Show "$sub\2a737441-1930-4402-8d77-b2bebba308a3\48e6b7a6-50f5-4782-a5d4-53bb
 Set-Show "$sub\501a4d13-42af-4429-9fd1-a8218c268e20\ee12f906-d277-404b-b6da-e5fa1a576df5" 0 'PCIe link state (0=off)'
 Set-Show "$sub\54533251-82be-4824-96c1-47b60b740d00\be337238-0d82-4146-a960-4f3749d470c7" 2 'CPU boost (2=aggressive)'
 Set-Show "$sub\54533251-82be-4824-96c1-47b60b740d00\06cadf0e-64ed-448a-8927-ce7bf90eb35d" 0 'EPP (0=max)'
-$ntfs = (fsutil behavior query DisableDeleteNotify NTFS) -join ' '
-if ($ntfs -match '= 1') { fsutil behavior set DisableDeleteNotify NTFS 0 | Out-Null; "TRIM was OFF -> ON" } else { "TRIM ON — stands" }
+foreach ($fs in 'NTFS','ReFS') { $q = (fsutil behavior query DisableDeleteNotify $fs) -join ' '; if ($q -match '= 1') { fsutil behavior set DisableDeleteNotify $fs 0 | Out-Null; "TRIM $fs was OFF -> ON" } else { "TRIM $fs ON — stands" } }
+$dtask = Get-ScheduledTask -TaskPath '\Microsoft\Windows\Defrag\' -TaskName 'ScheduledDefrag'
+if ($dtask.State -eq 'Disabled') { Enable-ScheduledTask -TaskPath '\Microsoft\Windows\Defrag\' -TaskName 'ScheduledDefrag' | Out-Null; "Optimize Drives schedule ENABLED" } else { "Optimize Drives schedule live — stands" }
 Stop-Service SysMain -Force; Set-Service SysMain -StartupType Disabled; "SysMain stood down"
 $games = 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
 if (Test-Path $games) { Set-ItemProperty $games -Name 'GPU Priority' -Value 8; Set-ItemProperty $games -Name 'Priority' -Value 8; Set-ItemProperty $games -Name 'Scheduling Category' -Value 'High'; "MMCSS Games raised" }
@@ -45,21 +46,32 @@ if ($saves.Count -gt 34) {
   $z = [System.IO.Compression.ZipFile]::OpenRead($pack); $n = $z.Entries.Count; $z.Dispose()
   if ($n -eq $old.Count) { Remove-Item $old.FullName -Force; "saves: {0} packed whole + lifted | 34 newest live" -f $old.Count } else { "save pack count mismatch — originals untouched" }
 } else { "saves lean ({0})" -f $saves.Count }
-"=== PHASE 3: KEEPER — golden angle + Fibonacci tick, hands off memory ==="
+"=== PHASE 3+4: MEMORY TRIM (phi^2 form) + KEEPER — golden angle, Fibonacci tick ==="
+"memory law: standby trims ONLY from abundance (free RAM above total/phi = {0:N2} GB); under pressure, hands off — forever" -f ($ramGB / $PHI)
 Add-Type -TypeDefinition @'
 using System; using System.Runtime.InteropServices;
-public class T618 { [DllImport("ntdll.dll")] public static extern int NtSetTimerResolution(uint D, bool S, out uint C); }
+public class T618 {
+  [DllImport("ntdll.dll")] public static extern int NtSetTimerResolution(uint D, bool S, out uint C);
+  [DllImport("ntdll.dll")] public static extern int NtSetSystemInformation(int Cls, IntPtr Info, int Len);
+}
 '@
 $cur = 0; [T618]::NtSetTimerResolution(5000, $true, [ref]$cur) | Out-Null
-"timer 0.5 ms held. Core is live — leave this window open while you play. Ctrl+C stands it down."
+"timer 0.5 ms held. Core is live — permanently. Leave this window open while you play."
 $fib = @(1,1,2,3,5,8,13,21); $i = 0; $phase = 0.0
+$abundance = $ramGB / $PHI
 while ($true) {
   $tick = $fib[$i % $fib.Count]; $i++; $phase = ($phase + $GOLDEN) % 360
   $p = Get-Process Starfield
+  $free = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1MB
   if ($p) {
     if ($p.PriorityClass -ne 'AboveNormal') { $p.PriorityClass = 'AboveNormal' }
-    $free = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1MB
-    "tick {0}s | phase {1:N3} | priority held | free RAM {2:N2} GB" -f $tick, $phase, $free
+    if ($free -gt $abundance) {
+      $buf = [Runtime.InteropServices.Marshal]::AllocHGlobal(4)
+      [Runtime.InteropServices.Marshal]::WriteInt32($buf, 2)
+      [T618]::NtSetSystemInformation(80, $buf, 4) | Out-Null
+      [Runtime.InteropServices.Marshal]::FreeHGlobal($buf)
+      "tick {0}s | phase {1:N3} | trimmed from abundance (free {2:N2} GB)" -f $tick, $phase, $free
+    } else { "tick {0}s | phase {1:N3} | priority held | free {2:N2} GB | hands off memory" -f $tick, $phase, $free }
   } else { "tick {0}s | phase {1:N3} | waiting for Starfield..." -f $tick, $phase }
   Start-Sleep -Seconds $tick
 }
