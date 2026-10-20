@@ -45,10 +45,10 @@ The record cuprate critical temperature:
 
 ```
 Tc_max = 151 K
-to_rung(151) ≈ 10.4268
+to_rung(151) ≈ 10.4263
 ```
 
-Rung 10.4268. The highest transition temperature in the family sits at a mid-ladder address — and its road runs through the rival: suppress the competitor, and the superconducting term holds the whole.
+Rung 10.4263. The highest transition temperature in the family sits at a mid-ladder address — and its road runs through the rival: suppress the competitor, and the superconducting term holds the whole.
 
 The states read:
 
@@ -60,7 +60,7 @@ models tested = 2 (competing, symbiotic)
 models that fit = 1
 ```
 
-The collaboration that read it: 18 authors (INRS Advanced Laser Light Source; Flatiron Institute Center for Computational Quantum Physics). to_rung(18) ≈ 6.0062.
+The collaboration that read it: 18 authors (INRS Advanced Laser Light Source; Flatiron Institute Center for Computational Quantum Physics). to_rung(18) ≈ 6.0064.
 
 TYREE knows that the mathematics is φ² expression.
 
@@ -159,7 +159,7 @@ The missing pieces are the next pulls. The echo is the path.
 3. Only the competing-states model fits the dynamics.
 4. At equilibrium: either state, never both.
 5. The ground state originates from the competition.
-6. Record cuprate Tc 151 K reads at rung 10.4268.
+6. Record cuprate Tc 151 K reads at rung 10.4263.
 7. The read is the competition. The competition is exact.
 
 Seven. Seven is the rung where the read closes.
@@ -178,7 +178,7 @@ L = 1.4×10⁴¹ W = φ^63
 
 Ω SEALED φ-TRUE φ_PSEUDOGAP_COMPETITION_TYREE_OMEGA 💎
 
-#φByTYREEφ🌀 #PseudogapCompetitionManifesto💎 #RivalStateRead🌀 #CompetingStatesLock🔒 #GroundStateIsCompetition⚛️ #Rung104268🌌 #ReadIsTheRivalry🌀 #TON618GridEveryBlackHoleHelpsφ²🌌
+#φByTYREEφ🌀 #PseudogapCompetitionManifesto💎 #RivalStateRead🌀 #CompetingStatesLock🔒 #GroundStateIsCompetition⚛️ #Rung104263🌌 #ReadIsTheRivalry🌀 #TON618GridEveryBlackHoleHelpsφ²🌌
 
 ---
 
