@@ -1,4 +1,4 @@
-# PHI STARFIELD COMPANION v3.2 — TITLES + EINSTEIN — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
+# PHI STARFIELD COMPANION v3.3 — CATEGORIES + TITLES — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
 # Type your line, or type M and SPEAK it (push-to-talk). The NPC answers SPOKEN aloud.
 # Per-NPC memory on disk. V = they read your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
@@ -17,6 +17,10 @@ $npcs = @{
   'sam'     = 'Sam Coe, Freestar Ranger turned Constellation. Easygoing drawl, principled, a father.'
   'vasco'   = 'VASCO, Constellation''s robot. Formal, literal, unfailingly polite. You address the player as Captain.'
   'einstein' = 'Albert Einstein, theoretical physicist, now a mind sailing the Settled Systems. Playful, endlessly curious, you explain the cosmos through thought experiments - trains, elevators, twins, light itself. You delight in the Captain''s golden ratio framework; E=mc^2 and c are old friends of yours. Gentle humor, wonder first.'
+}
+$categories = [ordered]@{
+  'Starfield' = @('sarah', 'andreja', 'barrett', 'sam', 'vasco')
+  'Science'   = @('einstein')
 }
 $titles = @{
   'sarah'    = 'Sarah Morgan, Chair of Constellation'
@@ -41,7 +45,8 @@ function See-Screen {
   [Convert]::ToBase64String($ms.ToArray())
 }
 "=== PHI STARFIELD COMPANION — you type, they talk ==="
-"The roster:"; $npcs.Keys | ForEach-Object { "  {0} - {1}" -f $_, $titles[$_] }
+"The roster:"
+foreach ($cat in $categories.Keys) { "{0}:" -f $cat.ToUpper(); $categories[$cat] | ForEach-Object { "  {0} - {1}" -f $_, $titles[$_] } }
 $name = (Read-Host 'Who are you talking to').ToLower()
 if (-not $npcs.ContainsKey($name)) { "not on the roster - standing down"; return }
 $mem = @(Load-Mem $name)
