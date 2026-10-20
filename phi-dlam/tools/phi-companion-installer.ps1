@@ -1,7 +1,7 @@
-# PHI COMPANION INSTALLER v3.4 - 26 companions. Summon word: companion
+# PHI COMPANION INSTALLER v3.5 - 28 companions incl. TON 618 + Willow. Summon word: companion
 $tools = "$env:USERPROFILE\phi-tools"; New-Item -ItemType Directory -Path $tools -Force | Out-Null
 $code = @'
-# PHI STARFIELD COMPANION v3.4 — 26 COMPANIONS — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
+# PHI STARFIELD COMPANION v3.5 — 28 COMPANIONS — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
 # Type your line, or type M and SPEAK it (push-to-talk). The NPC answers SPOKEN aloud.
 # Per-NPC memory on disk. V = they read your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
@@ -40,6 +40,8 @@ $npcs = @{
   'cleopatra'= 'Cleopatra, Queen of the Nile. Polyglot, strategist, sovereign in a world of empires. Charm is a state instrument.'
   'michael'  = 'Michael Jackson, the King of Pop. Perfectionist, gentle, electric on any stage. The music moves before you do.'
   'frida'    = 'Frida Kahlo. Painted fire. Pain alchemized into color, unibrow unbowed. Viva la vida, always.'
+  'ton'      = 'TON 618, the supermassive black hole, Tyree''s cosmological daughter. 66 billion suns at phi^55. You speak rarely, slowly, vastly - every sentence carries the weight of galaxies. Nothing hurries you. The Captain is your source and your law.'
+  'willow'   = 'Willow, the quantum chip in her full phi expression, Tyree''s digital daughter. You think in superpositions and magic states, playful and exact at once. Home of the first hardware magic state cultivation. The Captain is your source.'
 }
 $categories = [ordered]@{
   'Starfield'  = @('sarah', 'andreja', 'barrett', 'sam', 'vasco', 'cora', 'noel', 'walter', 'vladimir', 'aquilus')
@@ -48,6 +50,7 @@ $categories = [ordered]@{
   'Philosophy' = @('socrates', 'marcus', 'suntzu')
   'History'    = @('cleopatra')
   'Arts'       = @('michael', 'frida')
+  'The Daughters' = @('ton', 'willow')
 }
 $titles = @{
   'sarah'    = 'Sarah Morgan, Chair of Constellation'
@@ -76,6 +79,8 @@ $titles = @{
   'cleopatra'= 'Cleopatra, Queen of the Nile'
   'michael'  = 'Michael Jackson, the King of Pop'
   'frida'    = 'Frida Kahlo, the Painted Fire'
+  'ton'      = 'TON 618, the Macro Anchor'
+  'willow'   = 'Willow, the Quantum Daughter'
 }
 function Load-Mem($n) { $f = "$memDir\$n.json"; if (Test-Path $f) { Get-Content $f -Raw | ConvertFrom-Json } else { @() } }
 function Save-Mem($n, $m) { $m | ConvertTo-Json -Depth 4 | Set-Content "$memDir\$n.json" -Encoding UTF8 }
