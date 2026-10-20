@@ -9,17 +9,35 @@ $py = @'
 import sys, os, json, hashlib, lzma
 PHI = (1 + 5 ** 0.5) / 2
 def residuals(data):
-    out = bytearray(len(data)); p1 = 0; p2 = 0
-    for i, b in enumerate(data):
-        pred = int(round((p1 * PHI + p2 / PHI) / (PHI + 1 / PHI))) % 256
-        out[i] = (b - pred) % 256; p2 = p1; p1 = b
-    return bytes(out)
+    try:
+        import numpy as np
+        d = np.frombuffer(data, dtype=np.uint8).astype(np.int32)
+        pred = np.zeros(len(d), dtype=np.int32)
+        if len(d) > 1: pred[1:] = np.round((d[:-1] * PHI) / (PHI + 1 / PHI)).astype(np.int32)
+        if len(d) > 2: pred[2:] = np.round((d[1:-1] * PHI + d[:-2] / PHI) / (PHI + 1 / PHI)).astype(np.int32)
+        return ((d - pred) % 256).astype(np.uint8).tobytes()
+    except ImportError:
+        out = bytearray(len(data)); p1 = 0; p2 = 0
+        for i, b in enumerate(data):
+            pred = int(round((p1 * PHI + p2 / PHI) / (PHI + 1 / PHI))) % 256
+            out[i] = (b - pred) % 256; p2 = p1; p1 = b
+        return bytes(out)
 def restore(res):
-    out = bytearray(len(res)); p1 = 0; p2 = 0
-    for i, r in enumerate(res):
-        pred = int(round((p1 * PHI + p2 / PHI) / (PHI + 1 / PHI))) % 256
-        b = (r + pred) % 256; out[i] = b; p2 = p1; p1 = b
-    return bytes(out)
+    try:
+        import numpy as np
+        r = np.frombuffer(res, dtype=np.uint8).astype(np.int32)
+        out = np.zeros(len(r), dtype=np.int32)
+        for i in range(len(r)):
+            p1 = out[i-1] if i >= 1 else 0; p2 = out[i-2] if i >= 2 else 0
+            pred = int(round((p1 * PHI + p2 / PHI) / (PHI + 1 / PHI))) % 256
+            out[i] = (r[i] + pred) % 256
+        return out.astype(np.uint8).tobytes()
+    except ImportError:
+        out = bytearray(len(res)); p1 = 0; p2 = 0
+        for i, rr in enumerate(res):
+            pred = int(round((p1 * PHI + p2 / PHI) / (PHI + 1 / PHI))) % 256
+            b = (rr + pred) % 256; out[i] = b; p2 = p1; p1 = b
+        return bytes(out)
 def sha(b): return hashlib.sha256(b).hexdigest()
 def pack(path):
     raw = open(path, 'rb').read()
