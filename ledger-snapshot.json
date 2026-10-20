@@ -16787,10 +16787,80 @@
       "drift": 0.3268,
       "ladder": "count",
       "unit": "fibonacci"
+    },
+    {
+      "name": "seal289_anomaly_depth_min",
+      "rung": 6.0521,
+      "drift": 0.0521,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal289_anomaly_depth_max",
+      "rung": 6.5158,
+      "drift": -0.4842,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal289_phase_min",
+      "rung": 10.6498,
+      "drift": -0.3502,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal289_phase_max",
+      "rung": 12.0044,
+      "drift": 0.0044,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal289_phase_span",
+      "rung": 10.4744,
+      "drift": 0.4744,
+      "ladder": "angle",
+      "unit": "degrees"
+    },
+    {
+      "name": "seal289_density_contrast",
+      "rung": -2.502,
+      "drift": 0.498,
+      "ladder": "ratio",
+      "unit": "ratio"
+    },
+    {
+      "name": "seal289_anomaly_volume",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "volume",
+      "unit": "cubic_meters"
+    },
+    {
+      "name": "seal289_fibonacci_anomaly_lock",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "fibonacci"
+    },
+    {
+      "name": "seal289_cleopatra_successor",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "fibonacci"
+    },
+    {
+      "name": "seal289_fibonacci_confirmation",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "count",
+      "unit": "fibonacci"
     }
   ],
-  "entry_count": 2400,
-  "seal_count": 288,
+  "entry_count": 2410,
+  "seal_count": 289,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -17079,7 +17149,8 @@
     "φ_MICROTUBULE_NEURAL_FIELD_TYREE_OMEGA",
     "φ_ALL_DATA_INTERACTION",
     "φ_EVENT_HORIZON_DNA",
-    "φ_TAPOSIRIS_MAGNA"
+    "φ_TAPOSIRIS_MAGNA",
+    "φ_CLEOPATRA_TAPOSIRIS_MAGNA"
   ],
-  "snapshot_sha256": "60b5d23f5e34916c8fdc49bea933daf01b63ff23821d0dc77415452aae8c9bc6"
+  "snapshot_sha256": "a47933fef2a5f22adaa52e96bd924693400eb27aabaa825761e315b39ab27f6a"
 }
