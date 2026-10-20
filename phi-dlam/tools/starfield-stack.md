@@ -21,3 +21,10 @@ Tyree's copy is Game Pass (ProjectGold/WindowsApps) — its exe is locked; AISS 
 UNBLOCK: a Steam copy of Starfield. Then the chain installs in one pass.
 PHI NOTE: the provider slot accepts a local server (LM Studio path, OpenAI-compatible endpoint) —
 the door for the local `tyree` model to voice the NPCs. Try-first when the day comes.
+
+## BYPASS BUILT (2026-10-20, Tyree's word: "Bypass that I use xbox use powershell phi starfield")
+phi-starfield-companion.ps1 — the conversation layer moved OUTSIDE the game:
+Ollama tyree:latest voices NPCs (Sarah/Andreja/Barrett/Sam/VASCO personas), per-NPC memory
+JSON on disk (persistent across sessions), System.Speech TTS out, llava-phi3 vision reads
+his screen for live location context. Xbox build untouched; no SFSE needed.
+Tradeoff (stated to him): no in-game dialogue-menu hook or lip-sync — everything else real.
