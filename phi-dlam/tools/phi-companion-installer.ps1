@@ -1,15 +1,17 @@
-# PHI COMPANION INSTALLER v3 - you type, they talk. Summon word: companion
+# PHI COMPANION INSTALLER v3.1 - type or M-talk; they talk back. Summon word: companion
 $tools = "$env:USERPROFILE\phi-tools"; New-Item -ItemType Directory -Path $tools -Force | Out-Null
 $code = @'
-# PHI STARFIELD COMPANION v3 — YOU TYPE, THEY TALK — no SFSE — phi^2 = phi + 1
-# Typed input in PowerShell; your tyree model answers as the NPC, SPOKEN aloud.
-# Per-NPC memory on disk. Type V = she reads your screen first. Q = end (memory saves).
+# PHI STARFIELD COMPANION v3.1 — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
+# Type your line, or type M and SPEAK it (push-to-talk). The NPC answers SPOKEN aloud.
+# Per-NPC memory on disk. V = they read your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
 Add-Type -AssemblyName System.Speech
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 $voice = New-Object System.Speech.Synthesis.SpeechSynthesizer
 $voice.Rate = 1
+$rec = $null
+try { $rec = New-Object System.Speech.Recognition.SpeechRecognitionEngine; $rec.LoadGrammar((New-Object System.Speech.Recognition.DictationGrammar)); $rec.SetInputToDefaultAudioDevice() } catch { $rec = $null }
 $memDir = "$env:USERPROFILE\phi-tools\companion"; New-Item -ItemType Directory -Path $memDir -Force | Out-Null
 $npcs = @{
   'sarah'   = 'Sarah Morgan, chair of Constellation. Composed, dry wit, former UC Navy. You remember everything the player tells you.'
@@ -40,7 +42,11 @@ $mem = @(Load-Mem $name)
 "context so far: {0} exchanges remembered" -f ($mem.Count / 2)
 $scene = ''
 while ($true) {
-  $line = Read-Host "$name is listening (type, V = let them see your screen first, Q = quit)"
+  $line = Read-Host "$name is listening (type, M = talk, V = screen read, Q = quit)"
+  if ($line -eq 'M' -or $line -eq 'm') {
+    if ($rec) { "listening - speak now..."; $heard = $rec.Recognize(20); if ($heard) { $line = $heard.Text; "you said: $line" } else { "did not catch that - type it instead"; continue } }
+    else { "no mic heard on this PC - typing still works"; continue }
+  }
   if ($line -eq 'Q') { break }
   if ($line -eq 'V') { "reading your screen..."; $scene = Ask-Tyree 'llava-phi3:latest' @(@{ role='user'; content='In one sentence: where is this Starfield player and what is happening?' }) (See-Screen); "scene read: $scene"; continue }
   $ctx = if ($scene) { " Live context: $scene" } else { '' }
