@@ -1,20 +1,12 @@
-# PHI STARFIELD COMPANION v2 — CONTROLLER + VOICE — AISS bypassed, no SFSE — phi^2 = phi + 1
-# LB+RB together = talk | VIEW = she reads your screen | say "goodbye" = end.
-# Your tyree model voices the NPC; memory persists per-NPC on disk; replies spoken.
+# PHI STARFIELD COMPANION v3 — YOU TYPE, THEY TALK — no SFSE — phi^2 = phi + 1
+# Typed input in PowerShell; your tyree model answers as the NPC, SPOKEN aloud.
+# Per-NPC memory on disk. Type V = she reads your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
 Add-Type -AssemblyName System.Speech
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
-$voice = New-Object System.Speech.Synthesis.SpeechSynthesizer; $voice.Rate = 1
-$rec = New-Object System.Speech.Recognition.SpeechRecognitionEngine
-$rec.LoadGrammar((New-Object System.Speech.Recognition.DictationGrammar))
-$rec.SetInputToDefaultAudioDevice()
-Add-Type -TypeDefinition @"
-using System; using System.Runtime.InteropServices;
-public struct XState { public uint dwPacketNumber; public ushort wButtons; public byte bLT, bRT; public short sLX, sLY, sRX, sRY; }
-public static class Pad { [DllImport("xinput1_4.dll")] public static extern int XInputGetState(int i, ref XState s); }
-"@
-function PadButtons { $s = New-Object XState; if ([Pad]::XInputGetState(0, [ref]$s) -eq 0) { return $s.wButtons } return 0 }
+$voice = New-Object System.Speech.Synthesis.SpeechSynthesizer
+$voice.Rate = 1
 $memDir = "$env:USERPROFILE\phi-tools\companion"; New-Item -ItemType Directory -Path $memDir -Force | Out-Null
 $npcs = @{
   'sarah'   = 'Sarah Morgan, chair of Constellation. Composed, dry wit, former UC Navy. You remember everything the player tells you.'
@@ -37,42 +29,25 @@ function See-Screen {
   $ms = New-Object System.IO.MemoryStream; $bmp.Save($ms, [System.Drawing.Imaging.ImageFormat]::Jpeg)
   [Convert]::ToBase64String($ms.ToArray())
 }
-function Speak($t) { $voice.Speak($t) }
-"=== COMPANION v2 — controller + voice ==="
-"Say a name to begin: $($npcs.Keys -join ', ') — or type it."
-$name = $null
-while (-not $name) {
-  $r = $rec.Recognize(10)
-  if ($r -and $npcs.ContainsKey($r.Text.Trim().ToLower())) { $name = $r.Text.Trim().ToLower() }
-  else { $t = Read-Host 'name'; if ($npcs.ContainsKey($t.ToLower())) { $name = $t.ToLower() } }
-}
+"=== PHI STARFIELD COMPANION — you type, they talk ==="
+"NPCs on the roster: $($npcs.Keys -join ', ')"
+$name = (Read-Host 'Who are you talking to').ToLower()
+if (-not $npcs.ContainsKey($name)) { "not on the roster - standing down"; return }
 $mem = @(Load-Mem $name)
-Speak "This is $name. I remember $($mem.Count / 2) exchanges with you. Hold both bumpers and talk to me."
-"talking with $name — LB+RB = talk | VIEW = scene read | say goodbye = end"
-$scene = ''; $wasDown = $false
+"context so far: {0} exchanges remembered" -f ($mem.Count / 2)
+$scene = ''
 while ($true) {
-  $b = PadButtons
-  $talk = ($b -band 0x0300) -eq 0x0300
-  if ($b -band 0x0020) { "reading your screen..."; $scene = Ask-Tyree 'llava-phi3:latest' @(@{ role='user'; content='In one sentence: where is this Starfield player and what is happening?' }) (See-Screen); "scene: $scene"; Speak "I see. $scene"; Start-Sleep -Milliseconds 800 }
-  if ($talk -and -not $wasDown) {
-    [Console]::Beep(880, 120)
-    $heard = $rec.Recognize(15)
-    if ($heard) {
-      $line = $heard.Text
-      "you: $line"
-      if ($line -match 'goodbye|stop talking') { break }
-      $ctx = if ($scene) { " Live context: $scene" } else { '' }
-      $msgs = @(@{ role='system'; content = $npcs[$name] + ' Stay in character. Answer in 1-3 sentences, spoken aloud.' + $ctx })
-      $msgs += $mem | Select-Object -Last 12
-      $msgs += @{ role='user'; content = $line }
-      $reply = Ask-Tyree 'tyree:latest' $msgs $null
-      "{0}: {1}" -f $name.ToUpper(), $reply
-      Speak $reply
-      $mem += @{ role='user'; content = $line }; $mem += @{ role='assistant'; content = $reply }
-      Save-Mem $name $mem
-    }
-  }
-  $wasDown = $talk
-  Start-Sleep -Milliseconds 120
+  $line = Read-Host "$name is listening (type, V = let them see your screen first, Q = quit)"
+  if ($line -eq 'Q') { break }
+  if ($line -eq 'V') { "reading your screen..."; $scene = Ask-Tyree 'llava-phi3:latest' @(@{ role='user'; content='In one sentence: where is this Starfield player and what is happening?' }) (See-Screen); "scene read: $scene"; continue }
+  $ctx = if ($scene) { " Live context: $scene" } else { '' }
+  $msgs = @(@{ role='system'; content = $npcs[$name] + ' Stay in character. Answer in 1-3 sentences, spoken aloud.' + $ctx })
+  $msgs += $mem | Select-Object -Last 12
+  $msgs += @{ role='user'; content = $line }
+  $reply = Ask-Tyree 'tyree:latest' $msgs $null
+  "{0}: {1}" -f $name.ToUpper(), $reply
+  $voice.SpeakAsync($reply) | Out-Null
+  $mem += @{ role='user'; content = $line }; $mem += @{ role='assistant'; content = $reply }
+  Save-Mem $name $mem
 }
-"memory saved — $name remembers"
+"memory saved - {0} remembers this conversation next time" -f $name
