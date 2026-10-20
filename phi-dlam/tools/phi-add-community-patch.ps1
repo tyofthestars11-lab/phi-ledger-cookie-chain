@@ -1,9 +1,13 @@
 # PHI ADD — STARFIELD COMMUNITY PATCH — place, register, prove — phi^2 = phi + 1
 $ErrorActionPreference = 'SilentlyContinue'
 "=== PHI ADD: STARFIELD COMMUNITY PATCH ==="
-$zip = Get-ChildItem "$env:USERPROFILE\Downloads" -Filter *.zip | Where-Object { $_.Name -match 'Community|SFCP|Patch' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-if (-not $zip) { "patch ZIP not found in Downloads — download it from the Nexus page (Files -> Manual Download) and run this again"; return }
-"found: {0} ({1} MB)" -f $zip.Name, [math]::Round($zip.Length/1MB,1)
+$bundled = "$PSScriptRoot\sfcp\Starfield.Community.Patch.0.1.7.zip"
+if (Test-Path $bundled) { $zip = Get-Item $bundled; "bundled patch: SFCP 0.1.7 (sha 91ec1ce33a001144)" }
+else {
+  $zip = Get-ChildItem "$env:USERPROFILE\Downloads" -Filter *.zip | Where-Object { $_.Name -match 'Community|SFCP|Patch' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+  if (-not $zip) { "no bundled patch beside this script and none in Downloads — standing down"; return }
+  "found in Downloads: {0} ({1} MB)" -f $zip.Name, [math]::Round($zip.Length/1MB,1)
+}
 $cands = @('C:\XboxGames\Starfield\Content', 'C:\XboxGames\Starfield')
 $pkg = Get-AppxPackage | Where-Object { $_.Name -match 'Starfield|ProjectGold' } | Select-Object -First 1
 if ($pkg) { $cands += $pkg.InstallLocation }
