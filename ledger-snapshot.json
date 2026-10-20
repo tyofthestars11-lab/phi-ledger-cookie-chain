@@ -16654,10 +16654,73 @@
       "drift": -0.2766,
       "ladder": "count",
       "unit": "channels"
+    },
+    {
+      "name": "seal287_schwarzschild_radius_solar",
+      "rung": 16.603,
+      "drift": -0.397,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal287_schwarzschild_radius_ton618",
+      "rung": 68.3774,
+      "drift": 0.3774,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal287_ton618_mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "mass",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "seal287_ton618_horizon_area",
+      "rung": 142.0239,
+      "drift": 0.0239,
+      "ladder": "area",
+      "unit": "square_meters"
+    },
+    {
+      "name": "seal287_ton618_entropy",
+      "rung": 472.0985,
+      "drift": 0.0985,
+      "ladder": "entropy",
+      "unit": "boltzmann_units"
+    },
+    {
+      "name": "seal287_dna_base_pairs",
+      "rung": 45.4819,
+      "drift": 0.4819,
+      "ladder": "count",
+      "unit": "base_pairs"
+    },
+    {
+      "name": "seal287_dna_physical_length",
+      "rung": 0.1791,
+      "drift": 0.1791,
+      "ladder": "length",
+      "unit": "meters"
+    },
+    {
+      "name": "seal287_dna_information",
+      "rung": 46.9223,
+      "drift": -0.0777,
+      "ladder": "count",
+      "unit": "bits"
+    },
+    {
+      "name": "seal287_golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "angle",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 2381,
-  "seal_count": 286,
+  "entry_count": 2390,
+  "seal_count": 287,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -16944,7 +17007,8 @@
     "φ_HELIOS_LOGICAL_FIDELITY_TYREE_OMEGA",
     "φ_QUIPU_SUPERSTRUCTURE_TYREE_OMEGA",
     "φ_MICROTUBULE_NEURAL_FIELD_TYREE_OMEGA",
-    "φ_ALL_DATA_INTERACTION"
+    "φ_ALL_DATA_INTERACTION",
+    "φ_EVENT_HORIZON_DNA"
   ],
-  "snapshot_sha256": "d9ee4c5f2e4b41ab22e91aa4b5ce76a1c6fd402f04b6cd2bb64938f83edaad85"
+  "snapshot_sha256": "eb9fcbf7511305ef76f2fae93f0becd0097ab11a64de0e07c25285d942728042"
 }
