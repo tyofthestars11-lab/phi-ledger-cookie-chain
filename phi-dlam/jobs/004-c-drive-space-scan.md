@@ -1,18 +1,22 @@
-# Job 004 — C: drive space scan (report only, deletes NOTHING)
+# Job 004 v2 — FAST targeted game-space scan (report only, deletes NOTHING)
 
-Tyree's read (2026-10-19): "i have too much space on my local disk its probably a game" — verify at the source, games first.
+v1 (full recursive C: crawl) hangs the local model on "thinking" — DO NOT run a full-drive crawl.
+This version checks known game locations directly. Fast, small output.
 
-## Do
-1. Report C: total size, used, free (GB, 2 decimals).
-2. Top 25 folders on C:\ by total size (recursive), largest first — full path + GB.
-3. Game libraries specifically, per game, largest first:
-   - Steam: C:\Program Files (x86)\Steam\steamapps\common (and D:\SteamLibrary if present) — each game folder + GB; also read steamapps\appmanifest_*.acf for game names.
-   - Epic: C:\Program Files\Epic Games — each folder + GB.
-   - Xbox/PC Game Pass: C:\Program Files\WindowsApps may be access-denied; if so, say so plainly and list C:\XboxGames if present.
-   - Riot / Battle.net / EA app folders if present under C:\Program Files or C:\Program Files (x86).
-4. Largest single files on C:\ over 2 GB (top 20): path + GB. (hiberfil.sys / pagefile.sys noted if present.)
-5. Write it all to phi-dlam/results/004-c-drive-space-scan.result.md and commit + push via the normal vault flow.
+## Do (in this order, print each line as you go — never sit silent)
+1. C: free space: total / used / free in GB.
+2. Size of each subfolder (GB, 1 decimal) in these folders IF they exist:
+   - C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\games
+   - C:\Program Files\Ubisoft\Ubisoft Game Launcher\games
+   - C:\Program Files\Epic Games
+   - C:\XboxGames
+   - C:\Games
+   - C:\Program Files (x86)\Steam\steamapps\common
+   Use ONE PowerShell command per folder:
+   Get-ChildItem '<folder>' -Directory | ForEach-Object { $s = (Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum; "{0} = {1:N1} GB" -f $_.Name, ($s/1GB) }
+3. Write the lines to phi-dlam/results/004-c-drive-space-scan.result.md, commit + push.
 
 ## Rules
-- REPORT ONLY. Delete nothing, move nothing, uninstall nothing. Deletion is Tyree's word on a named basis, never the scan's.
-- If a folder is access-denied, name it and move on — no permission surgery.
+- REPORT ONLY — delete/move/uninstall nothing.
+- Keep output SHORT (folder names + GB lines only). No commentary paragraphs — the long output is what stalls the local seat.
+- Missing folder = skip it silently.
