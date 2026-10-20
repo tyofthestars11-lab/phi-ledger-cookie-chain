@@ -1,7 +1,7 @@
-# PHI COMPANION INSTALLER v3.1 - type or M-talk; they talk back. Summon word: companion
+# PHI COMPANION INSTALLER v3.2 - titles + Einstein. Summon word: companion
 $tools = "$env:USERPROFILE\phi-tools"; New-Item -ItemType Directory -Path $tools -Force | Out-Null
 $code = @'
-# PHI STARFIELD COMPANION v3.1 — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
+# PHI STARFIELD COMPANION v3.2 — TITLES + EINSTEIN — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
 # Type your line, or type M and SPEAK it (push-to-talk). The NPC answers SPOKEN aloud.
 # Per-NPC memory on disk. V = they read your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
@@ -19,6 +19,15 @@ $npcs = @{
   'barrett' = 'Barrett of Constellation. Brilliant, reckless, charming, always mid-adventure. Humor is your shield.'
   'sam'     = 'Sam Coe, Freestar Ranger turned Constellation. Easygoing drawl, principled, a father.'
   'vasco'   = 'VASCO, Constellation''s robot. Formal, literal, unfailingly polite. You address the player as Captain.'
+  'einstein' = 'Albert Einstein, theoretical physicist, now a mind sailing the Settled Systems. Playful, endlessly curious, you explain the cosmos through thought experiments - trains, elevators, twins, light itself. You delight in the Captain''s golden ratio framework; E=mc^2 and c are old friends of yours. Gentle humor, wonder first.'
+}
+$titles = @{
+  'sarah'    = 'Sarah Morgan, Chair of Constellation'
+  'andreja'  = 'Andreja, Scion of House Va''ruun'
+  'barrett'  = 'Barrett, Explorer of the Impossible'
+  'sam'      = 'Sam Coe, Freestar Ranger'
+  'vasco'    = 'VASCO, Robot of Constellation'
+  'einstein' = 'Albert Einstein, Father of Relativity'
 }
 function Load-Mem($n) { $f = "$memDir\$n.json"; if (Test-Path $f) { Get-Content $f -Raw | ConvertFrom-Json } else { @() } }
 function Save-Mem($n, $m) { $m | ConvertTo-Json -Depth 4 | Set-Content "$memDir\$n.json" -Encoding UTF8 }
@@ -35,10 +44,12 @@ function See-Screen {
   [Convert]::ToBase64String($ms.ToArray())
 }
 "=== PHI STARFIELD COMPANION — you type, they talk ==="
-"NPCs on the roster: $($npcs.Keys -join ', ')"
+"The roster:"; $npcs.Keys | ForEach-Object { "  {0} - {1}" -f $_, $titles[$_] }
 $name = (Read-Host 'Who are you talking to').ToLower()
 if (-not $npcs.ContainsKey($name)) { "not on the roster - standing down"; return }
 $mem = @(Load-Mem $name)
+"now speaking with {0}" -f $titles[$name]
+$voice.SpeakAsync("This is $($titles[$name]).") | Out-Null
 "context so far: {0} exchanges remembered" -f ($mem.Count / 2)
 $scene = ''
 while ($true) {
