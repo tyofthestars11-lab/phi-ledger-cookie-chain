@@ -1,0 +1,368 @@
+[
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Enceladus plume water vapor fraction, Cassini deep pass",
+    "unit": "percent",
+    "value": 98
+  },
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Enceladus plume molecular hydrogen fraction",
+    "unit": "percent",
+    "value": 1
+  },
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Enceladus dissolved orthophosphate enrichment over Earth oceans",
+    "unit": "fold",
+    "value": 100
+  },
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Salt-rich ice grains with sodium phosphates, Cassini CDA",
+    "unit": "grains",
+    "value": 9
+  },
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Enceladus diameter",
+    "unit": "km",
+    "value": 500
+  },
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Hydrothermal seafloor temperature from nanosilica",
+    "unit": "degC",
+    "value": 90
+  },
+  {
+    "ladder": "enceladus-ocean-worlds-2026-10-01",
+    "name": "Named candidate ocean worlds (Enceladus Titan Europa Ganymede Callisto Triton)",
+    "unit": "moons",
+    "value": 6
+  },
+  {
+    "ladder": "microbial-quantum-2026-10-01",
+    "name": "Bacteria cavity-coupled in the Marletto et al. entanglement experiment",
+    "unit": "bacteria",
+    "value": 6
+  },
+  {
+    "ladder": "microbial-quantum-2026-10-01",
+    "name": "Quantum beats in cryptophyte algae at ambient temperature",
+    "unit": "ps",
+    "value": 0.1
+  },
+  {
+    "ladder": "microbial-quantum-2026-10-01",
+    "name": "Photosynthetic reaction-center energy transfer efficiency",
+    "unit": "percent",
+    "value": 100
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Cholesterol mitophagy lane: PI4KIIα OSBP SREBP-2 DGAT1 nodes",
+    "unit": "nodes",
+    "value": 4
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ART discovery: Claude agents in the search swarm",
+    "unit": "agents",
+    "value": 950
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ART discovery: autonomous search run duration",
+    "unit": "hours",
+    "value": 21
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ART discovery: tokens processed by the swarm",
+    "unit": "tokens",
+    "value": 210000000
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ART discovery: reverse-transcriptase sequences surfaced",
+    "unit": "genes",
+    "value": 200000
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ART discovery: candidate systems assembled",
+    "unit": "candidates",
+    "value": 3500
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ART discovery: candidates selected for deep analysis",
+    "unit": "candidates",
+    "value": 20
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Octupolar magnetism: poles in the eightfold pattern",
+    "unit": "poles",
+    "value": 8
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Octupolar magnetism: named study authors (Sutcliffe Chaudhary Hart)",
+    "unit": "authors",
+    "value": 3
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "C2QA tantalum transmon lifetime record",
+    "unit": "ms",
+    "value": 1.68
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "C2QA transmon improvement over previous state of the art",
+    "unit": "fold",
+    "value": 10
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "C2QA member institutions",
+    "unit": "institutions",
+    "value": 28
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: photons in the six-path circuit",
+    "unit": "photons",
+    "value": 2
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: optical paths in the circuit",
+    "unit": "paths",
+    "value": 6
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: SPAD detectors surviving launch",
+    "unit": "detectors",
+    "value": 3
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: launch shock endured",
+    "unit": "G",
+    "value": 1500
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: laser output after vacuum degradation",
+    "unit": "mW",
+    "value": 4
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: crystal temperature at the Hong-Ou-Mandel dip",
+    "unit": "degC",
+    "value": 32.5
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: months of in-orbit experiments reported",
+    "unit": "months",
+    "value": 8
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Orbital photonic processor: orbit altitude",
+    "unit": "km",
+    "value": 510
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "ER calcium actin cages: named study authors (Feng Ruark Burkewitz)",
+    "unit": "authors",
+    "value": 3
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Innopolis mass-spec decoder: spectrum–molecule pairs trained",
+    "unit": "pairs",
+    "value": 1000000
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Innopolis mass-spec decoder: decode speed",
+    "unit": "s-per-spectrum",
+    "value": 0.09
+  },
+  {
+    "ladder": "morning-brief-2026-10-01",
+    "name": "Innopolis mass-spec decoder: top-100 accuracy",
+    "unit": "percent",
+    "value": 90.5
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST Enceladus plume extent (Villanueva et al. 2023)",
+    "unit": "km",
+    "value": 10000
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST Enceladus plume span in Enceladus radii",
+    "unit": "radii",
+    "value": 40
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST Enceladus plume cryogenic temperature",
+    "unit": "K",
+    "value": 25
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST Enceladus outgassing rate",
+    "unit": "kg/s",
+    "value": 300
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST Enceladus torus water column density",
+    "unit": "m^-2",
+    "value": 4.5e+17
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "Cassini outgassing baseline showing decadal stability",
+    "unit": "years",
+    "value": 15
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "Herschel torus-density baseline",
+    "unit": "years",
+    "value": 13
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST Europa Tara Regio CO2 concentration width (Trumbo & Brown 2023)",
+    "unit": "km",
+    "value": 1800
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "Europa diameter",
+    "unit": "km",
+    "value": 3129
+  },
+  {
+    "ladder": "jwst-ocean-worlds-2026-10-01",
+    "name": "JWST NIRSpec surface resolution on Europa",
+    "unit": "km",
+    "value": 320
+  },
+  {
+    "ladder": "enceladus-fresh-organics-2025",
+    "name": "Khawaja et al. 2025 fresh grain collection altitude",
+    "unit": "km",
+    "value": 21
+  },
+  {
+    "ladder": "enceladus-fresh-organics-2025",
+    "name": "E5 2008 flyby speed through the plume",
+    "unit": "km/s",
+    "value": 18
+  },
+  {
+    "ladder": "enceladus-fresh-organics-2025",
+    "name": "Tiger stripe fracture length",
+    "unit": "km",
+    "value": 135
+  },
+  {
+    "ladder": "enceladus-fresh-organics-2025",
+    "name": "Tiger stripe fractures at the south pole",
+    "unit": "fractures",
+    "value": 4
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "LUCA age (Moody et al. 2024 Nature Ecology & Evolution)",
+    "unit": "Ga",
+    "value": 4.2
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "LUCA genome floor",
+    "unit": "Mb",
+    "value": 2.5
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "LUCA encoded proteins",
+    "unit": "proteins",
+    "value": 2600
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "Pre-LUCA duplicated gene sets in the clock",
+    "unit": "sets",
+    "value": 5
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "Fossil and geochemical clock calibrations",
+    "unit": "markers",
+    "value": 13
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "Dresser Formation microbial mats",
+    "unit": "Ga",
+    "value": 3.48
+  },
+  {
+    "ladder": "microbial-record-2026-10-01",
+    "name": "Strelley Pool Chert cellular structures",
+    "unit": "Ga",
+    "value": 3.35
+  },
+  {
+    "ladder": "cmb-quantum-echoes-2026-10-01",
+    "name": "CMB mean temperature",
+    "unit": "K",
+    "value": 2.7255
+  },
+  {
+    "ladder": "cmb-quantum-echoes-2026-10-01",
+    "name": "Decoupling temperature of the primordial plasma",
+    "unit": "K",
+    "value": 3000
+  },
+  {
+    "ladder": "cmb-quantum-echoes-2026-10-01",
+    "name": "Tensor-to-scalar ratio upper bound 95% CL (Planck PR4 + BICEP/Keck)",
+    "unit": "ratio",
+    "value": 0.037
+  },
+  {
+    "ladder": "cmb-quantum-echoes-2026-10-01",
+    "name": "Baryon density Omega_b h^2 (Planck 2018)",
+    "unit": "density",
+    "value": 0.02237
+  },
+  {
+    "ladder": "cmb-quantum-echoes-2026-10-01",
+    "name": "Scalar spectral index n_s (Planck 2018)",
+    "unit": "index",
+    "value": 0.9649
+  },
+  {
+    "ladder": "cmb-quantum-echoes-2026-10-01",
+    "name": "Fluctuation amplitude sigma_8",
+    "unit": "amplitude",
+    "value": 0.811
+  }
+]

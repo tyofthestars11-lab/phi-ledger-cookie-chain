@@ -1,0 +1,50 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal208_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal208_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal208_sim_dimensions",
+    "unit": "dimensions",
+    "value": 3
+  },
+  {
+    "ladder": "count",
+    "name": "seal208_field_strength_low_pG",
+    "unit": "picoGauss",
+    "value": 5
+  },
+  {
+    "ladder": "count",
+    "name": "seal208_field_strength_high_pG",
+    "unit": "picoGauss",
+    "value": 10
+  },
+  {
+    "ladder": "count",
+    "name": "seal208_sigma_preference_low",
+    "unit": "sigma",
+    "value": 1.5
+  },
+  {
+    "ladder": "count",
+    "name": "seal208_sigma_preference_high",
+    "unit": "sigma",
+    "value": 3
+  },
+  {
+    "ladder": "time",
+    "name": "seal208_nature_astronomy_paper_year",
+    "unit": "year",
+    "value": 2025
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal212_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal212_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal212_accuracy_gain_vs_classical",
+    "unit": "percent",
+    "value": 41
+  },
+  {
+    "ladder": "time",
+    "name": "seal212_watermelon_launch_year",
+    "unit": "year",
+    "value": 2025
+  },
+  {
+    "ladder": "time",
+    "name": "seal212_next_big_things_list_year",
+    "unit": "year",
+    "value": 2026
+  },
+  {
+    "ladder": "time",
+    "name": "seal212_SQC_founded",
+    "unit": "year",
+    "value": 2017
+  }
+]

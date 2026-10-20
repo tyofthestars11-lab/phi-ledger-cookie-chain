@@ -1,0 +1,38 @@
+[
+  {
+    "name": "\u03c6 golden ratio constant",
+    "value": 1.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "\u03c6\u00b2 = \u03c6 + 1",
+    "value": 2.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "golden angle \u03b8_\u03c6",
+    "value": 137.5,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "fuel protocol count",
+    "value": 8,
+    "ladder": "count",
+    "unit": "protocols"
+  },
+  {
+    "name": "compact form lines",
+    "value": 10,
+    "ladder": "count",
+    "unit": "lines"
+  },
+  {
+    "name": "seal index",
+    "value": 156,
+    "ladder": "count",
+    "unit": "count"
+  }
+]

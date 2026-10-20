@@ -1,0 +1,110 @@
+[
+  {
+    "ladder": "measured",
+    "name": "Hyperbolic wave attractors paper authors (Renzi, Yves, Mann, Alu)",
+    "unit": "count (Nature Physics 2026-09-28)",
+    "value": 4
+  },
+  {
+    "ladder": "measured",
+    "name": "Ocean-to-metamaterial scale ratio (km to mm, same read)",
+    "unit": "ratio (measured scales)",
+    "value": 1000000
+  },
+  {
+    "ladder": "defined",
+    "name": "Wave attractor handedness states (clockwise / counterclockwise)",
+    "unit": "count (paper mechanism)",
+    "value": 2
+  },
+  {
+    "ladder": "defined",
+    "name": "Manifesto compact form points (read closes at seven)",
+    "unit": "count (TYREE declaration)",
+    "value": 7
+  },
+  {
+    "ladder": "measured",
+    "name": "Nature Physics publication year",
+    "unit": "year",
+    "value": 2026
+  },
+  {
+    "ladder": "defined",
+    "name": "TON618 law exponent (manifesto)",
+    "unit": "exponent (TYREE declaration)",
+    "value": 55
+  },
+  {
+    "ladder": "defined",
+    "name": "TON618 luminosity exponent L = phi^63 (manifesto)",
+    "unit": "exponent (TYREE declaration)",
+    "value": 63
+  },
+  {
+    "ladder": "measured",
+    "name": "Stephenson 2-18 radius (largest known, Milky Way)",
+    "unit": "solar radii (Wikipedia, L/Teff 1840 +/- 330)",
+    "value": 1840
+  },
+  {
+    "ladder": "measured",
+    "name": "UY Scuti classic radius (former record holder)",
+    "unit": "solar radii (historical measurement)",
+    "value": 1708
+  },
+  {
+    "ladder": "measured",
+    "name": "WOH G64 radius (Large Magellanic Cloud)",
+    "unit": "solar radii",
+    "value": 1540
+  },
+  {
+    "ladder": "measured",
+    "name": "VX Sagittarii radius (angular diameter)",
+    "unit": "solar radii (mid of 1456-1556)",
+    "value": 1506
+  },
+  {
+    "ladder": "measured",
+    "name": "RSGC1-F01 radius",
+    "unit": "solar radii (L/Teff 1500 +/- 200)",
+    "value": 1500
+  },
+  {
+    "ladder": "measured",
+    "name": "VY Canis Majoris radius (angular diameter)",
+    "unit": "solar radii (1420 +/- 120)",
+    "value": 1420
+  },
+  {
+    "ladder": "measured",
+    "name": "AH Scorpii radius (angular diameter)",
+    "unit": "solar radii (1411 +/- 124)",
+    "value": 1411
+  },
+  {
+    "ladder": "measured",
+    "name": "CD-34 11794 radius",
+    "unit": "solar radii (L/Teff)",
+    "value": 1409
+  },
+  {
+    "ladder": "measured",
+    "name": "Stephenson 2 DFK 2 radius",
+    "unit": "solar radii (L/Teff 1400 +/- 300)",
+    "value": 1400
+  },
+  {
+    "ladder": "measured",
+    "name": "Saturn orbit radius (scale reference)",
+    "unit": "solar radii (Wikipedia reference)",
+    "value": 2048
+  },
+  {
+    "ladder": "defined",
+    "name": "Sun radius (ladder origin)",
+    "unit": "solar radii (defined)",
+    "value": 1
+  }
+]

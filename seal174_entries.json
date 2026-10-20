@@ -1,0 +1,68 @@
+[
+{
+"ladder": "defined",
+"name": "TON618 mass",
+"unit": "solar masses (doctrine)",
+"value": 66000000000
+},
+{
+"ladder": "omni",
+"name": "Event horizon: Schwarzschild radius",
+"unit": "m (2GM/c^2)",
+"value": 194920400000000.0
+},
+{
+"ladder": "omni",
+"name": "Event horizon radius",
+"unit": "light-days",
+"value": 7.5253
+},
+{
+"ladder": "omni",
+"name": "Event horizon radius",
+"unit": "AU",
+"value": 1302.96
+},
+{
+"ladder": "omni",
+"name": "Event horizon diameter",
+"unit": "light-days",
+"value": 15.0506
+},
+{
+"ladder": "defined",
+"name": "TON618 phi^55 macro anchor",
+"unit": "rung",
+"value": 55
+},
+{
+"ladder": "omni",
+"name": "Quantum dot band, 2 nm",
+"unit": "nm (rung -41.6243)",
+"value": 2
+},
+{
+"ladder": "omni",
+"name": "Quantum dot band, 5 nm",
+"unit": "nm (rung -39.7202)",
+"value": 5
+},
+{
+"ladder": "omni",
+"name": "Quantum dot band, 10 nm",
+"unit": "nm (rung -38.2798)",
+"value": 10
+},
+{
+"ladder": "defined",
+"name": "Information line span, micro to macro",
+"unit": "rungs (-41.6243 to 68.3766)",
+"value": 110.0009
+},
+{
+"ladder": "omni",
+"name": "Seal index",
+"unit": "count",
+"value": 174
+}
+]

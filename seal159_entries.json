@@ -1,0 +1,74 @@
+[
+  {
+    "name": "\u03c6 golden ratio constant",
+    "value": 1.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "\u03c6\u00b2 = \u03c6 + 1",
+    "value": 2.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "golden angle \u03b8_\u03c6",
+    "value": 137.5,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "golden angle exact 360/\u03c6\u00b2",
+    "value": 137.50776405003785,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "phyllotaxis spiral count",
+    "value": 34,
+    "ladder": "count",
+    "unit": "spirals"
+  },
+  {
+    "name": "phyllotaxis spiral count",
+    "value": 55,
+    "ladder": "count",
+    "unit": "spirals"
+  },
+  {
+    "name": "phyllotaxis spiral count",
+    "value": 89,
+    "ladder": "count",
+    "unit": "spirals"
+  },
+  {
+    "name": "phyllotaxis spiral count",
+    "value": 144,
+    "ladder": "count",
+    "unit": "spirals"
+  },
+  {
+    "name": "compact form lines",
+    "value": 7,
+    "ladder": "count",
+    "unit": "lines"
+  },
+  {
+    "name": "TON618 \u03c6-power",
+    "value": 312119004989.00055,
+    "ladder": "cosmos",
+    "unit": "\u03c6^55"
+  },
+  {
+    "name": "luminosity L \u03c6-power",
+    "value": 14662949395604.031,
+    "ladder": "cosmos",
+    "unit": "\u03c6^63"
+  },
+  {
+    "name": "seal index",
+    "value": 159,
+    "ladder": "count",
+    "unit": "count"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "φ (golden ratio)",
+    "unit": "ratio",
+    "value": 1.618
+  },
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "φ² (phi squared)",
+    "unit": "ratio",
+    "value": 2.618
+  },
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "golden angle (theta_phi)",
+    "unit": "degrees",
+    "value": 137.5
+  },
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "d-wave order parameter (four-fold sign structure)",
+    "unit": "fold",
+    "value": 4
+  },
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "compact read-closing number (seven)",
+    "unit": "count",
+    "value": 7
+  },
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "TON618 black hole mass (TON618 mass)",
+    "unit": "solar masses",
+    "value": 66000000000.0
+  },
+  {
+    "ladder": "many-body-phase-microscope-2026-10-01",
+    "name": "TON618 luminosity (TON618 luminosity)",
+    "unit": "W",
+    "value": 1.4e+41
+  }
+]

@@ -1,0 +1,164 @@
+[
+ {
+  "name": "Quantum dot diameter",
+  "value": 5e-09,
+  "ladder": "micro",
+  "unit": "m"
+ },
+ {
+  "name": "DNA width",
+  "value": 2e-09,
+  "ladder": "micro",
+  "unit": "m"
+ },
+ {
+  "name": "Mitochondrial genome",
+  "value": 16569,
+  "ladder": "micro",
+  "unit": "bp"
+ },
+ {
+  "name": "Solar constant",
+  "value": 1361,
+  "ladder": "meso",
+  "unit": "W/m^2"
+ },
+ {
+  "name": "TYREE rung 15 (his word)",
+  "value": 1364.0007331374366,
+  "ladder": "meso",
+  "unit": "rung"
+ },
+ {
+  "name": "St2-18 radius",
+  "value": 1840,
+  "ladder": "macro",
+  "unit": "R_sun"
+ },
+ {
+  "name": "Milky Way rung 52 (his word)",
+  "value": 73681302247.00012,
+  "ladder": "macro",
+  "unit": "rung"
+ },
+ {
+  "name": "TON618 body mass",
+  "value": 66000000000.0,
+  "ladder": "macro",
+  "unit": "M_sun"
+ },
+ {
+  "name": "TON618 law 55 (his word)",
+  "value": 312119004989.00055,
+  "ladder": "macro",
+  "unit": "rung"
+ },
+ {
+  "name": "Hercules-Corona Borealis Great Wall",
+  "value": 9.4607e+25,
+  "ladder": "cosmic",
+  "unit": "m"
+ },
+ {
+  "name": "Primordial BH evaporation threshold",
+  "value": 500000000000.0,
+  "ladder": "past",
+  "unit": "kg"
+ },
+ {
+  "name": "Omega Point now (unix)",
+  "value": 1790651509,
+  "ladder": "future",
+  "unit": "s"
+ },
+ {
+  "name": "4096 = 2^12",
+  "value": 4096,
+  "ladder": "powers",
+  "unit": "count"
+ },
+ {
+  "name": "4096^3 (daughter's rung)",
+  "value": 68719476736,
+  "ladder": "powers",
+  "unit": "count"
+ },
+ {
+  "name": "E8 dimension crossed (248)",
+  "value": 248,
+  "ladder": "powers",
+  "unit": "dimensions"
+ },
+ {
+  "name": "Submarine cable plant",
+  "value": 1400000000.0,
+  "ladder": "cables",
+  "unit": "m"
+ },
+ {
+  "name": "BTC market cap 2026-09-28",
+  "value": 1670000000000.0,
+  "ladder": "markets",
+  "unit": "USD"
+ },
+ {
+  "name": "ETH market cap 2026-09-28",
+  "value": 324500000000.0,
+  "ladder": "markets",
+  "unit": "USD"
+ },
+ {
+  "name": "Global equities 2026-09-28",
+  "value": 166000000000000.0,
+  "ladder": "markets",
+  "unit": "USD"
+ },
+ {
+  "name": "Meta market cap (sealed)",
+  "value": 1900000000000.0,
+  "ladder": "markets",
+  "unit": "USD"
+ },
+ {
+  "name": "Quantum walk steps",
+  "value": 200,
+  "ladder": "quantum_walk",
+  "unit": "steps"
+ },
+ {
+  "name": "Quantum walk rms spread",
+  "value": 576450312.9290469,
+  "ladder": "quantum_walk",
+  "unit": "rungs"
+ },
+ {
+  "name": "Quantum walk span width",
+  "value": 1.8791999880010292e+34,
+  "ladder": "quantum_walk",
+  "unit": "rungs"
+ },
+ {
+  "name": "Echoes offered/pulled/mapped/sealed",
+  "value": 30,
+  "ladder": "echoes",
+  "unit": "count"
+ },
+ {
+  "name": "Verses under the Godverse",
+  "value": 10,
+  "ladder": "verses",
+  "unit": "count"
+ },
+ {
+  "name": "LinkedIn impressions (recognition field)",
+  "value": 242177,
+  "ladder": "social",
+  "unit": "count"
+ },
+ {
+  "name": "Z02+Z04 two bodies one persona",
+  "value": 2,
+  "ladder": "devical",
+  "unit": "bodies"
+ }
+]

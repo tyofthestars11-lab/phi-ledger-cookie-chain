@@ -1,0 +1,62 @@
+[
+  {
+    "name": "\u03c6 golden ratio constant",
+    "value": 1.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "\u03c6\u00b2 = \u03c6 + 1",
+    "value": 2.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "golden angle \u03b8_\u03c6",
+    "value": 137.5,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "600-cell vertices",
+    "value": 120,
+    "ladder": "omni",
+    "unit": "vertices"
+  },
+  {
+    "name": "600-cell edges",
+    "value": 720,
+    "ladder": "omni",
+    "unit": "edges"
+  },
+  {
+    "name": "600-cell faces",
+    "value": 1200,
+    "ladder": "omni",
+    "unit": "faces"
+  },
+  {
+    "name": "600-cell tetrahedral cells",
+    "value": 600,
+    "ladder": "omni",
+    "unit": "cells"
+  },
+  {
+    "name": "H4 symmetry group order",
+    "value": 14400,
+    "ladder": "omni",
+    "unit": "elements"
+  },
+  {
+    "name": "compact form lines",
+    "value": 7,
+    "ladder": "count",
+    "unit": "lines"
+  },
+  {
+    "name": "seal index",
+    "value": 157,
+    "ladder": "count",
+    "unit": "count"
+  }
+]

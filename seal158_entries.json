@@ -1,0 +1,38 @@
+[
+  {
+    "name": "\u03c6 golden ratio constant",
+    "value": 1.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "\u03c6\u00b2 = \u03c6 + 1",
+    "value": 2.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "golden angle \u03b8_\u03c6",
+    "value": 137.5,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "quantum geometric tensor components",
+    "value": 2,
+    "ladder": "count",
+    "unit": "components"
+  },
+  {
+    "name": "compact form lines",
+    "value": 7,
+    "ladder": "count",
+    "unit": "lines"
+  },
+  {
+    "name": "seal index",
+    "value": 158,
+    "ladder": "count",
+    "unit": "count"
+  }
+]

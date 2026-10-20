@@ -1,0 +1,38 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal211_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal211_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal211_photon_indistinguishability_new",
+    "unit": "percent",
+    "value": 90
+  },
+  {
+    "ladder": "count",
+    "name": "seal211_photon_indistinguishability_prior",
+    "unit": "percent",
+    "value": 60
+  },
+  {
+    "ladder": "count",
+    "name": "seal211_collaborating_universities",
+    "unit": "universities",
+    "value": 3
+  },
+  {
+    "ladder": "time",
+    "name": "seal211_PR_applied_paper_year",
+    "unit": "year",
+    "value": 2026
+  }
+]

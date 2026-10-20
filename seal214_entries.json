@@ -1,0 +1,44 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal214_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal214_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal214_Pa30_distance_lightyears",
+    "unit": "lightyears",
+    "value": 7500
+  },
+  {
+    "ladder": "count",
+    "name": "seal214_knot_width_neptune_orbits",
+    "unit": "neptune_orbits",
+    "value": 10
+  },
+  {
+    "ladder": "count",
+    "name": "seal214_filament_feature_factor",
+    "unit": "x",
+    "value": 10
+  },
+  {
+    "ladder": "time",
+    "name": "seal214_historical_SN_year",
+    "unit": "year",
+    "value": 1181
+  },
+  {
+    "ladder": "time",
+    "name": "seal214_Pa30_identified_year",
+    "unit": "year",
+    "value": 2013
+  }
+]

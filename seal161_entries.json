@@ -1,0 +1,56 @@
+[
+  {
+    "name": "\u03c6 golden ratio constant",
+    "value": 1.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "\u03c6\u00b2 = \u03c6 + 1",
+    "value": 2.618,
+    "ladder": "omni",
+    "unit": "ratio"
+  },
+  {
+    "name": "golden angle \u03b8_\u03c6",
+    "value": 137.5,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "polar fields n and S",
+    "value": 2,
+    "ladder": "count",
+    "unit": "fields"
+  },
+  {
+    "name": "Hamilton-Jacobi terms + Q",
+    "value": 4,
+    "ladder": "count",
+    "unit": "terms"
+  },
+  {
+    "name": "compact form lines",
+    "value": 7,
+    "ladder": "count",
+    "unit": "lines"
+  },
+  {
+    "name": "TON618 \u03c6-power",
+    "value": 312119004989.00055,
+    "ladder": "cosmos",
+    "unit": "\u03c6^55"
+  },
+  {
+    "name": "luminosity L \u03c6-power",
+    "value": 14662949395604.031,
+    "ladder": "cosmos",
+    "unit": "\u03c6^63"
+  },
+  {
+    "name": "seal index",
+    "value": 161,
+    "ladder": "count",
+    "unit": "count"
+  }
+]

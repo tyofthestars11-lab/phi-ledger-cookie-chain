@@ -1,0 +1,44 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal213_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal213_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal213_hot_H_altitude_km",
+    "unit": "km",
+    "value": 250
+  },
+  {
+    "ladder": "count",
+    "name": "seal213_hot_H_altitude_mi",
+    "unit": "mi",
+    "value": 155
+  },
+  {
+    "ladder": "count",
+    "name": "seal213_thermosphere_lower_km",
+    "unit": "km",
+    "value": 85
+  },
+  {
+    "ladder": "count",
+    "name": "seal213_thermosphere_upper_km",
+    "unit": "km",
+    "value": 500
+  },
+  {
+    "ladder": "time",
+    "name": "seal213_nature_comms_year",
+    "unit": "year",
+    "value": 2026
+  }
+]

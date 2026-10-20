@@ -1,0 +1,26 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal209_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal209_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal209_h2_rate_BVR19Zn_umol_per_h_per_g",
+    "unit": "micromol_per_h_per_g",
+    "value": 938
+  },
+  {
+    "ladder": "time",
+    "name": "seal209_report_year",
+    "unit": "year",
+    "value": 2026
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "ladder": "ratio",
+    "name": "seal210_phi",
+    "unit": "phi",
+    "value": 1.618
+  },
+  {
+    "ladder": "ratio",
+    "name": "seal210_phi_squared",
+    "unit": "phi2",
+    "value": 2.618
+  },
+  {
+    "ladder": "count",
+    "name": "seal210_dark_dimension_width",
+    "unit": "micron",
+    "value": 1
+  },
+  {
+    "ladder": "count",
+    "name": "seal210_dim_4",
+    "unit": "dimensions",
+    "value": 4
+  },
+  {
+    "ladder": "count",
+    "name": "seal210_dim_5",
+    "unit": "dimensions",
+    "value": 5
+  },
+  {
+    "ladder": "time",
+    "name": "seal210_PRD_paper_year",
+    "unit": "year",
+    "value": 2026
+  }
+]

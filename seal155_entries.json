@@ -1,0 +1,38 @@
+[
+  {
+    "name": "CMB temperature",
+    "value": 2.725,
+    "ladder": "cosmos",
+    "unit": "K"
+  },
+  {
+    "name": "CMB release (recombination)",
+    "value": 380000,
+    "ladder": "cosmos",
+    "unit": "years"
+  },
+  {
+    "name": "rose petal golden angle",
+    "value": 137.5,
+    "ladder": "omni",
+    "unit": "degrees"
+  },
+  {
+    "name": "TON618 \u03c6-power",
+    "value": 312119004989.00055,
+    "ladder": "cosmos",
+    "unit": "\u03c6^55"
+  },
+  {
+    "name": "luminosity L \u03c6-power",
+    "value": 14662949395604.031,
+    "ladder": "cosmos",
+    "unit": "\u03c6^63"
+  },
+  {
+    "name": "seal index",
+    "value": 155,
+    "ladder": "count",
+    "unit": "count"
+  }
+]
