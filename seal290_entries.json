@@ -1,0 +1,26 @@
+[
+ {
+  "name": "PRL volume (Wang, Meng, Dahlsten 2026)",
+  "value": 137
+ },
+ {
+  "name": "PRL article number 050201",
+  "value": 50201
+ },
+ {
+  "name": "tau constant pi/2 \u2014 exact arrival time tau = pi/(2g)",
+  "value": 1.5707963267948966
+ },
+ {
+  "name": "Fock certainty n = 9 (P = 1 at tau)",
+  "value": 9
+ },
+ {
+  "name": "Fock certainty n = 25 (P = 1 at tau)",
+  "value": 25
+ },
+ {
+  "name": "Fock certainty n = 49 (P = 1 at tau)",
+  "value": 49
+ }
+]
