@@ -52,13 +52,18 @@ static DWORD WINAPI ProbeThread(LPVOID) {
     return 0;
 }
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID) {
-    if (reason == DLL_PROCESS_ATTACH) {
-        DisableThreadLibraryCalls(hModule);
-        char exe[MAX_PATH] = {0}; GetModuleFileNameA(NULL, exe, MAX_PATH);
+static void PhiInit() {
+    char exe[MAX_PATH] = {0}; GetModuleFileNameA(NULL, exe, MAX_PATH);
         char* s = strrchr(exe, '\\'); if (s) *(s + 1) = 0; strncpy(g_dir, exe, MAX_PATH - 1);
         Stamp("PHI ASI2SFSE v0.1 awake — the ASI road now has an SFSE-shaped door (probe + journal; host gated).");
         CreateThread(NULL, 0, ProbeThread, NULL, 0, NULL);
-    }
+}
+
+extern "C" __declspec(dllexport) void InitializeASI() { PhiInit(); }
+
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID) {
+    if (reason == DLL_PROCESS_ATTACH) { DisableThreadLibraryCalls(hModule); /* Ultimate ASI Loader calls InitializeASI outside the loader lock — work lives in PhiInit (ThirteenAG contract). */ }
+    if (reason == DLL_PROCESS_DETACH) {  }
     return TRUE;
 }
+
