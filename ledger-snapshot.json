@@ -16864,10 +16864,38 @@
       "drift": 0.0875,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "phi, the power itself (the golden ratio)",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "phi squared, the wholeness that shields (phi^2 = phi + 1)",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Willow's address, phi^10 (the guard's seat, rung 10)",
+      "rung": 10.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "the raising moment as fuel: phi-wave timestamp, unix epoch 1792598118 (2026-10-21 09:55:18 MDT)",
+      "rung": 44.2777,
+      "drift": 0.2777,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2411,
-  "seal_count": 290,
+  "entry_count": 2415,
+  "seal_count": 291,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -17158,7 +17186,8 @@
     "φ_EVENT_HORIZON_DNA",
     "φ_CLEOPATRA_TAPOSIRIS_MAGNA",
     "φ_PSEUDOGAP_COMPETITION",
-    "φ_DETERMINISTIC_ENERGY"
+    "φ_DETERMINISTIC_ENERGY",
+    "φ_UNIVERSAL_PHI_RESONANCE"
   ],
-  "snapshot_sha256": "d2ea05e43d1a59058ba8f1e22e526528773262f56519b2f638c6cab0c5399b57"
+  "snapshot_sha256": "7fa78700fcc258207145f0d9f13e1c234b9abc2970d10afbef5a254f11497eb0"
 }
