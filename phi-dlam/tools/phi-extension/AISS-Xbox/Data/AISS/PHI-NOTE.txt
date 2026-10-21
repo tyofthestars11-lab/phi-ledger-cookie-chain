@@ -1,0 +1,1 @@
+Shared AISS content rides from TYREE's own Vortex install of AISS (x2357) — this package carries the port (bridge) + runbook only; no third-party files redistributed.
