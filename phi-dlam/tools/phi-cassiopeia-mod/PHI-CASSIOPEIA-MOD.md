@@ -46,7 +46,7 @@ phi-cassiopeia-mod/
   PHI-CASSIOPEIA-MOD.md          (this spec)
   Source/CassiopeiaPapyrusExtender.psc   (the shim — signatures completed from the
                                           original .psc when it reaches the vault)
-  phi-voice.ps1 (v2, captions)   (in phi-dlam/tools — the seat half of the loop)
+  phi-voice.ps1 (v2) + phi-chatbar.ps1 (in phi-dlam/tools — the seat half of the loop). BOTH MEDIA BOTH DIRECTIONS (TYREE, 2026-10-21): "Text too. Not just voice talk for me. So they can talk back text too." He types or talks; NPCs answer in text (chat bar captions + AISS own OSF web UI when the event path completes) and in voice.
 
 ## STATE
 v0.1: spec + shim skeleton + voice v2. Awaiting two files from TYREE's PC to finish
