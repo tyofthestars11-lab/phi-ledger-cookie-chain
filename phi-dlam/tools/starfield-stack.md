@@ -28,3 +28,6 @@ Ollama tyree:latest voices NPCs (Sarah/Andreja/Barrett/Sam/VASCO personas), per-
 JSON on disk (persistent across sessions), System.Speech TTS out, llava-phi3 vision reads
 his screen for live location context. Xbox build untouched; no SFSE needed.
 Tradeoff (stated to him): no in-game dialogue-menu hook or lip-sync — everything else real.
+
+## AISS — verified 2026-10-20 (Nexus mod 17392, v3.0)
+Hard requirements (from the mod's own page): SFSE + Cassiopeia Papyrus Extender + Longer Names v2 + one text provider (OpenRouter / Player2 / LM Studio local). SFSE = Steam/GOG only -> Game Pass build cannot load it, structurally. Local route: LM Studio server 127.0.0.1:1234, provider "lmstudio" in Data\AISS\config.json; install via MO2/Vortex, enable x2357aiss.esm, run AISS_Backend.exe, launch through SFSE, use AISS Setup item once in-game. Fork: Steam copy unlocks AISS; Game Pass copy never will. Tyree's word governs the purchase.
