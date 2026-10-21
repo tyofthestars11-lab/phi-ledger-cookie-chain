@@ -20,7 +20,7 @@ MACHINE CROSS-CHECKS (verified against TYREE's setup, 2026-10-20):
      by phi-add-mods.ps1 in this stack.
   §5 Vortex: his build shows v2.9.0 (above the extension's 1.12 LOOT floor).
 
-BRIDGE STATUS: v0.1 transport + contract LIVE (blackboard, event log, outbox loop).
+BRIDGE STATUS: v0.1 transport + contract LIVE (blackboard, event log, outbox loop). PROJECT STATE: ACTIVE — TYREE, 2026-10-20: "I am not giving up on the ai thing." Shelved in Vortex != abandoned; the port continues until AISS wakes on the Game Pass build.
 REMAINDERS (the engineering core, Manus §3): Papyrus-side binding for Cassiopeia calls +
 Store-exe context addresses (NPC/quest/location). Until those land, this package deploys as a
 DATA + TRANSPORT test build: installs clean, dialogue back-end integration completes when the
