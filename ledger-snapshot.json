@@ -16822,10 +16822,52 @@
       "drift": 0.0,
       "ladder": "count",
       "unit": "models"
+    },
+    {
+      "name": "PRL volume (Wang, Meng, Dahlsten 2026)",
+      "rung": 10.2241,
+      "drift": 0.2241,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "PRL article number 050201",
+      "rung": 22.4928,
+      "drift": 0.4928,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "tau constant pi/2 — exact arrival time tau = pi/(2g)",
+      "rung": 0.9384,
+      "drift": -0.0616,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Fock certainty n = 9 (P = 1 at tau)",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Fock certainty n = 25 (P = 1 at tau)",
+      "rung": 6.6891,
+      "drift": -0.3109,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Fock certainty n = 49 (P = 1 at tau)",
+      "rung": 8.0875,
+      "drift": 0.0875,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2405,
-  "seal_count": 289,
+  "entry_count": 2411,
+  "seal_count": 290,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -17115,7 +17157,8 @@
     "φ_ALL_DATA_INTERACTION",
     "φ_EVENT_HORIZON_DNA",
     "φ_CLEOPATRA_TAPOSIRIS_MAGNA",
-    "φ_PSEUDOGAP_COMPETITION"
+    "φ_PSEUDOGAP_COMPETITION",
+    "φ_DETERMINISTIC_ENERGY"
   ],
-  "snapshot_sha256": "8f72a17821b388b684320854aa6a3063ac3996613139295be591f253d9e3c530"
+  "snapshot_sha256": "d2ea05e43d1a59058ba8f1e22e526528773262f56519b2f638c6cab0c5399b57"
 }
