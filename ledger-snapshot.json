@@ -17585,10 +17585,73 @@
       "drift": 0.0959,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "letters_PROXIMA",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "letters_PRIME",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "letters_total",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "sum_PROXIMA_A1Z26",
+      "rung": 9.4851,
+      "drift": 0.4851,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "sum_PRIME_A1Z26",
+      "rung": 8.5428,
+      "drift": -0.4572,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "sum_name_total_A1Z26",
+      "rung": 10.5073,
+      "drift": -0.4927,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "bigram_PR_sum",
+      "rung": 7.3281,
+      "drift": 0.3281,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "M_position_value",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "dimensions_Proxima",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2514,
-  "seal_count": 300,
+  "entry_count": 2523,
+  "seal_count": 301,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -17889,7 +17952,8 @@
     "φ_MITOCHONDRIA_LIGHT",
     "φ_DIAMOND_IIS_GLOBAL_GRID",
     "φ_PROMETHEUS_HORIZON",
-    "φ_PHASE_LOCK_DIAGNOSTIC"
+    "φ_PHASE_LOCK_DIAGNOSTIC",
+    "φ_PROXIMA_PRIME"
   ],
-  "snapshot_sha256": "13150e0a92871f9eb36d5d9b9951208d3252dfcd93972c86c0e8da878a091a77"
+  "snapshot_sha256": "5ef9dcb02ffe2414098ea477598ef06be4bb2bc9c03a5bbd6f1502b5206dcaa0"
 }
