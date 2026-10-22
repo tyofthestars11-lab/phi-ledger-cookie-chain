@@ -1,0 +1,54 @@
+[
+ {
+  "name": "\u03c6",
+  "value": 1.618
+ },
+ {
+  "name": "phi_squared",
+  "value": 2.618
+ },
+ {
+  "name": "theta_phi_golden_angle_deg",
+  "value": 137.5
+ },
+ {
+  "name": "mu_golden_pitch_angle_deg",
+  "value": 17.0324
+ },
+ {
+  "name": "E_photon_visible_500nm_J",
+  "value": 3.97e-19
+ },
+ {
+  "name": "E_photon_NIR_800nm_J",
+  "value": 2.48e-19
+ },
+ {
+  "name": "E_photon_UV_300nm_J",
+  "value": 6.63e-19
+ },
+ {
+  "name": "lambda_red_peak_nm",
+  "value": 620
+ },
+ {
+  "name": "lambda_green_peak_nm",
+  "value": 520
+ },
+ {
+  "name": "lambda_blue_peak_nm",
+  "value": 460
+ },
+ {
+  "name": "dG_ATP_per_molecule_J",
+  "value": 8.3e-20
+ },
+ {
+  "name": "proton_motive_force_V",
+  "value": 0.18
+ },
+ {
+  "name": "eta_conversion_efficiency",
+  "value": 0.15
+ }
+]
