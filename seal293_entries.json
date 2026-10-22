@@ -1,0 +1,22 @@
+[
+ {"name": "phi as written (the golden ratio)", "value": 1.618},
+ {"name": "phi squared as written (phi^2 = phi + 1)", "value": 2.618},
+ {"name": "golden angle theta_phi as written (degrees)", "value": 137.507764},
+ {"name": "golden pitch angle mu as written (degrees)", "value": 17.0324},
+ {"name": "Earth baseline (AU)", "value": 1},
+ {"name": "Jupiter (AU)", "value": 5.204},
+ {"name": "Saturn (AU)", "value": 9.583},
+ {"name": "Uranus (AU)", "value": 19.191},
+ {"name": "Neptune (AU)", "value": 30.07},
+ {"name": "Kuiper Belt inner edge (AU)", "value": 30},
+ {"name": "Kuiper Belt outer region start (AU)", "value": 50},
+ {"name": "termination shock range start (AU)", "value": 80},
+ {"name": "Kuiper Belt outer region / termination shock upper bound (AU)", "value": 100},
+ {"name": "inner Oort Cloud start (AU)", "value": 2000},
+ {"name": "inner Oort Cloud end (AU)", "value": 5000},
+ {"name": "outer Oort Cloud extent (AU)", "value": 100000},
+ {"name": "C/2014 UN271 aphelion (AU)", "value": 31600},
+ {"name": "C/2014 UN271 diameter as measured by Hubble (miles across)", "value": 80},
+ {"name": "TON618 law mass as written: 66B solar masses", "value": 66000000000},
+ {"name": "TON618 law luminosity L as written (W)", "value": 1.4e41}
+]
