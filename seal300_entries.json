@@ -1,0 +1,42 @@
+[
+ {
+  "name": "phi",
+  "value": 1.618
+ },
+ {
+  "name": "phi_squared",
+  "value": 2.618
+ },
+ {
+  "name": "theta_phi_golden_angle_deg",
+  "value": 137.5
+ },
+ {
+  "name": "mu_golden_pitch_angle_deg",
+  "value": 17.0324
+ },
+ {
+  "name": "lambda_foundational_m",
+  "value": 1.6e-06
+ },
+ {
+  "name": "proton_motive_force_V",
+  "value": 0.18
+ },
+ {
+  "name": "d_Fornax_m",
+  "value": 5.87e+23
+ },
+ {
+  "name": "R_s_TON618_horizon_m",
+  "value": 195000000000000.0
+ },
+ {
+  "name": "z_Candidate_D_HotDOG",
+  "value": 0.9
+ },
+ {
+  "name": "z_Candidate_E_starburst",
+  "value": 0.4
+ }
+]
