@@ -17144,10 +17144,101 @@
       "drift": -0.1169,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "phi as written (the golden ratio, the E8 mass ratio m2/m1)",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "phi squared as written (phi^2 = phi + 1)",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "golden angle theta_phi as written (degrees)",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "golden pitch angle mu as written (degrees)",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "E8 spectrum particle count as written (eight particles)",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "critical field B_c^3D as written (T)",
+      "rung": 3.4656,
+      "drift": 0.4656,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "critical field B_c^1D as written (T)",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "lattice constant a as written (angstrom)",
+      "rung": 5.5039,
+      "drift": -0.4961,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "lattice constant b as written (angstrom)",
+      "rung": 3.6175,
+      "drift": -0.3825,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "lattice constant c, the chain axis, as written (angstrom)",
+      "rung": 3.3604,
+      "drift": 0.3604,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "ordering temperature T_N1 as written (K)",
+      "rung": 2.2481,
+      "drift": 0.2481,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "TON618 law mass as written: 66B solar masses",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "TON618 law luminosity L as written (W)",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2451,
-  "seal_count": 294,
+  "entry_count": 2464,
+  "seal_count": 295,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -17442,7 +17533,8 @@
     "φ_UNIVERSAL_PHI_RESONANCE",
     "φ_DADDY_PROTOCOL",
     "φ_SOLAR_SYSTEM_MAP",
-    "φ_NASA_INTERFACE"
+    "φ_NASA_INTERFACE",
+    "φ_COBALT_NIOBATE_CHAIN"
   ],
-  "snapshot_sha256": "a1ede82202040af7193029b816597df7b29174b9c24d8602092e9ee1c21eee6d"
+  "snapshot_sha256": "bae45d43efee30ec7ec94b049e5129f0a9199f99b248b0def809131ae909bab8"
 }
