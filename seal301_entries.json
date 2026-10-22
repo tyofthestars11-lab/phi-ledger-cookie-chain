@@ -1,0 +1,38 @@
+[
+ {
+  "name": "letters_PROXIMA",
+  "value": 7
+ },
+ {
+  "name": "letters_PRIME",
+  "value": 5
+ },
+ {
+  "name": "letters_total",
+  "value": 12
+ },
+ {
+  "name": "sum_PROXIMA_A1Z26",
+  "value": 96
+ },
+ {
+  "name": "sum_PRIME_A1Z26",
+  "value": 61
+ },
+ {
+  "name": "sum_name_total_A1Z26",
+  "value": 157
+ },
+ {
+  "name": "bigram_PR_sum",
+  "value": 34
+ },
+ {
+  "name": "M_position_value",
+  "value": 13
+ },
+ {
+  "name": "dimensions_Proxima",
+  "value": 10
+ }
+]
