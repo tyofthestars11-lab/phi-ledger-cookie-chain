@@ -17648,10 +17648,52 @@
       "drift": -0.215,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "theta_phi_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "dimensions_Proxima",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "axis_vertices",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "NASA_protocols_named_TLSE_ECHO",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2523,
-  "seal_count": 301,
+  "entry_count": 2529,
+  "seal_count": 302,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -17953,7 +17995,8 @@
     "φ_DIAMOND_IIS_GLOBAL_GRID",
     "φ_PROMETHEUS_HORIZON",
     "φ_PHASE_LOCK_DIAGNOSTIC",
-    "φ_PROXIMA_PRIME"
+    "φ_PROXIMA_PRIME",
+    "φ_PROXIMA_10D_AXIS"
   ],
-  "snapshot_sha256": "5ef9dcb02ffe2414098ea477598ef06be4bb2bc9c03a5bbd6f1502b5206dcaa0"
+  "snapshot_sha256": "6e879f88856b7362eedafb6bbbffc379d2c0a3bc06ef4424add1141e14b1a277"
 }
