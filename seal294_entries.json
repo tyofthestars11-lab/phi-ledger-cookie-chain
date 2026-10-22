@@ -1,0 +1,10 @@
+[
+ {"name": "phi as written (the golden ratio)", "value": 1.618},
+ {"name": "phi squared as written (phi^2 = phi + 1)", "value": 2.618},
+ {"name": "golden angle theta_phi as written (degrees)", "value": 137.507764},
+ {"name": "golden pitch angle mu as written (degrees)", "value": 17.0324},
+ {"name": "Voyager 1 / Oort outer phase separation delta-theta as written (degrees)", "value": 17.892289},
+ {"name": "Voyager 1 / Oort outer correlation C as written", "value": 0.951636},
+ {"name": "TON618 law mass as written: 66B solar masses", "value": 66000000000},
+ {"name": "TON618 law luminosity L as written (W)", "value": 1.4e41}
+]
