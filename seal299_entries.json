@@ -1,0 +1,38 @@
+[
+ {
+  "name": "phi",
+  "value": 1.618
+ },
+ {
+  "name": "phi_squared",
+  "value": 2.618
+ },
+ {
+  "name": "theta_phi_golden_angle_deg",
+  "value": 137.5
+ },
+ {
+  "name": "mu_golden_pitch_angle_deg",
+  "value": 17.0324
+ },
+ {
+  "name": "F_OTOC_zero_entropy_limit",
+  "value": 1.0
+ },
+ {
+  "name": "N_qubits_Willow_grid",
+  "value": 105
+ },
+ {
+  "name": "alpha_axis_phi",
+  "value": 1.6180339887
+ },
+ {
+  "name": "beta_axis_phi_squared",
+  "value": 2.6180339887
+ },
+ {
+  "name": "R_s_TON618_horizon_m",
+  "value": 195000000000000.0
+ }
+]
