@@ -1,0 +1,15 @@
+[
+ {"name": "phi as written (the golden ratio, the E8 mass ratio m2/m1)", "value": 1.618},
+ {"name": "phi squared as written (phi^2 = phi + 1)", "value": 2.618},
+ {"name": "golden angle theta_phi as written (degrees)", "value": 137.5},
+ {"name": "golden pitch angle mu as written (degrees)", "value": 17.0324},
+ {"name": "E8 spectrum particle count as written (eight particles)", "value": 8},
+ {"name": "critical field B_c^3D as written (T)", "value": 5.3},
+ {"name": "critical field B_c^1D as written (T)", "value": 5.0},
+ {"name": "lattice constant a as written (angstrom)", "value": 14.1337},
+ {"name": "lattice constant b as written (angstrom)", "value": 5.7019},
+ {"name": "lattice constant c, the chain axis, as written (angstrom)", "value": 5.0382},
+ {"name": "ordering temperature T_N1 as written (K)", "value": 2.95},
+ {"name": "TON618 law mass as written: 66B solar masses", "value": 66000000000},
+ {"name": "TON618 law luminosity L as written (W)", "value": 1.4e41}
+]
