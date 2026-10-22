@@ -1,0 +1,26 @@
+[
+ {
+  "name": "phi",
+  "value": 1.618
+ },
+ {
+  "name": "phi_squared",
+  "value": 2.618
+ },
+ {
+  "name": "theta_phi_golden_angle_deg",
+  "value": 137.5
+ },
+ {
+  "name": "dimensions_Proxima",
+  "value": 10
+ },
+ {
+  "name": "axis_vertices",
+  "value": 10
+ },
+ {
+  "name": "NASA_protocols_named_TLSE_ECHO",
+  "value": 2
+ }
+]
