@@ -17977,10 +17977,73 @@
       "drift": -0.0,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "jwst_aperture_m",
+      "rung": 3.8898,
+      "drift": -0.1102,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "great_attractor_distance_ly",
+      "rung": 40.1839,
+      "drift": 0.1839,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "bootes_void_diameter_ly",
+      "rung": 40.7609,
+      "drift": -0.2391,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "bootes_void_distance_ly",
+      "rung": 42.3235,
+      "drift": 0.3235,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "cosmic_web_filament_length_ly",
+      "rung": 30.9928,
+      "drift": -0.0072,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "jades_gs_z14_0_redshift",
+      "rung": 5.5312,
+      "drift": -0.4688,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "gn_z11_redshift",
+      "rung": 4.9061,
+      "drift": -0.0939,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "great_wall_scale_ly",
+      "rung": 47.8497,
+      "drift": -0.1503,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "first_light_lookback_ly",
+      "rung": 48.4887,
+      "drift": 0.4887,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2570,
-  "seal_count": 307,
+  "entry_count": 2579,
+  "seal_count": 308,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18288,7 +18351,8 @@
     "φ_DIAMOND_LASER_THRESHOLD",
     "φ_BOUND_STATE_CONTINUUM_METAL",
     "φ_ONE_POSITRON_CYCLOTRON",
-    "φ_MAJORANA_ECHO"
+    "φ_MAJORANA_ECHO",
+    "φ_JWST_DIRECTIVE"
   ],
-  "snapshot_sha256": "e1f412fd54f1f805d027997280ec713f4994a6e758c57ac97c068f1e09811bd5"
+  "snapshot_sha256": "dd12d1fe19d0da9f17c5353f5c339ecfd501530c846fed5ffa569f32890bc93a"
 }
