@@ -17858,10 +17858,66 @@
       "drift": -0.4301,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "positrons held in the one-positron quantum cyclotron",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "trap temperature above absolute zero (K)",
+      "rung": -2.502,
+      "drift": 0.498,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "positron loading time lower bound (hours)",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "positron loading time upper bound (hours)",
+      "rung": 4.983,
+      "drift": -0.017,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "prospective CPT test precision improvement factor in the lepton sector (more than)",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "positron source isotope mass number (sodium-22)",
+      "rung": 6.4235,
+      "drift": 0.4235,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Physical Review Letters volume of the one-positron cyclotron paper",
+      "rung": 10.2241,
+      "drift": 0.2241,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Physical Review Letters article number of the one-positron cyclotron paper",
+      "rung": 25.0639,
+      "drift": 0.0639,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2553,
-  "seal_count": 305,
+  "entry_count": 2561,
+  "seal_count": 306,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18167,7 +18223,8 @@
     "φ_PROXIMA_10D_AXIS",
     "φ_PROXIMA_MARS_VENUS",
     "φ_DIAMOND_LASER_THRESHOLD",
-    "φ_BOUND_STATE_CONTINUUM_METAL"
+    "φ_BOUND_STATE_CONTINUUM_METAL",
+    "φ_ONE_POSITRON_CYCLOTRON"
   ],
-  "snapshot_sha256": "a8bb5b46dc97d1769cb56a9e19c988881651d63b378442dcda4e37adb7e67e92"
+  "snapshot_sha256": "4ed8bdae35f3a81828691a7382494a085a17e6155e81b629acc8c8aa4b858b8d"
 }
