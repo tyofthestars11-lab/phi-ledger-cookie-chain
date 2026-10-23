@@ -17718,10 +17718,59 @@
       "drift": -0.4985,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "theta_phi_golden_angle_deg",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Mars_life_epoch_years_ago",
+      "rung": 45.9456,
+      "drift": -0.0544,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Venus_life_epoch_years_ago",
+      "rung": 43.0647,
+      "drift": 0.0647,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "clips_parsed_Mars_Venus",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "named_proteins_enzymes_Venusian_DNA",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2533,
-  "seal_count": 302,
+  "entry_count": 2540,
+  "seal_count": 303,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18024,7 +18073,8 @@
     "φ_PROMETHEUS_HORIZON",
     "φ_PHASE_LOCK_DIAGNOSTIC",
     "φ_PROXIMA_PRIME",
-    "φ_PROXIMA_10D_AXIS"
+    "φ_PROXIMA_10D_AXIS",
+    "φ_PROXIMA_MARS_VENUS"
   ],
-  "snapshot_sha256": "242dbd7eb9d9981f5e44993a9d1659a687a27176f5095e2631a6089fab02a6b3"
+  "snapshot_sha256": "95c848e70711837aa587a6c56a2285006f7b6ea22052f042261e0533324b002c"
 }
