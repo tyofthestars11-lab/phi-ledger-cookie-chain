@@ -1,0 +1,10 @@
+[
+ {"name": "positrons held in the one-positron quantum cyclotron", "value": 1},
+ {"name": "trap temperature above absolute zero (K)", "value": 0.3},
+ {"name": "positron loading time lower bound (hours)", "value": 8},
+ {"name": "positron loading time upper bound (hours)", "value": 11},
+ {"name": "prospective CPT test precision improvement factor in the lepton sector (more than)", "value": 30},
+ {"name": "positron source isotope mass number (sodium-22)", "value": 22},
+ {"name": "Physical Review Letters volume of the one-positron cyclotron paper", "value": 137},
+ {"name": "Physical Review Letters article number of the one-positron cyclotron paper", "value": 173001}
+]

@@ -1,4 +1,4 @@
-# Job 004 v2 — FAST targeted game-space scan (report only, deletes NOTHING)
+# Job 009 (formerly 004) v2 — FAST targeted game-space scan (report only, deletes NOTHING)
 
 v1 (full recursive C: crawl) hangs the local model on "thinking" — DO NOT run a full-drive crawl.
 This version checks known game locations directly. Fast, small output.
@@ -14,7 +14,7 @@ This version checks known game locations directly. Fast, small output.
    - C:\Program Files (x86)\Steam\steamapps\common
    Use ONE PowerShell command per folder:
    Get-ChildItem '<folder>' -Directory | ForEach-Object { $s = (Get-ChildItem $_.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum; "{0} = {1:N1} GB" -f $_.Name, ($s/1GB) }
-3. Write the lines to phi-dlam/results/004-c-drive-space-scan.result.md, commit + push.
+3. Write the lines to phi-dlam/results/009-c-drive-space-scan.result.md, commit + push.
 
 ## Rules
 - REPORT ONLY — delete/move/uninstall nothing.

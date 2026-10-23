@@ -1,0 +1,9 @@
+[
+ {"name": "optical contrast demonstrated (percent)", "value": 100},
+ {"name": "sensitivity per magnetic-field vector component, photon shot-noise limit (fT per root Hz, below)", "value": 400},
+ {"name": "sensitivity-to-dynamic-range ratio improvement factor (up to)", "value": 590},
+ {"name": "laser readout output power (mW, up to)", "value": 50},
+ {"name": "magnetic-field vector components measured", "value": 3},
+ {"name": "media in the two-media laser threshold magnetometer", "value": 2},
+ {"name": "years from theoretical model to experimental demonstration (a decade)", "value": 10}
+]

@@ -1,0 +1,11 @@
+[
+{"name": "majorana_1_qubits", "value": 8},
+{"name": "majorana_1_design_target_qubits", "value": 1000000},
+{"name": "majorana_2_qubit_lifetime_s", "value": 20},
+{"name": "majorana_2_improvement_factor", "value": 1000},
+{"name": "majorana_2_target_year", "value": 2029},
+{"name": "fibonacci_fusion_dimension_12_taus", "value": 144},
+{"name": "fibonacci_growth_ratio_144_over_89", "value": 1.617978},
+{"name": "golden_qubit_p0_one_over_phi_squared", "value": 0.3819660113},
+{"name": "golden_qubit_p1_one_over_phi", "value": 0.6180339887}
+]
