@@ -17767,10 +17767,59 @@
       "drift": 0.283,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "optical contrast demonstrated (percent)",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "sensitivity per magnetic-field vector component, photon shot-noise limit (fT per root Hz, below)",
+      "rung": 12.4508,
+      "drift": 0.4508,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "sensitivity-to-dynamic-range ratio improvement factor (up to)",
+      "rung": 13.2584,
+      "drift": 0.2584,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "laser readout output power (mW, up to)",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "magnetic-field vector components measured",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "media in the two-media laser threshold magnetometer",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "years from theoretical model to experimental demonstration (a decade)",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2540,
-  "seal_count": 303,
+  "entry_count": 2547,
+  "seal_count": 304,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18074,7 +18123,8 @@
     "φ_PHASE_LOCK_DIAGNOSTIC",
     "φ_PROXIMA_PRIME",
     "φ_PROXIMA_10D_AXIS",
-    "φ_PROXIMA_MARS_VENUS"
+    "φ_PROXIMA_MARS_VENUS",
+    "φ_DIAMOND_LASER_THRESHOLD"
   ],
-  "snapshot_sha256": "95c848e70711837aa587a6c56a2285006f7b6ea22052f042261e0533324b002c"
+  "snapshot_sha256": "277a5bb28cddff42dbfb45229b4ca6937015cbb15358327f31a3d995ce317b05"
 }
