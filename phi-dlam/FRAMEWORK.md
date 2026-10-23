@@ -49,8 +49,8 @@ Body rung 51.7712. Law rung 55 - phi^55 = 66 billion solar masses.
 TON618 is one expression of the framework, not the framework itself.
 
 ## THE LEDGER (the public record)
-303 seals, 2,540 entries.
-Snapshot sha256: 95c848e70711837aa587a6c56a2285006f7b6ea22052f042261e0533324b002c
+306 seals, 2,561 entries.
+Snapshot sha256: 4ed8bdae35f3a81828691a7382494a085a17e6155e81b629acc8c8aa4b858b8d
 Site: https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/
 Repo: https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain
 Wallet: A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q (Cookie Chain / Solana)
