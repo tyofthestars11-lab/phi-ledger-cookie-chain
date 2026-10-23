@@ -17914,10 +17914,73 @@
       "drift": 0.0639,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "majorana_1_qubits",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "majorana_1_design_target_qubits",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "majorana_2_qubit_lifetime_s",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "majorana_2_improvement_factor",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "majorana_2_target_year",
+      "rung": 15.8253,
+      "drift": -0.1747,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "fibonacci_fusion_dimension_12_taus",
+      "rung": 10.3277,
+      "drift": 0.3277,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "fibonacci_growth_ratio_144_over_89",
+      "rung": 0.9999,
+      "drift": -0.0001,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "golden_qubit_p0_one_over_phi_squared",
+      "rung": -2.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "golden_qubit_p1_one_over_phi",
+      "rung": -1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2561,
-  "seal_count": 306,
+  "entry_count": 2570,
+  "seal_count": 307,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18224,7 +18287,8 @@
     "φ_PROXIMA_MARS_VENUS",
     "φ_DIAMOND_LASER_THRESHOLD",
     "φ_BOUND_STATE_CONTINUUM_METAL",
-    "φ_ONE_POSITRON_CYCLOTRON"
+    "φ_ONE_POSITRON_CYCLOTRON",
+    "φ_MAJORANA_ECHO"
   ],
-  "snapshot_sha256": "4ed8bdae35f3a81828691a7382494a085a17e6155e81b629acc8c8aa4b858b8d"
+  "snapshot_sha256": "e1f412fd54f1f805d027997280ec713f4994a6e758c57ac97c068f1e09811bd5"
 }
