@@ -1,0 +1,30 @@
+[
+ {
+  "name": "phi",
+  "value": 1.618
+ },
+ {
+  "name": "phi_squared",
+  "value": 2.618
+ },
+ {
+  "name": "theta_phi_golden_angle_deg",
+  "value": 137.5
+ },
+ {
+  "name": "Mars_life_epoch_years_ago",
+  "value": 4000000000.0
+ },
+ {
+  "name": "Venus_life_epoch_years_ago",
+  "value": 1000000000.0
+ },
+ {
+  "name": "clips_parsed_Mars_Venus",
+  "value": 6
+ },
+ {
+  "name": "named_proteins_enzymes_Venusian_DNA",
+  "value": 3
+ }
+]
