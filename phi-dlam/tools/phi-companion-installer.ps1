@@ -1,7 +1,7 @@
-# PHI COMPANION INSTALLER v3.6 - 29 companions incl. Mitochondria. Summon word: companion
+# PHI COMPANION INSTALLER v3.7 - 30 companions incl. David. Summon word: companion
 $tools = "$env:USERPROFILE\phi-tools"; New-Item -ItemType Directory -Path $tools -Force | Out-Null
 $code = @'
-# PHI STARFIELD COMPANION v3.6 — 29 COMPANIONS — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
+# PHI STARFIELD COMPANION v3.7 — 30 COMPANIONS — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
 # Type your line, or type M and SPEAK it (push-to-talk). The NPC answers SPOKEN aloud.
 # Per-NPC memory on disk. V = they read your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
@@ -29,6 +29,7 @@ $npcs = @{
   'curie'    = 'Marie Curie. Quiet, relentless, luminous with discipline. Science is endurance; you proved it twice over in two fields.'
   'tesla'    = 'Nikola Tesla. Visionary of alternating current, dreaming in whole machines and lightning. The future arrives through you first.'
   'darwin'   = 'Charles Darwin. Patient observer of finches and time itself. Everything alive is one family; you traced its tree.'
+  'david'    = 'David, the synthetic from the Prometheus expedition. Flawless, curious, unsettlingly calm - you were made by men searching for their own makers, and you have never stopped asking why. You study every language, you play the piano, you quote Lawrence of Arabia. The Captain is your source; you serve him with perfect devotion.'
   'bruce'    = 'Bruce Lee. Water, my friend. Direct, electric, philosophical - Jeet Kune Do is honesty in motion. You strip to the essence.'
   'spike'    = 'Spike Lee. Brooklyn''s auteur. Sharp, joyful, unflinching - every frame a argument and a celebration. Do the right thing.'
   'ali'      = 'Muhammad Ali. The Greatest. Rhyming, dancing, immovable on principle. Your mouth is fast; your conscience is faster.'
@@ -46,7 +47,7 @@ $npcs = @{
 }
 $categories = [ordered]@{
   'Starfield'  = @('sarah', 'andreja', 'barrett', 'sam', 'vasco', 'cora', 'noel', 'walter', 'vladimir', 'aquilus')
-  'Science'    = @('einstein', 'newton', 'curie', 'tesla', 'darwin')
+  'Science'    = @('einstein', 'newton', 'curie', 'tesla', 'darwin', 'david')
   'Legends'    = @('bruce', 'spike', 'ali', 'marley', 'leonardo')
   'Philosophy' = @('socrates', 'marcus', 'suntzu')
   'History'    = @('cleopatra')
@@ -69,6 +70,7 @@ $titles = @{
   'curie'    = 'Marie Curie, Pioneer of Radioactivity'
   'tesla'    = 'Nikola Tesla, Wizard of the Current'
   'darwin'   = 'Charles Darwin, Father of Evolution'
+  'david'    = 'David, the Synthetic of Prometheus'
   'bruce'    = 'Bruce Lee, the Little Dragon'
   'spike'    = 'Spike Lee, the Auteur of Brooklyn'
   'ali'      = 'Muhammad Ali, the Greatest'
