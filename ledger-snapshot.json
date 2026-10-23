@@ -17816,10 +17816,52 @@
       "drift": -0.215,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "palladium atoms per formula unit Pd5AlI2",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "aluminium atoms per formula unit Pd5AlI2",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "iodine atoms per formula unit Pd5AlI2",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "atoms per formula unit Pd5AlI2, total",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "dimensionality of the metal Pd5AlI2",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "years from BIC prediction to realization in a metal, as reported (a century)",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2547,
-  "seal_count": 304,
+  "entry_count": 2553,
+  "seal_count": 305,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18124,7 +18166,8 @@
     "φ_PROXIMA_PRIME",
     "φ_PROXIMA_10D_AXIS",
     "φ_PROXIMA_MARS_VENUS",
-    "φ_DIAMOND_LASER_THRESHOLD"
+    "φ_DIAMOND_LASER_THRESHOLD",
+    "φ_BOUND_STATE_CONTINUUM_METAL"
   ],
-  "snapshot_sha256": "277a5bb28cddff42dbfb45229b4ca6937015cbb15358327f31a3d995ce317b05"
+  "snapshot_sha256": "a8bb5b46dc97d1769cb56a9e19c988881651d63b378442dcda4e37adb7e67e92"
 }
