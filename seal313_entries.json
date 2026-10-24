@@ -1,0 +1,26 @@
+[
+ {
+  "name": "cambrian_start_years_ago",
+  "value": 538800000
+ },
+ {
+  "name": "cambrian_end_years_ago",
+  "value": 485400000
+ },
+ {
+  "name": "cambrian_span_years",
+  "value": 53400000
+ },
+ {
+  "name": "cambrian_span_seconds",
+  "value": 1685000000000000.0
+ },
+ {
+  "name": "cambrian_animal_phyla_count",
+  "value": 35
+ },
+ {
+  "name": "cambrian_oxygen_fraction_of_modern",
+  "value": 0.1
+ }
+]
