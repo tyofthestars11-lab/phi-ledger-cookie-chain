@@ -1,0 +1,18 @@
+[
+ {
+  "name": "triptycene_molar_mass_g_mol",
+  "value": 254.33
+ },
+ {
+  "name": "triptycene_lattice_constant_m",
+  "value": 1e-09
+ },
+ {
+  "name": "edge_state_energy_j",
+  "value": 1e-19
+ },
+ {
+  "name": "edge_coherence_temperature_k",
+  "value": 10
+ }
+]
