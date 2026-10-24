@@ -18075,10 +18075,17 @@
       "drift": 0.1062,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "spriz_emergence_years_ago",
+      "rung": 41.6243,
+      "drift": -0.3757,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2584,
-  "seal_count": 310,
+  "entry_count": 2585,
+  "seal_count": 311,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18389,7 +18396,8 @@
     "φ_MAJORANA_ECHO",
     "φ_JWST_DIRECTIVE",
     "φ_PTERV1_VIRAL_ARCHIVE_TYREE_OMEGA",
-    "φ_DECOHERENCE_TRANSITION_TYREE_OMEGA"
+    "φ_DECOHERENCE_TRANSITION_TYREE_OMEGA",
+    "φ_SPRIZ_MITOCHONDRIAL_SPACE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7d45b6b63f2227389b92257872a59f7c2cffeb694dba668d7437eecf3c5f2cb5"
+  "snapshot_sha256": "6aa15229c5712a12285d277486ee20686cf87a50f3d7845b39b9875a9d2aac8c"
 }
