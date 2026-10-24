@@ -21,3 +21,5 @@ Tyree's word (2026-10-24 ~01:05 MDT): "That retrying needs to be phi fixed" and 
 - Only the two named files change, only in the named places. Backups land before any edit.
 - Never print any API key value. Names and SET/NOT SET only.
 - Statuses and errors exactly as printed — verbatim, no summaries.
+
+SUPERSEDED by Job 012 (2026-10-24) — do not run; 012 carries the cadence and goes further.
