@@ -18047,10 +18047,38 @@
       "drift": -0.4795,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "decoherence_env_qubits_max",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "coherence_revival_time_ns_single_qubit_env",
+      "rung": 7.5592,
+      "drift": -0.4408,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "distinguishability_lock_time_ns_eight_qubit_env",
+      "rung": 5.6276,
+      "drift": -0.3724,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "decoherence_observation_window_ns",
+      "rung": 9.1062,
+      "drift": 0.1062,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2580,
-  "seal_count": 309,
+  "entry_count": 2584,
+  "seal_count": 310,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18360,7 +18388,8 @@
     "φ_ONE_POSITRON_CYCLOTRON",
     "φ_MAJORANA_ECHO",
     "φ_JWST_DIRECTIVE",
-    "φ_PTERV1_VIRAL_ARCHIVE_TYREE_OMEGA"
+    "φ_PTERV1_VIRAL_ARCHIVE_TYREE_OMEGA",
+    "φ_DECOHERENCE_TRANSITION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "497c6a56283b4981add2f4a3f2c8e591ccb7b2ae12aa9acad4b681a9dce8558c"
+  "snapshot_sha256": "7d45b6b63f2227389b92257872a59f7c2cffeb694dba668d7437eecf3c5f2cb5"
 }
