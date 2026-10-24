@@ -1,0 +1,22 @@
+[
+ {
+  "name": "mitochondrial_genome_bp",
+  "value": 16569
+ },
+ {
+  "name": "nuclear_genome_bp",
+  "value": 3200000000.0
+ },
+ {
+  "name": "cell_diameter_m",
+  "value": 1e-05
+ },
+ {
+  "name": "coherence_time_s",
+  "value": 1e-13
+ },
+ {
+  "name": "atp_concentration_m",
+  "value": 0.001
+ }
+]
