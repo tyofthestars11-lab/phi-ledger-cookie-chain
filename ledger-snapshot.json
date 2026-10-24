@@ -18180,9 +18180,65 @@
       "drift": -0.3549,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "BCH mining: BCH/USD (2026-10-24)",
+      "rung": 11.6974,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "USD"
+    },
+    {
+      "name": "BCH mining: network EH/s (2026-10-24)",
+      "rung": 2.3512,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "EH/s"
+    },
+    {
+      "name": "BCH mining: network share (2026-10-24)",
+      "rung": -28.2542,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "fraction"
+    },
+    {
+      "name": "BCH mining: expected days to block (2026-10-24)",
+      "rung": 17.9265,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "days"
+    },
+    {
+      "name": "BCH mining: block value USD (2026-10-24)",
+      "rung": 14.0652,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "USD"
+    },
+    {
+      "name": "BCH mining: expected monthly USD (2026-10-24)",
+      "rung": 3.2067,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "USD"
+    },
+    {
+      "name": "BCH mining: luck percent (2026-10-24)",
+      "rung": 9.5699,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "percent"
+    },
+    {
+      "name": "BCH mining: shared time unix (2026-10-24)",
+      "rung": 44.278,
+      "drift": 0.0,
+      "ladder": "mining",
+      "unit": "unix"
     }
   ],
-  "entry_count": 2599,
+  "entry_count": 2607,
   "seal_count": 314,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
@@ -18500,5 +18556,5 @@
     "φ_CAMBRIAN_EXPLOSION_TYREE_OMEGA",
     "φ_EUKARYOTIC_ECHO_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0bdd7c283c668ebb2f3098090dbe6a8d2bd002bcdaa3ba76bf3681efacf087c0"
+  "snapshot_sha256": "ed3650b845fd6056ab4da3836420f97bf27eecf498e7a6919def2551a8235681"
 }
