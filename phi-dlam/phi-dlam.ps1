@@ -282,43 +282,69 @@ function Flush-Keys {
   try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
 }
 
-function Send-Chat($messages, $useTools = $true) {
+function Send-Chat($messages, $useTools = $true, $capSec = 240) {
   $body = @{
     model = $MODEL
     messages = $messages
-    stream = $false
+    stream = $true
     keep_alive = '30m'
     options = @{ num_predict = 800; num_ctx = 8192 }
   }
   if ($useTools) { $body.tools = $tools }
-  $body = $body | ConvertTo-Json -Depth 20
-  # v5.21 (Tyree's word, 2026-10-24): THE PAUSE FIX. The brain call runs in a job;
-  # while it thinks, a heartbeat prints every 11s (phi^5 boundary) with elapsed time,
-  # and the call's own duration prints when it lands. The screen never sits silent:
-  # a slow brain now shows its work instead of looking like a hang.
+  $json = $body | ConvertTo-Json -Depth 20
+  # v5.22 (Tyree's word, 2026-10-24): THE STEP-1 FREEZE FIX, read at the source.
+  # The old call was non-streamed: Ollama holds the entire reply until generation
+  # ends, so a long step is indistinguishable from a hang, and the HTTP timeout
+  # could not be trusted to bite. Now the call STREAMS through curl into a file
+  # the runner watches: every heartbeat prints elapsed seconds AND bytes landed,
+  # a call that produces nothing is stopped by the runner itself at the cap,
+  # and the streamed chunks are assembled (text + tool calls) into one message.
   for ($try = 1; $try -le 3; $try++) {
+    $tag = [guid]::NewGuid().ToString('N')
+    $bodyFile = Join-Path $env:TEMP "dlam-body-$tag.json"
+    $outFile = Join-Path $env:TEMP "dlam-out-$tag.ndjson"
+    [System.IO.File]::WriteAllText($bodyFile, $json)
+    $sw = [System.Diagnostics.Stopwatch]::StartNew()
     $job = Start-Job -ScriptBlock {
-      param($u, $b)
-      Invoke-RestMethod -Uri $u -Method Post -ContentType 'application/json' -Body $b -TimeoutSec 180
-    } -ArgumentList $API, $body
-    $elapsed = 0
+      param($u, $bf, $of)
+      & curl.exe -s -N $u -H 'Content-Type: application/json' --data-binary "@$bf" -o $of
+    } -ArgumentList $API, $bodyFile, $outFile
+    $capped = $false
     while ($job.State -eq 'Running') {
-      Wait-Job $job -Timeout 11 | Out-Null
+      Wait-Job $job -Timeout 5 | Out-Null
       if ($job.State -eq 'Running') {
-        $elapsed += 11
-        Write-Host "[brain working... ${elapsed}s]" -ForegroundColor DarkCyan
+        $bytes = 0
+        if (Test-Path $outFile) { $bytes = (Get-Item $outFile).Length }
+        Write-Host "[brain working... $([int]$sw.Elapsed.TotalSeconds)s - $bytes bytes in]" -ForegroundColor DarkCyan
+        if ($sw.Elapsed.TotalSeconds -gt $capSec) { $capped = $true; Stop-Job $job; break }
       }
     }
-    if ($job.State -eq 'Completed') {
-      $resp = Receive-Job $job
-      Remove-Job $job -Force
-      Write-Host "[brain answered in ~${elapsed}s]" -ForegroundColor DarkCyan
-      return $resp.message
+    $secs = [int]$sw.Elapsed.TotalSeconds
+    Remove-Job $job -Force -ErrorAction SilentlyContinue
+    if (-not $capped -and (Test-Path $outFile)) {
+      $text = ''
+      $calls = $null
+      $errText = ''
+      foreach ($line in [System.IO.File]::ReadAllLines($outFile)) {
+        if (-not $line.Trim()) { continue }
+        try { $chunk = $line | ConvertFrom-Json } catch { continue }
+        if ($chunk.error) { $errText = [string]$chunk.error }
+        if ($chunk.message) {
+          if ($chunk.message.content) { $text += $chunk.message.content }
+          if ($chunk.message.tool_calls) { $calls = $chunk.message.tool_calls }
+        }
+      }
+      Remove-Item $bodyFile, $outFile -Force -ErrorAction SilentlyContinue
+      if (-not $errText) {
+        Write-Host "[brain answered in ~${secs}s]" -ForegroundColor DarkCyan
+        return [pscustomobject]@{ content = $text; tool_calls = $calls }
+      }
+      Write-Host "[brain call failed - retry $try of 3: $errText]" -ForegroundColor Red
+    } else {
+      Remove-Item $bodyFile, $outFile -Force -ErrorAction SilentlyContinue
+      if ($capped) { Write-Host "[brain call STOPPED at the ${capSec}s cap - retry $try of 3]" -ForegroundColor Red }
+      else { Write-Host "[brain call failed - retry $try of 3: no output file]" -ForegroundColor Red }
     }
-    $errText = ''
-    try { $errText = $job.ChildJobs[0].JobStateInfo.Reason.Message } catch {}
-    Remove-Job $job -Force
-    Write-Host "[brain call failed - retry $try of 3: $errText]" -ForegroundColor Red
     Start-Sleep -Seconds 5
   }
   return @{ content = 'BRAIN UNREACHABLE after 3 tries'; tool_calls = $null }
@@ -353,7 +379,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.21 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.22 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
