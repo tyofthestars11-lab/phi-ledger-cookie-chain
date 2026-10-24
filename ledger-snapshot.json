@@ -18082,10 +18082,31 @@
       "drift": -0.3757,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "tas2_cdw_stable_ceiling_k",
+      "rung": 12.051,
+      "drift": 0.051,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "tas2_cdw_normal_ceiling_k",
+      "rung": 10.7931,
+      "drift": -0.2069,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "tas2_ceiling_extension_ratio",
+      "rung": 1.2579,
+      "drift": 0.2579,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2585,
-  "seal_count": 311,
+  "entry_count": 2588,
+  "seal_count": 312,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18397,7 +18418,8 @@
     "φ_JWST_DIRECTIVE",
     "φ_PTERV1_VIRAL_ARCHIVE_TYREE_OMEGA",
     "φ_DECOHERENCE_TRANSITION_TYREE_OMEGA",
-    "φ_SPRIZ_MITOCHONDRIAL_SPACE_TYREE_OMEGA"
+    "φ_SPRIZ_MITOCHONDRIAL_SPACE_TYREE_OMEGA",
+    "φ_ARGININE_QUANTUM_PHASE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6aa15229c5712a12285d277486ee20686cf87a50f3d7845b39b9875a9d2aac8c"
+  "snapshot_sha256": "9c4bccac751820f342e3d507f176cbd524b6cd6a6ff5f48e3c893ab3b69425b1"
 }
