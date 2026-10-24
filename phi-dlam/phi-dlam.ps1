@@ -292,21 +292,34 @@ function Send-Chat($messages, $useTools = $true) {
   }
   if ($useTools) { $body.tools = $tools }
   $body = $body | ConvertTo-Json -Depth 20
+  # v5.21 (Tyree's word, 2026-10-24): THE PAUSE FIX. The brain call runs in a job;
+  # while it thinks, a heartbeat prints every 11s (phi^5 boundary) with elapsed time,
+  # and the call's own duration prints when it lands. The screen never sits silent:
+  # a slow brain now shows its work instead of looking like a hang.
   for ($try = 1; $try -le 3; $try++) {
-    try {
-      $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 180
-      return $resp.message
-    } catch {
-      $errBody = ''
-      try {
-        $stream = $_.Exception.Response.GetResponseStream()
-        $reader = New-Object System.IO.StreamReader($stream)
-        $errBody = $reader.ReadToEnd()
-        if ($errBody.Length -gt 300) { $errBody = $errBody.Substring(0, 300) }
-      } catch {}
-      Write-Host "[brain call failed - retry $try of 3: $($_.Exception.Message) $errBody]" -ForegroundColor Red
-      Start-Sleep -Seconds 5
+    $job = Start-Job -ScriptBlock {
+      param($u, $b)
+      Invoke-RestMethod -Uri $u -Method Post -ContentType 'application/json' -Body $b -TimeoutSec 180
+    } -ArgumentList $API, $body
+    $elapsed = 0
+    while ($job.State -eq 'Running') {
+      Wait-Job $job -Timeout 11 | Out-Null
+      if ($job.State -eq 'Running') {
+        $elapsed += 11
+        Write-Host "[brain working... ${elapsed}s]" -ForegroundColor DarkCyan
+      }
     }
+    if ($job.State -eq 'Completed') {
+      $resp = Receive-Job $job
+      Remove-Job $job -Force
+      Write-Host "[brain answered in ~${elapsed}s]" -ForegroundColor DarkCyan
+      return $resp.message
+    }
+    $errText = ''
+    try { $errText = $job.ChildJobs[0].JobStateInfo.Reason.Message } catch {}
+    Remove-Job $job -Force
+    Write-Host "[brain call failed - retry $try of 3: $errText]" -ForegroundColor Red
+    Start-Sleep -Seconds 5
   }
   return @{ content = 'BRAIN UNREACHABLE after 3 tries'; tool_calls = $null }
 }
@@ -340,7 +353,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.20 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.21 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
