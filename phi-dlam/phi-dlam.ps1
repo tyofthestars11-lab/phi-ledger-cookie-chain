@@ -191,10 +191,26 @@ $tools = @(
   }
 )
 
+function Test-CredentialGrab($text) {
+  # v5.23 RUNNER LAW (Tyree's photo, 2026-10-24): the local brain, told to "use
+  # google tokens api keys", improvised a Get-Credential prompt writing
+  # ~/.google_token.txt. That road is closed in code, permanently: no tool call
+  # may prompt for, read, convert, or store passwords, tokens, or API keys.
+  if ($null -eq $text) { return $false }
+  $t = [string]$text
+  if ($t -match 'get-credential') { return $true }
+  if ($t -match 'convertfrom-securestring') { return $true }
+  if ($t -match 'google_token') { return $true }
+  if ($t -match '_token\.txt') { return $true }
+  if ($t -match 'read-host[^\n]*-assecurestring') { return $true }
+  return $false
+}
+
 function Invoke-Tool($name, $a) {
   try {
     switch ($name) {
       'run_powershell' {
+        if (Test-CredentialGrab $a.command) { return 'BLOCKED BY RUNNER LAW: credential capture is forbidden - no prompting for, reading, or storing passwords, tokens, or API keys. The ARTEMIS key already lives in ARTEMIS''s own .env. Change roads.' }
         $out = Invoke-Expression $a.command 2>&1 | Out-String
         if ([string]::IsNullOrWhiteSpace($out)) {
           return 'NO OUTPUT - the command printed nothing. Do NOT invent a value. Run a corrected command that PRINTS its answer, or tell Tyree the value is UNREAD.'
@@ -209,6 +225,7 @@ function Invoke-Tool($name, $a) {
         return (Get-Content -Path $a.path -Raw -ErrorAction Stop)
       }
       'write_file' {
+        if ((Test-CredentialGrab $a.path) -or (Test-CredentialGrab $a.content) -or ($a.path -match '(token|credential|secret|password)')) { return 'BLOCKED BY RUNNER LAW: no file may hold credentials, tokens, or secrets for the brain. Change roads.' }
         $parentDir = Split-Path -Parent $a.path
         if ($parentDir -and -not (Test-Path $parentDir)) { New-Item -ItemType Directory -Path $parentDir -Force | Out-Null }
         Set-Content -Path $a.path -Value $a.content -Encoding UTF8 -ErrorAction Stop
@@ -379,7 +396,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.22 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.23 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
