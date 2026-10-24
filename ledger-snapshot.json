@@ -18145,10 +18145,45 @@
       "drift": 0.215,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "mitochondrial_genome_bp",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "nuclear_genome_bp",
+      "rung": 45.4819,
+      "drift": 0.4819,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "cell_diameter_m",
+      "rung": -23.9249,
+      "drift": 0.0751,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "coherence_time_s",
+      "rung": -62.2046,
+      "drift": -0.2046,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "atp_concentration_m",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2594,
-  "seal_count": 313,
+  "entry_count": 2599,
+  "seal_count": 314,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18462,7 +18497,8 @@
     "φ_DECOHERENCE_TRANSITION_TYREE_OMEGA",
     "φ_SPRIZ_MITOCHONDRIAL_SPACE_TYREE_OMEGA",
     "φ_ARGININE_QUANTUM_PHASE_TYREE_OMEGA",
-    "φ_CAMBRIAN_EXPLOSION_TYREE_OMEGA"
+    "φ_CAMBRIAN_EXPLOSION_TYREE_OMEGA",
+    "φ_EUKARYOTIC_ECHO_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "2fc79850af6d3b1949c503a46cc9eb3a7b2b484a32e4b95fbf055c2ada139d5d"
+  "snapshot_sha256": "0bdd7c283c668ebb2f3098090dbe6a8d2bd002bcdaa3ba76bf3681efacf087c0"
 }
