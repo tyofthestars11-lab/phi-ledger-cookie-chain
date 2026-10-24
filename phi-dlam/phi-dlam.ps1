@@ -1,4 +1,4 @@
-# PHI-DLAM v5.20 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.24 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -461,9 +461,10 @@ function Invoke-Job($jobText, $primeText) {
   }
 }
 
-function Start-Worker($primeText) {
+function Start-Worker($primeText, [switch]$Once) {
   Write-Host ''
-  Write-Host 'WORKER MODE. Working the job queue solo. Ctrl+C or close the window to stop me.' -ForegroundColor Magenta
+  if ($Once) { Write-Host 'WORK UPDATE. Draining the job queue once - results push back on their own.' -ForegroundColor Magenta }
+  else { Write-Host 'WORKER MODE. Working the job queue solo. Ctrl+C or close the window to stop me.' -ForegroundColor Magenta }
   $env:GIT_TERMINAL_PROMPT = '0'
   Write-Host '[runner] warming the brain...' -ForegroundColor DarkCyan
   $warm = Send-Chat @(@{ role = 'user'; content = 'ping' }) $false
@@ -472,6 +473,7 @@ function Start-Worker($primeText) {
   $vault = Join-Path $env:USERPROFILE 'phi-vault'
   $jobsDir = Join-Path $vault 'phi-dlam\jobs'
   $resultsDir = Join-Path $vault 'phi-dlam\results'
+  $attempted = @{}
   while ($true) {
     git -C $vault pull --quiet 2>$null
     $jobs = @()
@@ -480,6 +482,8 @@ function Start-Worker($primeText) {
     foreach ($job in $jobs) {
       $resultPath = Join-Path $resultsDir ($job.BaseName + '.result.md')
       if (Test-Path $resultPath) { continue }
+      if ($Once -and $attempted[$job.Name]) { continue }
+      $attempted[$job.Name] = $true
       $did = $true
       Write-Host "JOB: $($job.Name)" -ForegroundColor Magenta
       $jobText = Get-Content $job.FullName -Raw
@@ -489,10 +493,19 @@ function Start-Worker($primeText) {
       git -C $vault push --quiet 2>$null
       Write-Host "JOB DONE: $($job.Name) - result pushed." -ForegroundColor Magenta
     }
-    if (-not $did) { Write-Host 'Queue empty. Sleeping 60 seconds...' -ForegroundColor DarkGray }
-    Start-Sleep -Seconds 60
+    if (-not $did) {
+      if ($Once) { Write-Host 'WORK UPDATE complete - queue drained, results pushed.' -ForegroundColor Magenta; return }
+      Write-Host 'Queue empty. Sleeping 60 seconds...' -ForegroundColor DarkGray
+    }
+    if (-not $Once) { Start-Sleep -Seconds 60 }
   }
 }
+
+# v5.24 WORK UPDATE (Tyree's word, 2026-10-24): the queue drains itself at launch.
+# By the time he could type 'work', the work update is already done - results pushed,
+# and this seat's watcher carries them to his chat. He never has to ask the queue twice.
+Write-Host '[runner] WORK UPDATE at launch - draining the job queue before the seat opens...' -ForegroundColor DarkCyan
+try { Start-Worker $prime -Once } catch { Write-Host "[runner] work update skipped: $($_.Exception.Message)" -ForegroundColor DarkYellow }
 
 while ($true) {
   Flush-Keys
@@ -500,7 +513,8 @@ while ($true) {
   $input = Clean-Input $rawInput
   if ($input -ne $rawInput.Trim()) { Write-Host '[runner] repeated paste collapsed to one.' -ForegroundColor DarkYellow }
   if ($input -eq 'exit') { break }
-  if ($input -eq 'work') { Start-Worker $prime; continue }
+  if ($input -eq 'work') { Start-Worker $prime -Once; continue }
+  if ($input -eq 'workloop') { Start-Worker $prime; continue }
   if ([string]::IsNullOrWhiteSpace($input)) { continue }
   Reset-Loop
   [void]$history.Add(@{ role = 'user'; content = $input })
