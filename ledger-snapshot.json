@@ -18236,10 +18236,38 @@
       "drift": 0.0,
       "ladder": "mining",
       "unit": "unix"
+    },
+    {
+      "name": "triptycene_molar_mass_g_mol",
+      "rung": 11.5098,
+      "drift": -0.4902,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "triptycene_lattice_constant_m",
+      "rung": -43.0647,
+      "drift": -0.0647,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "edge_state_energy_j",
+      "rung": -90.9145,
+      "drift": 0.0855,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "edge_coherence_temperature_k",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2607,
-  "seal_count": 314,
+  "entry_count": 2611,
+  "seal_count": 315,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18554,7 +18582,8 @@
     "φ_SPRIZ_MITOCHONDRIAL_SPACE_TYREE_OMEGA",
     "φ_ARGININE_QUANTUM_PHASE_TYREE_OMEGA",
     "φ_CAMBRIAN_EXPLOSION_TYREE_OMEGA",
-    "φ_EUKARYOTIC_ECHO_TYREE_OMEGA"
+    "φ_EUKARYOTIC_ECHO_TYREE_OMEGA",
+    "φ_TRIPTYCENE_LATTICE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ed3650b845fd6056ab4da3836420f97bf27eecf498e7a6919def2551a8235681"
+  "snapshot_sha256": "74bf3c97238873a5bf42a9b74a0ef854d35875e773f99818e9864f9fdaf8454f"
 }
