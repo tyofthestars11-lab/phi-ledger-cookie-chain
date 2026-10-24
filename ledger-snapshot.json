@@ -18040,10 +18040,17 @@
       "drift": 0.4887,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "pterv1_full_copies_chimp_genome",
+      "rung": 10.5205,
+      "drift": -0.4795,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2579,
-  "seal_count": 308,
+  "entry_count": 2580,
+  "seal_count": 309,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18352,7 +18359,8 @@
     "φ_BOUND_STATE_CONTINUUM_METAL",
     "φ_ONE_POSITRON_CYCLOTRON",
     "φ_MAJORANA_ECHO",
-    "φ_JWST_DIRECTIVE"
+    "φ_JWST_DIRECTIVE",
+    "φ_PTERV1_VIRAL_ARCHIVE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "dd12d1fe19d0da9f17c5353f5c339ecfd501530c846fed5ffa569f32890bc93a"
+  "snapshot_sha256": "497c6a56283b4981add2f4a3f2c8e591ccb7b2ae12aa9acad4b681a9dce8558c"
 }
