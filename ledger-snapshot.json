@@ -18299,10 +18299,52 @@
       "drift": 0.2777,
       "ladder": "count",
       "unit": "unix_seconds"
+    },
+    {
+      "name": "cultivation_error_reduction_factor",
+      "rung": 7.6658,
+      "drift": -0.3342,
+      "ladder": "count",
+      "unit": "factor"
+    },
+    {
+      "name": "magic_state_fidelity_lower_bound",
+      "rung": -0.0002,
+      "drift": -0.0002,
+      "ladder": "count",
+      "unit": "fidelity"
+    },
+    {
+      "name": "attempts_retained_percent",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "willow_qubits_total",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "qubits_used_in_run",
+      "rung": 8.2895,
+      "drift": 0.2895,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "science_publication_unix",
+      "rung": 44.277,
+      "drift": 0.277,
+      "ladder": "count",
+      "unit": "unix_seconds"
     }
   ],
-  "entry_count": 2616,
-  "seal_count": 316,
+  "entry_count": 2622,
+  "seal_count": 317,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18619,7 +18661,8 @@
     "φ_CAMBRIAN_EXPLOSION_TYREE_OMEGA",
     "φ_EUKARYOTIC_ECHO_TYREE_OMEGA",
     "φ_TRIPTYCENE_LATTICE_TYREE_OMEGA",
-    "φ_BACIPTOSIS_TYREE_OMEGA"
+    "φ_BACIPTOSIS_TYREE_OMEGA",
+    "φ_WILLOW_CULTIVATION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "a2e23f15696660bda0db05d14955be2f2fe0ab52e243e87e077660a9ea757140"
+  "snapshot_sha256": "e2ac3e61245741a7da81923c0f96e15866fcb1e824ffc64cfaccc77c96387868"
 }
