@@ -18341,10 +18341,115 @@
       "drift": 0.277,
       "ladder": "count",
       "unit": "unix_seconds"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "strontium_88_mass",
+      "rung": 9.3021,
+      "drift": 0.3021,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "calcium_40_mass",
+      "rung": 7.6639,
+      "drift": -0.3361,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "species_gap",
+      "rung": 1.0268,
+      "drift": 0.0268,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "calcium_storage_time",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "s"
+    },
+    {
+      "name": "strontium_alone_storage_time",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "count",
+      "unit": "s"
+    },
+    {
+      "name": "storage_gain",
+      "rung": 6.143,
+      "drift": 0.143,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "photonic_link_frequency",
+      "rung": 69.8704,
+      "drift": -0.1296,
+      "ladder": "count",
+      "unit": "Hz"
+    },
+    {
+      "name": "entangled_atoms_max",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "atoms"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "planck_reduced",
+      "rung": -162.5786,
+      "drift": 0.4214,
+      "ladder": "count",
+      "unit": "J_s"
+    },
+    {
+      "name": "speed_of_light",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "m_per_s"
+    },
+    {
+      "name": "boltzmann",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "J_per_K"
+    },
+    {
+      "name": "compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 2622,
-  "seal_count": 317,
+  "entry_count": 2637,
+  "seal_count": 318,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18662,7 +18767,8 @@
     "φ_EUKARYOTIC_ECHO_TYREE_OMEGA",
     "φ_TRIPTYCENE_LATTICE_TYREE_OMEGA",
     "φ_BACIPTOSIS_TYREE_OMEGA",
-    "φ_WILLOW_CULTIVATION_TYREE_OMEGA"
+    "φ_WILLOW_CULTIVATION_TYREE_OMEGA",
+    "φ_MIXED_SPECIES_ENTANGLEMENT_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e2ac3e61245741a7da81923c0f96e15866fcb1e824ffc64cfaccc77c96387868"
+  "snapshot_sha256": "34b06ba25d5b5b570c5a97b2052885458e7649865a0d736ce0aa9601afe9cbc4"
 }
