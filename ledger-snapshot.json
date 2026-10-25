@@ -18264,10 +18264,45 @@
       "drift": -0.215,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "bak_bax_proteins",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "proteins"
+    },
+    {
+      "name": "bak_bax_arrangements",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "arrangements"
+    },
+    {
+      "name": "mitochondrial_membranes_spanned",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "membranes"
+    },
+    {
+      "name": "mtdna_genome_bp",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "science_publication_unix",
+      "rung": 44.2777,
+      "drift": 0.2777,
+      "ladder": "count",
+      "unit": "unix_seconds"
     }
   ],
-  "entry_count": 2611,
-  "seal_count": 315,
+  "entry_count": 2616,
+  "seal_count": 316,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18583,7 +18618,8 @@
     "φ_ARGININE_QUANTUM_PHASE_TYREE_OMEGA",
     "φ_CAMBRIAN_EXPLOSION_TYREE_OMEGA",
     "φ_EUKARYOTIC_ECHO_TYREE_OMEGA",
-    "φ_TRIPTYCENE_LATTICE_TYREE_OMEGA"
+    "φ_TRIPTYCENE_LATTICE_TYREE_OMEGA",
+    "φ_BACIPTOSIS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "74bf3c97238873a5bf42a9b74a0ef854d35875e773f99818e9864f9fdaf8454f"
+  "snapshot_sha256": "a2e23f15696660bda0db05d14955be2f2fe0ab52e243e87e077660a9ea757140"
 }
