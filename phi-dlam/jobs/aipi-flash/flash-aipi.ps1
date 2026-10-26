@@ -80,7 +80,7 @@ $port = $null
 foreach ($p in $candidates) {
   Say "probing $p ..."
   $out = & $venvPy -m esptool -p $p chip_id 2>&1 | Out-String
-  $out -split "`r?`n" | Where-Object { $_ -ne '' } | ForEach-Object { Say "$p: $_" }
+  $out -split "`r?`n" | Where-Object { $_ -ne '' } | ForEach-Object { Say "${p}: $_" }
   if ($out -match 'ESP32-S3') { $port = $p; break }
 }
 if (-not $port) { Fail 'no ESP32-S3 answered on any candidate port' }
