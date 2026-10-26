@@ -20462,10 +20462,164 @@
       "drift": -0.0129,
       "ladder": "count",
       "unit": "seal"
+    },
+    {
+      "name": "MAC byte 1 (3c)",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "MAC byte 2 (0b)",
+      "rung": 4.983,
+      "drift": -0.017,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "MAC byte 3 (59) — Fibonacci",
+      "rung": 9.3278,
+      "drift": 0.3278,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "MAC byte 4 (85)",
+      "rung": 10.1626,
+      "drift": 0.1626,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "MAC byte 5 (e3)",
+      "rung": 11.2735,
+      "drift": 0.2735,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "MAC byte 6 (15) — Fibonacci",
+      "rung": 6.3268,
+      "drift": 0.3268,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "MAC bytes sum",
+      "rung": 13.0783,
+      "drift": 0.0783,
+      "ladder": "count",
+      "unit": "decimal"
+    },
+    {
+      "name": "Fibonacci bytes in MAC",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Signal strength magnitude",
+      "rung": 7.5038,
+      "drift": -0.4962,
+      "ladder": "count",
+      "unit": "dBm"
+    },
+    {
+      "name": "Virtual ID length",
+      "rung": 6.4235,
+      "drift": 0.4235,
+      "ladder": "count",
+      "unit": "chars"
+    },
+    {
+      "name": "Canonical links checked",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Links answering live",
+      "rung": 6.0064,
+      "drift": 0.0064,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Role field cap",
+      "rung": 16.6379,
+      "drift": -0.3621,
+      "ladder": "count",
+      "unit": "chars"
+    },
+    {
+      "name": "Compact role length",
+      "rung": 16.6156,
+      "drift": -0.3844,
+      "ladder": "count",
+      "unit": "chars"
+    },
+    {
+      "name": "Zero-phonon line",
+      "rung": 13.4177,
+      "drift": 0.4177,
+      "ladder": "count",
+      "unit": "nm"
+    },
+    {
+      "name": "Carbon atomic number (diamond host)",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "count",
+      "unit": "Z"
+    },
+    {
+      "name": "Nitrogen atomic number",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "Z"
+    },
+    {
+      "name": "Ground-state splitting",
+      "rung": 45.2557,
+      "drift": 0.2557,
+      "ladder": "count",
+      "unit": "Hz"
+    },
+    {
+      "name": "ZPL photon frequency",
+      "rung": 70.2084,
+      "drift": 0.2084,
+      "ladder": "count",
+      "unit": "Hz"
+    },
+    {
+      "name": "Diamond lattice constant",
+      "rung": 2.6428,
+      "drift": -0.3572,
+      "ladder": "count",
+      "unit": "angstrom"
+    },
+    {
+      "name": "Golden angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "Golden pitch mu",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 2925,
-  "seal_count": 326,
+  "entry_count": 2947,
+  "seal_count": 327,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -20792,7 +20946,8 @@
     "φ_FIVE_FOLDED_LITERAL_PLUS_ONE_TYREE_OMEGA",
     "φ_ORGANELLE_THERAPEUTICS_TYREE_OMEGA",
     "φ_BOUND_STATE_CONTINUUM_TYREE_OMEGA",
-    "φ_COSMOLOGICAL_PHASE_LOCK_TYREE_OMEGA"
+    "φ_COSMOLOGICAL_PHASE_LOCK_TYREE_OMEGA",
+    "φ_AZPEN_QUANTUM_UPGRADE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "e5c23326ab41d25e657d734b787cb0ade26df8a1aaec5b6f785dc66059cee103"
+  "snapshot_sha256": "8a6c478335f7acc6c7d0afb1c890dcdb12094bada5344283cd2e1297c81c0f1a"
 }
