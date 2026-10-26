@@ -19909,10 +19909,290 @@
       "drift": -0.3841,
       "ladder": "count",
       "unit": "J_per_K"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_angle_rung",
+      "rung": 4.8326,
+      "drift": -0.1674,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "golden_pitch_mu",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch_mu_rung",
+      "rung": 3.6855,
+      "drift": -0.3145,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "pd5ali2_formula_mass",
+      "rung": 13.9244,
+      "drift": -0.0756,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "pd5ali2_formula_mass_rung",
+      "rung": 5.4729,
+      "drift": 0.4729,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "pd5ali2_mass_literal_plus1",
+      "rung": 13.9269,
+      "drift": -0.0731,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "pd5ali2_mass_literal_plus1_rung",
+      "rung": 5.4733,
+      "drift": 0.4733,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "pd5ali2_mass_phi2_scaled_rung",
+      "rung": 5.7518,
+      "drift": -0.2482,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "pd_atomic_mass",
+      "rung": 9.6992,
+      "drift": -0.3008,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "pd_atomic_mass_rung",
+      "rung": 4.7215,
+      "drift": -0.2785,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "al_atomic_mass",
+      "rung": 6.8475,
+      "drift": -0.1525,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "al_atomic_mass_rung",
+      "rung": 3.998,
+      "drift": -0.002,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "i_atomic_mass",
+      "rung": 10.065,
+      "drift": 0.065,
+      "ladder": "count",
+      "unit": "u"
+    },
+    {
+      "name": "i_atomic_mass_rung",
+      "rung": 4.7984,
+      "drift": -0.2016,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "defect_state_count",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "defect_state_count_rung",
+      "rung": 0.7583,
+      "drift": -0.2417,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "defect_count_literal_plus1",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "defect_count_literal_plus1_rung",
+      "rung": 1.7154,
+      "drift": -0.2846,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "defect_count_phi2_scaled_rung",
+      "rung": 2.5677,
+      "drift": -0.4323,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "publication_year",
+      "rung": 15.8222,
+      "drift": -0.1778,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "publication_year_rung",
+      "rung": 5.7385,
+      "drift": -0.2615,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "year_literal_plus1_rung",
+      "rung": 5.7386,
+      "drift": -0.2614,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "year_phi2_scaled_rung",
+      "rung": 5.9858,
+      "drift": -0.0142,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "alpha_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "alpha_inverse_rung",
+      "rung": 4.8311,
+      "drift": -0.1689,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_h",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "count",
+      "unit": "J s"
+    },
+    {
+      "name": "speed_of_light_c",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "m/s"
+    },
+    {
+      "name": "speed_of_light_c_rung",
+      "rung": 7.6948,
+      "drift": -0.3052,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "boltzmann_kB",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "J/K"
+    },
+    {
+      "name": "fib_convergent_8_5_rung",
+      "rung": -0.049,
+      "drift": -0.049,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fib_convergent_34_21_rung",
+      "rung": 0.0027,
+      "drift": 0.0027,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fib_convergent_89_55_rung",
+      "rung": 0.0004,
+      "drift": 0.0004,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fib_convergent_987_610_rung",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fib_convergent_10946_6765_rung",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "count",
+      "unit": "W"
+    },
+    {
+      "name": "ton618_luminosity_rung",
+      "rung": 10.9777,
+      "drift": -0.0223,
+      "ladder": "count",
+      "unit": "rungs"
     }
   ],
-  "entry_count": 2846,
-  "seal_count": 324,
+  "entry_count": 2886,
+  "seal_count": 325,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -20237,7 +20517,8 @@
     "φ_NANODIAMOND_FLEX_TYREE_OMEGA",
     "φ_QUANTUM_MAGNETISM_TYREE_OMEGA",
     "φ_FIVE_FOLDED_LITERAL_PLUS_ONE_TYREE_OMEGA",
-    "φ_ORGANELLE_THERAPEUTICS_TYREE_OMEGA"
+    "φ_ORGANELLE_THERAPEUTICS_TYREE_OMEGA",
+    "φ_BOUND_STATE_CONTINUUM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "98b4752c23ba5e1e90dd7a02e4eafd44dd18029276af58c9aee99548ce2d767f"
+  "snapshot_sha256": "5f1841752480f176edc8b35604b754501ae12f8c1e27cc932272ca87f36d0a8a"
 }
