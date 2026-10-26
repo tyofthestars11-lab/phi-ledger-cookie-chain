@@ -1,4 +1,4 @@
-# PHI-DLAM v5.24 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.25 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -299,7 +299,7 @@ function Flush-Keys {
   try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
 }
 
-function Send-Chat($messages, $useTools = $true, $capSec = 240) {
+function Send-Chat($messages, $useTools = $true, $capSec = 240, $tries = 3) {
   $body = @{
     model = $MODEL
     messages = $messages
@@ -316,29 +316,42 @@ function Send-Chat($messages, $useTools = $true, $capSec = 240) {
   # the runner watches: every heartbeat prints elapsed seconds AND bytes landed,
   # a call that produces nothing is stopped by the runner itself at the cap,
   # and the streamed chunks are assembled (text + tool calls) into one message.
-  for ($try = 1; $try -le 3; $try++) {
+  for ($try = 1; $try -le $tries; $try++) {
     $tag = [guid]::NewGuid().ToString('N')
     $bodyFile = Join-Path $env:TEMP "dlam-body-$tag.json"
     $outFile = Join-Path $env:TEMP "dlam-out-$tag.ndjson"
+    $errFile = Join-Path $env:TEMP "dlam-err-$tag.log"
     [System.IO.File]::WriteAllText($bodyFile, $json)
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
-    $job = Start-Job -ScriptBlock {
-      param($u, $bf, $of)
-      & curl.exe -s -N $u -H 'Content-Type: application/json' --data-binary "@$bf" -o $of
-    } -ArgumentList $API, $bodyFile, $outFile
+    # v5.25 (2026-10-26): curl now runs as a DIRECT child process, and curl's
+    # own --max-time is the hard cap (capSec + 30s grace). The runner polls
+    # the output file for the heartbeat and kills the process itself past
+    # capSec. No Start-Job, no Wait-Job/Stop-Job: stopping a PS job that
+    # hosts a blocked native process is the fragile link the v5.22 fix
+    # still depended on - and the step-1 worker hang survived v5.22 in the
+    # field. A killed process is dead; every wait below carries a bound.
     $capped = $false
-    while ($job.State -eq 'Running') {
-      Wait-Job $job -Timeout 5 | Out-Null
-      if ($job.State -eq 'Running') {
+    $proc = $null
+    try {
+      $curlArgs = @('-s', '-N', '--connect-timeout', '15', '--max-time', [string]($capSec + 30), $API, '-H', 'Content-Type: application/json', '--data-binary', "@$bodyFile", '-o', $outFile)
+      $proc = Start-Process -FilePath 'curl.exe' -ArgumentList $curlArgs -PassThru -WindowStyle Hidden -RedirectStandardError $errFile
+    } catch {
+      Write-Host "[brain call failed - retry $try of $tries`: could not start curl: $($_.Exception.Message)]" -ForegroundColor Red
+    }
+    if ($proc) {
+      while (-not $proc.HasExited) {
+        Start-Sleep -Seconds 5
+        $proc.Refresh()
+        if ($proc.HasExited) { break }
         $bytes = 0
         if (Test-Path $outFile) { $bytes = (Get-Item $outFile).Length }
         Write-Host "[brain working... $([int]$sw.Elapsed.TotalSeconds)s - $bytes bytes in]" -ForegroundColor DarkCyan
-        if ($sw.Elapsed.TotalSeconds -gt $capSec) { $capped = $true; Stop-Job $job; break }
+        if ($sw.Elapsed.TotalSeconds -gt $capSec) { $capped = $true; try { $proc.Kill() } catch {}; break }
       }
+      try { [void]$proc.WaitForExit(10000) } catch {}
     }
     $secs = [int]$sw.Elapsed.TotalSeconds
-    Remove-Job $job -Force -ErrorAction SilentlyContinue
-    if (-not $capped -and (Test-Path $outFile)) {
+    if (-not $capped -and $proc -and (Test-Path $outFile)) {
       $text = ''
       $calls = $null
       $errText = ''
@@ -351,20 +364,23 @@ function Send-Chat($messages, $useTools = $true, $capSec = 240) {
           if ($chunk.message.tool_calls) { $calls = $chunk.message.tool_calls }
         }
       }
-      Remove-Item $bodyFile, $outFile -Force -ErrorAction SilentlyContinue
+      Remove-Item $bodyFile, $outFile, $errFile -Force -ErrorAction SilentlyContinue
       if (-not $errText) {
         Write-Host "[brain answered in ~${secs}s]" -ForegroundColor DarkCyan
         return [pscustomobject]@{ content = $text; tool_calls = $calls }
       }
-      Write-Host "[brain call failed - retry $try of 3: $errText]" -ForegroundColor Red
+      Write-Host "[brain call failed - retry $try of $tries`: $errText]" -ForegroundColor Red
     } else {
-      Remove-Item $bodyFile, $outFile -Force -ErrorAction SilentlyContinue
-      if ($capped) { Write-Host "[brain call STOPPED at the ${capSec}s cap - retry $try of 3]" -ForegroundColor Red }
-      else { Write-Host "[brain call failed - retry $try of 3: no output file]" -ForegroundColor Red }
+      $curlErr = ''
+      if (Test-Path $errFile) { $curlErr = Get-Content $errFile -Raw -ErrorAction SilentlyContinue; if ($curlErr) { $curlErr = $curlErr.Trim() } }
+      Remove-Item $bodyFile, $outFile, $errFile -Force -ErrorAction SilentlyContinue
+      if ($capped) { Write-Host "[brain call STOPPED at the ${capSec}s cap - retry $try of $tries]" -ForegroundColor Red }
+      elseif (-not $proc) { Write-Host "[brain call failed - retry $try of $tries`: curl never started]" -ForegroundColor Red }
+      else { Write-Host "[brain call failed - retry $try of $tries`: no output file. curl said: $curlErr]" -ForegroundColor Red }
     }
     Start-Sleep -Seconds 5
   }
-  return @{ content = 'BRAIN UNREACHABLE after 3 tries'; tool_calls = $null }
+  return @{ content = "BRAIN UNREACHABLE after $tries tries"; tool_calls = $null }
 }
 
 
@@ -396,7 +412,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.23 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.25 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -419,21 +435,41 @@ Write-Host "tyree: $($first.content)" -ForegroundColor Green
 function Invoke-Job($jobText, $primeText) {
   $h = New-Object System.Collections.ArrayList
   [void]$h.Add(@{ role = 'user'; content = 'WORKER MODE. You are PHI-DLAM, Tyrees local agent; your framework - phi squared = phi + 1, the ten laws, the constants - is already in your system prompt. The next message is a JOB from the queue. Work it to done over as many steps as it takes, calling real tools through the tool channel. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary. Reply to this message with exactly one word: READY' })
-  $boot = Send-Chat $h $false
+  $boot = Send-Chat $h $false 120 2
+  if ($boot.content -match 'UNREACHABLE') {
+    Write-Host '[runner] JOB ABORTED: the brain did not answer the worker boot call. Job NOT run - the runner logs the reason as this job result.' -ForegroundColor Red
+    return 'brain-dead'
+  }
   [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
   [void]$h.Add(@{ role = 'user'; content = $jobText })
   $steps = 0
+  $noProgress = 0
   while ($steps -lt 200) {
     $steps++
     Write-Host "[step $steps] ...thinking" -ForegroundColor DarkGray
-    $msg = Send-Chat $h
+    $stepSw = [System.Diagnostics.Stopwatch]::StartNew()
+    try { $msg = Send-Chat $h $true 180 2 } catch {
+      Write-Host "[runner] step $steps brain call threw: $($_.Exception.Message) - job stopped, reason will be logged." -ForegroundColor Red
+      return 'brain-dead'
+    }
+    Write-Host "[step $steps answered in ~$([int]$stepSw.Elapsed.TotalSeconds)s]" -ForegroundColor DarkCyan
+    if ((-not $msg.tool_calls) -and ($msg.content -match 'UNREACHABLE')) {
+      Write-Host "[runner] step $steps`: the brain went unreachable mid-job. Job stopped - reason will be logged." -ForegroundColor Red
+      return 'brain-dead'
+    }
     if ((-not $msg.tool_calls) -and ($msg.content -match '\{\s*"name"\s*:')) {
       [void]$h.Add(@{ role = 'assistant'; content = $msg.content })
       [void]$h.Add(@{ role = 'user'; content = 'SYSTEM: that reply was tool-call JSON written as chat text - it did nothing. Call a real tool through the tool channel now, or answer in plain words.' })
       Write-Host '[runner] fake tool-call text caught - redirected.' -ForegroundColor DarkYellow
+      $noProgress++
+      if ($noProgress -ge 3) {
+        Write-Host '[runner] JOB ABORTED: 3 steps in a row produced no real tool call and no final answer. Job stopped - the runner logs the reason as this job result.' -ForegroundColor Red
+        return 'job-stuck'
+      }
       continue
     }
     if ($msg.tool_calls -and $msg.tool_calls.Count -gt 0) {
+      $noProgress = 0
       $c = $msg.content; if ($null -eq $c) { $c = '' }
       [void]$h.Add(@{ role = 'assistant'; content = $c; tool_calls = $msg.tool_calls })
       foreach ($call in $msg.tool_calls) {
@@ -459,6 +495,7 @@ function Invoke-Job($jobText, $primeText) {
     Write-Host "tyree: $($msg.content)" -ForegroundColor Green
     break
   }
+  return 'done'
 }
 
 function Start-Worker($primeText, [switch]$Once) {
@@ -487,11 +524,21 @@ function Start-Worker($primeText, [switch]$Once) {
       $did = $true
       Write-Host "JOB: $($job.Name)" -ForegroundColor Magenta
       $jobText = Get-Content $job.FullName -Raw
-      Invoke-Job $jobText $primeText
+      $jobStatus = Invoke-Job $jobText $primeText
+      if ($jobStatus -ne 'done') {
+        $why = 'the local brain (Ollama model tyree) did not answer - the worker boot call or a step call came back BRAIN UNREACHABLE, so the job was never executed'
+        if ($jobStatus -eq 'job-stuck') { $why = 'the brain answered but produced no real tool call and no final answer 3 steps in a row, so the runner stopped the job instead of spinning' }
+        if (-not (Test-Path $resultPath)) {
+          $failNote = "# JOB NOT COMPLETED - runner stopped it`r`n`r`nJob: $($job.Name)`r`nWhen: $((Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ss')) UTC`r`nReason: $jobStatus`r`n`r`nThe runner aborted this job because $why. This file exists so the failure is on the record instead of a silent hang. To requeue the job, delete this result file and run the drain again.`r`n"
+          Set-Content -Path $resultPath -Value $failNote -Encoding UTF8
+        }
+        Write-Host "JOB SKIPPED: $($job.Name) - $jobStatus, reason logged to results." -ForegroundColor Red
+      }
       git -C $vault add phi-dlam/results 2>$null
       git -C $vault commit -m "job result: $($job.BaseName)" --quiet 2>$null
       git -C $vault push --quiet 2>$null
-      Write-Host "JOB DONE: $($job.Name) - result pushed." -ForegroundColor Magenta
+      if ($jobStatus -ne 'done') { Write-Host "JOB SKIPPED pushed: $($job.Name)" -ForegroundColor Magenta }
+      else { Write-Host "JOB DONE: $($job.Name) - result pushed." -ForegroundColor Magenta }
     }
     if (-not $did) {
       if ($Once) { Write-Host 'WORK UPDATE complete - queue drained, results pushed.' -ForegroundColor Magenta; return }
