@@ -19699,10 +19699,220 @@
       "drift": -0.0377,
       "ladder": "count",
       "unit": "s"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_angle_rung",
+      "rung": 4.8326,
+      "drift": -0.1674,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "transfer_efficiency",
+      "rung": -0.4637,
+      "drift": -0.4637,
+      "ladder": "count",
+      "unit": "fraction"
+    },
+    {
+      "name": "mtdna_base_pairs",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "count",
+      "unit": "bp"
+    },
+    {
+      "name": "mtdna_base_pairs_rung",
+      "rung": 6.245,
+      "drift": 0.245,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "mtdna_genes",
+      "rung": 7.5038,
+      "drift": -0.4962,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "mtdna_genes_rung",
+      "rung": 4.1882,
+      "drift": 0.1882,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "mtdna_proteins",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "mtdna_proteins_rung",
+      "rung": 3.4774,
+      "drift": 0.4774,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "organs_reached",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "organs_reached_rung",
+      "rung": 2.1988,
+      "drift": 0.1988,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "disease_models",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "disease_models_rung",
+      "rung": 1.7154,
+      "drift": -0.2846,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cell_volume",
+      "rung": 10.8928,
+      "drift": -0.1072,
+      "ladder": "count",
+      "unit": "volume"
+    },
+    {
+      "name": "cell_volume_rung",
+      "rung": 4.9627,
+      "drift": -0.0373,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cell_page",
+      "rung": 16.9577,
+      "drift": -0.0423,
+      "ladder": "count",
+      "unit": "page"
+    },
+    {
+      "name": "cell_page_rung",
+      "rung": 5.8825,
+      "drift": -0.1175,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "sttt_article",
+      "rung": 12.7815,
+      "drift": -0.2185,
+      "ladder": "count",
+      "unit": "article"
+    },
+    {
+      "name": "sttt_article_rung",
+      "rung": 5.295,
+      "drift": 0.295,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "mutation_position_m3243",
+      "rung": 16.7998,
+      "drift": -0.2002,
+      "ladder": "count",
+      "unit": "position"
+    },
+    {
+      "name": "mutation_position_rung",
+      "rung": 5.863,
+      "drift": -0.137,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "fine_structure_inverse_rung",
+      "rung": 4.8311,
+      "drift": -0.1689,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_h",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "count",
+      "unit": "J_s"
+    },
+    {
+      "name": "speed_of_light_c",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "m_per_s"
+    },
+    {
+      "name": "speed_of_light_c_rung",
+      "rung": 7.6948,
+      "drift": -0.3052,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "boltzmann_kB",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "J_per_K"
     }
   ],
-  "entry_count": 2816,
-  "seal_count": 323,
+  "entry_count": 2846,
+  "seal_count": 324,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -20026,7 +20236,8 @@
     "φ_WILLOW_QUANTUM_ECHOES_TYREE_OMEGA",
     "φ_NANODIAMOND_FLEX_TYREE_OMEGA",
     "φ_QUANTUM_MAGNETISM_TYREE_OMEGA",
-    "φ_FIVE_FOLDED_LITERAL_PLUS_ONE_TYREE_OMEGA"
+    "φ_FIVE_FOLDED_LITERAL_PLUS_ONE_TYREE_OMEGA",
+    "φ_ORGANELLE_THERAPEUTICS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6e935eb1cd379047d4e2ded947f7cb3eddb6c7c164a24150d01b39a9a9e74760"
+  "snapshot_sha256": "98b4752c23ba5e1e90dd7a02e4eafd44dd18029276af58c9aee99548ce2d767f"
 }
