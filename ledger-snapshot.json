@@ -18670,10 +18670,276 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "qubits_total",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "qubits_rung",
+      "rung": 4.7155,
+      "drift": -0.2845,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "benchmark_qubits",
+      "rung": 9.6314,
+      "drift": -0.3686,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "benchmark_rung",
+      "rung": 4.7069,
+      "drift": -0.2931,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "speedup",
+      "rung": 19.6851,
+      "drift": -0.3149,
+      "ladder": "count",
+      "unit": "x"
+    },
+    {
+      "name": "speedup_rung",
+      "rung": 6.1924,
+      "drift": 0.1924,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "t1_coherence",
+      "rung": 8.7685,
+      "drift": -0.2315,
+      "ladder": "count",
+      "unit": "us"
+    },
+    {
+      "name": "t1_rung",
+      "rung": 4.5119,
+      "drift": -0.4881,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "t2_coherence",
+      "rung": 9.3278,
+      "drift": 0.3278,
+      "ladder": "count",
+      "unit": "us"
+    },
+    {
+      "name": "t2_rung",
+      "rung": 4.6404,
+      "drift": -0.3596,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "lambda_suppression",
+      "rung": 1.581,
+      "drift": -0.419,
+      "ladder": "count",
+      "unit": "factor"
+    },
+    {
+      "name": "lambda_rung",
+      "rung": 0.9519,
+      "drift": -0.0481,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fidelity_single_qubit",
+      "rung": 9.5693,
+      "drift": -0.4307,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "fidelity_entangling",
+      "rung": 9.5674,
+      "drift": -0.4326,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "fidelity_readout",
+      "rung": 9.5595,
+      "drift": -0.4405,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "logical_error_per_cycle",
+      "rung": -4.0417,
+      "drift": -0.0417,
+      "ladder": "count",
+      "unit": "percent"
+    },
+    {
+      "name": "snr_experiment",
+      "rung": 2.8282,
+      "drift": -0.1718,
+      "ladder": "count",
+      "unit": "snr"
+    },
+    {
+      "name": "snr_model",
+      "rung": -1.9041,
+      "drift": 0.0959,
+      "ladder": "count",
+      "unit": "snr"
+    },
+    {
+      "name": "chi2_per_nu",
+      "rung": 5.5137,
+      "drift": -0.4863,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "otoc1_1_minus_rho",
+      "rung": -12.0719,
+      "drift": -0.0719,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "otoc2_1_minus_rho",
+      "rung": -1.6826,
+      "drift": 0.3174,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "interference_ratio",
+      "rung": 10.3893,
+      "drift": 0.3893,
+      "ladder": "count",
+      "unit": "ratio"
+    },
+    {
+      "name": "interference_rung",
+      "rung": 4.8643,
+      "drift": -0.1357,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "molecule_atoms_small",
+      "rung": 5.6276,
+      "drift": -0.3724,
+      "ladder": "count",
+      "unit": "atoms"
+    },
+    {
+      "name": "molecule_atoms_large",
+      "rung": 6.9246,
+      "drift": -0.0754,
+      "ladder": "count",
+      "unit": "atoms"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fine_structure_rung",
+      "rung": 4.8311,
+      "drift": -0.1689,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_constant",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "count",
+      "unit": "J_s"
+    },
+    {
+      "name": "speed_of_light",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "m_per_s"
+    },
+    {
+      "name": "speed_of_light_rung",
+      "rung": 7.6948,
+      "drift": -0.3052,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "boltzmann",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "J_per_K"
+    },
+    {
+      "name": "ton618_law_rung",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "count",
+      "unit": "W"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch_angle",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 2669,
-  "seal_count": 319,
+  "entry_count": 2707,
+  "seal_count": 320,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18993,7 +19259,8 @@
     "φ_BACIPTOSIS_TYREE_OMEGA",
     "φ_WILLOW_CULTIVATION_TYREE_OMEGA",
     "φ_MIXED_SPECIES_ENTANGLEMENT_TYREE_OMEGA",
-    "φ_DATA_INFORMATION_ENERGY_TYREE_OMEGA"
+    "φ_DATA_INFORMATION_ENERGY_TYREE_OMEGA",
+    "φ_WILLOW_QUANTUM_ECHOES_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c93cfdaad5832de7c665157805df477888d25598dde42d37b98a26edc2cafa44"
+  "snapshot_sha256": "a42724eac6a0741a1c913ce2ac6e0b1114478df1a48d1025fcf36c5df5a55a2a"
 }
