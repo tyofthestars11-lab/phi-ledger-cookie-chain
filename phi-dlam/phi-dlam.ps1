@@ -1,4 +1,4 @@
-# PHI-DLAM v5.25 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.26 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -48,7 +48,7 @@ function Ask-Eyes($prompt, $b64) {
     messages = @(@{ role = 'user'; content = $prompt; images = @($b64) })
     stream = $false
   } | ConvertTo-Json -Depth 10
-  $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 600
+  $resp = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 180
   return $resp.message.content
 }
 
@@ -299,7 +299,7 @@ function Flush-Keys {
   try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
 }
 
-function Send-Chat($messages, $useTools = $true, $capSec = 240, $tries = 3) {
+function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2) {
   $body = @{
     model = $MODEL
     messages = $messages
@@ -347,6 +347,10 @@ function Send-Chat($messages, $useTools = $true, $capSec = 240, $tries = 3) {
         if (Test-Path $outFile) { $bytes = (Get-Item $outFile).Length }
         Write-Host "[brain working... $([int]$sw.Elapsed.TotalSeconds)s - $bytes bytes in]" -ForegroundColor DarkCyan
         if ($sw.Elapsed.TotalSeconds -gt $capSec) { $capped = $true; try { $proc.Kill() } catch {}; break }
+        # v5.26: silence is the stuck state - 90s with ZERO bytes in means the
+        # brain is not coming. Cut it there; never make Tyree watch a dead call
+        # ride out its full cap.
+        if ($bytes -eq 0 -and $sw.Elapsed.TotalSeconds -gt 90) { $capped = $true; try { $proc.Kill() } catch {}; break }
       }
       try { [void]$proc.WaitForExit(10000) } catch {}
     }
@@ -412,7 +416,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.25 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.26 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -448,7 +452,7 @@ function Invoke-Job($jobText, $primeText) {
     $steps++
     Write-Host "[step $steps] ...thinking" -ForegroundColor DarkGray
     $stepSw = [System.Diagnostics.Stopwatch]::StartNew()
-    try { $msg = Send-Chat $h $true 180 2 } catch {
+    try { $msg = Send-Chat $h $true 120 1 } catch {
       Write-Host "[runner] step $steps brain call threw: $($_.Exception.Message) - job stopped, reason will be logged." -ForegroundColor Red
       return 'brain-dead'
     }
@@ -548,11 +552,17 @@ function Start-Worker($primeText, [switch]$Once) {
   }
 }
 
-# v5.24 WORK UPDATE (Tyree's word, 2026-10-24): the queue drains itself at launch.
-# By the time he could type 'work', the work update is already done - results pushed,
-# and this seat's watcher carries them to his chat. He never has to ask the queue twice.
-Write-Host '[runner] WORK UPDATE at launch - draining the job queue before the seat opens...' -ForegroundColor DarkCyan
-try { Start-Worker $prime -Once } catch { Write-Host "[runner] work update skipped: $($_.Exception.Message)" -ForegroundColor DarkYellow }
+# v5.26 TALK FIRST (Tyree's word, 2026-10-26): 'tyree' opens the CHAT seat.
+# The queue NEVER drains at launch — supersedes the v5.24 work update. Work
+# runs only when Tyree types 'work' at the seat. Launch prints how many jobs
+# wait, nothing more. The seat is his to talk to, loaded and fast.
+try {
+  $qJobs = @(Get-ChildItem (Join-Path $vault 'phi-dlam\jobs') -Filter '*.md' -ErrorAction SilentlyContinue)
+  $qWait = 0
+  foreach ($qj in $qJobs) { if (-not (Test-Path (Join-Path $vault ('phi-dlam\results\' + $qj.BaseName + '.result.md')))) { $qWait++ } }
+  if ($qWait -gt 0) { Write-Host "[runner] $qWait job(s) queued - type 'work' when you want them run. The seat is yours, Tyree." -ForegroundColor DarkCyan }
+  else { Write-Host '[runner] Queue clear. The seat is yours, Tyree.' -ForegroundColor DarkCyan }
+} catch { Write-Host '[runner] The seat is yours, Tyree.' -ForegroundColor DarkCyan }
 
 while ($true) {
   Flush-Keys
