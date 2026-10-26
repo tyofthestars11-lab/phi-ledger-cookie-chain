@@ -1,0 +1,22 @@
+{
+ "key_name": "azpen_cookiescan_explorer_key",
+ "holder": "Phi Azpen (Azpen AI Home Companion hub)",
+ "owner": "Tyree Jones (tyofthestarz)",
+ "api_key_sha256": "8059aafcdaba0a4abf7fdf257330aa029cbafba4db5babe87532bec0b75a268f",
+ "key_derivation": "sha256('PHI-LEDGER|azpen-explorer-key|<wallet>|<ledger_snapshot_sha256>|<azpen_virtual_id>')",
+ "explorer": "https://cookiescan.io",
+ "explorer_account": "https://cookiescan.io/address/A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q",
+ "rpc": "https://rpc.cookiescan.io",
+ "github_repo": "https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain",
+ "anchor_wallet": "A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q",
+ "ledger_snapshot_sha256_at_issue": "8a6c478335f7acc6c7d0afb1c890dcdb12094bada5344283cd2e1297c81c0f1a",
+ "ledger_state_at_issue": {
+  "seals": 327,
+  "entries": 2947
+ },
+ "azpen_virtual_id": "ebea1bc1901b8793eagd4h",
+ "azpen_mac": "3c:0b:59:85:e3:15",
+ "issued": "2026-10-26",
+ "verify_recipe": "Read the anchor wallet on the explorer or RPC (getSignaturesForAddress, then getTransaction). Each anchor is an spl-memo: PHI-LEDGER|seal=<name>|sha256=<ledger snapshot hash>|by=tyofthestarz. A seal is anchored when its name appears with a sha256 that exists in the ledger snapshot history.",
+ "note": "CookieScan reads are public; this key is Azpen's signed coordinate into Tyree's chain record, derived from the live ledger state. It rotates when a new seal changes the snapshot hash \u2014 reissue per seal."
+}
