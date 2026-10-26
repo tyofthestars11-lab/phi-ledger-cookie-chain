@@ -35,6 +35,11 @@ foreach ($rel in $expect.Keys) {
   $p = Join-Path $here $rel
   if (-not (Test-Path $p)) { Fail "payload file missing: $rel" }
   $sz = (Get-Item $p).Length
+  if ($rel -eq 'flash_args') {
+    # git can check this text file out with CRLF endings on Windows (+1 byte per
+    # line: 179 -> 184). Content is what matters: measure EOL-normalized.
+    $sz = ([IO.File]::ReadAllText($p) -replace "`r`n", "`n").Length
+  }
   if ($sz -ne $expect[$rel]) { Fail "payload size mismatch: $rel is $sz bytes, expected $($expect[$rel])" }
   Say "payload OK: $rel ($sz bytes)"
 }
