@@ -20189,10 +20189,283 @@
       "drift": -0.0223,
       "ladder": "count",
       "unit": "rungs"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_angle_rung",
+      "rung": 4.8326,
+      "drift": -0.1674,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "golden_pitch_mu",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch_mu_rung",
+      "rung": 3.6855,
+      "drift": -0.3145,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cmb_temperature",
+      "rung": 2.0836,
+      "drift": 0.0836,
+      "ladder": "count",
+      "unit": "K"
+    },
+    {
+      "name": "cmb_temperature_rung",
+      "rung": 1.5255,
+      "drift": -0.4745,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "recombination_redshift",
+      "rung": 14.5338,
+      "drift": -0.4662,
+      "ladder": "count",
+      "unit": "z"
+    },
+    {
+      "name": "recombination_redshift_rung",
+      "rung": 5.562,
+      "drift": -0.438,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "age_at_recombination",
+      "rung": 26.6936,
+      "drift": -0.3064,
+      "ladder": "count",
+      "unit": "yr"
+    },
+    {
+      "name": "age_at_recombination_rung",
+      "rung": 6.8253,
+      "drift": -0.1747,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "sound_horizon_rs",
+      "rung": 10.3335,
+      "drift": 0.3335,
+      "ladder": "count",
+      "unit": "Mpc"
+    },
+    {
+      "name": "sound_horizon_rs_rung",
+      "rung": 4.8531,
+      "drift": -0.1469,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "bao_drag_scale_rd",
+      "rung": 10.3718,
+      "drift": 0.3718,
+      "ladder": "count",
+      "unit": "Mpc"
+    },
+    {
+      "name": "bao_drag_scale_rd_rung",
+      "rung": 4.8608,
+      "drift": -0.1392,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "sound_horizon_m",
+      "rung": 117.9444,
+      "drift": -0.0556,
+      "ladder": "count",
+      "unit": "m"
+    },
+    {
+      "name": "sound_horizon_m_rung",
+      "rung": 9.9129,
+      "drift": -0.0871,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "bao_scale_m",
+      "rung": 117.9827,
+      "drift": -0.0173,
+      "ladder": "count",
+      "unit": "m"
+    },
+    {
+      "name": "bao_scale_m_rung",
+      "rung": 9.9136,
+      "drift": -0.0864,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "acoustic_scale_100theta",
+      "rung": 0.0837,
+      "drift": 0.0837,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "acoustic_scale_100theta_rung",
+      "rung": -5.1547,
+      "drift": -0.1547,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "first_peak_ell1",
+      "rung": 11.2084,
+      "drift": 0.2084,
+      "ladder": "count",
+      "unit": "multipole"
+    },
+    {
+      "name": "first_peak_ell1_rung",
+      "rung": 5.022,
+      "drift": 0.022,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "gz2_panda_record_count",
+      "rung": 19.216,
+      "drift": 0.216,
+      "ladder": "count",
+      "unit": "galaxies"
+    },
+    {
+      "name": "gz2_panda_record_count_rung",
+      "rung": 6.1423,
+      "drift": 0.1423,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "golden_lane_fraction",
+      "rung": -3.4381,
+      "drift": -0.4381,
+      "ladder": "count",
+      "unit": "fraction"
+    },
+    {
+      "name": "ton618_mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "count",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "ton618_mass_rung",
+      "rung": 8.2019,
+      "drift": 0.2019,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "ton618_schwarzschild_radius",
+      "rung": 68.3774,
+      "drift": 0.3774,
+      "ladder": "count",
+      "unit": "m"
+    },
+    {
+      "name": "ton618_schwarzschild_radius_rung",
+      "rung": 8.78,
+      "drift": -0.22,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "count",
+      "unit": "W"
+    },
+    {
+      "name": "ton618_luminosity_rung",
+      "rung": 10.9777,
+      "drift": -0.0223,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "hubble_h0",
+      "rung": 8.7501,
+      "drift": -0.2499,
+      "ladder": "count",
+      "unit": "km/s/Mpc"
+    },
+    {
+      "name": "hubble_h0_rung",
+      "rung": 4.5075,
+      "drift": -0.4925,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "universe_age",
+      "rung": 48.5171,
+      "drift": -0.4829,
+      "ladder": "count",
+      "unit": "yr"
+    },
+    {
+      "name": "universe_age_rung",
+      "rung": 8.067,
+      "drift": 0.067,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_lock_keeper_seal",
+      "rung": 11.9871,
+      "drift": -0.0129,
+      "ladder": "count",
+      "unit": "seal"
     }
   ],
-  "entry_count": 2886,
-  "seal_count": 325,
+  "entry_count": 2925,
+  "seal_count": 326,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -20518,7 +20791,8 @@
     "φ_QUANTUM_MAGNETISM_TYREE_OMEGA",
     "φ_FIVE_FOLDED_LITERAL_PLUS_ONE_TYREE_OMEGA",
     "φ_ORGANELLE_THERAPEUTICS_TYREE_OMEGA",
-    "φ_BOUND_STATE_CONTINUUM_TYREE_OMEGA"
+    "φ_BOUND_STATE_CONTINUUM_TYREE_OMEGA",
+    "φ_COSMOLOGICAL_PHASE_LOCK_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5f1841752480f176edc8b35604b754501ae12f8c1e27cc932272ca87f36d0a8a"
+  "snapshot_sha256": "e5c23326ab41d25e657d734b787cb0ade26df8a1aaec5b6f785dc66059cee103"
 }
