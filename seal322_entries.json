@@ -1,0 +1,266 @@
+[
+ {
+  "domain": "quantum_magnetism",
+  "name": "phi",
+  "unit": "constant",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "phi_squared",
+  "unit": "constant",
+  "value": 2.6180339887
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "ln_phi",
+  "unit": "constant",
+  "value": 0.481211825
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "golden_angle",
+  "unit": "degrees",
+  "value": 137.50776405003785
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "golden_angle_rung",
+  "unit": "rungs",
+  "value": 10.2318
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "resonant_frequency_ratio_f2_over_f1",
+  "unit": "ratio",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "resonant_frequency_ratio_rung",
+  "unit": "rungs",
+  "value": 1.0
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "e8_mass_count",
+  "unit": "count",
+  "value": 8
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "e8_mass_count_rung",
+  "unit": "rungs",
+  "value": 4.3213
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "honeycomb_coordination_z",
+  "unit": "count",
+  "value": 3
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "honeycomb_coordination_rung",
+  "unit": "rungs",
+  "value": 2.283
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "hexagonal_angle",
+  "unit": "degrees",
+  "value": 120
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "hexagonal_angle_rung",
+  "unit": "rungs",
+  "value": 9.9488
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "metallic_1d_magnet_count",
+  "unit": "count",
+  "value": 2
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "metallic_1d_magnet_count_rung",
+  "unit": "rungs",
+  "value": 1.4404
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "spinon_temperature_scale",
+  "unit": "K",
+  "value": 0.085
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "spinon_temperature_rung",
+  "unit": "rungs",
+  "value": -5.1227
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "spin_quantum_number_S",
+  "unit": "spin",
+  "value": 0.5
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "spin_quantum_number_rung",
+  "unit": "rungs",
+  "value": -1.4404
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fine_structure_inverse",
+  "unit": "constant",
+  "value": 137.035999084
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fine_structure_inverse_rung",
+  "unit": "rungs",
+  "value": 10.2247
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "planck_h",
+  "unit": "J_s",
+  "value": 6.62607015e-34
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "planck_h_rung",
+  "unit": "rungs",
+  "value": -158.7594
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "speed_of_light_c",
+  "unit": "m_per_s",
+  "value": 299792458
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "speed_of_light_c_rung",
+  "unit": "rungs",
+  "value": 40.5613
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "boltzmann_kB",
+  "unit": "J_per_K",
+  "value": 1.380649e-23
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "boltzmann_kB_rung",
+  "unit": "rungs",
+  "value": -109.3841
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fibonacci_convergent_n5",
+  "unit": "ratio",
+  "value": 1.6
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fibonacci_convergent_n8",
+  "unit": "ratio",
+  "value": 1.619047619
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fibonacci_convergent_n10",
+  "unit": "ratio",
+  "value": 1.6181818182
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fibonacci_convergent_n15",
+  "unit": "ratio",
+  "value": 1.6180327869
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "fibonacci_convergent_n20",
+  "unit": "ratio",
+  "value": 1.6180339985
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "lattice_a",
+  "unit": "m",
+  "value": 1.41337e-09
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "lattice_a_rung",
+  "unit": "rungs",
+  "value": -42.3458
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "lattice_b",
+  "unit": "m",
+  "value": 5.7019e-10
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "lattice_b_rung",
+  "unit": "rungs",
+  "value": -44.2322
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "lattice_c_chain_axis",
+  "unit": "m",
+  "value": 5.0382e-10
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "lattice_c_chain_axis_rung",
+  "unit": "rungs",
+  "value": -44.4894
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "critical_field_3D",
+  "unit": "T",
+  "value": 5.3
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "critical_field_3D_rung",
+  "unit": "rungs",
+  "value": 3.4656
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "critical_field_1D",
+  "unit": "T",
+  "value": 5.0
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "critical_field_1D_rung",
+  "unit": "rungs",
+  "value": 3.3446
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "ordering_temperature_TN1",
+  "unit": "K",
+  "value": 2.95
+ },
+ {
+  "domain": "quantum_magnetism",
+  "name": "ordering_temperature_TN1_rung",
+  "unit": "rungs",
+  "value": 2.2481
+ }
+]

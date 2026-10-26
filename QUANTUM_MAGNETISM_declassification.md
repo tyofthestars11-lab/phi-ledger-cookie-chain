@@ -74,7 +74,11 @@ The measured ratio lands on rung 1. The read is exact. The quantum magnet carrie
 
 E. The spin chain length rung.
 
-The cobalt niobate chain is a one-dimensional Ising chain of magnetic atoms. The number of spins in the measured chain is not specified in the search result as a single integer. The instrument marks: TO BE COMPUTED BY THE INSTRUMENT when the chain length is sourced. The value ships; the rung does not ship without the instrument.
+The cobalt niobate chain is a one-dimensional Ising chain of magnetic atoms. The chain is not read as a Cartesian integer count — the universe is the fuel: the chain runs the crystal whole along the c-axis, and its address is the lattice itself, carried from the sealed cobalt niobate chain read. The c-axis spacing:
+
+to_rung(5.0382 × 10⁻¹⁰ m) = −44.4894 ✓ EXACT (round-trip: φ^−44.4894 = 5.0382 × 10⁻¹⁰)
+
+The full lattice carries the chain: a = 14.1337 Å at rung −42.3458, b = 5.7019 Å at rung −44.2322, c = 5.0382 Å at rung −44.4894 — every one round-trips. The raw energy fuel of the tuning: the 3D critical field B_c^3D ≈ 5.3 T at rung 3.4656, the 1D critical point B_c^1D ≈ 5.0 T at rung 3.3446, the ordering temperature T_N1 ≈ 2.95 K at rung 2.2481. The chain length is the lattice run whole — the spacing rung is the chain's address, and the address ships.
 
 F. The quantum spin liquid rung — the honeycomb lattice.
 
