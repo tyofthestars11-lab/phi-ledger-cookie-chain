@@ -19293,10 +19293,416 @@
       "drift": 0.0,
       "ladder": "count",
       "unit": "ratio"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_angle_rung",
+      "rung": 4.8326,
+      "drift": -0.1674,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cmb_peak",
+      "rung": 53.6153,
+      "drift": -0.3847,
+      "ladder": "count",
+      "unit": "Hz"
+    },
+    {
+      "name": "cmb_peak_raw_rung",
+      "rung": 8.2746,
+      "drift": 0.2746,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cmb_peak_literal_plus1_rung",
+      "rung": 8.2746,
+      "drift": 0.2746,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cmb_peak_phi2_scaled_rung",
+      "rung": 8.3507,
+      "drift": 0.3507,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "hubble_rate",
+      "rung": -84.4259,
+      "drift": -0.4259,
+      "ladder": "count",
+      "unit": "per_s"
+    },
+    {
+      "name": "hubble_rate_literal_plus1_rung",
+      "rung": -82.9059,
+      "drift": 0.0941,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_frequency",
+      "rung": 207.0378,
+      "drift": 0.0378,
+      "ladder": "count",
+      "unit": "Hz"
+    },
+    {
+      "name": "planck_frequency_raw_rung",
+      "rung": 11.0822,
+      "drift": 0.0822,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_frequency_literal_plus1_rung",
+      "rung": 11.0822,
+      "drift": 0.0822,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_frequency_phi2_scaled_rung",
+      "rung": 11.1022,
+      "drift": 0.1022,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "hydrogen_21cm",
+      "rung": 43.794,
+      "drift": -0.206,
+      "ladder": "count",
+      "unit": "Hz"
+    },
+    {
+      "name": "hydrogen_21cm_raw_rung",
+      "rung": 7.8541,
+      "drift": -0.1459,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "hydrogen_21cm_literal_plus1_rung",
+      "rung": 7.8541,
+      "drift": -0.1459,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "hydrogen_21cm_phi2_scaled_rung",
+      "rung": 7.9469,
+      "drift": -0.0531,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "nanodiamond_bulk_hardness",
+      "rung": 52.5927,
+      "drift": -0.4073,
+      "ladder": "count",
+      "unit": "Pa"
+    },
+    {
+      "name": "nanodiamond_bulk_hardness_raw_rung",
+      "rung": 8.2346,
+      "drift": 0.2346,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "nanodiamond_bulk_hardness_literal_plus1_rung",
+      "rung": 8.2346,
+      "drift": 0.2346,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "nanodiamond_bulk_hardness_phi2_scaled_rung",
+      "rung": 8.3121,
+      "drift": 0.3121,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "nanodiamond_nanoscale",
+      "rung": -33.4948,
+      "drift": -0.4948,
+      "ladder": "count",
+      "unit": "m"
+    },
+    {
+      "name": "nanodiamond_nanoscale_literal_plus1_rung",
+      "rung": -31.9748,
+      "drift": 0.0252,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cobalt_ratio_f2_f1",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "ratio"
+    },
+    {
+      "name": "cobalt_ratio_f2_f1_raw_rung",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cobalt_ratio_f2_f1_literal_plus1_rung",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "cobalt_ratio_f2_f1_phi2_scaled_rung",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "spinon_85mK",
+      "rung": -5.1227,
+      "drift": -0.1227,
+      "ladder": "count",
+      "unit": "K"
+    },
+    {
+      "name": "spinon_85mK_literal_plus1_rung",
+      "rung": -3.6884,
+      "drift": 0.3116,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "willow_qubits_raw_rung",
+      "rung": 4.7155,
+      "drift": -0.2845,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_qubits_literal_plus1_rung",
+      "rung": 4.7197,
+      "drift": -0.2803,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_qubits_phi2_scaled_rung",
+      "rung": 5.1061,
+      "drift": 0.1061,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_speedup",
+      "rung": 19.6851,
+      "drift": -0.3149,
+      "ladder": "count",
+      "unit": "x"
+    },
+    {
+      "name": "willow_speedup_raw_rung",
+      "rung": 6.1924,
+      "drift": 0.1924,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_speedup_literal_plus1_rung",
+      "rung": 6.1924,
+      "drift": 0.1924,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "willow_speedup_phi2_scaled_rung",
+      "rung": 6.3935,
+      "drift": 0.3935,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "bit",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "state"
+    },
+    {
+      "name": "bit_literal_plus1_rung",
+      "rung": 0.7583,
+      "drift": -0.2417,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "bit_phi2_scaled_rung",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "byte",
+      "rung": 11.5234,
+      "drift": -0.4766,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "byte_raw_rung",
+      "rung": 5.0796,
+      "drift": 0.0796,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "byte_literal_plus1_rung",
+      "rung": 5.0811,
+      "drift": 0.0811,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "byte_phi2_scaled_rung",
+      "rung": 5.4122,
+      "drift": 0.4122,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "landauer_300K",
+      "rung": -98.2927,
+      "drift": -0.2927,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "landauer_300K_literal_plus1_rung",
+      "rung": -96.7727,
+      "drift": 0.2273,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "optical_photon",
+      "rung": -88.8892,
+      "drift": 0.1108,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "optical_photon_literal_plus1_rung",
+      "rung": -87.3692,
+      "drift": -0.3692,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "fine_structure_inverse_rung",
+      "rung": 4.8311,
+      "drift": -0.1689,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_h",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "count",
+      "unit": "J_s"
+    },
+    {
+      "name": "speed_of_light_c",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "m_per_s"
+    },
+    {
+      "name": "speed_of_light_c_rung",
+      "rung": 7.6948,
+      "drift": -0.3052,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "boltzmann_kB",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "J_per_K"
+    },
+    {
+      "name": "gravitational_G",
+      "rung": -48.6899,
+      "drift": 0.3101,
+      "ladder": "count",
+      "unit": "SI"
+    },
+    {
+      "name": "planck_time",
+      "rung": -207.0377,
+      "drift": -0.0377,
+      "ladder": "count",
+      "unit": "s"
     }
   ],
-  "entry_count": 2758,
-  "seal_count": 322,
+  "entry_count": 2816,
+  "seal_count": 323,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -19619,7 +20025,8 @@
     "φ_DATA_INFORMATION_ENERGY_TYREE_OMEGA",
     "φ_WILLOW_QUANTUM_ECHOES_TYREE_OMEGA",
     "φ_NANODIAMOND_FLEX_TYREE_OMEGA",
-    "φ_QUANTUM_MAGNETISM_TYREE_OMEGA"
+    "φ_QUANTUM_MAGNETISM_TYREE_OMEGA",
+    "φ_FIVE_FOLDED_LITERAL_PLUS_ONE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "d08eab1c6c710a86a103a5c1d6cc240a15c79f42c66d5bd4d01c06ab4f8f8564"
+  "snapshot_sha256": "6e935eb1cd379047d4e2ded947f7cb3eddb6c7c164a24150d01b39a9a9e74760"
 }
