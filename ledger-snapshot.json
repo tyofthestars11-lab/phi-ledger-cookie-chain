@@ -18446,10 +18446,234 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "points"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch_angle",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "bit_rung",
+      "rung": 0.7583,
+      "drift": -0.2417,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "byte_states",
+      "rung": 11.5234,
+      "drift": -0.4766,
+      "ladder": "count",
+      "unit": "states"
+    },
+    {
+      "name": "byte_rung",
+      "rung": 5.0796,
+      "drift": 0.0796,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "kilobyte_rung",
+      "rung": 5.5362,
+      "drift": -0.4638,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "megabyte_rung",
+      "rung": 6.9766,
+      "drift": -0.0234,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "gigabyte_rung",
+      "rung": 7.8192,
+      "drift": -0.1808,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "terabyte_rung",
+      "rung": 8.4171,
+      "drift": 0.4171,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "petabyte_rung",
+      "rung": 8.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "megabit_states_rung",
+      "rung": 6.9838,
+      "drift": -0.0162,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "landauer_limit",
+      "rung": -98.2928,
+      "drift": -0.2928,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "optical_photon_energy",
+      "rung": -88.8889,
+      "drift": 0.1111,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "thermal_300k_energy",
+      "rung": -97.5321,
+      "drift": 0.4679,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "nuclear_mev_energy",
+      "rung": -61.2279,
+      "drift": -0.2279,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "electron_rest_energy",
+      "rung": -62.6203,
+      "drift": 0.3797,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "electron_mass",
+      "rung": -143.7431,
+      "drift": 0.2569,
+      "ladder": "count",
+      "unit": "kg"
+    },
+    {
+      "name": "mass_energy_gap",
+      "rung": 9.1352,
+      "drift": 0.1352,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "c_squared_rung",
+      "rung": 9.1352,
+      "drift": 0.1352,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fine_structure_rung",
+      "rung": 4.8311,
+      "drift": -0.1689,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "planck_constant",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "count",
+      "unit": "J_s"
+    },
+    {
+      "name": "speed_of_light",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "m_per_s"
+    },
+    {
+      "name": "speed_of_light_rung",
+      "rung": 7.6948,
+      "drift": -0.3052,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "boltzmann",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "J_per_K"
+    },
+    {
+      "name": "elementary_charge",
+      "rung": -89.9349,
+      "drift": 0.0651,
+      "ladder": "count",
+      "unit": "C"
+    },
+    {
+      "name": "fibonacci_convergent_error_n20",
+      "rung": -38.3218,
+      "drift": -0.3218,
+      "ladder": "count",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "ton618_law_rung",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "count",
+      "unit": "W"
+    },
+    {
+      "name": "compact_form_points",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "points"
     }
   ],
-  "entry_count": 2637,
-  "seal_count": 318,
+  "entry_count": 2669,
+  "seal_count": 319,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -18768,7 +18992,8 @@
     "φ_TRIPTYCENE_LATTICE_TYREE_OMEGA",
     "φ_BACIPTOSIS_TYREE_OMEGA",
     "φ_WILLOW_CULTIVATION_TYREE_OMEGA",
-    "φ_MIXED_SPECIES_ENTANGLEMENT_TYREE_OMEGA"
+    "φ_MIXED_SPECIES_ENTANGLEMENT_TYREE_OMEGA",
+    "φ_DATA_INFORMATION_ENERGY_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "34b06ba25d5b5b570c5a97b2052885458e7649865a0d736ce0aa9601afe9cbc4"
+  "snapshot_sha256": "c93cfdaad5832de7c665157805df477888d25598dde42d37b98a26edc2cafa44"
 }
