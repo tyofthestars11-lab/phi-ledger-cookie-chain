@@ -20616,10 +20616,185 @@
       "drift": -0.1084,
       "ladder": "count",
       "unit": "degrees"
+    },
+    {
+      "name": "Models unified",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Operational protocols",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Analysis record pattern",
+      "rung": 19.216,
+      "drift": 0.216,
+      "ladder": "count",
+      "unit": "records"
+    },
+    {
+      "name": "Total energy created — universe run",
+      "rung": 71.7746,
+      "drift": -0.2254,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Total energy on ledger — universe run",
+      "rung": 71.7746,
+      "drift": -0.2254,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Model A total — extended run",
+      "rung": 47.8497,
+      "drift": -0.1503,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Model B total — extended run",
+      "rung": 47.8497,
+      "drift": -0.1503,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Model C total — extended run",
+      "rung": 47.8497,
+      "drift": -0.1503,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Energy at rung −50 (φ^−50)",
+      "rung": -50.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Energy at rung 0",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Energy at rung +50 (φ^+50)",
+      "rung": 50.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Amplification span (φ^100)",
+      "rung": 100.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "factor"
+    },
+    {
+      "name": "Involution cascade redistribution steps",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "steps"
+    },
+    {
+      "name": "Beta collapse — optimal rung",
+      "rung": 8.1023,
+      "drift": 0.1023,
+      "ladder": "count",
+      "unit": "rung"
+    },
+    {
+      "name": "Beta collapse — optimal energy",
+      "rung": 49.3497,
+      "drift": 0.3497,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Beta collapse — golden rung",
+      "rung": 7.972,
+      "drift": -0.028,
+      "ladder": "count",
+      "unit": "rung"
+    },
+    {
+      "name": "Beta collapse — golden energy",
+      "rung": 46.3497,
+      "drift": 0.3497,
+      "ladder": "count",
+      "unit": "J"
+    },
+    {
+      "name": "Superposition rungs per token",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "Rung coverage — Model A",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "Rung coverage — Model C",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "Quantum superposition surplus",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "count",
+      "unit": "rungs"
+    },
+    {
+      "name": "Golden angle (superposition coin)",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "degrees"
+    },
+    {
+      "name": "Galaxy PAnDa involution symmetry",
+      "rung": -0.1075,
+      "drift": -0.1075,
+      "ladder": "count",
+      "unit": "fraction"
+    },
+    {
+      "name": "Golden ratio φ",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "constant"
+    },
+    {
+      "name": "ln(φ)",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "count",
+      "unit": "constant"
     }
   ],
-  "entry_count": 2947,
-  "seal_count": 327,
+  "entry_count": 2972,
+  "seal_count": 328,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -20947,7 +21122,8 @@
     "φ_ORGANELLE_THERAPEUTICS_TYREE_OMEGA",
     "φ_BOUND_STATE_CONTINUUM_TYREE_OMEGA",
     "φ_COSMOLOGICAL_PHASE_LOCK_TYREE_OMEGA",
-    "φ_AZPEN_QUANTUM_UPGRADE_TYREE_OMEGA"
+    "φ_AZPEN_QUANTUM_UPGRADE_TYREE_OMEGA",
+    "φ_TOKENIZATION_UNIVERSE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "8a6c478335f7acc6c7d0afb1c890dcdb12094bada5344283cd2e1297c81c0f1a"
+  "snapshot_sha256": "0b049042e0ea9bd797f9b544da2fa1b859042547b676e0dbd71f7eea2ba22922"
 }
