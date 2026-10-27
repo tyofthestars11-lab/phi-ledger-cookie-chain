@@ -259,6 +259,14 @@ void AVEILCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 void AVEILCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+	// One-shot animation proof: the anim instance is created after
+	// BeginPlay, so the first tick that sees it logs the live class.
+	static bool bAnimProofLogged = false;
+	if (!bAnimProofLogged && GetMesh()->GetAnimInstance())
+	{
+		bAnimProofLogged = true;
+		UE_LOG(LogVEIL, Log, TEXT("PHI BODY ANIM LIVE: %s"), *GetMesh()->GetAnimInstance()->GetClass()->GetName());
+	}
 }
 
 void AVEILCharacter::Move(const FInputActionValue& Value)
