@@ -193,3 +193,38 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
   Binaries). No measured error names a cache as its cause; the wipe costs a
   full module + shader rebuild on the RTX 3050 and deletes the Saved logs the
   forensics read from. Sent three times, it stays left three times.
+
+## Exchange 16 - "100% complete release" full-architecture dump (13:59 MDT)
+- PREMISE FALSE on all three counts, against measured logs: nav generates
+  (115 purge + his warning-free photo + editor Building Navigation); UI has
+  concrete C++ hooks (code-built UVEILMainMenu/PauseMenu + OMNI mirrors,
+  GODMODE button wired to Exec ToggleGodMode, builds 112/113); input is
+  initialized - the built-in code map his own PIE logs confirm ("built-in
+  map active (keyboard/mouse + Xbox controller)").
+- Replacement Character classes: LEFT. Duplicates of AVEILCharacter /
+  AOMNICharacter that REGRESS: no skeletal mesh wiring (no body at all),
+  tick disabled (kills the body diagnostics + movement systems), no camera /
+  dodge / sprint / interact / quest hooks, and Enhanced Input pointers that
+  are null without editor-made assets - the measured headless trap. Our
+  built-in input map is deliberate and proven in his sessions. Its GodMode
+  and XP formula are copies of standing work (ours: double precision in
+  UOMNIQuestSystem::XPNeedForLevel).
+- HUD widget: direction TAKEN for a later tranche, in OUR pattern - a
+  code-built HUD (health + quest tracker) with no BindWidget, since
+  BindWidget needs a WBP asset that does not exist. Not its file.
+- run_headless_pipeline.py: LEFT whole. Step 1 resurrects the Manny corpse
+  (SkeletonFactoryNew + skeleton set + ABP retarget) - the exact headless
+  write measured dead in jobs 106/107, and moot since the Countess repoint
+  (job 119). Step 2 writes 3 invented items to an invented table path; ours
+  stands at 24 measured rows, /Game/Data/DT_Items. Step 3 purges maps under
+  invented names (VEIL_CityDistrict / OMNI_PathOfLight do not exist).
+- Optimization matrix: ALREADY STANDS (Lumen, HW RT 0, TSR 4, VSM, SM6 -
+  the SM6 line echoes the fix written here last turn). One delta LEFT:
+  TSR.History.ScreenPercentage=100 vs our deliberate 66.6667 - the 3050
+  budget choice for locked 1080p/60; 100% history costs frames.
+- Package sequence: LEFT whole - the cache wipe's FOURTH send (Intermediate
+  / Saved / Binaries), invented .uproject names, UBT -wipe. Package attempt
+  7 already stands as jobs 120/121 on the true paths, no wipe.
+- Pattern named: each block lands one step BEHIND the live state (purge
+  after it ran, SM6 after it was added, Manny after the Countess) because
+  it does not know the shelf. The queue 118-122 holds the real next steps.
