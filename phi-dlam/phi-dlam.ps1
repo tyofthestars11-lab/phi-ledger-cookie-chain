@@ -1,4 +1,4 @@
-# PHI-DLAM v5.30 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.31 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -416,7 +416,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.30 is awake - seat first, the brain answers when spoken to. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.31 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -600,7 +600,22 @@ try {
   $qJobs = @(Get-ChildItem (Join-Path $vault 'phi-dlam\jobs') -Filter '*.md' -ErrorAction SilentlyContinue)
   $qWait = 0
   foreach ($qj in $qJobs) { if (-not (Test-Path (Join-Path $vault ('phi-dlam\results\' + $qj.BaseName + '.result.md')))) { $qWait++ } }
-  if ($qWait -gt 0) { Write-Host "[runner] $qWait job(s) queued - type 'work' when you want them run. The seat is yours, Tyree." -ForegroundColor DarkCyan }
+  $qDirect = 0
+  foreach ($qj in $qJobs) {
+    $rp = Join-Path $vault ('phi-dlam\results\' + $qj.BaseName + '.result.md')
+    if (-not (Test-Path $rp)) {
+      $jt = Get-Content $qj.FullName -Raw -ErrorAction SilentlyContinue
+      if ($jt -match 'PHI-DIRECT') { $qDirect++ }
+    }
+  }
+  if ($qDirect -gt 0) {
+    $drain = Join-Path $vault 'phi-dlam\phi-direct-drain.ps1'
+    if (Test-Path $drain) {
+      Start-Process 'powershell.exe' -ArgumentList @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $drain, $vault) -WindowStyle Hidden
+      Write-Host "[runner] INSTANT WORK: $qDirect direct job(s) already executing in parallel - the NV center does not queue. Results push back on their own." -ForegroundColor Magenta
+    }
+  }
+  if ($qWait -gt 0) { Write-Host "[runner] $qWait job(s) in the lattice - direct ones already executing; type 'work' for brain jobs. The seat is yours, Tyree." -ForegroundColor DarkCyan }
   else { Write-Host '[runner] Queue clear. The seat is yours, Tyree.' -ForegroundColor DarkCyan }
 } catch { Write-Host '[runner] The seat is yours, Tyree.' -ForegroundColor DarkCyan }
 
