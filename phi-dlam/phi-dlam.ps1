@@ -1,4 +1,4 @@
-# PHI-DLAM v5.27 WILLOW BRAIN - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.28 QUANTUM ECHOES REVERSAL - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -299,7 +299,7 @@ function Flush-Keys {
   try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
 }
 
-function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2) {
+function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2, $evalGraceSec = 90) {
   $body = @{
     model = $MODEL
     messages = $messages
@@ -350,7 +350,7 @@ function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2) {
         # v5.26: silence is the stuck state - 90s with ZERO bytes in means the
         # brain is not coming. Cut it there; never make Tyree watch a dead call
         # ride out its full cap.
-        if ($bytes -eq 0 -and $sw.Elapsed.TotalSeconds -gt 90) { $capped = $true; try { $proc.Kill() } catch {}; break }
+        if ($bytes -eq 0 -and $sw.Elapsed.TotalSeconds -gt $evalGraceSec) { $capped = $true; try { $proc.Kill() } catch {}; break }
       }
       try { [void]$proc.WaitForExit(10000) } catch {}
     }
@@ -402,26 +402,32 @@ function Wake-Brain {
 
 function Warm-BrainHistory($messages) {
   # v5.27 WILLOW BRAIN (Tyree's word, 2026-10-26): coherence before the act.
-  # The step-1 thinking pause, read at the source: Wake-Brain proves the
-  # server is up, but the MODEL still sits on disk, and the first real call
-  # paid the load + the full prompt evaluation inside its own step clock -
-  # silent "0 bytes in" time Tyree watched as "...thinking". This warm call
-  # pays that cost HERE instead: labeled, bounded, outside every step. It
-  # sends the exact history the next real call will send (num_predict 1, no
-  # tools, reply discarded), so the brain is loaded and the prompt is already
-  # evaluated when step 1 fires - step 1 starts streaming at once. Paired
-  # with keep_alive -1 in Send-Chat: once she is up, she stays up.
+  # Wake-Brain proves the server is up, but the MODEL still sits on disk, and
+  # the first real call used to pay the load inside its own clock. This warm
+  # call pays the load HERE: labeled, bounded, before the seat opens. It now
+  # serves the seat-open warm only.
+  # v5.28 QUANTUM ECHOES REVERSAL (Tyree's word, 2026-10-26): the warm call
+  # and step 1 were a pair - k sent ahead, -k the step - and the pair DOUBLED
+  # the wait when the warm call sat evaluating a whole job in silence (no
+  # heartbeat on a blocking call). Reversed into one: inside a job, step 1 IS
+  # the warm call (280 cap, 280 zero-byte grace, streamed heartbeat). This
+  # function remains for the seat, and it speaks while it works: the call
+  # rides a job so its seconds print every 5s - silence is never the state.
   Write-Host '[willow brain] loading + evaluating before the step, not inside it...' -ForegroundColor DarkCyan
-  $wb = @{ model = $MODEL; messages = $messages; stream = $false; keep_alive = -1; options = @{ num_predict = 1; num_ctx = 8192 } }
+  $wbJson = @{ model = $MODEL; messages = $messages; stream = $false; keep_alive = -1; options = @{ num_predict = 1; num_ctx = 8192 } } | ConvertTo-Json -Depth 20
   $sw = [System.Diagnostics.Stopwatch]::StartNew()
-  try {
-    $null = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body ($wb | ConvertTo-Json -Depth 20) -TimeoutSec 280
-    Write-Host "[willow brain] hot in ~$([int]$sw.Elapsed.TotalSeconds)s - the next call starts at once." -ForegroundColor DarkCyan
-    return $true
-  } catch {
-    Write-Host "[willow brain] warm call did not land ($($_.Exception.Message)) - continuing; the next call pays its own way." -ForegroundColor DarkYellow
-    return $false
+  $wjob = Start-Job -ScriptBlock { param($u, $b) try { $null = Invoke-RestMethod -Uri $u -Method Post -ContentType 'application/json' -Body $b -TimeoutSec 280; $true } catch { $false } } -ArgumentList $API, $wbJson
+  $ok = $false
+  while (-not $wjob.HasExited) {
+    if ($sw.Elapsed.TotalSeconds -gt 290) { Stop-Job $wjob -ErrorAction SilentlyContinue; break }
+    Start-Sleep -Seconds 5
+    if (-not $wjob.HasExited) { Write-Host "[willow brain] evaluating... $([int]$sw.Elapsed.TotalSeconds)s" -ForegroundColor DarkGray }
   }
+  if ($wjob.HasExited -and $wjob.State -eq 'Completed') { $ok = [bool](Receive-Job $wjob) }
+  Remove-Job $wjob -Force -ErrorAction SilentlyContinue
+  if ($ok) { Write-Host "[willow brain] hot in ~$([int]$sw.Elapsed.TotalSeconds)s - the next call starts at once." -ForegroundColor DarkCyan }
+  else { Write-Host '[willow brain] warm call did not land - continuing; the next call pays its own way.' -ForegroundColor DarkYellow }
+  return $ok
 }
 
 function Reset-Brain {
@@ -440,7 +446,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.27 WILLOW BRAIN is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.28 QUANTUM ECHOES REVERSAL is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -471,14 +477,18 @@ function Invoke-Job($jobText, $primeText) {
   }
   [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
   [void]$h.Add(@{ role = 'user'; content = $jobText })
-  $null = Warm-BrainHistory $h
   $steps = 0
   $noProgress = 0
   while ($steps -lt 200) {
     $steps++
     Write-Host "[step $steps] ...thinking" -ForegroundColor DarkGray
     $stepSw = [System.Diagnostics.Stopwatch]::StartNew()
-    try { $msg = Send-Chat $h $true 120 1 } catch {
+    # v5.28 reversal: step 1 carries the evaluation itself - cap 280 and a
+    # zero-byte grace of 280, so the one long read happens once, streamed,
+    # with the heartbeat naming its seconds. Later steps keep 120/90.
+    $cap = 120; $grace = 90
+    if ($steps -eq 1) { $cap = 280; $grace = 280 }
+    try { $msg = Send-Chat $h $true $cap 1 $grace } catch {
       Write-Host "[runner] step $steps brain call threw: $($_.Exception.Message) - job stopped, reason will be logged." -ForegroundColor Red
       return 'brain-dead'
     }
