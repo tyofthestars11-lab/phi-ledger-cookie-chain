@@ -58,6 +58,16 @@ public:
 	UFUNCTION(BlueprintPure, Category = "OMNI|Health")
 	bool IsAlive() const { return Health > 0.f; }
 
+	// ---- God Mode: on the menus, on the console, in the damage gate ----
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OMNI|GodMode")
+	bool bGodMode = false;
+
+	UFUNCTION(Exec, BlueprintCallable, Category = "OMNI|GodMode")
+	void ToggleGodMode();
+
+	UFUNCTION(BlueprintPure, Category = "OMNI|GodMode")
+	bool IsGodMode() const { return bGodMode; }
+
 	// ---- Combat ----
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "OMNI|Combat")
 	EOMNICombatState CombatState = EOMNICombatState::Exploring;

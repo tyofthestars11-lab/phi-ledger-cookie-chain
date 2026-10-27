@@ -24,17 +24,23 @@ private:
 	void OnStartClicked();
 
 	UFUNCTION()
+	void OnGodClicked();
+
+	UFUNCTION()
 	void OnQualityClicked();
 
 	UFUNCTION()
 	void OnQuitClicked();
 
 	void RefreshQualityLabel();
+	void RefreshGodLabel();
 
 	TObjectPtr<UButton> StartButton;
+	TObjectPtr<UButton> GodButton;
 	TObjectPtr<UButton> QualityButton;
 	TObjectPtr<UButton> QuitButton;
 	TObjectPtr<UTextBlock> QualityLabel;
+	TObjectPtr<UTextBlock> GodLabel;
 
 	/** 0 Low, 1 Medium, 2 High, 3 Epic - prototype default is 1 (Medium). */
 	int32 QualityLevel = 1;

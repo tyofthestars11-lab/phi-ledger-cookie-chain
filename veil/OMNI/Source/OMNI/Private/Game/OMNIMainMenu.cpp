@@ -10,6 +10,8 @@
 #include "Components/VerticalBox.h"
 #include "Components/VerticalBoxSlot.h"
 #include "Game/OMNIGameMode.h"
+#include "Character/OMNICharacter.h"
+#include "GameFramework/Pawn.h"
 #include "GameFramework/GameUserSettings.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -55,17 +57,49 @@ void UOMNIMainMenu::NativeConstruct()
 	AddText(TEXT("OMNI"), 64);
 	AddText(TEXT("THE LAST SIGNAL"), 24);
 
+	GodButton = AddButton(TEXT("GODMODE"));
+	GodLabel = AddText(TEXT(""), 16);
 	StartButton = AddButton(TEXT("Enter the Signal"));
 	QualityButton = AddButton(TEXT("Graphics"));
 	QualityLabel = AddText(TEXT(""), 16);
 	QuitButton = AddButton(TEXT("Quit"));
 
 	StartButton->OnClicked.AddDynamic(this, &UOMNIMainMenu::OnStartClicked);
+	GodButton->OnClicked.AddDynamic(this, &UOMNIMainMenu::OnGodClicked);
 	QualityButton->OnClicked.AddDynamic(this, &UOMNIMainMenu::OnQualityClicked);
 	QuitButton->OnClicked.AddDynamic(this, &UOMNIMainMenu::OnQuitClicked);
 
 	StartButton->SetKeyboardFocus();
 	RefreshQualityLabel();
+	RefreshGodLabel();
+}
+
+void UOMNIMainMenu::RefreshGodLabel()
+{
+	bool bOn = false;
+	if (APlayerController* PC = GetOwningPlayer())
+	{
+		if (AOMNICharacter* Runner = Cast<AOMNICharacter>(PC->GetPawn()))
+		{
+			bOn = Runner->IsGodMode();
+		}
+	}
+	if (GodLabel)
+	{
+		GodLabel->SetText(FText::FromString(bOn ? TEXT("GODMODE: ON") : TEXT("GODMODE: OFF")));
+	}
+}
+
+void UOMNIMainMenu::OnGodClicked()
+{
+	if (APlayerController* PC = GetOwningPlayer())
+	{
+		if (AOMNICharacter* Runner = Cast<AOMNICharacter>(PC->GetPawn()))
+		{
+			Runner->ToggleGodMode();
+		}
+	}
+	RefreshGodLabel();
 }
 
 void UOMNIMainMenu::RefreshQualityLabel()

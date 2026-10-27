@@ -25,6 +25,9 @@ private:
 	void OnResumeClicked();
 
 	UFUNCTION()
+	void OnGodClicked();
+
+	UFUNCTION()
 	void OnQualityClicked();
 
 	UFUNCTION()
@@ -34,12 +37,15 @@ private:
 	void OnQuitClicked();
 
 	void RefreshQualityLabel();
+	void RefreshGodLabel();
 
 	TObjectPtr<UButton> ResumeButton;
+	TObjectPtr<UButton> GodButton;
 	TObjectPtr<UButton> QualityButton;
 	TObjectPtr<UButton> TitleButton;
 	TObjectPtr<UButton> QuitButton;
 	TObjectPtr<UTextBlock> QualityLabel;
+	TObjectPtr<UTextBlock> GodLabel;
 
 	int32 QualityLevel = 1;
 };

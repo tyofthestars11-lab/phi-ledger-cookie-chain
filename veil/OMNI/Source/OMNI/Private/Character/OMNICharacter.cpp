@@ -405,9 +405,16 @@ void AOMNICharacter::Interact()
 	}
 }
 
+void AOMNICharacter::ToggleGodMode()
+{
+	bGodMode = !bGodMode;
+	UE_LOG(LogOMNI, Warning, TEXT("PHI GODMODE: %s"), bGodMode ? TEXT("ON") : TEXT("OFF"));
+}
+
 float AOMNICharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
 	AController* EventInstigator, AActor* DamageCauser)
 {
+	if (bGodMode) return 0.f;
 	if (!IsAlive()) return 0.f;
 	const float Applied = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	Health = FMath::Clamp(Health - Applied, 0.f, MaxHealth);

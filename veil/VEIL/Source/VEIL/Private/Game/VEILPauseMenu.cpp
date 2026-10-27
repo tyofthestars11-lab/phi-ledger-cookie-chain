@@ -9,6 +9,8 @@
 #include "Components/VerticalBox.h"
 #include "Components/VerticalBoxSlot.h"
 #include "Game/VEILGameMode.h"
+#include "Character/VEILCharacter.h"
+#include "GameFramework/Pawn.h"
 #include "GameFramework/GameUserSettings.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -53,6 +55,8 @@ void UVEILPauseMenu::NativeConstruct()
 	AddText(TEXT("PAUSED"), 40);
 	AddText(TEXT("THE LAST SIGNAL HOLDS"), 16);
 
+	GodButton = AddButton(TEXT("GODMODE"));
+	GodLabel = AddText(TEXT(""), 16);
 	ResumeButton = AddButton(TEXT("Resume"));
 	QualityButton = AddButton(TEXT("Graphics"));
 	QualityLabel = AddText(TEXT(""), 16);
@@ -60,12 +64,42 @@ void UVEILPauseMenu::NativeConstruct()
 	QuitButton = AddButton(TEXT("Quit Game"));
 
 	ResumeButton->OnClicked.AddDynamic(this, &UVEILPauseMenu::OnResumeClicked);
+	GodButton->OnClicked.AddDynamic(this, &UVEILPauseMenu::OnGodClicked);
 	QualityButton->OnClicked.AddDynamic(this, &UVEILPauseMenu::OnQualityClicked);
 	TitleButton->OnClicked.AddDynamic(this, &UVEILPauseMenu::OnTitleClicked);
 	QuitButton->OnClicked.AddDynamic(this, &UVEILPauseMenu::OnQuitClicked);
 
 	ResumeButton->SetKeyboardFocus();
 	RefreshQualityLabel();
+	RefreshGodLabel();
+}
+
+void UVEILPauseMenu::RefreshGodLabel()
+{
+	bool bOn = false;
+	if (APlayerController* PC = GetOwningPlayer())
+	{
+		if (AVEILCharacter* Runner = Cast<AVEILCharacter>(PC->GetPawn()))
+		{
+			bOn = Runner->IsGodMode();
+		}
+	}
+	if (GodLabel)
+	{
+		GodLabel->SetText(FText::FromString(bOn ? TEXT("GODMODE: ON") : TEXT("GODMODE: OFF")));
+	}
+}
+
+void UVEILPauseMenu::OnGodClicked()
+{
+	if (APlayerController* PC = GetOwningPlayer())
+	{
+		if (AVEILCharacter* Runner = Cast<AVEILCharacter>(PC->GetPawn()))
+		{
+			Runner->ToggleGodMode();
+		}
+	}
+	RefreshGodLabel();
 }
 
 void UVEILPauseMenu::RefreshQualityLabel()

@@ -146,3 +146,18 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
 - generate_project_foundations.py (step 1 of exchange 8b): LEFT as a repeat - it is the same factory-create road as job 106, whose log carried zero output lines; and job 107's bind died at the same write step. Diagnosis: headless skeletal-asset WRITES die in this seat; file copies never have. New road (job 109): the TP_ThirdPerson template PROJECT's self-consistent Characters tree copied WHOLE + probe-all-meshes - the winner names itself.
 - bake_navigation_grids.py: same nav tool, invented map names again (VEIL_CityDistrict / OMNI_PathOfLight do not exist); corrected version already queued as job 110.
 - Google's "blue static = no nav data" diagnosis: LEFT - the blue static is the editor default material on actors the art pass had not reached (OMNI art materialized=0 on keyword misses, fixed with a stocked-pool fallback); navmesh governs pathing, not textures.
+
+## Exchange 9 - tower dresser + spiral spawner + minion bind (13:17 MDT)
+- dress_veil_towers.py: concept TAKEN (it is the standing mesh-swap tranche; swap_placeholders.py already waits in report mode) - paths LEFT ("/Game/SickaEnv/Meshes/SM_Tower_Structure_A" does not exist; our pack is Sicka_EnvPack2 - real names come from job 111's [MESH] inventory). Typo in its save call (get_get_editor_subsystem) would crash it as written.
+- PhiSpiralSpawner C++: LEFT as a class - no such spawner exists here; worlds are editor-placed by build_world.py and the runtime GameMode guard stands down on placed maps. Its BlockAll/static/shadow settings match what the builders already set.
+- bind_paragon_minions.py: direction TAKEN, script LEFT - invented class name (FactionEnemyAgent) and a wrong path (Down_Minion). The measured path from job 109's probe: /Game/ParagonMinions/Characters/Minions/Down_Minions/Meshes/Minion_Lane_Super_Dawn, skeleton SK_Minion_Lane_Super ALIVE. The bind happens in our C++ faction classes (runtime-spawned), not an editor pass.
+
+## Exchange 10 - full architecture dump (13:18 MDT)
+- Read as a mirror of our own brief: its FItemStructureRow ~ our FPHIItemRow (in code, DT_Items filled, 24 rows); its XP formula is ours verbatim (20 x phi^(L-1)); its Warden (900 HP) and GameModes duplicate standing classes. LEFT as duplicates - merging would fork the source of truth.
+- Its pipeline script repeats the factory skeleton road (dead in jobs 106/107) + invented maps + invented DT path (/Game/Core/DT_ItemDatabase). Its ini block duplicates our consolidated DefaultEngine.ini. Nothing new to take.
+
+## Exchange 11 - God Mode (13:19 MDT)
+- TAKEN and adapted: UFUNCTION(Exec) ToggleGodMode + TakeDamage gate, in OUR classes (AVEILCharacter/AOMNICharacter, which already own Health + TakeDamage). TYREE's word governs the placement: "Add it to the menu" - GODMODE button + state label added to all four menus (main + pause, both games), console command kept as the second door.
+
+## Exchange 12 - industry mirrors (13:20 MDT)
+- TAKEN as frame confirmation: Remnant 2 (procedural sector worlds, no GAS reliance), Bright Memory (solo-dev C++ loop + vault dressing on one workstation), Lords of the Fallen (data-driven combat AI, Lumen SOFTWARE ray tracing tuned for mid GPUs - our exact section-8 profile). Its offered builds (sector streaming, aggro listeners) already stand as our DistrictStreaming classes and faction AI - nothing to queue.

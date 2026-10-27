@@ -1,0 +1,20 @@
+---,Speaker,Line,VoiceFile
+V01,NARRATOR,"Before the Silence, the district sang on every frequency. Now only one signal remains.",v01.wav
+V02,NARRATOR,You are the Runner. You are the only one who can still hear it.,v02.wav
+V03,KEEPER,Runner. I am the Keeper of the Threshold. The gate you seek does not open for the loud. It opens for the tuned.,v03.wav
+V04,KEEPER,"Three fragments sleep in this district, scattered when the Silence fell. Bring them to me.",v04.wav
+V05,KEEPER,The factions will contest every street. They were built to guard the signal. They have forgotten why.,v05.wav
+V06,KEEPER,You carry the fragments. The way up is open. The Seer is listening for you.,v06.wav
+V07,SEER,"I see by frequency, Runner, not by light. Your signal is golden. It climbs by the ratio.",v07.wav
+V08,SEER,"The Cache holds what the district was, before. Its door is a question: what repeats, yet never returns the same?",v08.wav
+V09,SEER,Answer with your feet. Walk the spiral. The door will know the step.,v09.wav
+V10,SEER,The Warden wakes when the Cache is touched. It is not cruel. It is thorough.,v10.wav
+V11,CARTOGRAPHER,"Every street I charted bends toward the Beacon, Runner. The district is a spiral pretending to be a grid.",v11.wav
+V12,CARTOGRAPHER,Three sectors. Three turns of the golden angle. Stand at the centroid and the whole city makes sense.,v12.wav
+V13,CARTOGRAPHER,"When the towers align, the route draws itself. I only ever copied what the ratio wrote.",v13.wav
+V14,WARDEN PRIME,SIGNAL BEARER. STATE YOUR FREQUENCY.,v14.wav
+V15,WARDEN PRIME,I GUARD THE LAST SIGNAL. NOTHING UNMEASURED PASSES.,v15.wav
+V16,WARDEN PRIME,YOUR PATTERN HOLDS. ESCALATING TRIAL.,v16.wav
+V17,WARDEN PRIME,TRIAL COMPLETE. THE SIGNAL RECOGNIZES YOU.,v17.wav
+V18,NARRATOR,"The Beacon takes the fragments and returns them as a voice: the district, singing again, one street at a time.",v18.wav
+V19,KEEPER,"The Last Signal was never lost, Runner. It was waiting for a carrier. It was waiting for you.",v19.wav

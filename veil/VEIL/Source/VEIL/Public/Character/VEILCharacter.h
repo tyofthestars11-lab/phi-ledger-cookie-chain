@@ -58,6 +58,16 @@ public:
 	UFUNCTION(BlueprintPure, Category = "VEIL|Health")
 	bool IsAlive() const { return Health > 0.f; }
 
+	// ---- God Mode: on the menus, on the console, in the damage gate ----
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|GodMode")
+	bool bGodMode = false;
+
+	UFUNCTION(Exec, BlueprintCallable, Category = "VEIL|GodMode")
+	void ToggleGodMode();
+
+	UFUNCTION(BlueprintPure, Category = "VEIL|GodMode")
+	bool IsGodMode() const { return bGodMode; }
+
 	// ---- Combat ----
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Combat")
 	EVEILCombatState CombatState = EVEILCombatState::Exploring;

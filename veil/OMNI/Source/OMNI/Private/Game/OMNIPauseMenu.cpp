@@ -9,6 +9,8 @@
 #include "Components/VerticalBox.h"
 #include "Components/VerticalBoxSlot.h"
 #include "Game/OMNIGameMode.h"
+#include "Character/OMNICharacter.h"
+#include "GameFramework/Pawn.h"
 #include "GameFramework/GameUserSettings.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
@@ -53,6 +55,8 @@ void UOMNIPauseMenu::NativeConstruct()
 	AddText(TEXT("PAUSED"), 40);
 	AddText(TEXT("THE LAST SIGNAL HOLDS"), 16);
 
+	GodButton = AddButton(TEXT("GODMODE"));
+	GodLabel = AddText(TEXT(""), 16);
 	ResumeButton = AddButton(TEXT("Resume"));
 	QualityButton = AddButton(TEXT("Graphics"));
 	QualityLabel = AddText(TEXT(""), 16);
@@ -60,12 +64,42 @@ void UOMNIPauseMenu::NativeConstruct()
 	QuitButton = AddButton(TEXT("Quit Game"));
 
 	ResumeButton->OnClicked.AddDynamic(this, &UOMNIPauseMenu::OnResumeClicked);
+	GodButton->OnClicked.AddDynamic(this, &UOMNIPauseMenu::OnGodClicked);
 	QualityButton->OnClicked.AddDynamic(this, &UOMNIPauseMenu::OnQualityClicked);
 	TitleButton->OnClicked.AddDynamic(this, &UOMNIPauseMenu::OnTitleClicked);
 	QuitButton->OnClicked.AddDynamic(this, &UOMNIPauseMenu::OnQuitClicked);
 
 	ResumeButton->SetKeyboardFocus();
 	RefreshQualityLabel();
+	RefreshGodLabel();
+}
+
+void UOMNIPauseMenu::RefreshGodLabel()
+{
+	bool bOn = false;
+	if (APlayerController* PC = GetOwningPlayer())
+	{
+		if (AOMNICharacter* Runner = Cast<AOMNICharacter>(PC->GetPawn()))
+		{
+			bOn = Runner->IsGodMode();
+		}
+	}
+	if (GodLabel)
+	{
+		GodLabel->SetText(FText::FromString(bOn ? TEXT("GODMODE: ON") : TEXT("GODMODE: OFF")));
+	}
+}
+
+void UOMNIPauseMenu::OnGodClicked()
+{
+	if (APlayerController* PC = GetOwningPlayer())
+	{
+		if (AOMNICharacter* Runner = Cast<AOMNICharacter>(PC->GetPawn()))
+		{
+			Runner->ToggleGodMode();
+		}
+	}
+	RefreshGodLabel();
 }
 
 void UOMNIPauseMenu::RefreshQualityLabel()
