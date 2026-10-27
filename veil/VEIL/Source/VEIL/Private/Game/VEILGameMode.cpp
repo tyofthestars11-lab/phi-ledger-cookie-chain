@@ -1,5 +1,6 @@
 // VEIL: THE LAST SIGNAL - game mode + player controller implementation.
 #include "Game/VEILGameMode.h"
+#include "Data/PHIItemRow.h"
 
 #include "Blueprint/UserWidget.h"
 #include "Character/VEILCharacter.h"

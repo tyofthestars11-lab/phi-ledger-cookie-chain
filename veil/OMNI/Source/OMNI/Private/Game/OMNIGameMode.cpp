@@ -1,5 +1,6 @@
 // OMNI: THE LAST SIGNAL - game mode + player controller implementation.
 #include "Game/OMNIGameMode.h"
+#include "Data/PHIItemRow.h"
 
 #include "Blueprint/UserWidget.h"
 #include "Character/OMNICharacter.h"

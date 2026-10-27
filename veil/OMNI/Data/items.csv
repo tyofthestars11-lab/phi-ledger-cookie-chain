@@ -1,0 +1,25 @@
+---,DisplayName,ItemType,Damage,Rarity,Value
+Signal_Lance,Signal Lance,Weapon,10,1,25
+Echo_Blade,Echo Blade,Weapon,16,2,40
+Fragment_Pistol,Fragment Pistol,Weapon,16,2,40
+Concordance_Rifle,Concordance Rifle,Weapon,26,3,65
+Wardens_Reach,Warden's Reach,Weapon,42,4,106
+Phi_Caster,Phi Caster,Weapon,69,5,171
+Runners_Weave,Runner's Weave,Armor,10,1,25
+Signal_Vest,Signal Vest,Armor,16,2,40
+Concordance_Plate,Concordance Plate,Armor,26,3,65
+Golden_Aegis,Golden Aegis,Armor,69,5,171
+Scrap_Pack,Scrap Pack,Tool,10,1,25
+Signal_Scanner,Signal Scanner,Tool,16,2,40
+Echo_Lens,Echo Lens,Tool,26,3,65
+Angle_Compass,Golden Angle Compass,Tool,42,4,106
+Signal_Tonic,Signal Tonic,Consumable,10,1,25
+Echo_Draught,Echo Draught,Consumable,16,2,40
+Phi_Elixir,Phi Elixir,Consumable,42,4,106
+Echo_Stone,Echo Stone,Artifact,16,2,40
+Spiral_Key,Spiral Key,Artifact,26,3,65
+Beacon_Core,Beacon Core,Artifact,42,4,106
+Sealed_Fragment,Sealed Fragment,Artifact,26,3,65
+First_Signal,The First Signal,Artifact,69,5,171
+Dusk_Charm,Dusk Charm,Armor,26,3,65
+Static_Knife,Static Knife,Weapon,10,1,25
