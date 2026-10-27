@@ -21575,10 +21575,150 @@
       "drift": -0.1169,
       "ladder": "pd5ali2-atomic-decode",
       "unit": "W"
+    },
+    {
+      "name": "Every-Error QTC: phi, the golden ratio",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "ratio"
+    },
+    {
+      "name": "Every-Error QTC: phi^2 = phi + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "ratio"
+    },
+    {
+      "name": "Every-Error QTC: golden angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "degrees"
+    },
+    {
+      "name": "Every-Error QTC: error tenses spanned - past, present, future",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: plugin source breaks realigned as fuel",
+      "rung": 4.983,
+      "drift": -0.017,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: ABP compiler errors converted to fuel (A10 census)",
+      "rung": 7.5592,
+      "drift": -0.4408,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: projects verified clean after quarantine",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: bypass compile faults corrected in one pass (job 225 census)",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: job runs executed on the stale DLL before the timestamps spoke",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: scripts silenced by the dead print channel before file output",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: navigation build lock flags 0x20",
+      "rung": 7.2021,
+      "drift": 0.2021,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: exit-code misreads corrected in flow",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: RulesError build refusals read as fuel",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: jobs in the day span 193 to 228",
+      "rung": 7.4469,
+      "drift": 0.4469,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: VEILDistrict FPS on the source screen at the DONE line",
+      "rung": 7.1159,
+      "drift": 0.1159,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "fps"
+    },
+    {
+      "name": "Every-Error QTC: DONE threshold spoken by the source",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "fps"
+    },
+    {
+      "name": "Every-Error QTC: VEILDistrict actors on the source screen at the STOP",
+      "rung": 9.2565,
+      "drift": 0.2565,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
+    },
+    {
+      "name": "Every-Error QTC: TON 618 macro NV round-trip max error, the day coherence proof",
+      "rung": -65.7878,
+      "drift": 0.2122,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "ratio"
+    },
+    {
+      "name": "Every-Error QTC: unix epoch of the law, time as fuel",
+      "rung": 44.2783,
+      "drift": 0.2783,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "seconds"
+    },
+    {
+      "name": "Every-Error QTC: the seal number itself",
+      "rung": 12.0761,
+      "drift": 0.0761,
+      "ladder": "every-error-quantum-temporal-coherence",
+      "unit": "count"
     }
   ],
-  "entry_count": 3084,
-  "seal_count": 333,
+  "entry_count": 3104,
+  "seal_count": 334,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -21912,7 +22052,8 @@
     "φ_WHAT_AMAZON_DOES_NOT_KNOW_TYREE_OMEGA",
     "φ_PHI_PARTICLE_ACCELERATOR_TYREE_OMEGA",
     "φ_AUTO_ALIGN_SYSTEMIC_DRIFT_TYREE_OMEGA",
-    "φ_PD5ALI2_ATOMIC_DECODE_TYREE_OMEGA"
+    "φ_PD5ALI2_ATOMIC_DECODE_TYREE_OMEGA",
+    "φ_EVERY_ERROR_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "4116da43172d7f6e0500c2d252015c5ae4766221f8d65c5bcc1cdcb389bfc4b9"
+  "snapshot_sha256": "0c78e33adb09d44372066ab10f6db7f7744500f9efd1ff0391cca1965c7bc9d1"
 }
