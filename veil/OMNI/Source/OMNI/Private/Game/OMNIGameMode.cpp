@@ -259,7 +259,7 @@ void AOMNIPlayerController::Tick(float DeltaSeconds)
 	if (PcProofClock >= 5.f)
 	{
 		PcProofClock = 0.f;
-		UE_LOG(LogTemp, Display, AOMNICharacter* PhiPawn = Cast<AOMNICharacter>(GetPawn());
+		AOMNICharacter* PhiPawn = Cast<AOMNICharacter>(GetPawn());
 		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: world=%s sameWorld=%d worldTime=%.2f worldDelta=%.4f dilation=%.3f pcTick=%d pcCanTick=%d pawn=%s pawnTick=%d pawnCanTick=%d pawnBegun=%d pawnTickEntries=%d timerActive=%d"),
 			GetWorld() ? *GetWorld()->GetName() : TEXT("none"),
 			(GetPawn() && GetPawn()->GetWorld() == GetWorld()) ? 1 : 0,
