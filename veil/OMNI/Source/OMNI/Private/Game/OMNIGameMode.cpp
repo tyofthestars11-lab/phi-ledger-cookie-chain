@@ -1,3 +1,5 @@
+#include "EngineUtils.h"
+#include "Engine/StaticMeshActor.h"
 // OMNI: THE LAST SIGNAL - game mode + player controller implementation.
 #include "Game/OMNIGameMode.h"
 #include "Data/PHIItemRow.h"
@@ -25,6 +27,35 @@ AOMNIGameMode::AOMNIGameMode()
 void AOMNIGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// PHI CENSUS: 2.5s after boot, read every tall static mesh actor's
+	// bounds base in the LIVE world (baked + runtime alike). A floater
+	// names itself here - no more arguing with photographs.
+	{
+		FTimerHandle CensusTimer;
+		GetWorldTimerManager().SetTimer(CensusTimer, [this]()
+		{
+			int32 Total = 0; int32 Floaters = 0;
+			for (TActorIterator<AStaticMeshActor> It(GetWorld()); It; ++It)
+			{
+				FVector Origin; FVector Extent;
+				It->GetActorBounds(false, Origin, Extent);
+				if (Extent.Z <= 100.f) continue;
+				if (It->GetName().Contains(TEXT("Orb"))) continue;
+				++Total;
+				const float Base = Origin.Z - Extent.Z;
+				if (Base > 5.f)
+				{
+					++Floaters;
+					UE_LOG(LogTemp, Display,
+						TEXT("PHI CENSUS FLOAT: %s base=%.1f height=%.1f"),
+						*It->GetName(), Base, Extent.Z * 2.f);
+				}
+			}
+			UE_LOG(LogTemp, Display,
+				TEXT("PHI CENSUS: tall actors=%d floaters=%d"), Total, Floaters);
+		}, 2.5f, false);
+	}
 
 	// Build the world FIRST: OMNI ships no level assets, so the district,
 	// the light and the plaza are raised here, on whatever map the editor
