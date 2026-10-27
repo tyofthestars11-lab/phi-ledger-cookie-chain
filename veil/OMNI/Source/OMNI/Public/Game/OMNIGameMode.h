@@ -36,6 +36,7 @@ class OMNI_API AOMNIGameMode : public AGameModeBase
 
 public:
 	AOMNIGameMode();
+	virtual void Tick(float DeltaSeconds) override;
 
 	UPROPERTY(BlueprintAssignable, Category = "OMNI|Game")
 	FOMNIPhaseChanged OnPhaseChanged;
@@ -79,6 +80,7 @@ class OMNI_API AOMNIPlayerController : public APlayerController
 
 public:
 	AOMNIPlayerController();
+	virtual void Tick(float DeltaSeconds) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OMNI|UI")
 	TSubclassOf<UUserWidget> HUDWidgetClass;

@@ -36,6 +36,7 @@ class VEIL_API AVEILGameMode : public AGameModeBase
 
 public:
 	AVEILGameMode();
+	virtual void Tick(float DeltaSeconds) override;
 
 	UPROPERTY(BlueprintAssignable, Category = "VEIL|Game")
 	FVEILPhaseChanged OnPhaseChanged;
@@ -79,6 +80,7 @@ class VEIL_API AVEILPlayerController : public APlayerController
 
 public:
 	AVEILPlayerController();
+	virtual void Tick(float DeltaSeconds) override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|UI")
 	TSubclassOf<UUserWidget> HUDWidgetClass;

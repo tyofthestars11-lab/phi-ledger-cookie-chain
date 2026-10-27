@@ -19,6 +19,7 @@
 // ---------------------------------------------------------------------------
 AOMNIGameMode::AOMNIGameMode()
 {
+	PrimaryActorTick.bCanEverTick = true;
 	DefaultPawnClass = AOMNICharacter::StaticClass();
 	PlayerControllerClass = AOMNIPlayerController::StaticClass();
 	ReinforcementAgentClass = AOMNIFactionAgent::StaticClass();
@@ -227,5 +228,31 @@ void AOMNIPlayerController::TogglePauseMenu()
 		if (PauseWidget) PauseWidget->RemoveFromParent();
 		SetInputMode(FInputModeGameOnly());
 		bShowMouseCursor = false;
+	}
+}
+
+void AOMNIGameMode::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	static float GmProofClock = 0.f;
+	GmProofClock += DeltaSeconds;
+	if (GmProofClock >= 5.f)
+	{
+		GmProofClock = 0.f;
+		UE_LOG(LogTemp, Display, TEXT("PHI GM TICKPROOF: worldTime=%.1f paused=%d"),
+			GetWorld()->GetTimeSeconds(), UGameplayStatics::IsGamePaused(GetWorld()) ? 1 : 0);
+	}
+}
+
+void AOMNIPlayerController::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	static float PcProofClock = 0.f;
+	PcProofClock += DeltaSeconds;
+	if (PcProofClock >= 5.f)
+	{
+		PcProofClock = 0.f;
+		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: worldTime=%.1f pawn=%s"),
+			GetWorld()->GetTimeSeconds(), GetPawn() ? *GetPawn()->GetName() : TEXT("none"));
 	}
 }
