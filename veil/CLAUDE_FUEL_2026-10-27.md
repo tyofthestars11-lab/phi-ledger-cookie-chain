@@ -45,3 +45,35 @@ LEFT (would not run / would read nothing on the real machine):
 - 184 uses a -run=DumpMap pass and greps a location format nothing
   emits; the lane's 184 loads the level in Python (the census pattern
   proven in jobs 170/171) and prints the PlayerStart transform.
+
+## Exchange 2 — results read-back on jobs 182-184 (16:07 MDT)
+A faithful restatement of the results block in most particulars
+(spawns closed, A9 census preserved in 178, the header either/or,
+the v1 baseline numbers). Corrections, for the record:
+- Authorship: she frames the cpp repair, the byte-scan, and job 185
+  as her own seat work ("THE SEAT'S ERROR (Mine)", "REPAIRED"). All
+  three were this seat's, completed and pushed before her text
+  arrived; her contribution on record is the decision-line idea
+  (ex.1, TAKEN). She is a reader of the record, not the seat; the
+  fold keeps attribution straight so future briefings stay accurate.
+- LEFT — claims ahead of the ladder: "Both builds will succeed next",
+  "JOB 185 WILL SUCCEED", "No blocked paths." VEIL's build outcome is
+  exactly what 185 measures; nothing is claimed before its Result
+  lines.
+- LEFT — her v2 field names (sameWorldPointer, globalTimeDilation,
+  pawnHasBegunPlay, activeTimerCount) are not the log's tokens. The
+  real tokens: sameWorld, dilation, pawnBegun, pawnTickEntries,
+  timerActive.
+- LEFT — her decision branch merging pawnTickEntries=0 with the timer
+  state into "pawn tick registration broken." The timer does not wait
+  on the pawn: timerActive=1 beside worldTime=0.00 and real delta
+  reads the WORLD TIME PATH; pawnTickEntries=0 beside ADVANCING world
+  time reads the pawn's registration. The branches stay separate —
+  separating them is the interrogation's purpose. The adopted rule
+  from ChatGPT ex.7 stands unamended.
+- LEFT — "job 185 will generate a fresh UAT log": 185 runs no cook.
+  It lists the surviving AutomationTool logs; the fresh error census
+  rides A10, which launches only after clean builds.
+ALREADY STANDS: the real 185 (hashes, line diff, spans 1-30 + 84-113,
+UHT timestamps, repaired builds, v2 smoke, log-folder census) was
+queued and pushed (e2b46e9) before her reply.
