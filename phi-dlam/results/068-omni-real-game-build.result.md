@@ -1,11 +1,11 @@
 ﻿# DIRECT JOB REPORT - executed by the NV center (PHI-DLAM v5.29), no brain calls
-When: 2026-10-27 15:15:43 UTC
+When: 2026-10-27 15:16:47 UTC
 
 ## STEP 1
 ```
 SYNCED: OMNI Source + Config + uproject (real-game tranche)
-BUILD5 STARTED detached, PID 37668
-AFTER 190 s: build processes=0 dll=
+BUILD5 STARTED detached, PID 50004
+AFTER 190 s: build processes=2 dll=
 Result: Failed (OtherCompilationError)
 Total execution time: 1.70 seconds
 Trace written to file C:\Users\Admin\AppData\Local\UnrealBuildTool\Trace.uba with size 4.7kb
