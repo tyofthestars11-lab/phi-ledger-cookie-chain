@@ -22,7 +22,7 @@ void AEnvironmentalClue::Interact_Implementation(AVEILCharacter* Player)
 	if (bOneShot && bCollected) return;
 	bCollected = true;
 
-	if (AVEILDiscoveryManager* Manager = GetWorld()->GetSubsystem<AVEILDiscoveryManager>())
+	if (UVEILDiscoveryManager* Manager = GetWorld()->GetSubsystem<UVEILDiscoveryManager>())
 	{
 		Manager->CollectFragment(Fragment);
 	}
@@ -46,7 +46,7 @@ AArtifact::AArtifact()
 
 void AArtifact::Interact_Implementation(AVEILCharacter* Player)
 {
-	if (AVEILDiscoveryManager* Manager = GetWorld()->GetSubsystem<AVEILDiscoveryManager>())
+	if (UVEILDiscoveryManager* Manager = GetWorld()->GetSubsystem<UVEILDiscoveryManager>())
 	{
 		if (!Manager->CollectArtifact(ArtifactId)) return; // already taken
 	}
@@ -65,7 +65,7 @@ void AArtifact::Interact_Implementation(AVEILCharacter* Player)
 // ---------------------------------------------------------------------------
 // Discovery Manager
 // ---------------------------------------------------------------------------
-void AVEILDiscoveryManager::RegisterMystery(const FVEILMystery& Mystery)
+void UVEILDiscoveryManager::RegisterMystery(const FVEILMystery& Mystery)
 {
 	for (const FVEILMystery& Existing : Mysteries)
 	{
@@ -74,7 +74,7 @@ void AVEILDiscoveryManager::RegisterMystery(const FVEILMystery& Mystery)
 	Mysteries.Add(Mystery);
 }
 
-bool AVEILDiscoveryManager::CollectFragment(const FVEILLoreFragment& Fragment)
+bool UVEILDiscoveryManager::CollectFragment(const FVEILLoreFragment& Fragment)
 {
 	if (Fragment.Id.IsNone() || CollectedFragments.Contains(Fragment.Id)) return false;
 	CollectedFragments.Add(Fragment.Id);
@@ -87,7 +87,7 @@ bool AVEILDiscoveryManager::CollectFragment(const FVEILLoreFragment& Fragment)
 	return true;
 }
 
-bool AVEILDiscoveryManager::CollectArtifact(FName ArtifactId)
+bool UVEILDiscoveryManager::CollectArtifact(FName ArtifactId)
 {
 	if (ArtifactId.IsNone() || CollectedArtifacts.Contains(ArtifactId)) return false;
 	CollectedArtifacts.Add(ArtifactId);
@@ -95,7 +95,7 @@ bool AVEILDiscoveryManager::CollectArtifact(FName ArtifactId)
 	return true;
 }
 
-void AVEILDiscoveryManager::CheckMysteries(FName MysteryId)
+void UVEILDiscoveryManager::CheckMysteries(FName MysteryId)
 {
 	for (FVEILMystery& Mystery : Mysteries)
 	{
@@ -115,7 +115,7 @@ void AVEILDiscoveryManager::CheckMysteries(FName MysteryId)
 	}
 }
 
-float AVEILDiscoveryManager::GetMysteryProgress(FName MysteryId) const
+float UVEILDiscoveryManager::GetMysteryProgress(FName MysteryId) const
 {
 	for (const FVEILMystery& Mystery : Mysteries)
 	{
@@ -131,7 +131,7 @@ float AVEILDiscoveryManager::GetMysteryProgress(FName MysteryId) const
 	return 0.f;
 }
 
-bool AVEILDiscoveryManager::IsMysterySolved(FName MysteryId) const
+bool UVEILDiscoveryManager::IsMysterySolved(FName MysteryId) const
 {
 	for (const FVEILMystery& Mystery : Mysteries)
 	{
@@ -140,7 +140,7 @@ bool AVEILDiscoveryManager::IsMysterySolved(FName MysteryId) const
 	return false;
 }
 
-float AVEILDiscoveryManager::GetSignalProgress() const
+float UVEILDiscoveryManager::GetSignalProgress() const
 {
 	if (Mysteries.Num() == 0) return 0.f;
 	int32 Solved = 0;

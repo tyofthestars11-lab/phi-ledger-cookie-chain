@@ -129,7 +129,7 @@ public:
 // mystery, and measures how much of the Signal has been assembled.
 // ---------------------------------------------------------------------------
 UCLASS()
-class VEIL_API AVEILDiscoveryManager : public UWorldSubsystem
+class VEIL_API UVEILDiscoveryManager : public UWorldSubsystem
 {
 	GENERATED_BODY()
 

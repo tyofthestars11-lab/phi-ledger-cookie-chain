@@ -22,7 +22,7 @@ void AVEILGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	// Seed the world systems with the authored starting data.
-	if (AVEILDiscoveryManager* Discovery = GetWorld()->GetSubsystem<AVEILDiscoveryManager>())
+	if (UVEILDiscoveryManager* Discovery = GetWorld()->GetSubsystem<UVEILDiscoveryManager>())
 	{
 		for (const FVEILMystery& Mystery : MysteriesToRegister)
 		{
@@ -31,7 +31,7 @@ void AVEILGameMode::BeginPlay()
 		Discovery->OnMysterySolved.AddDynamic(this, &AVEILGameMode::HandleMysterySolved);
 	}
 
-	if (AVEILFactionManager* Factions = GetWorld()->GetSubsystem<AVEILFactionManager>())
+	if (UVEILFactionManager* Factions = GetWorld()->GetSubsystem<UVEILFactionManager>())
 	{
 		for (const FVEILTerritory& Territory : TerritoriesToRegister)
 		{

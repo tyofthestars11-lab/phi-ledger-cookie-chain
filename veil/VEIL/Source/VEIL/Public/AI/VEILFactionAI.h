@@ -144,7 +144,7 @@ private:
 // territory ownership, and reinforcement spawns.
 // ---------------------------------------------------------------------------
 UCLASS()
-class VEIL_API AVEILFactionManager : public UWorldSubsystem
+class VEIL_API UVEILFactionManager : public UWorldSubsystem
 {
 	GENERATED_BODY()
 

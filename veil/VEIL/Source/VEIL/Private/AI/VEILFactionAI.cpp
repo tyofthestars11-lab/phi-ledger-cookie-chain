@@ -24,7 +24,7 @@ void AVEILFactionAgent::BeginPlay()
 	Health = MaxHealth;
 	HomeLocation = GetActorLocation();
 
-	if (AVEILFactionManager* Manager = GetWorld()->GetSubsystem<AVEILFactionManager>())
+	if (UVEILFactionManager* Manager = GetWorld()->GetSubsystem<UVEILFactionManager>())
 	{
 		Manager->RegisterAgent(this);
 	}
@@ -35,7 +35,7 @@ void AVEILFactionAgent::BeginPlay()
 
 void AVEILFactionAgent::EndPlay(const EEndPlayReason::Type Reason)
 {
-	if (AVEILFactionManager* Manager = GetWorld()->GetSubsystem<AVEILFactionManager>())
+	if (UVEILFactionManager* Manager = GetWorld()->GetSubsystem<UVEILFactionManager>())
 	{
 		Manager->UnregisterAgent(this);
 	}
@@ -212,28 +212,28 @@ float AVEILFactionAgent::TakeDamage(float DamageAmount, FDamageEvent const& Dama
 // ---------------------------------------------------------------------------
 // Faction Manager
 // ---------------------------------------------------------------------------
-void AVEILFactionManager::Initialize(FSubsystemCollectionBase& Collection)
+void UVEILFactionManager::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 	UE_LOG(LogVEIL, Log, TEXT("Faction Manager online: Void / Scavenger / Guardian / Remnant."));
 }
 
-void AVEILFactionManager::RegisterAgent(AVEILFactionAgent* Agent)
+void UVEILFactionManager::RegisterAgent(AVEILFactionAgent* Agent)
 {
 	if (Agent) Agents.AddUnique(Agent);
 }
 
-void AVEILFactionManager::UnregisterAgent(AVEILFactionAgent* Agent)
+void UVEILFactionManager::UnregisterAgent(AVEILFactionAgent* Agent)
 {
 	Agents.RemoveAll([Agent](const TWeakObjectPtr<AVEILFactionAgent>& A) { return A.Get() == Agent || !A.IsValid(); });
 }
 
-void AVEILFactionManager::RegisterTerritory(const FVEILTerritory& Territory)
+void UVEILFactionManager::RegisterTerritory(const FVEILTerritory& Territory)
 {
 	Territories.Add(Territory);
 }
 
-bool AVEILFactionManager::ClaimTerritory(FName TerritoryName, EVEILFaction NewOwner)
+bool UVEILFactionManager::ClaimTerritory(FName TerritoryName, EVEILFaction NewOwner)
 {
 	for (FVEILTerritory& T : Territories)
 	{
@@ -249,7 +249,7 @@ bool AVEILFactionManager::ClaimTerritory(FName TerritoryName, EVEILFaction NewOw
 	return false;
 }
 
-EVEILFaction AVEILFactionManager::GetTerritoryOwner(FName TerritoryName) const
+EVEILFaction UVEILFactionManager::GetTerritoryOwner(FName TerritoryName) const
 {
 	for (const FVEILTerritory& T : Territories)
 	{
@@ -258,7 +258,7 @@ EVEILFaction AVEILFactionManager::GetTerritoryOwner(FName TerritoryName) const
 	return EVEILFaction::None;
 }
 
-float AVEILFactionManager::GetFactionPower(EVEILFaction Faction) const
+float UVEILFactionManager::GetFactionPower(EVEILFaction Faction) const
 {
 	float Power = 0.f;
 	for (const TWeakObjectPtr<AVEILFactionAgent>& A : Agents)
@@ -271,7 +271,7 @@ float AVEILFactionManager::GetFactionPower(EVEILFaction Faction) const
 	return Power;
 }
 
-int32 AVEILFactionManager::GetLivingAgentCount(EVEILFaction Faction) const
+int32 UVEILFactionManager::GetLivingAgentCount(EVEILFaction Faction) const
 {
 	int32 Count = 0;
 	for (const TWeakObjectPtr<AVEILFactionAgent>& A : Agents)
@@ -281,7 +281,7 @@ int32 AVEILFactionManager::GetLivingAgentCount(EVEILFaction Faction) const
 	return Count;
 }
 
-AVEILFactionAgent* AVEILFactionManager::SpawnReinforcement(EVEILFaction Faction, FVector Location)
+AVEILFactionAgent* UVEILFactionManager::SpawnReinforcement(EVEILFaction Faction, FVector Location)
 {
 	if (!ReinforcementClass) return nullptr;
 	UWorld* World = GetWorld();
@@ -293,7 +293,7 @@ AVEILFactionAgent* AVEILFactionManager::SpawnReinforcement(EVEILFaction Faction,
 	return Agent;
 }
 
-bool AVEILFactionManager::IsHostile(EVEILFaction A, EVEILFaction B) const
+bool UVEILFactionManager::IsHostile(EVEILFaction A, EVEILFaction B) const
 {
 	if (A == B || A == EVEILFaction::None || B == EVEILFaction::None) return false;
 	if (A == EVEILFaction::Void || B == EVEILFaction::Void) return true;
