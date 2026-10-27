@@ -18,5 +18,12 @@ $p = Start-Process $UE -ArgumentList '"D:\OMNI-UE\OMNI.uproject"','/Game/Maps/OM
 Start-Sleep -Seconds 30
 if (!$p.HasExited) { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Write-Output "smoke closed after 30s" }
 Select-String -Path "D:\OMNI-UE\Saved\smoke180v2.log" -Pattern "TICKPROOF|TIMER CHECK|GAMEMODE ALIVE|BODY CHECK|Traceback" | Select-Object -First 14 | ForEach-Object { $_.Line }
+$tk = Select-String -Path "D:\OMNI-UE\Saved\smoke180v2.log" -Pattern "TICKPROOF" | Select-Object -Last 1
+if ($tk) {
+  if ($tk.Line -match "worldTime=0\.00" -and $tk.Line -match "timerActive=1") { Write-Output "DECISION: clock at 0.00 with the 3s timer still pending and delta real - the break sits on the world's time path" }
+  if ($tk.Line -match "pawnTickEntries=0") { Write-Output "DECISION: pawn Tick never entered - entry count 0" }
+  if ($tk.Line -match "pawnTickEntries=[1-9]") { Write-Output "DECISION: pawn Tick entered - the count is live" }
+  if ($tk.Line -match "sameWorld=0") { Write-Output "DECISION: controller and pawn sit in different worlds" }
+}
 Write-Output "=== JOB 182 DONE ==="
 ```
