@@ -15,6 +15,7 @@
 #include "Engine/StaticMeshActor.h"
 #include "GameFramework/PlayerStart.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "EngineUtils.h"
 #include "UObject/ConstructorHelpers.h"
 #include "OMNI.h"
 
@@ -107,7 +108,7 @@ void AOMNIWorldBuilder::BuildLighting()
 		if (USkyLightComponent* Comp =
 			Sky->FindComponentByClass<USkyLightComponent>())
 		{
-			Comp->SetIntensity(0.7f);
+			Comp->SetIntensity(0.5f);
 		}
 	}
 	// Violet dusk fog for depth.
@@ -118,7 +119,7 @@ void AOMNIWorldBuilder::BuildLighting()
 		if (UExponentialHeightFogComponent* Comp =
 			Fog->FindComponentByClass<UExponentialHeightFogComponent>())
 		{
-			Comp->FogDensity = 0.012f;
+			Comp->FogDensity = 0.02f;
 			Comp->FogInscatteringColor = FLinearColor(0.13f, 0.08f, 0.24f);
 			Comp->FogHeightFalloff = 0.25f;
 		}
@@ -143,10 +144,10 @@ void AOMNIWorldBuilder::BuildDistrict()
 	UWorld* World = GetWorld();
 	if (!World) return;
 
-	const FLinearColor GroundTint(0.05f, 0.05f, 0.08f);
-	const FLinearColor TowerTint(0.10f, 0.11f, 0.18f);
-	const FLinearColor TowerTintWarm(0.16f, 0.12f, 0.10f);
-	const FLinearColor PlazaTint(0.20f, 0.16f, 0.08f);
+	const FLinearColor GroundTint(0.08f, 0.08f, 0.11f);
+	const FLinearColor TowerTint(0.23f, 0.25f, 0.38f);
+	const FLinearColor TowerTintWarm(0.34f, 0.24f, 0.16f);
+	const FLinearColor PlazaTint(0.30f, 0.23f, 0.10f);
 	const FLinearColor GoldTint(1.0f, 0.78f, 0.30f);
 
 	// Ground: one slab, top face exactly at z = 0.
@@ -180,6 +181,14 @@ void AOMNIWorldBuilder::BuildDistrict()
 					FVector(Width / 130.f, Width / 130.f, 0.24f),
 					CubeMesh, GoldTint, 2.5f);
 			}
+			// Lit floor band on every second tower: at dusk a city
+			// reads by its light lines, not its silhouettes.
+			if (Towers % 2 == 0)
+			{
+				SpawnBlock(FVector(Loc.X, Loc.Y, Height * 0.55f),
+					FVector(Width / 98.f, Width / 98.f, 0.16f),
+					CubeMesh, GoldTint, 1.4f);
+			}
 			++Towers;
 		}
 	}
@@ -202,6 +211,30 @@ void AOMNIWorldBuilder::BuildWorld()
 {
 	if (bBuilt) return;
 	bBuilt = true;
+
+	// ONE RIG, ONE CITY: clear the template map's own stage first.
+	// Its sun, sky, fog and checker floor are what fought the dusk in
+	// the first standing photo - two directional lights competing for
+	// forward shading, a grid floor under the district. A real game
+	// ships one stage: the builder's. Everything pre-existing in those
+	// classes dies here, before anything of ours spawns.
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		for (TActorIterator<ADirectionalLight> It(World); It; ++It) It->Destroy();
+		for (TActorIterator<ASkyLight> It(World); It; ++It) It->Destroy();
+		for (TActorIterator<AExponentialHeightFog> It(World); It; ++It) It->Destroy();
+		for (TActorIterator<AStaticMeshActor> It(World); It; ++It) It->Destroy();
+		for (TActorIterator<AActor> It(World); It; ++It)
+		{
+			const FString Name = It->GetClass()->GetName();
+			if (Name == TEXT("SkyAtmosphere") || Name == TEXT("VolumetricCloud"))
+			{
+				It->Destroy();
+			}
+		}
+	}
+
 	BuildLighting();
 	BuildDistrict();
 }
