@@ -1,7 +1,7 @@
 // VEIL: THE LAST SIGNAL - runtime world builder implementation.
 #include "World/VEILWorldBuilder.h"
 
-#include "Atmosphere/SkyAtmosphere.h"
+#include "Components/SkyAtmosphereComponent.h"
 #include "Components/DirectionalLightComponent.h"
 #include "Components/ExponentialHeightFogComponent.h"
 #include "Components/SkyLightComponent.h"
@@ -91,9 +91,15 @@ void AVEILWorldBuilder::BuildLighting()
 			Light->SetLightColor(FLinearColor(1.f, 0.72f, 0.45f));
 		}
 	}
-	// Sky dome + ambient from the sky itself.
-	World->SpawnActor<ASkyAtmosphere>(ASkyAtmosphere::StaticClass(),
-		FVector::ZeroVector, FRotator::ZeroRotator);
+	// Sky dome: the atmosphere as a component on the builder itself -
+	// the include surface every engine version carries (the actor
+	// header path does not exist in 5.8; build10/11/OMNI build3 all
+	// died on it, forensics job 062).
+	if (USkyAtmosphereComponent* Atmo =
+		NewObject<USkyAtmosphereComponent>(this))
+	{
+		Atmo->RegisterComponent();
+	}
 	if (ASkyLight* Sky = World->SpawnActor<ASkyLight>(
 		ASkyLight::StaticClass(), FVector(0.f, 0.f, 1000.f),
 		FRotator::ZeroRotator))
