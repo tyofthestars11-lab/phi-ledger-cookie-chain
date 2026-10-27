@@ -260,7 +260,7 @@ void AOMNIPlayerController::Tick(float DeltaSeconds)
 	{
 		PcProofClock = 0.f;
 		AOMNICharacter* PhiPawn = Cast<AOMNICharacter>(GetPawn());
-		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: world=%s sameWorld=%d worldTime=%.2f worldDelta=%.4f dilation=%.3f pcTick=%d pcCanTick=%d pawn=%s pawnTick=%d pawnCanTick=%d pawnBegun=%d pawnTickEntries=%d timerActive=%d"),
+		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: world=%s sameWorld=%d worldTime=%.2f worldDelta=%.4f dilation=%.3f pcTick=%d pcCanTick=%d pawn=%s pawnTick=%d pawnCanTick=%d pawnBegun=%d pawnTickEntries=%d timerActive=%d worldType=%d gameWorld=%d worldBegun=%d timerRemaining=%.2f"),
 			GetWorld() ? *GetWorld()->GetName() : TEXT("none"),
 			(GetPawn() && GetPawn()->GetWorld() == GetWorld()) ? 1 : 0,
 			GetWorld()->GetTimeSeconds(), GetWorld()->GetDeltaSeconds(),
@@ -271,7 +271,10 @@ void AOMNIPlayerController::Tick(float DeltaSeconds)
 			(GetPawn() && GetPawn()->PrimaryActorTick.bCanEverTick) ? 1 : 0,
 			(GetPawn() && GetPawn()->HasActorBegunPlay()) ? 1 : 0,
 			PhiPawn ? PhiPawn->PhiTickEntryCount : -1,
-			GetWorldTimerManager().IsTimerActive(GPhiTimerHandle) ? 1 : 0);
+			GetWorldTimerManager().IsTimerActive(GPhiTimerHandle) ? 1 : 0,
+			(int32)GetWorld()->WorldType, GetWorld()->IsGameWorld() ? 1 : 0,
+			GetWorld()->HasBegunPlay() ? 1 : 0,
+			GetWorldTimerManager().GetTimerRemaining(GPhiTimerHandle));
 	}
 }
 
