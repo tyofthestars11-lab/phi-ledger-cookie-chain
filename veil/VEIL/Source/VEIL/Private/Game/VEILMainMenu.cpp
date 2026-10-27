@@ -1,6 +1,8 @@
 // VEIL: THE LAST SIGNAL - main menu implementation.
 #include "Game/VEILMainMenu.h"
 
+#include "Blueprint/WidgetTree.h"
+
 #include "Components/Button.h"
 #include "Components/CanvasPanel.h"
 #include "Components/CanvasPanelSlot.h"

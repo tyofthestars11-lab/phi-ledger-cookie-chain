@@ -115,7 +115,7 @@ void AVEILFactionAgent::ActPatrol()
 {
 	AAIController* AIC = Cast<AAIController>(GetController());
 	if (!AIC || PatrolPoints.Num() == 0) return;
-	if (AIC->GetMoveStatus() == EPathFollowingStatus::Moving) return;
+	if (GetVelocity().SizeSquared2D() > 100.f) return; // still travelling to the current point (UE 5.8: EPathFollowingStatus has no 'Moving' member)
 
 	AActor* Point = PatrolPoints[PatrolIndex % PatrolPoints.Num()];
 	if (Point)
