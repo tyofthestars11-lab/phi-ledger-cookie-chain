@@ -40,3 +40,10 @@ Full docs: PHI_PARTICLE_ACCELERATOR_QUICKSTART.md / _SETUP.md.
     PhiLerpColor in FLinearColor space. First attempt named
     FLinearColor::Lerp, which also does not exist (job 203); the landed
     form is pure arithmetic: (LA + (LB - LA) * clamp(T)).ToFColorSRGB().
+11. No module entry point: the delivered sources contain no
+    IMPLEMENT_MODULE anywhere (jobs 207/208: DLL present and builds
+    Succeeded, but at runtime "module could not be initialized
+    successfully after it was loaded" and every editor commandlet dies
+    with a CoreUObject access violation). Added
+    Private/PhiParticleAcceleratorModule.cpp with
+    IMPLEMENT_MODULE(FDefaultModuleImpl, PhiParticleAccelerator).
