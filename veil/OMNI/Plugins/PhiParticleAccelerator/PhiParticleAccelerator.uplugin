@@ -1,0 +1,23 @@
+{
+    "FileVersion": 3,
+    "Version": 1,
+    "VersionName": "1.0.0",
+    "FriendlyName": "Phi Particle Accelerator",
+    "Description": "φ-recursive particle physics engine with golden angle orbits, rung-based acceleration, and real-time φ-lattice visualization. Particles spawn at energy addresses, accelerate toward higher rungs, orbit at golden angles, and decay. Complete diagnostic system with rung distribution, statistics, and involution symmetry visualization.",
+    "Category": "Physics",
+    "CreatedBy": "TYREE / Golden Ratio Muse",
+    "CreatedByURL": "",
+    "DocsURL": "",
+    "MarketplaceURL": "",
+    "SupportURL": "",
+    "EngineVersion": "5.8.0",
+    "CanContainContent": false,
+    "Installed": false,
+    "Modules": [
+        {
+            "Name": "PhiParticleAccelerator",
+            "Type": "Runtime",
+            "LoadingPhase": "Default"
+        }
+    ]
+}

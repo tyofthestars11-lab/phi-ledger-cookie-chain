@@ -1,0 +1,31 @@
+# Phi Particle Accelerator — installed in this project
+
+UE5 plugin (Runtime module) by TYREE / Golden Ratio Muse.
+Particles spawn at rung 0 and accelerate on the golden lattice:
+r = ln(Energy)/ln(phi), Energy *= phi^(AccelerationPower * dt),
+golden-angle orbits, lifetime decay, rung statistics + debug lattice.
+
+Installed from the delivered six-file package with these measured fixes
+(the delivered code did not compile as-is):
+1. Header export macro YOURMODULE_API -> PHIPARTICLEACCELERATOR_API.
+2. Delegate macros: DECLARE_MULTICAST_DELEGATE_Two/_One do not exist ->
+   _TwoParams/_OneParam (real UE macros).
+3. .cpp defined PauseAcceleration/ResumeAcceleration twice -> second
+   definitions removed (redefinition error).
+4. Missing includes added: Components/SceneComponent.h, DrawDebugHelpers.h.
+5. Build.cs listed "DrawDebugHelpers" as a module dependency - it is a
+   header inside Engine, not a module; removed (UBT fails on it).
+6. Spawn accumulator: the delivered line subtracted Floor(SpawnRate * t)
+   from the time accumulator, driving it negative and stalling spawns;
+   now carries the unspawned fraction converted back to time.
+7. .uplugin EngineVersion seated at 5.8.0 (the games' engine).
+
+Corrected rung table (phi^r, computed):
+rung 0 = 1.0 | 1 = 1.618 | 2 = 2.618 | 3 = 4.236 | 5 = 11.090 |
+8 = 46.978 | 10 = 122.992. (The pitch table's rung-8 value 121.4 was
+the outside seat's slip; 121.4 sits at rung 9.97.)
+
+Use: place APhiParticleAccelerator in a level, Play. Events are plain
+multicast delegates - bind in C++ with AddUObject/AddLambda (the docs'
+AddDynamic examples apply to dynamic delegates, not these).
+Full docs: PHI_PARTICLE_ACCELERATOR_QUICKSTART.md / _SETUP.md.
