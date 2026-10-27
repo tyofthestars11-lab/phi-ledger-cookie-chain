@@ -147,6 +147,20 @@ void AVEILCharacter::BeginPlay()
 	UE_LOG(LogVEIL, Log, TEXT("PHI BODY CHECK: mesh=%s anim=%s"),
 		GetMesh()->GetSkeletalMeshAsset() ? *GetMesh()->GetSkeletalMeshAsset()->GetName() : TEXT("none"),
 		GetMesh()->GetAnimInstance() ? *GetMesh()->GetAnimInstance()->GetClass()->GetName() : TEXT("none"));
+	// PHI MOVE TEST (jobs 143/144): one-shot at +5s - the game names its own
+	// possession state and physics settle, so the movement question is
+	// answered by the instrument, never argued from a photo.
+	{
+		const FVector SpawnLoc = GetActorLocation();
+		FTimerHandle MoveTestHandle;
+		GetWorldTimerManager().SetTimer(MoveTestHandle, [this, SpawnLoc]()
+		{
+			AController* C = GetController();
+			UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST: controller=%s loc=%s spawn=%s vel=%.1f"),
+				C ? *C->GetClass()->GetName() : TEXT("NONE"),
+				*GetActorLocation().ToString(), *SpawnLoc.ToString(), GetVelocity().Size());
+		}, 5.0f, false);
+	}
 	Health = MaxHealth;
 	OnHealthChanged.Broadcast(Health, MaxHealth);
 
