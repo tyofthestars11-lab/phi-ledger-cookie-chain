@@ -18,6 +18,17 @@ robocopy veil\VEIL\Scripts D:\VEIL\Scripts /E /NFL /NDL /NJH | Out-Null
 robocopy veil\VEIL\Source D:\VEIL\Source /E /NFL /NDL /NJH | Out-Null
 robocopy veil\OMNI\Source D:\OMNI-UE\Source /E /NFL /NDL /NJH | Out-Null
 "SYNCED (scripts + sources, incl. GameMode placed-world guard)"
+"=== PLUGIN UNION (geometry / modeling / PCG shelf rides in) ==="
+foreach ($pair in @(@{Pc='D:\VEIL\VEIL.uproject'; Repo='veil\VEIL\VEIL.uproject'}, @{Pc='D:\OMNI-UE\OMNI.uproject'; Repo='veil\OMNI\OMNI.uproject'})) {
+  if ((Test-Path $pair.Pc) -and (Test-Path $pair.Repo)) {
+    $pc = Get-Content $pair.Pc -Raw | ConvertFrom-Json
+    $repo = Get-Content $pair.Repo -Raw | ConvertFrom-Json
+    $have = @($pc.Plugins | ForEach-Object { $_.Name })
+    foreach ($pl in $repo.Plugins) { if ($have -notcontains $pl.Name) { $pc.Plugins += $pl; "ADDED to $($pair.Pc): $($pl.Name)" } }
+    [IO.File]::WriteAllText($pair.Pc, ($pc | ConvertTo-Json -Depth 10), (New-Object System.Text.UTF8Encoding($false)))
+    "PLUGINS in $($pair.Pc): " + (($pc.Plugins | ForEach-Object { $_.Name }) -join ', ')
+  }
+}
 if (Get-Process UnrealEditor -ErrorAction SilentlyContinue) { "EDITOR OPEN - worldgen deferred; rerun with the editor closed"; "=== JOB 083 DONE ===" }
 else {
   $ini = 'D:\VEIL\Config\DefaultEngine.ini'
