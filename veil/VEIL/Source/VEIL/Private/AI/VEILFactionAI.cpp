@@ -277,7 +277,12 @@ void AVEILFactionAgent::MoveToward(const FVector& Dest, float AcceptRadius)
 {
 	if (AAIController* AIC = Cast<AAIController>(GetController()))
 	{
-		if (AIC->MoveToLocation(Dest, AcceptRadius) != EPathFollowingRequestResult::Failed)
+		// UE 5.8 removed EPathFollowingRequestResult::Failed (measured:
+		// error C2039 in the OMNI-A7 package compile, job 142). Success and
+		// AlreadyAtGoal are the accept states; anything else falls through
+		// to the direct steer below.
+		const EPathFollowingRequestResult::Type MoveResult = AIC->MoveToLocation(Dest, AcceptRadius);
+		if (MoveResult == EPathFollowingRequestResult::Success || MoveResult == EPathFollowingRequestResult::AlreadyAtGoal)
 		{
 			return;
 		}
