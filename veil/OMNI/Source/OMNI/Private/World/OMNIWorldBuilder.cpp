@@ -119,9 +119,11 @@ void AOMNIWorldBuilder::BuildLighting()
 		if (UExponentialHeightFogComponent* Comp =
 			Fog->FindComponentByClass<UExponentialHeightFogComponent>())
 		{
+			// Density only: FogInscatteringColor is NOT a member of
+			// UExponentialHeightFogComponent in UE 5.8 - build5 died on
+			// exactly that line (error C2039, job 068). The dusk comes
+			// from the sun and sky rig, not from tinting the fog.
 			Comp->FogDensity = 0.02f;
-			Comp->FogInscatteringColor = FLinearColor(0.13f, 0.08f, 0.24f);
-			Comp->FogHeightFalloff = 0.25f;
 		}
 	}
 	// The beacon's gold heart over the plaza.
