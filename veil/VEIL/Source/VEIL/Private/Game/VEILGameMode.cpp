@@ -7,6 +7,7 @@
 #include "InputCoreTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "VEIL.h"
+#include "World/VEILWorldBuilder.h"
 
 // ---------------------------------------------------------------------------
 // Game Mode
@@ -15,11 +16,40 @@ AVEILGameMode::AVEILGameMode()
 {
 	DefaultPawnClass = AVEILCharacter::StaticClass();
 	PlayerControllerClass = AVEILPlayerController::StaticClass();
+	ReinforcementAgentClass = AVEILFactionAgent::StaticClass();
 }
 
 void AVEILGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Build the world FIRST: VEIL ships no level assets, so the district,
+	// the light and the plaza are raised here, on whatever map the editor
+	// or the game opened with. Then seat the runner on the plaza and wake
+	// the first machines around him.
+	AVEILWorldBuilder* Builder = GetWorld()->SpawnActor<AVEILWorldBuilder>(
+		FVector::ZeroVector, FRotator::ZeroRotator);
+	if (Builder)
+	{
+		Builder->BuildWorld();
+		if (APawn* Pawn = UGameplayStatics::GetPlayerPawn(this, 0))
+		{
+			Pawn->SetActorLocation(Builder->PlazaCenter);
+		}
+		for (int32 i = 0; i < 3; ++i)
+		{
+			const float Angle = (2.f * PI / 3.f) * i;
+			const FVector Loc(FMath::Cos(Angle) * 950.f,
+				FMath::Sin(Angle) * 950.f, 240.f);
+			if (AVEILFactionAgent* Agent =
+				GetWorld()->SpawnActor<AVEILFactionAgent>(
+					AVEILFactionAgent::StaticClass(), Loc,
+					FRotator(0.f, -Angle * 180.f / PI, 0.f)))
+			{
+				Agent->SpawnDefaultController();
+			}
+		}
+	}
 
 	// Seed the world systems with the authored starting data.
 	if (UVEILDiscoveryManager* Discovery = GetWorld()->GetSubsystem<UVEILDiscoveryManager>())

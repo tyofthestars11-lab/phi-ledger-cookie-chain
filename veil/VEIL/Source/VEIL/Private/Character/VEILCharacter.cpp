@@ -3,6 +3,10 @@
 
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Engine/StaticMesh.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "UObject/ConstructorHelpers.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -42,6 +46,47 @@ AVEILCharacter::AVEILCharacter()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
+
+	// The runner's visible body, built from engine shapes - no mesh assets
+	// ship with the project, and an invisible pawn is not a character.
+	{
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> CylinderMesh(
+			TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMesh(
+			TEXT("/Engine/BasicShapes/Cube.Cube"));
+
+		UStaticMeshComponent* Body = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RunnerBody"));
+		Body->SetupAttachment(GetCapsuleComponent());
+		Body->SetRelativeLocation(FVector(0.f, 0.f, -15.f));
+		Body->SetRelativeScale3D(FVector(0.62f, 0.62f, 1.5f));
+		Body->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		if (CylinderMesh.Succeeded()) Body->SetStaticMesh(CylinderMesh.Object);
+		if (UMaterialInterface* Base = Body->GetMaterial(0))
+		{
+			if (UMaterialInstanceDynamic* MID = UMaterialInstanceDynamic::Create(Base, this))
+			{
+				MID->SetVectorParameterValue(TEXT("Color"), FLinearColor(0.08f, 0.08f, 0.12f));
+				MID->SetVectorParameterValue(TEXT("BaseColor"), FLinearColor(0.08f, 0.08f, 0.12f));
+				Body->SetMaterial(0, MID);
+			}
+		}
+
+		UStaticMeshComponent* Visor = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RunnerVisor"));
+		Visor->SetupAttachment(GetCapsuleComponent());
+		Visor->SetRelativeLocation(FVector(20.f, 0.f, 58.f));
+		Visor->SetRelativeScale3D(FVector(0.10f, 0.46f, 0.12f));
+		Visor->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		if (CubeMesh.Succeeded()) Visor->SetStaticMesh(CubeMesh.Object);
+		if (UMaterialInterface* Base = Visor->GetMaterial(0))
+		{
+			if (UMaterialInstanceDynamic* MID = UMaterialInstanceDynamic::Create(Base, this))
+			{
+				MID->SetVectorParameterValue(TEXT("Color"), FLinearColor(1.f, 0.78f, 0.30f));
+				MID->SetVectorParameterValue(TEXT("EmissiveColor"), FLinearColor(1.f, 0.78f, 0.30f) * 3.f);
+				Visor->SetMaterial(0, MID);
+			}
+		}
+	}
 
 	Health = MaxHealth;
 }

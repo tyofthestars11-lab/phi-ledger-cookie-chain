@@ -2,8 +2,13 @@
 #include "AI/VEILFactionAI.h"
 
 #include "AIController.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Engine/StaticMesh.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "UObject/ConstructorHelpers.h"
 #include "VEIL.h"
 
 // ---------------------------------------------------------------------------
@@ -15,6 +20,48 @@ AVEILFactionAgent::AVEILFactionAgent()
 	AIControllerClass = AAIController::StaticClass();
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 	GetCharacterMovement()->MaxWalkSpeed = 380.f;
+
+	// Visible machine body from engine shapes - same law as the runner:
+	// no mesh assets ship, and an invisible agent is not a machine.
+	{
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> CylinderMesh(
+			TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMesh(
+			TEXT("/Engine/BasicShapes/Cube.Cube"));
+
+		UStaticMeshComponent* Body = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MachineBody"));
+		Body->SetupAttachment(GetCapsuleComponent());
+		Body->SetRelativeLocation(FVector(0.f, 0.f, -10.f));
+		Body->SetRelativeScale3D(FVector(0.72f, 0.72f, 1.55f));
+		Body->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		if (CylinderMesh.Succeeded()) Body->SetStaticMesh(CylinderMesh.Object);
+		if (UMaterialInterface* Base = Body->GetMaterial(0))
+		{
+			if (UMaterialInstanceDynamic* MID = UMaterialInstanceDynamic::Create(Base, this))
+			{
+				MID->SetVectorParameterValue(TEXT("Color"), FLinearColor(0.14f, 0.10f, 0.20f));
+				MID->SetVectorParameterValue(TEXT("BaseColor"), FLinearColor(0.14f, 0.10f, 0.20f));
+				Body->SetMaterial(0, MID);
+			}
+		}
+
+		UStaticMeshComponent* Eye = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MachineEye"));
+		Eye->SetupAttachment(GetCapsuleComponent());
+		Eye->SetRelativeLocation(FVector(22.f, 0.f, 60.f));
+		Eye->SetRelativeScale3D(FVector(0.10f, 0.30f, 0.10f));
+		Eye->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		if (CubeMesh.Succeeded()) Eye->SetStaticMesh(CubeMesh.Object);
+		if (UMaterialInterface* Base = Eye->GetMaterial(0))
+		{
+			if (UMaterialInstanceDynamic* MID = UMaterialInstanceDynamic::Create(Base, this))
+			{
+				MID->SetVectorParameterValue(TEXT("Color"), FLinearColor(0.85f, 0.2f, 1.f));
+				MID->SetVectorParameterValue(TEXT("EmissiveColor"), FLinearColor(0.85f, 0.2f, 1.f) * 3.f);
+				Eye->SetMaterial(0, MID);
+			}
+		}
+	}
+
 	Health = MaxHealth;
 }
 
