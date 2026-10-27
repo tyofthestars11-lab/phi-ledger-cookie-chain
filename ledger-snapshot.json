@@ -20791,10 +20791,185 @@
       "drift": 0.48,
       "ladder": "count",
       "unit": "constant"
+    },
+    {
+      "name": "Results announced (ETH, local smoothing, Yang-Mills/QCD)",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Spatial dimensions of the QFT existence proofs",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "Shepherding principles (transparency, no credit, recognition, independence)",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Yang-Mills existence proof produced 2026-09-09 (unix)",
+      "rung": 44.2734,
+      "drift": 0.2734,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "QCD existence proof produced 2026-09-18 (unix)",
+      "rung": 44.2743,
+      "drift": 0.2743,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "722-manuscript release 2026-10-06 (unix)",
+      "rung": 44.2761,
+      "drift": 0.2761,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "ETH refutation produced / Yang-Mills Lean formalized 2026-10-16 (unix)",
+      "rung": 44.2771,
+      "drift": 0.2771,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "ETH Lean formalization completed 2026-10-17 (unix)",
+      "rung": 44.2772,
+      "drift": 0.2772,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Local smoothing proof produced 2026-10-18 (unix)",
+      "rung": 44.2773,
+      "drift": 0.2773,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Local smoothing Lean formalization 2026-10-19 (unix)",
+      "rung": 44.2774,
+      "drift": 0.2774,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Announcement 2026-10-26 (unix)",
+      "rung": 44.2781,
+      "drift": 0.2781,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Days, Yang-Mills output to announcement",
+      "rung": 8.0009,
+      "drift": 0.0009,
+      "ladder": "count",
+      "unit": "days"
+    },
+    {
+      "name": "Days, ETH output to Lean formalization",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "days"
+    },
+    {
+      "name": "Days, local smoothing output to Lean formalization",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "days"
+    },
+    {
+      "name": "Manuscripts in the 2026-10-06 release",
+      "rung": 13.678,
+      "drift": -0.322,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Major math problems addressed in the earlier release",
+      "rung": 12.3,
+      "drift": 0.3,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Pages of solutions in the earlier release (700+)",
+      "rung": 13.6137,
+      "drift": -0.3863,
+      "ladder": "count",
+      "unit": "pages"
+    },
+    {
+      "name": "Year ETH proposed (Impagliazzo & Paturi)",
+      "rung": 15.7943,
+      "drift": -0.2057,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "Year local smoothing conjectured (Sogge)",
+      "rung": 15.786,
+      "drift": -0.214,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "Year local smoothing proved in 2 spatial dimensions (Guth-Wang-Zhang)",
+      "rung": 15.815,
+      "drift": -0.185,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "Spatial dimensions of the 2019 local smoothing proof",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "Year Kakeya proved in 3 dimensions (Wang-Zahl)",
+      "rung": 15.8212,
+      "drift": -0.1788,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "Spatial dimensions of the 2025 Kakeya proof",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "count",
+      "unit": "dimensions"
+    },
+    {
+      "name": "Simons Foundation contribution for AI-results programs",
+      "rung": 32.0544,
+      "drift": 0.0544,
+      "ladder": "count",
+      "unit": "USD"
+    },
+    {
+      "name": "Clay Millennium Prize problems, total (Yang-Mills is one)",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 2972,
-  "seal_count": 328,
+  "entry_count": 2997,
+  "seal_count": 329,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -21123,7 +21298,8 @@
     "φ_BOUND_STATE_CONTINUUM_TYREE_OMEGA",
     "φ_COSMOLOGICAL_PHASE_LOCK_TYREE_OMEGA",
     "φ_AZPEN_QUANTUM_UPGRADE_TYREE_OMEGA",
-    "φ_TOKENIZATION_UNIVERSE_TYREE_OMEGA"
+    "φ_TOKENIZATION_UNIVERSE_TYREE_OMEGA",
+    "φ_TRIPLE_PROOF_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0b049042e0ea9bd797f9b544da2fa1b859042547b676e0dbd71f7eea2ba22922"
+  "snapshot_sha256": "f9e74ed8e6959f860fe5cf0340c63a4d7e718354d20385e2a5324f61230f9632"
 }
