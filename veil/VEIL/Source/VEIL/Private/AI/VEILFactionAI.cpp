@@ -11,6 +11,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Navigation/PathFollowingComponent.h"
 #include "VEIL.h"
 
 // ---------------------------------------------------------------------------
@@ -277,12 +278,12 @@ void AVEILFactionAgent::MoveToward(const FVector& Dest, float AcceptRadius)
 {
 	if (AAIController* AIC = Cast<AAIController>(GetController()))
 	{
-		// UE 5.8 removed EPathFollowingRequestResult::Failed (measured:
-		// error C2039 in the OMNI-A7 package compile, job 142). Success and
-		// AlreadyAtGoal are the accept states; anything else falls through
-		// to the direct steer below.
-		const EPathFollowingRequestResult::Type MoveResult = AIC->MoveToLocation(Dest, AcceptRadius);
-		if (MoveResult == EPathFollowingRequestResult::Success || MoveResult == EPathFollowingRequestResult::AlreadyAtGoal)
+		// UE 5.8 header evidence (PathFollowingComponent.h, grepped by job
+		// 146): EPathFollowingRequestResult::Type = { Failed, AlreadyAtGoal,
+		// RequestSuccessful }. AIController.h only forward-declares the enum,
+		// so this file includes PathFollowingComponent.h directly - without
+		// it, no enumerator resolves (error C2039, jobs 142 and 146).
+		if (AIC->MoveToLocation(Dest, AcceptRadius) != EPathFollowingRequestResult::Failed)
 		{
 			return;
 		}
