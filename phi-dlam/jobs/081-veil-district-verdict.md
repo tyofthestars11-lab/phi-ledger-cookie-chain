@@ -1,0 +1,33 @@
+<!-- PHI-DIRECT -->
+# JOB 081 - VEIL DISTRICT VERDICT + MAP DEFAULTS + LUMEN (DIRECT)
+
+Reads the district build log job 078 launched, proves the level file
+exists, and - only if it does - seats VEILDistrict as the game's
+default and editor startup map and turns on the Lumen lines in
+DefaultEngine.ini (backup first). If the level is absent, the log
+tail rides back instead. Nothing is forced.
+
+```powershell
+"=== DISTRICT VERDICT ==="
+$log = 'D:\VEIL\Saved\district-build.log'
+if (Test-Path $log) { Select-String -Path $log -Pattern '\[DISTRICT\]' | ForEach-Object { $_.Line } } else { "NO DISTRICT LOG" }
+$umap = 'D:\VEIL\Content\Maps\VEILDistrict.umap'
+if (Test-Path $umap) {
+  "UMAP EXISTS: {0:N1} KB" -f ((Get-Item $umap).Length/1KB)
+  $ini = 'D:\VEIL\Config\DefaultEngine.ini'
+  Copy-Item $ini "$ini.bak-081" -Force
+  $t = Get-Content $ini -Raw
+  if ($t -notmatch 'GameMapsSettings') { $t += "`r`n[/Script/EngineSettings.GameMapsSettings]`r`n" }
+  if ($t -notmatch 'GameDefaultMap=') { $t = $t -replace '(\[/Script/EngineSettings\.GameMapsSettings\])', "`$1`r`nGameDefaultMap=/Game/Maps/VEILDistrict`r`nEditorStartupMap=/Game/Maps/VEILDistrict" }
+  if ($t -notmatch 'RendererSettings') { $t += "`r`n[/Script/Engine.RendererSettings]`r`n" }
+  foreach ($kv in 'r.DynamicGlobalIlluminationMethod=1','r.ReflectionMethod=1','r.GenerateMeshDistanceFields=True') {
+    if ($t -notmatch [regex]::Escape($kv.Split('=')[0])) { $t = $t -replace '(\[/Script/Engine\.RendererSettings\])', "`$1`r`n$kv" }
+  }
+  Set-Content $ini $t -Encoding ASCII
+  "MAP DEFAULTS + LUMEN SET (backup: DefaultEngine.ini.bak-081)"
+} else {
+  "UMAP ABSENT - district build did not land; log tail:"
+  if (Test-Path $log) { Get-Content $log -Tail 25 }
+}
+"=== JOB 081 DONE ==="
+```

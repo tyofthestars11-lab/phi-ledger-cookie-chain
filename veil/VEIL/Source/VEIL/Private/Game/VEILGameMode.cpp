@@ -4,6 +4,7 @@
 #include "Blueprint/UserWidget.h"
 #include "Character/VEILCharacter.h"
 #include "Game/VEILMainMenu.h"
+#include "Game/VEILPauseMenu.h"
 #include "InputCoreTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "VEIL.h"
@@ -97,6 +98,7 @@ AVEILPlayerController::AVEILPlayerController()
 {
 	// The C++ main menu is the default: a working menu with zero assets.
 	MainMenuWidgetClass = UVEILMainMenu::StaticClass();
+	PauseWidgetClass = UVEILPauseMenu::StaticClass();
 }
 
 void AVEILPlayerController::BeginPlay()
@@ -115,6 +117,7 @@ void AVEILPlayerController::BeginPlay()
 		if (MainMenuWidget)
 		{
 			MainMenuWidget->AddToViewport(20);
+			SetPause(true); // the title is a real title: the world waits behind it
 			SetInputMode(FInputModeGameAndUI());
 			bShowMouseCursor = true;
 			return;

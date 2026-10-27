@@ -81,6 +81,7 @@ void UVEILMainMenu::OnStartClicked()
 {
 	if (APlayerController* PC = GetOwningPlayer())
 	{
+		PC->SetPause(false);
 		PC->SetInputMode(FInputModeGameOnly());
 		PC->bShowMouseCursor = false;
 	}

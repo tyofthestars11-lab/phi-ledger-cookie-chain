@@ -4,6 +4,7 @@
 #include "Blueprint/UserWidget.h"
 #include "Character/OMNICharacter.h"
 #include "Game/OMNIMainMenu.h"
+#include "Game/OMNIPauseMenu.h"
 #include "InputCoreTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "OMNI.h"
@@ -127,6 +128,7 @@ AOMNIPlayerController::AOMNIPlayerController()
 {
 	// The C++ main menu is the default: a working menu with zero assets.
 	MainMenuWidgetClass = UOMNIMainMenu::StaticClass();
+	PauseWidgetClass = UOMNIPauseMenu::StaticClass();
 }
 
 void AOMNIPlayerController::BeginPlay()
@@ -145,6 +147,7 @@ void AOMNIPlayerController::BeginPlay()
 		if (MainMenuWidget)
 		{
 			MainMenuWidget->AddToViewport(20);
+			SetPause(true); // the title is a real title: the world waits behind it
 			SetInputMode(FInputModeGameAndUI());
 			bShowMouseCursor = true;
 			return;
