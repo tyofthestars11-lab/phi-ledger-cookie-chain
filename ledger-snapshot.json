@@ -21183,10 +21183,136 @@
       "drift": 0.2783,
       "ladder": "count",
       "unit": "unix seconds"
+    },
+    {
+      "name": "PhiParticleAccelerator: phi, the accelerator constant",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "phi-particle-accelerator",
+      "unit": "ratio"
+    },
+    {
+      "name": "PhiParticleAccelerator: golden angle 360/phi^2",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "phi-particle-accelerator",
+      "unit": "degrees"
+    },
+    {
+      "name": "PhiParticleAccelerator: energy multiplier per second at default power 1.5 (phi^1.5)",
+      "rung": 1.5,
+      "drift": -0.5,
+      "ladder": "phi-particle-accelerator",
+      "unit": "ratio"
+    },
+    {
+      "name": "PhiParticleAccelerator: rung 5 energy (phi^5)",
+      "rung": 5.0,
+      "drift": 0.0,
+      "ladder": "phi-particle-accelerator",
+      "unit": "energy"
+    },
+    {
+      "name": "PhiParticleAccelerator: rung 8 milestone energy (phi^8)",
+      "rung": 8.0,
+      "drift": 0.0,
+      "ladder": "phi-particle-accelerator",
+      "unit": "energy"
+    },
+    {
+      "name": "PhiParticleAccelerator: rung 10 energy (phi^10)",
+      "rung": 10.0,
+      "drift": 0.0,
+      "ladder": "phi-particle-accelerator",
+      "unit": "energy"
+    },
+    {
+      "name": "PhiParticleAccelerator: default spawn rate",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "phi-particle-accelerator",
+      "unit": "particles/s"
+    },
+    {
+      "name": "PhiParticleAccelerator: max particles",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "phi-particle-accelerator",
+      "unit": "particles"
+    },
+    {
+      "name": "PhiParticleAccelerator: particle lifetime",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "phi-particle-accelerator",
+      "unit": "seconds"
+    },
+    {
+      "name": "PhiParticleAccelerator: tick rate",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "phi-particle-accelerator",
+      "unit": "fps"
+    },
+    {
+      "name": "PhiParticleAccelerator: header lines",
+      "rung": 11.2272,
+      "drift": 0.2272,
+      "ladder": "phi-particle-accelerator",
+      "unit": "lines"
+    },
+    {
+      "name": "PhiParticleAccelerator: implementation lines",
+      "rung": 12.8253,
+      "drift": -0.1747,
+      "ladder": "phi-particle-accelerator",
+      "unit": "lines"
+    },
+    {
+      "name": "PhiParticleAccelerator: total code lines (header + implementation + Build.cs)",
+      "rung": 13.6636,
+      "drift": -0.3364,
+      "ladder": "phi-particle-accelerator",
+      "unit": "lines"
+    },
+    {
+      "name": "PhiParticleAccelerator: files per game",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "phi-particle-accelerator",
+      "unit": "files"
+    },
+    {
+      "name": "PhiParticleAccelerator: games carrying the plugin",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "phi-particle-accelerator",
+      "unit": "games"
+    },
+    {
+      "name": "PhiParticleAccelerator: delivered breaks repaired before install",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "phi-particle-accelerator",
+      "unit": "breaks"
+    },
+    {
+      "name": "PhiParticleAccelerator: lattice points per rung circle",
+      "rung": 7.2021,
+      "drift": 0.2021,
+      "ladder": "phi-particle-accelerator",
+      "unit": "points"
+    },
+    {
+      "name": "PhiParticleAccelerator: involution pairs drawn",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "phi-particle-accelerator",
+      "unit": "pairs"
     }
   ],
-  "entry_count": 3028,
-  "seal_count": 330,
+  "entry_count": 3046,
+  "seal_count": 331,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -21517,7 +21643,8 @@
     "φ_AZPEN_QUANTUM_UPGRADE_TYREE_OMEGA",
     "φ_TOKENIZATION_UNIVERSE_TYREE_OMEGA",
     "φ_TRIPLE_PROOF_TYREE_OMEGA",
-    "φ_WHAT_AMAZON_DOES_NOT_KNOW_TYREE_OMEGA"
+    "φ_WHAT_AMAZON_DOES_NOT_KNOW_TYREE_OMEGA",
+    "φ_PHI_PARTICLE_ACCELERATOR_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c9aab84e5c53911271503fcdcc2be1f40f4b0ae169b515c9b0d29eb54b282919"
+  "snapshot_sha256": "7b708c56bd8838b0d795fe4d7423e2f00e6127ba4b9f025fe723f682c03bc189"
 }
