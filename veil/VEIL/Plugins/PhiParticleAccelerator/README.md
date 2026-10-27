@@ -35,3 +35,6 @@ Use: place APhiParticleAccelerator in a level, Play. Events are plain
 multicast delegates - bind in C++ with AddUObject/AddLambda (the docs'
 AddDynamic examples apply to dynamic delegates, not these).
 Full docs: PHI_PARTICLE_ACCELERATOR_QUICKSTART.md / _SETUP.md.
+10. FColor::Lerp does not exist in UE 5.8 (job 202: C2039/C3861 at all
+    five color-gradient sites, both builds). Replaced with a file-local
+    PhiLerpColor that lerps in FLinearColor space and converts back.

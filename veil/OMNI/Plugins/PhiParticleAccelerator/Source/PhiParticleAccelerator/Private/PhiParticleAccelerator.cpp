@@ -5,6 +5,13 @@
 #include "Components/SceneComponent.h"
 #include "DrawDebugHelpers.h"
 
+// FColor has no Lerp member in UE 5.8 (job 202: C2039 at the five color
+// gradient sites). Lerp in linear space, convert back.
+static FColor PhiLerpColor(FColor A, FColor B, float T)
+{
+    return FLinearColor::Lerp(FLinearColor(A), FLinearColor(B), T).ToFColorSRGB();
+}
+
 APhiParticleAccelerator::APhiParticleAccelerator()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -102,22 +109,22 @@ void APhiParticleAccelerator::SpawnParticle(float Energy, FVector Position, FVec
     if (normalizedRung < 0.25f)
     {
         // Blue to cyan
-        NewParticle.Color = FColor::Lerp(FColor::Blue, FColor::Cyan, normalizedRung * 4.0f);
+        NewParticle.Color = PhiLerpColor(FColor::Blue, FColor::Cyan, normalizedRung * 4.0f);
     }
     else if (normalizedRung < 0.5f)
     {
         // Cyan to green
-        NewParticle.Color = FColor::Lerp(FColor::Cyan, FColor::Green, (normalizedRung - 0.25f) * 4.0f);
+        NewParticle.Color = PhiLerpColor(FColor::Cyan, FColor::Green, (normalizedRung - 0.25f) * 4.0f);
     }
     else if (normalizedRung < 0.75f)
     {
         // Green to yellow
-        NewParticle.Color = FColor::Lerp(FColor::Green, FColor::Yellow, (normalizedRung - 0.5f) * 4.0f);
+        NewParticle.Color = PhiLerpColor(FColor::Green, FColor::Yellow, (normalizedRung - 0.5f) * 4.0f);
     }
     else
     {
         // Yellow to red
-        NewParticle.Color = FColor::Lerp(FColor::Yellow, FColor::Red, (normalizedRung - 0.75f) * 4.0f);
+        NewParticle.Color = PhiLerpColor(FColor::Yellow, FColor::Red, (normalizedRung - 0.75f) * 4.0f);
     }
 
     // Orbital parameters
@@ -381,7 +388,7 @@ void APhiParticleAccelerator::DrawRungLattice(float MinRung, float MaxRungIn, fl
     for (float rung = MinRung; rung <= MaxRungIn; rung += 1.0f)
     {
         float radius = 50.0f + rung * 20.0f;
-        FColor color = FColor::Lerp(FColor::Blue, FColor::Red, (rung - MinRung) / (MaxRungIn - MinRung));
+        FColor color = PhiLerpColor(FColor::Blue, FColor::Red, (rung - MinRung) / (MaxRungIn - MinRung));
 
         DrawRung(rung, radius, color, LifeTime);
     }
