@@ -6,11 +6,10 @@ public class PhiParticleAccelerator : ModuleRules
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        PublicDependencies.AddRange(new string[] {
+        PublicDependencyModuleNames.AddRange(new string[] {
             "Core",
             "CoreUObject",
             "Engine"
         });
-
     }
 }

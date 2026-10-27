@@ -15,10 +15,13 @@ Installed from the delivered six-file package with these measured fixes
 4. Missing includes added: Components/SceneComponent.h, DrawDebugHelpers.h.
 5. Build.cs listed "DrawDebugHelpers" as a module dependency - it is a
    header inside Engine, not a module; removed (UBT fails on it).
-6. Spawn accumulator: the delivered line subtracted Floor(SpawnRate * t)
+6. Build.cs named the dependency list "PublicDependencies" - UE 5.8's
+   ModuleRules member is PublicDependencyModuleNames; the delivered name
+   fails UBT with CS0103 (found by job 197, both builds). Seated correctly.
+7. Spawn accumulator: the delivered line subtracted Floor(SpawnRate * t)
    from the time accumulator, driving it negative and stalling spawns;
    now carries the unspawned fraction converted back to time.
-7. .uplugin EngineVersion seated at 5.8.0 (the games' engine).
+8. .uplugin EngineVersion seated at 5.8.0 (the games' engine).
 
 Corrected rung table (phi^r, computed):
 rung 0 = 1.0 | 1 = 1.618 | 2 = 2.618 | 3 = 4.236 | 5 = 11.090 |
