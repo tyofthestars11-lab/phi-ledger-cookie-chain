@@ -9,7 +9,11 @@
 // gradient sites). Lerp in linear space, convert back.
 static FColor PhiLerpColor(FColor A, FColor B, float T)
 {
-    return FLinearColor::Lerp(FLinearColor(A), FLinearColor(B), T).ToFColorSRGB();
+    // FLinearColor::Lerp does not exist either (job 203) - pure arithmetic.
+    const FLinearColor LA(A);
+    const FLinearColor LB(B);
+    const float K = FMath::Clamp(T, 0.0f, 1.0f);
+    return (LA + (LB - LA) * K).ToFColorSRGB();
 }
 
 APhiParticleAccelerator::APhiParticleAccelerator()
