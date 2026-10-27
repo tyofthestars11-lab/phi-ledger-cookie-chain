@@ -4,10 +4,11 @@ $ErrorActionPreference = "Continue"
 Set-Location "C:\Users\Admin\phi-vault"
 if (Test-Path ".git\MERGE_HEAD") { git commit --no-edit }
 git pull 2>&1 | Select-Object -Last 1
-Write-Output "=== sync source (TICKPROOF v3), build OMNI, smoke: what kind of world is the smoke running? ==="
+Write-Output "=== sync source (TICKPROOF v3), build BOTH fully, smoke: what kind of world is the smoke running? ==="
 Copy-Item "veil\OMNI\Source\*" "D:\OMNI-UE\Source" -Recurse -Force -ErrorAction SilentlyContinue
 Copy-Item "veil\VEIL\Source\*" "D:\VEIL\Source" -Recurse -Force -ErrorAction SilentlyContinue
 $Build = "C:\Program Files\Epic Games\UE_5.8\Engine\Build\BatchFiles\Build.bat"
+& $Build VEILEditor Win64 Development -Project="D:\VEIL\VEIL.uproject" -WaitMutex 2>&1 | Select-String "Result:|error" | Select-Object -First 8
 & $Build OMNIEditor Win64 Development -Project="D:\OMNI-UE\OMNI.uproject" -WaitMutex 2>&1 | Select-String "Result:|error" | Select-Object -First 8
 $UE = "C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor.exe"
 $p = Start-Process $UE -ArgumentList '"D:\OMNI-UE\OMNI.uproject"','/Game/Maps/OMNIWorld','-game','-windowed','-resx=640','-resy=360','-abslog="D:\OMNI-UE\Saved\smoke186.log"' -PassThru
