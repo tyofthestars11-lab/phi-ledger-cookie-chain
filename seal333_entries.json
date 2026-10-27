@@ -1,0 +1,156 @@
+[
+ {
+  "name": "Pd5AlI2: phi, the golden ratio",
+  "value": 1.618033988749895,
+  "unit": "ratio",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: phi^2 = phi + 1",
+  "value": 2.618033988749895,
+  "unit": "ratio",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: golden angle",
+  "value": 137.50776405003785,
+  "unit": "degrees",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: mu, golden pitch angle",
+  "value": 17.0324,
+  "unit": "degrees",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: Pd atomic mass",
+  "value": 106.42,
+  "unit": "u",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: Pd atomic number",
+  "value": 46,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: Al atomic mass",
+  "value": 26.9815,
+  "unit": "u",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: Al atomic number",
+  "value": 13,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: I atomic mass",
+  "value": 126.90447,
+  "unit": "u",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: I atomic number",
+  "value": 53,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: formula unit mass Pd5AlI2",
+  "value": 812.89044,
+  "unit": "u",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: atoms per formula unit",
+  "value": 8,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: atoms per formula unit, literal +1",
+  "value": 9,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: vacancy - one Pd removed, the rung subtraction",
+  "value": 106.42,
+  "unit": "u",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: defect bound states measured (BIC, Science Oct 22)",
+  "value": 2,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: bound states, literal +1 read",
+  "value": 3,
+  "unit": "count",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: fine-structure alpha^-1",
+  "value": 137.035999,
+  "unit": "ratio",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: Planck constant h",
+  "value": 6.62607015e-34,
+  "unit": "J s",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: speed of light c",
+  "value": 299792458,
+  "unit": "m/s",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: Boltzmann constant k_B",
+  "value": 1.380649e-23,
+  "unit": "J/K",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: TON 618 body, the macro anchor (seal 331 canonical)",
+  "value": 66000000000.0,
+  "unit": "solar masses",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ },
+ {
+  "name": "Pd5AlI2: TON 618 luminosity",
+  "value": 1.4e+41,
+  "unit": "W",
+  "ladder": "pd5ali2-atomic-decode",
+  "domain": "pd5ali2-atomic-decode"
+ }
+]
