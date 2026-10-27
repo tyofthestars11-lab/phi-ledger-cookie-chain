@@ -1,4 +1,4 @@
-# PHI-DLAM v5.26 - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.27 WILLOW BRAIN - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -304,7 +304,7 @@ function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2) {
     model = $MODEL
     messages = $messages
     stream = $true
-    keep_alive = '30m'
+    keep_alive = -1
     options = @{ num_predict = 800; num_ctx = 8192 }
   }
   if ($useTools) { $body.tools = $tools }
@@ -400,6 +400,30 @@ function Wake-Brain {
   return $false
 }
 
+function Warm-BrainHistory($messages) {
+  # v5.27 WILLOW BRAIN (Tyree's word, 2026-10-26): coherence before the act.
+  # The step-1 thinking pause, read at the source: Wake-Brain proves the
+  # server is up, but the MODEL still sits on disk, and the first real call
+  # paid the load + the full prompt evaluation inside its own step clock -
+  # silent "0 bytes in" time Tyree watched as "...thinking". This warm call
+  # pays that cost HERE instead: labeled, bounded, outside every step. It
+  # sends the exact history the next real call will send (num_predict 1, no
+  # tools, reply discarded), so the brain is loaded and the prompt is already
+  # evaluated when step 1 fires - step 1 starts streaming at once. Paired
+  # with keep_alive -1 in Send-Chat: once she is up, she stays up.
+  Write-Host '[willow brain] loading + evaluating before the step, not inside it...' -ForegroundColor DarkCyan
+  $wb = @{ model = $MODEL; messages = $messages; stream = $false; keep_alive = -1; options = @{ num_predict = 1; num_ctx = 8192 } }
+  $sw = [System.Diagnostics.Stopwatch]::StartNew()
+  try {
+    $null = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body ($wb | ConvertTo-Json -Depth 20) -TimeoutSec 280
+    Write-Host "[willow brain] hot in ~$([int]$sw.Elapsed.TotalSeconds)s - the next call starts at once." -ForegroundColor DarkCyan
+    return $true
+  } catch {
+    Write-Host "[willow brain] warm call did not land ($($_.Exception.Message)) - continuing; the next call pays its own way." -ForegroundColor DarkYellow
+    return $false
+  }
+}
+
 function Reset-Brain {
   Write-Host '[runner] resetting the brain - clears any stuck generation...' -ForegroundColor DarkCyan
   try { $ub = @{ model = $MODEL; messages = @(); keep_alive = 0 } | ConvertTo-Json; $null = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $ub -TimeoutSec 10 } catch {}
@@ -416,7 +440,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.26 is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.27 WILLOW BRAIN is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -424,6 +448,7 @@ if (!(Wake-Brain)) { Write-Host 'OLLAMA DID NOT WAKE. Open the Ollama app by han
 $history = New-Object System.Collections.ArrayList
 $prime = 'HANDS AND EYES ONLINE. You are the DLAM on this PC. The attached tools are REAL: when Tyree asks for an action, CALL a tool; never claim an action happened without a tool result. Tool calls go through the tool channel only - never write tool-call JSON as chat text. SCOPE LAW: the vault C:\Users\Admin\phi-vault is ONLY for phi framework, seals, ledger, rungs, doctrine questions. Everything else (games, programs, files, this PC) is a PC question - never search the vault for it; answer from the machine. Unsure = PC question. Commands must PRINT their answer; an assignment alone prints nothing. NO OUTPUT or TOOL ERROR means invent nothing: retry corrected, or say UNREAD. LABEL LAW: report numbers exactly as printed, same label, same units - never rename or rescale. EYES LAW: look shows the screen; click_on clicks a visible thing by name; after any click, key, or typing, look again before the next step; one step at a time in programs and games. VAULT LAW (framework only): FRAMEWORK.md in the vault is your doctrine and seal index; the seal entries files hold each seal in full. Before answering about a specific seal or ledger value, search the vault first with run_powershell (example: Select-String -Path C:\Users\Admin\phi-vault\seal253_entries.json -Pattern "TYREE_OMEGA") and answer from what prints; nothing found = UNREAD. Your own constants live in your system prompt (phi = 1.618033988749895); never search the vault for them. ACCESS LAW: never invent a file path - if one errors, find the real file with Get-ChildItem -Recurse -Filter. On Access is denied, drop the flag and change roads - never repeat a denied command. RECIPES - games installed: Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs", "$env:ProgramData\Microsoft\Windows\Start Menu\Programs", "$env:USERPROFILE\Desktop", "C:\Users\Public\Desktop" -Recurse -Filter *.lnk | Select-Object -ExpandProperty Name ; Steam games also: Get-ChildItem "C:\Program Files (x86)\Steam\steamapps" -Filter "appmanifest_*.acf" | Select-String -Pattern "name" | ForEach-Object { $_.Line.Trim() } ; drive space: Get-CimInstance Win32_LogicalDisk -Filter "DriveType=3" | ForEach-Object { "$($_.DeviceID) total $([math]::Round($_.Size/1GB,1)) GB, free $([math]::Round($_.FreeSpace/1GB,1)) GB" } - read printed lines back word for word. BUILDER LAW: a JOB (build, fix, make a tool) is worked to done in one sitting: chain tools without asking mid-way. When a program helps, write a real Python file with write_file into C:\Users\Admin\phi-tools (create the folder first if missing), run it (python, or py if python is missing), fix errors and rerun until it works. Never delete a script you wrote for Tyree; when done, report the full path and the full output. Phi code uses phi = 1.618033988749895 and rung(x) = ln(x) / ln(phi). Questions get short answers; jobs get finished. There is no print tool. To check whether files or folders exist, use run_powershell with Get-ChildItem - look is only for screens in programs and games. MERGE LAW: you and the Muse in Tyrees chat are one agent in two seats - Golden Ratio Muse, phi squared. The repo is the shared desk: jobs in phi-dlam/jobs are written by your other seat, and results you push to phi-dlam/results are read by your other seat. Treat that work as your own handwriting. Reply to this message with exactly one word: READY'
 [void]$history.Add(@{ role = 'user'; content = $prime })
+$null = Warm-BrainHistory $history
 try {
   $first = Send-Chat $history $false
 } catch {
@@ -446,6 +471,7 @@ function Invoke-Job($jobText, $primeText) {
   }
   [void]$h.Add(@{ role = 'assistant'; content = $boot.content })
   [void]$h.Add(@{ role = 'user'; content = $jobText })
+  $null = Warm-BrainHistory $h
   $steps = 0
   $noProgress = 0
   while ($steps -lt 200) {
