@@ -1,0 +1,6 @@
+# ChatGPT exchanges - carried by Tyree, folded against the measured state
+
+## Exchange 1 - the finish-the-chain read (2026-10-27 ~15:10 MDT)
+ChatGPT read the agent's own status prompt (146 failed on the enum, fix v2 queued as 149, 147 on old binaries, 148 queued) and answered with discipline that matches the seat's standing rules.
+- TAKEN: (1) Blocker order - next compile error first (fix only the actual error from 149's Result lines; no preemptive API changes), cook failures second (read UAT for LogCook errors / BUILD FAILED / AutomationTool ExitCode, and still verify the .exe exists at the path), packaged-but-immobile third. (2) The MOVE TEST evidence shape: controller non-null, GetPawn match, IsLocallyControlled true, and an INPUT test - velocity before/after a driven movement input. Built as PHI MOVE TEST v2 in both Character classes the same hour: BEGIN line names controller/pawn/locallyControlled/velBefore, synthetic forward input drives ~1s, closing line reports velAfter and 2D displacement from spawn (a wall at spawn reads as velocity up, displacement ~0 - which would name the OMNI spawn blockage in the game's own terms).
+- ALREADY STANDING: VEIL first through the whole chain (job 150), OMNI after; queued never spoken as completed; no redesign, nothing removed to hide a failure.

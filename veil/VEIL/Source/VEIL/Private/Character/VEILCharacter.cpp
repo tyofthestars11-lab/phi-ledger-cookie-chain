@@ -147,18 +147,33 @@ void AVEILCharacter::BeginPlay()
 	UE_LOG(LogVEIL, Log, TEXT("PHI BODY CHECK: mesh=%s anim=%s"),
 		GetMesh()->GetSkeletalMeshAsset() ? *GetMesh()->GetSkeletalMeshAsset()->GetName() : TEXT("none"),
 		GetMesh()->GetAnimInstance() ? *GetMesh()->GetAnimInstance()->GetClass()->GetName() : TEXT("none"));
-	// PHI MOVE TEST (jobs 143/144): one-shot at +5s - the game names its own
-	// possession state and physics settle, so the movement question is
-	// answered by the instrument, never argued from a photo.
+	// PHI MOVE TEST v2: at +5s the game names its possession state, then
+	// drives synthetic forward input for ~1s and reports the velocity and
+	// displacement its own physics produced - movement proven by the game
+	// itself, in its own log. (Evidence shape carried by Tyree from
+	// ChatGPT, 2026-10-27; folded and built into both runners.)
 	{
 		const FVector SpawnLoc = GetActorLocation();
 		FTimerHandle MoveTestHandle;
 		GetWorldTimerManager().SetTimer(MoveTestHandle, [this, SpawnLoc]()
 		{
 			AController* C = GetController();
-			UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST: controller=%s loc=%s spawn=%s vel=%.1f"),
-				C ? *C->GetClass()->GetName() : TEXT("NONE"),
-				*GetActorLocation().ToString(), *SpawnLoc.ToString(), GetVelocity().Size());
+			UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST BEGIN: controller=%s pawn=%s locallyControlled=%d velBefore=%.1f loc=%s"),
+				C ? *C->GetClass()->GetName() : TEXT("NONE"), *GetName(),
+				IsLocallyControlled() ? 1 : 0, GetVelocity().Size(), *GetActorLocation().ToString());
+			FTimerHandle DriveHandle;
+			GetWorldTimerManager().SetTimer(DriveHandle, [this]()
+			{
+				AddMovementInput(GetActorForwardVector(), 1.0f);
+			}, 0.05f, true);
+			FTimerHandle StopHandle;
+			GetWorldTimerManager().SetTimer(StopHandle, [this, SpawnLoc, DriveHandle]() mutable
+			{
+				GetWorldTimerManager().ClearTimer(DriveHandle);
+				UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST: velAfter=%.1f locAfter=%s moved=%.1f"),
+					GetVelocity().Size(), *GetActorLocation().ToString(),
+					FVector::Dist2D(GetActorLocation(), SpawnLoc));
+			}, 1.2f, false);
 		}, 5.0f, false);
 	}
 	Health = MaxHealth;
