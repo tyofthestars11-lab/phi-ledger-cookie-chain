@@ -71,3 +71,27 @@ LEFT:
 - "Use default template characters to start" - Manny is already the body in both games.
 - Deleting the flat blocks to sculpt - the blocks receive real meshes and materials (swap tranche); the layout Google says to keep is the layout we keep.
 - Audio remains a real gap (the Unreal builds are silent; the web fleet carries THE SCORE) - named, parked behind anim/art/package.
+
+---
+
+## Third + fourth carries - the AAA blueprint and the phi-Cartesian map (2026-10-27 ~12:27 MDT)
+
+Read against the live state and the 097-100 verdicts (below). Google's AAA list mostly names roads already closed or roads closed by the machine (RTX 3050 6GB):
+
+- Nanite: TAKEN for static environment meshes where it fits the 3050 budget (rides the mesh-swap tranche).
+- Lumen hardware ray tracing: LEFT - off by design; Lumen software RT is the standing rig.
+- Substrate materials: LEFT - experimental cost on a 6GB card; the art problem is family-correct assignment, not material model.
+- GAS: LEFT - health/quest/XP/abilities already run as custom C++ systems; a GAS migration replaces working systems for ceremony.
+- Motion Warping / Control Rig IK: LATER - real, but behind the skeleton (nothing animates until SKM_Manny_Simple has one).
+- World Partition / Data Layers: LEFT - maps are standard levels by design.
+- MetaHumans / Fab packs: LEFT - Launcher-account downloads and size; the VaultCache shelf feeds first.
+- "100-weapon JSON for GAS tags": the items table already stands at 24 phi-curve rows (job 100; fill shape fixed, reimport queued) - scaling the CSV is an edit, not a pipeline.
+- The phi-Cartesian matrix snippet: NAMES WHAT THE WORLDGEN ALREADY RUNS - build_world.py places sectors on the golden spiral (golden angle, phi growth) over the Cartesian grid; the 1 -> phi -> phi^2 scale ladder is its tower math. Taken from it: the camera composition note (player resting at the phi intersection of the viewport) for the cinematic pass.
+
+## The 097-100 verdicts (2026-10-27 ~12:21-12:25 MDT) - one root, three symptoms
+
+- 097: LogAnimation names it: "SKM_Manny_Simple has no skeleton." The TemplateResources Mannequins copy carried no Skeletons folder. Anim instance can never be created - T-pose explained at the root. VEIL art pass v1 exited 1 after inventorying 824 materials; it still dressed the district (Tyree's photo: towers wearing a character-suit material - the keyword race went to the character kits).
+- 098: ProjectID removed, cook advanced 85 s and failed on the REAL error: "ABP_Unarmed - The skeleton asset for this animation Blueprint is missing, so it cannot be compiled!" ProjectID was a passenger, never the cause - the removal test is what exposed the true one. One root (missing skeleton) drives anim, T-pose, and every failed cook.
+- 099: OMNIWorld now loads as OMNI's default map (seat confirmed). OMNI art: only 5 materials exist in OMNI's /Game (Mannequins only) - every actor NO MATERIAL, matching Tyree's blue-void photo. OMNI needs its content drop (SickaEnv + ParagonMinions, job 102).
+- 100: DT_Items created with FPHIItemRow in both games; fill returned ok=True with 0 rows - the JSON shape was keyed-object; the fill wants an array of row objects with a Name field. Script fixed; reimport rides job 103.
+- Queued: 101 skeleton probe + install-wide hunt (the copy/fix job follows the named home), 102 OMNI content + VEIL art v2 (environment pools, character kits blacklisted, chosen material per family logged), 103 OMNI art v2 + mood pass both + items reimport, 104 package attempt 5 + door upgrade if the exe lands.

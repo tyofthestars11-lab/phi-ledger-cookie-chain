@@ -1,43 +1,55 @@
-# PHI art pass - run inside UnrealEditor-Cmd with PythonScriptPlugin.
-# The placed worlds were built before real content landed in /Game, so
-# their actors wear no materials. Now that the content trees are in,
-# this pass discovers every material under /Game, assigns each actor
-# family its best-matching real material, and sets every static mesh
-# component MOVABLE - dynamic lighting (Lumen + virtual shadow maps)
-# is the rig these levels run, and movable meshes leave the lightmap
-# system entirely, which ends the "lighting needs to be rebuilt"
-# warning at its root.
+# PHI art pass v2 - run inside UnrealEditor-Cmd with PythonScriptPlugin.
+# v1 dressed the towers in a character suit: it matched materials by
+# name across ALL of /Game, and character kits won the keyword race.
+# v2 builds an ENVIRONMENT pool (SickaEnv / Environment trees), a
+# general pool, and a hard blacklist (character kits, eyes, hair,
+# mannequins) that never dresses a building. Every placed actor's
+# static mesh component also goes MOVABLE (dynamic lighting rig).
 import unreal
 
 MAPS = ["/Game/Maps/OMNIWorld"]
 
+BLACKLIST = ("mannequin", "characters", "eyelash", "eye", "hair",
+             "mouth", "greystone", "paragon", "teeth", "tongue")
+ENV_HINTS = ("sicka", "environment", "/env/", "props", "architecture")
+
 ar = unreal.AssetRegistryHelpers.get_asset_registry()
-mats = []
+env_pool, gen_pool = [], []
 for a in ar.get_assets_by_path("/Game", recursive=True):
     cn = str(a.asset_class_path.asset_name)
-    if cn in ("Material", "MaterialInstanceConstant"):
-        mats.append((str(a.package_name), str(a.asset_name)))
-unreal.log("[ART] material inventory under /Game: %d" % len(mats))
-for path, name in mats[:40]:
-    unreal.log("[ART]   mat: %s" % path)
+    if cn not in ("Material", "MaterialInstanceConstant"):
+        continue
+    path = str(a.package_name)
+    low = path.lower()
+    if any(b in low for b in BLACKLIST):
+        continue
+    if any(h in low for h in ENV_HINTS):
+        env_pool.append((path, str(a.asset_name)))
+    else:
+        gen_pool.append((path, str(a.asset_name)))
+unreal.log("[ART] pools: env=%d general=%d" % (len(env_pool), len(gen_pool)))
+for path, name in (env_pool + gen_pool)[:30]:
+    unreal.log("[ART]   pool: %s" % path)
 
 def pick(keys):
-    for k in keys:
-        for path, name in mats:
-            if k in name.lower():
-                return path
+    for pool in (env_pool, gen_pool):
+        for k in keys:
+            for path, name in pool:
+                if k in name.lower():
+                    return path
     return None
 
 FAMILIES = [
-    (("tower",), ["building", "concrete", "brick", "metal", "wall", "sicka"]),
-    (("ground", "foundation", "terrain"), ["ground", "asphalt", "concrete", "road", "terrain"]),
-    (("plaza", "road"), ["stone", "concrete", "asphalt", "ground"]),
-    (("lamp", "beacon", "spire", "statue"), ["metal", "gold", "steel"]),
-    (("fragment", "crystal"), ["crystal", "gem", "gold", "metal"]),
+    (("tower",), ["sicka", "building", "concrete", "brick", "metal", "wall", "panel"]),
+    (("ground", "foundation", "terrain"), ["sicka", "ground", "asphalt", "road", "terrain", "concrete"]),
+    (("plaza", "road"), ["sicka", "stone", "concrete", "asphalt", "ground", "tile"]),
+    (("lamp", "beacon", "spire", "statue"), ["metal", "gold", "steel", "sicka"]),
+    (("fragment", "crystal"), ["crystal", "gem", "gold", "glass", "sicka"]),
 ]
 
 les = unreal.get_editor_subsystem(unreal.LevelEditorSubsystem)
 ews = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+chosen = {}
 for m in MAPS:
     if not les.load_level(m):
         unreal.log("[ART] LOAD FAILED: %s" % m)
@@ -48,21 +60,24 @@ for m in MAPS:
         if not comp:
             continue
         low = actor.get_actor_label().lower()
-        keys = ["concrete", "metal", "ground"]
+        keys = ["concrete", "metal", "ground", "sicka"]
+        fam = "default"
         for names, fam_keys in FAMILIES:
             if any(n in low for n in names):
-                keys = fam_keys
+                keys, fam = fam_keys, names[0]
                 break
         comp.set_editor_property("mobility", unreal.ComponentMobility.MOVABLE)
         path = pick(keys)
         if path:
+            if fam not in chosen:
+                chosen[fam] = path
+                unreal.log("[ART] family %s -> %s" % (fam, path))
             mat = unreal.load_asset(path)
             for i in range(max(1, comp.get_num_materials())):
                 comp.set_material(i, mat)
             done += 1
         else:
             missed += 1
-            unreal.log("[ART] NO MATERIAL for %s" % actor.get_actor_label())
     les.save_current_level()
     unreal.log("[ART] %s: materialized=%d missed=%d" % (m, done, missed))
 unreal.log("[ART] PASS COMPLETE")

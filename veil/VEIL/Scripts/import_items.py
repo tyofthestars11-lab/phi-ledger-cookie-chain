@@ -9,17 +9,17 @@ CSV_PATH = r"D:\VEIL\Data\items.csv"
 DEST = "/Game/Data"
 NAME = "DT_Items"
 
-rows = {}
+rows = []
 with open(CSV_PATH, newline="") as f:
     for r in csv.DictReader(f):
-        name = r["---"]
-        rows[name] = {
+        rows.append({
+            "Name": r["---"],
             "DisplayName": r["DisplayName"],
             "ItemType": r["ItemType"],
             "Damage": float(r["Damage"]),
             "Rarity": int(r["Rarity"]),
             "Value": int(r["Value"]),
-        }
+        })
 unreal.log("[ITEMS] csv rows read: %d" % len(rows))
 
 if not unreal.EditorAssetLibrary.does_directory_exist(DEST):
