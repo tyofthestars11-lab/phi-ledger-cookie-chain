@@ -29,8 +29,14 @@ void AOMNIGameMode::BeginPlay()
 	// the light and the plaza are raised here, on whatever map the editor
 	// or the game opened with. Then seat the runner on the plaza and wake
 	// the first machines around him.
-	AOMNIWorldBuilder* Builder = GetWorld()->SpawnActor<AOMNIWorldBuilder>(
-		FVector::ZeroVector, FRotator::ZeroRotator);
+	// Placed worlds (the district / generated-world levels) already hold
+	// the city as real actors - the runtime builder stands down there, so
+	// one world is never built twice. On bare maps it still raises it.
+	const bool bPlacedWorld = GetWorld()->GetName().Contains(TEXT("District"))
+		|| GetWorld()->GetName().Contains(TEXT("World"));
+	AOMNIWorldBuilder* Builder = bPlacedWorld ? nullptr
+		: GetWorld()->SpawnActor<AOMNIWorldBuilder>(
+			FVector::ZeroVector, FRotator::ZeroRotator);
 	if (Builder)
 	{
 		Builder->BuildWorld();
