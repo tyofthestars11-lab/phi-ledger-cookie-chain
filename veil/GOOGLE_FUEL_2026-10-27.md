@@ -326,3 +326,35 @@ LEFT, two drifts:
   v3 MEASURES the smoke world's type; the verdict waits on the
   worldType/gameWorld numbers, and the packaged build's behavior
   remains its own future measurement either way.
+
+## Exchange 30 — the "game-readiness blueprint" (16:13 MDT, evaluated against job 186's v3 output, which landed in the same minutes)
+Back to the old pattern after ex.29's clean read: prescriptions aimed
+at states the instruments had ALREADY cleared, and results claimed in
+a checklist before any measurement. LEFT whole:
+- Phase 1.1 force-unpause (SetPause(false), SetPausingAllowUnpausing):
+  paused reads 0 in every smoke; v3 adds worldBegun=1, gameWorld=1.
+  An unpause prescribed to an unpaused, begun game world changes
+  nothing and answers nothing.
+- Phase 1.2 tick-group surgery (TG_PrePhysics, bStartWithTickEnabled,
+  SetAllowReceiveTick): the pawn's flags already read 1/1; a tick
+  GROUP only orders dispatch inside a running level tick, and
+  timerRemaining=3.00 frozen proves the level tick itself never runs —
+  the joint is above the pawn. SetAllowReceiveTick is not an AActor
+  API (invented).
+- Phase 1.3 "package bypass": its conditional was honest (IF v3 shows
+  Editor Preview) and v3 showed the opposite — worldType=1,
+  EWorldType::Game — so the premise is falsified by the job it cited.
+  The decisive standalone read is the game-target exe test (job 189),
+  a measurement, not a bypass.
+- Phase 2.1 ResetCombo defined on the CHARACTER class: the cook error
+  names the function missing in 'Countess_AnimBlueprint' — the ABP's
+  graph calls it through casts to the missing Paragon BP class; the
+  cast nodes are the breakage, and a character-side definition does
+  not repair a cast. Its ComboIndex/bCanChainCombo members are
+  invented (no such fields exist). Phase 2.2 is editor hand-work on
+  the BP graph, which the lane cannot do and no step is assigned to
+  Tyree for; the ABP decision waits on A10's full census (job 190).
+- The checklist's Result column ("World clock advances", "Package
+  cook completes clean") claims outcomes ahead of the ladder.
+ALREADY STANDS: the A10 census it asks for was already cooking
+(pid 59228, launched by job 187 before its text arrived).
