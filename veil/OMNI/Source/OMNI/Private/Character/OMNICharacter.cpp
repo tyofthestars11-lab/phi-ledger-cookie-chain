@@ -93,15 +93,17 @@ AOMNICharacter::AOMNICharacter()
 	}
 
 	// The real body (job 089 landed the Mannequins tree in Content):
-	// Manny's skeletal mesh + the unarmed animation blueprint, paths
+	// The Countess: mesh, skeleton and AnimBlueprint all resolve in
+	// the ParagonCountess tree (job 116's triangle). Manny's mesh never
+	// carried a skeleton in this seat; the Countess closes the triangle.
 	// verbatim from the on-disk inventory. If either fails to load,
 	// the primitive runner above stays visible and the log says so -
 	// an invisible pawn is not a character.
 	{
 		static ConstructorHelpers::FObjectFinder<USkeletalMesh> MannyMesh(
-			TEXT("/Game/Mannequins/Meshes/SKM_Manny_Simple.SKM_Manny_Simple"));
+			TEXT("/Game/ParagonCountess/Characters/Heroes/Countess/Meshes/SM_Countess.SM_Countess"));
 		static ConstructorHelpers::FClassFinder<UAnimInstance> MannyAnim(
-			TEXT("/Game/Mannequins/Anims/Unarmed/ABP_Unarmed.ABP_Unarmed_C"));
+			TEXT("/Game/ParagonCountess/Characters/Heroes/Countess/Countess_AnimBlueprint.Countess_AnimBlueprint_C"));
 		if (MannyMesh.Succeeded())
 		{
 			GetMesh()->SetSkeletalMeshAsset(MannyMesh.Object);
@@ -113,15 +115,15 @@ AOMNICharacter::AOMNICharacter()
 			}
 			else
 			{
-				UE_LOG(LogOMNI, Warning, TEXT("PHI BODY: ABP_Unarmed class not found - mesh set, animation unassigned."));
+				UE_LOG(LogOMNI, Warning, TEXT("PHI BODY: Countess_AnimBlueprint class not found - mesh set, animation unassigned."));
 			}
 			if (RunnerBody) RunnerBody->SetVisibility(false);
 			if (RunnerVisor) RunnerVisor->SetVisibility(false);
-			UE_LOG(LogOMNI, Log, TEXT("PHI BODY: Manny skeletal mesh is the runner's body."));
+			UE_LOG(LogOMNI, Log, TEXT("PHI BODY: Countess skeletal mesh is the runner's body."));
 		}
 		else
 		{
-			UE_LOG(LogOMNI, Warning, TEXT("PHI BODY FALLBACK: SKM_Manny_Simple not found - primitive runner body stands."));
+			UE_LOG(LogOMNI, Warning, TEXT("PHI BODY FALLBACK: SM_Countess not found - primitive runner body stands."));
 		}
 	}
 
@@ -137,7 +139,7 @@ void AOMNICharacter::BeginPlay()
 	// that lives. The Tick one-shots report which state won.
 	{
 		if (UClass* AnimClass = StaticLoadClass(UAnimInstance::StaticClass(), nullptr,
-			TEXT("/Game/Mannequins/Anims/Unarmed/ABP_Unarmed.ABP_Unarmed_C")))
+			TEXT("/Game/ParagonCountess/Characters/Heroes/Countess/Countess_AnimBlueprint.Countess_AnimBlueprint_C")))
 		{
 			GetMesh()->SetAnimInstanceClass(AnimClass);
 		}
