@@ -107,3 +107,16 @@ Read against the live state and the 097-100 verdicts (below). Google's AAA list 
 - Blocker 3: CONFIRMS the lane's fix - array of row objects with a Name field (job 103 reimport). Google's example uses enum-typed fields; our struct is FString/int32, so plain values are correct here.
 - Config block: already standing in our consolidated inis (Lumen SWRT, TSR, VSM). Its ScreenPercentage=100 and DynamicRes lines contradict the 3050 tuning - LEFT; nothing applied.
 - Its closing either/or (Minion bindings vs OMNI landscape): neither re-sequences the lane - agents' bodies already sit in the queue behind the body/art proof.
+
+---
+
+## Sixth carry - "both still stuck" + the bulletproof fixes (2026-10-27 ~12:39 MDT)
+
+Google's diagnosis (a cooking checkpoint rejecting the scripts before they parse) is invented - the logs show the scripts ran (824 materials inventoried, DT_Items created) and the cook dies on the ABP's missing skeleton, measured in 098. Its scripts, weighed one by one:
+
+- fix_skeleton_core.py: the CORE MOVE IS REAL - SkeletonFactoryNew with the factory's skeletal_mesh property set builds the skeleton FROM the mesh's bone tree (its earlier version omitted this and would have made an empty skeleton). TAKEN as the guarded FALLBACK (job 106): corrected ABP path (/Anims/Unarmed/ABP_Unarmed), a guard that skips when job 105's disk copy already resolved the mesh, probe/build/smoke verdict attached. The hunt+copy (105) still outranks it - a copied template skeleton carries the true retarget data.
+- load_items_datatable.py: LEFT - points at a nonexistent /Game/Core/DT_ItemDatabase and fills 3 invented enum rows; ours is /Game/Data/DT_Items, 24 phi-curve rows from the CSV, fill shape already fixed (job 103).
+- AssignFactionMesh.py: LEFT - invented mesh path (Minion_Lane_Super_Dawn vs measured SK_Minion_Lane_Super) and invented class name; faction agents are runtime-spawned C++ actors - their bodies are wired in C++ in the agents' tranche.
+- The bash manifest: LEFT - wrong project names throughout (VeilGame.uproject); the lane's own sequence stands.
+
+His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched across the whole cube face (giant yellow bands - cube UVs make any photographic texture read at building scale; the mesh-swap tranche is the true cure, material-on-cube is a stopgap), towers in the suit material, T-pose shadow still - all consistent with v1 art + the missing skeleton. OMNI still the blue void until 102/103 land.
