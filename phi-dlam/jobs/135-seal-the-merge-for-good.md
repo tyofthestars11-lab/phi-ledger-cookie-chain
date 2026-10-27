@@ -2,7 +2,7 @@
 ```powershell
 $ErrorActionPreference = "Continue"
 Set-Location "C:\Users\Admin\phi-vault"
-Write-Output "=== kill the vim merge, permanently ==="
+Write-Output "=== the merge, sealed for good ==="
 if (Test-Path ".git\MERGE_HEAD") { git commit --no-edit 2>&1 | Select-Object -Last 1; Write-Output "standing merge sealed" } else { Write-Output "no merge standing" }
 git config core.editor "true"
 Write-Output "core.editor now: $(git config core.editor)  (merges auto-seal with the default message; no editor can ever park a pull again)"
