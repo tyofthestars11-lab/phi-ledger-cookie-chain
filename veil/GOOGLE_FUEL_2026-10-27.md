@@ -120,3 +120,21 @@ Google's diagnosis (a cooking checkpoint rejecting the scripts before they parse
 - The bash manifest: LEFT - wrong project names throughout (VeilGame.uproject); the lane's own sequence stands.
 
 His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched across the whole cube face (giant yellow bands - cube UVs make any photographic texture read at building scale; the mesh-swap tranche is the true cure, material-on-cube is a stopgap), towers in the suit material, T-pose shadow still - all consistent with v1 art + the missing skeleton. OMNI still the blue void until 102/103 land.
+
+---
+
+## Seventh carry - phi reverse-engineering of UE5 (2026-10-27 ~12:39 MDT)
+
+- PhiCameraModifier: LEFT. Its own math cancels (phi^2/(phi+1) = 1.0 by its comment) and then multiplies FOV by 1.37508/aspect - a permanent frustum distortion dressed as framing. The off-center projection note was already taken for the cinematic pass; a modifier class is not the vehicle.
+- TSR phi tiers: LEFT - DynamicRes is OFF by standing tune (OperationMode=0, history SP 66.6667); the 61.8033 tier fights the 3050 budget math already sealed in the ini.
+- PhiSpiralSpawner: LEFT - duplicates build_world.py's law as a runtime spawner; our sectors are placed and saved, a runtime spawner double-builds the world.
+- Nothing in the carry touches a live blocker. The blockers fell to the probe instead (101): the skeleton was in-project all along.
+
+## The 101-105 verdicts (2026-10-27 ~12:33-12:37 MDT)
+
+- THE SKELETON WAS HOME ALL ALONG: /Game/Mannequins/Meshes/SK_Mannequin is a Skeleton asset sitting in the project; both Simple meshes carry an EMPTY skeleton reference (probe: NONE), and the ABP's skeleton reference is broken with it. Job 105 copied the UE4-era SK_Mannequin_Skeleton from Standard\Mannequin into /Game/Character/Mesh/ - present, unreferenced, harmless. The fix is a BIND, not a hunt: bind_skeleton.py sets the real SK_Mannequin onto both meshes + the ABP, compiles, verifies by reload (job 107, with VEIL build + smoke + package attempt 6).
+- ITEMS: DONE - fill ok=True, rows in table=24, both games (103).
+- MOOD: DONE - PHIPostProcess placed in OMNIWorld + VEILDistrict + VEILWorld (103).
+- VEIL ART V2: env pool = 153 (Sicka_EnvPack2: Ancient_Kit + Scifi_Interior); exited 1 again - application lines + cause ride job 107's forensics grep.
+- OMNI ART: zero - job 102 searched the WRONG VaultCache root (UnrealEngineLauncher); the true root is C:\ProgramData\Epic\EpicGamesLauncher\VaultCache (job 089's file). Job 108 re-copies LavaMate by the 089 pattern + inventories every pack folder + reruns OMNI art + smoke.
+- PACKAGE attempt 5 (104): same ABP error - it ran ahead of any bind; attempt 6 rides the bind in 107.
