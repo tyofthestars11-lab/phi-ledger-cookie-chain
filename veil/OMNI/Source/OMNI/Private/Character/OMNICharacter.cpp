@@ -3,6 +3,8 @@
 
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Animation/AnimInstance.h"
+#include "Engine/SkeletalMesh.h"
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Materials/MaterialInstanceDynamic.h"
@@ -90,12 +92,48 @@ AOMNICharacter::AOMNICharacter()
 		}
 	}
 
+	// The real body (job 089 landed the Mannequins tree in Content):
+	// Manny's skeletal mesh + the unarmed animation blueprint, paths
+	// verbatim from the on-disk inventory. If either fails to load,
+	// the primitive runner above stays visible and the log says so -
+	// an invisible pawn is not a character.
+	{
+		static ConstructorHelpers::FObjectFinder<USkeletalMesh> MannyMesh(
+			TEXT("/Game/Mannequins/Meshes/SKM_Manny_Simple.SKM_Manny_Simple"));
+		static ConstructorHelpers::FClassFinder<UAnimInstance> MannyAnim(
+			TEXT("/Game/Mannequins/Anims/Unarmed/ABP_Unarmed.ABP_Unarmed_C"));
+		if (MannyMesh.Succeeded())
+		{
+			GetMesh()->SetSkeletalMeshAsset(MannyMesh.Object);
+			GetMesh()->SetRelativeLocation(FVector(0.f, 0.f, -96.f));
+			GetMesh()->SetRelativeRotation(FRotator(0.f, -90.f, 0.f));
+			if (MannyAnim.Succeeded())
+			{
+				GetMesh()->SetAnimInstanceClass(MannyAnim.Class);
+			}
+			else
+			{
+				UE_LOG(LogOMNI, Warning, TEXT("PHI BODY: ABP_Unarmed class not found - mesh set, animation unassigned."));
+			}
+			if (RunnerBody) RunnerBody->SetVisibility(false);
+			if (RunnerVisor) RunnerVisor->SetVisibility(false);
+			UE_LOG(LogOMNI, Log, TEXT("PHI BODY: Manny skeletal mesh is the runner's body."));
+		}
+		else
+		{
+			UE_LOG(LogOMNI, Warning, TEXT("PHI BODY FALLBACK: SKM_Manny_Simple not found - primitive runner body stands."));
+		}
+	}
+
 	Health = MaxHealth;
 }
 
 void AOMNICharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	UE_LOG(LogOMNI, Log, TEXT("PHI BODY CHECK: mesh=%s anim=%s"),
+		GetMesh()->GetSkeletalMeshAsset() ? *GetMesh()->GetSkeletalMeshAsset()->GetName() : TEXT("none"),
+		GetMesh()->GetAnimInstance() ? *GetMesh()->GetAnimInstance()->GetClass()->GetName() : TEXT("none"));
 	Health = MaxHealth;
 	OnHealthChanged.Broadcast(Health, MaxHealth);
 
@@ -368,5 +406,6 @@ void AOMNICharacter::ToggleCameraMode()
 	}
 	if (RunnerBody) RunnerBody->SetOwnerNoSee(bFirstPerson);
 	if (RunnerVisor) RunnerVisor->SetOwnerNoSee(bFirstPerson);
+	GetMesh()->SetOwnerNoSee(bFirstPerson);
 	UE_LOG(LogOMNI, Log, TEXT("OMNI camera: %s person."), bFirstPerson ? TEXT("first") : TEXT("third"));
 }
