@@ -228,3 +228,24 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
 - Pattern named: each block lands one step BEHIND the live state (purge
   after it ran, SM6 after it was added, Manny after the Countess) because
   it does not know the shelf. The queue 118-122 holds the real next steps.
+
+## Exchange 17 - "NaN spawner crash" + viewport reset + cache wipe, fifth send (14:11 MDT)
+- The diagnosis is invented whole: there is no PhiSpiralSpawner class and no
+  NaN / infinite-scale error in any measured log. The worlds are built by
+  build_world.py / build_district.py with fixed measured coordinates and the
+  runtime builders. FMath::Pow(Phi, n) appears in XP and items, clamped by
+  construction (levels, tiers) - and the games boot, quest, speak and animate
+  on his screen, which a transform crash would forbid.
+- OMNI's red screen has a measured cause and a queued cure: PlayerStart sits
+  at sector centre inside the lava-dressed statue; job 124 moves it to a
+  clear vantage facing the centroid. Not a skybox fall, not a camera-matrix
+  loop - his OMNI log shows 256 actors, quest online, body check clean.
+- VEIL's floating towers are a real seam with a plain cause: the district
+  builder seats tower bases at pivot height. Grounding rides the mesh-swap
+  tranche. Not an orientation crash - the towers render textured and stable
+  in every photo since 13:15.
+- The viewport script: LEFT - it edits EDITOR viewport camera info (PIE and
+  -game render through the pawn, never the editor viewport), runs a VR
+  rebase console command at a desktop game, and aims at invented map names
+  again. The ini block: LEFT - hardware RT already off, the distance-field
+  numbers unmeasured. Cache wipe (Intermediate/Saved): FIFTH send, left.
