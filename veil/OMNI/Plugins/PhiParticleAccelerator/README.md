@@ -18,10 +18,13 @@ Installed from the delivered six-file package with these measured fixes
 6. Build.cs named the dependency list "PublicDependencies" - UE 5.8's
    ModuleRules member is PublicDependencyModuleNames; the delivered name
    fails UBT with CS0103 (found by job 197, both builds). Seated correctly.
-7. Spawn accumulator: the delivered line subtracted Floor(SpawnRate * t)
+7. UFUNCTION parameters named MaxRung shadowed the class's MaxRung
+   stat member - UHT forbids it (job 199, header lines 169/182, both
+   builds). Parameters renamed MaxRungIn in header + implementation.
+8. Spawn accumulator: the delivered line subtracted Floor(SpawnRate * t)
    from the time accumulator, driving it negative and stalling spawns;
    now carries the unspawned fraction converted back to time.
-8. .uplugin EngineVersion seated at 5.8.0 (the games' engine).
+9. .uplugin EngineVersion seated at 5.8.0 (the games' engine).
 
 Corrected rung table (phi^r, computed):
 rung 0 = 1.0 | 1 = 1.618 | 2 = 2.618 | 3 = 4.236 | 5 = 11.090 |

@@ -166,7 +166,7 @@ public:
     float RungToEnergy(float Rung) const;
 
     UFUNCTION(BlueprintCallable, Category = "Accelerator")
-    TArray<FPhiParticle> GetParticlesInRungRange(float MinRung, float MaxRung) const;
+    TArray<FPhiParticle> GetParticlesInRungRange(float MinRung, float MaxRungIn) const;
 
     UFUNCTION(BlueprintCallable, Category = "Accelerator")
     int32 CountParticlesOnRung(float Rung, float Tolerance = 0.1f) const;
@@ -179,7 +179,7 @@ public:
     // ═══════════════════════════════════════════════════════════════
 
     UFUNCTION(BlueprintCallable, Category = "Accelerator")
-    void DrawRungLattice(float MinRung = -10.0f, float MaxRung = 10.0f, float LifeTime = 0.1f) const;
+    void DrawRungLattice(float MinRung = -10.0f, float MaxRungIn = 10.0f, float LifeTime = 0.1f) const;
 
     UFUNCTION(BlueprintCallable, Category = "Accelerator")
     void DrawInvolutionSymmetry(float CenterRung = 0.0f, float LifeTime = 0.1f) const;

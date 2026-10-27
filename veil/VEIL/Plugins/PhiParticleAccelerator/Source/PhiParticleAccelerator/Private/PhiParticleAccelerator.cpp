@@ -305,13 +305,13 @@ float APhiParticleAccelerator::RungToEnergy(float Rung) const
 // QUERIES
 // ═══════════════════════════════════════════════════════════════════
 
-TArray<FPhiParticle> APhiParticleAccelerator::GetParticlesInRungRange(float MinRung, float MaxRung) const
+TArray<FPhiParticle> APhiParticleAccelerator::GetParticlesInRungRange(float MinRung, float MaxRungIn) const
 {
     TArray<FPhiParticle> Result;
 
     for (const auto& Particle : Particles)
     {
-        if (Particle.bAlive && Particle.Rung >= MinRung && Particle.Rung <= MaxRung)
+        if (Particle.bAlive && Particle.Rung >= MinRung && Particle.Rung <= MaxRungIn)
         {
             Result.Add(Particle);
         }
@@ -374,14 +374,14 @@ void APhiParticleAccelerator::PrintRungDistribution() const
 // VISUALIZATION
 // ═══════════════════════════════════════════════════════════════════
 
-void APhiParticleAccelerator::DrawRungLattice(float MinRung, float MaxRung, float LifeTime) const
+void APhiParticleAccelerator::DrawRungLattice(float MinRung, float MaxRungIn, float LifeTime) const
 {
     FVector center = GetActorLocation();
 
-    for (float rung = MinRung; rung <= MaxRung; rung += 1.0f)
+    for (float rung = MinRung; rung <= MaxRungIn; rung += 1.0f)
     {
         float radius = 50.0f + rung * 20.0f;
-        FColor color = FColor::Lerp(FColor::Blue, FColor::Red, (rung - MinRung) / (MaxRung - MinRung));
+        FColor color = FColor::Lerp(FColor::Blue, FColor::Red, (rung - MinRung) / (MaxRungIn - MinRung));
 
         DrawRung(rung, radius, color, LifeTime);
     }
