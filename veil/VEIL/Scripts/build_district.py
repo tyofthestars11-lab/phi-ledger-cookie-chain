@@ -117,6 +117,13 @@ fog.set_actor_label("DuskFog")
 ps = actors.spawn_actor_from_class(unreal.PlayerStart, unreal.Vector(0, 0, 220), unreal.Rotator(0, 90, 0))
 ps.set_actor_label("PlazaStart")
 
+# navigation bounds - the whole district is walkable. With runtime
+# generation set Dynamic (job 081), the navmesh fills itself and the
+# editor's "navigation build is locked" state can never return.
+nav = actors.spawn_actor_from_class(unreal.NavMeshBoundsVolume, unreal.Vector(0, 0, 400))
+nav.set_actor_scale3d(unreal.Vector(62, 62, 6))
+nav.set_actor_label("DistrictNavBounds")
+
 les.save_current_level()
 all_actors = actors.get_all_level_actors()
 say("DISTRICT LEVEL BUILT: %d actors in %s" % (len(all_actors), LEVEL))
