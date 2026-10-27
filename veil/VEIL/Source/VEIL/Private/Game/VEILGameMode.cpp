@@ -228,7 +228,10 @@ void AVEILPlayerController::Tick(float DeltaSeconds)
 	if (PcProofClock >= 5.f)
 	{
 		PcProofClock = 0.f;
-		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: worldTime=%.1f pawn=%s"),
-			GetWorld()->GetTimeSeconds(), GetPawn() ? *GetPawn()->GetName() : TEXT("none"));
+		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: worldTime=%.1f worldDelta=%.4f pawn=%s pawnTickEnabled=%d pawnCanEverTick=%d"),
+			GetWorld()->GetTimeSeconds(), GetWorld()->GetDeltaSeconds(),
+			GetPawn() ? *GetPawn()->GetName() : TEXT("none"),
+			(GetPawn() && GetPawn()->IsActorTickEnabled()) ? 1 : 0,
+			(GetPawn() && GetPawn()->PrimaryActorTick.bCanEverTick) ? 1 : 0);
 	}
 }
