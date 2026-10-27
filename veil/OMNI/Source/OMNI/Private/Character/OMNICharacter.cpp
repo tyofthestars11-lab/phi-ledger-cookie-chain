@@ -275,6 +275,7 @@ void AOMNICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 void AOMNICharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+	++PhiTickEntryCount;
 	// PHI MOVE TEST v3 - tick-driven, no timers. At t=5s of tick time it
 	// names the possession state, drives synthetic forward input for
 	// ~1.2s, then reports the velocity and displacement produced.

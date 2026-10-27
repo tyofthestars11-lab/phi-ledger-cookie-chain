@@ -81,6 +81,8 @@ class OMNI_API AOMNIPlayerController : public APlayerController
 public:
 	AOMNIPlayerController();
 	virtual void Tick(float DeltaSeconds) override;
+	/** Fires only if the world's timer manager advances: the timer cross-check. */
+	void PhiOnTimerCheck();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OMNI|UI")
 	TSubclassOf<UUserWidget> HUDWidgetClass;

@@ -19,6 +19,6 @@ $p = Start-Process $UE -ArgumentList "`"D:\OMNI-UE\OMNI.uproject`"", "/Game/Maps
 Start-Sleep -Seconds 30
 if (!$p.HasExited) { Stop-Process -Id $p.Id -Force; Write-Output "smoke closed after 30s" }
 Start-Sleep -Seconds 3
-if (Test-Path $log) { Select-String -Path $log -Pattern "TICKPROOF|MOVE TEST|GAMEMODE ALIVE|BODY CHECK" | ForEach-Object { $_.Line } }
+if (Test-Path $log) { Select-String -Path $log -Pattern "TICKPROOF|TIMER CHECK|MOVE TEST|GAMEMODE ALIVE|BODY CHECK" | ForEach-Object { $_.Line } }
 Write-Output "=== JOB 180 DONE ==="
 ```

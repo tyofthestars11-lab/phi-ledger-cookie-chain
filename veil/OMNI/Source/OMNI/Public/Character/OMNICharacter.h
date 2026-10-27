@@ -33,6 +33,9 @@ class OMNI_API AOMNICharacter : public ACharacter
 
 public:
 	AOMNICharacter();
+	/** Incremented as the first act of Tick - the controller reads it
+	 *  to prove whether Tick is ever entered. */
+	int32 PhiTickEntryCount = 0;
 
 	virtual void Tick(float DeltaSeconds) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

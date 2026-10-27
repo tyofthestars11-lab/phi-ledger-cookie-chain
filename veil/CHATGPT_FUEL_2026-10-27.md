@@ -27,3 +27,52 @@ ChatGPT read the agent's own status prompt (146 failed on the enum, fix v2 queue
 - ADOPTED WHOLE: A9 is the priority (does quarantining the broken Countess Blueprint let the cook finish); the ProjectID error may be separate from the Blueprint error - if A9 still fails, the new trace's first relevant error governs, not an assumption; 175 distinguishes character-level from frame/logging stall; 173/174 recover real mesh names before the picker is retuned; OMNI preserved, its own first blocking error identified before changes; the ladder stands (compiled -> packaged -> launched -> playable in his hands).
 - One addition from the record it did not have: OMNI's first blocking error is ALREADY identified - job 169's log carries OMNI's own ProjectID import error (DC5E4CF1-FD4D-485E-98F1-2B96AF43DB4C) beside the same CountessPlayerCharacter errors, and job 172's quarantine covers OMNI's copy too.
 - Noted in its own words, the honest line that separates help from guessing: "I can't see its live queue directly from this chat."
+
+## Exchange 7 — the root-cause isolation spec (ADOPTED as job 180's extension)
+ChatGPT declined to name a cause without job 180's output ("I won't
+invent a root cause from measurements we haven't seen") and specified
+the exact diagnostic fields: world pointer + name, world time/delta/
+dilation, controller tick state, pawn tick state + HasActorBegunPlay +
+world pointer, pawn Tick entry proof, same-world check, and a timer on
+the world's timer manager read against wall time. Decision rule ADOPTED
+whole: telemetry wrong → fix telemetry; world time AND delta zero →
+the world-tick path and effective dilation; world advances but pawn
+Tick silent → the pawn's tick registration/enablement/lifecycle; only
+the evidenced branch changes. Its closing boundary also stands: A9 and
+the materials check move independently of the runtime read.
+Filed into job 180 as written: the PC TICKPROOF extended (world name,
+sameWorld, dilation via UGameplayStatics, PC tick flags, pawn
+HasActorBegunPlay, a PhiTickEntryCount the Character increments as
+Tick's first act and the PC reads back, timerActive), a 3-second
+PhiOnTimerCheck one-shot on the world timer manager scheduled in
+BeginPlay, and "TIMER CHECK" added to job 180's capture pattern.
+
+## Exchange 8 — the possibilities list (CONVERTED under the no-hypothesis law)
+Tyree's correction governs this exchange: "so I had chat gpt find the
+most likely evidence not just 'hypothesis'" / "We don't 'hypothesize'"
+— the seat's own update text carried the banned framing ("answers are
+treated as hypotheses to verify") and is corrected in the file itself.
+The four possibilities are converted to leads ranked AGAINST THE RECORD:
+1. THE WORLD'S TIME PATH (the lead the evidence carries): every
+   world-time-driven system is silent together — clock 0.0 at every
+   read, world timers never fire (census +2.5s, MOVE TEST +5s, every
+   smoke all day), the pawn's Tick never enters — while every
+   frame-driven system lives: frames advance, the controller ticks with
+   real deltas, BeginPlays and voices fire. One joint explains all
+   three silences; job 180's extended fields read that joint.
+2. WORLD-CONTEXT MISMATCH: open, unproven either way until 180's
+   pointer fields land (sameWorld, pawn world vs controller world).
+3. PAUSE/TICK-STATE MISMATCH: weakened by the record — GAMEMODE ALIVE
+   reads paused=0 in the same smokes; 180's dilation field reads the
+   remaining state directly.
+4. TELEMETRY ARTIFACT (the clock read is wrong, the world is fine):
+   the weakest lead — three independent instruments agree: the clock
+   read (0.0 across two builds), the timers' silence (a separate
+   system that would fire if world time advanced), and the pawn's
+   silent Tick (its timers and one-shots ride the same clock). A bad
+   clock READ does not silence timers.
+Ex.8's standing summary adopted where it matches the record: A9 tests
+the Blueprint blocker only (ProjectID errors may remain), one start per
+world closes the spawn question, the registry (644 meshes, no
+tower-sized exterior) governs the art retune, and VEIL's header build
+failure is repaired before the two builds are treated as equivalent.

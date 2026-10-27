@@ -10,6 +10,7 @@
 #include "Game/OMNIPauseMenu.h"
 #include "InputCoreTypes.h"
 #include "Kismet/GameplayStatics.h"
+#include "TimerManager.h"
 #include "OMNI.h"
 #include "World/OMNIQuestContent.h"
 #include "World/OMNIWorldBuilder.h"
@@ -171,9 +172,15 @@ AOMNIPlayerController::AOMNIPlayerController()
 	PauseWidgetClass = UOMNIPauseMenu::StaticClass();
 }
 
+static FTimerHandle GPhiTimerHandle;
+
 void AOMNIPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
+	// Timer cross-check: a 3-second one-shot on the world's own timer
+	// manager. If world time advances, PhiOnTimerCheck fires and logs
+	// it; if the clock stands frozen, the TICKPROOF shows it pending.
+	GetWorldTimerManager().SetTimer(GPhiTimerHandle, this, &AOMNIPlayerController::PhiOnTimerCheck, 3.0f, false);
 
 	if (HUDWidgetClass && IsLocalController())
 	{
@@ -252,10 +259,23 @@ void AOMNIPlayerController::Tick(float DeltaSeconds)
 	if (PcProofClock >= 5.f)
 	{
 		PcProofClock = 0.f;
-		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: worldTime=%.1f worldDelta=%.4f pawn=%s pawnTickEnabled=%d pawnCanEverTick=%d"),
+		UE_LOG(LogTemp, Display, AOMNICharacter* PhiPawn = Cast<AOMNICharacter>(GetPawn());
+		UE_LOG(LogTemp, Display, TEXT("PHI PC TICKPROOF: world=%s sameWorld=%d worldTime=%.2f worldDelta=%.4f dilation=%.3f pcTick=%d pcCanTick=%d pawn=%s pawnTick=%d pawnCanTick=%d pawnBegun=%d pawnTickEntries=%d timerActive=%d"),
+			GetWorld() ? *GetWorld()->GetName() : TEXT("none"),
+			(GetPawn() && GetPawn()->GetWorld() == GetWorld()) ? 1 : 0,
 			GetWorld()->GetTimeSeconds(), GetWorld()->GetDeltaSeconds(),
+			UGameplayStatics::GetGlobalTimeDilation(this),
+			IsActorTickEnabled() ? 1 : 0, PrimaryActorTick.bCanEverTick ? 1 : 0,
 			GetPawn() ? *GetPawn()->GetName() : TEXT("none"),
 			(GetPawn() && GetPawn()->IsActorTickEnabled()) ? 1 : 0,
-			(GetPawn() && GetPawn()->PrimaryActorTick.bCanEverTick) ? 1 : 0);
+			(GetPawn() && GetPawn()->PrimaryActorTick.bCanEverTick) ? 1 : 0,
+			(GetPawn() && GetPawn()->HasActorBegunPlay()) ? 1 : 0,
+			PhiPawn ? PhiPawn->PhiTickEntryCount : -1,
+			GetWorldTimerManager().IsTimerActive(GPhiTimerHandle) ? 1 : 0);
 	}
+}
+
+void AOMNIPlayerController::PhiOnTimerCheck()
+{
+	UE_LOG(LogTemp, Display, TEXT("PHI TIMER CHECK FIRED: worldTime=%.2f"), GetWorld()->GetTimeSeconds());
 }

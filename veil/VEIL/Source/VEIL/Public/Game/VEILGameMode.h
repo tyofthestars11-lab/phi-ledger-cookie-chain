@@ -81,6 +81,8 @@ class VEIL_API AVEILPlayerController : public APlayerController
 public:
 	AVEILPlayerController();
 	virtual void Tick(float DeltaSeconds) override;
+	/** Fires only if the world's timer manager advances: the timer cross-check. */
+	void PhiOnTimerCheck();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|UI")
 	TSubclassOf<UUserWidget> HUDWidgetClass;
