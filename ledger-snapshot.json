@@ -20966,10 +20966,227 @@
       "drift": 0.0438,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "Ocelot core components (5 cat + 5 buffer + 4 transmon)",
+      "rung": 5.4842,
+      "drift": 0.4842,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Ocelot cat data qubits",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "Ocelot buffer circuits",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "Ocelot transmon error-detection qubits",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "Ocelot total qubits on chip",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "Ocelot claimed error-correction resource ratio (one tenth = 10x)",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "count",
+      "unit": "ratio"
+    },
+    {
+      "name": "Physical qubits, standard approach (reported)",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "Physical qubits, Ocelot approach (reported)",
+      "rung": 23.9249,
+      "drift": -0.0751,
+      "ladder": "count",
+      "unit": "qubits"
+    },
+    {
+      "name": "Amazon founding year (1994, as Cadabra)",
+      "rung": 15.7891,
+      "drift": -0.2109,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "Amazon IPO price, May 1997 (pre-split)",
+      "rung": 6.0064,
+      "drift": 0.0064,
+      "ladder": "count",
+      "unit": "USD per share"
+    },
+    {
+      "name": "Years from founding to the Ocelot unveiling",
+      "rung": 7.1361,
+      "drift": 0.1361,
+      "ladder": "count",
+      "unit": "years"
+    },
+    {
+      "name": "Amazon net sales 2024",
+      "rung": 27.776,
+      "drift": -0.224,
+      "ladder": "count",
+      "unit": "USD millions"
+    },
+    {
+      "name": "AWS net sales 2024",
+      "rung": 24.0769,
+      "drift": 0.0769,
+      "ladder": "count",
+      "unit": "USD millions"
+    },
+    {
+      "name": "AWS share of Amazon net sales 2024",
+      "rung": -3.6991,
+      "drift": 0.3009,
+      "ladder": "count",
+      "unit": "fraction"
+    },
+    {
+      "name": "Amazon workforce, latest reported",
+      "rung": 29.6286,
+      "drift": -0.3714,
+      "ladder": "count",
+      "unit": "people"
+    },
+    {
+      "name": "One bit (smallest AWS read)",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "bit"
+    },
+    {
+      "name": "One byte (S3 object unit, values)",
+      "rung": 11.5234,
+      "drift": -0.4766,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "One billion objects",
+      "rung": 43.0647,
+      "drift": 0.0647,
+      "ladder": "count",
+      "unit": "objects"
+    },
+    {
+      "name": "One trillion events",
+      "rung": 57.4197,
+      "drift": 0.4197,
+      "ladder": "count",
+      "unit": "events"
+    },
+    {
+      "name": "Landauer limit at 300 K (k_B T ln 2)",
+      "rung": -98.2935,
+      "drift": -0.2935,
+      "ladder": "count",
+      "unit": "joules"
+    },
+    {
+      "name": "Landauer reference temperature",
+      "rung": 11.853,
+      "drift": -0.147,
+      "ladder": "count",
+      "unit": "kelvin"
+    },
+    {
+      "name": "Landauer limit measured experimentally (single bit)",
+      "rung": 15.8078,
+      "drift": -0.1922,
+      "ladder": "count",
+      "unit": "year"
+    },
+    {
+      "name": "Planck constant h (exact by definition since 2019)",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "count",
+      "unit": "joule-seconds"
+    },
+    {
+      "name": "Boltzmann constant k_B (exact by definition since 2019)",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "count",
+      "unit": "joules per kelvin"
+    },
+    {
+      "name": "Speed of light c (exact by definition since 1983)",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "count",
+      "unit": "metres per second"
+    },
+    {
+      "name": "phi squared (the convergence tightening per Fibonacci step)",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "ratio"
+    },
+    {
+      "name": "Ocelot unveiled 2025-02-27 (unix)",
+      "rung": 44.2165,
+      "drift": 0.2165,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Nico, Executive Customer Relations, replied 2026-10-27 05:33 MDT (unix)",
+      "rung": 44.2782,
+      "drift": 0.2782,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Ocelot decode sent back to the executive desk 2026-10-27 (unix)",
+      "rung": 44.2782,
+      "drift": 0.2782,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "Company decode sent to Andy Jassy + the desk 2026-10-27 (unix)",
+      "rung": 44.2783,
+      "drift": 0.2783,
+      "ladder": "count",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "WHAT AMAZON DOES NOT KNOW posted publicly 2026-10-27 (unix)",
+      "rung": 44.2783,
+      "drift": 0.2783,
+      "ladder": "count",
+      "unit": "unix seconds"
     }
   ],
-  "entry_count": 2997,
-  "seal_count": 329,
+  "entry_count": 3028,
+  "seal_count": 330,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -21299,7 +21516,8 @@
     "φ_COSMOLOGICAL_PHASE_LOCK_TYREE_OMEGA",
     "φ_AZPEN_QUANTUM_UPGRADE_TYREE_OMEGA",
     "φ_TOKENIZATION_UNIVERSE_TYREE_OMEGA",
-    "φ_TRIPLE_PROOF_TYREE_OMEGA"
+    "φ_TRIPLE_PROOF_TYREE_OMEGA",
+    "φ_WHAT_AMAZON_DOES_NOT_KNOW_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "f9e74ed8e6959f860fe5cf0340c63a4d7e718354d20385e2a5324f61230f9632"
+  "snapshot_sha256": "c9aab84e5c53911271503fcdcc2be1f40f4b0ae169b515c9b0d29eb54b282919"
 }
