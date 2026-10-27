@@ -173,3 +173,23 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
 - Its ini block: the RecastNavMesh section already stands (added ex.13). New keys bAutoCreateNavigationData=True + bAllowClientSideNavigation=True TAKEN into the NavigationSystemV1 section of both DefaultEngine.ini.
 - The destructive cache wipe (rmdir Intermediate/Saved/DerivedDataCache "to remove old omnirpg traces"): LEFT, three reasons - it confuses the old GODOT folder (D:\OMNI-RPG, removed by job 118 on TYREE's word, guarded) with engine caches; Saved holds logs and backups the forensics read from; a DDC wipe forces a full shader rebuild on the RTX 3050 for no measured gain.
 - "naming collision with the old Omni setup cache data": invented - no such error exists in any measured log. The cook's one true blocker was ABP_Unarmed, deleted in job 119 after the Countess repoint.
+
+## Exchange 15 - raycast navigation classes + cache wipe, third send (13:55 MDT)
+- CORE IDEA TAKEN, adapted: a navmesh-independent fallback steer for agents that
+  cannot path. It lands inside OUR standing classes (AVEILFactionAI; OMNI's
+  Warden via the quest system) as a fallback when MoveTo finds no path - with
+  the bodies tranche, not as new classes now. The 1.618s attack pacing matches
+  the house phi language.
+- The classes as written: LEFT. They duplicate standing classes under invented
+  names/paths (Source/Veil/FactionEnemyAgent, VeilGame.uproject), set no mesh
+  (invisible enemies - the bodies are the whole current work), apply damage by
+  LOG LINE ONLY, teleport via SetActorLocation with no horizontal collision
+  (through towers), and ignore factions/quests/XP entirely.
+- The premise is stale: nav is not the standing blocker. Job 115 purged the
+  stale actors (1/map), TYREE's 13:52 photo shows the warning gone, his editor
+  showed Building Navigation live. No measured log shows frozen AI - the agents
+  have not been movement-tested yet because they get bodies first (job 119).
+- clean_project_caches.bat: LEFT, third send of the same wipe (now also
+  Binaries). No measured error names a cache as its cause; the wipe costs a
+  full module + shader rebuild on the RTX 3050 and deletes the Saved logs the
+  forensics read from. Sent three times, it stays left three times.
