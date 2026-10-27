@@ -46,3 +46,28 @@ LEFT: invented asset paths, the Shipping-first package command,
 and its closing offer — OMNI's phi XP curve already exists in
 UOMNIQuestSystem, and the 3-sector world generator is already
 built (build_world.py, both games).
+
+---
+
+## Second carry - the greybox-to-game roadmap (2026-10-27 ~12:19 MDT)
+
+Google's six-step roadmap (loop/controls, RPG logic, art swap, lighting, gameplay/UI/audio, package), read whole against the live state. Google itself names the first move: "Complete the task your agent is working on (Checking anim load)" - the lane's jobs 097-099, already queued.
+
+TAKEN:
+- Item DataTable via agent-written CSV (20-30 items, Name/Damage/Rarity/Value), imported by editor script. Queued as the tranche after the 097-099 verdicts; stats on the phi curve (damage by phi growth, rarity as rungs).
+- Post Process Volumes for per-game mood (VEIL dusk grade). Rides the next art tranche with the mesh swaps.
+- Sculpted landscape under OMNI's sectors. Later tranche, after the city proves; VEIL's district stays flat by design (it is a city).
+
+ALREADY STANDS (the roadmap does not know the shelf):
+- Perspective: both, toggle V / R3, boom 420 <-> 0. Enhanced Input gamepad map live: move, look, jump, dodge, interact, fire, aim, sprint, camera, pause.
+- RPG logic: OMNI 6-stage quest system, XP = round(20 * phi^(level-1)), Warden Prime 900 HP, health/damage, HUD quest tracker, pause/title shell in both games.
+- Lighting: Lumen GI + reflections, virtual shadow maps, SkyAtmosphere + fog + sun placed by the builders, TSR tuned in both inis.
+- Enemies: faction agents in C++ with per-faction attack patterns (not Behavior Trees).
+- Animation Blueprint: ABP_Unarmed already exists in the Mannequins tree with its blend spaces; the work is wiring it live (097/099), not authoring from zero.
+
+LEFT:
+- Behavior Trees as the enemy route - a rewrite for ceremony; the C++ agents already perceive, move, and attack.
+- Fab downloads through the Launcher as the art source - the shelf on disk feeds first (19.5 GB VaultCache + TemplateResources already copied in, job 089); Launcher downloads are also his-account clicks, not lane work.
+- "Use default template characters to start" - Manny is already the body in both games.
+- Deleting the flat blocks to sculpt - the blocks receive real meshes and materials (swap tranche); the layout Google says to keep is the layout we keep.
+- Audio remains a real gap (the Unreal builds are silent; the web fleet carries THE SCORE) - named, parked behind anim/art/package.
