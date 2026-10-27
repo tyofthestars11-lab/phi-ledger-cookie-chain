@@ -1,0 +1,188 @@
+[
+ {
+  "domain": "ocelot",
+  "name": "Ocelot core components (5 cat + 5 buffer + 4 transmon)",
+  "unit": "count",
+  "value": 14
+ },
+ {
+  "domain": "ocelot",
+  "name": "Ocelot cat data qubits",
+  "unit": "qubits",
+  "value": 5
+ },
+ {
+  "domain": "ocelot",
+  "name": "Ocelot buffer circuits",
+  "unit": "count",
+  "value": 5
+ },
+ {
+  "domain": "ocelot",
+  "name": "Ocelot transmon error-detection qubits",
+  "unit": "qubits",
+  "value": 4
+ },
+ {
+  "domain": "ocelot",
+  "name": "Ocelot total qubits on chip",
+  "unit": "qubits",
+  "value": 9
+ },
+ {
+  "domain": "ocelot",
+  "name": "Ocelot claimed error-correction resource ratio (one tenth = 10x)",
+  "unit": "ratio",
+  "value": 10
+ },
+ {
+  "domain": "ocelot",
+  "name": "Physical qubits, standard approach (reported)",
+  "unit": "qubits",
+  "value": 1000000
+ },
+ {
+  "domain": "ocelot",
+  "name": "Physical qubits, Ocelot approach (reported)",
+  "unit": "qubits",
+  "value": 100000
+ },
+ {
+  "domain": "amazon",
+  "name": "Amazon founding year (1994, as Cadabra)",
+  "unit": "year",
+  "value": 1994
+ },
+ {
+  "domain": "amazon",
+  "name": "Amazon IPO price, May 1997 (pre-split)",
+  "unit": "USD per share",
+  "value": 18
+ },
+ {
+  "domain": "amazon",
+  "name": "Years from founding to the Ocelot unveiling",
+  "unit": "years",
+  "value": 31
+ },
+ {
+  "domain": "amazon",
+  "name": "Amazon net sales 2024",
+  "unit": "USD millions",
+  "value": 638021
+ },
+ {
+  "domain": "amazon",
+  "name": "AWS net sales 2024",
+  "unit": "USD millions",
+  "value": 107589
+ },
+ {
+  "domain": "amazon",
+  "name": "AWS share of Amazon net sales 2024",
+  "unit": "fraction",
+  "value": 0.1686292457458297
+ },
+ {
+  "domain": "amazon",
+  "name": "Amazon workforce, latest reported",
+  "unit": "people",
+  "value": 1556000
+ },
+ {
+  "domain": "scale",
+  "name": "One bit (smallest AWS read)",
+  "unit": "bit",
+  "value": 1
+ },
+ {
+  "domain": "scale",
+  "name": "One byte (S3 object unit, values)",
+  "unit": "count",
+  "value": 256
+ },
+ {
+  "domain": "scale",
+  "name": "One billion objects",
+  "unit": "objects",
+  "value": 1000000000
+ },
+ {
+  "domain": "scale",
+  "name": "One trillion events",
+  "unit": "events",
+  "value": 1000000000000
+ },
+ {
+  "domain": "constants",
+  "name": "Landauer limit at 300 K (k_B T ln 2)",
+  "unit": "joules",
+  "value": 2.87e-21
+ },
+ {
+  "domain": "constants",
+  "name": "Landauer reference temperature",
+  "unit": "kelvin",
+  "value": 300
+ },
+ {
+  "domain": "constants",
+  "name": "Landauer limit measured experimentally (single bit)",
+  "unit": "year",
+  "value": 2012
+ },
+ {
+  "domain": "constants",
+  "name": "Planck constant h (exact by definition since 2019)",
+  "unit": "joule-seconds",
+  "value": 6.62607015e-34
+ },
+ {
+  "domain": "constants",
+  "name": "Boltzmann constant k_B (exact by definition since 2019)",
+  "unit": "joules per kelvin",
+  "value": 1.380649e-23
+ },
+ {
+  "domain": "constants",
+  "name": "Speed of light c (exact by definition since 1983)",
+  "unit": "metres per second",
+  "value": 299792458
+ },
+ {
+  "domain": "constants",
+  "name": "phi squared (the convergence tightening per Fibonacci step)",
+  "unit": "ratio",
+  "value": 2.618033988749895
+ },
+ {
+  "domain": "time",
+  "name": "Ocelot unveiled 2025-02-27 (unix)",
+  "unit": "unix seconds",
+  "value": 1740614400
+ },
+ {
+  "domain": "time",
+  "name": "Nico, Executive Customer Relations, replied 2026-10-27 05:33 MDT (unix)",
+  "unit": "unix seconds",
+  "value": 1793100828
+ },
+ {
+  "domain": "time",
+  "name": "Ocelot decode sent back to the executive desk 2026-10-27 (unix)",
+  "unit": "unix seconds",
+  "value": 1793110020
+ },
+ {
+  "domain": "time",
+  "name": "Company decode sent to Andy Jassy + the desk 2026-10-27 (unix)",
+  "unit": "unix seconds",
+  "value": 1793110320
+ },
+ {
+  "domain": "time",
+  "name": "WHAT AMAZON DOES NOT KNOW posted publicly 2026-10-27 (unix)",
+  "unit": "unix seconds",
+  "value": 1793112000
+ }
+]
