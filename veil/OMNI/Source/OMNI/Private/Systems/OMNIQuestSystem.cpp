@@ -1,5 +1,6 @@
 // OMNI RPG: PATH OF LIGHT - quest + progression implementation.
 #include "Systems/OMNIQuestSystem.h"
+#include "Systems/PHIVoice.h"
 
 #include "AI/OMNIWardenPrime.h"
 #include "Engine/World.h"
@@ -20,6 +21,7 @@ void UOMNIQuestSystem::OnWorldBeginPlay(UWorld& InWorld)
 	UE_LOG(LogOMNI, Log,
 		TEXT("OMNI QUEST SYSTEM ONLINE: stage=MeetKeeper, level 1, first rung needs %d XP."),
 		XPNeedForLevel(1));
+	FPHIVoice::Play(&InWorld, TEXT("O01"));
 }
 
 void UOMNIQuestSystem::AwardXP(int32 Amount, const TCHAR* Reason)
@@ -45,6 +47,7 @@ void UOMNIQuestSystem::TalkTo(FName Giver)
 			Stage = EOMNIQuestStage::GatherFragments;
 			UE_LOG(LogOMNI, Log,
 				TEXT("OMNI QUEST [Keeper]: \"The signal broke into three, Runner. Gather the fragments where the streets remember them.\" Stage -> GatherFragments."));
+			FPHIVoice::Play(GetWorld(), TEXT("O03"));
 		}
 		else
 		{
@@ -59,6 +62,7 @@ void UOMNIQuestSystem::TalkTo(FName Giver)
 			Stage = EOMNIQuestStage::ReachCache;
 			UE_LOG(LogOMNI, Log,
 				TEXT("OMNI QUEST [Seer]: \"Starlit, Runner. My cache sleeps by the south wall, green and glowing. Bring word of it - and wake what guards the beacon.\" Stage -> ReachCache."));
+			FPHIVoice::Play(GetWorld(), TEXT("O08"));
 		}
 		else
 		{
@@ -94,6 +98,7 @@ void UOMNIQuestSystem::CollectFragment()
 		Stage = EOMNIQuestStage::MeetSeer;
 		UE_LOG(LogOMNI, Log,
 			TEXT("OMNI QUEST: the signal is whole in your hands. The Seer waits. Stage -> MeetSeer."));
+		FPHIVoice::Play(GetWorld(), TEXT("O06"));
 	}
 }
 
@@ -122,6 +127,7 @@ void UOMNIQuestSystem::WakeWarden()
 		Stage = EOMNIQuestStage::WardenAwake;
 		UE_LOG(LogOMNI, Log,
 			TEXT("OMNI QUEST: WARDEN PRIME HAS WOKEN at the plaza's south edge. Stage -> WardenAwake."));
+		FPHIVoice::Play(GetWorld(), TEXT("O13"));
 	}
 }
 
@@ -134,5 +140,6 @@ void UOMNIQuestSystem::Poll()
 		AwardXP(100, TEXT("WARDEN PRIME down"));
 		UE_LOG(LogOMNI, Log,
 			TEXT("OMNI QUEST: WARDEN PRIME DOWN - PATH OF LIGHT CLEAR. +150 gold -> %d. The beacon burns steady."), Gold);
+		FPHIVoice::Play(GetWorld(), TEXT("O16"));
 	}
 }

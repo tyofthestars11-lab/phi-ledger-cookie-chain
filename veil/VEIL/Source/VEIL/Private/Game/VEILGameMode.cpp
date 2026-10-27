@@ -1,5 +1,6 @@
 // VEIL: THE LAST SIGNAL - game mode + player controller implementation.
 #include "Game/VEILGameMode.h"
+#include "Systems/PHIVoice.h"
 #include "Data/PHIItemRow.h"
 
 #include "Blueprint/UserWidget.h"
@@ -83,6 +84,7 @@ void AVEILGameMode::BeginPlay()
 
 	SetPhase(EVEILGamePhase::Exploration);
 	UE_LOG(LogVEIL, Log, TEXT("VEIL world booted. Phase: Exploration. Difficulty x%.2f"), DifficultyScale);
+	FPHIVoice::Play(GetWorld(), TEXT("V01"));
 }
 
 void AVEILGameMode::SetPhase(EVEILGamePhase NewPhase)
@@ -90,6 +92,10 @@ void AVEILGameMode::SetPhase(EVEILGamePhase NewPhase)
 	if (NewPhase == Phase) return;
 	Phase = NewPhase;
 	OnPhaseChanged.Broadcast(Phase);
+	if (NewPhase == EVEILGamePhase::Resolution)
+	{
+		FPHIVoice::Play(GetWorld(), TEXT("V18"));
+	}
 }
 
 void AVEILGameMode::HandleMysterySolved(FName MysteryId)
