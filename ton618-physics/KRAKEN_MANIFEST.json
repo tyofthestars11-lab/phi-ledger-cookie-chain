@@ -1,0 +1,19 @@
+{
+ "root": ".",
+ "recipe": "KRAKEN-TON618",
+ "entries": [
+  {
+   "path": "ton618_physics_bundle.json",
+   "krk": "ton618_physics_bundle.json.krk",
+   "pipeline": "raw",
+   "action": "packed",
+   "orig_size": 21534,
+   "krk_size": 5489,
+   "ratio": 0.2549,
+   "sha256_orig": "2570268311b8f56c8cc46554cfde0a692b92cb625a74f74162c13fe557d375ff",
+   "sha256_krk": "6425fae6e7fc0ce5b256f078784e61268609c92363cf5132d922c39644827dc5",
+   "verified": true,
+   "elapsed_s": 0.02
+  }
+ ]
+}
