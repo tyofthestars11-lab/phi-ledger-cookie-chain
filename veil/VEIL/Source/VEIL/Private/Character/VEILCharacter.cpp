@@ -147,35 +147,9 @@ void AVEILCharacter::BeginPlay()
 	UE_LOG(LogVEIL, Log, TEXT("PHI BODY CHECK: mesh=%s anim=%s"),
 		GetMesh()->GetSkeletalMeshAsset() ? *GetMesh()->GetSkeletalMeshAsset()->GetName() : TEXT("none"),
 		GetMesh()->GetAnimInstance() ? *GetMesh()->GetAnimInstance()->GetClass()->GetName() : TEXT("none"));
-	// PHI MOVE TEST v2: at +5s the game names its possession state, then
-	// drives synthetic forward input for ~1s and reports the velocity and
-	// displacement its own physics produced - movement proven by the game
-	// itself, in its own log. (Evidence shape carried by Tyree from
-	// ChatGPT, 2026-10-27; folded and built into both runners.)
-	{
-		const FVector SpawnLoc = GetActorLocation();
-		FTimerHandle MoveTestHandle;
-		GetWorldTimerManager().SetTimer(MoveTestHandle, [this, SpawnLoc]()
-		{
-			AController* C = GetController();
-			UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST BEGIN: controller=%s pawn=%s locallyControlled=%d velBefore=%.1f loc=%s"),
-				C ? *C->GetClass()->GetName() : TEXT("NONE"), *GetName(),
-				IsLocallyControlled() ? 1 : 0, GetVelocity().Size(), *GetActorLocation().ToString());
-			FTimerHandle DriveHandle;
-			GetWorldTimerManager().SetTimer(DriveHandle, [this]()
-			{
-				AddMovementInput(GetActorForwardVector(), 1.0f);
-			}, 0.05f, true);
-			FTimerHandle StopHandle;
-			GetWorldTimerManager().SetTimer(StopHandle, [this, SpawnLoc, DriveHandle]() mutable
-			{
-				GetWorldTimerManager().ClearTimer(DriveHandle);
-				UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST: velAfter=%.1f locAfter=%s moved=%.1f"),
-					GetVelocity().Size(), *GetActorLocation().ToString(),
-					FVector::Dist2D(GetActorLocation(), SpawnLoc));
-			}, 1.2f, false);
-		}, 5.0f, false);
-	}
+	// PHI MOVE TEST v3 lives in Tick (tick-driven state machine -
+	// timers never reported in the -game smokes, so the test rides
+	// the frame itself).
 	Health = MaxHealth;
 	OnHealthChanged.Broadcast(Health, MaxHealth);
 
@@ -301,6 +275,49 @@ void AVEILCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 void AVEILCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+	// PHI MOVE TEST v3 - tick-driven, no timers. At t=5s of tick time it
+	// names the possession state, drives synthetic forward input for
+	// ~1.2s, then reports the velocity and displacement produced.
+	{
+		static int32 MovePhase = 0;
+		static float MoveClock = 0.f;
+		static FVector MoveSpawn = FVector::ZeroVector;
+		MoveClock += DeltaSeconds;
+		if (MovePhase == 0 && MoveClock >= 5.f)
+		{
+			MovePhase = 1;
+			MoveSpawn = GetActorLocation();
+			AController* C = GetController();
+			UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST BEGIN: controller=%s pawn=%s locallyControlled=%d paused=%d velBefore=%.1f loc=%s"),
+				C ? *C->GetClass()->GetName() : TEXT("NONE"), *GetName(),
+				IsLocallyControlled() ? 1 : 0, UGameplayStatics::IsGamePaused(GetWorld()) ? 1 : 0,
+				GetVelocity().Size(), *GetActorLocation().ToString());
+		}
+		else if (MovePhase == 1)
+		{
+			AddMovementInput(GetActorForwardVector(), 1.0f);
+			if (MoveClock >= 6.2f)
+			{
+				MovePhase = 2;
+				UE_LOG(LogVEIL, Log, TEXT("PHI MOVE TEST: velAfter=%.1f locAfter=%s moved=%.1f"),
+					GetVelocity().Size(), *GetActorLocation().ToString(),
+					FVector::Dist2D(GetActorLocation(), MoveSpawn));
+			}
+		}
+	}
+	// PHI TICKPROOF: every ~5s of tick time the game states it is turning.
+	{
+		static float ProofClock = 0.f;
+		static int64 ProofFrames = 0;
+		ProofClock += DeltaSeconds;
+		++ProofFrames;
+		if (ProofClock >= 5.f)
+		{
+			ProofClock = 0.f;
+			UE_LOG(LogVEIL, Log, TEXT("PHI TICKPROOF: frames=%lld worldTime=%.1f paused=%d"),
+				ProofFrames, GetWorld()->GetTimeSeconds(), UGameplayStatics::IsGamePaused(GetWorld()) ? 1 : 0);
+		}
+	}
 	// One-shot animation proof: the anim instance is created after
 	// BeginPlay, so the first tick that sees it logs the live class.
 	static bool bAnimProofLogged = false;

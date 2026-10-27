@@ -27,6 +27,7 @@ AVEILGameMode::AVEILGameMode()
 void AVEILGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+	UE_LOG(LogTemp, Display, TEXT("PHI GAMEMODE ALIVE: %s paused=%d"), *GetClass()->GetName(), UGameplayStatics::IsGamePaused(GetWorld()) ? 1 : 0);
 
 	// PHI CENSUS: 2.5s after boot, read every tall static mesh actor's
 	// bounds base in the LIVE world (baked + runtime alike). A floater
