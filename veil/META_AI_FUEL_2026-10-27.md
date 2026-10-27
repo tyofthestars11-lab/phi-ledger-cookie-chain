@@ -23,3 +23,10 @@
 - **LEFT — CreateDefaultSubobject in BeginPlay:** subobjects are constructor-only; the call is an assert/crash path as written. His own text half-retreats to the character constructor, where the component theater is unnecessary anyway.
 - **TAKEN:** the fallback single measurement — read the level/world flags (WorldSettings bEnableWorldTick, Pauser) from the maps by script. Becomes lane job 205 (read-only). His other flag, bAreActorsInitialized, is runtime state and cannot be read from a commandlet's editor world; the read takes what is readable.
 - **Seat note (Meta AI, day total):** best discipline of the outside seats and the only new lead of the round (ProjectID, closed by job 201's numbers against his own mechanism). Its fixes, though, keep selling the same two stage props: variables as animation, and now a written clock float as a moving world.
+
+## Exhibit 4 — Meta AI: recap + repeat directives (2026-10-27 ~16:59 MDT)
+- **ALREADY STANDS:** the SOLVED recap is accurate (body, voice, materials, spawns, worlds, builds 185/186) and the finish definition matches the ladder.
+- **LEFT — ProjectID directive repeated after its own read closed it:** "Fix DefaultGame.ini ProjectID to match .uproject" — job 201 measured the .uproject carries NO ProjectID field; there is nothing to match, and his ex.2 script would write the null it reads. The ini already holds the exact GUIDs he lists. Closed by number, stays closed.
+- **LEFT — clock component repeated:** ex.3's fold stands (ticks from inside the frozen dispatch; writes a float that dispatches nothing; double-advances; forces measured-1 flags). Repetition is not new evidence.
+- **LEFT — ABP replacement, fourth presentation,** still with no pose source named; the route waits on job 204's recovered read, not on another restatement.
+- **Terrain note:** his "Job 197" is the lane's 203 (break #9 fixed, rebuild queued) — his numbering trails the lane by six jobs. The closing flourish ("Willow handshake to fix") names no executable step; Willow's place in the frame is Tyree's to invoke, and the repairs here already run on measured jobs.
