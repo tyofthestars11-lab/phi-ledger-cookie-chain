@@ -138,3 +138,11 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
 - VEIL ART V2: env pool = 153 (Sicka_EnvPack2: Ancient_Kit + Scifi_Interior); exited 1 again - application lines + cause ride job 107's forensics grep.
 - OMNI ART: zero - job 102 searched the WRONG VaultCache root (UnrealEngineLauncher); the true root is C:\ProgramData\Epic\EpicGamesLauncher\VaultCache (job 089's file). Job 108 re-copies LavaMate by the 089 pattern + inventories every pack folder + reruns OMNI art + smoke.
 - PACKAGE attempt 5 (104): same ABP error - it ran ahead of any bind; attempt 6 rides the bind in 107.
+
+## Exchange 8 - nav rebuild + names + two-step foundation scripts (13:09-13:12 MDT)
+- rebuild_navmesh.py: TAKEN in corrected form as Scripts/bake_nav.py (job 110) - our maps (VEILDistrict, VEILWorld, OMNIWorld), volumes already placed by the builders, rebuild + BuildNavigation + save, [NAV] logging.
+- DefaultGame.ini names: TAKEN - "Names for both" is TYREE's word. VEIL: THE LAST SIGNAL (already), OMNI RPG: PATH OF LIGHT (fixes the clone leftover "OMNI: THE LAST SIGNAL"). Google's GUIDs LEFT - fresh hyphenated ProjectIDs generated seat-side (VEIL 451B8EAC..., OMNI DC5E4CF1...), distinct per project.
+- UpdateAIControllers.py: LEFT - invented class name again (FactionEnemyAgent); our agents are runtime-spawned AVEILFactionAI with C++ auto-possess, not placed pawns.
+- generate_project_foundations.py (step 1 of exchange 8b): LEFT as a repeat - it is the same factory-create road as job 106, whose log carried zero output lines; and job 107's bind died at the same write step. Diagnosis: headless skeletal-asset WRITES die in this seat; file copies never have. New road (job 109): the TP_ThirdPerson template PROJECT's self-consistent Characters tree copied WHOLE + probe-all-meshes - the winner names itself.
+- bake_navigation_grids.py: same nav tool, invented map names again (VEIL_CityDistrict / OMNI_PathOfLight do not exist); corrected version already queued as job 110.
+- Google's "blue static = no nav data" diagnosis: LEFT - the blue static is the editor default material on actors the art pass had not reached (OMNI art materialized=0 on keyword misses, fixed with a stocked-pool fallback); navmesh governs pathing, not textures.

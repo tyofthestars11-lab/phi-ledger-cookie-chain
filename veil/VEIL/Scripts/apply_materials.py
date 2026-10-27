@@ -37,6 +37,10 @@ def pick(keys):
             for path, name in pool:
                 if k in name.lower():
                     return path
+    if env_pool:
+        return env_pool[0][0]
+    if gen_pool:
+        return gen_pool[0][0]
     return None
 
 FAMILIES = [
@@ -60,7 +64,7 @@ for m in MAPS:
         if not comp:
             continue
         low = actor.get_actor_label().lower()
-        keys = ["concrete", "metal", "ground", "sicka"]
+        keys = ["concrete", "metal", "ground", "sicka", "lava"]
         fam = "default"
         for names, fam_keys in FAMILIES:
             if any(n in low for n in names):
