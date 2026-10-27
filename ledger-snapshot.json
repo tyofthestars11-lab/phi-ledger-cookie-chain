@@ -21421,10 +21421,164 @@
       "drift": 0.0636,
       "ladder": "auto-align-drift",
       "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: phi, the golden ratio",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "ratio"
+    },
+    {
+      "name": "Pd5AlI2: phi^2 = phi + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "ratio"
+    },
+    {
+      "name": "Pd5AlI2: golden angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "degrees"
+    },
+    {
+      "name": "Pd5AlI2: mu, golden pitch angle",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "degrees"
+    },
+    {
+      "name": "Pd5AlI2: Pd atomic mass",
+      "rung": 9.6992,
+      "drift": -0.3008,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "u"
+    },
+    {
+      "name": "Pd5AlI2: Pd atomic number",
+      "rung": 7.9562,
+      "drift": -0.0438,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: Al atomic mass",
+      "rung": 6.8476,
+      "drift": -0.1524,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "u"
+    },
+    {
+      "name": "Pd5AlI2: Al atomic number",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: I atomic mass",
+      "rung": 10.0651,
+      "drift": 0.0651,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "u"
+    },
+    {
+      "name": "Pd5AlI2: I atomic number",
+      "rung": 8.2506,
+      "drift": 0.2506,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: formula unit mass Pd5AlI2",
+      "rung": 13.9244,
+      "drift": -0.0756,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "u"
+    },
+    {
+      "name": "Pd5AlI2: atoms per formula unit",
+      "rung": 4.3213,
+      "drift": 0.3213,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: atoms per formula unit, literal +1",
+      "rung": 4.566,
+      "drift": -0.434,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: vacancy - one Pd removed, the rung subtraction",
+      "rung": 9.6992,
+      "drift": -0.3008,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "u"
+    },
+    {
+      "name": "Pd5AlI2: defect bound states measured (BIC, Science Oct 22)",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: bound states, literal +1 read",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "count"
+    },
+    {
+      "name": "Pd5AlI2: fine-structure alpha^-1",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "ratio"
+    },
+    {
+      "name": "Pd5AlI2: Planck constant h",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "J s"
+    },
+    {
+      "name": "Pd5AlI2: speed of light c",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "m/s"
+    },
+    {
+      "name": "Pd5AlI2: Boltzmann constant k_B",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "J/K"
+    },
+    {
+      "name": "Pd5AlI2: TON 618 body, the macro anchor (seal 331 canonical)",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "solar masses"
+    },
+    {
+      "name": "Pd5AlI2: TON 618 luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "pd5ali2-atomic-decode",
+      "unit": "W"
     }
   ],
-  "entry_count": 3062,
-  "seal_count": 332,
+  "entry_count": 3084,
+  "seal_count": 333,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -21757,7 +21911,8 @@
     "φ_TRIPLE_PROOF_TYREE_OMEGA",
     "φ_WHAT_AMAZON_DOES_NOT_KNOW_TYREE_OMEGA",
     "φ_PHI_PARTICLE_ACCELERATOR_TYREE_OMEGA",
-    "φ_AUTO_ALIGN_SYSTEMIC_DRIFT_TYREE_OMEGA"
+    "φ_AUTO_ALIGN_SYSTEMIC_DRIFT_TYREE_OMEGA",
+    "φ_PD5ALI2_ATOMIC_DECODE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c5c99bbe22a916c6989624e9fb8b3a2f42714a614202afd4f185a9d58e6ed39d"
+  "snapshot_sha256": "4116da43172d7f6e0500c2d252015c5ae4766221f8d65c5bcc1cdcb389bfc4b9"
 }
