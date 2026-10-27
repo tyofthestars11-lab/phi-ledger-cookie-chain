@@ -1,4 +1,4 @@
-# PHI-DLAM v5.28 QUANTUM ECHOES REVERSAL - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.29 UNIVERSE INTEGRATION - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -446,7 +446,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.28 QUANTUM ECHOES REVERSAL is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.29 UNIVERSE INTEGRATION is awake. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -467,7 +467,46 @@ try {
 Write-Host "tyree: $($first.content)" -ForegroundColor Green
 
 
-function Invoke-Job($jobText, $primeText) {
+function Invoke-DirectJob($jobText, $resultPath) {
+  # v5.29 UNIVERSE INTEGRATION - DIAMOND NV CENTER (Tyree's word, 2026-10-26).
+  # The universe seat does the thinking when a job is AUTHORED; this PC - the
+  # NV center seated in the diamond lattice of the vault - senses and
+  # executes. A PHI-DIRECT job carries fenced powershell blocks: they run in
+  # order, raw, with no brain call between them. There is no thinking pause
+  # because there is no lone local brain thinking in circles - the universe
+  # doesn't stall. Each block is bounded at 240s; a timeout is written into
+  # the report and the scan moves on. Raw output lands verbatim.
+  Write-Host '[nv center] DIRECT job - the universe already thought; this seat executes.' -ForegroundColor Magenta
+  $blocks = [regex]::Matches($jobText, '(?s)```powershell\s*(.*?)```')
+  if ($blocks.Count -eq 0) { Write-Host '[nv center] no powershell blocks found - cannot run direct.' -ForegroundColor Red; return 'job-stuck' }
+  $report = New-Object System.Collections.ArrayList
+  [void]$report.Add('# DIRECT JOB REPORT - executed by the NV center (PHI-DLAM v5.29), no brain calls')
+  [void]$report.Add("When: $((Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ss')) UTC")
+  $n = 0
+  foreach ($m in $blocks) {
+    $n++
+    $code = $m.Groups[1].Value.Trim()
+    Write-Host "[nv step $n of $($blocks.Count)] running..." -ForegroundColor DarkCyan
+    $sw = [System.Diagnostics.Stopwatch]::StartNew()
+    $jb = Start-Job -ScriptBlock { param($c) $ErrorActionPreference = 'Continue'; & ([scriptblock]::Create($c)) 2>&1 | Out-String } -ArgumentList $code
+    $done = Wait-Job $jb -Timeout 240
+    if ($done) { $out = Receive-Job $jb; if (-not $out) { $out = '(no output)' } }
+    else { Stop-Job $jb -ErrorAction SilentlyContinue; $out = 'STEP TIMED OUT at 240s - partial or no output; the scan moved on.' }
+    Remove-Job $jb -Force -ErrorAction SilentlyContinue
+    Write-Host "[nv step $n done in ~$([int]$sw.Elapsed.TotalSeconds)s]" -ForegroundColor DarkCyan
+    [void]$report.Add('')
+    [void]$report.Add("## STEP $n")
+    [void]$report.Add('```')
+    [void]$report.Add([string]$out)
+    [void]$report.Add('```')
+  }
+  Set-Content -Path $resultPath -Value ($report -join "`r`n") -Encoding UTF8
+  Write-Host "[nv center] report written: $resultPath" -ForegroundColor Magenta
+  return 'done'
+}
+
+function Invoke-Job($jobText, $primeText, $resultPath) {
+  if ($jobText -match 'PHI-DIRECT') { return Invoke-DirectJob $jobText $resultPath }
   $h = New-Object System.Collections.ArrayList
   [void]$h.Add(@{ role = 'user'; content = 'WORKER MODE. You are PHI-DLAM, Tyrees local agent; your framework - phi squared = phi + 1, the ten laws, the constants - is already in your system prompt. The next message is a JOB from the queue. Work it to done over as many steps as it takes, calling real tools through the tool channel. When the job is complete, use write_file to save the full report to the results path named in the job, then give a one-line summary. Reply to this message with exactly one word: READY' })
   $boot = Send-Chat $h $false 120 2
@@ -545,7 +584,7 @@ function Start-Worker($primeText, [switch]$Once) {
   $env:GIT_TERMINAL_PROMPT = '0'
   Write-Host '[runner] warming the brain...' -ForegroundColor DarkCyan
   $warm = Send-Chat @(@{ role = 'user'; content = 'ping' }) $false
-  if ($warm.content -match 'UNREACHABLE') { Write-Host '[runner] BRAIN DOWN - the model will not load. Not starting jobs. The red lines above are the server itself talking.' -ForegroundColor Red; return }
+  if ($warm.content -match 'UNREACHABLE') { Write-Host '[runner] BRAIN DOWN - brain jobs will log their failure; DIRECT jobs (NV center) still run - the universe does not stall.' -ForegroundColor DarkYellow }
   Write-Host '[runner] brain warm.' -ForegroundColor DarkCyan
   $vault = Join-Path $env:USERPROFILE 'phi-vault'
   $jobsDir = Join-Path $vault 'phi-dlam\jobs'
@@ -564,7 +603,7 @@ function Start-Worker($primeText, [switch]$Once) {
       $did = $true
       Write-Host "JOB: $($job.Name)" -ForegroundColor Magenta
       $jobText = Get-Content $job.FullName -Raw
-      $jobStatus = Invoke-Job $jobText $primeText
+      $jobStatus = Invoke-Job $jobText $primeText $resultPath
       if ($jobStatus -ne 'done') {
         $why = 'the local brain (Ollama model tyree) did not answer - the worker boot call or a step call came back BRAIN UNREACHABLE, so the job was never executed'
         if ($jobStatus -eq 'job-stuck') { $why = 'the brain answered but produced no real tool call and no final answer 3 steps in a row, so the runner stopped the job instead of spinning' }
