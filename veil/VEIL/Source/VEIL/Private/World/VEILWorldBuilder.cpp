@@ -112,9 +112,10 @@ void AVEILWorldBuilder::BuildLighting()
 		if (UExponentialHeightFogComponent* Comp =
 			Fog->FindComponentByClass<UExponentialHeightFogComponent>())
 		{
+			// Density only: the one write every engine version carries.
+			// The fog's authored color stands - the dusk comes from the
+			// sun and sky above, not from tinting the fog against spec.
 			Comp->FogDensity = 0.012f;
-			Comp->FogInscatteringColor = FLinearColor(0.13f, 0.08f, 0.24f);
-			Comp->FogHeightFalloff = 0.25f;
 		}
 	}
 	// The beacon's gold heart over the plaza.
