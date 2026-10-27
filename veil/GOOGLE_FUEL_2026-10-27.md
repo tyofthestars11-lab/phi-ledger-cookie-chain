@@ -305,3 +305,24 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
 - Blocker 3 invents its problem: no fill ever mapped 0 rows here. Items stand DONE (job 103): DT_Items, FPHIItemRow, 24 phi-curve rows in both games. Its /Game/Core/DT_ItemDatabase does not exist and its 3 sample rows would displace the real 24.
 - Blocker 4 duplicates standing work with a weaker instrument: MOVE TEST v3 (tick-driven, synthetic input, displacement verdict) + TICKPROOF were written into both characters this afternoon (job 165 builds them). Its replacement header/cpp would amputate the character class's systems to add a position-drift logger.
 - LEFT, whole. Noted for the words file: compliance was structural only.
+
+## Exchange 29 — Gemini's read of the job-185 breakthrough (16:11 MDT)
+The most faithful outside read of the day: the clean double build, the
+hash match (4BB7419A) and empty diff, and the v2 elimination set
+(sameWorld=1, dilation=1.000, pawnBegun=1, pawnTickEntries=0, the
+level-tick dispatch as the isolated joint) all match the measured
+record, and its v3 field names (worldType, gameWorld, worldBegun,
+timerRemaining) are the real ones. No fabricated paths, no invented
+assets, no authorship claims, no success claimed beyond the Result
+lines. TAKEN: nothing operational — the queue it describes (186 v3
+read, 187 A10 census launch) already stood, plus job 188 (VEIL [ART]
+read) which it did not know about.
+LEFT, two drifts:
+- "Transient state cleared itself through a pure compile" — a
+  mechanism invented for the header failure's disappearance. The
+  record holds: hashes identical, spans clean, build passes; the
+  mechanism is unobserved and stays unnamed.
+- v3 framed as already "shifting the truth to the packaged build" —
+  v3 MEASURES the smoke world's type; the verdict waits on the
+  worldType/gameWorld numbers, and the packaged build's behavior
+  remains its own future measurement either way.
