@@ -60,6 +60,7 @@ AOMNICharacter::AOMNICharacter()
 		Body->SetRelativeLocation(FVector(0.f, 0.f, -15.f));
 		Body->SetRelativeScale3D(FVector(0.62f, 0.62f, 1.5f));
 		Body->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		RunnerBody = Body;
 		if (CylinderMesh.Succeeded()) Body->SetStaticMesh(CylinderMesh.Object);
 		if (UMaterialInterface* Base = Body->GetMaterial(0))
 		{
@@ -76,6 +77,7 @@ AOMNICharacter::AOMNICharacter()
 		Visor->SetRelativeLocation(FVector(20.f, 0.f, 58.f));
 		Visor->SetRelativeScale3D(FVector(0.10f, 0.46f, 0.12f));
 		Visor->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		RunnerVisor = Visor;
 		if (CubeMesh.Succeeded()) Visor->SetStaticMesh(CubeMesh.Object);
 		if (UMaterialInterface* Base = Visor->GetMaterial(0))
 		{
@@ -186,6 +188,10 @@ void AOMNICharacter::BuildFallbackInput()
 void AOMNICharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	// 1st/3rd person toggle: V on keyboard, right-stick click (R3) on the pad.
+	PlayerInputComponent->BindKey(EKeys::V, IE_Pressed, this, &AOMNICharacter::ToggleCameraMode);
+	PlayerInputComponent->BindKey(EKeys::Gamepad_RightThumbstick, IE_Pressed, this, &AOMNICharacter::ToggleCameraMode);
 
 	if (UEnhancedInputComponent* EIC = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
 	{
@@ -350,4 +356,17 @@ void AOMNICharacter::Heal(float Amount)
 	if (!IsAlive()) return;
 	Health = FMath::Clamp(Health + Amount, 0.f, MaxHealth);
 	OnHealthChanged.Broadcast(Health, MaxHealth);
+}
+
+void AOMNICharacter::ToggleCameraMode()
+{
+	bFirstPerson = !bFirstPerson;
+	if (CameraBoom)
+	{
+		CameraBoom->TargetArmLength = bFirstPerson ? 0.f : 420.f;
+		CameraBoom->SetRelativeLocation(bFirstPerson ? FVector(30.f, 0.f, 64.f) : FVector::ZeroVector);
+	}
+	if (RunnerBody) RunnerBody->SetOwnerNoSee(bFirstPerson);
+	if (RunnerVisor) RunnerVisor->SetOwnerNoSee(bFirstPerson);
+	UE_LOG(LogOMNI, Log, TEXT("OMNI camera: %s person."), bFirstPerson ? TEXT("first") : TEXT("third"));
 }

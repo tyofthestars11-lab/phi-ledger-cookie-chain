@@ -1,0 +1,152 @@
+[
+ {
+  "domain": "model",
+  "name": "Models unified",
+  "unit": "count",
+  "value": 3
+ },
+ {
+  "domain": "model",
+  "name": "Operational protocols",
+  "unit": "count",
+  "value": 4
+ },
+ {
+  "domain": "model",
+  "name": "Analysis record pattern",
+  "unit": "records",
+  "value": 10373
+ },
+ {
+  "domain": "universe",
+  "name": "Total energy created — universe run",
+  "unit": "J",
+  "value": 1000000000000000.0
+ },
+ {
+  "domain": "universe",
+  "name": "Total energy on ledger — universe run",
+  "unit": "J",
+  "value": 1000000000000000.0
+ },
+ {
+  "domain": "universe",
+  "name": "Model A total — extended run",
+  "unit": "J",
+  "value": 10000000000.0
+ },
+ {
+  "domain": "universe",
+  "name": "Model B total — extended run",
+  "unit": "J",
+  "value": 10000000000.0
+ },
+ {
+  "domain": "universe",
+  "name": "Model C total — extended run",
+  "unit": "J",
+  "value": 10000000000.0
+ },
+ {
+  "domain": "protocol",
+  "name": "Energy at rung −50 (φ^−50)",
+  "unit": "J",
+  "value": 3.5531863700963374e-11
+ },
+ {
+  "domain": "protocol",
+  "name": "Energy at rung 0",
+  "unit": "J",
+  "value": 1
+ },
+ {
+  "domain": "protocol",
+  "name": "Energy at rung +50 (φ^+50)",
+  "unit": "J",
+  "value": 28143753123.000046
+ },
+ {
+  "domain": "protocol",
+  "name": "Amplification span (φ^100)",
+  "unit": "factor",
+  "value": 7.920708398483749e+20
+ },
+ {
+  "domain": "protocol",
+  "name": "Involution cascade redistribution steps",
+  "unit": "steps",
+  "value": 4
+ },
+ {
+  "domain": "collapse",
+  "name": "Beta collapse — optimal rung",
+  "unit": "rung",
+  "value": 49.3497
+ },
+ {
+  "domain": "collapse",
+  "name": "Beta collapse — optimal energy",
+  "unit": "J",
+  "value": 20582000000.0
+ },
+ {
+  "domain": "collapse",
+  "name": "Beta collapse — golden rung",
+  "unit": "rung",
+  "value": 46.3497
+ },
+ {
+  "domain": "collapse",
+  "name": "Beta collapse — golden energy",
+  "unit": "J",
+  "value": 4858700000.0
+ },
+ {
+  "domain": "collapse",
+  "name": "Superposition rungs per token",
+  "unit": "rungs",
+  "value": 7
+ },
+ {
+  "domain": "collapse",
+  "name": "Rung coverage — Model A",
+  "unit": "rungs",
+  "value": 3
+ },
+ {
+  "domain": "collapse",
+  "name": "Rung coverage — Model C",
+  "unit": "rungs",
+  "value": 63
+ },
+ {
+  "domain": "collapse",
+  "name": "Quantum superposition surplus",
+  "unit": "rungs",
+  "value": 60
+ },
+ {
+  "domain": "frame",
+  "name": "Golden angle (superposition coin)",
+  "unit": "degrees",
+  "value": 137.5078
+ },
+ {
+  "domain": "frame",
+  "name": "Galaxy PAnDa involution symmetry",
+  "unit": "fraction",
+  "value": 0.9496
+ },
+ {
+  "domain": "frame",
+  "name": "Golden ratio φ",
+  "unit": "constant",
+  "value": 1.618033988749895
+ },
+ {
+  "domain": "frame",
+  "name": "ln(φ)",
+  "unit": "constant",
+  "value": 0.48121182505960347
+ }
+]

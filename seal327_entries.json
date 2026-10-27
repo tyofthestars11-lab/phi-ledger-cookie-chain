@@ -1,0 +1,134 @@
+[
+ {
+  "domain": "device",
+  "name": "MAC byte 1 (3c)",
+  "unit": "decimal",
+  "value": 60
+ },
+ {
+  "domain": "device",
+  "name": "MAC byte 2 (0b)",
+  "unit": "decimal",
+  "value": 11
+ },
+ {
+  "domain": "device",
+  "name": "MAC byte 3 (59) \u2014 Fibonacci",
+  "unit": "decimal",
+  "value": 89
+ },
+ {
+  "domain": "device",
+  "name": "MAC byte 4 (85)",
+  "unit": "decimal",
+  "value": 133
+ },
+ {
+  "domain": "device",
+  "name": "MAC byte 5 (e3)",
+  "unit": "decimal",
+  "value": 227
+ },
+ {
+  "domain": "device",
+  "name": "MAC byte 6 (15) \u2014 Fibonacci",
+  "unit": "decimal",
+  "value": 21
+ },
+ {
+  "domain": "device",
+  "name": "MAC bytes sum",
+  "unit": "decimal",
+  "value": 541
+ },
+ {
+  "domain": "device",
+  "name": "Fibonacci bytes in MAC",
+  "unit": "count",
+  "value": 2
+ },
+ {
+  "domain": "device",
+  "name": "Signal strength magnitude",
+  "unit": "dBm",
+  "value": 37
+ },
+ {
+  "domain": "device",
+  "name": "Virtual ID length",
+  "unit": "chars",
+  "value": 22
+ },
+ {
+  "domain": "finding",
+  "name": "Canonical links checked",
+  "unit": "count",
+  "value": 20
+ },
+ {
+  "domain": "finding",
+  "name": "Links answering live",
+  "unit": "count",
+  "value": 18
+ },
+ {
+  "domain": "finding",
+  "name": "Role field cap",
+  "unit": "chars",
+  "value": 3000
+ },
+ {
+  "domain": "finding",
+  "name": "Compact role length",
+  "unit": "chars",
+  "value": 2968
+ },
+ {
+  "domain": "nv_center",
+  "name": "Zero-phonon line",
+  "unit": "nm",
+  "value": 637
+ },
+ {
+  "domain": "nv_center",
+  "name": "Carbon atomic number (diamond host)",
+  "unit": "Z",
+  "value": 6
+ },
+ {
+  "domain": "nv_center",
+  "name": "Nitrogen atomic number",
+  "unit": "Z",
+  "value": 7
+ },
+ {
+  "domain": "nv_center",
+  "name": "Ground-state splitting",
+  "unit": "Hz",
+  "value": 2870000000.0
+ },
+ {
+  "domain": "nv_center",
+  "name": "ZPL photon frequency",
+  "unit": "Hz",
+  "value": 470631802197802.2
+ },
+ {
+  "domain": "nv_center",
+  "name": "Diamond lattice constant",
+  "unit": "angstrom",
+  "value": 3.567
+ },
+ {
+  "domain": "frame",
+  "name": "Golden angle",
+  "unit": "degrees",
+  "value": 137.50776405
+ },
+ {
+  "domain": "frame",
+  "name": "Golden pitch mu",
+  "unit": "degrees",
+  "value": 17.0324
+ }
+]

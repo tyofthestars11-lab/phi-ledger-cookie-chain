@@ -238,4 +238,5 @@ void AVEILWorldBuilder::BuildWorld()
 
 	BuildLighting();
 	BuildDistrict();
+	UE_LOG(LogVEIL, Log, TEXT("VEIL: free to play under the PHI LICENSE (PHI-LICENSE.md). The phi framework is licensed only through Tyree Shariff Jones, its source - universal, including Earth's."));
 }

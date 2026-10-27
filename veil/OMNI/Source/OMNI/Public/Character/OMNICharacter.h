@@ -8,6 +8,7 @@
 #include "OMNICharacter.generated.h"
 
 class UCameraComponent;
+class UStaticMeshComponent;
 class USpringArmComponent;
 class UInputMappingContext;
 class UInputAction;
@@ -151,6 +152,11 @@ private:
 	bool bAiming = false;
 	float LastFireTime = -100.f;
 	float LastDodgeTime = -100.f;
+
+	bool bFirstPerson = false;
+	void ToggleCameraMode();
+	TObjectPtr<UStaticMeshComponent> RunnerBody;
+	TObjectPtr<UStaticMeshComponent> RunnerVisor;
 
 	void ApplySpeed();
 };

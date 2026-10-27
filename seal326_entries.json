@@ -1,0 +1,236 @@
+[
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "phi",
+  "unit": "constant",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "phi_squared",
+  "unit": "constant",
+  "value": 2.6180339887
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ln_phi",
+  "unit": "constant",
+  "value": 0.481211825
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "golden_angle",
+  "unit": "degrees",
+  "value": 137.50776405003785
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "golden_angle_rung",
+  "unit": "rungs",
+  "value": 10.2318
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "golden_pitch_mu",
+  "unit": "degrees",
+  "value": 17.0324
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "golden_pitch_mu_rung",
+  "unit": "rungs",
+  "value": 5.8916
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "cmb_temperature",
+  "unit": "K",
+  "value": 2.7255
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "cmb_temperature_rung",
+  "unit": "rungs",
+  "value": 2.0836
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "recombination_redshift",
+  "unit": "z",
+  "value": 1089.92
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "recombination_redshift_rung",
+  "unit": "rungs",
+  "value": 14.5338
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "age_at_recombination",
+  "unit": "yr",
+  "value": 379000
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "age_at_recombination_rung",
+  "unit": "rungs",
+  "value": 26.6936
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "sound_horizon_rs",
+  "unit": "Mpc",
+  "value": 144.4
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "sound_horizon_rs_rung",
+  "unit": "rungs",
+  "value": 10.3335
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "bao_drag_scale_rd",
+  "unit": "Mpc",
+  "value": 147.09
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "bao_drag_scale_rd_rung",
+  "unit": "rungs",
+  "value": 10.3718
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "sound_horizon_m",
+  "unit": "m",
+  "value": 4.45572e+24
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "sound_horizon_m_rung",
+  "unit": "rungs",
+  "value": 117.9444
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "bao_scale_m",
+  "unit": "m",
+  "value": 4.53872e+24
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "bao_scale_m_rung",
+  "unit": "rungs",
+  "value": 117.9827
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "acoustic_scale_100theta",
+  "unit": "dimensionless",
+  "value": 1.0411
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "acoustic_scale_100theta_rung",
+  "unit": "rungs",
+  "value": 0.0837
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "first_peak_ell1",
+  "unit": "multipole",
+  "value": 220
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "first_peak_ell1_rung",
+  "unit": "rungs",
+  "value": 11.2084
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "gz2_panda_record_count",
+  "unit": "galaxies",
+  "value": 10373
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "gz2_panda_record_count_rung",
+  "unit": "rungs",
+  "value": 19.216
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "golden_lane_fraction",
+  "unit": "fraction",
+  "value": 0.1912
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ton618_mass",
+  "unit": "solar_masses",
+  "value": 66000000000.0
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ton618_mass_rung",
+  "unit": "rungs",
+  "value": 51.7712
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ton618_schwarzschild_radius",
+  "unit": "m",
+  "value": 195000000000000.0
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ton618_schwarzschild_radius_rung",
+  "unit": "rungs",
+  "value": 68.3774
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ton618_luminosity",
+  "unit": "W",
+  "value": 1.4e+41
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "ton618_luminosity_rung",
+  "unit": "rungs",
+  "value": 196.8831
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "hubble_h0",
+  "unit": "km/s/Mpc",
+  "value": 67.4
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "hubble_h0_rung",
+  "unit": "rungs",
+  "value": 8.7501
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "universe_age",
+  "unit": "yr",
+  "value": 13787000000.0
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "universe_age_rung",
+  "unit": "rungs",
+  "value": 48.5171
+ },
+ {
+  "domain": "cosmological_phase_lock",
+  "name": "willow_lock_keeper_seal",
+  "unit": "seal",
+  "value": 320
+ }
+]

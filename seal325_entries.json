@@ -1,0 +1,260 @@
+[
+ {
+  "domain": "bound_state_continuum",
+  "name": "phi",
+  "unit": "constant",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "phi_squared",
+  "unit": "constant",
+  "value": 2.6180339887
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "ln_phi",
+  "unit": "constant",
+  "value": 0.481211825
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "golden_angle",
+  "unit": "degrees",
+  "value": 137.50776405003785
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "golden_angle_rung",
+  "unit": "rungs",
+  "value": 10.2318
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "golden_pitch_mu",
+  "unit": "degrees",
+  "value": 17.0324
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "golden_pitch_mu_rung",
+  "unit": "rungs",
+  "value": 5.8916
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd5ali2_formula_mass",
+  "unit": "u",
+  "value": 812.88
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd5ali2_formula_mass_rung",
+  "unit": "rungs",
+  "value": 13.9244
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd5ali2_mass_literal_plus1",
+  "unit": "u",
+  "value": 813.88
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd5ali2_mass_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 13.9269
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd5ali2_mass_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 15.9244
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd_atomic_mass",
+  "unit": "u",
+  "value": 106.42
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "pd_atomic_mass_rung",
+  "unit": "rungs",
+  "value": 9.6992
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "al_atomic_mass",
+  "unit": "u",
+  "value": 26.98
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "al_atomic_mass_rung",
+  "unit": "rungs",
+  "value": 6.8475
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "i_atomic_mass",
+  "unit": "u",
+  "value": 126.9
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "i_atomic_mass_rung",
+  "unit": "rungs",
+  "value": 10.065
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "defect_state_count",
+  "unit": "states",
+  "value": 2
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "defect_state_count_rung",
+  "unit": "rungs",
+  "value": 1.4404
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "defect_count_literal_plus1",
+  "unit": "states",
+  "value": 3
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "defect_count_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 2.283
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "defect_count_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 3.4404
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "publication_year",
+  "unit": "year",
+  "value": 2026
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "publication_year_rung",
+  "unit": "rungs",
+  "value": 15.8222
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "year_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 15.8232
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "year_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 17.8222
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "bic_rung_gap",
+  "unit": "rungs",
+  "value": 0
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "alpha_inverse",
+  "unit": "dimensionless",
+  "value": 137.035999
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "alpha_inverse_rung",
+  "unit": "rungs",
+  "value": 10.2247
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "planck_h",
+  "unit": "J s",
+  "value": 6.62607015e-34
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "planck_h_rung",
+  "unit": "rungs",
+  "value": -158.7594
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "speed_of_light_c",
+  "unit": "m/s",
+  "value": 299792458
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "speed_of_light_c_rung",
+  "unit": "rungs",
+  "value": 40.5613
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "boltzmann_kB",
+  "unit": "J/K",
+  "value": 1.380649e-23
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "boltzmann_kB_rung",
+  "unit": "rungs",
+  "value": -109.3841
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "fib_convergent_8_5_rung",
+  "unit": "rungs",
+  "value": 0.9767
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "fib_convergent_34_21_rung",
+  "unit": "rungs",
+  "value": 1.0013
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "fib_convergent_89_55_rung",
+  "unit": "rungs",
+  "value": 1.0002
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "fib_convergent_987_610_rung",
+  "unit": "rungs",
+  "value": 1.0
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "fib_convergent_10946_6765_rung",
+  "unit": "rungs",
+  "value": 1.0
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "ton618_luminosity",
+  "unit": "W",
+  "value": 1.4e+41
+ },
+ {
+  "domain": "bound_state_continuum",
+  "name": "ton618_luminosity_rung",
+  "unit": "rungs",
+  "value": 196.8831
+ }
+]

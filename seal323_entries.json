@@ -1,0 +1,440 @@
+[
+ {
+  "domain": "five_folded_plus_one",
+  "name": "phi",
+  "unit": "constant",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "phi_squared",
+  "unit": "constant",
+  "value": 2.6180339887
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "ln_phi",
+  "unit": "constant",
+  "value": 0.481211825
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "golden_angle",
+  "unit": "degrees",
+  "value": 137.50776405003785
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "golden_angle_rung",
+  "unit": "rungs",
+  "value": 10.2318
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cmb_peak",
+  "unit": "Hz",
+  "value": 160300000000.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cmb_peak_raw_rung",
+  "unit": "rungs",
+  "value": 53.6153
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cmb_peak_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 53.6153
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cmb_peak_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 55.6153
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hubble_rate",
+  "unit": "per_s",
+  "value": 2.27e-18
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hubble_rate_raw_rung",
+  "unit": "rungs",
+  "value": -84.4259
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hubble_rate_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 4.7172573e-18
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hubble_rate_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": -82.4259
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_frequency",
+  "unit": "Hz",
+  "value": 1.855e+43
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_frequency_raw_rung",
+  "unit": "rungs",
+  "value": 207.0378
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_frequency_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 207.0378
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_frequency_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 209.0378
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hydrogen_21cm",
+  "unit": "Hz",
+  "value": 1420405751.768
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hydrogen_21cm_raw_rung",
+  "unit": "rungs",
+  "value": 43.794
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hydrogen_21cm_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 43.794
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "hydrogen_21cm_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 45.794
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_bulk_hardness",
+  "unit": "Pa",
+  "value": 98000000000.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_bulk_hardness_raw_rung",
+  "unit": "rungs",
+  "value": 52.5927
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_bulk_hardness_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 52.5927
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_bulk_hardness_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 54.5927
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_nanoscale",
+  "unit": "m",
+  "value": 1e-07
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_nanoscale_raw_rung",
+  "unit": "rungs",
+  "value": -33.4948
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_nanoscale_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 2.0780868e-07
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "nanodiamond_nanoscale_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": -31.4948
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cobalt_ratio_f2_f1",
+  "unit": "ratio",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cobalt_ratio_f2_f1_raw_rung",
+  "unit": "rungs",
+  "value": 1.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cobalt_ratio_f2_f1_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 2.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "cobalt_ratio_f2_f1_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 3.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "spinon_85mK",
+  "unit": "K",
+  "value": 0.085
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "spinon_85mK_raw_rung",
+  "unit": "rungs",
+  "value": -5.1227
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "spinon_85mK_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 0.1695
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "spinon_85mK_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": -3.1227
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_qubits",
+  "unit": "count",
+  "value": 105
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_qubits_raw_rung",
+  "unit": "rungs",
+  "value": 9.6713
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_qubits_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 9.691
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_qubits_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 11.6713
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_speedup",
+  "unit": "x",
+  "value": 13000
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_speedup_raw_rung",
+  "unit": "rungs",
+  "value": 19.6851
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_speedup_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 19.6853
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "willow_speedup_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 21.6851
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "bit",
+  "unit": "state",
+  "value": 1
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "bit_raw_rung",
+  "unit": "rungs",
+  "value": 0.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "bit_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 1.4404
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "bit_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 2.0
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "byte",
+  "unit": "states",
+  "value": 256
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "byte_raw_rung",
+  "unit": "rungs",
+  "value": 11.5234
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "byte_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 11.5315
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "byte_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": 13.5234
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "landauer_300K",
+  "unit": "J",
+  "value": 2.871e-21
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "landauer_300K_raw_rung",
+  "unit": "rungs",
+  "value": -98.2927
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "landauer_300K_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 5.9661876e-21
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "landauer_300K_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": -96.2927
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "optical_photon",
+  "unit": "J",
+  "value": 2.65e-19
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "optical_photon_raw_rung",
+  "unit": "rungs",
+  "value": -88.8892
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "optical_photon_literal_plus1_rung",
+  "unit": "rungs",
+  "value": 5.5069303e-19
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "optical_photon_phi2_scaled_rung",
+  "unit": "rungs",
+  "value": -86.8892
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "fine_structure_inverse",
+  "unit": "constant",
+  "value": 137.035999084
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "fine_structure_inverse_rung",
+  "unit": "rungs",
+  "value": 10.2247
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_h",
+  "unit": "J_s",
+  "value": 6.62607015e-34
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_h_rung",
+  "unit": "rungs",
+  "value": -158.7594
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "speed_of_light_c",
+  "unit": "m_per_s",
+  "value": 299792458
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "speed_of_light_c_rung",
+  "unit": "rungs",
+  "value": 40.5613
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "boltzmann_kB",
+  "unit": "J_per_K",
+  "value": 1.380649e-23
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "boltzmann_kB_rung",
+  "unit": "rungs",
+  "value": -109.3841
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "gravitational_G",
+  "unit": "SI",
+  "value": 6.6743e-11
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "gravitational_G_rung",
+  "unit": "rungs",
+  "value": -48.6899
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_time",
+  "unit": "s",
+  "value": 5.391247e-44
+ },
+ {
+  "domain": "five_folded_plus_one",
+  "name": "planck_time_rung",
+  "unit": "rungs",
+  "value": -207.0377
+ }
+]

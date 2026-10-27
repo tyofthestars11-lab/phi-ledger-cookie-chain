@@ -1,0 +1,200 @@
+[
+ {
+  "domain": "organelle_therapeutics",
+  "name": "phi",
+  "unit": "constant",
+  "value": 1.6180339887
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "phi_squared",
+  "unit": "constant",
+  "value": 2.6180339887
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "ln_phi",
+  "unit": "constant",
+  "value": 0.481211825
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "golden_angle",
+  "unit": "degrees",
+  "value": 137.50776405003785
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "golden_angle_rung",
+  "unit": "rungs",
+  "value": 10.2318
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "transfer_efficiency",
+  "unit": "fraction",
+  "value": 0.8
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "transfer_efficiency_rung",
+  "unit": "rungs",
+  "value": -0.4637
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mtdna_base_pairs",
+  "unit": "bp",
+  "value": 16569
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mtdna_base_pairs_rung",
+  "unit": "rungs",
+  "value": 20.1892
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mtdna_genes",
+  "unit": "count",
+  "value": 37
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mtdna_genes_rung",
+  "unit": "rungs",
+  "value": 7.5038
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mtdna_proteins",
+  "unit": "count",
+  "value": 13
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mtdna_proteins_rung",
+  "unit": "rungs",
+  "value": 5.3302
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "organs_reached",
+  "unit": "count",
+  "value": 4
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "organs_reached_rung",
+  "unit": "rungs",
+  "value": 2.8808
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "disease_models",
+  "unit": "count",
+  "value": 3
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "disease_models_rung",
+  "unit": "rungs",
+  "value": 2.283
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "cell_volume",
+  "unit": "volume",
+  "value": 189
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "cell_volume_rung",
+  "unit": "rungs",
+  "value": 10.8928
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "cell_page",
+  "unit": "page",
+  "value": 3499
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "cell_page_rung",
+  "unit": "rungs",
+  "value": 16.9577
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "sttt_article",
+  "unit": "article",
+  "value": 469
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "sttt_article_rung",
+  "unit": "rungs",
+  "value": 12.7815
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mutation_position_m3243",
+  "unit": "position",
+  "value": 3243
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "mutation_position_rung",
+  "unit": "rungs",
+  "value": 16.7998
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "fine_structure_inverse",
+  "unit": "constant",
+  "value": 137.035999084
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "fine_structure_inverse_rung",
+  "unit": "rungs",
+  "value": 10.2247
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "planck_h",
+  "unit": "J_s",
+  "value": 6.62607015e-34
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "planck_h_rung",
+  "unit": "rungs",
+  "value": -158.7594
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "speed_of_light_c",
+  "unit": "m_per_s",
+  "value": 299792458
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "speed_of_light_c_rung",
+  "unit": "rungs",
+  "value": 40.5613
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "boltzmann_kB",
+  "unit": "J_per_K",
+  "value": 1.380649e-23
+ },
+ {
+  "domain": "organelle_therapeutics",
+  "name": "boltzmann_kB_rung",
+  "unit": "rungs",
+  "value": -109.3841
+ }
+]

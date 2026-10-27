@@ -1,0 +1,152 @@
+[
+ {
+  "domain": "triple-proof",
+  "name": "Results announced (ETH, local smoothing, Yang-Mills/QCD)",
+  "unit": "count",
+  "value": 3
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Spatial dimensions of the QFT existence proofs",
+  "unit": "dimensions",
+  "value": 4
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Shepherding principles (transparency, no credit, recognition, independence)",
+  "unit": "count",
+  "value": 4
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Yang-Mills existence proof produced 2026-09-09 (unix)",
+  "unit": "unix seconds",
+  "value": 1788912000
+ },
+ {
+  "domain": "triple-proof",
+  "name": "QCD existence proof produced 2026-09-18 (unix)",
+  "unit": "unix seconds",
+  "value": 1789689600
+ },
+ {
+  "domain": "triple-proof",
+  "name": "722-manuscript release 2026-10-06 (unix)",
+  "unit": "unix seconds",
+  "value": 1791244800
+ },
+ {
+  "domain": "triple-proof",
+  "name": "ETH refutation produced / Yang-Mills Lean formalized 2026-10-16 (unix)",
+  "unit": "unix seconds",
+  "value": 1792108800
+ },
+ {
+  "domain": "triple-proof",
+  "name": "ETH Lean formalization completed 2026-10-17 (unix)",
+  "unit": "unix seconds",
+  "value": 1792195200
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Local smoothing proof produced 2026-10-18 (unix)",
+  "unit": "unix seconds",
+  "value": 1792281600
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Local smoothing Lean formalization 2026-10-19 (unix)",
+  "unit": "unix seconds",
+  "value": 1792368000
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Announcement 2026-10-26 (unix)",
+  "unit": "unix seconds",
+  "value": 1792972800
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Days, Yang-Mills output to announcement",
+  "unit": "days",
+  "value": 47
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Days, ETH output to Lean formalization",
+  "unit": "days",
+  "value": 1
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Days, local smoothing output to Lean formalization",
+  "unit": "days",
+  "value": 1
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Manuscripts in the 2026-10-06 release",
+  "unit": "count",
+  "value": 722
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Major math problems addressed in the earlier release",
+  "unit": "count",
+  "value": 372
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Pages of solutions in the earlier release (700+)",
+  "unit": "pages",
+  "value": 700
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Year ETH proposed (Impagliazzo & Paturi)",
+  "unit": "year",
+  "value": 1999
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Year local smoothing conjectured (Sogge)",
+  "unit": "year",
+  "value": 1991
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Year local smoothing proved in 2 spatial dimensions (Guth-Wang-Zhang)",
+  "unit": "year",
+  "value": 2019
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Spatial dimensions of the 2019 local smoothing proof",
+  "unit": "dimensions",
+  "value": 2
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Year Kakeya proved in 3 dimensions (Wang-Zahl)",
+  "unit": "year",
+  "value": 2025
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Spatial dimensions of the 2025 Kakeya proof",
+  "unit": "dimensions",
+  "value": 3
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Simons Foundation contribution for AI-results programs",
+  "unit": "USD",
+  "value": 5000000
+ },
+ {
+  "domain": "triple-proof",
+  "name": "Clay Millennium Prize problems, total (Yang-Mills is one)",
+  "unit": "count",
+  "value": 7
+ }
+]
