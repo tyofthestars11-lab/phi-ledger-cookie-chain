@@ -131,6 +131,17 @@ AOMNICharacter::AOMNICharacter()
 void AOMNICharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	// The anim class is set in the constructor AND here: if the
+	// component's initialization overwrote the constructor's
+	// assignment, this one - after registration - is the one
+	// that lives. The Tick one-shots report which state won.
+	{
+		if (UClass* AnimClass = StaticLoadClass(UAnimInstance::StaticClass(), nullptr,
+			TEXT("/Game/Mannequins/Anims/Unarmed/ABP_Unarmed.ABP_Unarmed_C")))
+		{
+			GetMesh()->SetAnimInstanceClass(AnimClass);
+		}
+	}
 	UE_LOG(LogOMNI, Log, TEXT("PHI BODY CHECK: mesh=%s anim=%s"),
 		GetMesh()->GetSkeletalMeshAsset() ? *GetMesh()->GetSkeletalMeshAsset()->GetName() : TEXT("none"),
 		GetMesh()->GetAnimInstance() ? *GetMesh()->GetAnimInstance()->GetClass()->GetName() : TEXT("none"));
@@ -266,6 +277,19 @@ void AOMNICharacter::Tick(float DeltaSeconds)
 	{
 		bAnimProofLogged = true;
 		UE_LOG(LogOMNI, Log, TEXT("PHI BODY ANIM LIVE: %s"), *GetMesh()->GetAnimInstance()->GetClass()->GetName());
+	static float AnimDiagTimer = 0.f;
+	if (!bAnimProofLogged)
+	{
+		AnimDiagTimer += DeltaSeconds;
+		if (AnimDiagTimer > 5.f)
+		{
+			bAnimProofLogged = true;
+			UE_LOG(LogOMNI, Warning, TEXT("PHI BODY ANIM DIAG: instance=none class=%s skeleton=%s"),
+				GetMesh()->GetAnimClass() ? *GetMesh()->GetAnimClass()->GetName() : TEXT("none"),
+				(GetMesh()->GetSkeletalMeshAsset() && GetMesh()->GetSkeletalMeshAsset()->GetSkeleton())
+					? *GetMesh()->GetSkeletalMeshAsset()->GetSkeleton()->GetName() : TEXT("none"));
+		}
+	}
 	}
 }
 
