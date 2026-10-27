@@ -161,3 +161,9 @@ His photos this round: VEIL's plaza wears a SickaEnv floor texture stretched acr
 
 ## Exchange 12 - industry mirrors (13:20 MDT)
 - TAKEN as frame confirmation: Remnant 2 (procedural sector worlds, no GAS reliance), Bright Memory (solo-dev C++ loop + vault dressing on one workstation), Lords of the Fallen (data-driven combat AI, Lumen SOFTWARE ray tracing tuned for mid GPUs - our exact section-8 profile). Its offered builds (sector streaming, aggro listeners) already stand as our DistrictStreaming classes and faction AI - nothing to queue.
+
+## Exchange 13 - nav purge / stale RecastNavMesh (13:38 MDT)
+- Diagnosis TAKEN as the working read: headless bakes can leave a stale RecastNavMesh-Default cached in the map, and the -game session loads the stale block - consistent with the warning surviving job 110's bake.
+- purge script: TAKEN IN CORRECTED FORM as Scripts/purge_nav.py (job 115, runs after 111-114 so its save is final) - our maps (VEILDistrict/VEILWorld/OMNIWorld, not the invented VEIL_CityDistrict/OMNI_PathOfLight); the nonexistent rebuild_all_navigation_data call dropped (proven AttributeError, job 110); post-build recast count verified before save.
+- Its flat 4000 bounds scale replaced by phi^3 x 1000 = 4236.07 (TYREE's math check, same minute: phi^3 rung 3.0000 exact) - spawn branch only; all three maps already carry volumes.
+- ini block: PARTLY taken repo-side - [/Script/NavigationSystem.RecastNavMesh] bRebuildAtRuntime=True, CellSize=19.0, CellHeight=10.0, AgentMaxSlope=45.0 added to both DefaultEngine.ini. RuntimeGeneration=Dynamic already stands in our NavigationSystem settings - not duplicated into a second section.
