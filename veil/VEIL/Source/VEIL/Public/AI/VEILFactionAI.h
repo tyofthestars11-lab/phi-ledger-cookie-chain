@@ -124,6 +124,8 @@ protected:
 	virtual void EndPlay(const EEndPlayReason::Type Reason) override;
 
 private:
+	void BindStoneBody();
+	void MoveToward(const FVector& Dest, float AcceptRadius);
 	void Perceive();
 	void ActPatrol();
 	void ActHunt();

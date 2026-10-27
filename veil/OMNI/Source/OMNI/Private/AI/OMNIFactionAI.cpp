@@ -4,6 +4,8 @@
 #include "AIController.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Animation/AnimInstance.h"
+#include "Engine/SkeletalMesh.h"
 #include "Engine/StaticMesh.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -68,6 +70,7 @@ AOMNIFactionAgent::AOMNIFactionAgent()
 void AOMNIFactionAgent::BeginPlay()
 {
 	Super::BeginPlay();
+	BindStoneBody();
 	Health = MaxHealth;
 	HomeLocation = GetActorLocation();
 
@@ -167,7 +170,7 @@ void AOMNIFactionAgent::ActPatrol()
 	AActor* Point = PatrolPoints[PatrolIndex % PatrolPoints.Num()];
 	if (Point)
 	{
-		AIC->MoveToLocation(Point->GetActorLocation(), 80.f);
+		MoveToward(Point->GetActorLocation(), 80.f);
 		PatrolIndex++;
 	}
 }
@@ -176,7 +179,7 @@ void AOMNIFactionAgent::ActHunt()
 {
 	AAIController* AIC = Cast<AAIController>(GetController());
 	if (!AIC || !TargetActor.IsValid()) return;
-	AIC->MoveToLocation(TargetActor->GetActorLocation(), AttackRange * 0.7f);
+	MoveToward(TargetActor->GetActorLocation(), AttackRange * 0.7f);
 }
 
 void AOMNIFactionAgent::ActCombat(float DeltaSeconds)
@@ -195,7 +198,7 @@ void AOMNIFactionAgent::ActCombat(float DeltaSeconds)
 	}
 	if (AIC && Dist > AttackRange * 0.8f)
 	{
-		AIC->MoveToLocation(Target->GetActorLocation(), AttackRange * 0.7f);
+		MoveToward(Target->GetActorLocation(), AttackRange * 0.7f);
 	}
 
 	const float Now = GetWorld()->TimeSeconds;
@@ -215,7 +218,7 @@ void AOMNIFactionAgent::ActDefendOrRetreat(bool bRetreat)
 	if (!AIC) return;
 	if (FVector::Dist(GetActorLocation(), HomeLocation) > 150.f)
 	{
-		AIC->MoveToLocation(HomeLocation, 100.f);
+		MoveToward(HomeLocation, 100.f);
 	}
 	if (!bRetreat && CanSeePlayer())
 	{
@@ -224,6 +227,71 @@ void AOMNIFactionAgent::ActDefendOrRetreat(bool bRetreat)
 	if (bRetreat && Health > MaxHealth * (RetreatHealthFraction + 0.25f))
 	{
 		SetState(EOMNIAgentState::Patrol);
+	}
+}
+
+
+void AOMNIFactionAgent::BindStoneBody()
+{
+	// The stone body (job 126's triangle): Greystone is the only hero
+	// tree besides the Countess complete in BOTH projects - mesh,
+	// Greystone_Skeleton, Greystone_AnimBlueprint, full Jog library.
+	// The Warden's own line names the material: nine hundred
+	// heartbeats of STONE. If the bind fails, the machine body stands
+	// and the log says so - an invisible agent is not an agent.
+	USkeletalMesh* Stone = LoadObject<USkeletalMesh>(nullptr,
+		TEXT("/Game/ParagonGreystone/Characters/Heroes/Greystone/Meshes/SM_Greystone.SM_Greystone"));
+	if (!Stone)
+	{
+		Stone = LoadObject<USkeletalMesh>(nullptr,
+			TEXT("/Game/ParagonGreystone/Characters/Heroes/Greystone/Meshes/SK_Greystone.SK_Greystone"));
+	}
+	UClass* StoneAnim = LoadClass<UAnimInstance>(nullptr,
+		TEXT("/Game/ParagonGreystone/Characters/Heroes/Greystone/Greystone_AnimBlueprint.Greystone_AnimBlueprint_C"));
+	if (Stone)
+	{
+		GetMesh()->SetSkeletalMeshAsset(Stone);
+		GetMesh()->SetRelativeLocation(FVector(0.f, 0.f, -96.f));
+		GetMesh()->SetRelativeRotation(FRotator(0.f, -90.f, 0.f));
+		if (StoneAnim) GetMesh()->SetAnimInstanceClass(StoneAnim);
+		for (UActorComponent* Comp : GetComponents())
+		{
+			if (Comp && (Comp->GetName() == TEXT("MachineBody") || Comp->GetName() == TEXT("MachineEye")))
+			{
+				if (UStaticMeshComponent* SMC = Cast<UStaticMeshComponent>(Comp))
+				{
+					SMC->SetVisibility(false);
+				}
+			}
+		}
+		UE_LOG(LogOMNI, Log, TEXT("PHI FACTION BODY: Greystone stands (mesh %s, anim %s)."),
+			*Stone->GetName(), StoneAnim ? *StoneAnim->GetName() : TEXT("unassigned"));
+	}
+	else
+	{
+		UE_LOG(LogOMNI, Warning, TEXT("PHI FACTION BODY FALLBACK: no Greystone mesh resolved - machine body stands."));
+	}
+}
+
+void AOMNIFactionAgent::MoveToward(const FVector& Dest, float AcceptRadius)
+{
+	if (AAIController* AIC = Cast<AAIController>(GetController()))
+	{
+		if (AIC->MoveToLocation(Dest, AcceptRadius) != EPathFollowingRequestResult::Failed)
+		{
+			return;
+		}
+	}
+	// Direct steer: no nav path - walk the line, face the line.
+	// (The raycast-nav kernel in house clothes; runs per-Tick via
+	// the Act functions, so the steering sustains.)
+	FVector To = Dest - GetActorLocation();
+	To.Z = 0.f;
+	if (To.Size() > AcceptRadius)
+	{
+		To.Normalize();
+		AddMovementInput(To, 1.f);
+		SetActorRotation(FRotationMatrix::MakeFromX(To).Rotator());
 	}
 }
 
