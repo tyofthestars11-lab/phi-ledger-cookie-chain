@@ -1,0 +1,34 @@
+﻿# DIRECT JOB REPORT - executed by the NV center (PHI-DLAM v5.29), no brain calls
+When: 2026-10-27 04:10:17 UTC
+
+## STEP 1
+```
+PLUGINS BACKED UP: 3991 bytes
+DATA FILES BEFORE: 419
+MISSING IN STAGING: All In One (For all) 1v8-290-1v8-1724258825
+MISSING IN STAGING: EXE V0.7-340-0-7-1697120543
+MISSING IN STAGING: Gergel Ebanex 1.3.1 for SAF 14425 1.3.1 2026-08-23T19-01Z XWUnshBNp
+MISSING IN STAGING: Improved Combat AI-1392-1-4-1777419381
+MISSING IN STAGING: More Ownable Ships-791-1-3-1701681185
+MISSING IN STAGING: No More Temple Puzzles-4570-1-0-1-1696351077
+MISSING IN STAGING: SETI v0.3.1-11480-0-3-1-1728673629
+MISSING IN STAGING: Sit to Add Ship to Fleet-6493-0-2-5-1776532555
+MISSING IN STAGING: SnuSnuField 13329 7.1.2 2026-07-30T16-39Z Siqx4gHh6
+MISSING IN STAGING: Sprint Stuttering Fix-884-1-0-6-1750021820
+MISSING IN STAGING: Starfield Community Patch-1-1-0-0-1727729773
+MISSING IN STAGING: StarUI Workbench 4966 1.3.1 2026-09-10T00-52Z qd5Tg9FpV
+MISSING IN STAGING: Undelayed Menu - Latest Version-404-1-0-6-1724715645
+MISSING IN STAGING: X2357's AISS - AI Settled Systems 17392 3.77 2026-10-08T21-37Z oc1PyZMxY
+PLUGINS.TXT WRITTEN: 8 plugins
+DATA FILES AFTER: 419
+PLUGIN FILES IN DATA:
+StarfieldCommunityPatch.esm : False
+GergelEbanex.esm : False
+Improved Combat AI.esm : False
+MoreOwnableShips.esm : False
+SETI_ShipLights_by_BosDragon.esm : False
+Sit To Add Ship.esm : False
+SnuSnuField.esm : False
+x2357aiss.esm : False
+
+```
