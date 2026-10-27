@@ -7,6 +7,7 @@
 #include "InputCoreTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "OMNI.h"
+#include "World/OMNIQuestContent.h"
 #include "World/OMNIWorldBuilder.h"
 
 // ---------------------------------------------------------------------------
@@ -49,6 +50,35 @@ void AOMNIGameMode::BeginPlay()
 				Agent->SpawnDefaultController();
 			}
 		}
+	}
+
+	// OMNI RPG content: the three statues on the plaza ring, three
+	// fragments out in the streets, the cache at the south wall. The
+	// quest system (UOMNIQuestSystem) runs the chain between them.
+	{
+		const TCHAR* Names[3] = { TEXT("Keeper"), TEXT("Seer"), TEXT("Cartographer") };
+		const FVector Spots[3] = {
+			FVector(900.f, 0.f, 10.f), FVector(-450.f, 780.f, 10.f), FVector(-450.f, -780.f, 10.f) };
+		const float Yaws[3] = { 180.f, -60.f, 60.f };
+		for (int32 i = 0; i < 3; ++i)
+		{
+			const FTransform T(FRotator(0.f, Yaws[i], 0.f), Spots[i]);
+			if (AOMNIQuestGiver* Giver = GetWorld()->SpawnActorDeferred<AOMNIQuestGiver>(
+				AOMNIQuestGiver::StaticClass(), T))
+			{
+				Giver->GiverName = FName(Names[i]);
+				Giver->FinishSpawning(T);
+			}
+		}
+		const FVector Shards[3] = {
+			FVector(2000.f, 500.f, 260.f), FVector(-2000.f, -900.f, 260.f), FVector(600.f, -2100.f, 260.f) };
+		for (int32 i = 0; i < 3; ++i)
+		{
+			GetWorld()->SpawnActor<AOMNIFragment>(
+				AOMNIFragment::StaticClass(), Shards[i], FRotator::ZeroRotator);
+		}
+		GetWorld()->SpawnActor<AOMNICache>(
+			AOMNICache::StaticClass(), FVector(0.f, -6200.f, 10.f), FRotator::ZeroRotator);
 	}
 
 	// Seed the world systems with the authored starting data.
