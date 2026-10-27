@@ -11,7 +11,7 @@ MAPS = ["/Game/Maps/OMNIWorld"]
 
 BLACKLIST = ("mannequin", "characters", "eyelash", "eye", "hair",
              "mouth", "greystone", "paragon", "teeth", "tongue")
-ENV_HINTS = ("sicka", "environment", "/env/", "props", "architecture")
+ENV_HINTS = ("sicka", "lavamate", "lava", "environment", "/env/", "props", "architecture")
 
 ar = unreal.AssetRegistryHelpers.get_asset_registry()
 env_pool, gen_pool = [], []

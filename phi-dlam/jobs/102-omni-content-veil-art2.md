@@ -12,13 +12,13 @@ Write-Output "SYNCED scripts + OMNI source/config"
 # STEP 2: OMNI gets its environment + machine content from the VaultCache shelf
 $vc = $null
 foreach ($r in @("C:\ProgramData\Epic\UnrealEngineLauncher\VaultCache", "C:\ProgramData\Epic\UnrealEngineLauncher", "D:\VaultCache")) {
-    if (Test-Path $r) { $hit = Get-ChildItem $r -Recurse -Directory -Filter "SickaEnv" -ErrorAction SilentlyContinue | Select-Object -First 1; if ($hit) { $vc = $hit.FullName -replace "\\Content\\SickaEnv$","" -replace "\\SickaEnv$",""; break } }
+    if (Test-Path $r) { $hit = Get-ChildItem $r -Recurse -Directory -Filter "LavaMate" -ErrorAction SilentlyContinue | Select-Object -First 1; if ($hit) { $vc = $hit.FullName -replace "\\Content\\LavaMate$","" -replace "\\LavaMate$",""; break } }
 }
-Write-Output "SickaEnv found under: $vc"
+Write-Output "LavaMate shelf root: $vc"
 if ($vc) {
-    $sickaSrc = Get-ChildItem $vc -Recurse -Directory -Filter "SickaEnv" -ErrorAction SilentlyContinue | Select-Object -First 1
-    robocopy $sickaSrc.FullName "D:\OMNI-UE\Content\SickaEnv" /E /NFL /NDL /NJH /NJS | Out-Null
-    Write-Output "SickaEnv copied to OMNI (robocopy exit $LASTEXITCODE)"
+    $lavaSrc = Get-ChildItem $vc -Recurse -Directory -Filter "LavaMate" -ErrorAction SilentlyContinue | Select-Object -First 1
+    robocopy $lavaSrc.FullName "D:\OMNI-UE\Content\LavaMate" /E /NFL /NDL /NJH /NJS | Out-Null
+    Write-Output "LavaMate copied to OMNI (robocopy exit $LASTEXITCODE)"
     $minSrc = Get-ChildItem $vc -Recurse -Directory -Filter "ParagonMinions" -ErrorAction SilentlyContinue | Select-Object -First 1
     if ($minSrc) { robocopy $minSrc.FullName "D:\OMNI-UE\Content\ParagonMinions" /E /NFL /NDL /NJH /NJS | Out-Null; Write-Output "ParagonMinions copied to OMNI (robocopy exit $LASTEXITCODE)" }
 }

@@ -95,3 +95,15 @@ Read against the live state and the 097-100 verdicts (below). Google's AAA list 
 - 099: OMNIWorld now loads as OMNI's default map (seat confirmed). OMNI art: only 5 materials exist in OMNI's /Game (Mannequins only) - every actor NO MATERIAL, matching Tyree's blue-void photo. OMNI needs its content drop (SickaEnv + ParagonMinions, job 102).
 - 100: DT_Items created with FPHIItemRow in both games; fill returned ok=True with 0 rows - the JSON shape was keyed-object; the fill wants an array of row objects with a Name field. Script fixed; reimport rides job 103.
 - Queued: 101 skeleton probe + install-wide hunt (the copy/fix job follows the named home), 102 OMNI content + VEIL art v2 (environment pools, character kits blacklisted, chosen material per family logged), 103 OMNI art v2 + mood pass both + items reimport, 104 package attempt 5 + door upgrade if the exe lands.
+
+---
+
+## Fifth carry - the three blockers answered (2026-10-27 ~12:32 MDT)
+
+- Blocker 1(a) skeleton home: Google names Engine TemplateResources ...\Mannequins\Meshes\SK_Mannequin_Skeleton.uasset, in-project /Game/Mannequins/Meshes/SK_Mannequin_Skeleton. Checkable, not assumed - job 101 hunts it; job 105 mirror-copies whatever the hunt finds (Content-relative) into both projects and re-probes every mannequin mesh.
+- Blocker 1(b) fix_skeleton.py: LEFT as written. It creates an EMPTY skeleton (no bones) and binds it - that silences the warning while breaking the body, and its ABP path omits the Unarmed folder. The lane copies the real skeleton or none.
+- Blocker 1(c): the quoted cook errors are invented text; our measured error stands in the 098 log.
+- Blocker 2 scripts: material paths invented (no such assets verified) - LEFT; art v2's registry discovery is the honest form. TAKEN: the OMNI identity allocation - LavaMate (volcanic) for OMNI instead of sharing VEIL's SickaEnv; Revenant for Warden Prime and Countess + ModularStylizedChars for OMNI variety ride the agents'-bodies tranche. Job 102 amended (LavaMate -> OMNI; OMNI art hints += lava).
+- Blocker 3: CONFIRMS the lane's fix - array of row objects with a Name field (job 103 reimport). Google's example uses enum-typed fields; our struct is FString/int32, so plain values are correct here.
+- Config block: already standing in our consolidated inis (Lumen SWRT, TSR, VSM). Its ScreenPercentage=100 and DynamicRes lines contradict the 3050 tuning - LEFT; nothing applied.
+- Its closing either/or (Minion bindings vs OMNI landscape): neither re-sequences the lane - agents' bodies already sit in the queue behind the body/art proof.
