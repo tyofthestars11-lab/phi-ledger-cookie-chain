@@ -1,0 +1,128 @@
+[
+ {
+  "name": "PhiParticleAccelerator: phi, the accelerator constant",
+  "value": 1.618033988749895,
+  "unit": "ratio",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: golden angle 360/phi^2",
+  "value": 137.50776405003785,
+  "unit": "degrees",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: energy multiplier per second at default power 1.5 (phi^1.5)",
+  "value": 2.0581710272714924,
+  "unit": "ratio",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: rung 5 energy (phi^5)",
+  "value": 11.090169943749476,
+  "unit": "energy",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: rung 8 milestone energy (phi^8)",
+  "value": 46.978713763747805,
+  "unit": "energy",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: rung 10 energy (phi^10)",
+  "value": 122.99186938124426,
+  "unit": "energy",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: default spawn rate",
+  "value": 100,
+  "unit": "particles/s",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: max particles",
+  "value": 10000,
+  "unit": "particles",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: particle lifetime",
+  "value": 8,
+  "unit": "seconds",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: tick rate",
+  "value": 60,
+  "unit": "fps",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: header lines",
+  "value": 222,
+  "unit": "lines",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: implementation lines",
+  "value": 479,
+  "unit": "lines",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: total code lines (header + implementation + Build.cs)",
+  "value": 717,
+  "unit": "lines",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: files per game",
+  "value": 7,
+  "unit": "files",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: games carrying the plugin",
+  "value": 2,
+  "unit": "games",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: delivered breaks repaired before install",
+  "value": 6,
+  "unit": "breaks",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: lattice points per rung circle",
+  "value": 32,
+  "unit": "points",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ },
+ {
+  "name": "PhiParticleAccelerator: involution pairs drawn",
+  "value": 5,
+  "unit": "pairs",
+  "ladder": "phi-particle-accelerator",
+  "domain": "phi-particle-accelerator"
+ }
+]
