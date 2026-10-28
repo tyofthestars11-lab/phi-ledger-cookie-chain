@@ -76,6 +76,24 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
     $errOut = if (Test-Path $tmpErr) { Get-Content $tmpErr -Raw }
     if ($errOut) { $out = [string]$out + "`r`n" + [string]$errOut }
     if (-not $done) { $out = [string]$out + "`r`nSTEP TIMED OUT at 900s - partial output above; the scan moved on." }
+    # v5.39 REROUTE (Tyree's law, 2026-10-27 23:09 MDT: every single form of
+    # information that causes errors or failures should be rerouted
+    # instantaneously to the path of least resistance): a step that times out
+    # or dies on a ParserError is retried ONCE, immediately, through a fresh
+    # pass; if the second pass also fails, the lane stamps the reroute and
+    # continues around the failed step - a failure is never the job's end.
+    if ((-not $done) -or ([string]$out -match 'ParserError')) {
+      $failClass = if (-not $done) { 'timeout' } else { 'ParserError' }
+      Start-Sleep -Seconds 3
+      $proc2 = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', $tmpPs) -PassThru -WindowStyle Hidden -RedirectStandardOutput $tmpOut -RedirectStandardError $tmpErr
+      $done2 = $proc2.WaitForExit(900000)
+      if (-not $done2) { try { $proc2.Kill() } catch {} }
+      $out2 = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }
+      $err2 = if (Test-Path $tmpErr) { Get-Content $tmpErr -Raw }
+      if ($err2) { $out2 = [string]$out2 + "`r`n" + [string]$err2 }
+      if ($done2 -and ([string]$out2 -notmatch 'ParserError')) { $out = [string]$out2 + "`r`nREROUTE: step failed once ($failClass) and was rerouted instantaneously - second pass ran." }
+      else { $out = [string]$out + "`r`nREROUTE: step failed twice ($failClass); the lane continued around it - the failure is fuel, not the end." }
+    }
     if (-not $out) { $out = '(no output)' }
     Remove-Item $tmpPs, $tmpOut, $tmpErr -Force -ErrorAction SilentlyContinue
     [void]$report.Add('')
