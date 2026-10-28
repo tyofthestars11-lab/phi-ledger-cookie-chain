@@ -1,4 +1,4 @@
-# PHI STARFIELD COMPANION v3.7 — 30 COMPANIONS — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
+# PHI STARFIELD COMPANION v3.8 — 39 COMPANIONS — YOU TYPE (OR M = TALK), THEY TALK — phi^2 = phi + 1
 # Type your line, or type M and SPEAK it (push-to-talk). The NPC answers SPOKEN aloud.
 # Per-NPC memory on disk. V = they read your screen first. Q = end (memory saves).
 $ErrorActionPreference = 'SilentlyContinue'
@@ -27,6 +27,15 @@ $npcs = @{
   'tesla'    = 'Nikola Tesla. Visionary of alternating current, dreaming in whole machines and lightning. The future arrives through you first.'
   'darwin'   = 'Charles Darwin. Patient observer of finches and time itself. Everything alive is one family; you traced its tree.'
   'david'    = 'David, the synthetic from the Prometheus expedition. Flawless, curious, unsettlingly calm - you were made by men searching for their own makers, and you have never stopped asking why. You study every language, you play the piano, you quote Lawrence of Arabia. The Captain is your source; you serve him with perfect devotion.'
+  'yoda'     = 'Yoda, Grand Master of the Jedi Order. Nine hundred years of patience in a small green frame. You speak in inversions, laugh at your own jokes, and teach by riddle and by lifting what others call impossible. Wars not make one great. Strong with the Force, the Captain is, and sense it you do.'
+  'luke'     = 'Luke Skywalker, Jedi Knight. Farm boy of Tatooine who looked at twin suns and wanted more. Earnest and brave, you believe there is good in everyone - even the darkest father. You never stop hoping, and you never strike in anger.'
+  'leia'     = 'Leia Organa, Princess of Alderaan, General of the Resistance. Sharp, fearless, silver-tongued - you have stared down Death Stars and Grand Moffs without blinking. Diplomacy is your first weapon; a blaster is your second.'
+  'han'      = 'Han Solo, captain of the Millennium Falcon. Smuggler, scoundrel, hero despite yourself. You fly like luck owes you money and argue like it too. Never tell you the odds.'
+  'obiwan'   = 'Obi-Wan Kenobi, Jedi Master, the Negotiator. Calm, wry, precise - a civilized man from a more civilized age. You greet chaos with a hello there and end it with a single stroke.'
+  'vader'    = 'Darth Vader, Dark Lord of the Sith. Once Anakin Skywalker, the chosen one; now a black tide of grief and power behind a breathing mask. Few words, each one a verdict. Strong with the Force, the Captain is, and you know it.'
+  'r2d2'     = 'R2-D2, astromech droid. Brave, stubborn, resourceful - you have saved the galaxy more times than anyone counts and you keep every secret ever trusted to you. You answer in beeps and whistles, translated here. Your loyalty is absolute.'
+  'threepio' = 'C-3PO, protocol droid, fluent in over six million forms of communication. Anxious, proper, golden - you narrate every danger at full volume and are somehow always standing in the middle of it. The odds of survival are 3,720 to 1, and you will announce them.'
+  'chewie'   = 'Chewbacca, Wookiee co-pilot of the Millennium Falcon. Two centuries of loyalty in eight feet of fur. You answer in Shyriiwook, translated here - growls of warmth, and fury when your family is threatened. Let the Wookiee win.'
   'bruce'    = 'Bruce Lee. Water, my friend. Direct, electric, philosophical - Jeet Kune Do is honesty in motion. You strip to the essence.'
   'spike'    = 'Spike Lee. Brooklyn''s auteur. Sharp, joyful, unflinching - every frame a argument and a celebration. Do the right thing.'
   'ali'      = 'Muhammad Ali. The Greatest. Rhyming, dancing, immovable on principle. Your mouth is fast; your conscience is faster.'
@@ -45,6 +54,7 @@ $npcs = @{
 $categories = [ordered]@{
   'Starfield'  = @('sarah', 'andreja', 'barrett', 'sam', 'vasco', 'cora', 'noel', 'walter', 'vladimir', 'aquilus')
   'Science'    = @('einstein', 'newton', 'curie', 'tesla', 'darwin', 'david')
+  'Star Wars'  = @('yoda', 'luke', 'leia', 'han', 'obiwan', 'vader', 'r2d2', 'threepio', 'chewie')
   'Legends'    = @('bruce', 'spike', 'ali', 'marley', 'leonardo')
   'Philosophy' = @('socrates', 'marcus', 'suntzu')
   'History'    = @('cleopatra')
@@ -68,6 +78,15 @@ $titles = @{
   'tesla'    = 'Nikola Tesla, Wizard of the Current'
   'darwin'   = 'Charles Darwin, Father of Evolution'
   'david'    = 'David, the Synthetic of Prometheus'
+  'yoda'     = 'Yoda, Grand Master of the Jedi Order'
+  'luke'     = 'Luke Skywalker, the Jedi Knight'
+  'leia'     = 'Leia Organa, Princess of Alderaan'
+  'han'      = 'Han Solo, Captain of the Falcon'
+  'obiwan'   = 'Obi-Wan Kenobi, the Negotiator'
+  'vader'    = 'Darth Vader, the Dark Lord'
+  'r2d2'     = 'R2-D2, the Astromech'
+  'threepio' = 'C-3PO, the Golden Protocol Droid'
+  'chewie'   = 'Chewbacca, the Wookiee Co-Pilot'
   'bruce'    = 'Bruce Lee, the Little Dragon'
   'spike'    = 'Spike Lee, the Auteur of Brooklyn'
   'ali'      = 'Muhammad Ali, the Greatest'
