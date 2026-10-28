@@ -454,7 +454,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.35 NAUTILUS SHELL is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.36 NAUTILUS SHELL is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -613,6 +613,8 @@ function Start-Worker($primeText, [switch]$Once) {
     git -C $vault pull --quiet 2>$null
     $jobs = @()
     if (Test-Path $jobsDir) { $jobs = Get-ChildItem $jobsDir -Filter '*.md' }
+    # v5.36 RUNNER FIRST (Tyree, 2026-10-27 22:38 MDT: "Go back to the runner not the brain as the brain gets stuck"): DIRECT jobs drain before brain jobs, always - the runner leads, the thinker never heads the line and can never stall it.
+    $jobs = @($jobs | Sort-Object @{ Expression = { if ((Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue) -match 'PHI-DIRECT') { 0 } else { 1 } } }, Name)
     $did = $false
     foreach ($job in $jobs) {
       $resultPath = Join-Path $resultsDir ($job.BaseName + '.result.md')
