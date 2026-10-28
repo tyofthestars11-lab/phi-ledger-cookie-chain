@@ -25,5 +25,14 @@ if (Test-Path $lnkPath) {
   Write-Output ("PHI DOOR TARGET: " + $chk.TargetPath)
   Write-Output ("PHI DOOR ARGS: " + $chk.Arguments)
 } else { Write-Output 'DOOR CREATE FAILED' }
+$omniDoors = 0; $parentDoors = 0
+foreach ($d in $desktops) {
+  Get-ChildItem $d -Filter '*.lnk' -File -ErrorAction SilentlyContinue | ForEach-Object {
+    if ($_.Name -match 'VEIL OMNI') { $omniDoors++ }
+    elseif ($_.Name -match 'VEIL' -or $_.Name -match 'OMNI') { $parentDoors++ }
+    Write-Output ("PHI DOOR AFTER: " + $_.Name)
+  }
+}
+Write-Output "PHI DOOR FINAL: veil_omni_doors=$omniDoors parent_doors=$parentDoors"
 Write-Output 'JOB 357 DONE'
 ```
