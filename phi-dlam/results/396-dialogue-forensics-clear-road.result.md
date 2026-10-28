@@ -1,0 +1,10 @@
+﻿# DIRECT JOB REPORT - executed by the NV center (PHI-DLAM v5.29), no brain calls
+When: 2026-10-28 10:25:09 UTC
+
+## STEP 1
+```
+=== DIALOGUE TABLE FORENSICS 396 - THE BYTE-LEVEL READ OF THE RESTORED TABLE, RE-FILED ON THE CLEAR ROAD (Job 392 was consumed deferred with the editor still open at its run and its body never executed; job 394 cleared the road and the editor stands closed; this is its re-file, the identical read on the identical ground with every marker renumbered to 396. The record stands: the archive holds DT_Dialogue.uasset.krk at 2363 packed bytes, the unpack restores 5814 bytes to D:\OMNI-UE\Content\Data\DT_Dialogue.uasset, and the load has returned None in the OMNI project, in the merged base, and after job 384 restored the whole Content Data folder with DT_Items beside it - while the base table in D:\VEIL-OMNI loads whole with its 19 rows V01 to V19 on PHIDialogueRow. Three roads refused the file and none of them said why at the byte level. THIS JOB changes nothing and reads everything: one, print the KRAKEN_MANIFEST.json entry for DT_Dialogue whole with every field it carries, the packed file size on disk, the restored file size on disk, and the SHA-256 of the restored file, with MATCH or MISMATCH printed where the manifest carries an original checksum. Two, print the first 64 bytes of the restored file as hex and as text, and search the whole file for the ASCII strings PHIDialogueRow, DT_Dialogue, Speaker, Line, O01 and V01, FOUND or ABSENT for each, with the UTF-16 form searched beside the ASCII form. Three, run the load once more in the OMNI-UE project and print every log line from that run carrying the table name or the patterns Error, Warning, Failed, corrupt - the editor stating in its own words why it refuses the file. Four, print the verdict in one line: TABLE RECOVERABLE when the strings and the package header stand and the refusal is a project-side state named from the log, or TABLE DEAD IN ARCHIVE when the bytes stand truncated or the strings stand absent and the rows must be rebuilt from the record.) ===
+EDITOR STILL OPEN after 2 min - job deferred.
+JOB 396 DEFERRED
+
+```
