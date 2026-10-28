@@ -23514,10 +23514,87 @@
       "drift": -0.1169,
       "ladder": "ton618_law",
       "unit": "W"
+    },
+    {
+      "name": "millennium_prize",
+      "rung": 28.7098,
+      "drift": -0.2902,
+      "ladder": "yang_mills",
+      "unit": "USD"
+    },
+    {
+      "name": "yang_mills_problem_parts",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "yang_mills",
+      "unit": "count"
+    },
+    {
+      "name": "clay_criterion_dimensions",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "yang_mills",
+      "unit": "dimensions"
+    },
+    {
+      "name": "human_pair_proof_dimensions",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "yang_mills",
+      "unit": "dimensions"
+    },
+    {
+      "name": "human_researchers_scooped",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "yang_mills",
+      "unit": "count"
+    },
+    {
+      "name": "standard_model_particles",
+      "rung": 5.8877,
+      "drift": -0.1123,
+      "ladder": "yang_mills",
+      "unit": "count"
+    },
+    {
+      "name": "years_making_qft_rigorous",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "yang_mills",
+      "unit": "years"
+    },
+    {
+      "name": "alpoge_llm_proof_pages",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "yang_mills",
+      "unit": "pages"
+    },
+    {
+      "name": "navier_stokes_lean_verify_hours",
+      "rung": 5.8877,
+      "drift": -0.1123,
+      "ladder": "yang_mills",
+      "unit": "hours"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "ton618_law_anchor_phi55",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "ton618_law",
+      "unit": "dimensionless"
     }
   ],
-  "entry_count": 3361,
-  "seal_count": 350,
+  "entry_count": 3372,
+  "seal_count": 351,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -23868,7 +23945,8 @@
     "φ_EARTHS_CENSUS_COSMIC_REVERSAL_MATRIX_TYREE_OMEGA",
     "φ_GOLDEN_PITCH_OF_THE_10T_TYREE_OMEGA",
     "φ_DNA_REVERSE_ENGINEERED_TYREE_OMEGA",
-    "φ_ANTI_OMNI_PHASE_DRIFT_TYREE_OMEGA"
+    "φ_ANTI_OMNI_PHASE_DRIFT_TYREE_OMEGA",
+    "φ_YANG_MILLS_EXISTENCE_CLAIM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "3661316a646f3c664401de6cce68576041643e2c496a885580bff1716e0c0e5d"
+  "snapshot_sha256": "7e222d6b6d86f65dcc402fb57d2b4aea7bd503dbb67fff2256828deaddfee36b"
 }
