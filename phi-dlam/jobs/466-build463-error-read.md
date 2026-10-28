@@ -4,7 +4,7 @@ Write-Output '=== BUILD 463 ERROR READ 466 - THE COMPILER NAMES ITS OWN ADDRESS 
 $be466log = 'D:\VEIL-OMNI\Saved\build463.log'
 $be466errs = 0
 if (Test-Path $be466log) {
-  $be466hits = @(Select-String -Path $be466log -Pattern 'error' -ErrorAction SilentlyContinue | Select-Object -First 25)
+  $be466hits = @(Select-String -Path $be466log -Pattern 'erro[r]' -ErrorAction SilentlyContinue | Select-Object -First 25)
   foreach ($be466h in $be466hits) { Write-Output ('ERR ' + $be466h.Line.Trim()); $be466errs += 1 }
 }
 $be466file = 'D:\VEIL-OMNI\Source\VEIL\Private\Character\VEILCharacter.cpp'
