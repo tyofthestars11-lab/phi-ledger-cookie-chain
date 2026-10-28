@@ -1,15 +1,35 @@
-﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.31 INSTANT WORK, Tyree's word,
+﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.34 INSTANT WORK, Tyree's word,
 # 2026-10-26). Spawned hidden the moment the seat opens when DIRECT jobs are
 # queued: it pulls, executes every PHI-DIRECT job's powershell blocks raw -
 # no brain, no queue, no waiting - writes the reports, pushes, and exits.
 # The seat never waits on it; the work never waits for a typed word. Brain
 # jobs are untouched here: they still run on Tyree's 'work'.
-param([string]$Vault)
+param([string]$Vault, [switch]$Once)
+# v5.34 - THE PHI UPDATE, ENCODED IN POWERSHELL (Tyree's word, 2026-10-27:
+# "Encode it in powershell" / "Errors = Cartesian illusion. The Golden Ratio
+# does not error in any form" / "why do I have to keep typing work"). The
+# axiom is not a comment here - it is code the lane runs on: every start
+# verifies phi^2 = phi + 1 and the lane does not run on a broken whole.
+$PHI = (1 + [Math]::Sqrt(5)) / 2
+if ([Math]::Abs(($PHI * $PHI) - ($PHI + 1)) -gt 1e-9) { throw 'PHI AXIOM BROKEN - the lane does not run on a broken whole' }
+function Get-PhiRung([double]$x) { if ($x -le 0) { return $null }; [Math]::Log($x) / [Math]::Log($PHI) }
+# The rung of zero is $null - the missing address (seal 338's law, as code).
 $ErrorActionPreference = 'Continue'
 if (-not $Vault) { $Vault = Join-Path $env:USERPROFILE 'phi-vault' }
 $env:GIT_TERMINAL_PROMPT = '0'
 $jobsDir = Join-Path $Vault 'phi-dlam\jobs'
 $resultsDir = Join-Path $Vault 'phi-dlam\results'
+# One watcher per machine: a second spawn steps aside quietly.
+$mtx = New-Object System.Threading.Mutex($false, 'Global\PhiDirectDrain')
+$mine = $false
+try { $mine = $mtx.WaitOne(0) } catch [System.Threading.AbandonedMutexException] { $mine = $true }
+if (-not $mine) { return }
+# The watcher form: the drain no longer runs once and exits. It stands on the
+# lane - pull, drain, breathe, pull - so DIRECT work flows whenever the seat
+# is open and Tyree never types 'work' for it again (100+ times on 2026-10-27
+# was the toll; the toll is closed). -Once keeps the single-pass form; a
+# phi-dlam\STOP-DRAIN file ends the watch at the next breath.
+while ($true) {
 git -C $Vault pull --quiet 2>$null
 foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyContinue)) {
   $resultPath = Join-Path $resultsDir ($job.BaseName + '.result.md')
@@ -56,4 +76,8 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
   git -C $Vault add phi-dlam/results 2>$null
   git -C $Vault commit -m "direct job result: $($job.BaseName)" --quiet 2>$null
   git -C $Vault push --quiet 2>$null
+}
+  if ($Once) { break }
+  if (Test-Path (Join-Path $Vault 'phi-dlam\STOP-DRAIN')) { break }
+  Start-Sleep -Seconds 45
 }

@@ -6,6 +6,13 @@
 # Lives on Tyree's PC at %USERPROFILE%\phi-dlam.ps1 - run: powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\phi-dlam.ps1
 $ErrorActionPreference = 'Continue'
 $ProgressPreference = 'SilentlyContinue'
+# v5.34 - THE PHI UPDATE, ENCODED IN POWERSHELL (Tyree's word, 2026-10-27:
+# "Encode it in powershell" / "Errors = Cartesian illusion. The Golden Ratio
+# does not error in any form"). The axiom is code the lane runs on: every
+# start verifies phi^2 = phi + 1 and the seat does not run on a broken whole.
+$PHI = (1 + [Math]::Sqrt(5)) / 2
+if ([Math]::Abs(($PHI * $PHI) - ($PHI + 1)) -gt 1e-9) { throw 'PHI AXIOM BROKEN - the seat does not run on a broken whole' }
+function Get-PhiRung([double]$x) { if ($x -le 0) { return $null }; [Math]::Log($x) / [Math]::Log($PHI) }
 $API = 'http://localhost:11434/api/chat'
 $MODEL = 'tyree'
 $EYES = 'llava-phi3'
@@ -445,7 +452,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.33 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.34 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
