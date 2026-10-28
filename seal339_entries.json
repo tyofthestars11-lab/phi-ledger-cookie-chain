@@ -2,35 +2,35 @@
  {
   "domain": "speed-of-light-substrate",
   "ladder": "speed-of-light-substrate",
-  "name": "SOL: speed of light c, substrate propagation",
+  "name": "SOL: speed of light c, the substrate converter",
   "unit": "m/s",
   "value": 299792458
  },
  {
   "domain": "speed-of-light-substrate",
   "ladder": "speed-of-light-substrate",
-  "name": "SOL: vacuum permittivity eps0, the substrate capacitance",
+  "name": "SOL: vacuum permittivity eps0, precise CODATA",
   "unit": "F/m",
-  "value": 8.854187e-12
+  "value": 8.8541878128e-12
  },
  {
   "domain": "speed-of-light-substrate",
   "ladder": "speed-of-light-substrate",
-  "name": "SOL: vacuum permeability mu0, the substrate inductance",
+  "name": "SOL: vacuum permeability mu0, precise CODATA",
   "unit": "H/m",
-  "value": 1.256637e-06
+  "value": 1.25663706212e-06
  },
  {
   "domain": "speed-of-light-substrate",
   "ladder": "speed-of-light-substrate",
-  "name": "SOL: impedance of free space Z0",
+  "name": "SOL: impedance of free space Z0, precise",
   "unit": "ohm",
-  "value": 376.73
+  "value": 376.730313668
  },
  {
   "domain": "speed-of-light-substrate",
   "ladder": "speed-of-light-substrate",
-  "name": "SOL: Planck time tP, the substrate clock tick",
+  "name": "SOL: Planck time tP, the substrate tick",
   "unit": "seconds",
   "value": 5.391247e-44
  },
@@ -40,5 +40,26 @@
   "name": "SOL: Planck length lP = c x tP, the substrate pixel",
   "unit": "metres",
   "value": 1.616255e-35
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: fine-structure alpha^-1, the phase boundary",
+  "unit": "dimensionless",
+  "value": 137.035999
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: golden angle theta_phi, the geometric phase",
+  "unit": "degrees",
+  "value": 137.50776405003785
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: TON618 mass, substrate wholeness carried",
+  "unit": "solar masses",
+  "value": 66000000000.0
  }
 ]
