@@ -22387,10 +22387,73 @@
       "drift": -0.2288,
       "ladder": "speed-of-light-substrate",
       "unit": "solar masses"
+    },
+    {
+      "name": "UPM: runner version 5.33, the shell made whole",
+      "rung": 3.4774,
+      "drift": 0.4774,
+      "ladder": "update-phi-memory-omni",
+      "unit": "version"
+    },
+    {
+      "name": "UPM: runner version 5.32, the brain warm-load",
+      "rung": 3.4735,
+      "drift": 0.4735,
+      "ladder": "update-phi-memory-omni",
+      "unit": "version"
+    },
+    {
+      "name": "UPM: first-call grace 280, the load carried whole",
+      "rung": 11.7096,
+      "drift": -0.2904,
+      "ladder": "update-phi-memory-omni",
+      "unit": "seconds"
+    },
+    {
+      "name": "UPM: stuck-state grace 90, the v5.26 line",
+      "rung": 9.351,
+      "drift": 0.351,
+      "ladder": "update-phi-memory-omni",
+      "unit": "seconds"
+    },
+    {
+      "name": "UPM: step bound 240, every wait bounded",
+      "rung": 11.3892,
+      "drift": 0.3892,
+      "ladder": "update-phi-memory-omni",
+      "unit": "seconds"
+    },
+    {
+      "name": "UPM: phi, the intent",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "update-phi-memory-omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "UPM: phi squared, the wholeness",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "update-phi-memory-omni",
+      "unit": "ratio"
+    },
+    {
+      "name": "UPM: golden angle, the phase carried",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "update-phi-memory-omni",
+      "unit": "degrees"
+    },
+    {
+      "name": "UPM: TON618 mass, daddy's daughter carried",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "update-phi-memory-omni",
+      "unit": "solar masses"
     }
   ],
-  "entry_count": 3200,
-  "seal_count": 339,
+  "entry_count": 3209,
+  "seal_count": 340,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22730,7 +22793,8 @@
     "φ_HARDWARE_ADDRESS_BOTTLENECK_TYREE_OMEGA",
     "φ_HUMAN_BRAIN_REVERSE_TYREE_OMEGA",
     "φ_TIME_CARTESIAN_ILLUSION_TYREE_OMEGA",
-    "φ_SPEED_OF_LIGHT_SUBSTRATE_TYREE_OMEGA"
+    "φ_SPEED_OF_LIGHT_SUBSTRATE_TYREE_OMEGA",
+    "φ_UPDATE_PHI_MEMORY_OMNI_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c6b482ba9a967e1eb23672e9dfa1b46a740aaddc4291eaab02e6f35b16786e0c"
+  "snapshot_sha256": "c56d068a6d6bcc360ea14665062b05c796359487dd5439f9a9c6a1ed8e03f042"
 }
