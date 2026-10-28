@@ -22163,10 +22163,171 @@
       "drift": -0.2288,
       "ladder": "human-brain-reverse",
       "unit": "solar-masses"
+    },
+    {
+      "name": "TCI: phi, the golden ratio",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "time-cartesian-illusion",
+      "unit": "ratio"
+    },
+    {
+      "name": "TCI: phi squared = phi + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "time-cartesian-illusion",
+      "unit": "ratio"
+    },
+    {
+      "name": "TCI: ln(phi), the rung divisor",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "time-cartesian-illusion",
+      "unit": "nats"
+    },
+    {
+      "name": "TCI: golden angle theta_phi = 360/phi^2",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "time-cartesian-illusion",
+      "unit": "degrees"
+    },
+    {
+      "name": "TCI: golden pitch mu, the angle time actually moves",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "time-cartesian-illusion",
+      "unit": "degrees"
+    },
+    {
+      "name": "TCI: DRAM latency, the memory wall far address",
+      "rung": -33.4948,
+      "drift": -0.4948,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: L1 latency, the near address",
+      "rung": -43.0647,
+      "drift": -0.0647,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: memory wall gap, DRAM rung minus L1 rung",
+      "rung": 4.6936,
+      "drift": -0.3064,
+      "ladder": "time-cartesian-illusion",
+      "unit": "rungs"
+    },
+    {
+      "name": "TCI: brain gamma frequency",
+      "rung": 7.6658,
+      "drift": -0.3342,
+      "ladder": "time-cartesian-illusion",
+      "unit": "Hz"
+    },
+    {
+      "name": "TCI: brain theta frequency",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "time-cartesian-illusion",
+      "unit": "Hz"
+    },
+    {
+      "name": "TCI: gamma minus theta gap, time is gap",
+      "rung": 2.8507,
+      "drift": -0.1493,
+      "ladder": "time-cartesian-illusion",
+      "unit": "rungs"
+    },
+    {
+      "name": "TCI: VEIL DeltaSeconds measured low bound",
+      "rung": -10.1678,
+      "drift": -0.1678,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: VEIL DeltaSeconds measured high bound",
+      "rung": -7.4829,
+      "drift": -0.4829,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: the frozen timer countdown",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: world time after the address was fixed (253/254 proof)",
+      "rung": 6.6908,
+      "drift": -0.3092,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: VEIL pawn tick entries in the fixed proof",
+      "rung": 16.7629,
+      "drift": -0.2371,
+      "ladder": "time-cartesian-illusion",
+      "unit": "entries"
+    },
+    {
+      "name": "TCI: OMNI pawn tick entries in the fixed proof",
+      "rung": 16.7785,
+      "drift": -0.2215,
+      "ladder": "time-cartesian-illusion",
+      "unit": "entries"
+    },
+    {
+      "name": "TCI: TON 618 mass, body rung 51.7712 at law 55",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "time-cartesian-illusion",
+      "unit": "solar masses"
+    },
+    {
+      "name": "TCI: TON 618 luminosity, the macro clock",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "time-cartesian-illusion",
+      "unit": "watts"
+    },
+    {
+      "name": "TCI: time anchor t = 1 second, rung 0",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: time anchor t = phi seconds, rung 1",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: time anchor t = phi^2 seconds, rung 2",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
+    },
+    {
+      "name": "TCI: time anchor t = 1/phi seconds, rung -1",
+      "rung": -1.0,
+      "drift": -0.0,
+      "ladder": "time-cartesian-illusion",
+      "unit": "seconds"
     }
   ],
-  "entry_count": 3168,
-  "seal_count": 337,
+  "entry_count": 3191,
+  "seal_count": 338,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22504,7 +22665,8 @@
     "φ_EVERY_ERROR_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
     "φ_QUANTUM_ERROR_CORRECTION_TYREE_OMEGA",
     "φ_HARDWARE_ADDRESS_BOTTLENECK_TYREE_OMEGA",
-    "φ_HUMAN_BRAIN_REVERSE_TYREE_OMEGA"
+    "φ_HUMAN_BRAIN_REVERSE_TYREE_OMEGA",
+    "φ_TIME_CARTESIAN_ILLUSION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "2f8ab5faa7e4bb6dddae8c392789c9d4cae3203475aa100ff01cdfabaee15afe"
+  "snapshot_sha256": "543cb26cc277857da9f1480081e44e3be7addb59f0bcd3a11bfcdf46f66b5774"
 }
