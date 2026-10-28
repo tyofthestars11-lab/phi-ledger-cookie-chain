@@ -22912,10 +22912,199 @@
       "drift": -0.4444,
       "ladder": "jwst_witness",
       "unit": "count"
+    },
+    {
+      "name": "tyree_declared_earths_echo_out",
+      "rung": 62.2046,
+      "drift": 0.2046,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "home_earth_reciprocal_echo_back",
+      "rung": -62.2046,
+      "drift": -0.2046,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "reciprocal_count"
+    },
+    {
+      "name": "this_earth_home_seat",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "golden_eye_pair_product",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "ratio"
+    },
+    {
+      "name": "confirmed_exoplanets",
+      "rung": 18.0928,
+      "drift": 0.0928,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "milky_way_habitable_conservative",
+      "rung": 40.5628,
+      "drift": -0.4372,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "milky_way_earth_size_habitable_zone_including_red_dwarfs",
+      "rung": 50.7306,
+      "drift": -0.2694,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "galaxies_pre_jwst_estimate",
+      "rung": 58.8601,
+      "drift": -0.1399,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "galaxies_jwst_revised_high_read",
+      "rung": 61.7409,
+      "drift": -0.2591,
+      "ladder": "jwst_witness",
+      "unit": "count"
+    },
+    {
+      "name": "bright_early_galaxies_frequency_factor",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "jwst_witness",
+      "unit": "factor"
+    },
+    {
+      "name": "universe_earth_like_ceiling",
+      "rung": 95.6994,
+      "drift": -0.3006,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "stars_estimated",
+      "rung": 111.4948,
+      "drift": 0.4948,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "count"
+    },
+    {
+      "name": "jwst_little_red_dots",
+      "rung": 11.5556,
+      "drift": -0.4444,
+      "ladder": "jwst_witness",
+      "unit": "count"
+    },
+    {
+      "name": "k2_18b_distance",
+      "rung": 10.017,
+      "drift": 0.017,
+      "ladder": "jwst_witness",
+      "unit": "light_years"
+    },
+    {
+      "name": "k2_18b_robustly_detected_atmospheric_species",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "jwst_witness",
+      "unit": "count"
+    },
+    {
+      "name": "k2_18b_dms_hint_data_sets",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "jwst_witness",
+      "unit": "count"
+    },
+    {
+      "name": "trappist_1_distance",
+      "rung": 7.6132,
+      "drift": -0.3868,
+      "ladder": "jwst_witness",
+      "unit": "light_years"
+    },
+    {
+      "name": "trappist_1_earth_size_planets",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "jwst_witness",
+      "unit": "count"
+    },
+    {
+      "name": "trappist_1_minimum_habitable_zone_planets",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "jwst_witness",
+      "unit": "count"
+    },
+    {
+      "name": "ton_618_body",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "qubits"
+    },
+    {
+      "name": "mitochondria_genome",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "base_pairs"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "degrees"
+    },
+    {
+      "name": "this_moment",
+      "rung": 44.2783,
+      "drift": 0.2783,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "unix_seconds"
+    },
+    {
+      "name": "engine_ledger_live_entries",
+      "rung": 14.0559,
+      "drift": 0.0559,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "entries"
+    },
+    {
+      "name": "core_reciprocal_one_over_phi",
+      "rung": -1.0,
+      "drift": -0.0,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "ratio"
+    },
+    {
+      "name": "cosmic_reversal_matrix_max_round_trip_deviation",
+      "rung": -76.3427,
+      "drift": -0.3427,
+      "ladder": "quantum_echoes_reversal_matrix",
+      "unit": "ratio"
     }
   ],
-  "entry_count": 3275,
-  "seal_count": 346,
+  "entry_count": 3302,
+  "seal_count": 347,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -23262,7 +23451,8 @@
     "φ_ANTI_STALL_SUPERPOSITION_TYREE_OMEGA",
     "φ_QUANTUM_ECHOES_REVERSAL_MATRIX_CHAT_TYREE_OMEGA",
     "φ_EARTHS_CENSUS_TYREE_OMEGA",
-    "φ_EARTHS_CENSUS_JWST_WITNESS_TYREE_OMEGA"
+    "φ_EARTHS_CENSUS_JWST_WITNESS_TYREE_OMEGA",
+    "φ_EARTHS_CENSUS_COSMIC_REVERSAL_MATRIX_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "891dc73cb987f0b8080186a6058604d224e7e34a2398a0c0f485b1978e578667"
+  "snapshot_sha256": "ff8f80e1959674f5333c72b858bad51d6e142925d3a1e7823a5556ec80e7d5b6"
 }
