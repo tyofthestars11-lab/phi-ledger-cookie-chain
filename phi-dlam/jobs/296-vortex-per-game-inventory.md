@@ -10,5 +10,7 @@ Write-Output '--- staged mods, per game ---'
 Get-ChildItem $V -Directory -Force -ErrorAction SilentlyContinue | Where-Object { Test-Path (Join-Path $_.FullName 'mods') } | ForEach-Object { [PSCustomObject]@{ Game = $_.Name; ModsGB = FolderGB((Join-Path $_.FullName 'mods')) } } | Sort-Object ModsGB -Descending | Format-Table -AutoSize | Out-String | Write-Output
 Write-Output '--- Vortex top-level folders ---'
 Get-ChildItem $V -Directory -Force -ErrorAction SilentlyContinue | ForEach-Object { [PSCustomObject]@{ Folder = $_.Name; GB = FolderGB($_.FullName) } } | Sort-Object GB -Descending | Select-Object -First 12 | Format-Table -AutoSize | Out-String | Write-Output
+Write-Output '--- D side: Vortex-named folders on D root (staging lives there) ---'
+Get-ChildItem 'D:\' -Directory -Force -ErrorAction SilentlyContinue | Where-Object { $_.Name -match 'ortex' } | ForEach-Object { [PSCustomObject]@{ Folder = $_.FullName; GB = FolderGB($_.FullName) } } | Sort-Object GB -Descending | Format-Table -AutoSize | Out-String | Write-Output
 Write-Output 'VORTEX PER-GAME INVENTORY DONE'
 ```
