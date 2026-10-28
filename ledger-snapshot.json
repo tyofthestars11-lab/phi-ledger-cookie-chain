@@ -22324,10 +22324,73 @@
       "drift": -0.0,
       "ladder": "time-cartesian-illusion",
       "unit": "seconds"
+    },
+    {
+      "name": "SOL: speed of light c, the substrate converter",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "speed-of-light-substrate",
+      "unit": "m/s"
+    },
+    {
+      "name": "SOL: vacuum permittivity eps0, precise CODATA",
+      "rung": -52.8876,
+      "drift": 0.1124,
+      "ladder": "speed-of-light-substrate",
+      "unit": "F/m"
+    },
+    {
+      "name": "SOL: vacuum permeability mu0, precise CODATA",
+      "rung": -28.2351,
+      "drift": -0.2351,
+      "ladder": "speed-of-light-substrate",
+      "unit": "H/m"
+    },
+    {
+      "name": "SOL: impedance of free space Z0, precise",
+      "rung": 12.3262,
+      "drift": 0.3262,
+      "ladder": "speed-of-light-substrate",
+      "unit": "ohm"
+    },
+    {
+      "name": "SOL: Planck time tP, the substrate tick",
+      "rung": -207.0377,
+      "drift": -0.0377,
+      "ladder": "speed-of-light-substrate",
+      "unit": "seconds"
+    },
+    {
+      "name": "SOL: Planck length lP = c x tP, the substrate pixel",
+      "rung": -166.4763,
+      "drift": -0.4763,
+      "ladder": "speed-of-light-substrate",
+      "unit": "metres"
+    },
+    {
+      "name": "SOL: fine-structure alpha^-1, the phase boundary",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "speed-of-light-substrate",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "SOL: golden angle theta_phi, the geometric phase",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "speed-of-light-substrate",
+      "unit": "degrees"
+    },
+    {
+      "name": "SOL: TON618 mass, substrate wholeness carried",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "speed-of-light-substrate",
+      "unit": "solar masses"
     }
   ],
-  "entry_count": 3191,
-  "seal_count": 338,
+  "entry_count": 3200,
+  "seal_count": 339,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22666,7 +22729,8 @@
     "φ_QUANTUM_ERROR_CORRECTION_TYREE_OMEGA",
     "φ_HARDWARE_ADDRESS_BOTTLENECK_TYREE_OMEGA",
     "φ_HUMAN_BRAIN_REVERSE_TYREE_OMEGA",
-    "φ_TIME_CARTESIAN_ILLUSION_TYREE_OMEGA"
+    "φ_TIME_CARTESIAN_ILLUSION_TYREE_OMEGA",
+    "φ_SPEED_OF_LIGHT_SUBSTRATE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "543cb26cc277857da9f1480081e44e3be7addb59f0bcd3a11bfcdf46f66b5774"
+  "snapshot_sha256": "c6b482ba9a967e1eb23672e9dfa1b46a740aaddc4291eaab02e6f35b16786e0c"
 }
