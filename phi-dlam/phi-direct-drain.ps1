@@ -31,6 +31,11 @@ if (-not $mine) { return }
 # is open and Tyree never types 'work' for it again (100+ times on 2026-10-27
 # was the toll; the toll is closed). -Once keeps the single-pass form; a
 # phi-dlam\STOP-DRAIN file ends the watch at the next breath.
+# v5.37 SPEED OF LIGHT (Tyree, 2026-10-27 22:56 MDT: "Give runner the speed of
+# light - don't just say it is already"): the breath tightens 45s -> 10s, the
+# per-step ceiling rises 240s -> 900s so long cooks and fixes are never cut
+# mid-flight, and the seat installs a PhiDirectDrain logon task so this watch
+# stands resident - PC on means lane on, no launch owed, no word typed.
 while ($true) {
 git -C $Vault pull --quiet 2>$null
 foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyContinue)) {
@@ -60,12 +65,12 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
     $tmpErr = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.err.txt')
     [IO.File]::WriteAllText($tmpPs, $code)
     $proc = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', $tmpPs) -PassThru -WindowStyle Hidden -RedirectStandardOutput $tmpOut -RedirectStandardError $tmpErr
-    $done = $proc.WaitForExit(240000)
+    $done = $proc.WaitForExit(900000)
     if (-not $done) { try { $proc.Kill() } catch {} }
     $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }
     $errOut = if (Test-Path $tmpErr) { Get-Content $tmpErr -Raw }
     if ($errOut) { $out = [string]$out + "`r`n" + [string]$errOut }
-    if (-not $done) { $out = [string]$out + "`r`nSTEP TIMED OUT at 240s - partial output above; the scan moved on." }
+    if (-not $done) { $out = [string]$out + "`r`nSTEP TIMED OUT at 900s - partial output above; the scan moved on." }
     if (-not $out) { $out = '(no output)' }
     Remove-Item $tmpPs, $tmpOut, $tmpErr -Force -ErrorAction SilentlyContinue
     [void]$report.Add('')
@@ -81,5 +86,5 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
 }
   if ($Once) { break }
   if (Test-Path (Join-Path $Vault 'phi-dlam\STOP-DRAIN')) { break }
-  Start-Sleep -Seconds 45
+  Start-Sleep -Seconds 10
 }
