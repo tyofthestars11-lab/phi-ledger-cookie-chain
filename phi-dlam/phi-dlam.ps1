@@ -1,4 +1,4 @@
-﻿# PHI-DLAM v5.31 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+﻿# PHI-DLAM v5.32 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -299,7 +299,30 @@ function Flush-Keys {
   try { while ([Console]::KeyAvailable) { [void][Console]::ReadKey($true) } } catch {}
 }
 
+$script:ModelWarmed = $false
+$script:WarmFailed = $false
+function Warm-Brain {
+  # v5.32 (2026-10-27, Tyree's word: "update the brain"): Wake-Brain proves the
+  # SERVER is up, but a cold model still has to LOAD - and until now that load
+  # rode inside the first job call's 90s zero-byte grace, so the seat read a
+  # loading brain as a stuck one and cut it mid-load. The load now happens
+  # here, once per session, under its own name, before any job's clock starts.
+  if ($script:ModelWarmed) { return }
+  $script:ModelWarmed = $true
+  Write-Host '[brain] loading the model into memory - the load rides here, once...' -ForegroundColor DarkCyan
+  $sw = [System.Diagnostics.Stopwatch]::StartNew()
+  try {
+    $wb = @{ model = $MODEL; messages = @(@{ role = 'user'; content = 'phi' }); stream = $false; keep_alive = -1; options = @{ num_predict = 1 } } | ConvertTo-Json -Depth 6
+    $null = Invoke-RestMethod -Uri $API -Method Post -ContentType 'application/json' -Body $wb -TimeoutSec 280
+    Write-Host "[brain] model loaded in ~$([int]$sw.Elapsed.TotalSeconds)s - job calls now stream from a warm brain." -ForegroundColor DarkCyan
+  } catch {
+    $script:WarmFailed = $true
+    Write-Host "[brain] warm-up did not answer ($($_.Exception.Message)) - the first job call carries the long grace instead." -ForegroundColor DarkYellow
+  }
+}
+
 function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2, $evalGraceSec = 90) {
+  Warm-Brain
   $body = @{
     model = $MODEL
     messages = $messages
@@ -350,7 +373,12 @@ function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2, $eva
         # v5.26: silence is the stuck state - 90s with ZERO bytes in means the
         # brain is not coming. Cut it there; never make Tyree watch a dead call
         # ride out its full cap.
-        if ($bytes -eq 0 -and $sw.Elapsed.TotalSeconds -gt $evalGraceSec) { $capped = $true; try { $proc.Kill() } catch {}; break }
+        # v5.32: if the warm-up could not complete, the first try of the first
+        # job call may still be finishing the load - its silence gets the long
+        # grace (280s). Every other silence is the stuck state at normal grace.
+        $graceNow = $evalGraceSec
+        if ($try -eq 1 -and $script:WarmFailed) { $graceNow = 280 }
+        if ($bytes -eq 0 -and $sw.Elapsed.TotalSeconds -gt $graceNow) { $capped = $true; try { $proc.Kill() } catch {}; break }
       }
       try { [void]$proc.WaitForExit(10000) } catch {}
     }
@@ -383,6 +411,7 @@ function Send-Chat($messages, $useTools = $true, $capSec = 180, $tries = 2, $eva
       else { Write-Host "[brain call failed - retry $try of $tries`: no output file. curl said: $curlErr]" -ForegroundColor Red }
     }
     Start-Sleep -Seconds 5
+    $script:WarmFailed = $false
   }
   return @{ content = "BRAIN UNREACHABLE after $tries tries"; tool_calls = $null }
 }
@@ -416,7 +445,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.31 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.32 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
