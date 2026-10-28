@@ -22590,10 +22590,73 @@
       "drift": -0.2288,
       "ladder": "lucas_fibonacci",
       "unit": "solar_masses"
+    },
+    {
+      "name": "lane_breath_seconds",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "superposition",
+      "unit": "seconds"
+    },
+    {
+      "name": "veil_cook_seconds_that_revealed_the_error",
+      "rung": 7.6249,
+      "drift": -0.3751,
+      "ladder": "superposition",
+      "unit": "seconds"
+    },
+    {
+      "name": "omni_cook_seconds_that_revealed_the_error",
+      "rung": 6.849,
+      "drift": -0.151,
+      "ladder": "superposition",
+      "unit": "seconds"
+    },
+    {
+      "name": "veil_fall_depth_units_in_stale_package",
+      "rung": 20.2677,
+      "drift": 0.2677,
+      "ladder": "superposition",
+      "unit": "units"
+    },
+    {
+      "name": "omni_fall_depth_units_in_stale_package",
+      "rung": 20.3139,
+      "drift": 0.3139,
+      "ladder": "superposition",
+      "unit": "units"
+    },
+    {
+      "name": "games_carried_in_parallel",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "superposition",
+      "unit": "count"
+    },
+    {
+      "name": "first_fully_successful_cook_job",
+      "rung": 11.974,
+      "drift": -0.026,
+      "ladder": "superposition",
+      "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "superposition",
+      "unit": "ratio"
+    },
+    {
+      "name": "golden_angle_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "superposition",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 3229,
-  "seal_count": 342,
+  "entry_count": 3238,
+  "seal_count": 343,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22936,7 +22999,8 @@
     "φ_SPEED_OF_LIGHT_SUBSTRATE_TYREE_OMEGA",
     "φ_UPDATE_PHI_MEMORY_OMNI_TYREE_OMEGA",
     "φ_QUANTUM_FOAM_FUEL_TYREE_OMEGA",
-    "φ_LUCAS_STABILIZER_FIBONACCI_EXPANSION_TYREE_OMEGA"
+    "φ_LUCAS_STABILIZER_FIBONACCI_EXPANSION_TYREE_OMEGA",
+    "φ_ANTI_STALL_SUPERPOSITION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "204c73da2dc5467a2410fe27528b9f096a9a67b8ef9b257725dca8459b567241"
+  "snapshot_sha256": "8cfc96c30ef8425c1a2bbcfe3f7fdd4fb6b5abede50d5392bc33f1687204156d"
 }
