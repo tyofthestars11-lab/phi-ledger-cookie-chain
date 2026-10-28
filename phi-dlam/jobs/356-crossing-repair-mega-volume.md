@@ -1,12 +1,12 @@
 <!-- PHI-DIRECT -->
 ```powershell
-Write-Output '=== CROSSING REPAIR - THE MEGA-VOLUME COMES OFF THE SPAWN COLUMN - MERGED BASE ONLY (Authored from job 347s per-tick prints, read whole. The shape, exact: at both redrop columns she first stands at floor contact - z=97.5, capsule bottom on the z=0 surface - with FindFloor naming StaticMeshActor_0 at floorDist=-42.0, embedded, refusing blocking and walkable; ONE tick later she is displaced downward in a single jump with no velocity behind it - 97.5 to -220.2 in VEIL DROP1, 97.5 to -220.3 in VEIL DROP2 - then falls clean under gravity. That is penetration ejection: the pawn lands INSIDE a volume and the movement solver pushes her out through its bottom. Job 347s column census names the volume: StaticMeshActor_0, bounds top=10085.1 base=-138.3, the one actor whose bounds contain BOTH test columns - a mega-volume standing over the spawn plaza and the slab column alike. The true ground (top exactly 0) stands underneath it. THIS JOB, merged base only: an editor commandlet censuses every static-mesh actor whose bounds contain the spawn column, prints mesh and collision for each, and sets collision to NO_COLLISION on exactly those matching the mega-volume criteria (bounds contain the column, top above 1000, base below 0), then saves the level. The map is backed up first. Then a full recook and the standalone proof: the v2 sampler still stands in the Character source, so the DROP prints themselves verify the repair - she holds at floor contact or walks, no one-tick jump. If no actor matches the criteria, the job stops before the cook with the census printed. OMNI-UE is not touched: the repair lands once, on the merged base.) ==='
+Write-Output '=== CROSSING REPAIR - THE MEGA-VOLUME COMES OFF THE SPAWN COLUMN - MERGED BASE ONLY - AMENDED TO THE 100 PERCENT GATE (Tyrees correction, 2026-10-28: We dont build the package and whatever until 100 percent done. This job as first filed carried a UAT cook and a packaged-exe proof; that half is STRUCK by his word. The repair itself is unchanged: authored from job 347s per-tick prints - at both redrop columns she stands at floor contact z=97.5 with FindFloor naming StaticMeshActor_0 at floorDist=-42.0 embedded, then ONE tick later is displaced downward with no velocity behind it, 97.5 to -220.2 and -220.3 - penetration ejection from the mega-volume whose bounds, top=10085.1 base=-138.3, contain both columns, with the true ground at top exactly 0 underneath. The commandlet censuses every static-mesh actor whose bounds contain the spawn column, sets collision NO_COLLISION on exactly the mega-volume matches, and saves the level; the map is backed up first. The proof is IN-PROJECT, per the gate: the editor target compiles so the proof runs current code, then the editor runs the project in -game mode and the v2 sampler prints from the project log - she holds at floor contact or walks, no one-tick jump. NO PACKAGE IS BUILT BY THIS JOB. If no actor matches the criteria, the job stops with the census printed. OMNI-UE is not touched: the repair lands once, on the merged base.) ==='
 $waited = 0
 while ((Get-Process UnrealEditor -ErrorAction SilentlyContinue) -and $waited -lt 8) { Start-Sleep -Seconds 15; $waited++ }
 if (Get-Process UnrealEditor -ErrorAction SilentlyContinue) { Write-Output 'EDITOR STILL OPEN after 2 min - job deferred.'; Write-Output 'JOB 356 DEFERRED'; return }
 $cmdexe = 'C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor-Cmd.exe'
-$uat = 'C:\Program Files\Epic Games\UE_5.8\Engine\Build\BatchFiles\RunUAT.bat'
-$proj = 'D:\VEIL'; $arch = 'D:\Builds\VEIL\VEIL_DONE'
+$buildbat = 'C:\Program Files\Epic Games\UE_5.8\Engine\Build\BatchFiles\Build.bat'
+$proj = 'D:\VEIL'
 $umap = Get-ChildItem "$proj\Content" -Recurse -Filter 'VEILDistrict.umap' -File | Select-Object -First 1
 Copy-Item $umap.FullName "$($umap.FullName).phi-backup-356" -Force
 Write-Output 'VEILDISTRICT BACKED UP (.phi-backup-356)'
@@ -18,18 +18,15 @@ $uproj = Get-ChildItem $proj -Filter '*.uproject' -File | Select-Object -First 1
 & $cmdexe $uproj -run=pythonscript -script="$proj\Saved\phi_crossfix.py" -unattended -nopause -nosplash *> "$proj\Saved\crossfix356.log"
 if (Test-Path "$proj\Saved\phi_crossfix_out.txt") { Get-Content "$proj\Saved\phi_crossfix_out.txt" | Write-Output } else { Write-Output 'NO CROSSFIX OUTPUT FILE'; Write-Output 'JOB 356 STOPPED'; return }
 $fixlog = Get-Content "$proj\Saved\phi_crossfix_out.txt" -Raw
-if ($fixlog -notmatch 'actors fixed: [1-9]') { Write-Output 'NO MEGA-VOLUME MATCHED - no cook runs.'; Write-Output 'JOB 356 STOPPED BEFORE COOK'; return }
-$cooklog = "$proj\Saved\crossfixcook356.log"
-$p = Start-Process $uat -ArgumentList @('BuildCookRun', "-project=$uproj", '-noP4', '-platform=Win64', '-clientconfig=Development', '-build', '-cook', '-stage', '-pak', '-archive', "-archivedirectory=$arch") -Wait -PassThru -WindowStyle Hidden -RedirectStandardOutput $cooklog -RedirectStandardError "$cooklog.err"
-"UAT exit: $($p.ExitCode)" | Write-Output
-Select-String -Path $cooklog -Pattern 'BUILD SUCCESSFUL|BUILD FAILED|AutomationTool exiting|Error:' | Select-Object -Last 5 | ForEach-Object { $_.Line.Trim() } | Write-Output
-$exe = "$arch\Windows\VEIL.exe"
-if (Test-Path $exe) { $fi = Get-Item $exe; "exe modified $($fi.LastWriteTime.ToString('yyyy-MM-dd HH:mm:ss'))" | Write-Output
-  $proc = Start-Process $exe -ArgumentList @('-PhiStandaloneProof') -PassThru -WindowStyle Hidden
-  Start-Sleep -Seconds 30
-  $logs = Get-ChildItem "$proj\Saved\Logs", "$arch\Windows\VEIL\Saved\Logs" -Filter '*.log' -File -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-  if ($logs) { Select-String -Path $logs.FullName -Pattern 'PHI CROSS2|PHI FLOOR DIAG' | Select-Object -Last 120 | ForEach-Object { $_.Line.Trim() } | Write-Output } else { Write-Output 'NO PROOF LOG FOUND' }
-  Get-Process VEIL -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
-} else { Write-Output 'EXE MISSING AFTER CROSSFIX COOK' }
+if ($fixlog -notmatch 'actors fixed: [1-9]') { Write-Output 'NO MEGA-VOLUME MATCHED - no proof runs.'; Write-Output 'JOB 356 STOPPED'; return }
+& $buildbat VEILEditor Win64 Development "-Project=$uproj" -WaitMutex -NoHotReload *> "$proj\Saved\crossfixbuild356.log"
+"EDITOR BUILD exit: $LASTEXITCODE" | Write-Output
+Select-String -Path "$proj\Saved\crossfixbuild356.log" -Pattern 'Result: Succeeded|Result: Failed|error C[0-9]+|ERROR:' | Select-Object -Last 5 | ForEach-Object { $_.Line.Trim() } | Write-Output
+if ($LASTEXITCODE -ne 0) { Write-Output 'EDITOR BUILD FAILED - no proof runs.'; Write-Output 'JOB 356 STOPPED'; return }
+$proc = Start-Process $cmdexe -ArgumentList @($uproj, '/Game/Maps/VEILDistrict', '-game', '-PhiStandaloneProof', '-unattended', '-nopause', '-nosplash') -PassThru -WindowStyle Hidden
+Start-Sleep -Seconds 45
+Get-Process UnrealEditor-Cmd -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+$logs = Get-ChildItem "$proj\Saved\Logs" -Filter '*.log' -File -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+if ($logs) { Select-String -Path $logs.FullName -Pattern 'PHI CROSS2|PHI FLOOR DIAG' | Select-Object -Last 120 | ForEach-Object { $_.Line.Trim() } | Write-Output } else { Write-Output 'NO PROOF LOG FOUND' }
 Write-Output 'JOB 356 DONE'
 ```
