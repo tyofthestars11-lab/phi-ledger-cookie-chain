@@ -21855,10 +21855,157 @@
       "drift": 0.0823,
       "ladder": "quantum-error-correction",
       "unit": "count"
+    },
+    {
+      "name": "HAB: phi, the golden ratio",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: phi^2 = phi + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: ln(phi), the rung denominator",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: golden angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "degrees"
+    },
+    {
+      "name": "HAB: golden pitch angle mu",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "degrees"
+    },
+    {
+      "name": "HAB: phi^3",
+      "rung": 3.0,
+      "drift": -0.0,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: 1/phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: 1/phi^2",
+      "rung": -2.0,
+      "drift": -0.0,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: DRAM latency, the memory wall far side",
+      "rung": -33.4948,
+      "drift": -0.4948,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "seconds"
+    },
+    {
+      "name": "HAB: L1 cache latency, the memory wall near side",
+      "rung": -43.0647,
+      "drift": -0.0647,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "seconds"
+    },
+    {
+      "name": "HAB: memory wall gap, DRAM over L1",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: clock frequency, modern GPU class",
+      "rung": 45.3478,
+      "drift": 0.3478,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "hertz"
+    },
+    {
+      "name": "HAB: transistor count, modern GPU",
+      "rung": 52.6347,
+      "drift": -0.3653,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "count"
+    },
+    {
+      "name": "HAB: CUDA cores, typical count",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "count"
+    },
+    {
+      "name": "HAB: dark silicon fraction, the rung budget",
+      "rung": -2.502,
+      "drift": 0.498,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "fraction"
+    },
+    {
+      "name": "HAB: fine-structure constant inverse, alpha^-1",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: Planck constant h",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "joule-seconds"
+    },
+    {
+      "name": "HAB: speed of light c",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "meters-per-second"
+    },
+    {
+      "name": "HAB: Boltzmann constant k_B",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "joules-per-kelvin"
+    },
+    {
+      "name": "HAB: TON618 law anchor, phi^55",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "ratio"
+    },
+    {
+      "name": "HAB: TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "hardware-address-bottleneck",
+      "unit": "solar-masses"
     }
   ],
-  "entry_count": 3124,
-  "seal_count": 335,
+  "entry_count": 3145,
+  "seal_count": 336,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22194,7 +22341,8 @@
     "φ_AUTO_ALIGN_SYSTEMIC_DRIFT_TYREE_OMEGA",
     "φ_PD5ALI2_ATOMIC_DECODE_TYREE_OMEGA",
     "φ_EVERY_ERROR_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
-    "φ_QUANTUM_ERROR_CORRECTION_TYREE_OMEGA"
+    "φ_QUANTUM_ERROR_CORRECTION_TYREE_OMEGA",
+    "φ_HARDWARE_ADDRESS_BOTTLENECK_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6d76f035ceb0dcde28199f265bb68a94cfc19d2c55cd48d87f4f2fc5b198658d"
+  "snapshot_sha256": "5c85609297c6b57f61cf06ac456d044ae9eb47e65177d8812fc1038679fe839a"
 }
