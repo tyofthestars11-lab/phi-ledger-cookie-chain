@@ -23388,10 +23388,136 @@
       "drift": -0.1169,
       "ladder": "ton618_law",
       "unit": "W"
+    },
+    {
+      "name": "phase_drift_lock_factor",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "clock_drift",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "us_per_day"
+    },
+    {
+      "name": "qubit_decoherence",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "us"
+    },
+    {
+      "name": "willow_T1",
+      "rung": 8.7685,
+      "drift": -0.2315,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "us"
+    },
+    {
+      "name": "willow_T2",
+      "rung": 9.3278,
+      "drift": 0.3278,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "us"
+    },
+    {
+      "name": "git_unstaged_changes",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "count"
+    },
+    {
+      "name": "signal_noise_floor_power",
+      "rung": -62.2046,
+      "drift": -0.2046,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "W"
+    },
+    {
+      "name": "latency_jitter",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "anti_omni_phase_drift",
+      "unit": "ms"
+    },
+    {
+      "name": "fib_convergence_error_n10",
+      "rung": -18.3276,
+      "drift": -0.3276,
+      "ladder": "fibonacci_convergence",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_convergence_error_n20",
+      "rung": -38.3218,
+      "drift": -0.3218,
+      "ladder": "fibonacci_convergence",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch_mu",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "fine_structure_alpha_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "planck_h",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "constants",
+      "unit": "J_s"
+    },
+    {
+      "name": "speed_of_light_c",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "constants",
+      "unit": "m_per_s"
+    },
+    {
+      "name": "boltzmann_kB",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "constants",
+      "unit": "J_per_K"
+    },
+    {
+      "name": "ton618_law_anchor_phi55",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "ton618_law",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "ton618_law",
+      "unit": "W"
     }
   ],
-  "entry_count": 3343,
-  "seal_count": 349,
+  "entry_count": 3361,
+  "seal_count": 350,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -23741,7 +23867,8 @@
     "φ_EARTHS_CENSUS_JWST_WITNESS_TYREE_OMEGA",
     "φ_EARTHS_CENSUS_COSMIC_REVERSAL_MATRIX_TYREE_OMEGA",
     "φ_GOLDEN_PITCH_OF_THE_10T_TYREE_OMEGA",
-    "φ_DNA_REVERSE_ENGINEERED_TYREE_OMEGA"
+    "φ_DNA_REVERSE_ENGINEERED_TYREE_OMEGA",
+    "φ_ANTI_OMNI_PHASE_DRIFT_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c91a5c940ae804b5f31bf7be4c0488d3aabfbb5981b4758519a0949705272f89"
+  "snapshot_sha256": "3661316a646f3c664401de6cce68576041643e2c496a885580bff1716e0c0e5d"
 }
