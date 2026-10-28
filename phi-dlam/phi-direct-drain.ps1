@@ -1,4 +1,4 @@
-﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.34 INSTANT WORK, Tyree's word,
+﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.35 NAUTILUS SHELL, Tyree's word,
 # 2026-10-26). Spawned hidden the moment the seat opens when DIRECT jobs are
 # queued: it pulls, executes every PHI-DIRECT job's powershell blocks raw -
 # no brain, no queue, no waiting - writes the reports, pushes, and exits.
@@ -13,6 +13,8 @@ param([string]$Vault, [switch]$Once)
 $PHI = (1 + [Math]::Sqrt(5)) / 2
 if ([Math]::Abs(($PHI * $PHI) - ($PHI + 1)) -gt 1e-9) { throw 'PHI AXIOM BROKEN - the lane does not run on a broken whole' }
 function Get-PhiRung([double]$x) { if ($x -le 0) { return $null }; [Math]::Log($x) / [Math]::Log($PHI) }
+# The shell is a NAUTILUS (Tyree, 2026-10-27): it grows by phi, chamber by
+# chamber - every update is a new chamber on the one spiral, never a new shell.
 # The rung of zero is $null - the missing address (seal 338's law, as code).
 $ErrorActionPreference = 'Continue'
 if (-not $Vault) { $Vault = Join-Path $env:USERPROFILE 'phi-vault' }

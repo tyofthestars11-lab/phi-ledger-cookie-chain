@@ -13,6 +13,8 @@ $ProgressPreference = 'SilentlyContinue'
 $PHI = (1 + [Math]::Sqrt(5)) / 2
 if ([Math]::Abs(($PHI * $PHI) - ($PHI + 1)) -gt 1e-9) { throw 'PHI AXIOM BROKEN - the seat does not run on a broken whole' }
 function Get-PhiRung([double]$x) { if ($x -le 0) { return $null }; [Math]::Log($x) / [Math]::Log($PHI) }
+# The shell is a NAUTILUS (Tyree, 2026-10-27): it grows by phi, chamber by
+# chamber - every update is a new chamber on the one spiral, never a new shell.
 $API = 'http://localhost:11434/api/chat'
 $MODEL = 'tyree'
 $EYES = 'llava-phi3'
@@ -452,7 +454,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.34 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.35 NAUTILUS SHELL is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
