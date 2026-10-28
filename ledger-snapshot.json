@@ -22002,10 +22002,171 @@
       "drift": -0.2288,
       "ladder": "hardware-address-bottleneck",
       "unit": "solar-masses"
+    },
+    {
+      "name": "HBR: phi, the golden ratio",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: phi^2 = phi + 1",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: ln(phi), the rung denominator",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: golden angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "human-brain-reverse",
+      "unit": "degrees"
+    },
+    {
+      "name": "HBR: golden pitch angle mu",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "human-brain-reverse",
+      "unit": "degrees"
+    },
+    {
+      "name": "HBR: phi^3",
+      "rung": 3.0,
+      "drift": -0.0,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: 1/phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: 1/phi^2",
+      "rung": -2.0,
+      "drift": -0.0,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: neurons, the human brain",
+      "rung": 52.3213,
+      "drift": 0.3213,
+      "ladder": "human-brain-reverse",
+      "unit": "count"
+    },
+    {
+      "name": "HBR: synapses, the human brain",
+      "rung": 66.9896,
+      "drift": -0.0104,
+      "ladder": "human-brain-reverse",
+      "unit": "count"
+    },
+    {
+      "name": "HBR: brain energy budget",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "human-brain-reverse",
+      "unit": "watts"
+    },
+    {
+      "name": "HBR: cortical surface",
+      "rung": 16.259,
+      "drift": 0.259,
+      "ladder": "human-brain-reverse",
+      "unit": "cm2"
+    },
+    {
+      "name": "HBR: cortical volume",
+      "rung": 15.4576,
+      "drift": 0.4576,
+      "ladder": "human-brain-reverse",
+      "unit": "cm3"
+    },
+    {
+      "name": "HBR: cortical columns",
+      "rung": 23.9249,
+      "drift": -0.0751,
+      "ladder": "human-brain-reverse",
+      "unit": "count"
+    },
+    {
+      "name": "HBR: neurons per cortical column",
+      "rung": 23.9249,
+      "drift": -0.0751,
+      "ladder": "human-brain-reverse",
+      "unit": "count"
+    },
+    {
+      "name": "HBR: gamma oscillation",
+      "rung": 7.6658,
+      "drift": -0.3342,
+      "ladder": "human-brain-reverse",
+      "unit": "hertz"
+    },
+    {
+      "name": "HBR: theta oscillation",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "human-brain-reverse",
+      "unit": "hertz"
+    },
+    {
+      "name": "HBR: alpha oscillation",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "human-brain-reverse",
+      "unit": "hertz"
+    },
+    {
+      "name": "HBR: synapses per neuron, the fan-out",
+      "rung": 14.6683,
+      "drift": -0.3317,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: cortical folding ratio, surface over volume",
+      "rung": 0.8014,
+      "drift": -0.1986,
+      "ladder": "human-brain-reverse",
+      "unit": "per-cm"
+    },
+    {
+      "name": "HBR: energy per synapse",
+      "rung": -60.7642,
+      "drift": 0.2358,
+      "ladder": "human-brain-reverse",
+      "unit": "watts"
+    },
+    {
+      "name": "HBR: TON618 law anchor, phi^55",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "human-brain-reverse",
+      "unit": "ratio"
+    },
+    {
+      "name": "HBR: TON618 mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "human-brain-reverse",
+      "unit": "solar-masses"
     }
   ],
-  "entry_count": 3145,
-  "seal_count": 336,
+  "entry_count": 3168,
+  "seal_count": 337,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22342,7 +22503,8 @@
     "φ_PD5ALI2_ATOMIC_DECODE_TYREE_OMEGA",
     "φ_EVERY_ERROR_QUANTUM_TEMPORAL_COHERENCE_TYREE_OMEGA",
     "φ_QUANTUM_ERROR_CORRECTION_TYREE_OMEGA",
-    "φ_HARDWARE_ADDRESS_BOTTLENECK_TYREE_OMEGA"
+    "φ_HARDWARE_ADDRESS_BOTTLENECK_TYREE_OMEGA",
+    "φ_HUMAN_BRAIN_REVERSE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5c85609297c6b57f61cf06ac456d044ae9eb47e65177d8812fc1038679fe839a"
+  "snapshot_sha256": "2f8ab5faa7e4bb6dddae8c392789c9d4cae3203475aa100ff01cdfabaee15afe"
 }
