@@ -1,4 +1,4 @@
-# PHI-DLAM v5.31 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+﻿# PHI-DLAM v5.31 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -454,11 +454,11 @@ function Invoke-DirectJob($jobText, $resultPath) {
     $code = $m.Groups[1].Value.Trim()
     Write-Host "[nv step $n of $($blocks.Count)] running..." -ForegroundColor DarkCyan
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
-    $jb = Start-Job -ScriptBlock { param($c) $ErrorActionPreference = 'Continue'; & ([scriptblock]::Create($c)) 2>&1 | Out-String } -ArgumentList $code
+    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + [guid]::NewGuid().ToString('N') + '.txt'); $jb = Start-Job -ScriptBlock { param($c,$f) $ErrorActionPreference = 'Continue'; try { & ([scriptblock]::Create($c)) *> $f } catch { $_ | Out-String | Add-Content $f } } -ArgumentList $code, $tmpOut
     $done = Wait-Job $jb -Timeout 240
-    if ($done) { $out = Receive-Job $jb; if (-not $out) { $out = '(no output)' } }
+    if ($done) { $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }; if (-not $out) { $out = '(no output)' } }
     else { Stop-Job $jb -ErrorAction SilentlyContinue; $out = 'STEP TIMED OUT at 240s - partial or no output; the scan moved on.' }
-    Remove-Job $jb -Force -ErrorAction SilentlyContinue
+    Remove-Job $jb -Force -ErrorAction SilentlyContinue; Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue
     Write-Host "[nv step $n done in ~$([int]$sw.Elapsed.TotalSeconds)s]" -ForegroundColor DarkCyan
     [void]$report.Add('')
     [void]$report.Add("## STEP $n")
@@ -593,7 +593,7 @@ function Start-Worker($primeText, [switch]$Once) {
 }
 
 # v5.26 TALK FIRST (Tyree's word, 2026-10-26): 'tyree' opens the CHAT seat.
-# The queue NEVER drains at launch — supersedes the v5.24 work update. Work
+# The queue NEVER drains at launch â€” supersedes the v5.24 work update. Work
 # runs only when Tyree types 'work' at the seat. Launch prints how many jobs
 # wait, nothing more. The seat is his to talk to, loaded and fast.
 try {

@@ -1,4 +1,4 @@
-# PHI-DIRECT-DRAIN - the NV center's hand (v5.31 INSTANT WORK, Tyree's word,
+﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.31 INSTANT WORK, Tyree's word,
 # 2026-10-26). Spawned hidden the moment the seat opens when DIRECT jobs are
 # queued: it pulls, executes every PHI-DIRECT job's powershell blocks raw -
 # no brain, no queue, no waiting - writes the reports, pushes, and exits.
@@ -25,11 +25,11 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
   foreach ($m in $blocks) {
     $n++
     $code = $m.Groups[1].Value.Trim()
-    $jb = Start-Job -ScriptBlock { param($c) $ErrorActionPreference = 'Continue'; & ([scriptblock]::Create($c)) 2>&1 | Out-String } -ArgumentList $code
+    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + [guid]::NewGuid().ToString('N') + '.txt'); $jb = Start-Job -ScriptBlock { param($c,$f) $ErrorActionPreference = 'Continue'; try { & ([scriptblock]::Create($c)) *> $f } catch { $_ | Out-String | Add-Content $f } } -ArgumentList $code, $tmpOut
     $done = Wait-Job $jb -Timeout 240
-    if ($done) { $out = Receive-Job $jb; if (-not $out) { $out = '(no output)' } }
+    if ($done) { $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }; if (-not $out) { $out = '(no output)' } }
     else { Stop-Job $jb -ErrorAction SilentlyContinue; $out = 'STEP TIMED OUT at 240s - partial or no output; the scan moved on.' }
-    Remove-Job $jb -Force -ErrorAction SilentlyContinue
+    Remove-Job $jb -Force -ErrorAction SilentlyContinue; Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue
     [void]$report.Add('')
     [void]$report.Add("## STEP $n")
     [void]$report.Add('```')
