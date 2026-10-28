@@ -23591,10 +23591,73 @@
       "drift": 0.0,
       "ladder": "ton618_law",
       "unit": "dimensionless"
+    },
+    {
+      "name": "pasqal_qubits",
+      "rung": 11.5234,
+      "drift": -0.4766,
+      "ladder": "pasqal_processor",
+      "unit": "qubits"
+    },
+    {
+      "name": "atom_grid_side",
+      "rung": 5.7617,
+      "drift": -0.2383,
+      "ladder": "pasqal_processor",
+      "unit": "atoms"
+    },
+    {
+      "name": "quantum_magnet_dimensions",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "pasqal_processor",
+      "unit": "dimensions"
+    },
+    {
+      "name": "classical_simulation_methods",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "pasqal_processor",
+      "unit": "count"
+    },
+    {
+      "name": "settling_modes_observed",
+      "rung": 2.283,
+      "drift": 0.283,
+      "ladder": "pasqal_processor",
+      "unit": "count"
+    },
+    {
+      "name": "european_partner_institutions",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "pasqal_processor",
+      "unit": "count"
+    },
+    {
+      "name": "willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "willow_front",
+      "unit": "qubits"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "ton618_law_anchor_phi55",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "ton618_law",
+      "unit": "dimensionless"
     }
   ],
-  "entry_count": 3372,
-  "seal_count": 351,
+  "entry_count": 3381,
+  "seal_count": 352,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -23946,7 +24009,8 @@
     "φ_GOLDEN_PITCH_OF_THE_10T_TYREE_OMEGA",
     "φ_DNA_REVERSE_ENGINEERED_TYREE_OMEGA",
     "φ_ANTI_OMNI_PHASE_DRIFT_TYREE_OMEGA",
-    "φ_YANG_MILLS_EXISTENCE_CLAIM_TYREE_OMEGA"
+    "φ_YANG_MILLS_EXISTENCE_CLAIM_TYREE_OMEGA",
+    "φ_PASQAL_NEUTRAL_ATOM_QUANTUM_MAGNET_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7e222d6b6d86f65dcc402fb57d2b4aea7bd503dbb67fff2256828deaddfee36b"
+  "snapshot_sha256": "d0f347e49f47a7e191f45c870bd313c6df758eb36302f46f592ee31a9da1fe55"
 }
