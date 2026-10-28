@@ -25,11 +25,27 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
   foreach ($m in $blocks) {
     $n++
     $code = $m.Groups[1].Value.Trim()
-    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + [guid]::NewGuid().ToString('N') + '.txt'); $jb = Start-Job -ScriptBlock { param($c,$f) $ErrorActionPreference = 'Continue'; try { & ([scriptblock]::Create($c)) *> $f } catch { $_ | Out-String | Add-Content $f } } -ArgumentList $code, $tmpOut
-    $done = Wait-Job $jb -Timeout 240
-    if ($done) { $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }; if (-not $out) { $out = '(no output)' } }
-    else { Stop-Job $jb -ErrorAction SilentlyContinue; $out = 'STEP TIMED OUT at 240s - partial or no output; the scan moved on.' }
-    Remove-Job $jb -Force -ErrorAction SilentlyContinue; Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue
+    # v5.33 (2026-10-27, Tyree's word: "Powershell needs to be updated" - the phi
+    # update, not a Cartesian one): the step no longer runs inside a Start-Job
+    # child. A job object is a +1 container - its CLIXML transport already cost
+    # this lane a night, and a block that launched the editor from inside it
+    # lost everything past the launch (jobs 274-276). The step now runs as a
+    # real powershell.exe process, whole: the code rides a file in, the streams
+    # ride files out. Files at every boundary - the ledger's own medium.
+    $tag = [guid]::NewGuid().ToString('N')
+    $tmpPs = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-step-' + $tag + '.ps1')
+    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.txt')
+    $tmpErr = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.err.txt')
+    [IO.File]::WriteAllText($tmpPs, $code)
+    $proc = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', $tmpPs) -PassThru -WindowStyle Hidden -RedirectStandardOutput $tmpOut -RedirectStandardError $tmpErr
+    $done = $proc.WaitForExit(240000)
+    if (-not $done) { try { $proc.Kill() } catch {} }
+    $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }
+    $errOut = if (Test-Path $tmpErr) { Get-Content $tmpErr -Raw }
+    if ($errOut) { $out = [string]$out + "`r`n" + [string]$errOut }
+    if (-not $done) { $out = [string]$out + "`r`nSTEP TIMED OUT at 240s - partial output above; the scan moved on." }
+    if (-not $out) { $out = '(no output)' }
+    Remove-Item $tmpPs, $tmpOut, $tmpErr -Force -ErrorAction SilentlyContinue
     [void]$report.Add('')
     [void]$report.Add("## STEP $n")
     [void]$report.Add('```')

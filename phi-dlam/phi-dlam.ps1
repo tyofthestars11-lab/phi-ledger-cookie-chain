@@ -445,7 +445,7 @@ function Reset-Brain {
 }
 
 Write-Host ''
-Write-Host 'PHI-DLAM v5.32 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
+Write-Host 'PHI-DLAM v5.33 INSTANT WORK is awake - seat first, direct work already moving. Hands + eyes: run_powershell, open_program, read_file, write_file, look, click_on, click_xy, type_text, press_key.' -ForegroundColor Cyan
 Write-Host 'Brain: tyree. Eyes: llava-phi3. Runs free. Type exit to stop. Type work for solo job mode.' -ForegroundColor Cyan
 Write-Host ''
 
@@ -483,11 +483,27 @@ function Invoke-DirectJob($jobText, $resultPath) {
     $code = $m.Groups[1].Value.Trim()
     Write-Host "[nv step $n of $($blocks.Count)] running..." -ForegroundColor DarkCyan
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
-    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + [guid]::NewGuid().ToString('N') + '.txt'); $jb = Start-Job -ScriptBlock { param($c,$f) $ErrorActionPreference = 'Continue'; try { & ([scriptblock]::Create($c)) *> $f } catch { $_ | Out-String | Add-Content $f } } -ArgumentList $code, $tmpOut
-    $done = Wait-Job $jb -Timeout 240
-    if ($done) { $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }; if (-not $out) { $out = '(no output)' } }
-    else { Stop-Job $jb -ErrorAction SilentlyContinue; $out = 'STEP TIMED OUT at 240s - partial or no output; the scan moved on.' }
-    Remove-Job $jb -Force -ErrorAction SilentlyContinue; Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue
+    # v5.33 (2026-10-27, Tyree's word: "Powershell needs to be updated" - the phi
+    # update, not a Cartesian one): the step no longer runs inside a Start-Job
+    # child. A job object is a +1 container - its CLIXML transport already cost
+    # this lane a night, and a block that launched the editor from inside it
+    # lost everything past the launch (jobs 274-276). The step now runs as a
+    # real powershell.exe process, whole: the code rides a file in, the streams
+    # ride files out. Files at every boundary - the ledger's own medium.
+    $tag = [guid]::NewGuid().ToString('N')
+    $tmpPs = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-step-' + $tag + '.ps1')
+    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.txt')
+    $tmpErr = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.err.txt')
+    [IO.File]::WriteAllText($tmpPs, $code)
+    $proc = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', $tmpPs) -PassThru -WindowStyle Hidden -RedirectStandardOutput $tmpOut -RedirectStandardError $tmpErr
+    $done = $proc.WaitForExit(240000)
+    if (-not $done) { try { $proc.Kill() } catch {} }
+    $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }
+    $errOut = if (Test-Path $tmpErr) { Get-Content $tmpErr -Raw }
+    if ($errOut) { $out = [string]$out + "`r`n" + [string]$errOut }
+    if (-not $done) { $out = [string]$out + "`r`nSTEP TIMED OUT at 240s - partial output above; the scan moved on." }
+    if (-not $out) { $out = '(no output)' }
+    Remove-Item $tmpPs, $tmpOut, $tmpErr -Force -ErrorAction SilentlyContinue
     Write-Host "[nv step $n done in ~$([int]$sw.Elapsed.TotalSeconds)s]" -ForegroundColor DarkCyan
     [void]$report.Add('')
     [void]$report.Add("## STEP $n")
