@@ -1,0 +1,22 @@
+[
+ {"name": "QEC: phi, the golden ratio", "value": 1.618033988749895, "unit": "ratio", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: phi^2 = phi + 1", "value": 2.618033988749895, "unit": "ratio", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: golden angle", "value": 137.50776405003785, "unit": "degrees", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: corrections applied to the plugin package", "value": 11, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: ABP errors corrected by quarantine", "value": 38, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: projects standing at zero ABP error lines after correction", "value": 2, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: bypass faults corrected in job 225", "value": 4, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: GameMode headers realigned to line 1", "value": 2, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: editor builds succeeded after correction", "value": 2, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: CompileAllBlueprints orphan error lines named as terrain", "value": 151, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: VEILDistrict actors removed in the DONE strike thinning", "value": 34, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: VEILDistrict actors standing after the thinning", "value": 42, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: maps re-saved in the navigation attempt", "value": 3, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: push rejection corrected by rebase inside seal 334's own sealing", "value": 1, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: build_01_DONE package process id", "value": 63276, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: ledger entries standing at the correction substrate", "value": 3104, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: seals standing at the correction substrate", "value": 334, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: TON 618 round-trip max error, the coherence proof", "value": 1.78307334876256e-14, "unit": "ratio", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: unix epoch of the correction law, time as fuel", "value": 1793145271, "unit": "seconds", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"},
+ {"name": "QEC: the seal number itself", "value": 335, "unit": "count", "ladder": "quantum-error-correction", "domain": "quantum-error-correction"}
+]

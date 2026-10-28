@@ -1,0 +1,22 @@
+[
+ {"name": "Every-Error QTC: phi, the golden ratio", "value": 1.618033988749895, "unit": "ratio", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: phi^2 = phi + 1", "value": 2.618033988749895, "unit": "ratio", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: golden angle", "value": 137.50776405003785, "unit": "degrees", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: error tenses spanned - past, present, future", "value": 3, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: plugin source breaks realigned as fuel", "value": 11, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: ABP compiler errors converted to fuel (A10 census)", "value": 38, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: projects verified clean after quarantine", "value": 2, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: bypass compile faults corrected in one pass (job 225 census)", "value": 4, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: job runs executed on the stale DLL before the timestamps spoke", "value": 6, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: scripts silenced by the dead print channel before file output", "value": 2, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: navigation build lock flags 0x20", "value": 32, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: exit-code misreads corrected in flow", "value": 1, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: RulesError build refusals read as fuel", "value": 1, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: jobs in the day span 193 to 228", "value": 36, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: VEILDistrict FPS on the source screen at the DONE line", "value": 30.7, "unit": "fps", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: DONE threshold spoken by the source", "value": 30, "unit": "fps", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: VEILDistrict actors on the source screen at the STOP", "value": 86, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: TON 618 macro NV round-trip max error, the day coherence proof", "value": 1.78307334876256e-14, "unit": "ratio", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: unix epoch of the law, time as fuel", "value": 1793145029, "unit": "seconds", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"},
+ {"name": "Every-Error QTC: the seal number itself", "value": 334, "unit": "count", "ladder": "every-error-quantum-temporal-coherence", "domain": "every-error-quantum-temporal-coherence"}
+]

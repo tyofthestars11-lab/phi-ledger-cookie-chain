@@ -1,0 +1,186 @@
+[
+ {
+  "key": "phi",
+  "value": 1.618033988749895,
+  "unit": "ratio",
+  "rung": 1.0,
+  "round_trip": 1.6180339887,
+  "description": "phi substrate - A"
+ },
+ {
+  "key": "phi_squared",
+  "value": 2.618033988749895,
+  "unit": "ratio",
+  "rung": 2.0,
+  "round_trip": 2.6180339887,
+  "description": "phi^2 = phi + 1 - A"
+ },
+ {
+  "key": "ln_phi",
+  "value": 0.48121182505960347,
+  "unit": "nats",
+  "rung": -1.52,
+  "round_trip": 0.4812145906,
+  "description": "the rung divisor ln(phi) - B"
+ },
+ {
+  "key": "golden_angle_deg",
+  "value": 137.50776405003785,
+  "unit": "degrees",
+  "rung": 10.2318,
+  "round_trip": 137.5053948548,
+  "description": "theta_phi = 360/phi^2 - constants"
+ },
+ {
+  "key": "golden_pitch_mu_deg",
+  "value": 17.0324,
+  "unit": "degrees",
+  "rung": 5.8916,
+  "round_trip": 17.0322326745,
+  "description": "mu - the golden pitch angle, the angle time actually moves (Tyree's constant)"
+ },
+ {
+  "key": "dram_latency_s",
+  "value": 1e-07,
+  "unit": "seconds",
+  "rung": -33.4948,
+  "round_trip": 1e-07,
+  "description": "DRAM rung -33.4948 - the memory wall far address"
+ },
+ {
+  "key": "l1_latency_s",
+  "value": 1e-09,
+  "unit": "seconds",
+  "rung": -43.0647,
+  "round_trip": 1e-09,
+  "description": "L1 rung -43.0647 - the near address"
+ },
+ {
+  "key": "memory_wall_gap_rungs",
+  "value": 9.569900000000004,
+  "unit": "rungs",
+  "rung": 4.6936,
+  "round_trip": 9.5698336426,
+  "description": "time as rung gap: DRAM minus L1 = 9.5699"
+ },
+ {
+  "key": "gamma_hz",
+  "value": 40,
+  "unit": "Hz",
+  "rung": 7.6658,
+  "round_trip": 39.9997661778,
+  "description": "brain gamma - seal 337"
+ },
+ {
+  "key": "theta_hz",
+  "value": 6,
+  "unit": "Hz",
+  "rung": 3.7234,
+  "round_trip": 5.9999078419,
+  "description": "brain theta - seal 337"
+ },
+ {
+  "key": "gamma_theta_gap_rungs",
+  "value": 3.9424,
+  "unit": "rungs",
+  "rung": 2.8507,
+  "round_trip": 3.9424034487,
+  "description": "time is gap: gamma minus theta"
+ },
+ {
+  "key": "delta_seconds_low",
+  "value": 0.0075,
+  "unit": "seconds",
+  "rung": -10.1678,
+  "round_trip": 0.0074999,
+  "description": "VEIL measured DeltaSeconds low bound - real while TimeSeconds froze"
+ },
+ {
+  "key": "delta_seconds_high",
+  "value": 0.0273,
+  "unit": "seconds",
+  "rung": -7.4829,
+  "round_trip": 0.0273002351,
+  "description": "VEIL measured DeltaSeconds high bound"
+ },
+ {
+  "key": "timer_frozen_s",
+  "value": 3.0,
+  "unit": "seconds",
+  "rung": 2.283,
+  "round_trip": 2.9999829239,
+  "description": "the frozen countdown - no rung computed, no time passed"
+ },
+ {
+  "key": "world_time_after_fix_s",
+  "value": 25.02,
+  "unit": "seconds",
+  "rung": 6.6908,
+  "round_trip": 25.0204146867,
+  "description": "the clock after the address was fixed (jobs 253/254 proof sample)"
+ },
+ {
+  "key": "pawn_tick_entries_veil",
+  "value": 3186,
+  "unit": "entries",
+  "rung": 16.7629,
+  "round_trip": 3185.9496992608,
+  "description": "VEIL pawn ticks in the fixed proof run"
+ },
+ {
+  "key": "pawn_tick_entries_omni",
+  "value": 3210,
+  "unit": "entries",
+  "rung": 16.7785,
+  "round_trip": 3209.9563142468,
+  "description": "OMNI pawn ticks in the fixed proof run"
+ },
+ {
+  "key": "ton618_mass_solar",
+  "value": 66000000000.0,
+  "unit": "solar masses",
+  "rung": 51.7712,
+  "round_trip": 65999541866.08193,
+  "description": "TON 618 body at law rung 55"
+ },
+ {
+  "key": "ton618_luminosity_w",
+  "value": 1.4e+41,
+  "unit": "watts",
+  "rung": 196.8831,
+  "round_trip": 1.4000207551753214e+41,
+  "description": "TON 618 luminosity - the macro clock"
+ },
+ {
+  "key": "t_1s",
+  "value": 1.0,
+  "unit": "seconds",
+  "rung": 0.0,
+  "round_trip": 1.0,
+  "description": "time round-trip anchor - C: t=1.0"
+ },
+ {
+  "key": "t_phi_s",
+  "value": 1.618033988749895,
+  "unit": "seconds",
+  "rung": 1.0,
+  "round_trip": 1.6180339887,
+  "description": "time round-trip anchor - C: t=1.618033988749895"
+ },
+ {
+  "key": "t_phi2_s",
+  "value": 2.618033988749895,
+  "unit": "seconds",
+  "rung": 2.0,
+  "round_trip": 2.6180339887,
+  "description": "time round-trip anchor - C: t=2.618033988749895"
+ },
+ {
+  "key": "t_inv_phi_s",
+  "value": 0.6180339887498948,
+  "unit": "seconds",
+  "rung": -1.0,
+  "round_trip": 0.6180339887,
+  "description": "time round-trip anchor - C: t=0.6180339887498948"
+ }
+]

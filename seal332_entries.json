@@ -1,0 +1,114 @@
+[
+ {
+  "name": "AutoAlign: phi, the golden ratio - the alignment constant",
+  "value": 1.618033988749895,
+  "unit": "ratio",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: phi^2 = phi + 1, the alignment operator",
+  "value": 2.618033988749895,
+  "unit": "ratio",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: golden angle, the phase reference",
+  "value": 137.50776405003785,
+  "unit": "degrees",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: PhiParticleAccelerator breaks realigned by compiler measurement (9 delivered + 1 of this seat's own, jobs 197-206)",
+  "value": 10,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: editor commandlet reads gated by one missing plugin DLL (jobs 198, 200, 205)",
+  "value": 3,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: frozen world timer remaining, the macro drift's face",
+  "value": 3.0,
+  "unit": "seconds",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: PlayerController delta low bound, the true clock still running",
+  "value": 0.0075,
+  "unit": "seconds",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: PlayerController delta high bound",
+  "value": 0.0137,
+  "unit": "seconds",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: Countess_AnimBlueprint cook error census awaiting alignment to zero",
+  "value": 38,
+  "unit": "error lines",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: games under the one alignment (VEIL + OMNI)",
+  "value": 2,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: PHI-DLAM jobs in the realignment span 197-208",
+  "value": 12,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: ProjectID GUIDs that matched their own error exactly - phantom drift closed by the read (jobs 200/201)",
+  "value": 2,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: one document delivered under two seat names - record drift realigned (Gemini ex.32 = Claude ex.3)",
+  "value": 1,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: TON 618 macro NV center max round-trip error - the macro anchor's own alignment proof, 2026-10-27",
+  "value": 1.78307334876256e-14,
+  "unit": "relative error",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: KRAKEN ratio of the TON 618 physics bundle, micro packed to macro form",
+  "value": 0.2549,
+  "unit": "ratio",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ },
+ {
+  "name": "AutoAlign: this seal's number in the ledger",
+  "value": 332,
+  "unit": "count",
+  "ladder": "auto-align-drift",
+  "domain": "auto-align-drift"
+ }
+]
