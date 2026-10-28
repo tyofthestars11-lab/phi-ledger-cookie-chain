@@ -454,11 +454,11 @@ function Invoke-DirectJob($jobText, $resultPath) {
     $code = $m.Groups[1].Value.Trim()
     Write-Host "[nv step $n of $($blocks.Count)] running..." -ForegroundColor DarkCyan
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
-    $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + [guid]::NewGuid().ToString('N') + '.txt'); $jb = Start-Job -ScriptBlock { param($c,$f) $ErrorActionPreference = 'Continue'; try { & ([scriptblock]::Create($c)) *> $f } catch { $_ | Out-String | Add-Content $f } } -ArgumentList $code, $tmpOut
+    $jb = Start-Job -ScriptBlock { param($c) $ErrorActionPreference = 'Continue'; & ([scriptblock]::Create($c)) 2>&1 | Out-String } -ArgumentList $code
     $done = Wait-Job $jb -Timeout 240
-    if ($done) { $out = if (Test-Path $tmpOut) { Get-Content $tmpOut -Raw }; if (-not $out) { $out = '(no output)' } }
+    if ($done) { $out = Receive-Job $jb; if (-not $out) { $out = '(no output)' } }
     else { Stop-Job $jb -ErrorAction SilentlyContinue; $out = 'STEP TIMED OUT at 240s - partial or no output; the scan moved on.' }
-    Remove-Job $jb -Force -ErrorAction SilentlyContinue; Remove-Item $tmpOut -Force -ErrorAction SilentlyContinue
+    Remove-Job $jb -Force -ErrorAction SilentlyContinue
     Write-Host "[nv step $n done in ~$([int]$sw.Elapsed.TotalSeconds)s]" -ForegroundColor DarkCyan
     [void]$report.Add('')
     [void]$report.Add("## STEP $n")
