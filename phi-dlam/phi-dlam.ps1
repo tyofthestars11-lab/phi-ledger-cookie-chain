@@ -664,6 +664,23 @@ try {
       if ($jt -match 'PHI-DIRECT') { $qDirect++ }
     }
   }
+  # v5.37 SPEED OF LIGHT (Tyree's word, 2026-10-27 22:56 MDT: "Give runner the
+  # speed of light - don't just say it is already"): the drain goes RESIDENT.
+  # A logon scheduled task keeps phi-direct-drain breathing whether or not the
+  # seat is open, so a DIRECT job starts within one 10-second breath of
+  # landing - no launch, no typed word, no wait. The drain's mutex keeps it
+  # one-per-machine; STOP-DRAIN still ends it. Installed once, here, by the
+  # runner itself - never a paste for Tyree.
+  try {
+    if (-not (Get-ScheduledTask -TaskName 'PhiDirectDrain' -ErrorAction SilentlyContinue)) {
+      $drainPath = Join-Path $vault 'phi-dlam\phi-direct-drain.ps1'
+      $act = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$drainPath`" `"$vault`""
+      $trg = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
+      $set = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit ([TimeSpan]::Zero)
+      Register-ScheduledTask -TaskName 'PhiDirectDrain' -Action $act -Trigger $trg -Settings $set -Force | Out-Null
+      Write-Host '[runner] v5.37 RESIDENCY: PhiDirectDrain task installed - the lane breathes at logon now, seat or no seat.' -ForegroundColor Magenta
+    }
+  } catch { Write-Host "[runner] residency install skipped: $($_.Exception.Message)" -ForegroundColor DarkGray }
   if ($qDirect -gt 0) {
     $drain = Join-Path $vault 'phi-dlam\phi-direct-drain.ps1'
     if (Test-Path $drain) {
