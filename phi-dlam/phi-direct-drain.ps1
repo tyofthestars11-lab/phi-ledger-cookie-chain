@@ -63,7 +63,12 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
     $tmpPs = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-step-' + $tag + '.ps1')
     $tmpOut = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.txt')
     $tmpErr = [IO.Path]::Combine([IO.Path]::GetTempPath(), 'phi-direct-' + $tag + '.err.txt')
-    [IO.File]::WriteAllText($tmpPs, $code)
+    # v5.38 (2026-10-27): write the step file as UTF-8 WITH BOM. Windows
+    # PowerShell 5.1 reads a BOM-less file as ANSI, and the UTF-8 bytes of an
+    # em-dash decode to a smart-quote byte that the parser accepts as a string
+    # delimiter - jobs 294-302 died on ParserErrors from prose punctuation
+    # alone. BOM-marked UTF-8 makes 5.1 read the file as written.
+    [IO.File]::WriteAllText($tmpPs, $code, [Text.UTF8Encoding]::new($true))
     $proc = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File', $tmpPs) -PassThru -WindowStyle Hidden -RedirectStandardOutput $tmpOut -RedirectStandardError $tmpErr
     $done = $proc.WaitForExit(900000)
     if (-not $done) { try { $proc.Kill() } catch {} }
