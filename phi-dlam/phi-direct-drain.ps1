@@ -1,4 +1,4 @@
-﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.37 SPEED OF LIGHT, Tyree's word,
+﻿# PHI-DIRECT-DRAIN - the NV center's hand (v5.39 REROUTE, Tyree's word,
 # 2026-10-26). Spawned hidden the moment the seat opens when DIRECT jobs are
 # queued: it pulls, executes every PHI-DIRECT job's powershell blocks raw -
 # no brain, no queue, no waiting - writes the reports, pushes, and exits.
