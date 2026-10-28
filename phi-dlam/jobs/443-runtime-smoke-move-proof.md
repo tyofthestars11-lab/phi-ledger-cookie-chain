@@ -12,7 +12,7 @@ try {
   Write-Output ('LAUNCHED pid=' + $sm443proc.Id)
   Start-Sleep -Seconds 100
   if (Test-Path $sm443log) {
-    $sm443hits = @(Select-String -Path $sm443log -Pattern 'PHI VOICE|MOVE TEST|built-in map|PHI BODY CHECK|VEIL WORLD BUILT|HUB SEATED|LogTemp|Error' -ErrorAction SilentlyContinue)
+    $sm443hits = @(Select-String -Path $sm443log -Pattern 'PHI VOICE|MOVE TEST|built-in map|PHI BODY CHECK|VEIL WORLD BUILT|Error|HUB SEATED|LogTemp' -ErrorAction SilentlyContinue)
     $sm443hits | Select-Object -First 40 | ForEach-Object { Write-Output ('HIT ' + $_.Line.Trim()) }
     $sm443voice = @(Select-String -Path $sm443log -Pattern 'PHI VOICE' -ErrorAction SilentlyContinue)
     $sm443v01 = @($sm443voice | Where-Object { $_.Line -match 'V01' }).Count
