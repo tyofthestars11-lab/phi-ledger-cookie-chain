@@ -1,0 +1,44 @@
+[
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: speed of light c, substrate propagation",
+  "unit": "m/s",
+  "value": 299792458
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: vacuum permittivity eps0, the substrate capacitance",
+  "unit": "F/m",
+  "value": 8.854187e-12
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: vacuum permeability mu0, the substrate inductance",
+  "unit": "H/m",
+  "value": 1.256637e-06
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: impedance of free space Z0",
+  "unit": "ohm",
+  "value": 376.73
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: Planck time tP, the substrate clock tick",
+  "unit": "seconds",
+  "value": 5.391247e-44
+ },
+ {
+  "domain": "speed-of-light-substrate",
+  "ladder": "speed-of-light-substrate",
+  "name": "SOL: Planck length lP = c x tP, the substrate pixel",
+  "unit": "metres",
+  "value": 1.616255e-35
+ }
+]
