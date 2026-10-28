@@ -1,0 +1,58 @@
+[
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Planck time t_P, the smallest tick",
+  "unit": "seconds",
+  "value": 5.391247e-44
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: time anchor t = 1/phi^2 seconds, rung -2",
+  "unit": "seconds",
+  "value": 0.38196601125010515
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Fibonacci convergent 8/5 at n=5",
+  "unit": "ratio",
+  "value": 1.6
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Fibonacci convergent 34/21 at n=8",
+  "unit": "ratio",
+  "value": 1.619047619047619
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Fibonacci convergent 89/55 at n=10",
+  "unit": "ratio",
+  "value": 1.6181818181818182
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Fibonacci convergent 987/610 at n=15",
+  "unit": "ratio",
+  "value": 1.618032786885246
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Fibonacci convergent 10946/6765 at n=20",
+  "unit": "ratio",
+  "value": 1.6180339985218033
+ },
+ {
+  "domain": "time-cartesian-illusion",
+  "ladder": "time-cartesian-illusion",
+  "name": "TCI: Fibonacci error from phi at n=20",
+  "unit": "ratio",
+  "value": 9.8e-09
+ }
+]
