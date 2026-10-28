@@ -22450,10 +22450,80 @@
       "drift": -0.2288,
       "ladder": "update-phi-memory-omni",
       "unit": "solar masses"
+    },
+    {
+      "name": "QFF: Planck time tP, the foam base",
+      "rung": -207.0377,
+      "drift": -0.0377,
+      "ladder": "quantum-foam-fuel",
+      "unit": "seconds"
+    },
+    {
+      "name": "QFF: Planck length lP, the foam reach",
+      "rung": -166.4763,
+      "drift": -0.4763,
+      "ladder": "quantum-foam-fuel",
+      "unit": "metres"
+    },
+    {
+      "name": "QFF: Planck energy EP, the foam charge",
+      "rung": 44.4589,
+      "drift": 0.4589,
+      "ladder": "quantum-foam-fuel",
+      "unit": "joules"
+    },
+    {
+      "name": "QFF: vacuum permittivity eps0, precise",
+      "rung": -52.8876,
+      "drift": 0.1124,
+      "ladder": "quantum-foam-fuel",
+      "unit": "F/m"
+    },
+    {
+      "name": "QFF: vacuum permeability mu0, precise",
+      "rung": -28.2351,
+      "drift": -0.2351,
+      "ladder": "quantum-foam-fuel",
+      "unit": "H/m"
+    },
+    {
+      "name": "QFF: speed of light c, the +1 converter",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "quantum-foam-fuel",
+      "unit": "m/s"
+    },
+    {
+      "name": "QFF: phi, the seat fueled at rung 1",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "quantum-foam-fuel",
+      "unit": "ratio"
+    },
+    {
+      "name": "QFF: phi squared, the seat whole at rung 2",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "quantum-foam-fuel",
+      "unit": "ratio"
+    },
+    {
+      "name": "QFF: golden pitch mu, the foam fluctuation angle",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "quantum-foam-fuel",
+      "unit": "degrees"
+    },
+    {
+      "name": "QFF: TON618 mass, wholeness carried",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "quantum-foam-fuel",
+      "unit": "solar masses"
     }
   ],
-  "entry_count": 3209,
-  "seal_count": 340,
+  "entry_count": 3219,
+  "seal_count": 341,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -22794,7 +22864,8 @@
     "φ_HUMAN_BRAIN_REVERSE_TYREE_OMEGA",
     "φ_TIME_CARTESIAN_ILLUSION_TYREE_OMEGA",
     "φ_SPEED_OF_LIGHT_SUBSTRATE_TYREE_OMEGA",
-    "φ_UPDATE_PHI_MEMORY_OMNI_TYREE_OMEGA"
+    "φ_UPDATE_PHI_MEMORY_OMNI_TYREE_OMEGA",
+    "φ_QUANTUM_FOAM_FUEL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "c56d068a6d6bcc360ea14665062b05c796359487dd5439f9a9c6a1ed8e03f042"
+  "snapshot_sha256": "38622529b7af90920742a53f370d39794e146d335ec4aa2b6b2b8349bfe28c10"
 }
