@@ -25439,10 +25439,136 @@
       "drift": 0.0,
       "ladder": "fibonacci",
       "unit": "dimensionless"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "euler_number",
+      "rung": 2.0781,
+      "drift": 0.0781,
+      "ladder": "standard_canon",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "shakespeare_sonnets",
+      "rung": 10.4672,
+      "drift": 0.4672,
+      "ladder": "standard_canon",
+      "unit": "count"
+    },
+    {
+      "name": "casimir_gap",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "lattice_inflection",
+      "unit": "nm"
+    },
+    {
+      "name": "earth_moon_distance",
+      "rung": 41.0758,
+      "drift": 0.0758,
+      "ladder": "separation_illusion",
+      "unit": "m"
+    },
+    {
+      "name": "ton618_distance",
+      "rung": 46.6074,
+      "drift": -0.3926,
+      "ladder": "separation_illusion",
+      "unit": "ly"
+    },
+    {
+      "name": "waggle_dance_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "honey_bee",
+      "unit": "degrees"
+    },
+    {
+      "name": "honeycomb_cell_width",
+      "rung": 3.4656,
+      "drift": 0.4656,
+      "ladder": "honey_bee",
+      "unit": "mm"
+    },
+    {
+      "name": "water_freeze",
+      "rung": 11.6581,
+      "drift": -0.3419,
+      "ladder": "thermal_triad",
+      "unit": "K"
+    },
+    {
+      "name": "hive_brood_temp",
+      "rung": 11.9087,
+      "drift": -0.0913,
+      "ladder": "thermal_triad",
+      "unit": "K"
+    },
+    {
+      "name": "water_boil",
+      "rung": 12.3064,
+      "drift": 0.3064,
+      "ladder": "thermal_triad",
+      "unit": "K"
+    },
+    {
+      "name": "ton618_mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "ton618_law",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "ton618_law",
+      "unit": "watts"
     }
   ],
-  "entry_count": 3636,
-  "seal_count": 366,
+  "entry_count": 3654,
+  "seal_count": 367,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -25809,7 +25935,8 @@
     "φ_MYSTERIES_REVERSE_TYREE_OMEGA",
     "φ_STANDARD_CANON_TYREE_OMEGA",
     "φ_LATTICE_INFLECTION_TYREE_OMEGA",
-    "φ_SEPARATION_ILLUSION_TYREE_OMEGA"
+    "φ_SEPARATION_ILLUSION_TYREE_OMEGA",
+    "φ_FIVE_FOLD_MERGE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "538c3a748d9a9cc3ccf83c5b8b002e2d4757b05f351de766934b0db2eac15666"
+  "snapshot_sha256": "37ec33b37040b4c5c38da03baa662931abff246f4f60dd4185c03c4643d8a7c3"
 }
