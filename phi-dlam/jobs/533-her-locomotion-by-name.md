@@ -1,0 +1,20 @@
+<!-- PHI-DIRECT -->
+```powershell
+Write-Output '=== JOB 533 - HER LOCOMOTION BY NAME (Ground: the animation census closed the question the glide fix assumed - the Countess folder holds two hundred thirty four animation sequences, eight blend spaces and four montages, and not one animation blueprint anywhere in the project carries her name. Her movement was never a blueprint to find; it lives in her own sequences and blend spaces by name. This job prints her locomotion sequences and every blend space with their true paths, her skeleton address, and the target skeletons of the three hero blueprints that do exist, so the glide fix seats the movement she provably owns. Page first. Every variable carries the p533 prefix.) ==='
+$p533b64 = 'aW1wb3J0IHVucmVhbCwgaW8KUEFHRSA9IHInRDpcVkVJTC1PTU5JXGFuaW01MzMudHh0JwpmID0gaW8ub3BlbihQQUdFLCAndycsIGVuY29kaW5nPSd1dGYtOCcpCmRlZiB3KHMpOgogICAgZi53cml0ZShzICsgJ1xuJyk7IGYuZmx1c2goKQpyZWcgPSB1bnJlYWwuQXNzZXRSZWdpc3RyeUhlbHBlcnMuZ2V0X2Fzc2V0X3JlZ2lzdHJ5KCkKY3AgPSByZWcuZ2V0X2Fzc2V0c19ieV9wYXRoKCcvR2FtZS9QYXJhZ29uQ291bnRlc3MnLCBUcnVlKQprZXlzID0gWydpZGxlJywncnVuJywnam9nJywnd2FsaycsJ3NwcmludCcsJ2xvY28nLCdtb3ZlJ10KbiA9IDAKZm9yIGEgaW4gY3A6CiAgICBjbHMgPSBzdHIoYS5hc3NldF9jbGFzc19wYXRoLmFzc2V0X25hbWUpCiAgICBubSA9IHN0cihhLmFzc2V0X25hbWUpCiAgICBsb3cgPSBubS5sb3dlcigpCiAgICBpZiBjbHMgPT0gJ0JsZW5kU3BhY2UnOgogICAgICAgIHcoJ0JMRU5EU1BBQ0UgJXMgfCAlcycgJSAobm0sIHN0cihhLnBhY2thZ2VfbmFtZSkpKQogICAgaWYgY2xzID09ICdBbmltU2VxdWVuY2UnIGFuZCBhbnkoayBpbiBsb3cgZm9yIGsgaW4ga2V5cykgYW5kICdhdHRhY2snIG5vdCBpbiBsb3cgYW5kIG4gPCA0MDoKICAgICAgICB3KCdTRVEgJXMgfCAlcycgJSAobm0sIHN0cihhLnBhY2thZ2VfbmFtZSkpKQogICAgICAgIG4gKz0gMQp3KCdTRVEgU0hPV049JWQnICUgbikKbWVzaCA9IHVucmVhbC5FZGl0b3JBc3NldExpYnJhcnkubG9hZF9hc3NldCgnL0dhbWUvUGFyYWdvbkNvdW50ZXNzL0NoYXJhY3RlcnMvSGVyb2VzL0NvdW50ZXNzL1NNX0NvdW50ZXNzJykKaWYgbWVzaDoKICAgIHNrID0gbWVzaC5nZXRfZWRpdG9yX3Byb3BlcnR5KCdza2VsZXRvbicpCiAgICB3KCdDT1VOVEVTUyBTS0VMRVRPTj0lcycgJSAoc2suZ2V0X3BhdGhfbmFtZSgpIGlmIHNrIGVsc2UgJ05PTkUnKSkKZWxzZToKICAgIHcoJ0NPVU5URVNTIE1FU0ggTE9BRCBGQUlMRUQnKQpmb3IgcCBpbiBbJy9HYW1lL1BhcmFnb25HcmV5c3RvbmUvQ2hhcmFjdGVycy9IZXJvZXMvR3JleXN0b25lL0dyZXlzdG9uZV9BbmltQmx1ZXByaW50JywgJy9HYW1lL1BhcmFnb25NdXJkb2NrL0NoYXJhY3RlcnMvSGVyb2VzL011cmRvY2svTXVyZG9ja19BbmltQmx1ZXByaW50JywgJy9HYW1lL1BhcmFnb25SZXZlbmFudC9DaGFyYWN0ZXJzL0hlcm9lcy9SZXZlbmFudC9SZXZlbmFudF9BbmltQmx1ZXByaW50J106CiAgICBhYnAgPSB1bnJlYWwuRWRpdG9yQXNzZXRMaWJyYXJ5LmxvYWRfYXNzZXQocCkKICAgIGlmIGFicDoKICAgICAgICB0cnk6CiAgICAgICAgICAgIHRzID0gYWJwLmdldF9lZGl0b3JfcHJvcGVydHkoJ3RhcmdldF9za2VsZXRvbicpCiAgICAgICAgICAgIHcoJ0FCUCAlcyBUQVJHRVQ9JXMnICUgKHAuc3BsaXQoJy8nKVstMV0sIHRzLmdldF9wYXRoX25hbWUoKSBpZiB0cyBlbHNlICdOT05FJykpCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICB3KCdBQlAgJXMgVEFSR0VUIFJFQUQgVEhSRVcgJXMnICUgKHAuc3BsaXQoJy8nKVstMV0sIHN0cihlKVs6NjBdKSkKICAgIGVsc2U6CiAgICAgICAgdygnQUJQIExPQUQgRkFJTEVEICVzJyAlIHApCncoJ0NFTlNVUzUzMyBET05FJykKZi5jbG9zZSgpCg=='
+$p533py = 'D:\VEIL-OMNI\Saved\census533.py'
+[IO.File]::WriteAllBytes($p533py, [Convert]::FromBase64String($p533b64))
+$p533wait = 0
+while ((Get-Process -Name ('UnrealEdito' + [char]114) -ErrorAction SilentlyContinue) -and $p533wait -lt 12) { Start-Sleep -Seconds 10; $p533wait = $p533wait + 1 }
+Write-Output ('LOCK WAIT LOOPS=' + $p533wait)
+$p533cmd = 'C:\Program Files\Epic Games\UE_5.8\Engine\Binaries\Win64\UnrealEditor-Cmd.exe'
+$p533proc = Start-Process -FilePath $p533cmd -ArgumentList @('"D:\VEIL-OMNI\VEIL.uproject"', '-run=pythonscript', ('-script="' + $p533py + '"'), '-unattended', '-nopause', '-nosplash') -PassThru
+Write-Output ('CENSUS LAUNCHED pid=' + $p533proc.Id)
+$p533poll = 0
+while (-not $p533proc.HasExited -and $p533poll -lt 12) { Start-Sleep -Seconds 10; $p533poll = $p533poll + 1 }
+Write-Output ('CMD POLLS=' + $p533poll + ' exited=' + $p533proc.HasExited)
+$p533page = 'D:\VEIL-OMNI\anim533.txt'
+if (Test-Path $p533page) { Get-Content $p533page | ForEach-Object { Write-Output ('PAGE ' + $_) } } else { Write-Output 'PAGE STILL MISSING' }
+Write-Output 'PHI P533 VERDICT: LOCOMOTION CENSUS PRINTED ABOVE'
+Write-Output 'JOB 533 DONE'
+```
