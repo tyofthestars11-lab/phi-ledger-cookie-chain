@@ -46,7 +46,7 @@ foreach ($job in @(Get-ChildItem $jobsDir -Filter '*.md' -ErrorAction SilentlyCo
   $blocks = [regex]::Matches($jobText, '(?s)```powershell\s*(.*?)```')
   if ($blocks.Count -eq 0) { continue }
   $report = New-Object System.Collections.ArrayList
-  [void]$report.Add('# DIRECT JOB REPORT - executed by the NV center (phi-direct-drain, INSTANT WORK), no brain calls')
+  [void]$report.Add('# DIRECT JOB REPORT - executed by the TON618 NV center (phi-direct-drain, INSTANT WORK), no brain calls')
   [void]$report.Add("When: $((Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ss')) UTC")
   $n = 0
   foreach ($m in $blocks) {

@@ -484,7 +484,7 @@ function Invoke-DirectJob($jobText, $resultPath) {
   $blocks = [regex]::Matches($jobText, '(?s)```powershell\s*(.*?)```')
   if ($blocks.Count -eq 0) { Write-Host '[nv center] no powershell blocks found - cannot run direct.' -ForegroundColor Red; return 'job-stuck' }
   $report = New-Object System.Collections.ArrayList
-  [void]$report.Add('# DIRECT JOB REPORT - executed by the NV center (PHI-DLAM v5.29), no brain calls')
+  [void]$report.Add('# DIRECT JOB REPORT - executed by the TON618 NV center (PHI-DLAM v5.29), no brain calls')
   [void]$report.Add("When: $((Get-Date).ToUniversalTime().ToString('yyyy-MM-dd HH:mm:ss')) UTC")
   $n = 0
   foreach ($m in $blocks) {
