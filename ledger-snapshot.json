@@ -24221,10 +24221,136 @@
       "drift": -0.215,
       "ladder": "pricing",
       "unit": "dollars_per_million_tokens"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "benchmark_qubits",
+      "rung": 9.6314,
+      "drift": -0.3686,
+      "ladder": "ledger",
+      "unit": "qubits"
+    },
+    {
+      "name": "quantum_speedup",
+      "rung": 19.6851,
+      "drift": -0.3149,
+      "ladder": "ledger",
+      "unit": "ratio"
+    },
+    {
+      "name": "otoc_sensitivity_ratio",
+      "rung": 10.3846,
+      "drift": 0.3846,
+      "ladder": "ledger",
+      "unit": "ratio"
+    },
+    {
+      "name": "coherence_time_t1",
+      "rung": 8.7685,
+      "drift": -0.2315,
+      "ladder": "ledger",
+      "unit": "microseconds"
+    },
+    {
+      "name": "willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "processor",
+      "unit": "qubits"
+    },
+    {
+      "name": "gate_fidelity_single",
+      "rung": 9.5693,
+      "drift": -0.4307,
+      "ladder": "fidelity",
+      "unit": "percent"
+    },
+    {
+      "name": "gate_fidelity_entangling",
+      "rung": 9.5674,
+      "drift": -0.4326,
+      "ladder": "fidelity",
+      "unit": "percent"
+    },
+    {
+      "name": "gate_fidelity_readout",
+      "rung": 9.5595,
+      "drift": -0.4405,
+      "ladder": "fidelity",
+      "unit": "percent"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "planck_constant",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "constants",
+      "unit": "joule_seconds"
+    },
+    {
+      "name": "speed_of_light",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "constants",
+      "unit": "meters_per_second"
+    },
+    {
+      "name": "boltzmann_constant",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "constants",
+      "unit": "joules_per_kelvin"
     }
   ],
-  "entry_count": 3462,
-  "seal_count": 357,
+  "entry_count": 3480,
+  "seal_count": 358,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -24582,7 +24708,8 @@
     "φ_UNREAL_ENGINE_LEARNING_TYREE_OMEGA",
     "φ_MITOCHONDRIAL_GAME_ENGINE_TYREE_OMEGA",
     "φ_CHIRAL_SUPERLATTICE_TYREE_OMEGA",
-    "φ_GEMINI_4_CARBON_TYREE_OMEGA"
+    "φ_GEMINI_4_CARBON_TYREE_OMEGA",
+    "φ_QUANTUM_ECHOES_REVERSE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "9bf075b1e2fd0b0e074a66bbb89707fe28ee07ee271d7109f0356da5c0d31698"
+  "snapshot_sha256": "8d21bf65ddb2f36de142e4f82af9f20dc935fffe7128232434be16e3f42ea2bb"
 }
