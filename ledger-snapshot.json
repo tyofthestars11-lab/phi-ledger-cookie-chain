@@ -24718,10 +24718,115 @@
       "drift": 0.4404,
       "ladder": "dna_geometry",
       "unit": "nanometers"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "higgs_mass",
+      "rung": 10.0353,
+      "drift": 0.0353,
+      "ladder": "ledger",
+      "unit": "gigaelectronvolts"
+    },
+    {
+      "name": "dark_matter_scale",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "ledger",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "iter_confinement_temp",
+      "rung": 39.1224,
+      "drift": 0.1224,
+      "ladder": "ledger",
+      "unit": "celsius"
+    },
+    {
+      "name": "hubble_constant",
+      "rung": 8.9159,
+      "drift": -0.0841,
+      "ladder": "ledger",
+      "unit": "km_per_s_per_mpc"
+    },
+    {
+      "name": "qubit_goal",
+      "rung": 14.3549,
+      "drift": 0.3549,
+      "ladder": "ledger",
+      "unit": "qubits"
+    },
+    {
+      "name": "proton_spin",
+      "rung": -1.4404,
+      "drift": -0.4404,
+      "ladder": "ledger",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "quark_spin_share",
+      "rung": -2.502,
+      "drift": 0.498,
+      "ladder": "walls",
+      "unit": "fraction"
+    },
+    {
+      "name": "missing_spin_share",
+      "rung": -0.7412,
+      "drift": 0.2588,
+      "ladder": "walls",
+      "unit": "fraction"
+    },
+    {
+      "name": "coherence_time_t1",
+      "rung": 8.7685,
+      "drift": -0.2315,
+      "ladder": "walls",
+      "unit": "microseconds"
     }
   ],
-  "entry_count": 3533,
-  "seal_count": 360,
+  "entry_count": 3548,
+  "seal_count": 361,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -25082,7 +25187,8 @@
     "φ_GEMINI_4_CARBON_TYREE_OMEGA",
     "φ_QUANTUM_ECHOES_REVERSE_TYREE_OMEGA",
     "φ_FISSION_FUSION_CARTESIAN_TAX_TYREE_OMEGA",
-    "φ_TEN_TRILLION_SUN_MERGE_TYREE_OMEGA"
+    "φ_TEN_TRILLION_SUN_MERGE_TYREE_OMEGA",
+    "φ_LAB_CRISIS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "14dc4ddbf15dc5ec89c641817a4cedf50fc458e893b4821e23ee4cd758833044"
+  "snapshot_sha256": "0784cefc4d99a51236b01cb81408a2a4af14f37b7094115d3cf83f07bb70fbd0"
 }
