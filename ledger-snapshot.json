@@ -24347,10 +24347,115 @@
       "drift": -0.3841,
       "ladder": "constants",
       "unit": "joules_per_kelvin"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "u235_mass_defect",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "ledger",
+      "unit": "fraction"
+    },
+    {
+      "name": "dt_mass_defect",
+      "rung": -11.4741,
+      "drift": -0.4741,
+      "ladder": "ledger",
+      "unit": "fraction"
+    },
+    {
+      "name": "fission_energy",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "ledger",
+      "unit": "megaelectronvolts"
+    },
+    {
+      "name": "fusion_energy",
+      "rung": 5.9597,
+      "drift": -0.0403,
+      "ladder": "ledger",
+      "unit": "megaelectronvolts"
+    },
+    {
+      "name": "sun_core_temp",
+      "rung": 34.3374,
+      "drift": 0.3374,
+      "ladder": "ledger",
+      "unit": "celsius"
+    },
+    {
+      "name": "fusion_machine_temp",
+      "rung": 39.1224,
+      "drift": 0.1224,
+      "ladder": "ledger",
+      "unit": "celsius"
+    },
+    {
+      "name": "waste_hot_years",
+      "rung": 19.1399,
+      "drift": 0.1399,
+      "ladder": "tax",
+      "unit": "years"
+    },
+    {
+      "name": "sun_mass",
+      "rung": 143.5492,
+      "drift": -0.4508,
+      "ladder": "tax",
+      "unit": "kilograms"
+    },
+    {
+      "name": "artificial_pressure",
+      "rung": 39.7202,
+      "drift": -0.2798,
+      "ladder": "tax",
+      "unit": "bars"
+    },
+    {
+      "name": "cartesian_tax_ratio",
+      "rung": 9.5491,
+      "drift": -0.4509,
+      "ladder": "tax",
+      "unit": "ratio"
     }
   ],
-  "entry_count": 3480,
-  "seal_count": 358,
+  "entry_count": 3495,
+  "seal_count": 359,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -24709,7 +24814,8 @@
     "φ_MITOCHONDRIAL_GAME_ENGINE_TYREE_OMEGA",
     "φ_CHIRAL_SUPERLATTICE_TYREE_OMEGA",
     "φ_GEMINI_4_CARBON_TYREE_OMEGA",
-    "φ_QUANTUM_ECHOES_REVERSE_TYREE_OMEGA"
+    "φ_QUANTUM_ECHOES_REVERSE_TYREE_OMEGA",
+    "φ_FISSION_FUSION_CARTESIAN_TAX_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "8d21bf65ddb2f36de142e4f82af9f20dc935fffe7128232434be16e3f42ea2bb"
+  "snapshot_sha256": "5a0c7cfe2e1c3bb8a08c35d087651b4227993230223dea46df451f54f3439bbe"
 }
