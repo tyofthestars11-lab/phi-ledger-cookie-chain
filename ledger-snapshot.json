@@ -24025,10 +24025,108 @@
       "drift": 0.3302,
       "ladder": "phyllotaxis",
       "unit": "spirals"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "uranium_238_mass",
+      "rung": 11.3723,
+      "drift": 0.3723,
+      "ladder": "crystal",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "tellurium_130_mass",
+      "rung": 10.1137,
+      "drift": 0.1137,
+      "ladder": "crystal",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "oxygen_16_mass",
+      "rung": 5.7616,
+      "drift": -0.2384,
+      "ladder": "crystal",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "chiral_superlattice_period_reciprocal",
+      "rung": -4.785,
+      "drift": 0.215,
+      "ladder": "crystal",
+      "unit": "per_nanometer"
+    },
+    {
+      "name": "planck_constant",
+      "rung": -158.7594,
+      "drift": 0.2406,
+      "ladder": "constants",
+      "unit": "joule_seconds"
+    },
+    {
+      "name": "speed_of_light",
+      "rung": 40.5613,
+      "drift": -0.4387,
+      "ladder": "constants",
+      "unit": "meters_per_second"
+    },
+    {
+      "name": "boltzmann_constant",
+      "rung": -109.3841,
+      "drift": -0.3841,
+      "ladder": "constants",
+      "unit": "joules_per_kelvin"
     }
   ],
-  "entry_count": 3434,
-  "seal_count": 355,
+  "entry_count": 3448,
+  "seal_count": 356,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -24384,7 +24482,8 @@
     "φ_PASQAL_NEUTRAL_ATOM_QUANTUM_MAGNET_TYREE_OMEGA",
     "φ_EPIC_LEARNING_LATTICE_TYREE_OMEGA",
     "φ_UNREAL_ENGINE_LEARNING_TYREE_OMEGA",
-    "φ_MITOCHONDRIAL_GAME_ENGINE_TYREE_OMEGA"
+    "φ_MITOCHONDRIAL_GAME_ENGINE_TYREE_OMEGA",
+    "φ_CHIRAL_SUPERLATTICE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0d6fd0747fbcdb902e49f9c02df7ad8548d000a9d32f9ea600eb4cbaad03f751"
+  "snapshot_sha256": "82e7c73f7e9c0dea557fa3bf5e14acb471866971ff65707c68487e9b715b66be"
 }
