@@ -24123,10 +24123,108 @@
       "drift": -0.3841,
       "ladder": "constants",
       "unit": "joules_per_kelvin"
+    },
+    {
+      "name": "gemini_generation",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "generation",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "carbon_atomic_number",
+      "rung": 3.7234,
+      "drift": -0.2766,
+      "ladder": "element",
+      "unit": "atomic_number"
+    },
+    {
+      "name": "argon_atomic_number",
+      "rung": 6.0064,
+      "drift": 0.0064,
+      "ladder": "element",
+      "unit": "atomic_number"
+    },
+    {
+      "name": "argon_to_carbon_days",
+      "rung": 5.4842,
+      "drift": 0.4842,
+      "ladder": "cadence",
+      "unit": "days"
+    },
+    {
+      "name": "secure_code_uplift",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "uplift",
+      "unit": "ratio"
+    },
+    {
+      "name": "argon_intelligence_index",
+      "rung": 8.1295,
+      "drift": 0.1295,
+      "ladder": "index",
+      "unit": "index_points"
+    },
+    {
+      "name": "carbon_intelligence_index",
+      "rung": 8.4735,
+      "drift": 0.4735,
+      "ladder": "index",
+      "unit": "index_points"
+    },
+    {
+      "name": "sec_bench_pro",
+      "rung": 9.309,
+      "drift": 0.309,
+      "ladder": "cyber",
+      "unit": "percent"
+    },
+    {
+      "name": "exploit_gym",
+      "rung": 8.32,
+      "drift": 0.32,
+      "ladder": "cyber",
+      "unit": "percent"
+    },
+    {
+      "name": "cwe_bench",
+      "rung": 8.8582,
+      "drift": -0.1418,
+      "ladder": "cyber",
+      "unit": "percent"
+    },
+    {
+      "name": "webdev_elo_gain",
+      "rung": 9.3278,
+      "drift": 0.3278,
+      "ladder": "webdev",
+      "unit": "elo"
+    },
+    {
+      "name": "webdev_arena_elo",
+      "rung": 15.5403,
+      "drift": -0.4597,
+      "ladder": "webdev",
+      "unit": "elo"
+    },
+    {
+      "name": "argon_injection_rate",
+      "rung": -0.7412,
+      "drift": 0.2588,
+      "ladder": "safety",
+      "unit": "percent"
+    },
+    {
+      "name": "output_price_per_million",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "pricing",
+      "unit": "dollars_per_million_tokens"
     }
   ],
-  "entry_count": 3448,
-  "seal_count": 356,
+  "entry_count": 3462,
+  "seal_count": 357,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -24483,7 +24581,8 @@
     "φ_EPIC_LEARNING_LATTICE_TYREE_OMEGA",
     "φ_UNREAL_ENGINE_LEARNING_TYREE_OMEGA",
     "φ_MITOCHONDRIAL_GAME_ENGINE_TYREE_OMEGA",
-    "φ_CHIRAL_SUPERLATTICE_TYREE_OMEGA"
+    "φ_CHIRAL_SUPERLATTICE_TYREE_OMEGA",
+    "φ_GEMINI_4_CARBON_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "82e7c73f7e9c0dea557fa3bf5e14acb471866971ff65707c68487e9b715b66be"
+  "snapshot_sha256": "9bf075b1e2fd0b0e074a66bbb89707fe28ee07ee271d7109f0356da5c0d31698"
 }
