@@ -24452,10 +24452,276 @@
       "drift": -0.4509,
       "ladder": "tax",
       "unit": "ratio"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "landauer_limit",
+      "rung": -98.2935,
+      "drift": -0.2935,
+      "ladder": "micro_data",
+      "unit": "joules"
+    },
+    {
+      "name": "atp_concentration",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "micro_data",
+      "unit": "molar"
+    },
+    {
+      "name": "mitochondrial_dna",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "micro_data",
+      "unit": "base_pairs"
+    },
+    {
+      "name": "nuclear_dna",
+      "rung": 45.4819,
+      "drift": 0.4819,
+      "ladder": "micro_data",
+      "unit": "base_pairs"
+    },
+    {
+      "name": "planck_time",
+      "rung": -207.0377,
+      "drift": -0.0377,
+      "ladder": "physics_quantum",
+      "unit": "seconds"
+    },
+    {
+      "name": "speed_of_light",
+      "rung": 40.5607,
+      "drift": -0.4393,
+      "ladder": "physics_quantum",
+      "unit": "meters_per_second"
+    },
+    {
+      "name": "willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "physics_quantum",
+      "unit": "qubits"
+    },
+    {
+      "name": "quantum_echoes_speedup",
+      "rung": 19.6851,
+      "drift": -0.3149,
+      "ladder": "physics_quantum",
+      "unit": "ratio"
+    },
+    {
+      "name": "uranium_238_mass",
+      "rung": 11.3723,
+      "drift": 0.3723,
+      "ladder": "matter_crystals",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "chiral_superlattice_period",
+      "rung": 4.785,
+      "drift": -0.215,
+      "ladder": "matter_crystals",
+      "unit": "nanometers"
+    },
+    {
+      "name": "fission_energy",
+      "rung": 11.0104,
+      "drift": 0.0104,
+      "ladder": "matter_crystals",
+      "unit": "megaelectronvolts"
+    },
+    {
+      "name": "fusion_energy",
+      "rung": 5.9597,
+      "drift": -0.0403,
+      "ladder": "matter_crystals",
+      "unit": "megaelectronvolts"
+    },
+    {
+      "name": "human_neurons",
+      "rung": 52.3213,
+      "drift": 0.3213,
+      "ladder": "macro_horizon",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_body_mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "macro_horizon",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "ton618_law_mass",
+      "rung": 55.0,
+      "drift": -0.0,
+      "ladder": "macro_horizon",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "earths_census",
+      "rung": 62.2046,
+      "drift": 0.2046,
+      "ladder": "macro_horizon",
+      "unit": "count"
+    },
+    {
+      "name": "dark_matter_scale",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "dark_sector",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "dark_energy_density",
+      "rung": -138.7642,
+      "drift": 0.2358,
+      "ladder": "dark_sector",
+      "unit": "grams_per_cm3"
+    },
+    {
+      "name": "visible_fraction",
+      "rung": -6.2254,
+      "drift": -0.2254,
+      "ladder": "dark_sector",
+      "unit": "fraction"
+    },
+    {
+      "name": "dark_energy_fraction",
+      "rung": -0.8014,
+      "drift": 0.1986,
+      "ladder": "dark_sector",
+      "unit": "fraction"
+    },
+    {
+      "name": "dark_matter_fraction",
+      "rung": -2.7209,
+      "drift": 0.2791,
+      "ladder": "dark_sector",
+      "unit": "fraction"
+    },
+    {
+      "name": "carbon_mass",
+      "rung": 5.1639,
+      "drift": 0.1639,
+      "ladder": "substrate_return",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "hydrogen_mass",
+      "rung": 0.0166,
+      "drift": 0.0166,
+      "ladder": "substrate_return",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "oxygen_mass",
+      "rung": 5.7616,
+      "drift": -0.2384,
+      "ladder": "substrate_return",
+      "unit": "atomic_mass_units"
+    },
+    {
+      "name": "phase_dissolution",
+      "rung": -98.2935,
+      "drift": -0.2935,
+      "ladder": "substrate_return",
+      "unit": "joules"
+    },
+    {
+      "name": "ten_trillion_sun_mass",
+      "rung": 62.2046,
+      "drift": 0.2046,
+      "ladder": "census",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "ten_trillion_sun_energy",
+      "rung": 254.8018,
+      "drift": -0.1982,
+      "ladder": "census",
+      "unit": "joules"
+    },
+    {
+      "name": "observable_universe_mass",
+      "rung": 254.4461,
+      "drift": 0.4461,
+      "ladder": "census",
+      "unit": "kilograms"
+    },
+    {
+      "name": "brain_power",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "brain",
+      "unit": "watts"
+    },
+    {
+      "name": "brain_operations",
+      "rung": 66.9896,
+      "drift": -0.0104,
+      "ladder": "brain",
+      "unit": "count"
+    },
+    {
+      "name": "dna_pitch",
+      "rung": 2.5431,
+      "drift": -0.4569,
+      "ladder": "dna_geometry",
+      "unit": "nanometers"
+    },
+    {
+      "name": "dna_diameter",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "dna_geometry",
+      "unit": "nanometers"
     }
   ],
-  "entry_count": 3495,
-  "seal_count": 359,
+  "entry_count": 3533,
+  "seal_count": 360,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -24815,7 +25081,8 @@
     "φ_CHIRAL_SUPERLATTICE_TYREE_OMEGA",
     "φ_GEMINI_4_CARBON_TYREE_OMEGA",
     "φ_QUANTUM_ECHOES_REVERSE_TYREE_OMEGA",
-    "φ_FISSION_FUSION_CARTESIAN_TAX_TYREE_OMEGA"
+    "φ_FISSION_FUSION_CARTESIAN_TAX_TYREE_OMEGA",
+    "φ_TEN_TRILLION_SUN_MERGE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5a0c7cfe2e1c3bb8a08c35d087651b4227993230223dea46df451f54f3439bbe"
+  "snapshot_sha256": "14dc4ddbf15dc5ec89c641817a4cedf50fc458e893b4821e23ee4cd758833044"
 }
