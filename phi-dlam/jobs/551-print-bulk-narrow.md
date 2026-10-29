@@ -1,0 +1,19 @@
+<!-- PHI-DIRECT -->
+```powershell
+Write-Output '=== JOB 551 - PRINT THE BULK NARROW (Ground: job 550 printed the fly mark pattern, a bounded band scan capped at 400000, narrowed by play. The value narrow step reads one address at a time, so it cannot chew a mark that big, and the fly bulk narrow body is the last missing piece before the value hunt mirror is written. This job prints that bulk narrow body plus the value read and the hunt watch wiring. No patch rides this job, no rebuild, no relaunch. No game relaunch rides this job. Every variable carries the p551 prefix.) ==='
+$p551b64 = 'dXNpbmcgU3lzdGVtOwp1c2luZyBTeXN0ZW0uSU87CmNsYXNzIFA1NTEgewogICAgc3RhdGljIHZvaWQgTWFpbihzdHJpbmdbXSBhcmdzKSB7CiAgICAgICAgc3RyaW5nIHNyYyA9IGFyZ3NbMF07CiAgICAgICAgc3RyaW5nIHZlcmRpY3QgPSBhcmdzWzFdOwogICAgICAgIHN0cmluZ1tdIGxpbmVzID0gRmlsZS5SZWFkQWxsTGluZXMoc3JjKTsKICAgICAgICBDb25zb2xlLldyaXRlTGluZSgiU09VUkNFIExJTkVTPSIgKyBsaW5lcy5MZW5ndGgpOwogICAgICAgIGJvb2wgYSA9IFByaW50UmVnaW9uKGxpbmVzLCAiRmx5UmVmaW5lQ29yZSgiKTsKICAgICAgICBib29sIGIgPSBQcmludFJlZ2lvbihsaW5lcywgIlJlYWROdW0oIik7CiAgICAgICAgYm9vbCBjID0gUHJpbnRSZWdpb24obGluZXMsICJTdGFydEh1bnRXYXRjaCgiKTsKICAgICAgICBpZiAoYSAmJiBiICYmIGMpIHsKICAgICAgICAgICAgRmlsZS5Xcml0ZUFsbFRleHQodmVyZGljdCwgIlBSSU5URUQiKTsKICAgICAgICAgICAgQ29uc29sZS5Xcml0ZUxpbmUoIlBSSU5URUQgLSBCVUxLIE5BUlJPVyBCT0RJRVMgQUJPVkUiKTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICBGaWxlLldyaXRlQWxsVGV4dCh2ZXJkaWN0LCAiUkVHSU9OIE1JU1MiKTsKICAgICAgICAgICAgQ29uc29sZS5Xcml0ZUxpbmUoIlJFR0lPTiBNSVNTIik7CiAgICAgICAgfQogICAgfQogICAgc3RhdGljIGJvb2wgUHJpbnRSZWdpb24oc3RyaW5nW10gbGluZXMsIHN0cmluZyBuYW1lKSB7CiAgICAgICAgaW50IHN0YXJ0ID0gLTE7CiAgICAgICAgZm9yIChpbnQgaSA9IDA7IGkgPCBsaW5lcy5MZW5ndGg7IGkrKykgewogICAgICAgICAgICBzdHJpbmcgbCA9IGxpbmVzW2ldOwogICAgICAgICAgICBpZiAobC5Db250YWlucyhuYW1lKSAmJiAobC5Db250YWlucygicHJpdmF0ZSIpIHx8IGwuQ29udGFpbnMoInB1YmxpYyIpIHx8IGwuQ29udGFpbnMoInZvaWQiKSB8fCBsLkNvbnRhaW5zKCJkb3VibGUiKSB8fCBsLkNvbnRhaW5zKCJzdGF0aWMiKSkpIHsgc3RhcnQgPSBpOyBicmVhazsgfQogICAgICAgIH0KICAgICAgICBpZiAoc3RhcnQgPCAwKSB7IENvbnNvbGUuV3JpdGVMaW5lKCJSRUdJT04gTUlTU0lORyAiICsgbmFtZSk7IHJldHVybiBmYWxzZTsgfQogICAgICAgIGludCBkZXB0aCA9IDA7CiAgICAgICAgYm9vbCBzZWVuID0gZmFsc2U7CiAgICAgICAgaW50IGVuZCA9IGxpbmVzLkxlbmd0aCAtIDE7CiAgICAgICAgZm9yIChpbnQgaSA9IHN0YXJ0OyBpIDwgbGluZXMuTGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgZm9yZWFjaCAoY2hhciBjIGluIGxpbmVzW2ldKSB7CiAgICAgICAgICAgICAgICBpZiAoYyA9PSAneycpIHsgZGVwdGgrKzsgc2VlbiA9IHRydWU7IH0KICAgICAgICAgICAgICAgIGVsc2UgaWYgKGMgPT0gJ30nKSB7IGRlcHRoLS07IH0KICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAoc2VlbiAmJiBkZXB0aCA9PSAwKSB7IGVuZCA9IGk7IGJyZWFrOyB9CiAgICAgICAgfQogICAgICAgIGZvciAoaW50IGkgPSBzdGFydDsgaSA8PSBlbmQ7IGkrKykgewogICAgICAgICAgICBDb25zb2xlLldyaXRlTGluZSgiUkVHSU9OICIgKyAoaSArIDEpICsgIiAiICsgbGluZXNbaV0pOwogICAgICAgIH0KICAgICAgICByZXR1cm4gdHJ1ZTsKICAgIH0KfQo='
+$p551patcher = 'C:\Users\Admin\PhiTerminal\patch551.cs'
+[IO.File]::WriteAllBytes($p551patcher, [Convert]::FromBase64String($p551b64))
+$p551src = 'C:\Users\Admin\PhiTerminal\PhiTerminal3.cs'
+$p551verdict = 'C:\Users\Admin\PhiTerminal\patch551.verdict.txt'
+$p551csc = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+& $p551csc /nologo /out:'C:\Users\Admin\PhiTerminal\patch551.exe' $p551patcher
+if ($LASTEXITCODE -ne 0) { Write-Output 'PATCHER BUILD FAILED' } else {
+  & 'C:\Users\Admin\PhiTerminal\patch551.exe' $p551src $p551verdict
+  $p551v = ''
+  if (Test-Path $p551verdict) { $p551v = Get-Content $p551verdict }
+  Write-Output ('VERDICT ' + $p551v)
+}
+Write-Output 'PHI P551 VERDICT: BULK NARROW BODIES ABOVE'
+Write-Output 'JOB 551 DONE'
+```
