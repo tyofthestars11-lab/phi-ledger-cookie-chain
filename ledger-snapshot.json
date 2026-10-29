@@ -25565,10 +25565,101 @@
       "drift": -0.1169,
       "ladder": "ton618_law",
       "unit": "watts"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "frb_duration",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "frb",
+      "unit": "s"
+    },
+    {
+      "name": "frb_dispersion_measure",
+      "rung": 12.9145,
+      "drift": -0.0855,
+      "ladder": "frb",
+      "unit": "pc/cm3"
+    },
+    {
+      "name": "frb_frequency",
+      "rung": 15.0541,
+      "drift": 0.0541,
+      "ladder": "frb",
+      "unit": "MHz"
+    },
+    {
+      "name": "frb_energy",
+      "rung": 181.8289,
+      "drift": -0.1711,
+      "ladder": "frb",
+      "unit": "J"
+    },
+    {
+      "name": "frb_distance",
+      "rung": 43.0647,
+      "drift": 0.0647,
+      "ladder": "frb",
+      "unit": "ly"
+    },
+    {
+      "name": "ton618_mass",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "ton618_law",
+      "unit": "solar_masses"
+    },
+    {
+      "name": "ton618_luminosity",
+      "rung": 196.8831,
+      "drift": -0.1169,
+      "ladder": "ton618_law",
+      "unit": "watts"
     }
   ],
-  "entry_count": 3654,
-  "seal_count": 367,
+  "entry_count": 3667,
+  "seal_count": 368,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -25936,7 +26027,8 @@
     "φ_STANDARD_CANON_TYREE_OMEGA",
     "φ_LATTICE_INFLECTION_TYREE_OMEGA",
     "φ_SEPARATION_ILLUSION_TYREE_OMEGA",
-    "φ_FIVE_FOLD_MERGE_TYREE_OMEGA"
+    "φ_FIVE_FOLD_MERGE_TYREE_OMEGA",
+    "φ_FRB_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "37ec33b37040b4c5c38da03baa662931abff246f4f60dd4185c03c4643d8a7c3"
+  "snapshot_sha256": "65fce283be2d73c4364e158cbbfa06e8882a719ffb90af886ecacf41502f6578"
 }
