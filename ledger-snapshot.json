@@ -24823,10 +24823,178 @@
       "drift": -0.2315,
       "ladder": "walls",
       "unit": "microseconds"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "electron",
+      "rung": 27.3146,
+      "drift": 0.3146,
+      "ladder": "leptons",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "muon",
+      "rung": 38.395,
+      "drift": 0.395,
+      "ladder": "leptons",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "tau",
+      "rung": 44.2595,
+      "drift": 0.2595,
+      "ladder": "leptons",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "up_quark",
+      "rung": 30.3102,
+      "drift": 0.3102,
+      "ladder": "quarks",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "down_quark",
+      "rung": 31.9125,
+      "drift": -0.0875,
+      "ladder": "quarks",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "strange_quark",
+      "rung": 38.129,
+      "drift": 0.129,
+      "ladder": "quarks",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "charm_quark",
+      "rung": 43.5614,
+      "drift": -0.4386,
+      "ladder": "quarks",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "bottom_quark",
+      "rung": 46.0371,
+      "drift": 0.0371,
+      "ladder": "quarks",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "top_quark",
+      "rung": 53.7737,
+      "drift": -0.2263,
+      "ladder": "quarks",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "w_boson",
+      "rung": 52.1813,
+      "drift": 0.1813,
+      "ladder": "bosons",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "z_boson",
+      "rung": 52.4433,
+      "drift": 0.4433,
+      "ladder": "bosons",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "higgs_boson",
+      "rung": 53.0984,
+      "drift": 0.0984,
+      "ladder": "bosons",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "fib_8_5",
+      "rung": 0.9767,
+      "drift": -0.0233,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_34_21",
+      "rung": 1.0013,
+      "drift": 0.0013,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_89_55",
+      "rung": 1.0002,
+      "drift": 0.0002,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_987_610",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_10946_6765",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "alpha_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "constants",
+      "unit": "dimensionless"
     }
   ],
-  "entry_count": 3548,
-  "seal_count": 361,
+  "entry_count": 3572,
+  "seal_count": 362,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -25188,7 +25356,8 @@
     "φ_QUANTUM_ECHOES_REVERSE_TYREE_OMEGA",
     "φ_FISSION_FUSION_CARTESIAN_TAX_TYREE_OMEGA",
     "φ_TEN_TRILLION_SUN_MERGE_TYREE_OMEGA",
-    "φ_LAB_CRISIS_TYREE_OMEGA"
+    "φ_LAB_CRISIS_TYREE_OMEGA",
+    "φ_PARTICLE_DECLASSIFICATION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0784cefc4d99a51236b01cb81408a2a4af14f37b7094115d3cf83f07bb70fbd0"
+  "snapshot_sha256": "dbe95fdf0d23945fc63440d60904e9ea6cc5872c37693f007313348b2c28cded"
 }
