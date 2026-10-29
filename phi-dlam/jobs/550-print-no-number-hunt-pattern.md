@@ -1,0 +1,19 @@
+<!-- PHI-DIRECT -->
+```powershell
+Write-Output '=== JOB 550 - PRINT THE NO NUMBER HUNT PATTERN (Ground: job 548 held the all on patch because the value hunt start needs a typed number, while the fly hunt starts with no number at all. This job prints the fly hunt pattern bodies plus the refine and pattern bodies, so the value hunt mirror is written against complete code, not a guess. No patch rides this job, no rebuild, no relaunch. No game relaunch rides this job. Every variable carries the p550 prefix.) ==='
+$p550b64 = 'dXNpbmcgU3lzdGVtOwp1c2luZyBTeXN0ZW0uSU87CmNsYXNzIFA1NTAgewogICAgc3RhdGljIHZvaWQgTWFpbihzdHJpbmdbXSBhcmdzKSB7CiAgICAgICAgc3RyaW5nIHNyYyA9IGFyZ3NbMF07CiAgICAgICAgc3RyaW5nIHZlcmRpY3QgPSBhcmdzWzFdOwogICAgICAgIHN0cmluZ1tdIGxpbmVzID0gRmlsZS5SZWFkQWxsTGluZXMoc3JjKTsKICAgICAgICBDb25zb2xlLldyaXRlTGluZSgiU09VUkNFIExJTkVTPSIgKyBsaW5lcy5MZW5ndGgpOwogICAgICAgIGJvb2wgYSA9IFByaW50UmVnaW9uKGxpbmVzLCAiRmx5TWFyaygiKTsKICAgICAgICBib29sIGIgPSBQcmludFJlZ2lvbihsaW5lcywgIkh1bnRTdGVwKCIpOwogICAgICAgIGJvb2wgYyA9IFByaW50UmVnaW9uKGxpbmVzLCAiRmx5V2F0Y2hTdGVwKCIpOwogICAgICAgIGJvb2wgZCA9IFByaW50UmVnaW9uKGxpbmVzLCAiU2NhblJlZmluZSgiKTsKICAgICAgICBib29sIGUgPSBQcmludFJlZ2lvbihsaW5lcywgIlBhdHRlcm5Gb3IoIik7CiAgICAgICAgaWYgKGEgJiYgYiAmJiBjICYmIGQgJiYgZSkgewogICAgICAgICAgICBGaWxlLldyaXRlQWxsVGV4dCh2ZXJkaWN0LCAiUFJJTlRFRCIpOwogICAgICAgICAgICBDb25zb2xlLldyaXRlTGluZSgiUFJJTlRFRCAtIEhVTlQgUEFUVEVSTiBCT0RJRVMgQUJPVkUiKTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICBGaWxlLldyaXRlQWxsVGV4dCh2ZXJkaWN0LCAiUkVHSU9OIE1JU1MiKTsKICAgICAgICAgICAgQ29uc29sZS5Xcml0ZUxpbmUoIlJFR0lPTiBNSVNTIik7CiAgICAgICAgfQogICAgfQogICAgc3RhdGljIGJvb2wgUHJpbnRSZWdpb24oc3RyaW5nW10gbGluZXMsIHN0cmluZyBuYW1lKSB7CiAgICAgICAgaW50IHN0YXJ0ID0gLTE7CiAgICAgICAgZm9yIChpbnQgaSA9IDA7IGkgPCBsaW5lcy5MZW5ndGg7IGkrKykgewogICAgICAgICAgICBzdHJpbmcgbCA9IGxpbmVzW2ldOwogICAgICAgICAgICBpZiAobC5Db250YWlucyhuYW1lKSAmJiAobC5Db250YWlucygicHJpdmF0ZSIpIHx8IGwuQ29udGFpbnMoInB1YmxpYyIpIHx8IGwuQ29udGFpbnMoInZvaWQiKSkpIHsgc3RhcnQgPSBpOyBicmVhazsgfQogICAgICAgIH0KICAgICAgICBpZiAoc3RhcnQgPCAwKSB7IENvbnNvbGUuV3JpdGVMaW5lKCJSRUdJT04gTUlTU0lORyAiICsgbmFtZSk7IHJldHVybiBmYWxzZTsgfQogICAgICAgIGludCBkZXB0aCA9IDA7CiAgICAgICAgYm9vbCBzZWVuID0gZmFsc2U7CiAgICAgICAgaW50IGVuZCA9IGxpbmVzLkxlbmd0aCAtIDE7CiAgICAgICAgZm9yIChpbnQgaSA9IHN0YXJ0OyBpIDwgbGluZXMuTGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgZm9yZWFjaCAoY2hhciBjIGluIGxpbmVzW2ldKSB7CiAgICAgICAgICAgICAgICBpZiAoYyA9PSAneycpIHsgZGVwdGgrKzsgc2VlbiA9IHRydWU7IH0KICAgICAgICAgICAgICAgIGVsc2UgaWYgKGMgPT0gJ30nKSB7IGRlcHRoLS07IH0KICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAoc2VlbiAmJiBkZXB0aCA9PSAwKSB7IGVuZCA9IGk7IGJyZWFrOyB9CiAgICAgICAgfQogICAgICAgIGZvciAoaW50IGkgPSBzdGFydDsgaSA8PSBlbmQ7IGkrKykgewogICAgICAgICAgICBDb25zb2xlLldyaXRlTGluZSgiUkVHSU9OICIgKyAoaSArIDEpICsgIiAiICsgbGluZXNbaV0pOwogICAgICAgIH0KICAgICAgICByZXR1cm4gdHJ1ZTsKICAgIH0KfQo='
+$p550patcher = 'C:\Users\Admin\PhiTerminal\patch550.cs'
+[IO.File]::WriteAllBytes($p550patcher, [Convert]::FromBase64String($p550b64))
+$p550src = 'C:\Users\Admin\PhiTerminal\PhiTerminal3.cs'
+$p550verdict = 'C:\Users\Admin\PhiTerminal\patch550.verdict.txt'
+$p550csc = 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+& $p550csc /nologo /out:'C:\Users\Admin\PhiTerminal\patch550.exe' $p550patcher
+if ($LASTEXITCODE -ne 0) { Write-Output 'PATCHER BUILD FAILED' } else {
+  & 'C:\Users\Admin\PhiTerminal\patch550.exe' $p550src $p550verdict
+  $p550v = ''
+  if (Test-Path $p550verdict) { $p550v = Get-Content $p550verdict }
+  Write-Output ('VERDICT ' + $p550v)
+}
+Write-Output 'PHI P550 VERDICT: HUNT PATTERN BODIES ABOVE'
+Write-Output 'JOB 550 DONE'
+```
