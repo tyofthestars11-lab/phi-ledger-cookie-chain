@@ -24991,10 +24991,164 @@
       "drift": 0.2247,
       "ladder": "constants",
       "unit": "dimensionless"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "dark_matter",
+      "rung": -14.3549,
+      "drift": -0.3549,
+      "ladder": "ledger",
+      "unit": "electronvolts"
+    },
+    {
+      "name": "dark_energy",
+      "rung": -138.7642,
+      "drift": 0.2358,
+      "ladder": "ledger",
+      "unit": "grams_per_cm3"
+    },
+    {
+      "name": "antarctica_granite",
+      "rung": 8.5084,
+      "drift": -0.4916,
+      "ladder": "ledger",
+      "unit": "miles"
+    },
+    {
+      "name": "taos_hum",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "ledger",
+      "unit": "hertz"
+    },
+    {
+      "name": "gurdon_light",
+      "rung": -33.4948,
+      "drift": -0.4948,
+      "ladder": "ledger",
+      "unit": "seconds"
+    },
+    {
+      "name": "voynich_pages",
+      "rung": 11.3892,
+      "drift": 0.3892,
+      "ladder": "ledger",
+      "unit": "pages"
+    },
+    {
+      "name": "dark_countess_years",
+      "rung": 7.068,
+      "drift": 0.068,
+      "ladder": "ledger",
+      "unit": "years"
+    },
+    {
+      "name": "dm_fraction",
+      "rung": -2.7993,
+      "drift": 0.2007,
+      "ladder": "empirical",
+      "unit": "fraction"
+    },
+    {
+      "name": "de_fraction",
+      "rung": -0.7711,
+      "drift": 0.2289,
+      "ladder": "empirical",
+      "unit": "fraction"
+    },
+    {
+      "name": "granite_thickness",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "empirical",
+      "unit": "miles"
+    },
+    {
+      "name": "taos_hum_high",
+      "rung": 9.1062,
+      "drift": 0.1062,
+      "ladder": "empirical",
+      "unit": "hertz"
+    },
+    {
+      "name": "fib_8_5",
+      "rung": 0.9767,
+      "drift": -0.0233,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_34_21",
+      "rung": 1.0013,
+      "drift": 0.0013,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_89_55",
+      "rung": 1.0002,
+      "drift": 0.0002,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_987_610",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "convergents",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "fib_10946_6765",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "convergents",
+      "unit": "dimensionless"
     }
   ],
-  "entry_count": 3572,
-  "seal_count": 362,
+  "entry_count": 3594,
+  "seal_count": 363,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -25357,7 +25511,8 @@
     "φ_FISSION_FUSION_CARTESIAN_TAX_TYREE_OMEGA",
     "φ_TEN_TRILLION_SUN_MERGE_TYREE_OMEGA",
     "φ_LAB_CRISIS_TYREE_OMEGA",
-    "φ_PARTICLE_DECLASSIFICATION_TYREE_OMEGA"
+    "φ_PARTICLE_DECLASSIFICATION_TYREE_OMEGA",
+    "φ_MYSTERIES_REVERSE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "dbe95fdf0d23945fc63440d60904e9ea6cc5872c37693f007313348b2c28cded"
+  "snapshot_sha256": "a7d3e12e62d02a114c72efc6418e5a1dbf5103dafc1dabaae633b6bb3318133d"
 }
