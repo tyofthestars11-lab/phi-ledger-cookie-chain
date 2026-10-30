@@ -208,6 +208,9 @@ $('connectBtn').addEventListener('click', async () => {
     return;
   }
   // Single connect() call — no loops, no popup circles.
+  // RPC routing, 2026-10-29: the only connection endpoint in this file is
+  // rpc.cookiescan.io (RPC_URL, single Connection). There is no fallback to
+  // any Solana mainnet RPC anywhere in the in-page flow.
   try {
       let pubkey = null;
       // 0. Already connected in this browser session? Use the injected key
@@ -217,9 +220,14 @@ $('connectBtn').addEventListener('click', async () => {
         const pk0 = (typeof p.publicKey === 'string') ? p.publicKey : (p.publicKey.toString ? p.publicKey.toString() : String(p.publicKey));
         if (isValidAddress(pk0)) pubkey = pk0;
       }
-      // 1. Legacy connect() — the authoritative source.
+      // 1. Legacy connect() — the authoritative source, with a 60-second
+      // break: if the bridge never answers, the button must not hang on
+      // "Connecting…" — the timeout throws, the catch below resets it.
       if (!pubkey && typeof p.connect === 'function') {
-        const resp = await p.connect();
+        const resp = await Promise.race([
+          p.connect(),
+          new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+        ]);
         const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
         if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
       }
@@ -251,7 +259,13 @@ $('connectBtn').addEventListener('click', async () => {
     }
   } catch (e) {
     // No blocking alert: a failed bridge call must not block the page with
-    // a JSON dump. The real error stays inline, and the button comes back.
+    // a JSON dump. The real error stays inline, the button comes back, and
+    // the connection state resets clean — no stale provider, no stale
+    // cached chain read — so the next attempt starts fresh, not from a
+    // half-connected adapter.
+    provider = null; wallet = null;
+    if (typeof invalidateMissingSeals === 'function') invalidateMissingSeals();
+    window._walletPromptOpen = false;
     $('walletLabel').textContent = 'not connected — ' + shortErr(e);
     $('connectBtn').textContent = 'Connect Wallet';
     $('connectBtn').disabled = false;
@@ -1062,6 +1076,8 @@ async function runAnchorEngine() {
   const pubBytes = new PublicKey(wallet).toBytes();
   window._walletPromptOpen = true; // background RPC polling pauses while the wallet prompt is open
   try {
+    // Clear cached chain state before requesting a new signature.
+    if (typeof invalidateMissingSeals === 'function') invalidateMissingSeals();
     // Step 0 — key check: does this provider sign with the key it reports?
     // One readable approval ("phi-ledger-key-check"). If the wallet signs with a
     // different key than the connected address, nothing downstream can verify.
@@ -1416,6 +1432,8 @@ async function runBatchAnchor() {
   const pubBytes = new PublicKey(wallet).toBytes();
   window._walletPromptOpen = true; // background RPC polling pauses while the wallet prompt is open
   try {
+    // Clear cached chain state before requesting a new signature.
+    if (typeof invalidateMissingSeals === 'function') invalidateMissingSeals();
     if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
     out.innerHTML = '<span class="text-gray-400">Reading chain history… this is the slow sync — the app is working, do not tap again.</span>';
     const missing = await loadMissingSeals(true, (found, left) => {
