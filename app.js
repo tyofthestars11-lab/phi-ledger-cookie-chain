@@ -251,7 +251,7 @@ async function connectOneProvider(prov) {
   return pk;
 }
 
-$('connectBtn').addEventListener('click', async () => {
+if ($('connectBtn')) $('connectBtn').addEventListener('click', async () => {
   // One click, one connect: disable while connecting so five taps cannot
   // stack five connect attempts, and show status instead of a frozen button.
   // Nightly is slow to answer in its own browser — the label says so while
@@ -321,8 +321,6 @@ $('connectBtn').addEventListener('click', async () => {
       if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned no account (111...) — unlock your wallet and select your account, then tap Add & Connect again');
       wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
-    $('connectBtn').textContent = 'Connected';
-    $('connectBtn').disabled = true;
     $('anchorBtn').disabled = false;
     $('batchAnchorBtn').disabled = false;
     refreshBatchLabel();
@@ -466,8 +464,6 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
   if (connectedPk) {
     provider = connectedProv; wallet = connectedPk;
     $('walletLabel').textContent = short(wallet, 4);
-    $('connectBtn').textContent = 'Connected';
-    $('connectBtn').disabled = true;
     $('anchorBtn').disabled = false;
     $('batchAnchorBtn').disabled = false;
     refreshBatchLabel();

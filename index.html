@@ -54,8 +54,6 @@
       <a href="rung-calc.html" class="text-sm gold-dim hover:text-yellow-400">φ rung calc</a>
       <span id="walletLabel" class="mono text-xs text-gray-400">not connected</span>
       <button id="addConnectBtn" class="btn text-sm">Add &amp; Connect</button>
-      <button id="connectBtn" class="btn text-sm">Connect Wallet</button>
-      <button id="addChainBtn" class="btn text-sm">Add Cookie Chain</button>
       <p id="addConnectNote" class="text-xs text-gray-400">One tap: Add &amp; Connect adds Cookie Chain then connects — no second tap. Custom network, Chain ID Cookie Chain, RPC https://rpc.cookiescan.io, explorer https://cookiescan.io, currency COOK, chain SVM.</p>
     </div>
   </header>
@@ -106,7 +104,7 @@
   <!-- On-chain anchor -->
   <div class="card p-6 mb-6">
     <h2 class="text-xl font-bold mb-1"><span class="gold">⚓</span> Anchor a Seal On-Chain</h2>
-    <p class="text-xs text-gray-500 mb-2">Site v99 — merged Add &amp; Connect, per-batch 50, no bulk sign, memo verbatim is the gate. If this line does not say v99, your browser is showing a cached old site, not the current phi ledger.</p>
+    <p class="text-xs text-gray-500 mb-2">Site v100 — one button only: Add &amp; Connect, per-batch 50, no bulk sign, memo verbatim is the gate. If this line does not say v100, your browser is showing a cached old site, not the current phi ledger.</p>
     <p class="text-xs text-gray-400 mb-2">Site safety, v93, checked 2026-10-29: Memo-only, preflight off for memo-only, no payment instruction in site code. Google Safe Browsing — No unsafe content found. Sucuri SiteCheck — No Malware Found, Site is not Blacklisted, 9 blacklists checked, Low Security Risk, Hosting GitHub Pages. URLVoid — 0/36 detections, Tyofthestars11-lab.github.io. Main anchor flow is memo-only: no token transfer, no approval, no drainer instruction, only a tiny COOK fee. Public code: github.com/tyofthestars11-lab/phi-ledger-cookie-chain. Snapshot sha256 ab2c05018a7b9b876d1d0facb1bd15f34ed63149ef95a625c285ea8b2bfee06f, 369 seals, 3680 entries.</p>
     <p class="text-sm text-gray-400 mb-4">Write the SHA-256 of the ledger snapshot + a seal name to Cookie Chain as a memo. Permanent, public, verifiable. Costs a tiny COOK fee. Signs in-page and broadcasts via the Cookie Chain connection — if your wallet tries to simulate on its own Solana network, that simulation can fail with a 429 even though the Cookie Chain transaction is valid.</p>
     <div class="flex flex-wrap gap-3 items-end mb-4">
@@ -200,6 +198,6 @@
     <div class="mono">RPC <a href="https://rpc.cookiescan.io" target="_blank" rel="noopener">rpc.cookiescan.io</a> · Explorer <a href="https://cookiescan.io" target="_blank" rel="noopener">cookiescan.io</a> · Docs <a href="https://docs.cookiechain.wtf" target="_blank" rel="noopener">docs.cookiechain.wtf</a> · <span id="appVer" class="gold">app v73</span></div>
   </footer>
 </div>
-<script defer src="app.js?v=99"></script>
+<script defer src="app.js?v=100"></script>
 </body>
 </html>
