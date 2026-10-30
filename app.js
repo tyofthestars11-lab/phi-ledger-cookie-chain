@@ -1557,14 +1557,19 @@ async function runBatchAnchor() {
       window._batchKeyCheck = kc;
     }
     const batches = pack50Batches(todo);
-    // Seal-all, one approval, 2026-10-29: if the wallet supports signing
-    // multiple transactions at once, sign every batch in ONE approval,
-    // whatever is missing, then broadcast them one by one. No 1-at-a-time,
-    // no 10-at-a-time approval loop. Each signed transaction is verified
-    // (signature + every memo verbatim) BEFORE any broadcast, so a bad
-    // signature spends no fee. If the wallet does not support this, the
-    // per-batch loop below runs instead — capability, not wallet name.
-    if (typeof provider.signAllTransactions === 'function') {
+    // 50 per batch, one approval per batch, 2026-10-29: the all-at-once
+    // signAllTransactions path is OFF. Phantom blocked it outright as
+    // "Request blocked — This dApp could be malicious" when the site
+    // tried to sign all missing seals at once, and the run paused with
+    // 0 anchored. A bulk sign request from a github.io dApp is what
+    // Phantom's filter flags, not the ledger itself — the transactions
+    // are memo-only, no tokens move, only a tiny COOK fee. So batch
+    // anchoring is now always per-batch: 50 seals per transaction,
+    // one normal single-transaction approval per batch, broadcast and
+    // verified on-chain before the next batch, progress saved so a
+    // pause resumes where it stopped. 161 missing seals = 4 approvals,
+    // not 1 bulk, not 161 singles.
+    if (false && typeof provider.signAllTransactions === 'function') {
       out.innerHTML = `<span class="text-gray-400">Signing all ${todo.length} missing seals in one approval — ${batches.length} transactions, 50 seals each… approve once in your wallet. If your wallet says simulation failed, 429, or 403, that is its Solana simulation, not Cookie Chain — Cookie Chain broadcast skips preflight, so confirming still anchors on Cookie Chain.</span>`;
       const txs = [];
       for (const seals of batches) txs.push(await buildBatch50Tx(wallet, seals));
