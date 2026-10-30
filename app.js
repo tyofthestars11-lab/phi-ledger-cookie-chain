@@ -184,13 +184,24 @@ function getProvider() {
 }
 
 $('connectBtn').addEventListener('click', async () => {
+  // One click, one connect: disable while connecting so five taps cannot
+  // stack five connect attempts, and show status instead of a frozen button.
+  // Nightly is slow to answer in its own browser — the label says so while
+  // it works, and the button comes back if the attempt fails.
+  const btn = $('connectBtn');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = 'Connecting…';
+  $('walletLabel').textContent = 'connecting to wallet…';
   const p = getProvider();
   if (!p) {
     // Mobile Chrome has no injected provider — offer the wallet app deep-link flow.
+    // Do NOT permanently disable the button: Nightly injects late, so a first
+    // tap before injection must be retryable, not a dead end.
     $('mobileAnchor').classList.remove('hidden');
-    $('connectBtn').textContent = 'Use Phantom app ↓';
-    $('connectBtn').disabled = true;
-    $('walletLabel').textContent = 'mobile flow below';
+    $('connectBtn').textContent = 'Connect Wallet';
+    $('connectBtn').disabled = false;
+    $('walletLabel').textContent = 'no wallet found yet — tap again';
     refreshMobileBalance();
     return;
   }
@@ -230,7 +241,10 @@ $('connectBtn').addEventListener('click', async () => {
       console.log('Nightly detected — ensure Cookie Chain network (rpc.cookiescan.io) is added in the wallet.');
     }
   } catch (e) {
-    alert('Wallet connection rejected: ' + (e.message || e));
+    alert('Wallet connection rejected: ' + shortErr(e));
+    $('connectBtn').textContent = 'Connect Wallet';
+    $('connectBtn').disabled = false;
+    $('walletLabel').textContent = 'not connected — tap again';
     return;
   }
 });
@@ -657,7 +671,17 @@ async function handleWalletReturn() {
 }
 
 /* ---------- Anchor engine ---------- */
-function shortErr(e) { return String((e && e.message) || e).slice(0, 220); }
+function shortErr(e) {
+  // Never print "[object Object]": Nightly and other wallets reject with plain
+  // objects (code, error, data) that have no .message. Show the real payload.
+  if (!e) return 'unknown error';
+  if (typeof e === 'string') return e.slice(0, 220);
+  if (e.message) return String(e.message).slice(0, 220);
+  if (e.error && e.error.message) return String(e.error.message).slice(0, 220);
+  try { const j = JSON.stringify(e); if (j && j !== '{}') return j.slice(0, 220); } catch (err) {}
+  if (e.code !== undefined) return 'wallet error code ' + e.code;
+  return String(e).slice(0, 220);
+}
 
 // The byte rung: signed bytes must be EXACTLY what we built — our memo
 // instruction(s), our data verbatim, every program present on-chain.
@@ -1289,7 +1313,7 @@ async function rpcCall(method, params) {
   if (j.error) throw new Error('RPC ' + method + ': ' + (j.error.message || 'error'));
   return j.result;
 }
-async function loadMissingSeals(force) {
+async function loadMissingSeals(force, onProgress) {
   if (window._missingSeals && !force) return window._missingSeals;
   if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
   if (!wallet) throw new Error('Connect your wallet first — missing seals are read from the chain.');
@@ -1302,6 +1326,7 @@ async function loadMissingSeals(force) {
     const sigs = await rpcCall('getSignaturesForAddress', [wallet, opts]);
     if (!sigs || !sigs.length) break;
     before = sigs[sigs.length - 1].signature;
+    if (onProgress) { try { onProgress(anchored.size, need.size); } catch (e) {} }
     // Read memos in parallel — a few hundred ms per wave, not per tx.
     const CONC = 8;
     for (let i = 0; i < sigs.length && need.size > 0; i += CONC) {
@@ -1324,6 +1349,24 @@ async function loadMissingSeals(force) {
   return window._missingSeals;
 }
 function invalidateMissingSeals() { window._missingSeals = null; }
+/* The missing list itself, in plain HTML that renders the same in Nightly,
+ * in any wallet browser, and on desktop — no fancy widget, no hidden state.
+ * It lives in its own element (#missingList), so the batch run's progress
+ * text in #batchOut can never overwrite it. Seal names come from the ledger
+ * snapshot (letters, digits, underscore, phi only), so plain joining is safe. */
+function showMissingList(missing) {
+  const el = $('missingList');
+  if (!el) return;
+  el.classList.remove('hidden');
+  if (!missing || !missing.length) {
+    el.innerHTML = '<span class="text-green-400">Missing on-chain: none — all seals anchored on-chain.</span>';
+    return;
+  }
+  const names = missing.map((s, i) => (i + 1) + '. ' + s).join('<br>');
+  el.innerHTML = '<span class="text-gray-400">Missing on-chain (' + missing.length + '):</span><br>' +
+    '<div style="max-height:240px;overflow:auto;border:1px solid #333;padding:8px;margin-top:4px;">' + names + '</div>' +
+    '<br><span class="text-gray-500 text-xs">If you just anchored seals and they still show here, the chain history is still syncing — wait before re-anchoring, or the same seals will be charged again.</span>';
+}
 function isRejection(e) {
   const m = String((e && e.message) || e).toLowerCase();
   return /reject|denied|cancel|dismiss|user closed|declined/.test(m);
@@ -1339,7 +1382,10 @@ async function runBatchAnchor() {
   const pubBytes = new PublicKey(wallet).toBytes();
   try {
     if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
-    const missing = await loadMissingSeals(true); // fresh chain read every run
+    out.innerHTML = '<span class="text-gray-400">Reading chain history… this is the slow sync — the app is working, do not tap again.</span>';
+    const missing = await loadMissingSeals(true, (found, left) => {
+      out.innerHTML = '<span class="text-gray-400">Reading chain history… ' + found + ' seals found on-chain, ' + left + ' still to check.</span>';
+    }); // fresh chain read every run
     // CHAIN ONLY, 2026-10-29 fix: the local done list (batchAnchoredV1) must
     // NEVER filter this list. Filtering by it is how "All missing seals
     // already anchored" was printed while the chain still missed seals, and
@@ -1349,7 +1395,8 @@ async function runBatchAnchor() {
     // is re-anchored, because the chain is the truth, not this browser.
     const todo = missing.slice();
     const anchoredCount = snapshot.seals.length - missing.length;
-    out.innerHTML = `<span class="text-gray-400">Chain read: ${anchoredCount} of ${snapshot.seals.length} seals anchored on-chain, ${missing.length} missing. No fee is charged until you approve a batch.</span>`;
+    showMissingList(missing);
+    out.innerHTML = `<span class="text-gray-400">Chain read: ${anchoredCount} of ${snapshot.seals.length} seals anchored on-chain, ${missing.length} missing. No fee is charged until you approve a batch. The missing names are listed below, on Nightly or any app.</span>`;
     // This-run counters only: the all-time done list must never leak into
     // this run's progress display (that was the "150 of 27" / "-123 left" bug).
     let runAnchored = 0, runTx = 0;
@@ -1394,7 +1441,6 @@ async function runBatchAnchor() {
       }
       if (!sig) throw lastErr || new Error('Batch did not land.');
       batchMarkDone(seals);
-      seals.forEach(s => done.add(s));
       runAnchored += seals.length; runTx += 1;
       // Same cadence as the single anchor: Confirmed → read back → Anchored ✓.
       // broadcastAndVerify already showed "Confirmed — reading it back…";
@@ -1403,11 +1449,17 @@ async function runBatchAnchor() {
     }
     const left = todo.length - runAnchored;
     out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${runAnchored} of ${todo.length} seals on-chain in ${runTx} transactions.</span>` + (left === 0 ? `<br><span class="gold">All ${todo.length} seals anchored.</span>` : '');
+    invalidateMissingSeals();
+    if (left) showMissingList(todo.slice(runAnchored));
+    else showMissingList([]);
     refreshBalance();
     batchRunning = false; btn.disabled = false;
     btn.textContent = left ? `Resume anchoring (${left} left)` : 'Anchor all missing';
   } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">Progress is saved — tap the button to resume. No fee was spent on the stopped batch.</span>`;
+    // Do NOT claim "no fee was spent" here: this catch runs after a batch may
+    // already have been broadcast, so a fee may have been spent even though
+    // the run stopped. The chain read on the next run is the only fee truth.
+    out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">Progress is saved — tap the button to resume. If a batch was already broadcast, its fee was spent even if this run stopped — check the chain read before re-anchoring.</span>`;
     batchRunning = false; btn.disabled = false; btn.textContent = 'Resume anchoring';
   }
 }
@@ -1415,7 +1467,12 @@ async function refreshBatchLabel() {
   const btn = $('batchAnchorBtn');
   if (!btn) return;
   try {
-    const missing = await loadMissingSeals(true); // fresh chain read, never the local done list
+    // Connect must stay fast on Nightly: use the cached chain read here.
+    // The Anchor run itself always forces a fresh chain read and lists the
+    // missing names before any approval, so a stale button count can never
+    // be the last word before money moves.
+    const missing = await loadMissingSeals();
+    showMissingList(missing);
     const left = missing.length;
     btn.textContent = left ? `Anchor all missing (${left})` : 'Anchor all missing';
   } catch (e) { btn.textContent = 'Anchor all missing'; }
@@ -1551,8 +1608,8 @@ $('pubSolflareBtn').addEventListener('click', async () => {
 });
 
 /* ---------- boot ---------- */
-pulse(); setInterval(pulse, 15000);
-mining(); setInterval(mining, 30000);
+pulse(); setInterval(pulse, 30000);
+mining(); setInterval(mining, 60000);
 /* Fee vault: Tyree's Nano balance on Cookie Chain, shown on the page. */
 async function refreshFeeVault() {
   try {
@@ -1567,7 +1624,7 @@ async function refreshFeeVault() {
 (async () => {
   try { await loadLedger(); } catch (e) { /* snapshot stays null; anchor button guards it */ }
   document.querySelectorAll('.pubFee').forEach(el => el.textContent = PUBLIC_ANCHOR_FEE_COOK + ' COOK');
-  refreshFeeVault(); setInterval(refreshFeeVault, 30000);
+  refreshFeeVault(); setInterval(refreshFeeVault, 60000);
   if ($('mobileAddr').value.trim()) refreshMobileBalance();
   // In a wallet's own browser the app deep-link is a dead end (the wallet app
   // returns to the system browser, never to this tab). Swap the dead-end
