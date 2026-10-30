@@ -38,6 +38,7 @@ const short = (s, n=6) => s ? s.slice(0,n) + '…' + s.slice(-4) : '';
 
 /* ---------- Cookie Chain network pulse ---------- */
 async function pulse() {
+  if (walletPromptOpen()) return;
   try {
     const [slot, epoch, perf] = await Promise.all([
       connection.getSlot(),
@@ -94,6 +95,7 @@ function renderEntries(q) {
 
 /* ---------- BCH mining telemetry (live, CORS-open) ---------- */
 async function mining() {
+  if (typeof walletPromptOpen === 'function' && walletPromptOpen()) return;
   try {
     const r = await fetch(SOLOPOOL);
     const m = await r.json();
@@ -250,6 +252,7 @@ $('connectBtn').addEventListener('click', async () => {
 });
 
 async function refreshBalance() {
+  if (typeof walletPromptOpen === 'function' && walletPromptOpen()) return;
   try {
     const lamports = await connection.getBalance(new PublicKey(wallet));
     const cook = lamports / 1e9;
@@ -262,6 +265,7 @@ async function refreshBalance() {
 
 /* ---------- Mobile anchor: Phantom app deep link (no injected provider) ---------- */
 async function refreshMobileBalance() {
+  if (typeof walletPromptOpen === 'function' && walletPromptOpen()) return;
   const addr = $('mobileAddr').value.trim();
   if (!addr) return;
   try {
@@ -1048,6 +1052,7 @@ async function runAnchorEngine() {
   out.classList.remove('hidden');
   let alterNote = '';
   const pubBytes = new PublicKey(wallet).toBytes();
+  window._walletPromptOpen = true; // background RPC polling pauses while the wallet prompt is open
   try {
     // Step 0 — key check: does this provider sign with the key it reports?
     // One readable approval ("phi-ledger-key-check"). If the wallet signs with a
@@ -1084,6 +1089,8 @@ async function runAnchorEngine() {
   } catch (e) {
     const full = (alterNote + String((e && e.message) || e)).slice(0, 900);
     out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${full}</span><br><span class="text-gray-500 text-xs">A transaction that never confirms costs no fee.</span>`;
+  } finally {
+    window._walletPromptOpen = false;
   }
 }
 
@@ -1190,14 +1197,16 @@ async function buildBatchAnchorTx(walletAddr, seals) {
   tx._memoTexts = memoTexts;
   return tx;
 }
+const MAX_BATCH_SEALS = 10; // 429 throttle: never more than 10 seals per wallet approval, no matter the byte cap
 function packSealBatches(seals) {
   // Greedy pack: keep adding seal memos while the estimated serialized
-  // message stays under cap. Deterministic — same list, same batches.
+  // message stays under cap, and never past 10 seals per batch.
+  // Deterministic — same list, same batches.
   const est = arr => 3 + 65 + 32 + arr.reduce((n, s) => n + 5 + new TextEncoder().encode(batchMemoText(s)).length, 0);
   const batches = [];
   let cur = [];
   for (const s of seals) {
-    if (cur.length && est(cur.concat([s])) > BATCH_MSG_CAP) { batches.push(cur); cur = []; }
+    if (cur.length && (cur.length >= MAX_BATCH_SEALS || est(cur.concat([s])) > BATCH_MSG_CAP)) { batches.push(cur); cur = []; }
     cur.push(s);
   }
   if (cur.length) batches.push(cur);
@@ -1303,16 +1312,33 @@ function batchTxTotal() {
  * reads every transaction's Memo-program memos, and reports the snapshot
  * seals with no on-chain PHI-LEDGER memo as missing. Anything the wallet
  * anchored — single or batch, any session — counts. */
+/* 429 throttle, 2026-10-29: when the RPC answers 429, stop sending — do not
+ * spam retries. All site RPC calls pause for 60 seconds, and the error names
+ * the rate limit plainly instead of surfacing as a bare "429 :" prompt. */
 async function rpcCall(method, params) {
+  if (window._rpcPausedUntil && Date.now() < window._rpcPausedUntil) {
+    throw new Error('RPC rate limited (429) — paused, do not tap again until the pause clears.');
+  }
   const r = await fetch(connection.rpcEndpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ jsonrpc: '2.0', id: 1, method, params }),
   });
+  if (!r.ok) {
+    if (r.status === 429) window._rpcPausedUntil = Date.now() + 60000;
+    throw new Error('RPC HTTP ' + r.status + (r.status === 429 ? ' — rate limited, paused 60 seconds, do not tap again.' : ''));
+  }
   const j = await r.json();
-  if (j.error) throw new Error('RPC ' + method + ': ' + (j.error.message || 'error'));
+  if (j.error) {
+    if (String(j.error.message || '').includes('429')) window._rpcPausedUntil = Date.now() + 60000;
+    throw new Error('RPC ' + method + ': ' + (j.error.message || 'error'));
+  }
   return j.result;
 }
+/* While a wallet prompt is open, the site sends no background RPC calls at
+ * all — no pulse, no mining, no balance, no fee vault — so nothing competes
+ * with the wallet's own simulation while Tyree approves. */
+function walletPromptOpen() { return !!window._walletPromptOpen; }
 async function loadMissingSeals(force, onProgress) {
   if (window._missingSeals && !force) return window._missingSeals;
   if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
@@ -1380,6 +1406,7 @@ async function runBatchAnchor() {
   batchRunning = true;
   btn.disabled = true;
   const pubBytes = new PublicKey(wallet).toBytes();
+  window._walletPromptOpen = true; // background RPC polling pauses while the wallet prompt is open
   try {
     if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
     out.innerHTML = '<span class="text-gray-400">Reading chain history… this is the slow sync — the app is working, do not tap again.</span>';
@@ -1461,6 +1488,8 @@ async function runBatchAnchor() {
     // the run stopped. The chain read on the next run is the only fee truth.
     out.innerHTML = `<span class="text-red-400">Stopped:</span> <span class="text-gray-400">${shortErr(e)}</span><br><span class="text-gray-500 text-xs">Progress is saved — tap the button to resume. If a batch was already broadcast, its fee was spent even if this run stopped — check the chain read before re-anchoring.</span>`;
     batchRunning = false; btn.disabled = false; btn.textContent = 'Resume anchoring';
+  } finally {
+    window._walletPromptOpen = false;
   }
 }
 async function refreshBatchLabel() {
@@ -1612,6 +1641,7 @@ pulse(); setInterval(pulse, 30000);
 mining(); setInterval(mining, 60000);
 /* Fee vault: Tyree's Nano balance on Cookie Chain, shown on the page. */
 async function refreshFeeVault() {
+  if (typeof walletPromptOpen === 'function' && walletPromptOpen()) return;
   try {
     const lamports = await connection.getBalance(new PublicKey(TYREE_WALLET));
     $('feeVault').textContent = (lamports / 1e9).toFixed(6) + ' COOK';
