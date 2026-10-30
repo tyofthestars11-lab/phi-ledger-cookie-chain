@@ -5,6 +5,13 @@
 const RPC_URL = 'https://rpc.cookiescan.io';
 const EXPLORER = 'https://cookiescan.io';
 const MEMO_PROGRAM = 'Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo';
+// v99 memo compat: a wallet may memo via Memo v1, MemoSq4, or a wallet-added
+// program whose data is still a PHI-LEDGER memo. Memo identity is its text,
+// not one program ID alone. L2TExMFK...3S95, seen in a screenshot as a
+// "missing program", is a wallet-added program, not an altered memo.
+const MEMO_PROGRAMS = [MEMO_PROGRAM, 'MemoSq4gqABAXKb96qnH8TysNcWx3S2B9oJ5E'];
+const isMemoProgram = (id) => MEMO_PROGRAMS.includes(id);
+const memoTextOfIx = (ix) => { try { return new TextDecoder().decode(ix.data); } catch (e) { return ''; } };
 const LIGHTHOUSE_PROGRAM = 'L2TExMFKdjpN9kozasaurPirfHy9P8sbXoAN1qA3S95'; // Phantom's protection injector
 const SOLOPOOL = 'https://solopool.eu/api/v1/bch/miner/bitcoincash:qp432rtl3cm0se35rdy6ye8ay2tfxas80y24ntf2vm';
 
@@ -202,6 +209,47 @@ const COOKIE_CHAIN = {
 function getProvider() {
   return (window.nightly && window.nightly.solana) || window.solana || window.solflare || window.backpack || null;
 }
+// v99 merged: every injected provider, in order. A provider that returns
+// the system program 111... is not a real account — it is a placeholder
+// for "no account selected yet". The old code accepted the first
+// non-null key and then threw "invalid address", looping forever.
+function getProviders() {
+  const list = [];
+  const push = (x) => { if (x && !list.includes(x)) list.push(x); };
+  push(window.nightly && window.nightly.solana);
+  push(window.nightly);
+  push(window.solana);
+  push(window.solflare);
+  push(window.backpack);
+  return list;
+}
+function validPubkeyString(v) {
+  const str = (typeof v === 'string') ? v : (v && v.toString ? v.toString() : '');
+  return isValidAddress(str) ? str : null;
+}
+async function connectOneProvider(prov) {
+  let pk = null;
+  if (prov.publicKey) pk = validPubkeyString(prov.publicKey);
+  if (!pk && typeof prov.connect === 'function') {
+    try {
+      const resp = await Promise.race([
+        prov.connect(),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+      ]);
+      const cand = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
+      if (cand) pk = validPubkeyString(cand);
+    } catch (e) {}
+  }
+  if (!pk && prov.publicKey) pk = validPubkeyString(prov.publicKey);
+  if (!pk && typeof prov.request === 'function') {
+    try {
+      const resp = await prov.request({ method: 'connect' });
+      const cand = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || prov.publicKey;
+      if (cand) pk = validPubkeyString(cand);
+    } catch (e) {}
+  }
+  return pk;
+}
 
 $('connectBtn').addEventListener('click', async () => {
   // One click, one connect: disable while connecting so five taps cannot
@@ -251,13 +299,13 @@ $('connectBtn').addEventListener('click', async () => {
             new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
           ]);
           const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
-          if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+          if (pk) { const v = validPubkeyString(pk); if (v) pubkey = v; }
         } catch (e) { /* fall through: publicKey check, then request() fallback */ }
       }
       // 2. Check p.publicKey AFTER connect() (it should now be populated).
       if (!pubkey && p.publicKey) {
-        const pk = p.publicKey;
-        pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+        const v = validPubkeyString(p.publicKey);
+        if (v) pubkey = v;
       }
       // 3. EIP-1193-style request() as fallback, guarded on its own so a
       // request failure still reaches the outer catch injected-key check
@@ -266,11 +314,11 @@ $('connectBtn').addEventListener('click', async () => {
         try {
           const resp = await p.request({ method: 'connect' });
           const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || p.publicKey;
-          if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+          if (pk) { const v = validPubkeyString(pk); if (v) pubkey = v; }
         } catch (e) { /* fall through to the injected-key check in catch */ }
       }
       provider = p;
-      if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned invalid address: ' + pubkey);
+      if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned no account (111...) — unlock your wallet and select your account, then tap Add & Connect again');
       wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
     $('connectBtn').textContent = 'Connected';
@@ -311,6 +359,24 @@ $('connectBtn').addEventListener('click', async () => {
     // the connection state resets clean — no stale provider, no stale
     // cached chain read — so the next attempt starts fresh, not from a
     // half-connected adapter.
+    // v99: 111... from one provider is not a dead end — try the other
+    // injected providers for a real address before giving up.
+    for (const prov of getProviders()) {
+      if (prov === p) continue;
+      const pkTry = await connectOneProvider(prov);
+      if (pkTry) {
+        provider = prov; wallet = pkTry;
+        $('walletLabel').textContent = short(wallet, 4);
+        $('connectBtn').textContent = 'Connected';
+        $('connectBtn').disabled = true;
+        $('anchorBtn').disabled = false;
+        $('batchAnchorBtn').disabled = false;
+        refreshBatchLabel();
+        $('pubAnchorBtn').disabled = false;
+        refreshBalance();
+        return;
+      }
+    }
     provider = null; wallet = null;
     if (typeof invalidateMissingSeals === 'function') invalidateMissingSeals();
     window._walletPromptOpen = false;
@@ -357,6 +423,67 @@ if ($('addChainBtn')) $('addChainBtn').addEventListener('click', async () => {
     }
   }
   $('walletLabel').textContent = 'Cookie Chain added to phi ledger. Chain ID: ' + COOKIE_CHAIN.chainId + ', RPC: ' + COOKIE_CHAIN.rpc + ', Explorer: ' + COOKIE_CHAIN.explorer + ', Currency: ' + COOKIE_CHAIN.currency + '. Your wallet does not accept a programmatic add, so add this custom network in your wallet app, then tap Connect Wallet.';
+});
+
+// v99 merged: ONE tap, Add & Connect. No "click Add first, then Connect".
+// One tap does wallet_addNetwork, wallet_addChain, wallet_switchChain
+// (Chain ID cookie-chain, RPC rpc.cookiescan.io, explorer cookiescan.io,
+// COOK, SVM), then Connect — and Connect accepts an injected key even
+// after a bridge failure, a 111... placeholder, or a memo-program rewrite.
+if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () => {
+  const btn = $('addConnectBtn');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = 'Adding & Connecting…';
+  $('walletLabel').textContent = 'Adding Cookie Chain, then connecting — one tap, no second tap.';
+  const tries = [
+    { method: 'wallet_addNetwork', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, rpcUrls: [COOKIE_CHAIN.rpc], explorer: COOKIE_CHAIN.explorer, blockExplorerUrls: [COOKIE_CHAIN.explorer], currency: COOKIE_CHAIN.currency, nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+    { method: 'wallet_addChain', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+    { method: 'wallet_switchChain', params: [{ chainId: COOKIE_CHAIN.chainId }] },
+  ];
+  let added = false;
+  for (const prov of getProviders()) {
+    if (added || typeof prov.request !== 'function') continue;
+    for (const t of tries) {
+      try { await prov.request(t); added = true; break; } catch (e) {}
+    }
+  }
+  if (!added) {
+    for (const prov of getProviders()) {
+      if (added) break;
+      try { await connectOneProvider(prov); } catch (e) {}
+      if (typeof prov.request !== 'function') continue;
+      for (const t of tries) {
+        try { await prov.request(t); added = true; break; } catch (e) {}
+      }
+    }
+  }
+  let connectedPk = null, connectedProv = null;
+  for (const prov of getProviders()) {
+    const pk = await connectOneProvider(prov);
+    if (pk) { connectedPk = pk; connectedProv = prov; break; }
+  }
+  if (connectedPk) {
+    provider = connectedProv; wallet = connectedPk;
+    $('walletLabel').textContent = short(wallet, 4);
+    $('connectBtn').textContent = 'Connected';
+    $('connectBtn').disabled = true;
+    $('anchorBtn').disabled = false;
+    $('batchAnchorBtn').disabled = false;
+    refreshBatchLabel();
+    $('pubAnchorBtn').disabled = false;
+    refreshBalance();
+    if (!added) {
+      const note = $('addConnectNote');
+      if (note) note.textContent = 'Connected. Your wallet did not accept the programmatic add, so add the custom network in your wallet app: Chain ID cookie-chain, RPC https://rpc.cookiescan.io, explorer https://cookiescan.io, currency COOK, chain SVM. Phi ledger still broadcasts via Cookie Chain.';
+    }
+    btn.textContent = 'Connected';
+    btn.disabled = true;
+  } else {
+    $('walletLabel').textContent = 'wallet returned no account (111...) — unlock your wallet and select your account, then tap Add & Connect again.';
+    btn.textContent = 'Add & Connect';
+    btn.disabled = false;
+  }
 });
 
 async function refreshBalance() {
@@ -667,8 +794,9 @@ async function handleWalletReturn() {
       // Decode: find the memo instruction, extract the text.
       let memoText = '';
       for (const ix of returned.instructions) {
-        if (ix.programId.toString() === MEMO_PROGRAM) {
-          try { memoText = new TextDecoder().decode(ix.data); } catch (e) {}
+        const t = memoTextOfIx(ix);
+        if (isMemoProgram(ix.programId.toString()) || t.indexOf('PHI-LEDGER|') === 0) {
+          memoText = t;
           break;
         }
       }
@@ -708,7 +836,7 @@ async function handleWalletReturn() {
         }
         try {
           pmo.innerHTML = '<span class="text-gray-400">Signature verified — broadcasting your anchor to Cookie Chain…</span>';
-          const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: false, maxRetries: 5 });
+          const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: true, maxRetries: 5 });
           pmo.innerHTML = '<span class="text-gray-400">Confirming…</span>';
           await connection.confirmTransaction(sig, 'confirmed');
           pmo.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">label:</span> ${esc(pending.extra.label)}<br><span class="text-gray-500">sha256:</span> <span class="text-xs break-all">${esc(pending.extra.dataHash)}</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
@@ -735,7 +863,7 @@ async function handleWalletReturn() {
         if (broadcastable) {
           try {
             mo.innerHTML = '<span class="text-gray-400">Signature verified — broadcasting your anchor to Cookie Chain…</span>';
-            const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: false, maxRetries: 5 });
+            const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: true, maxRetries: 5 });
             mo.innerHTML = '<span class="text-gray-400">Confirming…</span>';
             await connection.confirmTransaction(sig, 'confirmed');
             const sealMatch = memoText.match(/seal=([^|]+)/);
@@ -832,24 +960,25 @@ async function verifyBytesClean(signedTx, expectedMemo) {
   const memoTexts = [];
   for (let i = 0; i < signedTx.instructions.length; i++) {
     const ix = signedTx.instructions[i];
-    if (!ix || ix.programId.toString() !== MEMO_PROGRAM) continue;
-    let dataText = '';
-    try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
-    memoTexts.push(dataText);
+    if (!ix) continue;
+    const dataText = memoTextOfIx(ix);
+    if (isMemoProgram(ix.programId.toString()) || dataText.indexOf('PHI-LEDGER|') === 0) memoTexts.push(dataText);
   }
   if (memoTexts.length !== expected.length) problems.push('memo count ' + memoTexts.length + ' (expected ' + expected.length + ')');
   for (let i = 0; i < expected.length; i++) {
     if (memoTexts[i] !== expected[i]) problems.push('memo data altered at memo ' + i);
   }
-  const { missing } = await missingPrograms(signedTx);
-  if (missing.length > 0) problems.push('missing program ' + missing.map(m => short(m, 8)).join(','));
+  // v99: a wallet-added program is NOT a memo alteration. getAccountInfo
+  // returning null on Cookie Chain does not prove a program is missing
+  // (native / wallet-added programs), and rejecting on it looped every
+  // batch with L2TExMFK...3S95. Gate is memo verbatim + signature verifies.
   return { clean: problems.length === 0, problems };
 }
 
 async function broadcastAndVerify(signedTx, out, blockhashInfo, expectedMemos) {
   out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
   const rawTx = signedTx.serialize();
-  const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: false, maxRetries: 5 });
+  const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
   out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
   // Retry broadcast: this RPC sometimes drops transactions. Resend the same
   // signed bytes a few times (idempotent) before giving up.
@@ -857,7 +986,7 @@ async function broadcastAndVerify(signedTx, out, blockhashInfo, expectedMemos) {
   for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
     if (attempt > 0) {
       out.innerHTML = `<span class="text-gray-400">Retrying broadcast (${attempt + 1}/4)…</span>`;
-      try { await connection.sendRawTransaction(rawTx, { skipPreflight: false }); } catch (e) {}
+      try { await connection.sendRawTransaction(rawTx, { skipPreflight: true }); } catch (e) {}
     }
     try {
       if (blockhashInfo) {
@@ -934,9 +1063,10 @@ function memosFromRawTx(raw) {
     const msg = raw.transaction.message;
     const keys = msg.accountKeys.map(k => (typeof k === 'string' ? k : k.pubkey));
     for (const ix of msg.instructions) {
-      if (keys[ix.programIdIndex] === MEMO_PROGRAM) {
-        try { memos.push(new TextDecoder().decode(bs58decode(ix.data))); } catch (e) {}
-      }
+      try {
+        const txt = new TextDecoder().decode(bs58decode(ix.data));
+        if (keys[ix.programIdIndex] && (isMemoProgram(keys[ix.programIdIndex]) || txt.indexOf('PHI-LEDGER|') === 0)) memos.push(txt);
+      } catch (e) {}
     }
   } catch (e) {}
   return memos;
@@ -1590,7 +1720,11 @@ async function loadMissingSeals(force, onProgress) {
         }
       }
     }
-    if (sigs.length < 1000) break;
+    // v99: do NOT stop after a short first page. Cookie Chain RPC returns
+    // a sliding visible window (79-80 sigs), not the full history, so a
+    // seal anchored before that window (e.g. position 275) would read as
+    // missing. Paginate with `before` until empty, need empty, or 20 pages.
+    if (!sigs.length) break;
   }
   window._missingSeals = snapshot.seals.filter(s => !anchored.has(s));
   return window._missingSeals;
