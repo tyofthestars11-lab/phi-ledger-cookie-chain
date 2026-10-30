@@ -1507,6 +1507,60 @@ async function runBatchAnchor() {
       window._batchKeyCheck = kc;
     }
     const batches = packSealBatches(todo);
+    // Seal-all, one approval, 2026-10-29: if the wallet supports signing
+    // multiple transactions at once, sign every batch in ONE approval,
+    // whatever is missing, then broadcast them one by one. No 1-at-a-time,
+    // no 10-at-a-time approval loop. Each signed transaction is verified
+    // (signature + every memo verbatim) BEFORE any broadcast, so a bad
+    // signature spends no fee. If the wallet does not support this, the
+    // per-batch loop below runs instead — capability, not wallet name.
+    if (typeof provider.signAllTransactions === 'function') {
+      out.innerHTML = `<span class="text-gray-400">Signing all ${todo.length} missing seals in one approval — ${batches.length} transactions… approve once in your wallet.</span>`;
+      const txs = [];
+      for (const seals of batches) txs.push(await buildBatchAnchorTx(wallet, seals));
+      let signedAll;
+      try {
+        signedAll = await Promise.race([
+          provider.signAllTransactions(txs),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Wallet prompt timed out — no fee spent.')), 300000)),
+        ]);
+      } catch (e) {
+        if (isRejection(e)) {
+          out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed. 0 of ${todo.length} seals anchored this run. Tap the button to resume.</span>`;
+          batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${todo.length} left)`;
+          return;
+        }
+        throw e;
+      }
+      const signedTxs = [];
+      for (let i = 0; i < txs.length; i++) {
+        const raw = Array.isArray(signedAll) ? signedAll[i] : null;
+        const signedTx = normalizeSignedTx(raw);
+        if (!signedTx) throw new Error('Wallet returned nothing for batch ' + (i + 1) + ' — no fee spent.');
+        if (!txSignatureVerifies(signedTx, wallet)) throw new Error('Signature did not verify for batch ' + (i + 1) + ' — no fee spent.');
+        const check = await verifyBytesClean(signedTx, txs[i]._memoTexts);
+        if (!check.clean) throw new Error('Wallet altered memo bytes in batch ' + (i + 1) + ' (' + check.problems.join('; ') + ') — no fee spent.');
+        signedTx._memoTexts = txs[i]._memoTexts;
+        signedTx._blockhashInfo = txs[i]._blockhashInfo;
+        signedTxs.push(signedTx);
+      }
+      for (let bi = 0; bi < signedTxs.length; bi++) {
+        const seals = batches[bi];
+        out.innerHTML = `<span class="text-gray-400">Broadcasting batch ${bi + 1}/${signedTxs.length} — ${seals.length} seals…</span>`;
+        const sig = await broadcastAndVerify(signedTxs[bi], out, signedTxs[bi]._blockhashInfo, signedTxs[bi]._memoTexts);
+        batchMarkDone(seals);
+        runAnchored += seals.length; runTx += 1;
+        out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">batch ${bi + 1}/${signedTxs.length} — ${seals.length} seals verified on-chain.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${runAnchored} of ${todo.length} seals</span><br><a class="underline text-gray-500 text-xs" href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
+      }
+      const leftAll = todo.length - runAnchored;
+      out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">${runAnchored} of ${todo.length} seals on-chain in ${runTx} transactions, one approval.</span>` + (leftAll === 0 ? `<br><span class="gold">All ${todo.length} seals anchored.</span>` : '');
+      invalidateMissingSeals();
+      showMissingList([]);
+      refreshBalance();
+      batchRunning = false; btn.disabled = false;
+      btn.textContent = leftAll ? `Resume anchoring (${leftAll} left)` : 'Anchor all missing';
+      return;
+    }
     for (let bi = 0; bi < batches.length; bi++) {
       const seals = batches[bi];
       // Omni rounds per batch: a slow approval kills the blockhash — fresh
