@@ -8,6 +8,12 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# General run-fail fix: Pages deploy needs these, even when the job only verifies.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 on:
   push:
     branches: [main]
