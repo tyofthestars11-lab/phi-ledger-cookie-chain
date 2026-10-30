@@ -844,8 +844,13 @@ function isExpiredBlockhashErr(e) {
 function isRetryableSignErr(e) {
   if (isExpiredBlockhashErr(e)) return true;
   const m = String((e && e.message) || e).toLowerCase();
-  return /altered the bytes|unreadable signature|returned an unreadable/i.test(m);
+  return /altered the bytes|unreadable signature|returned an unreadable|429|rate limit/i.test(m);
 }
+function isRateLimitErr(e) {
+  const m = String((e && e.message) || e).toLowerCase();
+  return /429|rate limit/.test(m);
+}
+function sleepMs(ms) { return new Promise(r => setTimeout(r, ms)); }
 // Omni prompt timeout: a wallet prompt that never loads (spinner, no wallet
 // read) cannot hang the run forever. After 60 seconds the attempt throws a
 // retryable error and the caller rebuilds fresh and retries. No fee is spent
@@ -1522,18 +1527,36 @@ async function runBatchAnchor() {
       const txs = [];
       for (const seals of batches) txs.push(await buildBatchAnchorTx(wallet, seals));
       let signedAll;
-      try {
-        signedAll = await Promise.race([
-          provider.signAllTransactions(txs),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Wallet prompt timed out — no fee spent.')), 300000)),
-        ]);
-      } catch (e) {
-        if (isRejection(e)) {
-          out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed. 0 of ${todo.length} seals anchored this run. Tap the button to resume.</span>`;
-          batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${todo.length} left)`;
-          return;
+      // 429 cause and fix, 2026-10-29: Nightly's own Solana simulation
+      // rate-limits when many transactions are simulated at once, and it
+      // surfaces that as a "429 :" prompt instead of transaction details.
+      // That simulation is wallet-side, not Cookie Chain, and it is not
+      // the anchor failing — but sending 17 simulations at once is what
+      // trips it. On a 429, wait 60 seconds for the rate limit to clear,
+      // rebuild fresh, and try the one approval again, inside this same
+      // run, instead of stopping. A rejection still pauses, as before.
+      for (let attempt = 0; attempt < 3 && !signedAll; attempt++) {
+        try {
+          signedAll = await Promise.race([
+            provider.signAllTransactions(txs),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Wallet prompt timed out — no fee spent.')), 300000)),
+          ]);
+        } catch (e) {
+          if (isRejection(e)) {
+            out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed. 0 of ${todo.length} seals anchored this run. Tap the button to resume.</span>`;
+            batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${todo.length} left)`;
+            return;
+          }
+          if (isRateLimitErr(e) && attempt < 2) {
+            out.innerHTML = `<span class="text-gray-400">Rate limited (429) — waiting 60 seconds for the limit to clear, then trying the one approval again…</span>`;
+            await sleepMs(60000);
+            const fresh = [];
+            for (const seals of batches) fresh.push(await buildBatchAnchorTx(wallet, seals));
+            txs.length = 0; fresh.forEach(t => txs.push(t));
+            continue;
+          }
+          throw e;
         }
-        throw e;
       }
       const signedTxs = [];
       for (let i = 0; i < txs.length; i++) {
@@ -1572,6 +1595,10 @@ async function runBatchAnchor() {
             }
             lastErr = e;
             if (!isRetryableSignErr(e) || round === 2) throw e;
+            if (isRateLimitErr(e)) {
+              out.innerHTML = `<span class="text-gray-400">Rate limited (429) — waiting 60 seconds, then retrying batch ${bi + 1}/${signedTxs.length}…</span>`;
+              await sleepMs(60000);
+            }
           }
         }
         if (!sig) throw lastErr || new Error('Batch did not land.');
@@ -1611,6 +1638,10 @@ async function runBatchAnchor() {
           }
           lastErr = e;
           if (!isRetryableSignErr(e) || round === 2) throw e;
+          if (isRateLimitErr(e)) {
+            out.innerHTML = `<span class="text-gray-400">Rate limited (429) — waiting 60 seconds, then retrying batch ${bi + 1}/${batches.length}…</span>`;
+            await sleepMs(60000);
+          }
         }
       }
       if (!sig) throw lastErr || new Error('Batch did not land.');
