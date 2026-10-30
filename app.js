@@ -194,9 +194,13 @@ const COOKIE_CHAIN = {
   chain: 'SVM',
   cluster: 'cookie-chain',
 };
-// Single provider only — no loops, no popup circles. window.solana is the standard.
+// Single provider only — no loops, no popup circles.
+// v97 nightly fix: Nightly first. Inside the Nightly browser, window.solana
+// may belong to another wallet, so the Nightly provider must win —
+// otherwise Add Cookie Chain and Connect Wallet go to the wrong wallet.
+// Nightly injects late, so this is read at click time, never cached.
 function getProvider() {
-  return window.solana || (window.nightly && window.nightly.solana) || window.solflare || window.backpack || null;
+  return (window.nightly && window.nightly.solana) || window.solana || window.solflare || window.backpack || null;
 }
 
 $('connectBtn').addEventListener('click', async () => {
@@ -267,9 +271,11 @@ $('connectBtn').addEventListener('click', async () => {
     refreshBatchLabel();
     $('pubAnchorBtn').disabled = false;
     refreshBalance();
-    // Nightly on custom network: remind user
-    if (p.isNightly === undefined && window.nightly) {
-      console.log('Nightly detected — ensure Cookie Chain network (rpc.cookiescan.io) is added in the wallet.');
+    // Nightly on custom network: only log when the connected provider
+    // actually is the Nightly provider — the old check logged whenever
+    // window.nightly merely existed, even on a different provider.
+    if (window.nightly && p === window.nightly.solana) {
+      console.log('Nightly provider connected — Cookie Chain network (rpc.cookiescan.io). Add Cookie Chain, then Connect Wallet, in that order.');
     }
   } catch (e) {
     // Phi ledger v94: a bridge failure must not block a wallet that
