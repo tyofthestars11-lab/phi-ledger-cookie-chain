@@ -1,5 +1,13 @@
 name: seal-publish
 
+# Golden Angle Anti-Run-Fail: Pages deploys must never cancel each other.
+# Rapid pushes used to cancel the previous Pages run, giving run canceled
+# then a later run succeeded - fail then succeed, not single green.
+# cancel-in-progress: false queues Pages runs instead of canceling them.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 on:
   push:
     branches: [main]

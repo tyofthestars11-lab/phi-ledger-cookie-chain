@@ -87,6 +87,11 @@ def bump_site_script_version():
         return
     with open(idx, "w", encoding="utf-8") as f:
         f.write(s2)
+    # Golden Angle Gate 52.5: footer app v must match app.js?v, or seal-publish
+    # test_one_app_version_everywhere fails on the next push (v104 footer vs v105 script).
+    s3 = re.sub(r"app v\d+", f"app v{new_v}", s2)
+    with open(idx, "w", encoding="utf-8") as f:
+        f.write(s3)
     print(f"site script version bumped to ?v={new_v}")
 
 def main():
