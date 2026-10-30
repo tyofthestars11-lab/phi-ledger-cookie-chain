@@ -1236,6 +1236,40 @@ const BATCH_MSG_CAP = 1150; // serialized-message ceiling; +65B signature stays 
 function batchMemoText(seal) {
   return `PHI-LEDGER|seal=${seal}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
 }
+// 50-per, 2026-10-29: one memo per transaction, listing seal indices in
+// snapshot order, instead of one memo per seal. 50 indices + full snapshot
+// hash fit in ~240 bytes, far under the 1232-byte transaction limit, so
+// 170 missing seals land in 4 transactions, not 17, with 4 simulations
+// instead of 17, and 4 fees instead of 17. Indices map back to seal names
+// through the public ledger snapshot, whose full hash is in the memo itself,
+// so the batch memo is phase-locked to that snapshot, not to a wallet grid.
+// The old per-seal memo grammar still counts in the chain read below.
+function batch50MemoText(seals) {
+  const indices = seals.map(s => snapshot.seals.indexOf(s) + 1).filter(i => i > 0);
+  return `PHI-LEDGER|seals=${indices.join(',')}|sha256=${snapshot.snapshot_sha256}|by=tyofthestarz`;
+}
+async function buildBatch50Tx(walletAddr, seals) {
+  if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
+  const tx = new Transaction();
+  const memoText = batch50MemoText(seals);
+  tx.add(new TransactionInstruction({
+    keys: [{ pubkey: new PublicKey(walletAddr), isSigner: true, isWritable: false }],
+    programId: new PublicKey(MEMO_PROGRAM),
+    data: new TextEncoder().encode(memoText),
+  }));
+  tx.feePayer = new PublicKey(walletAddr);
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('confirmed');
+  tx.recentBlockhash = blockhash;
+  tx._blockhashInfo = { blockhash, lastValidBlockHeight };
+  tx._memoTexts = [memoText];
+  tx._memoText = memoText;
+  return tx;
+}
+function pack50Batches(seals) {
+  const batches = [];
+  for (let i = 0; i < seals.length; i += 50) batches.push(seals.slice(i, i + 50));
+  return batches;
+}
 async function buildBatchAnchorTx(walletAddr, seals) {
   if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
   const tx = new Transaction();
@@ -1435,6 +1469,14 @@ async function loadMissingSeals(force, onProgress) {
         for (const memo of memosFromRawTx(raw)) {
           const m = memo.match(/PHI-LEDGER\|seal=([^|]+)\|/);
           if (m) { anchored.add(m[1]); need.delete(m[1]); }
+          const b = memo.match(/PHI-LEDGER\|seals=([0-9,]+)\|/);
+          if (b) {
+            for (const part of b[1].split(',')) {
+              const idx = parseInt(part, 10);
+              const name = snapshot.seals[idx - 1];
+              if (name) { anchored.add(name); need.delete(name); }
+            }
+          }
         }
       }
     }
@@ -1514,7 +1556,7 @@ async function runBatchAnchor() {
       if (kc.outcome === 'none') throw new Error('key check FAILED: ' + kc.detail + ' — no fee spent.');
       window._batchKeyCheck = kc;
     }
-    const batches = packSealBatches(todo);
+    const batches = pack50Batches(todo);
     // Seal-all, one approval, 2026-10-29: if the wallet supports signing
     // multiple transactions at once, sign every batch in ONE approval,
     // whatever is missing, then broadcast them one by one. No 1-at-a-time,
@@ -1523,9 +1565,9 @@ async function runBatchAnchor() {
     // signature spends no fee. If the wallet does not support this, the
     // per-batch loop below runs instead — capability, not wallet name.
     if (typeof provider.signAllTransactions === 'function') {
-      out.innerHTML = `<span class="text-gray-400">Signing all ${todo.length} missing seals in one approval — ${batches.length} transactions… approve once in your wallet.</span>`;
+      out.innerHTML = `<span class="text-gray-400">Signing all ${todo.length} missing seals in one approval — ${batches.length} transactions, 50 seals each… approve once in your wallet. If your wallet says simulation failed, 429, or 403, that is its Solana simulation, not Cookie Chain — Cookie Chain broadcast skips preflight, so confirming still anchors on Cookie Chain.</span>`;
       const txs = [];
-      for (const seals of batches) txs.push(await buildBatchAnchorTx(wallet, seals));
+      for (const seals of batches) txs.push(await buildBatch50Tx(wallet, seals));
       let signedAll;
       // 429 cause and fix, 2026-10-29: Nightly's own Solana simulation
       // rate-limits when many transactions are simulated at once, and it
@@ -1551,13 +1593,23 @@ async function runBatchAnchor() {
             out.innerHTML = `<span class="text-gray-400">Rate limited (429) — waiting 60 seconds for the limit to clear, then trying the one approval again…</span>`;
             await sleepMs(60000);
             const fresh = [];
-            for (const seals of batches) fresh.push(await buildBatchAnchorTx(wallet, seals));
+            for (const seals of batches) fresh.push(await buildBatch50Tx(wallet, seals));
             txs.length = 0; fresh.forEach(t => txs.push(t));
             continue;
+          }
+          // Bypass, 2026-10-29: if sign-all simulation fails (Phantom
+          // "Failed to simulate", Nightly 403/429), do not stop the run.
+          // Break out to the per-batch loop below, in this same run,
+          // with 50 seals per transaction — not 1 by 1, not 10 by 10.
+          if (/simulate|403|forbidden/i.test(String((e && e.message) || e))) {
+            out.innerHTML = `<span class="text-gray-400">Sign-all simulation blocked by the wallet — bypassing to per-batch in this same run, 50 seals per transaction…</span>`;
+            signedAll = null;
+            break;
           }
           throw e;
         }
       }
+      if (signedAll) {
       const signedTxs = [];
       for (let i = 0; i < txs.length; i++) {
         const raw = Array.isArray(signedAll) ? signedAll[i] : null;
@@ -1583,7 +1635,7 @@ async function runBatchAnchor() {
               sig = await broadcastAndVerify(signedTxs[bi], out, signedTxs[bi]._blockhashInfo, signedTxs[bi]._memoTexts);
             } else {
               out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${signedTxs.length} — refreshing… approve in your wallet.</span>`;
-              const tx = await buildBatchAnchorTx(wallet, seals);
+              const tx = await buildBatch50Tx(wallet, seals);
               const signed = await signBatchTx(tx, wallet, pubBytes, kc, () => signMessageFallbackBatch(wallet, seals));
               sig = await broadcastAndVerify(signed.finalTx, out, signed.finalInfo, signed.finalTx._memoTexts);
             }
@@ -1615,6 +1667,7 @@ async function runBatchAnchor() {
       btn.textContent = leftAll ? `Resume anchoring (${leftAll} left)` : 'Anchor all missing';
       return;
     }
+    }
     for (let bi = 0; bi < batches.length; bi++) {
       const seals = batches[bi];
       // Omni rounds per batch: a slow approval kills the blockhash — fresh
@@ -1626,7 +1679,7 @@ async function runBatchAnchor() {
         } else {
           out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${batches.length} — refreshing… approve in your wallet.</span>`;
         }
-        const tx = await buildBatchAnchorTx(wallet, seals); // fresh blockhash every round
+        const tx = await buildBatch50Tx(wallet, seals); // fresh blockhash every round
         try {
           const signed = await signBatchTx(tx, wallet, pubBytes, kc, () => signMessageFallbackBatch(wallet, seals));
           sig = await broadcastAndVerify(signed.finalTx, out, signed.finalInfo, signed.finalTx._memoTexts);
