@@ -238,27 +238,36 @@ $('connectBtn').addEventListener('click', async () => {
         const pk0 = (typeof p.publicKey === 'string') ? p.publicKey : (p.publicKey.toString ? p.publicKey.toString() : String(p.publicKey));
         if (isValidAddress(pk0)) pubkey = pk0;
       }
-      // 1. Legacy connect() — the authoritative source, with a 60-second
-      // break: if the bridge never answers, the button must not hang on
-      // "Connecting…" — the timeout throws, the catch below resets it.
+      // 1. Legacy connect() — with a 60-second break, and guarded on its
+      // own: v98 real fix. Before v98 a bridge failure here ("Failed to
+      // connect to Solana") jumped straight to the outer catch and
+      // SKIPPED the request() fallback below, so a wallet whose bridge
+      // fails but whose request() would answer never got tried. A
+      // failure here now falls through to step 2 and step 3 instead.
       if (!pubkey && typeof p.connect === 'function') {
-        const resp = await Promise.race([
-          p.connect(),
-          new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
-        ]);
-        const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
-        if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+        try {
+          const resp = await Promise.race([
+            p.connect(),
+            new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+          ]);
+          const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
+          if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+        } catch (e) { /* fall through: publicKey check, then request() fallback */ }
       }
       // 2. Check p.publicKey AFTER connect() (it should now be populated).
       if (!pubkey && p.publicKey) {
         const pk = p.publicKey;
         pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
       }
-      // 3. EIP-1193-style request() as fallback.
+      // 3. EIP-1193-style request() as fallback, guarded on its own so a
+      // request failure still reaches the outer catch injected-key check
+      // below instead of throwing a raw error out of the flow.
       if (!pubkey && typeof p.request === 'function') {
-        const resp = await p.request({ method: 'connect' });
-        const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || p.publicKey;
-        if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+        try {
+          const resp = await p.request({ method: 'connect' });
+          const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || p.publicKey;
+          if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
+        } catch (e) { /* fall through to the injected-key check in catch */ }
       }
       provider = p;
       if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned invalid address: ' + pubkey);
@@ -334,8 +343,17 @@ if ($('addChainBtn')) $('addChainBtn').addEventListener('click', async () => {
       { method: 'wallet_addChain', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
       { method: 'wallet_switchChain', params: [{ chainId: COOKIE_CHAIN.chainId }] },
     ];
-    for (const t of tries) {
-      try { await p.request(t); $('walletLabel').textContent = 'Cookie Chain added to wallet via phi ledger. Chain ID: ' + COOKIE_CHAIN.chainId + ', RPC: ' + COOKIE_CHAIN.rpc + '. Now tap Connect Wallet.'; return; } catch (e) {}
+    // v98 real fix: some wallet browsers reject every add method until the
+    // wallet is connected first. If the first pass fails, connect once
+    // (guarded) and retry the same three methods in the same order, so
+    // the manual-add message only shows after both passes fail.
+    for (let attempt = 0; attempt < 2; attempt++) {
+      for (const t of tries) {
+        try { await p.request(t); $('walletLabel').textContent = 'Cookie Chain added to wallet via phi ledger. Chain ID: ' + COOKIE_CHAIN.chainId + ', RPC: ' + COOKIE_CHAIN.rpc + '. Now tap Connect Wallet.'; return; } catch (e) {}
+      }
+      if (attempt === 0 && typeof p.connect === 'function') {
+        try { await p.connect(); } catch (e) {}
+      }
     }
   }
   $('walletLabel').textContent = 'Cookie Chain added to phi ledger. Chain ID: ' + COOKIE_CHAIN.chainId + ', RPC: ' + COOKIE_CHAIN.rpc + ', Explorer: ' + COOKIE_CHAIN.explorer + ', Currency: ' + COOKIE_CHAIN.currency + '. Your wallet does not accept a programmatic add, so add this custom network in your wallet app, then tap Connect Wallet.';
