@@ -1161,13 +1161,18 @@ async function anchorSingleAttempt(walletAddr, seal, pubBytes, enveloped, alterN
     if (signedTx) {
       const wantHex = hexOf(tx.serializeMessage());
       const gotHex = hexOf(signedTx.serializeMessage());
-      if (gotHex === wantHex && txSignatureVerifies(signedTx, walletAddr)) {
-        finalTx = signedTx;
+      // Same omni memo gate as the batch path: accept altered non-memo
+      // bytes when the signature verifies and the memo is verbatim.
+      if (txSignatureVerifies(signedTx, walletAddr)) {
+        const check = await verifyBytesClean(signedTx, tx._memoText);
+        if (check.clean) {
+          if (gotHex !== wantHex) alterNote += `wallet altered non-memo bytes (first diff at byte ${firstDiffByte(wantHex, gotHex)}) but memo is verbatim — accepting. `;
+          finalTx = signedTx;
+        } else {
+          throw new Error(alterNote + 'wallet altered memo bytes (' + check.problems.join('; ') + ') — retry fresh. No fee spent.');
+        }
       } else {
-        const off = firstDiffByte(wantHex, gotHex);
-        alterNote += `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
-        throw new Error(alterNote + 'signTransaction altered the bytes — retry fresh. No fee spent.');
-        finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
+        throw new Error(alterNote + 'signature did not verify — retry fresh. No fee spent.');
       }
     } else {
       // Maybe signTransaction returned a bare signature instead of a transaction.
@@ -1289,20 +1294,32 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
   let finalTx = null, finalInfo = tx._blockhashInfo;
   // Omni, 2026-10-29: one path for every wallet — signTransaction only.
   // No Nightly branch, no Phantom branch, no message-signing fallback for
-  // transaction bytes. A wallet that alters or returns unreadable bytes
-  // throws a retryable error, and the caller rebuilds fresh and retries.
+  // transaction bytes. Altered non-memo bytes are accepted when the
+  // signature verifies and every memo is verbatim; only altered memos,
+  // bad signatures, or unreadable returns throw a retryable error, and
+  // the caller rebuilds fresh and retries.
   if (typeof provider.signTransaction === 'function') {
     const rawSigned = await signTransactionTimed(tx);
     const signedTx = normalizeSignedTx(rawSigned);
     if (signedTx) {
       const wantHex = hexOf(tx.serializeMessage());
       const gotHex = hexOf(signedTx.serializeMessage());
-      if (gotHex === wantHex && txSignatureVerifies(signedTx, walletAddr)) {
-        finalTx = signedTx;
+      // Omni memo gate: strict full-hex equality rejected a wallet that
+      // alters a non-memo byte (Phantom, first diff at byte 2) even when
+      // every memo was verbatim. The memos are the anchor, not the header
+      // bytes — if the signature verifies for the signed bytes AND every
+      // memo is verbatim, accept it. The downstream chain read still
+      // verifies the memos on-chain before any "Anchored" is said.
+      if (txSignatureVerifies(signedTx, walletAddr)) {
+        const check = await verifyBytesClean(signedTx, tx._memoTexts);
+        if (check.clean) {
+          if (gotHex !== wantHex) alterNote += `wallet altered non-memo bytes (first diff at byte ${firstDiffByte(wantHex, gotHex)}) but memos are verbatim — accepting. `;
+          finalTx = signedTx;
+        } else {
+          throw new Error(alterNote + 'wallet altered memo bytes (' + check.problems.join('; ') + ') — retry fresh. No fee spent.');
+        }
       } else {
-        const off = firstDiffByte(wantHex, gotHex);
-        alterNote += `signTransaction altered the bytes (first diff at byte ${off}). `;
-        throw new Error(alterNote + 'signTransaction altered the bytes — retry fresh. No fee spent.');
+        throw new Error(alterNote + 'signature did not verify — retry fresh. No fee spent.');
       }
     } else {
       const msgBytes = new Uint8Array(tx.serializeMessage());
