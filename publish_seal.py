@@ -65,6 +65,30 @@ def sync_site_config(d):
     print(f"site config synced: hash {d['snapshot_sha256'][:8]}, "
           f"{d['seal_count']} seals, {d['entry_count']} entries, ?v={d['seal_count']}")
 
+def bump_site_script_version():
+    """Keep the ledger site current at every publish, not just the snapshot:
+    index.html loads app.js with a ?v= version, and a browser that cached the
+    old app.js would keep showing old seal counts and old anchor logic even
+    after a new seal pushes. Bumping ?v= on every publish forces a fresh
+    app.js, so the site a visitor opens is the site that was just published.
+    Warns (does not block the seal) if the pattern is not found exactly once."""
+    import re
+    idx = os.path.join(HERE, "index.html")
+    with open(idx, encoding="utf-8") as f:
+        s = f.read()
+    m = re.search(r"app\.js\?v=(\d+)", s)
+    if not m:
+        print("site script version: pattern not found in index.html, not bumped")
+        return
+    new_v = int(m.group(1)) + 1
+    s2, n = re.subn(r"app\.js\?v=\d+", f"app.js?v={new_v}", s)
+    if n != 1:
+        print(f"site script version: pattern matched {n} times, not bumped")
+        return
+    with open(idx, "w", encoding="utf-8") as f:
+        f.write(s2)
+    print(f"site script version bumped to ?v={new_v}")
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seal", required=True)
@@ -120,9 +144,10 @@ def main():
     assert d2["entry_count"] == len(d2["entries"])
 
     sync_site_config(d2)
+    bump_site_script_version()
 
     msg = f"Seal {d2['seal_count']}: {a.seal} — snapshot {d2['entry_count']} entries, hash {h[:8]}"
-    subprocess.run(["git", "add", "ledger-snapshot.json", "publish_seal.py", "app.js"], cwd=HERE, check=True)
+    subprocess.run(["git", "add", "ledger-snapshot.json", "publish_seal.py", "app.js", "index.html"], cwd=HERE, check=True)
     subprocess.run(["git", "-c", "user.name=Tyree Jones",
                     "-c", "user.email=tyofthestars11@gmail.com",
                     "commit", "-m", msg], cwd=HERE, check=True)

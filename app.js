@@ -59,7 +59,7 @@ async function pulse() {
 
 /* ---------- Ledger analytics ---------- */
 async function loadLedger() {
-  const r = await fetch('ledger-snapshot.json?v=369');
+  const r = await fetch('ledger-snapshot.json?v=369', { cache: 'no-store' }); // ledger is current at every load, never a cached snapshot
   snapshot = await r.json();
   $('sealCount').textContent = snapshot.seal_count;
   $('entryCount').textContent = snapshot.entry_count;
@@ -1339,14 +1339,22 @@ async function runBatchAnchor() {
   const pubBytes = new PublicKey(wallet).toBytes();
   try {
     if (!snapshot) throw new Error('Ledger snapshot not loaded yet — reload the page and tap once more.');
-    const missing = await loadMissingSeals(true); // fresh chain read every run — resume still works via the done list
-    const done = new Set(batchDoneList());
-    const todo = missing.filter(s => !done.has(s));
+    const missing = await loadMissingSeals(true); // fresh chain read every run
+    // CHAIN ONLY, 2026-10-29 fix: the local done list (batchAnchoredV1) must
+    // NEVER filter this list. Filtering by it is how "All missing seals
+    // already anchored" was printed while the chain still missed seals, and
+    // how fees were spent on the assumption of anchors that were not there.
+    // Resume still works: a batch that landed is now in the chain read, so
+    // it is no longer missing. A seal in the done list but missing on-chain
+    // is re-anchored, because the chain is the truth, not this browser.
+    const todo = missing.slice();
+    const anchoredCount = snapshot.seals.length - missing.length;
+    out.innerHTML = `<span class="text-gray-400">Chain read: ${anchoredCount} of ${snapshot.seals.length} seals anchored on-chain, ${missing.length} missing. No fee is charged until you approve a batch.</span>`;
     // This-run counters only: the all-time done list must never leak into
     // this run's progress display (that was the "150 of 27" / "-123 left" bug).
     let runAnchored = 0, runTx = 0;
     if (!todo.length) {
-      out.innerHTML = '<span class="text-green-400">All missing seals already anchored ✓</span>';
+      out.innerHTML = `<span class="text-green-400">All ${snapshot.seals.length} seals anchored on-chain ✓</span><br><span class="text-gray-500 text-xs">Chain read, not a local list: ${anchoredCount} of ${snapshot.seals.length} seals found on-chain.</span>`;
       batchRunning = false; btn.disabled = false; btn.textContent = 'Anchor all missing';
       return;
     }
@@ -1407,8 +1415,8 @@ async function refreshBatchLabel() {
   const btn = $('batchAnchorBtn');
   if (!btn) return;
   try {
-    const missing = await loadMissingSeals();
-    const left = missing.filter(s => !batchDoneList().includes(s)).length;
+    const missing = await loadMissingSeals(true); // fresh chain read, never the local done list
+    const left = missing.length;
     btn.textContent = left ? `Anchor all missing (${left})` : 'Anchor all missing';
   } catch (e) { btn.textContent = 'Anchor all missing'; }
 }
