@@ -234,15 +234,21 @@ function validPubkeyString(v) {
 // solana connect, and wallet_requestPermissions, in that order. If locked,
 // the prompt itself is the unlock step; a message alone is not a fix.
 // A 111... key is still discarded, never accepted as an account.
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet prompt timed out')), ms)),
+  ]);
+}
 async function unlockAllProviders() {
   let unlockedPk = null;
   for (const prov of getProviders()) {
     if (typeof prov.request === 'function') {
-      try { await prov.request({ method: 'eth_requestAccounts' }); } catch (e) {}
-      try { await prov.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] }); } catch (e) {}
+      try { await withTimeout(prov.request({ method: 'eth_requestAccounts' }), 12000); } catch (e) {}
+      try { await withTimeout(prov.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] }), 12000); } catch (e) {}
     }
     if (typeof prov.connect === 'function') {
-      try { await prov.connect(); } catch (e) {}
+      try { await withTimeout(prov.connect(), 15000); } catch (e) {}
     }
     if (prov.publicKey) {
       const pk = validPubkeyString(prov.publicKey);
@@ -481,10 +487,12 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
     { method: 'wallet_switchChain', params: [{ chainId: COOKIE_CHAIN.chainId }] },
   ];
   let added = false;
+  // v103: every add request gets a 12 second timeout. A provider that
+  // never answers must not freeze the button on Adding and Connecting.
   for (const prov of getProviders()) {
     if (added || typeof prov.request !== 'function') continue;
     for (const t of tries) {
-      try { await prov.request(t); added = true; break; } catch (e) {}
+      try { await withTimeout(prov.request(t), 12000); added = true; break; } catch (e) {}
     }
   }
   if (!added) {
@@ -493,7 +501,7 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
       try { await connectOneProvider(prov); } catch (e) {}
       if (typeof prov.request !== 'function') continue;
       for (const t of tries) {
-        try { await prov.request(t); added = true; break; } catch (e) {}
+        try { await withTimeout(prov.request(t), 12000); added = true; break; } catch (e) {}
       }
     }
   }
@@ -533,7 +541,24 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
     btn.textContent = 'Connected';
     btn.disabled = true;
   } else {
-    $('walletLabel').textContent = 'No account was approved for this site (111...) — your wallet app showing A92L selected does not by itself approve this site. Approve A92L in the wallet prompt for this site, then tap Add & Connect again.';
+    // v103 diagnostics: name the providers the site actually sees, and
+    // what each returned, so a no-account result is not another blind
+    // message. A wallet app showing A92L selected does not by itself
+    // approve this site, and a different injected provider can be the
+    // one the site is actually talking to.
+    const diag = [];
+    const checkProv = (name, prov) => {
+      if (!prov) return;
+      const raw = prov.publicKey ? String(prov.publicKey) : '';
+      const status = isValidAddress(raw) ? raw.slice(0, 4) + '...' + raw.slice(-4) : (raw === '11111111111111111111111111111111' ? '111...' : 'no key');
+      diag.push(name + ' [' + status + ']');
+    };
+    checkProv('nightly.solana', window.nightly && window.nightly.solana);
+    checkProv('phantom.solana', window.phantom && window.phantom.solana);
+    checkProv('solana', window.solana);
+    checkProv('solflare', window.solflare);
+    checkProv('backpack', window.backpack);
+    $('walletLabel').textContent = 'No account was approved for this site (111...) — your wallet app showing A92L selected does not by itself approve this site. Approve A92L in the wallet prompt for this site, then tap Add & Connect again. Providers seen: ' + (diag.length ? diag.join(', ') : 'none');
     btn.textContent = 'Add & Connect';
     btn.disabled = false;
   }
