@@ -210,8 +210,15 @@ $('connectBtn').addEventListener('click', async () => {
   // Single connect() call — no loops, no popup circles.
   try {
       let pubkey = null;
+      // 0. Already connected in this browser session? Use the injected key
+      // directly — no new bridge call, so a failing SOLANA_CONNECT bridge
+      // cannot block a wallet that is already connected.
+      if (p.publicKey) {
+        const pk0 = (typeof p.publicKey === 'string') ? p.publicKey : (p.publicKey.toString ? p.publicKey.toString() : String(p.publicKey));
+        if (isValidAddress(pk0)) pubkey = pk0;
+      }
       // 1. Legacy connect() — the authoritative source.
-      if (typeof p.connect === 'function') {
+      if (!pubkey && typeof p.connect === 'function') {
         const resp = await p.connect();
         const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
         if (pk) pubkey = (typeof pk === 'string') ? pk : (pk.toString ? pk.toString() : String(pk));
@@ -243,10 +250,11 @@ $('connectBtn').addEventListener('click', async () => {
       console.log('Nightly detected — ensure Cookie Chain network (rpc.cookiescan.io) is added in the wallet.');
     }
   } catch (e) {
-    alert('Wallet connection rejected: ' + shortErr(e));
+    // No blocking alert: a failed bridge call must not block the page with
+    // a JSON dump. The real error stays inline, and the button comes back.
+    $('walletLabel').textContent = 'not connected — ' + shortErr(e);
     $('connectBtn').textContent = 'Connect Wallet';
     $('connectBtn').disabled = false;
-    $('walletLabel').textContent = 'not connected — tap again';
     return;
   }
 });
