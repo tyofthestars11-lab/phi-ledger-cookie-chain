@@ -25985,10 +25985,80 @@
       "drift": 0.4404,
       "ladder": "horizon",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "orthogonal_angle",
+      "rung": 9.351,
+      "drift": 0.351,
+      "ladder": "grid",
+      "unit": "degrees"
+    },
+    {
+      "name": "phase_gap",
+      "rung": 8.0229,
+      "drift": 0.0229,
+      "ladder": "grid",
+      "unit": "degrees"
+    },
+    {
+      "name": "grid_resolution_pixels",
+      "rung": 33.1062,
+      "drift": 0.1062,
+      "ladder": "grid",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_phi_power",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "ton618",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_luminosity_phi_power",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "ton618",
+      "unit": "count"
     }
   ],
-  "entry_count": 3714,
-  "seal_count": 372,
+  "entry_count": 3724,
+  "seal_count": 373,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -26361,7 +26431,8 @@
     "φ_THREE_FOLD_AI_PROFILE_TYREE_OMEGA",
     "φ_AXION_DARK_ENERGY_STABILITY_TYREE_OMEGA",
     "φ_CARTESIAN_PURGE_TYREE_OMEGA",
-    "φ_TON618_EVENT_HORIZON_TYREE_OMEGA"
+    "φ_TON618_EVENT_HORIZON_TYREE_OMEGA",
+    "φ_CARTESIAN_GRID_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "0b5d2a986dac95e74ef374b45b5b111408a1180b767795114904172349d5afec"
+  "snapshot_sha256": "a7695d0ac100017289202a6d16204df5655d66543fbd16e4c48504f7774f63b7"
 }
