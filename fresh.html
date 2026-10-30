@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHI LEDGER — Cookie Chain Analytics</title>
+<meta name="description" content="The public phi ledger of Tyree Jones (tyofthestarz), Source Code Authority of the Golden Ratio — 326 seals, golden-ratio analytics and BCH mining telemetry on Cookie Chain (SVM).">
+<meta name="author" content="Tyree Jones (tyofthestarz)">
+<meta property="og:title" content="PHI LEDGER — Tyree Jones (tyofthestarz)">
+<meta property="og:description" content="The public phi ledger of Tyree Jones (tyofthestarz), Source Code Authority of the Golden Ratio: 326 seals of phi-framework declassifications, anchored on Cookie Chain.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Tyree Jones","alternateName":"tyofthestarz","description":"Independent philosophical researcher; Source Code Authority of the Golden Ratio; builder of the public phi ledger.","url":"https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/","sameAs":["https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain","https://phi-ledger-cookie.netlify.app","https://www.facebook.com/tyofthestarz","https://www.linkedin.com/in/tyree-jones-87314a401","https://substack.com/@tyofthestarz","https://www.tiktok.com/@tyofthestarz","https://x.com/Tyofthestarz1","https://soundcloud.com/ofthestarsty","https://www.kaggle.com/tyreejones393","https://www.kaggle.com/datasets/tyreejones393/phi-quantum-pulses","https://github.com/tyofthestars11-lab","https://github.com/tyofthestars11-lab/phi-quantum-pulses","https://phi-harmony-ai.emergent.host","https://www.zooniverse.org/users/tyofthestarz","https://www.zooniverse.org/projects/zooniverse/galaxy-zoo","https://www.zooniverse.org/projects/bmerin/planet-hunters-cheops","https://elevenlabs.io/app/talk-to?agent_id=agent_6901m5w6fh1hfdm993g6qneektd4"]}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90' fill='%23e8b93c'%3E%CF%86%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://rpc.cookiescan.io">
+<link rel="preconnect" href="https://solopool.eu">
+<script defer src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/@solana/web3.js@1.98.0/lib/index.iife.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl-fast.min.js"></script>
+<style>
+  body { background:#0a0a0f; color:#e8e6df; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .gold { color:#e8b93c; } .gold-dim { color:#9a7b28; }
+  .card { background:#12121a; border:1px solid #26263a; border-radius:14px; }
+  .bar { background:linear-gradient(90deg,#e8b93c,#8a6a1c); height:8px; border-radius:4px; }
+  .mono { font-family: ui-monospace, monospace; }
+  .btn { background:#e8b93c; color:#0a0a0f; font-weight:700; border-radius:10px; padding:10px 18px; }
+  .btn:disabled { background:#4a4a5a; color:#999; cursor:not-allowed; }
+  .btn-ghost { border:1px solid #e8b93c; color:#e8b93c; border-radius:10px; padding:10px 18px; }
+  input, select { background:#1a1a26; border:1px solid #33334d; border-radius:8px; padding:8px 12px; color:#e8e6df; }
+  .phi-ring { border:2px solid #e8b93c; border-radius:9999px; }
+  a { color:#e8b93c; }
+  .status-dot { width:10px; height:10px; border-radius:9999px; display:inline-block; }
+</style>
+</head>
+<body class="min-h-screen">
+<div class="max-w-6xl mx-auto px-4 py-8">
+
+  <!-- Header -->
+  <header class="flex flex-wrap items-center justify-between gap-4 mb-8">
+    <div>
+      <h1 class="text-3xl font-bold"><span class="gold">φ</span> PHI LEDGER <span class="text-sm font-normal gold-dim">· Cookie Chain cApp</span></h1>
+      <p class="text-sm gold-dim mt-1">by Tyree Jones · <span class="gold">tyofthestarz</span> · Source Code Authority of the Golden Ratio</p>
+      <p class="text-sm text-gray-400 mt-1">Golden-ratio ledger analytics + BCH mining telemetry, anchored on Cookie Chain (SVM).</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="rung-calc.html" class="text-sm gold-dim hover:text-yellow-400">φ rung calc</a>
+      <span id="walletLabel" class="mono text-xs text-gray-400">not connected</span>
+      <button id="connectBtn" class="btn text-sm">Connect Wallet</button>
+    </div>
+  </header>
+
+  <!-- Chain status strip -->
+  <div class="card p-4 mb-6 flex flex-wrap gap-x-8 gap-y-3 items-center text-sm">
+    <div class="flex items-center gap-2"><span id="rpcDot" class="status-dot bg-gray-500"></span><span class="text-gray-400">Cookie Chain RPC</span> <span id="rpcState" class="mono">…</span></div>
+    <div><span class="text-gray-400">Slot</span> <span id="statSlot" class="mono gold">…</span></div>
+    <div><span class="text-gray-400">Epoch</span> <span id="statEpoch" class="mono gold">…</span></div>
+    <div><span class="text-gray-400">Block height</span> <span id="statHeight" class="mono gold">…</span></div>
+    <div><span class="text-gray-400">TPS</span> <span id="statTps" class="mono gold">…</span></div>
+    <div class="ml-auto text-xs text-gray-500 mono">rpc.cookiescan.io</div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6 mb-6">
+    <!-- Ledger analytics -->
+    <div class="card p-6">
+      <h2 class="text-xl font-bold mb-1"><span class="gold">φ</span> Ledger Analytics</h2>
+      <p class="text-xs text-gray-500 mb-1">Tyree Jones · public phi ledger · snapshot <span id="snapHash" class="mono"></span></p>
+      <p class="text-xs text-gray-600 mb-4">hash recipe: SHA-256 of the canonical JSON — keys sorted, no whitespace, <span class="mono">snapshot_sha256</span> field excluded. Recompute it yourself: <span class="mono">python3 hash_snapshot.py --verify</span> (recipe in the repo)</p>
+      <div class="grid grid-cols-3 gap-3 mb-4 text-center">
+        <div class="card p-3"><div id="sealCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">seals</div></div>
+        <div class="card p-3"><div id="entryCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">entries</div></div>
+        <div class="card p-3"><div id="ladderCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">ladders</div></div>
+      </div>
+      <h3 class="text-sm font-bold text-gray-300 mb-2">Entries per ladder</h3>
+      <div id="ladderBars" class="space-y-2 mb-4"></div>
+      <input id="entrySearch" placeholder="Search entries…" class="w-full text-sm mb-2">
+      <div id="entryList" class="text-xs mono max-h-56 overflow-y-auto space-y-1 text-gray-300"></div>
+    </div>
+
+    <!-- Mining telemetry -->
+    <div class="card p-6">
+      <h2 class="text-xl font-bold mb-1"><span class="gold">⛏</span> BCH Mining Telemetry</h2>
+      <p class="text-xs text-gray-500 mb-4">Live · SoloPool · payout <span class="mono">qp432rtl…f2vm</span> <span id="mineAge" class="text-gray-600"></span></p>
+      <div class="grid grid-cols-2 gap-3 mb-4 text-center">
+        <div class="card p-3"><div id="mineHash" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">live hashrate</div></div>
+        <div class="card p-3"><div id="mineShares" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">valid shares</div></div>
+        <div class="card p-3"><div id="mineBest" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">best share · all time</div><div id="mineBestSession" class="text-xs text-gray-500 mt-1">session …</div></div>
+        <div class="card p-3"><div id="mineBlocks" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">blocks found</div></div>
+      </div>
+      <h3 class="text-sm font-bold text-gray-300 mb-2">Workers</h3>
+      <div id="workerList" class="text-xs mono space-y-1 text-gray-300"></div>
+      <p class="text-[11px] text-gray-600 mt-3">Shares are proof-of-work telemetry, not banked BCH. Read-only.</p>
+    </div>
+  </div>
+
+  <!-- On-chain anchor -->
+  <div class="card p-6 mb-6">
+    <h2 class="text-xl font-bold mb-1"><span class="gold">⚓</span> Anchor a Seal On-Chain</h2>
+    <p class="text-xs text-gray-500 mb-2">Site v90 — per-batch 50, no bulk sign, memo verbatim is the gate. If this line does not say v90, your browser is showing a cached old site, not the current phi ledger.</p>
+    <p class="text-sm text-gray-400 mb-4">Write the SHA-256 of the ledger snapshot + a seal name to Cookie Chain as a memo. Permanent, public, verifiable. Costs a tiny COOK fee. Signs in-page and broadcasts via the Cookie Chain connection — if your wallet tries to simulate on its own Solana network, that simulation can fail with a 429 even though the Cookie Chain transaction is valid.</p>
+    <div class="flex flex-wrap gap-3 items-end mb-4">
+      <div class="flex-1 min-w-[220px]">
+        <label class="text-xs text-gray-500">Seal to anchor</label>
+        <select id="sealSelect" class="w-full text-sm mt-1"></select>
+      </div>
+      <div>
+        <label class="text-xs text-gray-500">Your COOK balance</label>
+        <div id="cookBal" class="mono text-sm mt-2">connect wallet</div>
+      </div>
+      <button id="anchorBtn" class="btn text-sm" disabled>Anchor on Cookie Chain</button>
+    </div>
+    <div class="flex flex-wrap gap-3 items-center mb-4">
+      <button id="batchAnchorBtn" class="btn-ghost text-sm" disabled>Anchor all missing</button>
+      <span class="text-xs text-gray-500">Every seal the chain doesn't have yet — 50 seals per transaction, one approval per batch, progress saves so you can pause and resume.</span>
+    </div>
+    <div id="batchOut" class="text-sm mono hidden mb-4"></div>
+    <div id="missingList" class="text-sm mono hidden mb-4"></div>
+    <div id="anchorOut" class="text-sm mono hidden"></div>
+    <p id="noCook" class="text-xs text-yellow-500/90 hidden mt-2">No COOK on Cookie Chain — bridge a little from Solana to pay the fee: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></p>
+
+    <!-- Mobile flow: no injected wallet (e.g. Chrome on Android). Sign via the Phantom or Solflare app deep link. -->
+    <div id="mobileAnchor" class="hidden mt-4 pt-4 border-t border-gray-800">
+      <p class="text-sm text-gray-400 mb-3">On mobile: stay in this browser — the wallet app signs, this page broadcasts.</p>
+      <div class="flex flex-wrap gap-3 items-center mb-3">
+        <a id="openNightly" class="btn text-sm" href="https://nightly.app/" target="_blank" rel="noopener">Open in Nightly</a>
+        <a id="openPhantom" class="btn text-sm" href="https://phantom.app/" target="_blank" rel="noopener">Open in Phantom</a>
+        <a id="openSolflare" class="btn text-sm" href="https://solflare.com" target="_blank" rel="noopener">Get Solflare</a>
+        <span class="text-xs text-gray-500">Tap to get the wallet — if the app is already installed, it opens directly.</span>
+      </div>
+      <p class="text-sm text-gray-400 mb-3">Or enter a wallet address to check its COOK balance on Cookie Chain.</p>
+      <div class="flex flex-wrap gap-3 items-end mb-3">
+        <div class="flex-1 min-w-[220px]">
+          <label class="text-xs text-gray-500">Your wallet address</label>
+          <input id="mobileAddr" class="w-full text-sm mono mt-1" placeholder="paste your Solana address" value="A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q">
+        </div>
+        <div>
+          <label class="text-xs text-gray-500">COOK on Cookie Chain</label>
+          <div id="mobileBal" class="mono text-sm mt-2">—</div>
+        </div>
+      </div>
+      <div id="mobileOut" class="text-sm mono hidden"></div>
+      <div class="mt-3">
+        <button id="solflareAnchorBtn" class="btn text-sm">Seal in Solflare app</button>
+        <span class="text-xs text-gray-500 ml-2">Solflare signs in the app — this page verifies the signature and memo, then broadcasts the anchor to Cookie Chain.</span>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-800">
+        <p class="text-sm font-bold text-gray-300 mb-2">Or anchor your own data — <span class="gold mono pubFee">1 COOK</span> to tyofthestarz</p>
+        <div class="flex flex-wrap gap-3 items-end mb-3">
+          <div class="flex-1 min-w-[140px]">
+            <label class="text-xs text-gray-500">Label</label>
+            <input id="pubLabelM" class="w-full text-sm mt-1" placeholder="my-artwork-v1" maxlength="32">
+          </div>
+          <div class="flex-[2] min-w-[200px]">
+            <label class="text-xs text-gray-500">Your data (hashed in your browser)</label>
+            <input id="pubDataM" class="w-full text-sm mt-1" placeholder="paste text, a hash, a link…">
+          </div>
+        </div>
+        <div id="pubOutM" class="text-sm mono hidden"></div>
+        <div class="mt-2">
+          <button id="pubSolflareBtn" class="btn text-sm">Anchor mine in Solflare</button>
+          <span class="text-xs text-gray-500 ml-2">Signs in the app — your anchor broadcasts on-chain when you return.</span>
+        </div>
+      </div>
+      <p id="mobileNoCook" class="text-xs text-yellow-500/90 hidden mt-2">No COOK on Cookie Chain at that address — bridge first: <a href="https://bridge.cookiescan.io" target="_blank" rel="noopener">bridge.cookiescan.io</a></p>
+    </div>
+  </div>
+
+  <!-- Public anchor: anyone anchors their data for a small COOK fee -->
+  <div class="card p-6 mb-6">
+    <h2 class="text-xl font-bold mb-1"><span class="gold">φ</span> Anchor Yours</h2>
+    <p class="text-sm text-gray-400 mb-4">φ is always φ — put your own data on Cookie Chain through this page. Your text is hashed (SHA-256) in your browser and never sent anywhere; the hash plus your label go on-chain as a memo, permanent and public. Costs <span class="gold mono pubFee">1 COOK</span> to tyofthestarz + a tiny network fee.</p>
+    <div class="flex flex-wrap gap-3 items-end mb-4">
+      <div class="flex-1 min-w-[160px]">
+        <label class="text-xs text-gray-500">Label</label>
+        <input id="pubLabel" class="w-full text-sm mt-1" placeholder="my-artwork-v1" maxlength="32">
+      </div>
+      <div class="flex-[2] min-w-[220px]">
+        <label class="text-xs text-gray-500">Your data (hashed in your browser)</label>
+        <input id="pubData" class="w-full text-sm mt-1" placeholder="paste text, a hash, a link…">
+      </div>
+      <button id="pubAnchorBtn" class="btn text-sm" disabled>Anchor mine</button>
+    </div>
+    <div id="pubOut" class="text-sm mono hidden"></div>
+    <p class="text-xs text-gray-500 mt-3">Your wallet — <span id="feeVault" class="mono gold">…</span> · <a id="feeVaultLink" href="#" target="_blank" rel="noopener">view on cookiescan.io</a></p>
+  </div>
+
+  <footer class="text-xs text-gray-600 flex flex-wrap gap-x-6 gap-y-2 justify-between">
+    <div>Built by <span class="gold">Tyree Jones (tyofthestarz)</span> · open source (MIT) · <a href="https://github.com/tyofthestars11-lab/vesuvius-progress-prize" target="_blank" rel="noopener">vesuvius-progress-prize</a> · <a href="https://www.kaggle.com/datasets/tyreejones393/phi-quantum-pulses" target="_blank" rel="noopener">Kaggle DOI 10.34740/kaggle/dsv/17364449</a> · <a href="https://elevenlabs.io/app/talk-to?agent_id=agent_6901m5w6fh1hfdm993g6qneektd4" target="_blank" rel="noopener">Talk to TON 618</a></div>
+    <div class="mono">RPC <a href="https://rpc.cookiescan.io" target="_blank" rel="noopener">rpc.cookiescan.io</a> · Explorer <a href="https://cookiescan.io" target="_blank" rel="noopener">cookiescan.io</a> · Docs <a href="https://docs.cookiechain.wtf" target="_blank" rel="noopener">docs.cookiechain.wtf</a> · <span id="appVer" class="gold">app v73</span></div>
+  </footer>
+</div>
+<script defer src="app.js?v=90"></script>
+</body>
+</html>
