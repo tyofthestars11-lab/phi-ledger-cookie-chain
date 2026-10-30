@@ -30,9 +30,9 @@ const TRANSACTION_SCHEMA = {
   version: 2,
   sealMemo: 'PHI-LEDGER|seal=<seal>|sha256=<snapshot_sha256>|by=tyofthestarz',
   publicMemo: 'PHI-LEDGER|public|<label>|sha256=<data_sha256>|by=<wallet>',
-  snapshotSha256: 'cfc25f43da73cbba605b29e17f4e2b544b3fa2744c6e2e39f00ced16d7daa410',
-  sealCount: 374,
-  entryCount: 3734,
+  snapshotSha256: '29e0a6a1a3cf2ff5cc522cc836654eb5d53c1edaa09a50ee27572f88cedcb736',
+  sealCount: 375,
+  entryCount: 3746,
 };
 
 let wallet = null;      // connected public key (base58)
