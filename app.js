@@ -218,6 +218,7 @@ function getProviders() {
   const push = (x) => { if (x && !list.includes(x)) list.push(x); };
   push(window.nightly && window.nightly.solana);
   push(window.nightly);
+  push(window.phantom && window.phantom.solana);
   push(window.solana);
   push(window.solflare);
   push(window.backpack);
@@ -226,6 +227,30 @@ function getProviders() {
 function validPubkeyString(v) {
   const str = (typeof v === 'string') ? v : (v && v.toString ? v.toString() : '');
   return isValidAddress(str) ? str : null;
+}
+// v102 unlock fix, on Tyree's directive: before Add & Connect, force an
+// unlock prompt, not just a message. Try every provider — Phantom,
+// Nightly, Backpack, and every injected provider — with eth_requestAccounts,
+// solana connect, and wallet_requestPermissions, in that order. If locked,
+// the prompt itself is the unlock step; a message alone is not a fix.
+// A 111... key is still discarded, never accepted as an account.
+async function unlockAllProviders() {
+  let unlockedPk = null;
+  for (const prov of getProviders()) {
+    if (typeof prov.request === 'function') {
+      try { await prov.request({ method: 'eth_requestAccounts' }); } catch (e) {}
+      try { await prov.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] }); } catch (e) {}
+    }
+    if (typeof prov.connect === 'function') {
+      try { await prov.connect(); } catch (e) {}
+    }
+    if (prov.publicKey) {
+      const pk = validPubkeyString(prov.publicKey);
+      if (pk) unlockedPk = pk;
+    }
+    if (unlockedPk) break;
+  }
+  return unlockedPk;
 }
 async function connectOneProvider(prov) {
   let pk = null;
@@ -447,7 +472,9 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
   if (btn.disabled) return;
   btn.disabled = true;
   btn.textContent = 'Adding & Connecting…';
-  $('walletLabel').textContent = 'Adding Cookie Chain, then connecting — one tap, no second tap.';
+  $('walletLabel').textContent = 'Unlock prompt sent — approve in your wallet, then Adding Cookie Chain, then connecting — one tap, no second tap.';
+  // v102: unlock first, before Add. If locked, this prompt is the unlock.
+  await unlockAllProviders();
   const tries = [
     { method: 'wallet_addNetwork', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, rpcUrls: [COOKIE_CHAIN.rpc], explorer: COOKIE_CHAIN.explorer, blockExplorerUrls: [COOKIE_CHAIN.explorer], currency: COOKIE_CHAIN.currency, nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
     { method: 'wallet_addChain', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
