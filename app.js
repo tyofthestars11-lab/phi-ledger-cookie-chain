@@ -846,6 +846,17 @@ function isRetryableSignErr(e) {
   const m = String((e && e.message) || e).toLowerCase();
   return /altered the bytes|unreadable signature|returned an unreadable/i.test(m);
 }
+// Omni prompt timeout: a wallet prompt that never loads (spinner, no wallet
+// read) cannot hang the run forever. After 60 seconds the attempt throws a
+// retryable error and the caller rebuilds fresh and retries. No fee is spent
+// on a timed-out attempt, because nothing is broadcast until a signature
+// returns in the current round.
+function signTransactionTimed(tx) {
+  return Promise.race([
+    provider.signTransaction(tx),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('Wallet prompt timed out — retry fresh. No fee spent.')), 60000)),
+  ]);
+}
 
 // Byte helpers
 function hexOf(u8) {
@@ -1145,7 +1156,7 @@ async function anchorSingleAttempt(walletAddr, seal, pubBytes, enveloped, alterN
   // network — Solana mainnet — where a Cookie Chain blockhash is invalid.)
   let finalTx = null, finalInfo = tx._blockhashInfo, finalMemo = tx._memoText;
   if (typeof provider.signTransaction === 'function') {
-    const rawSigned = await provider.signTransaction(tx);
+    const rawSigned = await signTransactionTimed(tx);
     const signedTx = normalizeSignedTx(rawSigned);
     if (signedTx) {
       const wantHex = hexOf(tx.serializeMessage());
@@ -1281,7 +1292,7 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
   // transaction bytes. A wallet that alters or returns unreadable bytes
   // throws a retryable error, and the caller rebuilds fresh and retries.
   if (typeof provider.signTransaction === 'function') {
-    const rawSigned = await provider.signTransaction(tx);
+    const rawSigned = await signTransactionTimed(tx);
     const signedTx = normalizeSignedTx(rawSigned);
     if (signedTx) {
       const wantHex = hexOf(tx.serializeMessage());
