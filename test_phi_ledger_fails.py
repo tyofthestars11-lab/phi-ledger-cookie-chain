@@ -33,10 +33,12 @@ class TestPageMatchesLedger(unittest.TestCase):
         self.assertIn('rel="icon"', read("index.html"))
 
     def test_one_app_version_everywhere(self):
+        # STOPPED 2026-10-30, Tyree: stop versioning, phi version infinite.
         html = read("index.html")
-        footer = re.search(r"app v(\d+)", html).group(1)
-        script = re.search(r"app\.js\?v=(\d+)", html).group(1)
-        self.assertEqual(footer, script)
+        self.assertNotIn("app.js?v=", html)
+        self.assertNotIn("app v", html)
+        self.assertIn("phi version infinite", html)
+        self.assertIn('src="app.js"', html)
 
     def test_transaction_schema_matches_snapshot(self):
         app = read("app.js")

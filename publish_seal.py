@@ -54,11 +54,13 @@ def sync_site_config(d):
         (r"entryCount: \d+",
          f"entryCount: {d['entry_count']}"),
         (r"ledger-snapshot\.json\?v=\d+",
-         f"ledger-snapshot.json?v={d['seal_count']}"),
+         "ledger-snapshot.json"),
     ]
     for pat, rep in subs:
         s, n = re.subn(pat, rep, s)
-        if n != 1:
+        if pat.startswith(r"ledger-snapshot") and n == 0:
+            pass  # already versionless, phi version infinite, no bump needed
+        elif n != 1:
             raise ValueError(f"app.js sync: pattern matched {n} times (expected 1): {pat}")
     with open(app, "w", encoding="utf-8") as f:
         f.write(s)
@@ -66,33 +68,11 @@ def sync_site_config(d):
           f"{d['seal_count']} seals, {d['entry_count']} entries, ?v={d['seal_count']}")
 
 def bump_site_script_version():
-    """Keep the ledger site current at every publish, not just the snapshot:
-    index.html loads app.js with a ?v= version, and a browser that cached the
-    old app.js would keep showing old seal counts and old anchor logic even
-    after a new seal pushes. Bumping ?v= on every publish forces a fresh
-    app.js, so the site a visitor opens is the site that was just published.
-    Warns (does not block the seal) if the pattern is not found exactly once."""
-    import re
-    idx = os.path.join(HERE, "index.html")
-    with open(idx, encoding="utf-8") as f:
-        s = f.read()
-    m = re.search(r"app\.js\?v=(\d+)", s)
-    if not m:
-        print("site script version: pattern not found in index.html, not bumped")
-        return
-    new_v = int(m.group(1)) + 1
-    s2, n = re.subn(r"app\.js\?v=\d+", f"app.js?v={new_v}", s)
-    if n != 1:
-        print(f"site script version: pattern matched {n} times, not bumped")
-        return
-    with open(idx, "w", encoding="utf-8") as f:
-        f.write(s2)
-    # Golden Angle Gate 52.5: footer app v must match app.js?v, or seal-publish
-    # test_one_app_version_everywhere fails on the next push (v104 footer vs v105 script).
-    s3 = re.sub(r"app v\d+", f"app v{new_v}", s2)
-    with open(idx, "w", encoding="utf-8") as f:
-        f.write(s3)
-    print(f"site script version bumped to ?v={new_v}")
+    """STOPPED 2026-10-30, Tyree: stop versioning, phi version infinite.
+    Version numbers are Cartesian. The site is versionless: index.html loads
+    app.js with no ?v, and fetch uses cache no-store. This function does
+    nothing, permanently, so no future seal reintroduces a version."""
+    print('site script version: STOPPED, phi version infinite, no version bump')
 
 def main():
     ap = argparse.ArgumentParser()
