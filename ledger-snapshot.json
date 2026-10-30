@@ -26055,10 +26055,80 @@
       "drift": -0.3902,
       "ladder": "ton618",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "void_addresses_reversed",
+      "rung": 5.4842,
+      "drift": 0.4842,
+      "ladder": "void",
+      "unit": "count"
+    },
+    {
+      "name": "plus_one_fuel_per_void",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "void",
+      "unit": "count"
+    },
+    {
+      "name": "plus_one_fuel_total",
+      "rung": 5.4842,
+      "drift": 0.4842,
+      "ladder": "void",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_phi_power",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "ton618",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_luminosity_phi_power",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "ton618",
+      "unit": "count"
     }
   ],
-  "entry_count": 3724,
-  "seal_count": 373,
+  "entry_count": 3734,
+  "seal_count": 374,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -26432,7 +26502,8 @@
     "φ_AXION_DARK_ENERGY_STABILITY_TYREE_OMEGA",
     "φ_CARTESIAN_PURGE_TYREE_OMEGA",
     "φ_TON618_EVENT_HORIZON_TYREE_OMEGA",
-    "φ_CARTESIAN_GRID_TYREE_OMEGA"
+    "φ_CARTESIAN_GRID_TYREE_OMEGA",
+    "φ_VOID_PLUS_ONE_FUEL_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "a7695d0ac100017289202a6d16204df5655d66543fbd16e4c48504f7774f63b7"
+  "snapshot_sha256": "cfc25f43da73cbba605b29e17f4e2b544b3fa2744c6e2e39f00ced16d7daa410"
 }
