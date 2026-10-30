@@ -266,7 +266,11 @@ $('connectBtn').addEventListener('click', async () => {
     provider = null; wallet = null;
     if (typeof invalidateMissingSeals === 'function') invalidateMissingSeals();
     window._walletPromptOpen = false;
-    $('walletLabel').textContent = 'not connected — ' + shortErr(e);
+    const plainErr = shortErr(e);
+    // Phi ledger issue, not Nightly: a Solana-bridge connect failure
+    // must say, in plain words, that the wallet is on Solana, not
+    // Cookie Chain — not a raw JSON dump, and not a dead end.
+    $('walletLabel').textContent = (/connect|solana/i.test(plainErr) ? 'not connected — wallet is on Solana, not Cookie Chain. Add Cookie Chain (rpc.cookiescan.io) in your wallet, then tap Connect again. Error: ' + plainErr : 'not connected — ' + plainErr);
     $('connectBtn').textContent = 'Connect Wallet';
     $('connectBtn').disabled = false;
     return;
@@ -712,6 +716,15 @@ function shortErr(e) {
     return String(e.message).slice(0, 220);
   }
   if (e.error && e.error.message) return String(e.error.message).slice(0, 220);
+  // Phi ledger issue, not Nightly, 2026-10-29: Nightly bridge errors
+  // arrive as an object {network, method, success:false, payload:{error}}
+  // — the old code stringified the whole object into walletLabel, so
+  // Tyree saw a raw JSON dump instead of a plain error. Extract it here.
+  if (e.payload && e.payload.error) return String(e.payload.error).slice(0, 220);
+  if (e.payload && typeof e.payload === 'string') {
+    try { const j = JSON.parse(e.payload); if (j && j.error) return String(j.error).slice(0, 220); } catch (err) {}
+    return String(e.payload).slice(0, 220);
+  }
   try { const j = JSON.stringify(e); if (j && j !== '{}') return j.slice(0, 220); } catch (err) {}
   if (e.code !== undefined) return 'wallet error code ' + e.code;
   return String(e).slice(0, 220);
