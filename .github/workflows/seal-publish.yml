@@ -5,7 +5,7 @@ name: seal-publish
 # then a later run succeeded - fail then succeed, not single green.
 # cancel-in-progress: false queues Pages runs instead of canceling them.
 concurrency:
-  group: pages
+  group: seal-publish-main
   cancel-in-progress: false
 
 # General run-fail fix: Pages deploy needs these, even when the job only verifies.
