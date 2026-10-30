@@ -217,7 +217,6 @@ function getProviders() {
   const list = [];
   const push = (x) => { if (x && !list.includes(x)) list.push(x); };
   push(window.nightly && window.nightly.solana);
-  push(window.nightly);
   push(window.phantom && window.phantom.solana);
   push(window.solana);
   push(window.solflare);
@@ -240,13 +239,14 @@ function withTimeout(promise, ms) {
     new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet prompt timed out')), ms)),
   ]);
 }
+// v104 Nightly fix: unlock is a Solana connect prompt only. The v102
+// eth_requestAccounts / wallet_requestPermissions calls are EVM prompts,
+// not Solana prompts — in Nightly they open the wrong prompt, burn up to
+// 24 seconds per provider, and bury the real Solana connect prompt.
+// A Solana provider is unlocked by its own connect(), nothing else.
 async function unlockAllProviders() {
   let unlockedPk = null;
   for (const prov of getProviders()) {
-    if (typeof prov.request === 'function') {
-      try { await withTimeout(prov.request({ method: 'eth_requestAccounts' }), 12000); } catch (e) {}
-      try { await withTimeout(prov.request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] }), 12000); } catch (e) {}
-    }
     if (typeof prov.connect === 'function') {
       try { await withTimeout(prov.connect(), 15000); } catch (e) {}
     }
@@ -268,7 +268,7 @@ async function connectOneProvider(prov) {
     try {
       const resp = await Promise.race([
         prov.connect(),
-        new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 15000)),
       ]);
       const cand = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
       if (cand) pk = validPubkeyString(cand);
@@ -279,7 +279,7 @@ async function connectOneProvider(prov) {
     try {
       const resp = await Promise.race([
         prov.connect(),
-        new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 15000)),
       ]);
       const cand = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
       if (cand) pk = validPubkeyString(cand);
@@ -341,7 +341,7 @@ if ($('connectBtn')) $('connectBtn').addEventListener('click', async () => {
         try {
           const resp = await Promise.race([
             p.connect(),
-            new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+            new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 15000)),
           ]);
           const pk = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
           if (pk) { const v = validPubkeyString(pk); if (v) pubkey = v; }
