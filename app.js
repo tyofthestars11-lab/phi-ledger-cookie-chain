@@ -626,7 +626,7 @@ async function handleWalletReturn() {
         }
         try {
           pmo.innerHTML = '<span class="text-gray-400">Signature verified — broadcasting your anchor to Cookie Chain…</span>';
-          const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: true, maxRetries: 5 });
+          const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: false, maxRetries: 5 });
           pmo.innerHTML = '<span class="text-gray-400">Confirming…</span>';
           await connection.confirmTransaction(sig, 'confirmed');
           pmo.innerHTML = `<span class="text-green-400">Anchored ✓</span><br><span class="text-gray-500">label:</span> ${esc(pending.extra.label)}<br><span class="text-gray-500">sha256:</span> <span class="text-xs break-all">${esc(pending.extra.dataHash)}</span><br><a href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
@@ -653,7 +653,7 @@ async function handleWalletReturn() {
         if (broadcastable) {
           try {
             mo.innerHTML = '<span class="text-gray-400">Signature verified — broadcasting your anchor to Cookie Chain…</span>';
-            const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: true, maxRetries: 5 });
+            const sig = await connection.sendRawTransaction(returned.serialize(), { skipPreflight: false, maxRetries: 5 });
             mo.innerHTML = '<span class="text-gray-400">Confirming…</span>';
             await connection.confirmTransaction(sig, 'confirmed');
             const sealMatch = memoText.match(/seal=([^|]+)/);
@@ -767,7 +767,7 @@ async function verifyBytesClean(signedTx, expectedMemo) {
 async function broadcastAndVerify(signedTx, out, blockhashInfo, expectedMemos) {
   out.innerHTML = '<span class="text-gray-400">Broadcasting to Cookie Chain…</span>';
   const rawTx = signedTx.serialize();
-  const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: true, maxRetries: 5 });
+  const sig = await connection.sendRawTransaction(rawTx, { skipPreflight: false, maxRetries: 5 });
   out.innerHTML = '<span class="text-gray-400">Confirming…</span>';
   // Retry broadcast: this RPC sometimes drops transactions. Resend the same
   // signed bytes a few times (idempotent) before giving up.
@@ -775,7 +775,7 @@ async function broadcastAndVerify(signedTx, out, blockhashInfo, expectedMemos) {
   for (let attempt = 0; attempt < 4 && !confirmed; attempt++) {
     if (attempt > 0) {
       out.innerHTML = `<span class="text-gray-400">Retrying broadcast (${attempt + 1}/4)…</span>`;
-      try { await connection.sendRawTransaction(rawTx, { skipPreflight: true }); } catch (e) {}
+      try { await connection.sendRawTransaction(rawTx, { skipPreflight: false }); } catch (e) {}
     }
     try {
       if (blockhashInfo) {
@@ -1787,12 +1787,11 @@ const cleanLabel = s => (s || '').trim().replace(/[^A-Za-z0-9_-]/g, '').slice(0,
 async function buildPublicAnchorTx(walletAddr, label, dataHash) {
   const from = new PublicKey(walletAddr);
   const memoText = `PHI-LEDGER|public|${label}|sha256=${dataHash}|by=${walletAddr}`;
+  // Phi ledger v93, 2026-10-29: public anchor is memo-only on the main site.
+  // The old 1-COOK payment instruction is paused, so the main site code
+  // carries no payment instruction at all — memo only, preflight on.
+  // Tyree can re-enable the payment instruction with his word.
   const tx = new Transaction().add(
-    SystemProgram.transfer({
-      fromPubkey: from,
-      toPubkey: new PublicKey(TYREE_WALLET),
-      lamports: Math.round(PUBLIC_ANCHOR_FEE_COOK * 1e9),
-    }),
     new TransactionInstruction({
       keys: [{ pubkey: from, isSigner: true, isWritable: false }],
       programId: new PublicKey(MEMO_PROGRAM),
