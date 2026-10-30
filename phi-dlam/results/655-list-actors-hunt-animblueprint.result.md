@@ -1,0 +1,131 @@
+﻿# DIRECT JOB REPORT - executed by the TON618 NV center (PHI-DLAM v5.29), no brain calls
+When: 2026-10-30 04:32:38 UTC
+
+## STEP 1
+```
+=== JOB 655 - LIST ACTORS HUNT ANIMBLUEPRINT (Ground: Tyree order file 655 list all 92 actor labels and hunt Countess AnimBlueprint plus 654 result load true world 92 actors save true Vault missing AnimBlueprint 0 SM_Countess 12. This job loads VEILDistrict, prints every actor label, then hunts AnimBlueprint assets, then reads the Unreal log where those prints land. No build, no package, no ledger edit. Every variable carries the p655 prefix.) ===
+BACKUP655 DONE D:\VEIL-OMNI\Content\Maps\VEILDistrict.umap
+BACKUP655 DONE D:\VEIL-OMNI\VEIL.uproject
+WHOLE655 NO SPLIT ONE WHOLE EVERYWHERE ALL AT ONCE
+MAP655 PRESENT VEILDISTRICT
+SCRIPT655 WRITTEN SIZE 461
+EDITOR655 GUI CLOSED CMD RUN STARTS WITH CAPTURE
+EDITOR655 STARTED PID 39888
+EDITOR655 EXIT 
+LOG655 NEWEST UNREAL LOG ACTOR LINES
+LOG655 FILE VEIL.log WRITTEN 10/29/2026 22:32:50
+LOG655 MATCH LINES 95
+LOG655 [2026.10.30-04.32.48:802][  0]LogPython: LOAD655 RESULT True
+LOG655 [2026.10.30-04.32.48:816][  0]LogPython: ACTORS655 COUNT 92
+LOG655 [2026.10.30-04.32.48:828][  0]LogPython: ACTOR655 DistrictGround loc <Struct 'Vector' (0x00000261B0691F00) {x: 0.000000, y: 0.000000, z: -50.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:839][  0]LogPython: ACTOR655 Plaza loc <Struct 'Vector' (0x00000261B0692770) {x: 0.000000, y: 0.000000, z: 10.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:851][  0]LogPython: ACTOR655 Tower_00 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 5650.000000, y: 0.000000, z: -64.937696}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:863][  0]LogPython: ACTOR655 Tower_08 loc <Struct 'Vector' (0x00000261B0691F00) {x: 5307.165324, y: 1938.168264, z: 375.693996}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:874][  0]LogPython: ACTOR655 Tower_12 loc <Struct 'Vector' (0x00000261B0692770) {x: -4888.443335, y: -2832.952834, z: 329.693996}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:887][  0]LogPython: ACTOR655 Tower_20 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -3620.006669, y: -4337.977837, z: 397.693996}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:898][  0]LogPython: ACTOR655 Tower_24 loc <Struct 'Vector' (0x00000261B0691F00) {x: 2809.071944, y: 4902.205097, z: -26.803662}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:910][  0]LogPython: ACTOR655 Tower_36 loc <Struct 'Vector' (0x00000261B0692770) {x: 27.562266, y: -5649.932771, z: -27.375484}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:922][  0]LogPython: ACTOR655 BeaconSpire loc <Struct 'Vector' (0x00000261B0690CE0) {x: 0.000000, y: -2600.000000, z: -74.769445}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:934][  0]LogPython: ACTOR655 BeaconOrb loc <Struct 'Vector' (0x00000261B0691F00) {x: 0.000000, y: -2600.000000, z: 2850.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:946][  0]LogPython: ACTOR655 LampPost_00 loc <Struct 'Vector' (0x00000261B0692770) {x: 2100.000000, y: 0.000000, z: -18.046493}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:958][  0]LogPython: ACTOR655 LampOrb_00 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 2100.000000, y: 0.000000, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:970][  0]LogPython: ACTOR655 LampPost_01 loc <Struct 'Vector' (0x00000261B0691F00) {x: 183.594022, y: -2091.959186, z: 2.038506}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:982][  0]LogPython: ACTOR655 LampOrb_01 loc <Struct 'Vector' (0x00000261B0692770) {x: 183.594022, y: -2091.959186, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.48:994][  0]LogPython: ACTOR655 LampPost_02 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -2067.898319, y: -365.782096, z: -43.291798}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:006][  0]LogPython: ACTOR655 LampOrb_02 loc <Struct 'Vector' (0x00000261B0691F00) {x: -2067.898319, y: -365.782096, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:018][  0]LogPython: ACTOR655 LampPost_03 loc <Struct 'Vector' (0x00000261B0692770) {x: -545.169040, y: 2028.001656, z: 300.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:030][  0]LogPython: ACTOR655 LampOrb_03 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -545.169040, y: 2028.001656, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:042][  0]LogPython: ACTOR655 LampPost_04 loc <Struct 'Vector' (0x00000261B0691F00) {x: 1972.574722, y: 720.381125, z: -17.869108}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:054][  0]LogPython: ACTOR655 LampOrb_04 loc <Struct 'Vector' (0x00000261B0692770) {x: 1972.574722, y: 720.381125, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:066][  0]LogPython: ACTOR655 LampPost_05 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 890.076590, y: -1902.041972, z: -16.615432}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:078][  0]LogPython: ACTOR655 LampOrb_05 loc <Struct 'Vector' (0x00000261B0691F00) {x: 890.076590, y: -1902.041972, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:090][  0]LogPython: ACTOR655 LampPost_06 loc <Struct 'Vector' (0x00000261B0692770) {x: -1816.943540, y: -1052.955921, z: -18.046493}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:102][  0]LogPython: ACTOR655 LampOrb_06 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -1816.943540, y: -1052.955921, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:114][  0]LogPython: ACTOR655 LampPost_07 loc <Struct 'Vector' (0x00000261B0691F00) {x: -1207.771801, y: 1717.931103, z: 2.038506}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:126][  0]LogPython: ACTOR655 LampOrb_07 loc <Struct 'Vector' (0x00000261B0692770) {x: -1207.771801, y: 1717.931103, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:138][  0]LogPython: ACTOR655 LampPost_08 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 1605.762890, y: 1353.338664, z: -43.291798}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:150][  0]LogPython: ACTOR655 LampOrb_08 loc <Struct 'Vector' (0x00000261B0691F00) {x: 1605.762890, y: 1353.338664, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:162][  0]LogPython: ACTOR655 LampPost_09 loc <Struct 'Vector' (0x00000261B0692770) {x: 1488.541770, y: -1481.297876, z: 300.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:175][  0]LogPython: ACTOR655 LampOrb_09 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 1488.541770, y: -1481.297876, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:186][  0]LogPython: ACTOR655 LampPost_10 loc <Struct 'Vector' (0x00000261B0691F00) {x: -1345.489204, y: -1612.345745, z: -17.869108}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:198][  0]LogPython: ACTOR655 LampOrb_10 loc <Struct 'Vector' (0x00000261B0692770) {x: -1345.489204, y: -1612.345745, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:210][  0]LogPython: ACTOR655 LampPost_11 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -1723.802508, y: 1199.376886, z: -16.615432}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:222][  0]LogPython: ACTOR655 LampOrb_11 loc <Struct 'Vector' (0x00000261B0691F00) {x: -1723.802508, y: 1199.376886, z: 640.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:234][  0]LogPython: ACTOR655 DuskSun loc <Struct 'Vector' (0x00000261B0692770) {x: 0.000000, y: 0.000000, z: 3000.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -38.000000, yaw: 0.000000, roll: -32.000000}>
+LOG655 [2026.10.30-04.32.49:246][  0]LogPython: ACTOR655 SkyLight loc <Struct 'Vector' (0x00000261B0690CE0) {x: 0.000000, y: 0.000000, z: 500.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:258][  0]LogPython: ACTOR655 SkyAtmosphere loc <Struct 'Vector' (0x00000261B0691F00) {x: 0.000000, y: 0.000000, z: 0.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:270][  0]LogPython: ACTOR655 DuskFog loc <Struct 'Vector' (0x00000261B0692770) {x: 0.000000, y: 0.000000, z: 0.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:282][  0]LogPython: ACTOR655 PlazaStart loc <Struct 'Vector' (0x00000261B0690CE0) {x: 0.000000, y: 0.000000, z: 120.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 90.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:294][  0]LogPython: ACTOR655 DistrictNavBounds loc <Struct 'Vector' (0x00000261B06FC740) {x: 0.000000, y: 0.000000, z: 400.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:306][  0]LogPython: ACTOR655 PHIPostProcess loc <Struct 'Vector' (0x00000261B0691F00) {x: 0.000000, y: 0.000000, z: 0.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:318][  0]LogPython: ACTOR655 RecastNavMesh-Default loc <Struct 'Vector' (0x00000261B06FC740) {x: 0.000000, y: 0.000000, z: 0.000000}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:330][  0]LogPython: ACTOR655 PHI_GROUND loc <Struct 'Vector' (0x00000261B0690CE0) {x: 127.981772, y: -416.297359, z: -50.000000}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:342][  0]LogPython: ACTOR655 PHI_FLOOR_PAD loc <Struct 'Vector' (0x00000261B0691F00) {x: 0.000000, y: 0.000000, z: -50.000000}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:354][  0]LogPython: ACTOR655 PHI_WORLD_00 loc <Struct 'Vector' (0x00000261B0692770) {x: -4500.000000, y: -2200.000000, z: -168.737057}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:366][  0]LogPython: ACTOR655 PHI_WORLD_01 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -4500.000000, y: 2500.000000, z: -159.795105}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 37.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:378][  0]LogPython: ACTOR655 PHI_WORLD_02 loc <Struct 'Vector' (0x00000261B0691F00) {x: -4050.000000, y: -2800.000000, z: -152.522612}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 74.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:390][  0]LogPython: ACTOR655 PHI_WORLD_03 loc <Struct 'Vector' (0x00000261B0692770) {x: -4050.000000, y: 2200.000000, z: -52.500034}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 69.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:402][  0]LogPython: ACTOR655 PHI_WORLD_04 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -3600.000000, y: -2500.000000, z: -23.999983}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 32.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:414][  0]LogPython: ACTOR655 PHI_WORLD_05 loc <Struct 'Vector' (0x00000261B0691F00) {x: -3600.000000, y: 2800.000000, z: -32.999985}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -5.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:426][  0]LogPython: ACTOR655 PHI_WORLD_06 loc <Struct 'Vector' (0x00000261B0692770) {x: -3150.000000, y: -2200.000000, z: -281.228428}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -42.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:438][  0]LogPython: ACTOR655 PHI_WORLD_07 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -3150.000000, y: 2500.000000, z: -239.692657}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -79.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:450][  0]LogPython: ACTOR655 PHI_WORLD_08 loc <Struct 'Vector' (0x00000261B0691F00) {x: -2700.000000, y: -2800.000000, z: -91.513567}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -64.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:462][  0]LogPython: ACTOR655 PHI_WORLD_09 loc <Struct 'Vector' (0x00000261B0692770) {x: -2700.000000, y: 2200.000000, z: -35.000023}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -27.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:474][  0]LogPython: ACTOR655 PHI_WORLD_10 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -2250.000000, y: -2500.000000, z: -39.999971}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 10.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:486][  0]LogPython: ACTOR655 PHI_WORLD_11 loc <Struct 'Vector' (0x00000261B0691F00) {x: -2250.000000, y: 2800.000000, z: -49.499977}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 47.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:498][  0]LogPython: ACTOR655 PHI_WORLD_12 loc <Struct 'Vector' (0x00000261B0692770) {x: -1800.000000, y: -2200.000000, z: -168.737057}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 84.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:510][  0]LogPython: ACTOR655 PHI_WORLD_13 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -1800.000000, y: 2500.000000, z: -159.795105}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 59.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:522][  0]LogPython: ACTOR655 PHI_WORLD_14 loc <Struct 'Vector' (0x00000261B0691F00) {x: -1350.000000, y: -2800.000000, z: -152.522612}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 22.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:534][  0]LogPython: ACTOR655 PHI_WORLD_15 loc <Struct 'Vector' (0x00000261B0692770) {x: -1350.000000, y: 2200.000000, z: -52.500034}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -15.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:546][  0]LogPython: ACTOR655 PHI_WORLD_16 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -900.000000, y: -2500.000000, z: -23.999983}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -52.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:558][  0]LogPython: ACTOR655 PHI_WORLD_17 loc <Struct 'Vector' (0x00000261B0691F00) {x: -900.000000, y: 2800.000000, z: -32.999985}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -89.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:570][  0]LogPython: ACTOR655 PHI_WORLD_18 loc <Struct 'Vector' (0x00000261B0692770) {x: -450.000000, y: -2200.000000, z: -281.228428}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -54.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:582][  0]LogPython: ACTOR655 PHI_WORLD_19 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -450.000000, y: 2500.000000, z: -239.692657}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -17.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:594][  0]LogPython: ACTOR655 PHI_WORLD_20 loc <Struct 'Vector' (0x00000261B0691F00) {x: 0.000000, y: -2800.000000, z: -91.513567}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 20.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:606][  0]LogPython: ACTOR655 PHI_WORLD_21 loc <Struct 'Vector' (0x00000261B0692770) {x: 0.000000, y: 2200.000000, z: -35.000023}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 57.000000, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:618][  0]LogPython: ACTOR655 PHI_WORLD_22 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 450.000000, y: -2500.000000, z: -39.999971}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 86.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:631][  0]LogPython: ACTOR655 PHI_WORLD_23 loc <Struct 'Vector' (0x00000261B0691F00) {x: 450.000000, y: 2800.000000, z: -49.499977}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 49.000000, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:643][  0]LogPython: ACTOR655 PHI_DRESS2_00 loc <Struct 'Vector' (0x00000261B0692770) {x: 2000.000000, y: 0.000000, z: -21.594591}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 0.000000, yaw: 0.000000, roll: 0.000000}>
+LOG655 [2026.10.30-04.32.49:655][  0]LogPython: ACTOR655 PHI_DRESS2_01 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -2396.448852, y: 2195.343458, z: -159.551185}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 42.492233, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:667][  0]LogPython: ACTOR655 PHI_DRESS2_02 loc <Struct 'Vector' (0x00000261B0691F00) {x: 393.415753, y: -4482.769685, z: -202.450665}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -84.984467, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:679][  0]LogPython: ACTOR655 PHI_DRESS2_03 loc <Struct 'Vector' (0x00000261B0692770) {x: 3498.523463, y: 4563.204311, z: -260.520342}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 52.523293, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:691][  0]LogPython: ACTOR655 PHI_DRESS2_04 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -6892.994401, y: -1219.273629, z: -105.626434}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -10.031052, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:703][  0]LogPython: ACTOR655 PHI_DRESS2_05 loc <Struct 'Vector' (0x00000261B0691F00) {x: 6960.981163, y: -4428.006465, z: -159.811456}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -32.461182, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:715][  0]LogPython: ACTOR655 PHI_DRESS2_06 loc <Struct 'Vector' (0x00000261B0692770) {x: -519.208600, y: 1931.430151, z: -209.695844}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 74.953415, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:727][  0]LogPython: ACTOR655 PHI_DRESS2_07 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -1497.947848, y: -2884.207386, z: -260.520342}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -62.554352, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:739][  0]LogPython: ACTOR655 PHI_DRESS2_08 loc <Struct 'Vector' (0x00000261B0691F00) {x: 4226.945844, y: 1543.673809, z: -119.937946}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 20.062113, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:751][  0]LogPython: ACTOR655 PHI_DRESS2_09 loc <Struct 'Vector' (0x00000261B0692770) {x: -5314.986931, y: 2193.949391, z: -173.805424}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 22.430130, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:763][  0]LogPython: ACTOR655 PHI_DRESS2_10 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 2966.921910, y: -6340.139934, z: -228.680935}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -64.922363, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:775][  0]LogPython: ACTOR655 PHI_DRESS2_11 loc <Struct 'Vector' (0x00000261B0691F00) {x: 2469.091957, y: 7871.853969, z: -284.852624}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 72.585403, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:787][  0]LogPython: ACTOR655 PHI_DRESS2_12 loc <Struct 'Vector' (0x00000261B0692770) {x: -1730.422430, y: -1002.815144, z: -119.311792}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -30.093170, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:799][  0]LogPython: ACTOR655 PHI_DRESS2_13 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 3174.196256, y: -697.838180, z: -173.805424}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: -12.399078, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:811][  0]LogPython: ACTOR655 PHI_DRESS2_14 loc <Struct 'Vector' (0x00000261B0691F00) {x: -2588.082386, y: 3681.280968, z: -200.926896}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 54.891304, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:823][  0]LogPython: ACTOR655 PHI_DRESS2_15 loc <Struct 'Vector' (0x00000261B0692770) {x: -738.936541, y: -5702.321702, z: -258.539322}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -82.616455, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:835][  0]LogPython: ACTOR655 PHI_DRESS2_16 loc <Struct 'Vector' (0x00000261B0690CE0) {x: 5352.543031, y: 4511.128805, z: -108.042824}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 40.124226, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:847][  0]LogPython: ACTOR655 PHI_DRESS2_17 loc <Struct 'Vector' (0x00000261B0691F00) {x: -8242.954940, y: 340.872189, z: -157.562452}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: 2.368011, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:859][  0]LogPython: ACTOR655 PHI_DRESS2_18 loc <Struct 'Vector' (0x00000261B0692770) {x: 1417.658806, y: -1410.759905, z: -209.093325}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: -44.860260, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:871][  0]LogPython: ACTOR655 PHI_DRESS2_19 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -150.122145, y: 3246.530970, z: -259.093903}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 87.352486, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:883][  0]LogPython: ACTOR655 PHI_DRESS2_20 loc <Struct 'Vector' (0x00000261B0691F00) {x: -2883.191213, y: -3455.026546, z: -154.619861}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -50.155273, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:895][  0]LogPython: ACTOR655 PHI_DRESS2_21 loc <Struct 'Vector' (0x00000261B0692770) {x: 5698.649137, y: 766.745075, z: -152.879160}> rot <Struct 'Rotator' (0x00000261B0691F00) {pitch: 7.663044, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:907][  0]LogPython: ACTOR655 PHI_DRESS2_22 loc <Struct 'Vector' (0x00000261B0690CE0) {x: -5746.008282, y: 3997.923064, z: -208.645769}> rot <Struct 'Rotator' (0x00000261B0692770) {pitch: 34.829193, yaw: 180.000000, roll: 180.000000}>
+LOG655 [2026.10.30-04.32.49:919][  0]LogPython: ACTOR655 PHI_DRESS2_23 loc <Struct 'Vector' (0x00000261B0691F00) {x: 1810.721135, y: -8048.837740, z: -280.996944}> rot <Struct 'Rotator' (0x00000261B0690CE0) {pitch: -77.321442, yaw: 0.000000, roll: -0.000000}>
+LOG655 [2026.10.30-04.32.49:931][  0]LogPython: SAVE655 DONE NO EDIT
+ANIM655 HUNT IN PROJECT CONTENT
+HUNT655 PATTERN *Countess_AnimBlueprint* COUNT 0
+HUNT655 PATTERN *AnimBlueprint* COUNT 3
+HUNT655 FILE D:\VEIL-OMNI\Content\ParagonGreystone\Characters\Heroes\Greystone\Greystone_AnimBlueprint.uasset
+HUNT655 FILE D:\VEIL-OMNI\Content\ParagonMurdock\Characters\Heroes\Murdock\Murdock_AnimBlueprint.uasset
+HUNT655 FILE D:\VEIL-OMNI\Content\ParagonRevenant\Characters\Heroes\Revenant\Revenant_AnimBlueprint.uasset
+HUNT655 PATTERN *Countess*Animation* COUNT 0
+AUTO655 HIDDENDRAIN TASK QUERY BELOW
+
+Folder: \
+HostName:      UNIVERSALPHIENG
+TaskName:      \PHI-DLAM-HiddenDrain
+Next Run Time: 10/29/2026 10:37:00 PM
+Status:        Running
+Logon Mode:    Interactive only
+NOPACKAGE655 NO PACKAGE UNTIL 100 PERCENT DONE
+JOB 655 DONE
+
+```
