@@ -185,11 +185,14 @@ function isValidAddress(addr) {
 // read — not Solana. Wallets that default to Solana get this definition
 // from phi ledger, so the site does not lean on the wallet's default.
 const COOKIE_CHAIN = {
+  id: 'cookie-chain',
+  chainId: 'cookie-chain',
   name: 'Cookie Chain',
   rpc: 'https://rpc.cookiescan.io',
   explorer: 'https://cookiescan.io',
   currency: 'COOK',
   chain: 'SVM',
+  cluster: 'cookie-chain',
 };
 // Single provider only — no loops, no popup circles. window.solana is the standard.
 function getProvider() {
@@ -321,14 +324,15 @@ if ($('addChainBtn')) $('addChainBtn').addEventListener('click', async () => {
   $('walletLabel').textContent = 'Cookie Chain added to phi ledger: ' + COOKIE_CHAIN.name + ', RPC ' + COOKIE_CHAIN.rpc + ', explorer ' + COOKIE_CHAIN.explorer + ', currency ' + COOKIE_CHAIN.currency + '.';
   if (p && typeof p.request === 'function') {
     const tries = [
-      { method: 'wallet_addNetwork', params: [{ name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, explorer: COOKIE_CHAIN.explorer, currency: COOKIE_CHAIN.currency }] },
-      { method: 'wallet_addChain', params: [{ name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+      { method: 'wallet_addNetwork', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, rpcUrls: [COOKIE_CHAIN.rpc], explorer: COOKIE_CHAIN.explorer, blockExplorerUrls: [COOKIE_CHAIN.explorer], currency: COOKIE_CHAIN.currency, nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+      { method: 'wallet_addChain', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+      { method: 'wallet_switchChain', params: [{ chainId: COOKIE_CHAIN.chainId }] },
     ];
     for (const t of tries) {
-      try { await p.request(t); $('walletLabel').textContent = 'Cookie Chain added to wallet via phi ledger. Now tap Connect Wallet.'; return; } catch (e) {}
+      try { await p.request(t); $('walletLabel').textContent = 'Cookie Chain added to wallet via phi ledger. Chain ID: ' + COOKIE_CHAIN.chainId + ', RPC: ' + COOKIE_CHAIN.rpc + '. Now tap Connect Wallet.'; return; } catch (e) {}
     }
   }
-  $('walletLabel').textContent = 'Cookie Chain added to phi ledger: ' + COOKIE_CHAIN.name + ', RPC ' + COOKIE_CHAIN.rpc + ', explorer ' + COOKIE_CHAIN.explorer + ', currency ' + COOKIE_CHAIN.currency + '. Your wallet does not accept a programmatic add, so select Cookie Chain in your wallet app, then tap Connect Wallet.';
+  $('walletLabel').textContent = 'Cookie Chain added to phi ledger. Chain ID: ' + COOKIE_CHAIN.chainId + ', RPC: ' + COOKIE_CHAIN.rpc + ', Explorer: ' + COOKIE_CHAIN.explorer + ', Currency: ' + COOKIE_CHAIN.currency + '. Your wallet does not accept a programmatic add, so add this custom network in your wallet app, then tap Connect Wallet.';
 });
 
 async function refreshBalance() {
