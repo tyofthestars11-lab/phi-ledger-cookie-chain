@@ -700,9 +700,17 @@ async function handleWalletReturn() {
 function shortErr(e) {
   // Never print "[object Object]": Nightly and other wallets reject with plain
   // objects (code, error, data) that have no .message. Show the real payload.
+  // Nightly bridge errors arrive as a JSON string — extract payload.error
+  // ("User rejected the request") instead of printing the whole JSON dump.
   if (!e) return 'unknown error';
-  if (typeof e === 'string') return e.slice(0, 220);
-  if (e.message) return String(e.message).slice(0, 220);
+  if (typeof e === 'string') {
+    try { const j = JSON.parse(e); if (j && j.payload && j.payload.error) return String(j.payload.error).slice(0, 220); } catch (err) {}
+    return e.slice(0, 220);
+  }
+  if (e.message) {
+    try { const j = JSON.parse(String(e.message)); if (j && j.payload && j.payload.error) return String(j.payload.error).slice(0, 220); } catch (err) {}
+    return String(e.message).slice(0, 220);
+  }
   if (e.error && e.error.message) return String(e.error.message).slice(0, 220);
   try { const j = JSON.stringify(e); if (j && j !== '{}') return j.slice(0, 220); } catch (err) {}
   if (e.code !== undefined) return 'wallet error code ' + e.code;
@@ -1264,7 +1272,16 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
   let alterNote = '';
   const enveloped = kc && kc.outcome !== 'raw';
   let finalTx = null, finalInfo = tx._blockhashInfo;
-  if (typeof provider.signTransaction === 'function') {
+  // Nightly-first, 2026-10-29: Nightly's signTransaction path runs its own
+  // Solana simulation, which fails with 429 and shows a SOL fee for a Cookie
+  // Chain transaction. Signing the exact message bytes instead triggers no
+  // transaction simulation at all — the site still broadcasts via the Cookie
+  // Chain connection. If the message sign is rejected, that rejection stands;
+  // any other message-sign failure falls through to signTransaction as before.
+  if (!enveloped && typeof provider.signMessage === 'function' && window.nightly) {
+    try { finalTx = await buildFresh(); finalInfo = finalTx._blockhashInfo; } catch (e) { if (isRejection(e)) throw e; }
+  }
+  if (!finalTx && typeof provider.signTransaction === 'function') {
     const rawSigned = await provider.signTransaction(tx);
     const signedTx = normalizeSignedTx(rawSigned);
     if (signedTx) {
@@ -1302,11 +1319,11 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
         finalInfo = finalTx._blockhashInfo;
       }
     }
-  } else if (typeof provider.signMessage === 'function') {
+  } else if (!finalTx && typeof provider.signMessage === 'function') {
     if (enveloped) throw new Error(alterNote + 'this provider only signs enveloped messages — no broadcastable signature exists. No fee spent.');
     finalTx = await buildFresh();
     finalInfo = finalTx._blockhashInfo;
-  } else {
+  } else if (!finalTx) {
     throw new Error('Wallet supports neither signTransaction nor signMessage.');
   }
   const check = await verifyBytesClean(finalTx, finalTx._memoTexts || tx._memoTexts);
