@@ -229,7 +229,21 @@ function validPubkeyString(v) {
 }
 async function connectOneProvider(prov) {
   let pk = null;
-  if (prov.publicKey) pk = validPubkeyString(prov.publicKey);
+  // v101: a stale injected publicKey must not win over a fresh connect.
+  // The wallet app showing an account selected does not by itself approve
+  // this site — connect() must run first to trigger the per-site approval
+  // prompt, then the key is read after it. A 111... key is discarded.
+  if (typeof prov.connect === 'function') {
+    try {
+      const resp = await Promise.race([
+        prov.connect(),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet connection timed out — not connected.')), 60000)),
+      ]);
+      const cand = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account);
+      if (cand) pk = validPubkeyString(cand);
+    } catch (e) {}
+  }
+  if (!pk && prov.publicKey) pk = validPubkeyString(prov.publicKey);
   if (!pk && typeof prov.connect === 'function') {
     try {
       const resp = await Promise.race([
@@ -318,7 +332,7 @@ if ($('connectBtn')) $('connectBtn').addEventListener('click', async () => {
         } catch (e) { /* fall through to the injected-key check in catch */ }
       }
       provider = p;
-      if (!pubkey || !isValidAddress(pubkey)) throw new Error('wallet returned no account (111...) — unlock your wallet and select your account, then tap Add & Connect again');
+      if (!pubkey || !isValidAddress(pubkey)) throw new Error('No account was approved for this site (111...) — your wallet app showing A92L selected does not by itself approve this site. Approve A92L in the wallet prompt for this site, then tap Add & Connect again');
       wallet = pubkey;
     $('walletLabel').textContent = short(wallet, 4);
     $('anchorBtn').disabled = false;
@@ -461,6 +475,22 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
     const pk = await connectOneProvider(prov);
     if (pk) { connectedPk = pk; connectedProv = prov; break; }
   }
+  // v101: second pass after a short wait. A wallet app showing an account
+  // selected does not by itself approve this site, and a provider can
+  // inject its key late, after the first pass already read 111... or null.
+  // Re-read every provider once before giving up, so a late approval is
+  // not reported as no account.
+  if (!connectedPk) {
+    await new Promise((r) => setTimeout(r, 1500));
+    for (const prov of getProviders()) {
+      if (prov.publicKey) {
+        const pk = validPubkeyString(prov.publicKey);
+        if (pk) { connectedPk = pk; connectedProv = prov; break; }
+      }
+      const pk2 = await connectOneProvider(prov);
+      if (pk2) { connectedPk = pk2; connectedProv = prov; break; }
+    }
+  }
   if (connectedPk) {
     provider = connectedProv; wallet = connectedPk;
     $('walletLabel').textContent = short(wallet, 4);
@@ -476,7 +506,7 @@ if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () =>
     btn.textContent = 'Connected';
     btn.disabled = true;
   } else {
-    $('walletLabel').textContent = 'wallet returned no account (111...) — unlock your wallet and select your account, then tap Add & Connect again.';
+    $('walletLabel').textContent = 'No account was approved for this site (111...) — your wallet app showing A92L selected does not by itself approve this site. Approve A92L in the wallet prompt for this site, then tap Add & Connect again.';
     btn.textContent = 'Add & Connect';
     btn.disabled = false;
   }
