@@ -838,6 +838,14 @@ function isExpiredBlockhashErr(e) {
   const m = String((e && e.message) || e).toLowerCase();
   return /blockhash not found|blockhash.*expired|block height exceeded|not confirmed|timed out|timeout/i.test(m);
 }
+// Omni retry: a wallet that alters or returns unreadable bytes is not a
+// dead end — the caller rebuilds a fresh transaction and tries signTransaction
+// again, in any wallet, with no wallet-specific branch.
+function isRetryableSignErr(e) {
+  if (isExpiredBlockhashErr(e)) return true;
+  const m = String((e && e.message) || e).toLowerCase();
+  return /altered the bytes|unreadable signature|returned an unreadable/i.test(m);
+}
 
 // Byte helpers
 function hexOf(u8) {
@@ -1110,7 +1118,7 @@ async function runAnchorEngine() {
       } catch (e) {
         if (isRejection(e)) throw e;
         lastErr = e;
-        if (!isExpiredBlockhashErr(e) || round === 2) throw e;
+        if (!isRetryableSignErr(e) || round === 2) throw e;
       }
     }
     if (!sig) throw lastErr || new Error('Anchor did not land.');
@@ -1147,9 +1155,7 @@ async function anchorSingleAttempt(walletAddr, seal, pubBytes, enveloped, alterN
       } else {
         const off = firstDiffByte(wantHex, gotHex);
         alterNote += `signTransaction altered the bytes (first diff at byte ${off}; want ${wantHex.slice(off * 2, off * 2 + 16)}…, got ${gotHex.slice(off * 2, off * 2 + 16)}…). `;
-        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
-        out.innerHTML = '<span class="text-gray-400">Wallet rewrote the transaction — signing the exact bytes instead… approve in your wallet.</span>';
-        finalTx = await signMessageFallback(walletAddr, seal);
+        throw new Error(alterNote + 'signTransaction altered the bytes — retry fresh. No fee spent.');
         finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
       }
     } else {
@@ -1171,9 +1177,7 @@ async function anchorSingleAttempt(walletAddr, seal, pubBytes, enveloped, alterN
         finalTx = tx;
       } else {
         alterNote += 'signTransaction returned ' + describeShape(rawSigned) + '. ';
-        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too, so this provider never signs raw transaction bytes — no broadcastable signature exists. No fee spent.');
-        out.innerHTML = '<span class="text-gray-400">Wallet returned an unreadable signature — signing the exact bytes instead… approve in your wallet.</span>';
-        finalTx = await signMessageFallback(walletAddr, seal);
+        throw new Error(alterNote + 'signTransaction returned an unreadable signature — retry fresh. No fee spent.');
         finalInfo = finalTx._blockhashInfo; finalMemo = finalTx._memoText;
       }
     }
@@ -1272,16 +1276,11 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
   let alterNote = '';
   const enveloped = kc && kc.outcome !== 'raw';
   let finalTx = null, finalInfo = tx._blockhashInfo;
-  // Nightly-first, 2026-10-29: Nightly's signTransaction path runs its own
-  // Solana simulation, which fails with 429 and shows a SOL fee for a Cookie
-  // Chain transaction. Signing the exact message bytes instead triggers no
-  // transaction simulation at all — the site still broadcasts via the Cookie
-  // Chain connection. If the message sign is rejected, that rejection stands;
-  // any other message-sign failure falls through to signTransaction as before.
-  if (!enveloped && typeof provider.signMessage === 'function' && window.nightly) {
-    try { finalTx = await buildFresh(); finalInfo = finalTx._blockhashInfo; } catch (e) { if (isRejection(e)) throw e; }
-  }
-  if (!finalTx && typeof provider.signTransaction === 'function') {
+  // Omni, 2026-10-29: one path for every wallet — signTransaction only.
+  // No Nightly branch, no Phantom branch, no message-signing fallback for
+  // transaction bytes. A wallet that alters or returns unreadable bytes
+  // throws a retryable error, and the caller rebuilds fresh and retries.
+  if (typeof provider.signTransaction === 'function') {
     const rawSigned = await provider.signTransaction(tx);
     const signedTx = normalizeSignedTx(rawSigned);
     if (signedTx) {
@@ -1292,9 +1291,7 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
       } else {
         const off = firstDiffByte(wantHex, gotHex);
         alterNote += `signTransaction altered the bytes (first diff at byte ${off}). `;
-        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too — no broadcastable signature exists. No fee spent.');
-        finalTx = await buildFresh();
-        finalInfo = finalTx._blockhashInfo;
+        throw new Error(alterNote + 'signTransaction altered the bytes — retry fresh. No fee spent.');
       }
     } else {
       const msgBytes = new Uint8Array(tx.serializeMessage());
@@ -1314,12 +1311,10 @@ async function signBatchTx(tx, walletAddr, pubBytes, kc, buildFresh) {
         finalTx = tx;
       } else {
         alterNote += 'signTransaction returned ' + describeShape(rawSigned) + '. ';
-        if (enveloped) throw new Error(alterNote + 'signMessage is enveloped too — no broadcastable signature exists. No fee spent.');
-        finalTx = await buildFresh();
-        finalInfo = finalTx._blockhashInfo;
+        throw new Error(alterNote + 'signTransaction returned an unreadable signature — retry fresh. No fee spent.');
       }
     }
-  } else if (!finalTx && typeof provider.signMessage === 'function') {
+  } else if (typeof provider.signMessage === 'function') {
     if (enveloped) throw new Error(alterNote + 'this provider only signs enveloped messages — no broadcastable signature exists. No fee spent.');
     finalTx = await buildFresh();
     finalInfo = finalTx._blockhashInfo;
@@ -1506,7 +1501,7 @@ async function runBatchAnchor() {
             return;
           }
           lastErr = e;
-          if (!isExpiredBlockhashErr(e) || round === 2) throw e;
+          if (!isRetryableSignErr(e) || round === 2) throw e;
         }
       }
       if (!sig) throw lastErr || new Error('Batch did not land.');
