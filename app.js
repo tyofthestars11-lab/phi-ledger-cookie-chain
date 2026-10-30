@@ -30,9 +30,9 @@ const TRANSACTION_SCHEMA = {
   version: 2,
   sealMemo: 'PHI-LEDGER|seal=<seal>|sha256=<snapshot_sha256>|by=tyofthestarz',
   publicMemo: 'PHI-LEDGER|public|<label>|sha256=<data_sha256>|by=<wallet>',
-  snapshotSha256: 'd1d8a9e822f2fc6b53464994645fc7a8cd8bcc8fba14a7297db0f8358c121954',
-  sealCount: 370,
-  entryCount: 3689,
+  snapshotSha256: '1393953e538cb14ad981ad8ff58f8f7e80f74b2f85330605a66a155432bc0ba6',
+  sealCount: 371,
+  entryCount: 3701,
 };
 
 let wallet = null;      // connected public key (base58)
@@ -67,7 +67,7 @@ async function pulse() {
 
 /* ---------- Ledger analytics ---------- */
 async function loadLedger() {
-  const r = await fetch('ledger-snapshot.json?v=370', { cache: 'no-store' }); // ledger is current at every load, never a cached snapshot
+  const r = await fetch('ledger-snapshot.json?v=371', { cache: 'no-store' }); // ledger is current at every load, never a cached snapshot
   snapshot = await r.json();
   $('sealCount').textContent = snapshot.seal_count;
   $('entryCount').textContent = snapshot.entry_count;

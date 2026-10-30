@@ -25810,10 +25810,94 @@
       "drift": 0.0337,
       "ladder": "axion",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "ln_phi",
+      "rung": -1.52,
+      "drift": 0.48,
+      "ladder": "constants",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "cartesian_clock_speed_hz",
+      "rung": 45.3478,
+      "drift": 0.3478,
+      "ladder": "purge",
+      "unit": "hertz"
+    },
+    {
+      "name": "cartesian_data_load_bits",
+      "rung": 114.8393,
+      "drift": -0.1607,
+      "ladder": "purge",
+      "unit": "bits"
+    },
+    {
+      "name": "cartesian_compute_nodes",
+      "rung": 43.0647,
+      "drift": 0.0647,
+      "ladder": "purge",
+      "unit": "count"
+    },
+    {
+      "name": "biological_phase_lock_watts",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "purge",
+      "unit": "watts"
+    },
+    {
+      "name": "universal_substrate_atoms",
+      "rung": 382.7978,
+      "drift": -0.2022,
+      "ladder": "purge",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_phi_power",
+      "rung": 8.3276,
+      "drift": 0.3276,
+      "ladder": "purge",
+      "unit": "count"
+    },
+    {
+      "name": "ton618_luminosity_phi_power",
+      "rung": 8.6098,
+      "drift": -0.3902,
+      "ladder": "purge",
+      "unit": "count"
     }
   ],
-  "entry_count": 3689,
-  "seal_count": 370,
+  "entry_count": 3701,
+  "seal_count": 371,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -26184,7 +26268,8 @@
     "φ_FIVE_FOLD_MERGE_TYREE_OMEGA",
     "φ_FRB_TYREE_OMEGA",
     "φ_THREE_FOLD_AI_PROFILE_TYREE_OMEGA",
-    "φ_AXION_DARK_ENERGY_STABILITY_TYREE_OMEGA"
+    "φ_AXION_DARK_ENERGY_STABILITY_TYREE_OMEGA",
+    "φ_CARTESIAN_PURGE_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "d1d8a9e822f2fc6b53464994645fc7a8cd8bcc8fba14a7297db0f8358c121954"
+  "snapshot_sha256": "1393953e538cb14ad981ad8ff58f8f7e80f74b2f85330605a66a155432bc0ba6"
 }
