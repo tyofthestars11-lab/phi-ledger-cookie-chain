@@ -27,3 +27,31 @@ jobs:
           assert d['entry_count'] == len(d['entries']), 'entry_count mismatch'
           print(f"hash MATCH {h[:8]} | seal_count={d['seal_count']} entry_count={d['entry_count']} OK")
           EOF
+
+  # Pages wait: a run is green only when the live site reads the version
+  # this push carries. Pages deploys lag the push, so a stale read (for
+  # example v95 while the push carries v96) must WAIT, never fail.
+  # The version is read from index.html, never hardcoded, so the same
+  # loop waits for v96 then and v97 now. Final verdict is one green run.
+  wait-pages:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: wait for Pages to serve this push
+        run: |
+          VERSION=$(sed -n 's/.*Site v\([0-9][0-9]*\).*/\1/p' index.html | head -1)
+          if [ -z "$VERSION" ]; then echo "no Site version line in index.html" && exit 1; fi
+          PAGES_URL="https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/"
+          echo "waiting for Pages to serve Site v$VERSION with app.js?v=$VERSION carrying chainId cookie-chain"
+          for i in $(seq 1 60); do
+            PAGE=$(curl -s -L "$PAGES_URL" || true)
+            APPJS=$(curl -s -L "${PAGES_URL}app.js?v=$VERSION" || true)
+            if echo "$PAGE" | grep -q "Site v$VERSION" && echo "$PAGE" | grep -q "app.js?v=$VERSION" && echo "$APPJS" | grep -q "chainId: 'cookie-chain'"; then
+              echo "PAGES LIVE Site v$VERSION app.js?v=$VERSION chainId cookie-chain"
+              exit 0
+            fi
+            echo "attempt $i/60: Pages not yet at v$VERSION, waiting 30s (stale version is a wait, not a failure)"
+            sleep 30
+          done
+          echo "Pages did not serve Site v$VERSION within 30 minutes" && exit 1
