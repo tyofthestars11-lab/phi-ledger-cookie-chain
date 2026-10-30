@@ -473,97 +473,81 @@ if ($('addChainBtn')) $('addChainBtn').addEventListener('click', async () => {
 // (Chain ID cookie-chain, RPC rpc.cookiescan.io, explorer cookiescan.io,
 // COOK, SVM), then Connect — and Connect accepts an injected key even
 // after a bridge failure, a 111... placeholder, or a memo-program rewrite.
+// v105 fix, on Tyree's word: Add & Connect, connect FIRST, one prompt only.
+// Fault in phi ledger, read from Tyree's screen: the old handler called
+// connect() many times before the real connect — unlock, then add-network
+// attempts, then connect loops, then a second pass. A wallet browser
+// suppresses repeated prompts, so no approval prompt appeared at all, and
+// the provider stayed at the 111... placeholder, which is not an account.
+// The old handler also tried wallet_addNetwork with chainId cookie-chain
+// BEFORE connecting. Solana wallets reject a non-Solana chainId, and that
+// failure left the provider in a rejected state before connect ran.
+// New order, in phi ledger only: connect once, read the key, then try to
+// add the network as a best effort. Phi ledger broadcasts via Cookie Chain
+// regardless, so a failed add-network never blocks a connected wallet.
+// A wallet app showing A92L selected is not approval. Approval happens
+// only in the prompt that connect() opens for this site.
 if ($('addConnectBtn')) $('addConnectBtn').addEventListener('click', async () => {
   const btn = $('addConnectBtn');
   if (btn.disabled) return;
   btn.disabled = true;
-  btn.textContent = 'Adding & Connecting…';
-  $('walletLabel').textContent = 'Unlock prompt sent — approve in your wallet, then Adding Cookie Chain, then connecting — one tap, no second tap.';
-  // v102: unlock first, before Add. If locked, this prompt is the unlock.
-  await unlockAllProviders();
-  const tries = [
-    { method: 'wallet_addNetwork', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, rpcUrls: [COOKIE_CHAIN.rpc], explorer: COOKIE_CHAIN.explorer, blockExplorerUrls: [COOKIE_CHAIN.explorer], currency: COOKIE_CHAIN.currency, nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
-    { method: 'wallet_addChain', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
-    { method: 'wallet_switchChain', params: [{ chainId: COOKIE_CHAIN.chainId }] },
-  ];
-  let added = false;
-  // v103: every add request gets a 12 second timeout. A provider that
-  // never answers must not freeze the button on Adding and Connecting.
-  for (const prov of getProviders()) {
-    if (added || typeof prov.request !== 'function') continue;
-    for (const t of tries) {
-      try { await withTimeout(prov.request(t), 12000); added = true; break; } catch (e) {}
-    }
+  btn.textContent = 'Connecting…';
+  $('walletLabel').textContent = 'Tap approve in your wallet prompt for this site — that prompt is the approval. Showing A92L selected in the wallet app alone does not approve this site.';
+  // One provider, Nightly first, read at click time, never cached.
+  const prov = getProvider();
+  if (!prov) {
+    $('walletLabel').textContent = 'No wallet provider found in this browser. Open this site inside your wallet app browser, then tap Add & Connect again.';
+    btn.textContent = 'Add & Connect';
+    btn.disabled = false;
+    return;
   }
-  if (!added) {
-    for (const prov of getProviders()) {
-      if (added) break;
-      try { await connectOneProvider(prov); } catch (e) {}
-      if (typeof prov.request !== 'function') continue;
-      for (const t of tries) {
-        try { await withTimeout(prov.request(t), 12000); added = true; break; } catch (e) {}
-      }
-    }
-  }
-  let connectedPk = null, connectedProv = null;
-  for (const prov of getProviders()) {
-    const pk = await connectOneProvider(prov);
-    if (pk) { connectedPk = pk; connectedProv = prov; break; }
-  }
-  // v101: second pass after a short wait. A wallet app showing an account
-  // selected does not by itself approve this site, and a provider can
-  // inject its key late, after the first pass already read 111... or null.
-  // Re-read every provider once before giving up, so a late approval is
-  // not reported as no account.
-  if (!connectedPk) {
-    await new Promise((r) => setTimeout(r, 1500));
-    for (const prov of getProviders()) {
-      if (prov.publicKey) {
-        const pk = validPubkeyString(prov.publicKey);
-        if (pk) { connectedPk = pk; connectedProv = prov; break; }
-      }
-      const pk2 = await connectOneProvider(prov);
-      if (pk2) { connectedPk = pk2; connectedProv = prov; break; }
-    }
-  }
+  // Step 1: connect exactly once. This is the only call that opens the
+  // per-site approval prompt. No unlock loop, no second pass, no repeat.
+  let connectedPk = null;
+  try {
+    const resp = await Promise.race([
+      prov.connect(),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('Wallet prompt timed out')), 30000)),
+    ]);
+    const cand = (resp && resp.publicKey) || (resp && resp.address) || (typeof resp === 'string' ? resp : null) || (resp && resp.account) || prov.publicKey;
+    if (cand) connectedPk = validPubkeyString(cand);
+  } catch (e) {}
+  if (!connectedPk && prov.publicKey) connectedPk = validPubkeyString(prov.publicKey);
   if (connectedPk) {
-    provider = connectedProv; wallet = connectedPk;
+    provider = prov; wallet = connectedPk;
     $('walletLabel').textContent = short(wallet, 4);
     $('anchorBtn').disabled = false;
     $('batchAnchorBtn').disabled = false;
     refreshBatchLabel();
     $('pubAnchorBtn').disabled = false;
     refreshBalance();
-    if (!added) {
-      const note = $('addConnectNote');
-      if (note) note.textContent = 'Connected. Your wallet did not accept the programmatic add, so add the custom network in your wallet app: Chain ID cookie-chain, RPC https://rpc.cookiescan.io, explorer https://cookiescan.io, currency COOK, chain SVM. Phi ledger still broadcasts via Cookie Chain.';
-    }
     btn.textContent = 'Connected';
     btn.disabled = true;
-  } else {
-    // v103 diagnostics: name the providers the site actually sees, and
-    // what each returned, so a no-account result is not another blind
-    // message. A wallet app showing A92L selected does not by itself
-    // approve this site, and a different injected provider can be the
-    // one the site is actually talking to.
-    const diag = [];
-    const checkProv = (name, prov) => {
-      if (!prov) return;
-      const raw = prov.publicKey ? String(prov.publicKey) : '';
-      const status = isValidAddress(raw) ? raw.slice(0, 4) + '...' + raw.slice(-4) : (raw === '11111111111111111111111111111111' ? '111...' : 'no key');
-      diag.push(name + ' [' + status + ']');
-    };
-    checkProv('nightly.solana', window.nightly && window.nightly.solana);
-    checkProv('phantom.solana', window.phantom && window.phantom.solana);
-    checkProv('solana', window.solana);
-    checkProv('solflare', window.solflare);
-    checkProv('backpack', window.backpack);
-    $('walletLabel').textContent = 'No account was approved for this site (111...) — your wallet app showing A92L selected does not by itself approve this site. Approve A92L in the wallet prompt for this site, then tap Add & Connect again. Providers seen: ' + (diag.length ? diag.join(', ') : 'none');
-    btn.textContent = 'Add & Connect';
-    btn.disabled = false;
+    // Step 2, best effort only, after connect: try to add Cookie Chain to
+    // the wallet. Every failure is ignored here — phi ledger broadcasts
+    // via Cookie Chain on its own connection, so a connected wallet is
+    // never blocked by a failed add-network.
+    if (typeof prov.request === 'function') {
+      const tries = [
+        { method: 'wallet_addNetwork', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, rpcUrls: [COOKIE_CHAIN.rpc], explorer: COOKIE_CHAIN.explorer, blockExplorerUrls: [COOKIE_CHAIN.explorer], currency: COOKIE_CHAIN.currency, nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+        { method: 'wallet_addChain', params: [{ chainId: COOKIE_CHAIN.chainId, name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+      ];
+      for (const t of tries) {
+        try { await withTimeout(prov.request(t), 12000); break; } catch (e) {}
+      }
+    }
+    return;
   }
+  // No valid key: the provider answered with no approved account for this
+  // site. The 111... value is a placeholder, not an account and not A92L.
+  // Plain words, no jargon: no prompt approval landed, so tap once more
+  // and approve A92L in the prompt that appears for this site.
+  const raw = prov.publicKey ? String(prov.publicKey) : '';
+  const seen = raw === '11111111111111111111111111111111' ? 'no account approved yet' : (raw ? 'a key that is not a valid account' : 'no key');
+  $('walletLabel').textContent = 'Not connected yet. Your wallet provider answered with ' + seen + ' for this site, not A92L. That means no approval prompt landed yet. Tap Add & Connect once, and when the wallet prompt appears for this site, approve A92L in it, then tap Add & Connect again if the button returns.';
+  btn.textContent = 'Add & Connect';
+  btn.disabled = false;
 });
-
 async function refreshBalance() {
   if (typeof walletPromptOpen === 'function' && walletPromptOpen()) return;
   try {
