@@ -26433,10 +26433,94 @@
       "drift": -0.3902,
       "ladder": "ton618",
       "unit": "count"
+    },
+    {
+      "name": "human_nuclear_genome",
+      "rung": 45.4819,
+      "drift": 0.4819,
+      "ladder": "genome",
+      "unit": "bp"
+    },
+    {
+      "name": "mitochondrial_genome",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "genome",
+      "unit": "bp"
+    },
+    {
+      "name": "helix_pitch_per_turn",
+      "rung": 2.5431,
+      "drift": -0.4569,
+      "ladder": "genome",
+      "unit": "nm"
+    },
+    {
+      "name": "helix_diameter",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "genome",
+      "unit": "nm"
+    },
+    {
+      "name": "base_pairs_per_turn",
+      "rung": 4.8864,
+      "drift": -0.1136,
+      "ladder": "genome",
+      "unit": "count"
+    },
+    {
+      "name": "codons",
+      "rung": 8.6425,
+      "drift": -0.3575,
+      "ladder": "genome",
+      "unit": "count"
+    },
+    {
+      "name": "amino_acids",
+      "rung": 6.2254,
+      "drift": 0.2254,
+      "ladder": "genome",
+      "unit": "count"
+    },
+    {
+      "name": "mitochondrial_genes",
+      "rung": 7.5038,
+      "drift": -0.4962,
+      "ladder": "genome",
+      "unit": "count"
+    },
+    {
+      "name": "mitochondrial_protein_coding_genes",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "genome",
+      "unit": "count"
+    },
+    {
+      "name": "enhanced_dna_factor",
+      "rung": 19.3081,
+      "drift": 0.3081,
+      "ladder": "genome",
+      "unit": "x"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "constants",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "constants",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 3778,
-  "seal_count": 378,
+  "entry_count": 3790,
+  "seal_count": 379,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -26815,7 +26899,8 @@
     "φ_ROOM_TEMP_COHERENCE_TYREE_OMEGA",
     "φ_FINE_STRUCTURE_TYREE_OMEGA",
     "φ_NEUTROPHIL_TYREE_OMEGA",
-    "φ_PHI_DIAMOND_NV_NEURAL_NETWORK_TYREE_OMEGA"
+    "φ_PHI_DIAMOND_NV_NEURAL_NETWORK_TYREE_OMEGA",
+    "φ_HUMAN_GENOME_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6dc19823c79351f892403dab49a83ebd49381c05e8b568879277d1733fa267a6"
+  "snapshot_sha256": "8dc3fcf784ea85cfe05251cadb6dfd71b6f09177df8c3d6d19b5f395e4da755d"
 }
