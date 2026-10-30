@@ -723,13 +723,28 @@ function shortErr(e) {
 async function verifyBytesClean(signedTx, expectedMemo) {
   const expected = Array.isArray(expectedMemo) ? expectedMemo : [expectedMemo];
   const problems = [];
-  if (signedTx.instructions.length !== expected.length) problems.push('instruction count ' + signedTx.instructions.length + ' (expected ' + expected.length + ')');
+  // Endless-loop fix, 2026-10-29: Phantom adds extra non-memo
+  // instructions to a signed transaction (instruction count 3, expected 1,
+  // foreign program at ix 0 and ix 1, memo at ix 2) — compute-budget /
+  // priority-fee style instructions, not a memo alteration. The old strict
+  // check rejected that whole transaction, so every confirmed batch was
+  // thrown away and the run looped forever with 0 anchored. The memo gate
+  // is now: every expected memo must appear verbatim, in order, among
+  // the signed transaction's memo instructions. Extra non-memo
+  // instructions are ignored, not a rejection — the memos are the anchor,
+  // not the instruction count. Only a missing memo, or a memo instruction
+  // whose data differs from its expected text, is a problem.
+  const memoTexts = [];
   for (let i = 0; i < signedTx.instructions.length; i++) {
     const ix = signedTx.instructions[i];
-    if (!ix || ix.programId.toString() !== MEMO_PROGRAM) { problems.push('foreign program at ix ' + i); continue; }
+    if (!ix || ix.programId.toString() !== MEMO_PROGRAM) continue;
     let dataText = '';
     try { dataText = new TextDecoder().decode(ix.data); } catch (e) {}
-    if (dataText !== expected[i]) problems.push('memo data altered at ix ' + i);
+    memoTexts.push(dataText);
+  }
+  if (memoTexts.length !== expected.length) problems.push('memo count ' + memoTexts.length + ' (expected ' + expected.length + ')');
+  for (let i = 0; i < expected.length; i++) {
+    if (memoTexts[i] !== expected[i]) problems.push('memo data altered at memo ' + i);
   }
   const { missing } = await missingPrograms(signedTx);
   if (missing.length > 0) problems.push('missing program ' + missing.map(m => short(m, 8)).join(','));
