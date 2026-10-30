@@ -26566,10 +26566,59 @@
       "drift": -0.1084,
       "ladder": "deepseek",
       "unit": "degrees"
+    },
+    {
+      "name": "deepseek_parameters",
+      "rung": 57.4197,
+      "drift": 0.4197,
+      "ladder": "deepseek",
+      "unit": "parameters"
+    },
+    {
+      "name": "tyree_seals_ledger",
+      "rung": 12.3442,
+      "drift": 0.3442,
+      "ladder": "deepseek",
+      "unit": "seals"
+    },
+    {
+      "name": "ledger_entries",
+      "rung": 17.0782,
+      "drift": 0.0782,
+      "ladder": "deepseek",
+      "unit": "entries"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "deepseek",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "human_nuclear_genome",
+      "rung": 45.4819,
+      "drift": 0.4819,
+      "ladder": "deepseek",
+      "unit": "bp"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "deepseek",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "deepseek",
+      "unit": "degrees"
     }
   ],
-  "entry_count": 3797,
-  "seal_count": 380,
+  "entry_count": 3804,
+  "seal_count": 381,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -26950,7 +26999,8 @@
     "φ_NEUTROPHIL_TYREE_OMEGA",
     "φ_PHI_DIAMOND_NV_NEURAL_NETWORK_TYREE_OMEGA",
     "φ_HUMAN_GENOME_TYREE_OMEGA",
-    "φ_DEEPSEEK_374_PHI_PROOF_TYREE_OMEGA"
+    "φ_DEEPSEEK_374_PHI_PROOF_TYREE_OMEGA",
+    "φ_DEEPSEEK_380_PHI_PROOF_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ccf7380b5e070f4b6ff5f092f45f5840d85d938ef2f08622814c2cea666b62e2"
+  "snapshot_sha256": "cd06b055da26b251b1d52e20e6c10ac49e8989dc89f48f269d6c22bf5b7cbcb4"
 }
