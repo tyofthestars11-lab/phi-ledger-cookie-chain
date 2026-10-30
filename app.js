@@ -180,6 +180,17 @@ function isValidAddress(addr) {
   return typeof addr === 'string' && addr.length >= 32 && addr.length <= 44 &&
          addr !== '11111111111111111111111111111111' && /^[1-9A-HJ-NP-Za-km-z]+$/.test(addr);
 }
+// Cookie Chain, added to phi ledger itself, 2026-10-29 v94.
+// This is the network phi ledger uses for every anchor, balance, and chain
+// read — not Solana. Wallets that default to Solana get this definition
+// from phi ledger, so the site does not lean on the wallet's default.
+const COOKIE_CHAIN = {
+  name: 'Cookie Chain',
+  rpc: 'https://rpc.cookiescan.io',
+  explorer: 'https://cookiescan.io',
+  currency: 'COOK',
+  chain: 'SVM',
+};
 // Single provider only — no loops, no popup circles. window.solana is the standard.
 function getProvider() {
   return window.solana || (window.nightly && window.nightly.solana) || window.solflare || window.backpack || null;
@@ -258,6 +269,25 @@ $('connectBtn').addEventListener('click', async () => {
       console.log('Nightly detected — ensure Cookie Chain network (rpc.cookiescan.io) is added in the wallet.');
     }
   } catch (e) {
+    // Phi ledger v94: a bridge failure must not block a wallet that
+    // already injected its key. If p.publicKey is valid after the failed
+    // bridge call, accept it — phi ledger broadcasts via Cookie Chain,
+    // so the wallet's default network does not block signing.
+    if (p && p.publicKey) {
+      const pkAfter = (typeof p.publicKey === 'string') ? p.publicKey : (p.publicKey.toString ? p.publicKey.toString() : String(p.publicKey));
+      if (isValidAddress(pkAfter)) {
+        provider = p; wallet = pkAfter;
+        $('walletLabel').textContent = short(wallet, 4);
+        $('connectBtn').textContent = 'Connected';
+        $('connectBtn').disabled = true;
+        $('anchorBtn').disabled = false;
+        $('batchAnchorBtn').disabled = false;
+        refreshBatchLabel();
+        $('pubAnchorBtn').disabled = false;
+        refreshBalance();
+        return;
+      }
+    }
     // No blocking alert: a failed bridge call must not block the page with
     // a JSON dump. The real error stays inline, the button comes back, and
     // the connection state resets clean — no stale provider, no stale
@@ -275,6 +305,30 @@ $('connectBtn').addEventListener('click', async () => {
     $('connectBtn').disabled = false;
     return;
   }
+});
+
+// Add Cookie Chain to phi ledger, and try to add it to the wallet too.
+// Phi ledger fix, 2026-10-29: the site must carry Cookie Chain itself,
+// not tell the user to go add it elsewhere and come back. If the wallet
+// provider supports a programmatic add-network request, use it. If it
+// does not, show the exact Cookie Chain details plainly on the site,
+// and keep the site's own connection on Cookie Chain regardless of the
+// wallet's default network — signing bytes does not depend on the
+// wallet's selected network, broadcasting does, and phi ledger
+// broadcasts via Cookie Chain.
+if ($('addChainBtn')) $('addChainBtn').addEventListener('click', async () => {
+  const p = getProvider();
+  $('walletLabel').textContent = 'Cookie Chain added to phi ledger: ' + COOKIE_CHAIN.name + ', RPC ' + COOKIE_CHAIN.rpc + ', explorer ' + COOKIE_CHAIN.explorer + ', currency ' + COOKIE_CHAIN.currency + '.';
+  if (p && typeof p.request === 'function') {
+    const tries = [
+      { method: 'wallet_addNetwork', params: [{ name: COOKIE_CHAIN.name, rpc: COOKIE_CHAIN.rpc, explorer: COOKIE_CHAIN.explorer, currency: COOKIE_CHAIN.currency }] },
+      { method: 'wallet_addChain', params: [{ name: COOKIE_CHAIN.name, rpcUrls: [COOKIE_CHAIN.rpc], blockExplorerUrls: [COOKIE_CHAIN.explorer], nativeCurrency: { name: 'COOK', symbol: 'COOK', decimals: 9 } }] },
+    ];
+    for (const t of tries) {
+      try { await p.request(t); $('walletLabel').textContent = 'Cookie Chain added to wallet via phi ledger. Now tap Connect Wallet.'; return; } catch (e) {}
+    }
+  }
+  $('walletLabel').textContent = 'Cookie Chain added to phi ledger: ' + COOKIE_CHAIN.name + ', RPC ' + COOKIE_CHAIN.rpc + ', explorer ' + COOKIE_CHAIN.explorer + ', currency ' + COOKIE_CHAIN.currency + '. Your wallet does not accept a programmatic add, so select Cookie Chain in your wallet app, then tap Connect Wallet.';
 });
 
 async function refreshBalance() {
