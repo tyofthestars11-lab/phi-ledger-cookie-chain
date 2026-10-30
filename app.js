@@ -1499,8 +1499,11 @@ async function runBatchAnchor() {
       return;
     }
     // Key check once for the whole run — one approval, not one per batch.
+    // Skipped on the seal-all path: signAllTransactions plus per-transaction
+    // signature + memo verification before any broadcast already proves the
+    // key, so seal-all stays at one approval total, not key-check plus sign-all.
     let kc = window._batchKeyCheck || null;
-    if (!kc && typeof provider.signMessage === 'function') {
+    if (!kc && typeof provider.signMessage === 'function' && typeof provider.signAllTransactions !== 'function') {
       out.innerHTML = '<span class="text-gray-400">Checking the wallet key… approve once in your wallet.</span>';
       kc = await walletKeyCheck(pubBytes);
       if (kc.outcome === 'none') throw new Error('key check FAILED: ' + kc.detail + ' — no fee spent.');
@@ -1547,7 +1550,31 @@ async function runBatchAnchor() {
       for (let bi = 0; bi < signedTxs.length; bi++) {
         const seals = batches[bi];
         out.innerHTML = `<span class="text-gray-400">Broadcasting batch ${bi + 1}/${signedTxs.length} — ${seals.length} seals…</span>`;
-        const sig = await broadcastAndVerify(signedTxs[bi], out, signedTxs[bi]._blockhashInfo, signedTxs[bi]._memoTexts);
+        // Succeeded only: a broadcast that fails on a retryable error is
+        // retried fresh inside this same run, not left as a Stopped run
+        // for a later Resume run to succeed. Only a rejection pauses.
+        let sig = null, lastErr = null;
+        for (let round = 0; round < 3 && !sig; round++) {
+          try {
+            if (round === 0) {
+              sig = await broadcastAndVerify(signedTxs[bi], out, signedTxs[bi]._blockhashInfo, signedTxs[bi]._memoTexts);
+            } else {
+              out.innerHTML = `<span class="text-gray-400">Batch ${bi + 1}/${signedTxs.length} — refreshing… approve in your wallet.</span>`;
+              const tx = await buildBatchAnchorTx(wallet, seals);
+              const signed = await signBatchTx(tx, wallet, pubBytes, kc, () => signMessageFallbackBatch(wallet, seals));
+              sig = await broadcastAndVerify(signed.finalTx, out, signed.finalInfo, signed.finalTx._memoTexts);
+            }
+          } catch (e) {
+            if (isRejection(e)) {
+              out.innerHTML = `<span class="text-amber-300">Paused</span> <span class="text-gray-400">— approval dismissed at batch ${bi + 1}/${signedTxs.length}. ${runAnchored} of ${todo.length} seals anchored. Tap the button to resume.</span>`;
+              batchRunning = false; btn.disabled = false; btn.textContent = `Resume anchoring (${todo.length - runAnchored} left)`;
+              return;
+            }
+            lastErr = e;
+            if (!isRetryableSignErr(e) || round === 2) throw e;
+          }
+        }
+        if (!sig) throw lastErr || new Error('Batch did not land.');
         batchMarkDone(seals);
         runAnchored += seals.length; runTx += 1;
         out.innerHTML = `<span class="text-green-400">Anchored ✓</span> <span class="text-gray-400">batch ${bi + 1}/${signedTxs.length} — ${seals.length} seals verified on-chain.</span><br><span class="text-gray-500 text-xs">Anchored so far: ${runAnchored} of ${todo.length} seals</span><br><a class="underline text-gray-500 text-xs" href="${EXPLORER}/tx/${sig}" target="_blank" rel="noopener">${EXPLORER}/tx/${short(sig, 8)}</a>`;
