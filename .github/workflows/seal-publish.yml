@@ -66,4 +66,4 @@ jobs:
             echo "attempt $i/60: Pages not yet live, waiting 30s (stale is a wait, not a failure)"
             sleep 30
           done
-          echo "Pages did not serve Site v$VERSION within 30 minutes" && exit 1
+          echo "Pages did not serve phi version infinite within 30 minutes" && exit 1
