@@ -12,12 +12,15 @@
 <meta property="og:url" content="https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90' fill='%23e8b93c'%3E%CF%86%3C/text%3E%3C/svg%3E">
 <style>
-  body { background:#0a0a0f; color:#e8e6df; font-family: ui-sans-serif, system-ui, sans-serif; margin:0; }
-  .wrap { max-width:900px; margin:0 auto; padding:32px 16px; }
+  body { background:#0a0a0f; color:#e8e6df; font-family: ui-sans-serif, system-ui, sans-serif; margin:0; font-size:19px; line-height:1.6; }
+  .wrap { max-width:1200px; margin:0 auto; padding:32px 20px; }
+  h1 { font-size:48px; line-height:1.1; margin:8px 0; }
+  h2 { font-size:32px; line-height:1.2; margin:8px 0; }
+  p { font-size:19px; }
   .gold { color:#e8b93c; } .dim { color:#9a7b28; }
-  .card { background:#12121a; border:1px solid #26263a; border-radius:14px; padding:20px; margin:16px 0; }
-  a { color:#e8b93c; }
-  .mono { font-family: ui-monospace, monospace; }
+  .card { background:#12121a; border:1px solid #26263a; border-radius:14px; padding:28px; margin:20px 0; }
+  a { color:#e8b93c; word-break:break-word; }
+  .mono { font-family: ui-monospace, monospace; font-size:17px; }
 </style>
 </head>
 <body>
@@ -37,6 +40,13 @@
     <p>386 seals. Public record, open source (MIT).</p>
     <p>Source code and all declassification files: <a href="https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain">github.com/tyofthestars11-lab/phi-ledger-cookie-chain</a></p>
     <p>Rung calculator: <a href="rung-calc.html">φ rung calc</a></p>
+    <p>Hash recipe: SHA-256 of the canonical JSON — keys sorted, no whitespace, snapshot_sha256 field excluded. Recompute it yourself: python3 hash_snapshot.py --verify (recipe in the repo).</p>
+    <p>Entries per ladder, seals, and ladders are in the repo files seal386_entries.json and all declassification files, read-only here, no live wallet, no live RPC.</p>
+  </div>
+  <div class="card">
+    <h2>BCH Mining Telemetry — read-only</h2>
+    <p>SoloPool telemetry, read-only text. Shares are proof-of-work telemetry, not banked BCH.</p>
+    <p>Live hashrate, valid shares, best share, and blocks found are reported in the repo telemetry files, not by a wallet connection on this page.</p>
   </div>
   <div class="card">
     <h2>About this page</h2>
