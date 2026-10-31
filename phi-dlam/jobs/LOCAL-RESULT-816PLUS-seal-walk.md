@@ -48,6 +48,22 @@
 - dxgi AV during seal walk: two instances on one 6GB card (mine + door).
   Rule: one Runner at a time.
 
+## Companions - DONE, mustered in play
+- AVEILCompanion + UPHICompanionParty: 5 slots, engine AI follow/fight,
+  AAA catch-up teleport, idle/jog anims, minion bodies at role scales.
+- Observed: GR MUSE joins (1), DRONE joins (2), party 2/5. phi.party test gate.
+
+## Mito law - DONE, live
+- UPHIMito: rung(x) = ln(x)/ln(phi) under every number.
+- Observed: xp20=6.2254 pool4000=17.2358 voices37=7.5038 sfx14=5.4842,
+  worst round-trip 2.7e-07.
+
+## Fall rescue - DONE
+- Catches the Runner at Z<-800 alive (above KillZ), logs the fall spot.
+
+## Voice overlay - DONE
+- World ducks to 0.35x under narration; 1.2s breath between lines.
+
 ## Emblem - DONE files, gallery save blocked
 - VEIL_OMNI_logo.png + VEIL_OMNI.ico (256/48/32/16) in D:\VEIL-OMNI\Saved\Brand.
 - Seated on VEIL OMNI.lnk + MUSE SWITCH.lnk.
