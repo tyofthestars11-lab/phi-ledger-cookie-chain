@@ -12,3 +12,5 @@ This is a GitHub DLAM document, not a job file. GitHub goes to PC on its own. Ty
 
 New evidence, Tyree's word, 2026-10-31: white thing appeared when mouse was put in that area, mouse left on it for a bit, mouse moved, white thing was still there.
 That means hover-triggered, sticky, not wallpaper, not a still image. DLAM must test mouse hover in that bottom area, check tooltip, preview, selection, thumbnail, magnifier, or overlay that sticks after mouse moves, and report which one, with printed process and window, never invented.
+
+Reverse engineer it, Tyree's word: do not guess the white thing, reverse engineer it from its behavior. Hover in bottom area, left mouse, sticky after mouse moves, not wallpaper, not still image. Reverse engineer from: trigger is mouse hover, persistence after mouse move, position bottom of screen, white glowing shape, desktop icons present, code rain wallpaper behind it. DLAM must reverse engineer which process, window, tooltip, preview, selection, or overlay produces that exact trigger and persistence, and report its exact name and path, or UNREAD.
