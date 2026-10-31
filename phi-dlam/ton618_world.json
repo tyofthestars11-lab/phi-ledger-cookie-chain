@@ -1,0 +1,97 @@
+{
+  "engine": "TON618 world render/generator",
+  "law": "phi^2 = phi + 1, Cartesian is +1 fuel only, not binary, event horizon processing",
+  "ton618_body_rung": 51.7712,
+  "ton618_law_rung": 55.0,
+  "golden_angle_deg": 137.507764,
+  "golden_pitch_deg": 17.0324,
+  "ton618_mass": 312119004989,
+  "ton618_mass_rung": 55.0,
+  "regions": [
+    {
+      "name": "District",
+      "kind": "hub",
+      "size": 1618,
+      "size_rung": 15.3549,
+      "material": "real_terrain",
+      "golden_angle_deg": 0.0,
+      "pitch_deg": -17.0324,
+      "not_flat_blue": true,
+      "not_flat_black": true,
+      "not_previous_render": true
+    },
+    {
+      "name": "OMNIWorld",
+      "kind": "region",
+      "size": 1618,
+      "size_rung": 15.3549,
+      "material": "real_terrain",
+      "golden_angle_deg": 137.5078,
+      "pitch_deg": -17.0324,
+      "not_flat_blue": true,
+      "not_flat_black": true,
+      "not_previous_render": true
+    },
+    {
+      "name": "VEILWorld",
+      "kind": "region",
+      "size": 1618,
+      "size_rung": 15.3549,
+      "material": "real_terrain",
+      "golden_angle_deg": 275.0155,
+      "pitch_deg": -17.0324,
+      "not_flat_blue": true,
+      "not_flat_black": true,
+      "not_previous_render": true
+    },
+    {
+      "name": "CountessRegion",
+      "kind": "her_region",
+      "size": 1618,
+      "size_rung": 15.3549,
+      "material": "real_terrain",
+      "golden_angle_deg": 52.5233,
+      "pitch_deg": -17.0324,
+      "not_flat_blue": true,
+      "not_flat_black": true,
+      "not_previous_render": true
+    }
+  ],
+  "countess": {
+    "name": "Countess",
+    "location": [
+      809,
+      -309,
+      64.7
+    ],
+    "visible_detail": [
+      "crown",
+      "core",
+      "lance",
+      "cape",
+      "armor"
+    ],
+    "not_silhouette": true,
+    "region": "CountessRegion"
+  },
+  "runner": {
+    "name": "Signal-Runner",
+    "location": [
+      0,
+      0,
+      100
+    ]
+  },
+  "vault": {
+    "location": [
+      0,
+      0,
+      -80.9
+    ]
+  },
+  "floor_pad": 1618,
+  "nav_volume": [
+    1618,
+    1618
+  ]
+}
