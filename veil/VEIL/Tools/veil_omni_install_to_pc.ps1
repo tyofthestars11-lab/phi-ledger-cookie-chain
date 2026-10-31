@@ -13,11 +13,17 @@
 #    no package until 100% done in project.
 #  - Prints every copied file, then prints the next editor steps.
 #  - Does NOT register the project in Epic Launcher My Projects by
-#    itself: opening VEIL.uproject (5.8.4, Windows x86) in the launcher
+#    itself: opening VEIL.uproject (5.8, Windows x86) DIRECTLY in File Explorer (NOT via Epic Launcher Browse)
 #    after this copy is the register step, and a previous Open did NOT
 #    register it - if My Projects still shows empty after this, show
 #    Muse a photo of Epic Launcher > Unreal Engine > My Projects.
 $ErrorActionPreference = "Stop"
+# BREAK-CIRCLE GUARD: never install over a running editor. A running
+# UnrealEditor / UnrealBuildTool is what makes "Build.bat is already
+# running" appear on the next open. This stops and tells the user to
+# close the editor first; it does NOT stop any process by itself.
+if (Get-Process UnrealEditor -ErrorAction SilentlyContinue) { throw "Close Unreal Editor first, then run this script again. Do not install over a running editor." }
+if (Get-Process UnrealBuildTool -ErrorAction SilentlyContinue) { throw "UnrealBuildTool is still running. Close it / wait for the build to finish, then run this script again." }
 $RepoVeil = Join-Path $PSScriptRoot ".."
 $Dest = "D:\VEIL-OMNI"
 if (-not (Test-Path $Dest)) { throw "D:\VEIL-OMNI not found. Stop - do not create a new project." }
@@ -39,6 +45,6 @@ Copy-Item -Force (Join-Path $RepoVeil "VEIL_OMNI_INSTALL_MAP.md") $Dest
 Copy-Item -Force (Join-Path $RepoVeil "VEIL_METAHUMAN.md") $Dest
 Write-Output "VEIL OMNI INSTALLED TO PC"
 Write-Output "Backup: $Backup"
-Write-Output "Copied: Source, Config, Tools, Data, VEIL.uproject (5.8.4, MetaHuman + MetaHumanCharacter), VEIL_OMNI_INSTALL_MAP.md, VEIL_METAHUMAN.md"
+Write-Output "Copied: Source, Config, Tools, Data, VEIL.uproject (5.8, MetaHuman + MetaHumanCharacter), VEIL_OMNI_INSTALL_MAP.md, VEIL_METAHUMAN.md"
 Write-Output "NOT touched: D:\VEIL-OMNI\Content (maps + Fab assets stay)"
 Write-Output "NEXT (editor, already-open): py Tools\whole_verify_goal.py in Output Log Cmd, then Tools\veil_omni_load_and_link.py, save, Play, photo + log are proof. No package."

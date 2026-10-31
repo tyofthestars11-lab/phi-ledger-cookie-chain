@@ -63,8 +63,8 @@ except Exception as e:
     log("EditorAssetLibrary unavailable: %s" % e)
 
 log("EDITOR CHECKLIST (not done by this script):")
-log("1) Epic Launcher > Library > Unreal Engine 5.8.4 > Options > MetaHuman Creator Core Data CHECKED (the 5.753 GB item, photo 224) > Apply > restart editor. Without it the Creator warns its functionality is significantly limited.")
-log("2) Editor > Edit > Plugins > search MetaHuman > MetaHuman + MetaHumanCharacter enabled (VEIL.uproject now lists both, 5.8.4) > restart editor if prompted.")
+log("1) Epic Launcher > Library > Unreal Engine 5.8 > Options > MetaHuman Creator Core Data CHECKED (the 5.753 GB item, photo 224) > Apply > restart editor. Without it the Creator warns its functionality is significantly limited.")
+log("2) Editor > Edit > Plugins > search MetaHuman > MetaHuman + MetaHumanCharacter enabled (VEIL.uproject now lists both, 5.8) > restart editor if prompted.")
 log("3) MetaHuman Manager > Clothing (Skeletal) > Buff_Black > Verify. Photo the result. If Verify fails, STOP: photo the error, do NOT Package, do NOT delete Buff_Black.")
 log("4) Only after Verify passes: MetaHuman Manager > Buff_Black > Package. Photo the result.")
 log("5) Assign a BODY, not Buff: BP_PlayerCharacter > AVEILCharacter > MetaHumanBodyMesh = an assembled body mesh under /Game/MetaHumans/<Name>/Body/, MetaHumanAnimBlueprintClass = its AnimBlueprint. Buff is an outfit on that body, applied in Creator/Manager, not the body property.")

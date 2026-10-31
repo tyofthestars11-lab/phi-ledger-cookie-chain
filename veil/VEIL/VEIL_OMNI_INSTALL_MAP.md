@@ -1,9 +1,28 @@
 # VEIL OMNI: THE LAST SIGNAL — PATH OF LIGHT — Install Map
 ## Add it to Tyree's stuff, whole, no Tyree typing beyond a pull
 
-Project on PC: `D:\VEIL-OMNI`, uproject `VEIL.uproject`, EngineAssociation **5.8.4**, Windows **x86** (not 32-bit), map `/Game/Maps/VEILDistrict`.
+Project on PC: `D:\VEIL-OMNI`, uproject `VEIL.uproject`, EngineAssociation **5.8**, Windows **x86** (not 32-bit), map `/Game/Maps/VEILDistrict`.
 GitHub source of truth: `tyofthestars11-lab/phi-ledger-cookie-chain`, branch `main`.
 PC clone (the only correct git dir): `C:\Users\Admin\phi-ledger-cookie-chain` — NOT `C:\Users\Admin`, NOT `D:\VEIL-OMNI`.
+
+## 0. BREAK-CIRCLE ROUTE — use this, NOT Epic Launcher Browse (new in this commit)
+
+The circle was: Launcher Open Project -> "You don't have any projects yet :(" -> Browse -> D:\VEIL-OMNI\VEIL.uproject -> Open -> back to empty, plus Convert dialog, plus Missing Modules -> Yes -> "Build.bat is already running" loop. Do NOT repeat that loop. Do this instead, in order:
+
+1. Close everything: close Epic Launcher, close any Open Project window, close Unreal Editor. The install script now refuses to run over a running editor (it stops and says to close it first; it does not stop any process itself).
+2. Pull + install (Windows PowerShell, one block, in the git clone only):
+```
+cd C:\Users\Admin\phi-ledger-cookie-chain
+git pull origin main
+.\veil\VEIL\Tools\veil_omni_install_to_pc.ps1
+```
+3. File Explorer -> D:\VEIL-OMNI -> right-click VEIL.uproject -> Switch Unreal Engine version -> pick 5.8 (the `C:\Program Files\Epic Games\UE_5.8` install) -> OK. This writes EngineAssociation "5.8" into the PC copy, matching the repo fix.
+4. Same folder -> right-click VEIL.uproject -> Generate Visual Studio project files -> wait for it to finish.
+5. Double-click VEIL.uproject DIRECTLY in File Explorer — NOT from Epic Launcher Browse, NOT from Launcher My Projects.
+6. If "Missing VEIL Modules — Would you like to rebuild them now?" appears, click **No**. This is the bypass: clicking Yes while a previous build is still held is what produces the "Build.bat is already running" loop.
+7. If "This project was built with a different version" appears, click **Convert in-place** (not Open a copy — a copy splits VEIL OMNI into two projects).
+8. Once the editor opens this way once, it WILL show in Launcher My Projects next time. That editor title — VEILDistrict - Unreal Editor, not a splash screen — is the proof photo.
+9. Safe cleanup, ONLY if Missing Modules still appears after steps 1-8, and ONLY with the editor and Launcher fully closed: delete the regenerable folders `D:\VEIL-OMNI\Binaries`, `D:\VEIL-OMNI\Intermediate`, and `D:\VEIL-OMNI\DerivedDataCache` only. NEVER delete `D:\VEIL-OMNI\Content` (maps + Fab assets + MetaHuman), NEVER delete `D:\VEIL-OMNI\Saved` by hand, and NEVER stop a process blindly — close the editor/Launcher normally first, then delete only those three regenerable folders, then repeat step 5. This cleanup is a manual PC step, not in the install script, and not a code fix by itself.
 
 ## 1. Pull + install (PC, Windows PowerShell, one block)
 ```
@@ -17,7 +36,7 @@ That script backs up `D:\VEIL-OMNI\Source` + `Config`, then copies Source/Config
 
 | Repo file (phi-ledger-cookie-chain) | Lands in D:\VEIL-OMNI as |
 |---|---|
-| `veil/VEIL/VEIL.uproject` (5.8.4) | `D:\VEIL-OMNI\VEIL.uproject` |
+| `veil/VEIL/VEIL.uproject` (5.8) | `D:\VEIL-OMNI\VEIL.uproject` |
 | `veil/VEIL/Config/DefaultEngine.ini` (Lumen, Nanite caps, streaming pool 2048, shadow cascades 2) | `D:\VEIL-OMNI\Config\DefaultEngine.ini` |
 | `veil/VEIL/Config/DefaultGame.ini`, `DefaultInput.ini` | `D:\VEIL-OMNI\Config\` (same names) |
 | `veil/VEIL/Source/VEIL/Private/AI/VEILFactionAI.cpp` (PLAYER-FIRST fix) | `D:\VEIL-OMNI\Source\VEIL\Private\AI\VEILFactionAI.cpp` |
@@ -32,7 +51,7 @@ That script backs up `D:\VEIL-OMNI\Source` + `Config`, then copies Source/Config
 | `veil/VEIL/Tools/veil_omni_fix_paragon_metahuman.py` | `D:\VEIL-OMNI\Tools\veil_omni_fix_paragon_metahuman.py` |
 | `veil/VEIL/Tools/veil_omni_metahuman_check.py` (NEW, MetaHuman check, no Verify/Package by script) | `D:\VEIL-OMNI\Tools\veil_omni_metahuman_check.py` |
 | `veil/VEIL/VEIL_METAHUMAN.md` (NEW, diagnosis + Verify/Package checklist + assignment path) | `D:\VEIL-OMNI\VEIL_METAHUMAN.md` |
-| `veil/VEIL/VEIL.uproject` (MetaHuman + MetaHumanCharacter enabled, 5.8.4) | `D:\VEIL-OMNI\VEIL.uproject` |
+| `veil/VEIL/VEIL.uproject` (MetaHuman + MetaHumanCharacter enabled, 5.8) | `D:\VEIL-OMNI\VEIL.uproject` |
 | `veil/VEIL/Data/dialogue.csv`, `items.csv` | `D:\VEIL-OMNI\Data\` (same names) |
 | `veil/OMNI/Source/OMNI/Private/AI/OMNIFactionAI.cpp` (PLAYER-FIRST mirror) | `D:\VEIL-OMNI\Source\OMNI\Private\AI\` — only if the OMNI module is kept; VEIL module is the merged main, OMNI file is a mirror, not a second game |
 | This file | `D:\VEIL-OMNI\VEIL_OMNI_INSTALL_MAP.md` |
@@ -47,7 +66,7 @@ These are already in Tyree's Fab Library (photo 214) — they land in the projec
 - Nwiro AI Pro -> already installed to all compatible engines, Saved in My Library; use in editor Nwiro Pro tab, 5 free prompts, do not reinstall
 - Mannequins, Ability_E assets -> already in project Content (photo 225)
 
-**Known blocker, stated plainly:** Fab Add to Project picker and Epic Launcher My Projects showed empty ("You don't have any projects yet") even after Open VEIL.uproject in the editor. Git + this install script do NOT by themselves register a project in Epic Launcher My Projects. After pull + install, open `VEIL.uproject` (5.8.4) from Epic Launcher > Unreal Engine > My Projects; if it still shows empty, that screen (photo) is the next proof Muse needs — do not claim registration from a commit alone.
+**Known blocker, stated plainly, and what changed in this commit:** Fab Add to Project picker and Epic Launcher My Projects showed empty ("You don't have any projects yet") even after Open VEIL.uproject in the editor. Root cause found in this audit: the previous commit set EngineAssociation to "5.8.4". Unreal's own association format is major.minor only (for example "5.0", not "5.0.3"; a 5.5 project runs on 5.5.1/5.5.2/5.5.3, and the version selector matches on major.minor). The installed engine folder is `UE_5.8`, so "5.8.4" does not match it: every open prompts "built with a different version", Convert runs, and the Launcher scan drops the project back to empty — the circle. This commit sets VEIL.uproject EngineAssociation to "5.8" only. OMNI.uproject was NOT changed in this commit: OMNI is a mirror, not a second game to launch, and VEIL is the merged main module. Git + this install script still do NOT by themselves register a project in Epic Launcher My Projects; the break-circle route in section 0 is the register step. If My Projects still shows empty after section 0, that screen (photo) is the next proof — do not claim registration from a commit alone.
 
 ## 4. Editor steps that are NOT done by git (need an open editor, Tyree types nothing if DLAM/autopilot runs them)
 - In open editor, Output Log Cmd: `py "D:\VEIL-OMNI\Tools\whole_verify_goal.py"` — never PowerShell, never `-ExecutePythonScript` for Play. Expect LOAD / VERIFY / SAVE lines + `seat719_out.txt` SAVE RESULT.
@@ -60,7 +79,7 @@ These are already in Tyree's Fab Library (photo 214) — they land in the projec
 
 ## 5. MetaHuman — see VEIL_METAHUMAN.md (full diagnosis + checklist)
 - Unknown error, as supplied, had no code or log line: section 1 lists 6 causes actually in evidence (Buff unverified 0 B / 46 refs; Buff = clothing not body; MetaHuman plugin absent from VEIL.uproject before this commit; MetaHuman Creator Core Data missing — the 5.753 GB install item; no assembled /Game/MetaHumans body in repo; Fab/My Projects empty blocker). No one cause is claimed as "the" fix.
-- Core Data route (engine side, not git): Epic Launcher > Library > Unreal Engine 5.8.4 > Options > MetaHuman Creator Core Data CHECKED > Apply > restart editor.
+- Core Data route (engine side, not git): Epic Launcher > Library > Unreal Engine 5.8 > Options > MetaHuman Creator Core Data CHECKED > Apply > restart editor.
 - Verify/Package route (editor only, no Python API): MetaHuman Manager > Buff_Black > Verify (photo result, stop on failure) > Package (photo result).
 
 ## 6. What is NOT claimed

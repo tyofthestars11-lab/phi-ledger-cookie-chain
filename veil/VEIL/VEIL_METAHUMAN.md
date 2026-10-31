@@ -1,6 +1,6 @@
 # VEIL OMNI — MetaHuman, whole, phi free
 
-Project: `D:\VEIL-OMNI`, uproject `VEIL.uproject`, EngineAssociation **5.8.4**,
+Project: `D:\VEIL-OMNI`, uproject `VEIL.uproject`, EngineAssociation **5.8**,
 Windows **x86** (not 32-bit). No paid pack. No package until 100% done.
 MetaHuman itself is free inside Unreal Engine; nothing in this file buys
 anything, and no Fab MetaHuman pack is added here.
@@ -23,7 +23,7 @@ claiming "MetaHuman fixed" would be a guess.
 | 1 | Buff_Black not verified, 0 B, 46 refs | Photo 210, MetaHuman Manager: centre "Buff_Black / Skeletal Clothing / Asset has not been verified / Total Size: 0 B / Number of referenced assets: 46" | Manager > Buff_Black > Verify, photo the result. Until Verify passes, Buff is not usable, whatever its 46 references say. |
 | 2 | Buff_* are clothing, not a body | Photo 210, left list heading "Clothing (Skeletal)": Buff_Black/Blue/Green/Red/White, Greystone_*, Murdock_* variants. A clothing item cannot stand alone as a player character. | Try to assign Buff as a body: no body, no play. Assign an assembled body mesh instead (section 3). |
 | 3 | MetaHuman plugin was NOT in VEIL.uproject | Repo grep before this commit: VEIL.uproject listed EnhancedInput, PythonScriptPlugin, EditorScriptingUtilities, GeometryScripting, ModelingToolsEditorMode, PCG — no MetaHuman entry. | This commit adds `MetaHuman` + `MetaHumanCharacter` (engine plugin names seen in UE LogPluginManager mounting lists). Editor > Edit > Plugins > MetaHuman must show them enabled after pull + install + restart. If the PC editor reports either name as unknown, remove that one entry and photo the message — do not invent a third name. |
-| 4 | MetaHuman Creator Core Data missing | Earlier record: "MetaHuman Core Data missing, play stuck, no visual edit yet". Tyree, 2026-10-31: "Need meta 5gb". Installation Options photo 224: a 5.753 GB item checked. Epic's own warning, via forum: "The MetaHuman Creator plugin requires that the MetaHuman Creator Core Data be installed alongside the Engine. Its functionality will be significantly limited without it." | Epic Launcher > Library > Unreal Engine 5.8.4 > Options > "MetaHuman Creator Core Data" CHECKED > Apply > restart editor. Photo 224 shows it checked; Apply + restart + Creator opening without that warning is the PC proof. This commit cannot install engine data. |
+| 4 | MetaHuman Creator Core Data missing | Earlier record: "MetaHuman Core Data missing, play stuck, no visual edit yet". Tyree, 2026-10-31: "Need meta 5gb". Installation Options photo 224: a 5.753 GB item checked. Epic's own warning, via forum: "The MetaHuman Creator plugin requires that the MetaHuman Creator Core Data be installed alongside the Engine. Its functionality will be significantly limited without it." | Epic Launcher > Library > Unreal Engine 5.8 > Options > "MetaHuman Creator Core Data" CHECKED > Apply > restart editor. Photo 224 shows it checked; Apply + restart + Creator opening without that warning is the PC proof. This commit cannot install engine data. |
 | 5 | No assembled MetaHuman body in the project | Repo `Content/` is empty (.keep only); `veil_omni_load_and_link.py` already lists `/Game/MetaHumans` as a root to check, FOUND or MISSING. A Manager clothing list is not a body. | Run `veil_omni_metahuman_check.py` in an open editor: `/Game/MetaHumans` FOUND with a body, or MISSING. MISSING = no body to assign yet, even if Buff lists fine. |
 | 6 | Fab / My Projects registration blocker | Install map, section 3: Fab Add to Project picker and Epic Launcher My Projects showed empty ("You don't have any projects yet") even after editor Open. MetaHuman Fab items land in Content ONLY via Fab Add to Project -> VEIL OMNI. | After pull + install, Epic Launcher > Unreal Engine > My Projects shows VEIL OMNI. If it still shows empty, that screen photo is the next proof — git does not register a project in the launcher by itself. |
 
@@ -35,7 +35,7 @@ for Fab items. Clothing (2) is never the body.
 ## 2. What was added in this commit (repo only, not PC proof)
 
 - `veil/VEIL/VEIL.uproject` — `MetaHuman` and `MetaHumanCharacter`
-  enabled, EngineAssociation stays 5.8.4. OMNI.uproject is NOT changed:
+  enabled, EngineAssociation is now 5.8 (see install map, break-circle section). OMNI.uproject is NOT changed:
   VEIL is the merged main module; OMNI is a mirror, not a second game.
 - `veil/VEIL/Source/VEIL/Public/Character/VEILCharacter.h` +
   `Private/Character/VEILCharacter.cpp` — `MetaHumanBodyMesh`
