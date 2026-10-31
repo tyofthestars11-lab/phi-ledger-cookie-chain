@@ -7,6 +7,20 @@
 #include "Sound/SoundWave.h"
 #include "VEIL.h"
 
+FString FPHIVoice::LastSubtitle;
+float FPHIVoice::LastPlayTime = -1000000.f;
+
+bool FPHIVoice::IsBusy(UWorld* World)
+{
+	return LastSubtitleAge(World) < 7.f;
+}
+
+float FPHIVoice::LastSubtitleAge(UWorld* World)
+{
+	if (!World) return 9999.f;
+	return World->TimeSeconds - LastPlayTime;
+}
+
 void FPHIVoice::Play(UWorld* World, const TCHAR* RowId)
 {
 	if (!World || !RowId) return;
@@ -31,6 +45,8 @@ void FPHIVoice::Play(UWorld* World, const TCHAR* RowId)
 		UE_LOG(LogVEIL, Warning, TEXT("PHI VOICE MISS: %s (row %s)"), *WavePath, *Id);
 		return;
 	}
+	LastSubtitle = Line;
+	LastPlayTime = World->TimeSeconds;
 	UGameplayStatics::PlaySound2D(World, Wave);
 	UE_LOG(LogVEIL, Log, TEXT("PHI VOICE [%s %s]: \"%s\""),
 		*Id, *Speaker, *Line);

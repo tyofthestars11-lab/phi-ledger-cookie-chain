@@ -1,6 +1,7 @@
 // VEIL: THE LAST SIGNAL - player character implementation.
 #include "Character/VEILCharacter.h"
 
+#include "Engine/OverlapResult.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Animation/AnimInstance.h"
