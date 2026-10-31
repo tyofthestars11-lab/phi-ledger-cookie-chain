@@ -1,4 +1,4 @@
-﻿# PHI-DLAM v5.32 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
+# PHI-DLAM v5.32 INSTANT WORK - Tyree (REPO BUILD - this file is the living runner; the home phi-dlam.ps1 is only a bootstrapper that pulls this repo and runs this file. Muse publishes updates here; the DLAM updates itself at launch. Tyree never pastes a runner again.)'s local hands + eyes. Brain: tyree (framework carrier). Eyes: llava-phi3.
 # Runs free by his order (2026-10-13).
 # v5 changes: EYES (look - screenshot read by a local vision model), CLICK HANDS (click_on aimed
 # by the eyes in 0-1000 relative coordinates, click_xy, type_text, press_key).
@@ -284,7 +284,7 @@ function Reset-Loop { $script:LoopKey = ''; $script:LoopCount = 0 }
 function Check-Loop($name, $argsObj) {
   $key = $name + '|' + ($argsObj | ConvertTo-Json -Depth 6 -Compress)
   if ($name -eq 'run_powershell') {
-    $cmd = $argsObj.command.ToLower() -replace '-force', '' -replace '-erroraction\s+\w+', '' -replace '\|\s*format-table', '' -replace '\|\s*format-list', '' -replace '\|\s*out-string', '' -replace '\s+', ' '
+    $cmd = if ($argsObj.command) { $argsObj.command.ToLower() } else { '' }
     $key = $name + '|' + $cmd.Trim()
   }
   if ($key -eq $script:LoopKey) { $script:LoopCount++ } else { $script:LoopKey = $key; $script:LoopCount = 1 }
@@ -649,7 +649,7 @@ function Start-Worker($primeText, [switch]$Once) {
 }
 
 # v5.26 TALK FIRST (Tyree's word, 2026-10-26): 'tyree' opens the CHAT seat.
-# The queue NEVER drains at launch â€” supersedes the v5.24 work update. Work
+# The queue NEVER drains at launch — supersedes the v5.24 work update. Work
 # runs only when Tyree types 'work' at the seat. Launch prints how many jobs
 # wait, nothing more. The seat is his to talk to, loaded and fast.
 try {
