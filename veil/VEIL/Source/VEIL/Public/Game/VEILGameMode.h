@@ -104,6 +104,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VEIL|UI")
 	void CloseWinScreen();
 
+	UFUNCTION(BlueprintCallable, Category = "VEIL|UI")
+	void RespawnRunner();
+
 	UFUNCTION(BlueprintPure, Category = "VEIL|UI")
 	bool IsPauseMenuOpen() const { return bPauseOpen; }
 

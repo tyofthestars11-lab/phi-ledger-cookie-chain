@@ -52,12 +52,17 @@ public:
 	int32 Fragments = 0;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
+	int32 Shards = 0;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	bool bChoiceOpen = false;
 
 	static int32 XPNeedForLevel(int32 InLevel);
 	void AwardXP(int32 Amount, const TCHAR* Reason);
 	void TalkTo(FName Giver);
 	void CollectFragment();
+	// PC call site VEILEnemy.cpp(174): DieQ->AddShard() — shard count, same as a fragment.
+	void AddShard();
 	void ReachCache();
 	void WakeWarden();
 	void DefeatWarden();

@@ -89,6 +89,12 @@ void UOMNIQuestSystem::TalkTo(FName Giver)
 	}
 }
 
+void UOMNIQuestSystem::AddShard()
+{
+	++Shards;
+	CollectFragment();
+}
+
 void UOMNIQuestSystem::CollectFragment()
 {
 	++Fragments;

@@ -227,6 +227,17 @@ void AVEILPlayerController::CloseWinScreen()
 	bShowMouseCursor = false;
 }
 
+void AVEILPlayerController::RespawnRunner()
+{
+	APawn* Pawn = GetPawn();
+	if (!Pawn)
+	{
+		return;
+	}
+	Pawn->SetActorLocation(FVector(0.f, 0.f, 100.f));
+	UE_LOG(LogTemp, Display, TEXT("PHI RESPAWN RUNNER at 0,0,100"));
+}
+
 void AVEILGameMode::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
