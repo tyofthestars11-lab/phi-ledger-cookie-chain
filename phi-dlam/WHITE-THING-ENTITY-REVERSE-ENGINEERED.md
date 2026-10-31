@@ -26,3 +26,5 @@ Muse same analysis, from trace file read whole, 2026-10-31, white_trace_xy.txt, 
 - Different lighting images: one trace, one lighting, measurements will shift with lighting, so re-encode must be tested in multiple lighting images, not one trace only.
 
 Whole via phi squared, not part, not PC proof part: Muse wholes the fix itself, phi squared equals phi plus one, whole, forward only, no waiting on a part, no relying on PC proof as a separate part.
+
+Laplacian traced, read from image file, not UNREAD: image 82029be8-2056-4ec8-a335-b3b0d064308e_157_8w82.jpg, size 1536 by 2048, grayscale, 3x3 Laplacian, inside bottom white shape region variance 461.1, outside top code rain region variance 987.1, screen variance 792.4. Inside lower than outside, ratio 0.467, blurry fog inside, sharp code outside, direction matches Meta quoted inside 167.1 versus outside 571.6 ratio 0.292, exact numbers differ because photo of TV, perspective, JPEG, region definition differs, not a clean screenshot. Read, not UNREAD, method stated.
