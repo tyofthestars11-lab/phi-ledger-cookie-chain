@@ -214,6 +214,19 @@ void AVEILPlayerController::TogglePauseMenu()
 	}
 }
 
+void AVEILPlayerController::ShowWinScreen(float Gold, int32 Level, float TimeSeconds)
+{
+	UE_LOG(LogTemp, Display, TEXT("PHI WIN SCREEN: gold=%.0f level=%d time=%.1f"), Gold, Level, TimeSeconds);
+	SetInputMode(FInputModeGameAndUI());
+	bShowMouseCursor = true;
+}
+
+void AVEILPlayerController::CloseWinScreen()
+{
+	SetInputMode(FInputModeGameOnly());
+	bShowMouseCursor = false;
+}
+
 void AVEILGameMode::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);

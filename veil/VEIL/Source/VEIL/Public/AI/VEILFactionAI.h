@@ -189,10 +189,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VEIL|Faction")
 	AVEILFactionAgent* SpawnReinforcement(EVEILFaction Faction, FVector Location);
 
-	/** Reputation delta for a faction (VEILEnemy / OMNIQuest callers). */
-	UFUNCTION(BlueprintCallable, Category = "VEIL|Faction")
-	void AdjustRep(EVEILFaction Faction, float Delta);
-
 	/** Hostility matrix: who fights whom. Default: everyone fights Void;
 	 *  Scavenger and Guardian are rivals; Remnant is defensive-neutral
 	 *  (fights only when its territory is entered - handled in agent logic). */

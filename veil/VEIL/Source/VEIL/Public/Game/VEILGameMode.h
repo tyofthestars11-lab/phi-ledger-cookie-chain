@@ -98,6 +98,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VEIL|UI")
 	void TogglePauseMenu();
 
+	UFUNCTION(BlueprintCallable, Category = "VEIL|UI")
+	void ShowWinScreen(float Gold, int32 Level, float TimeSeconds);
+
+	UFUNCTION(BlueprintCallable, Category = "VEIL|UI")
+	void CloseWinScreen();
+
 	UFUNCTION(BlueprintPure, Category = "VEIL|UI")
 	bool IsPauseMenuOpen() const { return bPauseOpen; }
 
