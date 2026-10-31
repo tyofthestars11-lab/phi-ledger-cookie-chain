@@ -1,0 +1,86 @@
+[
+  {
+    "ladder": "yang_mills_gap",
+    "name": "phi_constant",
+    "unit": "ratio",
+    "value": 1.6180339887
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "phi_squared",
+    "unit": "ratio",
+    "value": 2.6180339887
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "vacuum",
+    "unit": "dimensionless",
+    "value": 1
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "inverse_phi",
+    "unit": "ratio",
+    "value": 0.6180339887
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "mass_gap_221_7_MeV",
+    "unit": "MeV",
+    "value": 221.7
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "mass_gap_0_511_MeV",
+    "unit": "MeV",
+    "value": 0.511
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "mass_gap_550_MeV",
+    "unit": "MeV",
+    "value": 550
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "qcd_scale_220_MeV",
+    "unit": "MeV",
+    "value": 220
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "ton618_phi55_anchor",
+    "unit": "dimensionless",
+    "value": 312119004989.00055
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "golden_angle",
+    "unit": "degrees",
+    "value": 137.507764
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "golden_pitch",
+    "unit": "degrees",
+    "value": 17.0324
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "fine_structure_inverse",
+    "unit": "dimensionless",
+    "value": 137.035999
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "landauer_limit_300K",
+    "unit": "J",
+    "value": 2.87e-21
+  },
+  {
+    "ladder": "yang_mills_gap",
+    "name": "compact_form_lines",
+    "unit": "lines",
+    "value": 7
+  }
+]

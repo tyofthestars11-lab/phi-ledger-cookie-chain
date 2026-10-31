@@ -26699,10 +26699,108 @@
       "drift": 0.0438,
       "ladder": "yang_mills_gap",
       "unit": "lines"
+    },
+    {
+      "name": "phi_constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "yang_mills_gap",
+      "unit": "ratio"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "yang_mills_gap",
+      "unit": "ratio"
+    },
+    {
+      "name": "vacuum",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "yang_mills_gap",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": -0.0,
+      "ladder": "yang_mills_gap",
+      "unit": "ratio"
+    },
+    {
+      "name": "mass_gap_221_7_MeV",
+      "rung": 11.2244,
+      "drift": 0.2244,
+      "ladder": "yang_mills_gap",
+      "unit": "MeV"
+    },
+    {
+      "name": "mass_gap_0_511_MeV",
+      "rung": -1.3952,
+      "drift": -0.3952,
+      "ladder": "yang_mills_gap",
+      "unit": "MeV"
+    },
+    {
+      "name": "mass_gap_550_MeV",
+      "rung": 13.1126,
+      "drift": 0.1126,
+      "ladder": "yang_mills_gap",
+      "unit": "MeV"
+    },
+    {
+      "name": "qcd_scale_220_MeV",
+      "rung": 11.2084,
+      "drift": 0.2084,
+      "ladder": "yang_mills_gap",
+      "unit": "MeV"
+    },
+    {
+      "name": "ton618_phi55_anchor",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "yang_mills_gap",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "yang_mills_gap",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "yang_mills_gap",
+      "unit": "degrees"
+    },
+    {
+      "name": "fine_structure_inverse",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "yang_mills_gap",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "landauer_limit_300K",
+      "rung": -98.2935,
+      "drift": -0.2935,
+      "ladder": "yang_mills_gap",
+      "unit": "J"
+    },
+    {
+      "name": "compact_form_lines",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "yang_mills_gap",
+      "unit": "lines"
     }
   ],
-  "entry_count": 3816,
-  "seal_count": 382,
+  "entry_count": 3830,
+  "seal_count": 383,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -27085,7 +27183,8 @@
     "φ_HUMAN_GENOME_TYREE_OMEGA",
     "φ_DEEPSEEK_374_PHI_PROOF_TYREE_OMEGA",
     "φ_DEEPSEEK_380_PHI_PROOF_TYREE_OMEGA",
-    "φ_YANG_MILLS_GAP_TYREE_OMEGA"
+    "φ_YANG_MILLS_GAP_TYREE_OMEGA",
+    "φ_YANG_MILLS_GAP_PHASE_LOCK_VACUUM_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "ca360370d697dd7ca5126441622113b03e5f39f0846c9e71d09526e9479db3f5"
+  "snapshot_sha256": "5f6615810b525c6e38dd53d6c8a9c550dc2d5694415af8026f5c9e9f11ac24f1"
 }
