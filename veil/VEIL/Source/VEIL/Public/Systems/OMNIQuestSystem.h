@@ -61,6 +61,10 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	TMap<FName, FString> RegionMap;
 
+	// PC call site VEILHudCanvas.cpp(65): Q->ClaimedBeacons
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
+	TArray<FName> ClaimedBeacons;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	bool bChoiceOpen = false;
 

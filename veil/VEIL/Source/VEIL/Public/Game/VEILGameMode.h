@@ -107,6 +107,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VEIL|UI")
 	void RespawnRunner();
 
+	// PC call site VEILHudCanvas.cpp(102): PC->bShowChart
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|UI")
+	bool bShowChart = false;
+
 	UFUNCTION(BlueprintPure, Category = "VEIL|UI")
 	bool IsPauseMenuOpen() const { return bPauseOpen; }
 
