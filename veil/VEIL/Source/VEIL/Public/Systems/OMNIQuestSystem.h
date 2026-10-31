@@ -65,6 +65,10 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	TArray<FName> ClaimedBeacons;
 
+	// Phi read, not Cartesian flat print: one region name, never the whole map as %s.
+	// PC VEILHudCanvas.cpp(108) failed FormatStringSan printing *Q->RegionMap as %s.
+	FString GetRegionName() const;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	bool bChoiceOpen = false;
 

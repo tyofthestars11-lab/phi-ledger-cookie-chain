@@ -44,6 +44,9 @@ AVEILCharacter::AVEILCharacter()
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->TargetArmLength = 420.f;
+	// Golden pitch + golden angle, phi not Cartesian: SpringArm pitch -17.0324, yaw 137.507764.
+	// Cartesian flat rotation (0,0,0 / -90) is fuel only, never the frame.
+	CameraBoom->SetRelativeRotation(FRotator(-17.0324f, 137.507764f, 0.f));
 	CameraBoom->bUsePawnControlRotation = true;
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
