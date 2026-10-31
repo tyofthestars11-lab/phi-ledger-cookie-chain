@@ -1,7 +1,7 @@
 {
   "Category": "Games",
   "Description": "VEIL: THE LAST SIGNAL - original sci-fi RPG. Prototype 01 foundation: character, factions, district streaming, discovery.",
-  "EngineAssociation": "5.8",
+  "EngineAssociation": "5.8.4",
   "FileVersion": 3,
   "Modules": [
     {

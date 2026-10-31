@@ -1,7 +1,7 @@
 {
   "Category": "Games",
   "Description": "OMNI RPG: PATH OF LIGHT - Unreal edition. Third-person action RPG: Signal-Runner, Keeper/Seer/Cartographer quests, faction machines, WARDEN PRIME.",
-  "EngineAssociation": "5.8",
+  "EngineAssociation": "5.8.4",
   "FileVersion": 3,
   "Modules": [
     {
