@@ -41,6 +41,15 @@ while True:
         model = EYES if any(k in prompt.lower() for k in ["white", "image", "look", "see", ".jpg"]) else BRAIN
         resp = call_tyree(prompt, model)
         print(f"[TYREE AUTOPILOT] {resp[:1000]}")
+        # ACTION, not talk only: VEIL OMNI prompt actually opens the game, it does not just describe it
+        if "veil omni" in prompt.lower() or "click play" in prompt.lower():
+            import subprocess
+            print("[AUTOPILOT ACTION] Opening VEIL OMNI, full FilePath, -game, map VEILDistrict")
+            subprocess.Popen([
+                "C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+                "D:\\VEIL-OMNI\\VEIL.uproject", "-game", "-Map=/Game/Maps/VEILDistrict",
+            ], cwd="D:\\VEIL-OMNI")
+            print("[AUTOPILOT ACTION] VEIL OMNI launched - next: look, click Play in editor, verify Vault 0,0,-80.9, Countess 809,-309,64.7, RUNNER 0,0,100, save")
         if "white" in prompt.lower() or "VAULT_PHI" in prompt:
             SEAT.write_text(f"WORLD /Game/Maps/VEILDistrict.VEILDistrict VAULT 0,0,-80.9 COUNTESS 809,-309,64.7 MODEL 03330 FLOOR 1618 AUTOPILOT {time.time()} SAVE RESULT True\n", encoding="utf-8")
     else:
