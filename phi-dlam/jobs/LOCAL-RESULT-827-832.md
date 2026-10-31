@@ -50,3 +50,8 @@ Date: 2026-10-31. No package, no cook. Autopilot held throughout.
 6. Relaunch seal walk to PHI WIN + screenshots (her region, V20 line, disengage, minimap frame).
 7. Tyree ear (voices) + hands (Xbox pad) proof.
 8. seat719_out WIN whole + push.
+
+## 834/835 render at root - cause found, fix seated, build pending run exit
+- Giver statues wore Default/WorldGrid bases: Tint built MID on default -> invalid parent -> checker/default on screen. Seated real bases at construction (robe stone, visor glow, fragment gold, cache glow) + bolt static gold (MID churn deleted).
+- Deeper: Tint re-ran at BeginPlay on the live slot (already a MID) -> MID-on-MID nesting, still invalid. Rewrote Tint to always build from cached real base by path (stone/gold/glow), never the live slot. 27x warnings in-run prove the nesting; fix builds after the run exits.
+- Camera law explicit: boom probe bDoCollisionTest=true ProbeSize 16, pitch -17.0324, boom 420<->0 wheel + V/R3, autopilot exercises 1st/3rd every 45s with boom log.
