@@ -57,9 +57,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	int32 ForgeLevel = 0;
 
-	// PC call sites PHICompanionParty.cpp(202): Q->RegionMap.Contains(TEXT("OMNIWorld")) etc.
+	// Phi framework fix, not Cartesian: RegionMap is ONE region name string, never a whole map printed as %s.
+	// PC call sites, whole: PHICompanionParty.cpp(202) Q->RegionMap.Contains(TEXT("OMNIWorld")) works on FString,
+	// VEILHudCanvas.cpp(108) *Q->RegionMap as %s works on FString only. TMap broke the HUD line — removed.
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
-	TMap<FName, FString> RegionMap;
+	FString RegionMap;
 
 	// PC call site VEILHudCanvas.cpp(65): Q->ClaimedBeacons
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")

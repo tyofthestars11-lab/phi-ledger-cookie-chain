@@ -91,19 +91,11 @@ void UOMNIQuestSystem::TalkTo(FName Giver)
 
 FString UOMNIQuestSystem::GetRegionName() const
 {
-	if (RegionMap.Num() == 0)
+	if (RegionMap.IsEmpty())
 	{
 		return TEXT("the signal");
 	}
-	for (const TPair<FName, FString>& Pair : RegionMap)
-	{
-		if (!Pair.Value.IsEmpty())
-		{
-			return Pair.Value;
-		}
-		return Pair.Key.ToString();
-	}
-	return TEXT("the signal");
+	return RegionMap;
 }
 
 void UOMNIQuestSystem::AddShard()
