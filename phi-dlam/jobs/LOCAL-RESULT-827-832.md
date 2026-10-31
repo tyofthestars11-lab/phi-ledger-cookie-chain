@@ -55,3 +55,8 @@ Date: 2026-10-31. No package, no cook. Autopilot held throughout.
 - Giver statues wore Default/WorldGrid bases: Tint built MID on default -> invalid parent -> checker/default on screen. Seated real bases at construction (robe stone, visor glow, fragment gold, cache glow) + bolt static gold (MID churn deleted).
 - Deeper: Tint re-ran at BeginPlay on the live slot (already a MID) -> MID-on-MID nesting, still invalid. Rewrote Tint to always build from cached real base by path (stone/gold/glow), never the live slot. 27x warnings in-run prove the nesting; fix builds after the run exits.
 - Camera law explicit: boom probe bDoCollisionTest=true ProbeSize 16, pitch -17.0324, boom 420<->0 wheel + V/R3, autopilot exercises 1st/3rd every 45s with boom log.
+
+## Seal walk verdict FAIL + deep lead (honest, not a pass)
+- 11 crumbs, 3 locs, all spd=0: spawn (0,0,300), wedge (128,-416,300). No floor at 212 under path (surffind: all tops <=56) -> pawn floats, physics not moving it. Suspect flying/frozen movement mode or unpossessed pawn.
+- Fix: crumb now reports mode/falling/possession; autopilot steers NavMesh path points (engine FindPathToLocationSynchronously, read at source); HARDSTUCK alarm with loc; WORLD666 carpet collision removal (geometry lane); rebuild (error lane).
+- Keeper talk still advances (chain mechanics alive). Voices single, MID warnings zero, paused=0, no crash. Movement is the open gate.
