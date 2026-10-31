@@ -36,8 +36,9 @@ foreach ($Dir in @("Tools", "Data")) {
 }
 Copy-Item -Force (Join-Path $RepoVeil "VEIL.uproject") $Dest
 Copy-Item -Force (Join-Path $RepoVeil "VEIL_OMNI_INSTALL_MAP.md") $Dest
+Copy-Item -Force (Join-Path $RepoVeil "VEIL_METAHUMAN.md") $Dest
 Write-Output "VEIL OMNI INSTALLED TO PC"
 Write-Output "Backup: $Backup"
-Write-Output "Copied: Source, Config, Tools, Data, VEIL.uproject (5.8.4), VEIL_OMNI_INSTALL_MAP.md"
+Write-Output "Copied: Source, Config, Tools, Data, VEIL.uproject (5.8.4, MetaHuman + MetaHumanCharacter), VEIL_OMNI_INSTALL_MAP.md, VEIL_METAHUMAN.md"
 Write-Output "NOT touched: D:\VEIL-OMNI\Content (maps + Fab assets stay)"
 Write-Output "NEXT (editor, already-open): py Tools\whole_verify_goal.py in Output Log Cmd, then Tools\veil_omni_load_and_link.py, save, Play, photo + log are proof. No package."

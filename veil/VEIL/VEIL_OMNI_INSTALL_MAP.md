@@ -30,6 +30,9 @@ That script backs up `D:\VEIL-OMNI\Source` + `Config`, then copies Source/Config
 | `veil/VEIL/Tools/veil_omni_load_and_link.py` | `D:\VEIL-OMNI\Tools\veil_omni_load_and_link.py` |
 | `veil/VEIL/Tools/veil_omni_render_opt.py` | `D:\VEIL-OMNI\Tools\veil_omni_render_opt.py` |
 | `veil/VEIL/Tools/veil_omni_fix_paragon_metahuman.py` | `D:\VEIL-OMNI\Tools\veil_omni_fix_paragon_metahuman.py` |
+| `veil/VEIL/Tools/veil_omni_metahuman_check.py` (NEW, MetaHuman check, no Verify/Package by script) | `D:\VEIL-OMNI\Tools\veil_omni_metahuman_check.py` |
+| `veil/VEIL/VEIL_METAHUMAN.md` (NEW, diagnosis + Verify/Package checklist + assignment path) | `D:\VEIL-OMNI\VEIL_METAHUMAN.md` |
+| `veil/VEIL/VEIL.uproject` (MetaHuman + MetaHumanCharacter enabled, 5.8.4) | `D:\VEIL-OMNI\VEIL.uproject` |
 | `veil/VEIL/Data/dialogue.csv`, `items.csv` | `D:\VEIL-OMNI\Data\` (same names) |
 | `veil/OMNI/Source/OMNI/Private/AI/OMNIFactionAI.cpp` (PLAYER-FIRST mirror) | `D:\VEIL-OMNI\Source\OMNI\Private\AI\` — only if the OMNI module is kept; VEIL module is the merged main, OMNI file is a mirror, not a second game |
 | This file | `D:\VEIL-OMNI\VEIL_OMNI_INSTALL_MAP.md` |
@@ -40,7 +43,7 @@ These are already in Tyree's Fab Library (photo 214) — they land in the projec
 - SICKA Free Environment Pack -> `D:\VEIL-OMNI\Content\SICKA*`
 - Lava Material, Underwater test -> `D:\VEIL-OMNI\Content\`
 - Core Systems - Health, Stamina, XP and Mana -> `D:\VEIL-OMNI\Content\`
-- MetaHuman Buff (Buff_Black etc.) -> MetaHuman Manager in editor, Verify then Package (no Python API confirmed for this step)
+- MetaHuman Buff (Buff_Black etc.) -> MetaHuman Manager in editor, Verify then Package (no Python API confirmed for this step). Buff_* are Skeletal Clothing, NOT a body — see VEIL_METAHUMAN.md section 1, cause 2. Full MetaHuman bodies land at `D:\VEIL-OMNI\Content\MetaHumans\...`, Common at `Content\MetaHumans\Common\...`, pre-assembly MHC at `Content\EditableCharacters\...`
 - Nwiro AI Pro -> already installed to all compatible engines, Saved in My Library; use in editor Nwiro Pro tab, 5 free prompts, do not reinstall
 - Mannequins, Ability_E assets -> already in project Content (photo 225)
 
@@ -50,12 +53,18 @@ These are already in Tyree's Fab Library (photo 214) — they land in the projec
 - In open editor, Output Log Cmd: `py "D:\VEIL-OMNI\Tools\whole_verify_goal.py"` — never PowerShell, never `-ExecutePythonScript` for Play. Expect LOAD / VERIFY / SAVE lines + `seat719_out.txt` SAVE RESULT.
 - Same place, run the three Tools scripts above, in order: load_and_link, render_opt, fix_paragon_metahuman.
 - Place ONE `AVEILMinimapCapture` in VEILDistrict, high above district; create a UMG widget Blueprint with an Image named `MinimapImage` from `UVEILMinimapWidget`; assign a saved render target in editor.
-- MetaHuman Manager: Buff_Black Verify, then Package (editor only).
+- MetaHuman Manager: Buff_Black Verify, then Package (editor only, VEIL_METAHUMAN.md section 4 checklist, stop + photo on any Verify failure).
+- Run `veil_omni_metahuman_check.py` in Output Log Cmd, then assign a MetaHuman BODY (not Buff) in BP_PlayerCharacter > AVEILCharacter > MetaHumanBodyMesh, per VEIL_METAHUMAN.md section 3.
 - Paragon Murdock LevelStart: reassign/delete ONLY the broken LevelStart reference in Content Browser, save map.
 - Save map (Ctrl+S / File > Save All), Play, photo + Output Log.
 
-## 5. What is NOT claimed
-- No PC play proof, no save proof, no package, no Fab Add-to-Project proof, no MetaHuman verify proof, and no My Projects registration proof from this commit alone. Each needs a PC editor photo or Output Log line at its own address.
+## 5. MetaHuman — see VEIL_METAHUMAN.md (full diagnosis + checklist)
+- Unknown error, as supplied, had no code or log line: section 1 lists 6 causes actually in evidence (Buff unverified 0 B / 46 refs; Buff = clothing not body; MetaHuman plugin absent from VEIL.uproject before this commit; MetaHuman Creator Core Data missing — the 5.753 GB install item; no assembled /Game/MetaHumans body in repo; Fab/My Projects empty blocker). No one cause is claimed as "the" fix.
+- Core Data route (engine side, not git): Epic Launcher > Library > Unreal Engine 5.8.4 > Options > MetaHuman Creator Core Data CHECKED > Apply > restart editor.
+- Verify/Package route (editor only, no Python API): MetaHuman Manager > Buff_Black > Verify (photo result, stop on failure) > Package (photo result).
+
+## 6. What is NOT claimed
+- No PC play proof, no save proof, no package, no Fab Add-to-Project proof, no MetaHuman verify proof, no MetaHuman in-play proof, no Core Data install proof, and no My Projects registration proof from this commit alone. Each needs a PC editor photo or Output Log line at its own address.
 - No paid Fab pack was bought or added. All packs above are free / already-owned.
 - Megastructure Deep has no separate .umap in the repo: it is the Deep sublevel inside OMNIDistrict (`OMNIDistrict_Deep`, editor-created). If that sublevel does not exist on PC, StreamDeep logs the miss and does not claim a load.
 - Packaging gate stands verbatim: no cook/package/packaged exe until 100% done in project.

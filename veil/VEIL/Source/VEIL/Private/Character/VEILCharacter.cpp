@@ -144,6 +144,11 @@ void AVEILCharacter::BeginPlay()
 			GetMesh()->SetAnimInstanceClass(AnimClass);
 		}
 	}
+	// MetaHuman body, if one was assigned in BP_PlayerCharacter.
+	// This runs AFTER the Countess assignment above, so an assigned
+	// MetaHuman body wins, an empty assignment changes nothing, and
+	// the PHI BODY CHECK log below reports the final body.
+	AssignMetaHumanBody();
 	UE_LOG(LogVEIL, Log, TEXT("PHI BODY CHECK: mesh=%s anim=%s"),
 		GetMesh()->GetSkeletalMeshAsset() ? *GetMesh()->GetSkeletalMeshAsset()->GetName() : TEXT("none"),
 		GetMesh()->GetAnimInstance() ? *GetMesh()->GetAnimInstance()->GetClass()->GetName() : TEXT("none"));
@@ -169,6 +174,30 @@ void AVEILCharacter::BeginPlay()
 			}
 		}
 	}
+}
+
+void AVEILCharacter::AssignMetaHumanBody()
+{
+	if (!MetaHumanBodyMesh)
+	{
+		// No MetaHuman assigned in BP_PlayerCharacter. This is not an
+		// error: Countess / primitive stands, as before. A Buff_* item
+		// must never be put in MetaHumanBodyMesh: Buff is Skeletal
+		// Clothing in the MetaHuman Manager, not a body mesh.
+		UE_LOG(LogVEIL, Log, TEXT("PHI METAHUMAN: no MetaHumanBodyMesh assigned in BP_PlayerCharacter - Countess/primitive body stands."));
+		return;
+	}
+	GetMesh()->SetSkeletalMeshAsset(MetaHumanBodyMesh);
+	GetMesh()->SetRelativeLocation(FVector(0.f, 0.f, -96.f));
+	GetMesh()->SetRelativeRotation(FRotator(0.f, -90.f, 0.f));
+	if (MetaHumanAnimBlueprintClass)
+	{
+		GetMesh()->SetAnimInstanceClass(MetaHumanAnimBlueprintClass);
+	}
+	if (RunnerBody) RunnerBody->SetVisibility(false);
+	if (RunnerVisor) RunnerVisor->SetVisibility(false);
+	UE_LOG(LogVEIL, Log, TEXT("PHI METAHUMAN BODY: %s assigned as runner body."),
+		*MetaHumanBodyMesh->GetName());
 }
 
 void AVEILCharacter::BuildFallbackInput()

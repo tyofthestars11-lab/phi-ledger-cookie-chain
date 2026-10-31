@@ -10,6 +10,7 @@
 class UCameraComponent;
 class UStaticMeshComponent;
 class USpringArmComponent;
+class USkeletalMesh;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
@@ -108,6 +109,27 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "VEIL|Combat")
 	void LanceBolt();
+
+	// ---- MetaHuman body (VEIL OMNI, 2026-10-31) ----
+	// This is the PLAYER BODY assignment path, not a clothing path.
+	// Assign in BP_PlayerCharacter ONLY an assembled MetaHuman body
+	// mesh, e.g. a mesh under /Game/MetaHumans/<Name>/Body/.
+	// Buff_Black / Buff_Blue / Buff_* are Skeletal Clothing in the
+	// MetaHuman Manager (photo 210), NOT a body: assigning a Buff
+	// here is not a player character, and a Buff that is still
+	// "Asset has not been verified" (0 B) is not a playable body.
+	// If this is left empty, AssignMetaHumanBody() does nothing and
+	// the Countess mesh (constructor) / primitive runner (fallback)
+	// stands, exactly as before. Nothing here verifies, packages,
+	// downloads, or assembles a MetaHuman on its own.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|MetaHuman")
+	TObjectPtr<USkeletalMesh> MetaHumanBodyMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|MetaHuman")
+	TSubclassOf<UAnimInstance> MetaHumanAnimBlueprintClass;
+
+	UFUNCTION(BlueprintCallable, Category = "VEIL|MetaHuman")
+	void AssignMetaHumanBody();
 
 	// ---- Movement tuning ----
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|Movement")
