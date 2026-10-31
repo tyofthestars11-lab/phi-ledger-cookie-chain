@@ -18,7 +18,7 @@
 #include "VEILLevelLink.generated.h"
 
 UENUM(BlueprintType)
-enum class EVEILRegion : uint8
+enum class EVEILLevelRegion : uint8
 {
 	Hub,
 	Nest,
@@ -35,11 +35,11 @@ class VEIL_API UVEILLevelLink : public UWorldSubsystem
 public:
 	/** Map file (without /Game/Maps/ prefix) for a region. */
 	UFUNCTION(BlueprintPure, Category = "VEIL|Levels")
-	static FName MapForRegion(EVEILRegion Region);
+	static FName MapForRegion(EVEILLevelRegion Region);
 
 	/** Full travel: OpenLevel to the region's map. One save, one door. */
 	UFUNCTION(BlueprintCallable, Category = "VEIL|Levels")
-	void TravelToRegion(EVEILRegion Region);
+	void TravelToRegion(EVEILLevelRegion Region);
 
 	/** Stream the Deep sublevel inside OMNIDistrict. Logs, never claims, if absent. */
 	UFUNCTION(BlueprintCallable, Category = "VEIL|Levels")

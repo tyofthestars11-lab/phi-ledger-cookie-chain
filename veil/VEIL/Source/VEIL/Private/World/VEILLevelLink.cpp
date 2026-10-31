@@ -4,20 +4,20 @@
 #include "Kismet/GameplayStatics.h"
 #include "VEIL.h"
 
-FName UVEILLevelLink::MapForRegion(EVEILRegion Region)
+FName UVEILLevelLink::MapForRegion(EVEILLevelRegion Region)
 {
 	switch (Region)
 	{
-	case EVEILRegion::Hub: return TEXT("VEILDistrict");
-	case EVEILRegion::Nest: return TEXT("VEILWorld");
-	case EVEILRegion::Spire: return TEXT("OMNIWorld");
-	case EVEILRegion::OmniDistrict: return TEXT("OMNIDistrict");
-	case EVEILRegion::MegastructureDeep: return TEXT("OMNIDistrict");
+	case EVEILLevelRegion::Hub: return TEXT("VEILDistrict");
+	case EVEILLevelRegion::Nest: return TEXT("VEILWorld");
+	case EVEILLevelRegion::Spire: return TEXT("OMNIWorld");
+	case EVEILLevelRegion::OmniDistrict: return TEXT("OMNIDistrict");
+	case EVEILLevelRegion::MegastructureDeep: return TEXT("OMNIDistrict");
 	default: return TEXT("VEILDistrict");
 	}
 }
 
-void UVEILLevelLink::TravelToRegion(EVEILRegion Region)
+void UVEILLevelLink::TravelToRegion(EVEILLevelRegion Region)
 {
 	UWorld* World = GetWorld();
 	if (!World) return;
