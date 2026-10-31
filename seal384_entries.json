@@ -1,0 +1,92 @@
+[
+  {
+    "ladder": "openai_yang_mills",
+    "name": "phi_constant",
+    "unit": "ratio",
+    "value": 1.6180339887
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "phi_squared",
+    "unit": "ratio",
+    "value": 2.6180339887
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "vacuum",
+    "unit": "dimensionless",
+    "value": 1
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "inverse_phi",
+    "unit": "ratio",
+    "value": 0.6180339887
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "openai_existence_claim_4d_qft",
+    "unit": "claim",
+    "value": "unread"
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "mass_gap_221_7_MeV",
+    "unit": "MeV",
+    "value": 221.7
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "seals_382_383",
+    "unit": "seals",
+    "value": 2
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "ton618_phi55_anchor",
+    "unit": "dimensionless",
+    "value": 312119004989.00055
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "lean_formalization_unix_20261016",
+    "unit": "unix seconds",
+    "value": 1792108800
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "yang_mills_output_unix_20260909",
+    "unit": "unix seconds",
+    "value": 1788912000
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "qcd_output_unix_20260918",
+    "unit": "unix seconds",
+    "value": 1789689600
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "announcement_unix_20261026",
+    "unit": "unix seconds",
+    "value": 1792972800
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "golden_angle",
+    "unit": "degrees",
+    "value": 137.507764
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "golden_pitch",
+    "unit": "degrees",
+    "value": 17.0324
+  },
+  {
+    "ladder": "openai_yang_mills",
+    "name": "compact_form_lines",
+    "unit": "lines",
+    "value": 7
+  }
+]

@@ -26797,10 +26797,108 @@
       "drift": 0.0438,
       "ladder": "yang_mills_gap",
       "unit": "lines"
+    },
+    {
+      "name": "phi_constant",
+      "rung": 1.0,
+      "drift": -0.0,
+      "ladder": "openai_yang_mills",
+      "unit": "ratio"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": -0.0,
+      "ladder": "openai_yang_mills",
+      "unit": "ratio"
+    },
+    {
+      "name": "vacuum",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "openai_yang_mills",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "inverse_phi",
+      "rung": -1.0,
+      "drift": -0.0,
+      "ladder": "openai_yang_mills",
+      "unit": "ratio"
+    },
+    {
+      "name": "mass_gap_221_7_MeV",
+      "rung": 11.2244,
+      "drift": 0.2244,
+      "ladder": "openai_yang_mills",
+      "unit": "MeV"
+    },
+    {
+      "name": "seals_382_383",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "openai_yang_mills",
+      "unit": "seals"
+    },
+    {
+      "name": "ton618_phi55_anchor",
+      "rung": 55.0,
+      "drift": 0.0,
+      "ladder": "openai_yang_mills",
+      "unit": "dimensionless"
+    },
+    {
+      "name": "lean_formalization_unix_20261016",
+      "rung": 44.2771,
+      "drift": 0.2771,
+      "ladder": "openai_yang_mills",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "yang_mills_output_unix_20260909",
+      "rung": 44.2734,
+      "drift": 0.2734,
+      "ladder": "openai_yang_mills",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "qcd_output_unix_20260918",
+      "rung": 44.2743,
+      "drift": 0.2743,
+      "ladder": "openai_yang_mills",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "announcement_unix_20261026",
+      "rung": 44.2781,
+      "drift": 0.2781,
+      "ladder": "openai_yang_mills",
+      "unit": "unix seconds"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "openai_yang_mills",
+      "unit": "degrees"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "openai_yang_mills",
+      "unit": "degrees"
+    },
+    {
+      "name": "compact_form_lines",
+      "rung": 4.0438,
+      "drift": 0.0438,
+      "ladder": "openai_yang_mills",
+      "unit": "lines"
     }
   ],
-  "entry_count": 3830,
-  "seal_count": 383,
+  "entry_count": 3844,
+  "seal_count": 384,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -27184,7 +27282,8 @@
     "φ_DEEPSEEK_374_PHI_PROOF_TYREE_OMEGA",
     "φ_DEEPSEEK_380_PHI_PROOF_TYREE_OMEGA",
     "φ_YANG_MILLS_GAP_TYREE_OMEGA",
-    "φ_YANG_MILLS_GAP_PHASE_LOCK_VACUUM_TYREE_OMEGA"
+    "φ_YANG_MILLS_GAP_PHASE_LOCK_VACUUM_TYREE_OMEGA",
+    "φ_OPENAI_YANG_MILLS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "5f6615810b525c6e38dd53d6c8a9c550dc2d5694415af8026f5c9e9f11ac24f1"
+  "snapshot_sha256": "685d62b2f5e83450bb5be87b955f5727a980d986f5cc5c420762f0ac0d83e07d"
 }
