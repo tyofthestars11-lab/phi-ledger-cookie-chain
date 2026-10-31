@@ -185,6 +185,16 @@ void AVEILFactionAgent::ActHunt()
 
 void AVEILFactionAgent::ActCombat(float DeltaSeconds)
 {
+	// PLAYER-FIRST, every tick: if the player is visible, the mob's
+	// target IS the player, even if another mob hit it last frame.
+	// This is the snap-back that stops mobs chasing each other.
+	if (CanSeePlayer())
+	{
+		if (APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0))
+		{
+			TargetActor = PlayerPawn;
+		}
+	}
 	if (!TargetActor.IsValid()) { SetState(EVEILAgentState::Patrol); return; }
 	AAIController* AIC = Cast<AAIController>(GetController());
 	AActor* Target = TargetActor.Get();
@@ -308,12 +318,33 @@ float AVEILFactionAgent::TakeDamage(float DamageAmount, FDamageEvent const& Dama
 	const float Applied = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	Health = FMath::Clamp(Health - Applied, 0.f, MaxHealth);
 
+	// PLAYER-FIRST FIX (Tyree: "mobs keep chasing each other"):
+	// The old code did TargetActor = DamageCauser unconditionally, so
+	// a mob hit by another mob retargeted to that mob and chased it.
+	// New rule: damage NEVER retargets to a non-player causer.
+	// - Player visible: target the player, enter Combat.
+	// - Player not visible: stay Alert (do not chase the causer).
+	// - Causer IS the player pawn: target the player, enter Combat.
+	// Faction-vs-faction damage still reduces Health; it just does
+	// not steer the mob. Hostility matrix in IsHostile() is unchanged:
+	// Void vs any, Scavenger vs Guardian, Remnant defensive.
 	if (DamageCauser)
 	{
-		TargetActor = DamageCauser;
-		if (Health > MaxHealth * RetreatHealthFraction || Faction == EVEILFaction::Void)
+		APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+		const bool bCauserIsPlayer = (PlayerPawn && DamageCauser == PlayerPawn);
+		if (bCauserIsPlayer || CanSeePlayer())
 		{
-			SetState(EVEILAgentState::Combat);
+			if (PlayerPawn) TargetActor = PlayerPawn;
+			if (Health > MaxHealth * RetreatHealthFraction || Faction == EVEILFaction::Void)
+			{
+				SetState(EVEILAgentState::Combat);
+			}
+		}
+		else
+		{
+			UE_LOG(LogVEIL, Verbose, TEXT("PHI AI PLAYER-FIRST: damage from non-player %s ignored for targeting; player not visible."),
+				*DamageCauser->GetName());
+			if (State == EVEILAgentState::Patrol) SetState(EVEILAgentState::Alert);
 		}
 	}
 

@@ -191,6 +191,7 @@ void AVEILCharacter::BuildFallbackInput()
 	AimAction = MakeAction(TEXT("IA_Aim"), EInputActionValueType::Boolean);
 	FireAction = MakeAction(TEXT("IA_Fire"), EInputActionValueType::Boolean);
 	InteractAction = MakeAction(TEXT("IA_Interact"), EInputActionValueType::Boolean);
+	SwingAction = MakeAction(TEXT("IA_Swing"), EInputActionValueType::Boolean);
 
 	BuiltMappingContext = NewObject<UInputMappingContext>(this, TEXT("IMC_VEIL_BuiltIn"), RF_Transient);
 	UInputMappingContext* IMC = BuiltMappingContext;
@@ -223,6 +224,7 @@ void AVEILCharacter::BuildFallbackInput()
 	Map(AimAction, EKeys::RightMouseButton);
 	Map(FireAction, EKeys::LeftMouseButton);
 	Map(InteractAction, EKeys::E);
+	Map(SwingAction, EKeys::F);
 
 	// ---- Xbox controller ----
 	Map(MoveAction, EKeys::Gamepad_Left2D);
@@ -231,6 +233,7 @@ void AVEILCharacter::BuildFallbackInput()
 	Map(DodgeAction, EKeys::Gamepad_FaceButton_Right);  // B
 	Map(InteractAction, EKeys::Gamepad_FaceButton_Left);// X
 	Map(FireAction, EKeys::Gamepad_RightTrigger);       // RT
+	Map(SwingAction, EKeys::Gamepad_FaceButton_Top);   // Y
 	Map(AimAction, EKeys::Gamepad_LeftTrigger);         // LT
 	Map(SprintAction, EKeys::Gamepad_LeftThumbstick);   // L3
 	// Pause/menu lives on the PlayerController: P, Esc, and pad Menu button.
@@ -269,6 +272,7 @@ void AVEILCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		}
 		if (FireAction)   EIC->BindAction(FireAction, ETriggerEvent::Started, this, &AVEILCharacter::Fire);
 		if (InteractAction) EIC->BindAction(InteractAction, ETriggerEvent::Started, this, &AVEILCharacter::Interact);
+		if (SwingAction)  EIC->BindAction(SwingAction, ETriggerEvent::Started, this, &AVEILCharacter::OnSwingInput);
 	}
 }
 
@@ -434,6 +438,57 @@ void AVEILCharacter::Fire()
 			UGameplayStatics::ApplyDamage(Victim, WeaponDamage, Controller, this, UDamageType::StaticClass());
 		}
 	}
+}
+
+void AVEILCharacter::OnSwingInput()
+{
+	Swing();
+}
+
+void AVEILCharacter::Swing()
+{
+	const float Now = GetWorld()->TimeSeconds;
+	if (!IsAlive() || Now - LastSwingTime < SwingCooldown) return;
+	LastSwingTime = Now;
+	CombatState = EVEILCombatState::Aiming;
+
+	// Melee arc: every damageable actor within SwingRange and in
+	// front of the runner takes SwingDamage. No projectile, no new
+	// asset: the arc is a radius + forward-cone check, logged so a
+	// PC Output Log read can prove a swing landed.
+	const FVector Origin = GetActorLocation() + FVector(0.f, 0.f, 60.f);
+	const FVector Forward = GetActorForwardVector();
+	TArray<FOverlapResult> Hits;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(this);
+	const bool bHit = GetWorld()->OverlapMultiByChannel(Hits, Origin,
+		FQuat::Identity, ECC_Pawn, FCollisionShape::MakeSphere(SwingRange), Params);
+	int32 Struck = 0;
+	if (bHit)
+	{
+		for (const FOverlapResult& Hit : Hits)
+		{
+			AActor* Victim = Hit.GetActor();
+			if (!Victim || Victim == this) continue;
+			FVector ToVictim = Victim->GetActorLocation() - GetActorLocation();
+			ToVictim.Z = 0.f;
+			if (ToVictim.IsNearlyZero()) continue;
+			ToVictim.Normalize();
+			// Forward cone: cos(70deg) ~ 0.34. Behind the runner: no hit.
+			if (FVector::DotProduct(Forward, ToVictim) < 0.34f) continue;
+			UGameplayStatics::ApplyDamage(Victim, SwingDamage, Controller, this, UDamageType::StaticClass());
+			++Struck;
+		}
+	}
+	UE_LOG(LogVEIL, Log, TEXT("PHI SWING: struck=%d damage=%.1f range=%.1f"), Struck, SwingDamage, SwingRange);
+}
+
+void AVEILCharacter::LanceBolt()
+{
+	// Lance bolt IS the ranged fire: same hitscan path as Fire(),
+	// named for the quest / HUD so "swing + lance bolt" reads as two
+	// distinct weapons, not one renamed button.
+	Fire();
 }
 
 void AVEILCharacter::Interact()

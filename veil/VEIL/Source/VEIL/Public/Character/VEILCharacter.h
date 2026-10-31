@@ -90,6 +90,25 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|Combat")
 	float DodgeCooldown = 0.9f;
 
+	// ---- Swing + Lance Bolt (VEIL OMNI whole, 2026-10-31) ----
+	// Fire() is the lance bolt (hitscan, WeaponDamage, WeaponRange).
+	// Swing() is the close melee: Echo Blade / Signal Lance swing,
+	// short arc in front of the runner, no projectile asset needed.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|Combat")
+	float SwingDamage = 35.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|Combat")
+	float SwingRange = 260.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|Combat")
+	float SwingCooldown = 0.45f;
+
+	UFUNCTION(BlueprintCallable, Category = "VEIL|Combat")
+	void Swing();
+
+	UFUNCTION(BlueprintCallable, Category = "VEIL|Combat")
+	void LanceBolt();
+
 	// ---- Movement tuning ----
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VEIL|Movement")
 	float WalkSpeed = 450.f;
@@ -138,6 +157,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "VEIL|Input")
 	TObjectPtr<UInputAction> InteractAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "VEIL|Input")
+	TObjectPtr<UInputAction> SwingAction;
+
 	// ---- Input handlers ----
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
@@ -148,6 +170,7 @@ protected:
 	void StopAim();
 	void Fire();
 	void Interact();
+	void OnSwingInput();
 
 private:
 	/** If no Input assets are assigned in the Blueprint, the game builds its
@@ -165,6 +188,7 @@ private:
 	bool bAiming = false;
 	float LastFireTime = -100.f;
 	float LastDodgeTime = -100.f;
+	float LastSwingTime = -100.f;
 
 	bool bFirstPerson = false;
 	void ToggleCameraMode();

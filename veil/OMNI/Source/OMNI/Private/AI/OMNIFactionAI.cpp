@@ -185,6 +185,15 @@ void AOMNIFactionAgent::ActHunt()
 
 void AOMNIFactionAgent::ActCombat(float DeltaSeconds)
 {
+	// PLAYER-FIRST, every tick (mirrors VEIL fix): if the player is
+	// visible, the mob's target IS the player, not a mob that hit it.
+	if (CanSeePlayer())
+	{
+		if (APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0))
+		{
+			TargetActor = PlayerPawn;
+		}
+	}
 	if (!TargetActor.IsValid()) { SetState(EOMNIAgentState::Patrol); return; }
 	AAIController* AIC = Cast<AAIController>(GetController());
 	AActor* Target = TargetActor.Get();
@@ -308,12 +317,26 @@ float AOMNIFactionAgent::TakeDamage(float DamageAmount, FDamageEvent const& Dama
 	const float Applied = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	Health = FMath::Clamp(Health - Applied, 0.f, MaxHealth);
 
+	// PLAYER-FIRST FIX (mirrors VEIL): damage NEVER retargets to a
+	// non-player causer. Player visible or causer is player: target
+	// player, enter Combat. Otherwise: Alert, do not chase the causer.
 	if (DamageCauser)
 	{
-		TargetActor = DamageCauser;
-		if (Health > MaxHealth * RetreatHealthFraction || Faction == EOMNIFaction::Void)
+		APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+		const bool bCauserIsPlayer = (PlayerPawn && DamageCauser == PlayerPawn);
+		if (bCauserIsPlayer || CanSeePlayer())
 		{
-			SetState(EOMNIAgentState::Combat);
+			if (PlayerPawn) TargetActor = PlayerPawn;
+			if (Health > MaxHealth * RetreatHealthFraction || Faction == EOMNIFaction::Void)
+			{
+				SetState(EOMNIAgentState::Combat);
+			}
+		}
+		else
+		{
+			UE_LOG(LogOMNI, Verbose, TEXT("PHI AI PLAYER-FIRST: damage from non-player %s ignored for targeting; player not visible."),
+				*DamageCauser->GetName());
+			if (State == EOMNIAgentState::Patrol) SetState(EOMNIAgentState::Alert);
 		}
 	}
 
