@@ -55,6 +55,13 @@ public:
 	int32 Shards = 0;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
+	int32 ForgeLevel = 0;
+
+	// PC call sites PHICompanionParty.cpp(202): Q->RegionMap.Contains(TEXT("OMNIWorld")) etc.
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
+	TMap<FName, FString> RegionMap;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "VEIL|Quest")
 	bool bChoiceOpen = false;
 
 	static int32 XPNeedForLevel(int32 InLevel);
