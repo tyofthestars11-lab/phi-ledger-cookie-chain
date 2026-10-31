@@ -169,6 +169,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VEIL|Faction")
 	bool ClaimTerritory(FName TerritoryName, EVEILFaction NewOwner);
 
+	/** Reputation with a faction, used by the quest system.
+	 *  Added for OMNIQuestSystem: the PC file called AdjustRep, but no
+	 *  such method existed, so the call could never compile. */
+	UFUNCTION(BlueprintCallable, Category = "VEIL|Faction")
+	void AdjustRep(EVEILFaction Faction, float Amount);
+
 	UFUNCTION(BlueprintPure, Category = "VEIL|Faction")
 	EVEILFaction GetTerritoryOwner(FName TerritoryName) const;
 
@@ -183,6 +189,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VEIL|Faction")
 	AVEILFactionAgent* SpawnReinforcement(EVEILFaction Faction, FVector Location);
 
+	/** Reputation delta for a faction (VEILEnemy / OMNIQuest callers). */
+	UFUNCTION(BlueprintCallable, Category = "VEIL|Faction")
+	void AdjustRep(EVEILFaction Faction, float Delta);
+
 	/** Hostility matrix: who fights whom. Default: everyone fights Void;
 	 *  Scavenger and Guardian are rivals; Remnant is defensive-neutral
 	 *  (fights only when its territory is entered - handled in agent logic). */
@@ -192,4 +202,5 @@ public:
 private:
 	TArray<TWeakObjectPtr<AVEILFactionAgent>> Agents;
 	TArray<FVEILTerritory> Territories;
+	TMap<EVEILFaction, float> Reputation;
 };

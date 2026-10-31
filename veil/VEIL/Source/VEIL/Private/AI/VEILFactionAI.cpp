@@ -385,6 +385,13 @@ void UVEILFactionManager::RegisterTerritory(const FVEILTerritory& Territory)
 	Territories.Add(Territory);
 }
 
+void UVEILFactionManager::AdjustRep(EVEILFaction Faction, float Amount)
+{
+	float& Rep = Reputation.FindOrAdd(Faction);
+	Rep += Amount;
+	UE_LOG(LogVEIL, Log, TEXT("PHI FACTION REP: faction %d %+f -> %f."), (int32)Faction, Amount, Rep);
+}
+
 bool UVEILFactionManager::ClaimTerritory(FName TerritoryName, EVEILFaction NewOwner)
 {
 	for (FVEILTerritory& T : Territories)
