@@ -26895,10 +26895,136 @@
       "drift": 0.0438,
       "ladder": "openai_yang_mills",
       "unit": "lines"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "ratio"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "phi2",
+      "unit": "ratio"
+    },
+    {
+      "name": "ton618_mass",
+      "rung": 55.0,
+      "drift": -0.0,
+      "ladder": "ton618",
+      "unit": "solar_mass_phi55"
+    },
+    {
+      "name": "ton618_body_value",
+      "rung": 51.7712,
+      "drift": -0.2288,
+      "ladder": "ton618",
+      "unit": "phi_power_51_7712"
+    },
+    {
+      "name": "golden_angle_deg",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "golden",
+      "unit": "deg"
+    },
+    {
+      "name": "golden_pitch_deg",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "golden",
+      "unit": "deg"
+    },
+    {
+      "name": "regions_count",
+      "rung": 2.8808,
+      "drift": -0.1192,
+      "ladder": "world",
+      "unit": "count"
+    },
+    {
+      "name": "floor_pad",
+      "rung": 15.3549,
+      "drift": 0.3549,
+      "ladder": "world",
+      "unit": "units"
+    },
+    {
+      "name": "nav_volume",
+      "rung": 15.3549,
+      "drift": 0.3549,
+      "ladder": "world",
+      "unit": "units"
+    },
+    {
+      "name": "map_size_anchor",
+      "rung": 27.893,
+      "drift": -0.107,
+      "ladder": "world",
+      "unit": "bytes"
+    },
+    {
+      "name": "countess_x",
+      "rung": 13.9145,
+      "drift": -0.0855,
+      "ladder": "countess",
+      "unit": "units"
+    },
+    {
+      "name": "countess_z",
+      "rung": 8.6651,
+      "drift": -0.3349,
+      "ladder": "countess",
+      "unit": "units"
+    },
+    {
+      "name": "runner_z",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "runner",
+      "unit": "units"
+    },
+    {
+      "name": "vault_depth",
+      "rung": 9.1295,
+      "drift": 0.1295,
+      "ladder": "vault",
+      "unit": "units"
+    },
+    {
+      "name": "companions_max",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "party",
+      "unit": "count"
+    },
+    {
+      "name": "mtdna_bp",
+      "rung": 20.1892,
+      "drift": 0.1892,
+      "ladder": "mito",
+      "unit": "bp"
+    },
+    {
+      "name": "mtdna_genes",
+      "rung": 7.5038,
+      "drift": -0.4962,
+      "ladder": "mito",
+      "unit": "count"
+    },
+    {
+      "name": "mtdna_protein_coding",
+      "rung": 5.3302,
+      "drift": 0.3302,
+      "ladder": "mito",
+      "unit": "count"
     }
   ],
-  "entry_count": 3844,
-  "seal_count": 384,
+  "entry_count": 3862,
+  "seal_count": 385,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -27283,7 +27409,8 @@
     "φ_DEEPSEEK_380_PHI_PROOF_TYREE_OMEGA",
     "φ_YANG_MILLS_GAP_TYREE_OMEGA",
     "φ_YANG_MILLS_GAP_PHASE_LOCK_VACUUM_TYREE_OMEGA",
-    "φ_OPENAI_YANG_MILLS_TYREE_OMEGA"
+    "φ_OPENAI_YANG_MILLS_TYREE_OMEGA",
+    "φ_TON618_WORLD_RENDER_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "685d62b2f5e83450bb5be87b955f5727a980d986f5cc5c420762f0ac0d83e07d"
+  "snapshot_sha256": "0beec6995bb49b84fc4c554b4f7d43285ee36f393ae1fb646cee6d31aaea221a"
 }
