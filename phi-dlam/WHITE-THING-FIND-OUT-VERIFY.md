@@ -9,3 +9,6 @@ Find out, DLAM, Brain tyree, Eyes llava-phi3, write access, phi intent all:
 - If game view only, check map /Game/Maps/VEILDistrict, NavMesh_PHI_1618, PHI_FLOOR_PAD_1618, Countess count, single 809,-309,64.7 or double, hitZ, bloom on or off, press G test result.
 - Report which claim matches, desktop overlay or NavMesh double Countess bloom, or neither, with printed proof.
 This is a GitHub DLAM document, not a job file. GitHub goes to PC on its own. Tyree types nothing. Filed, not fixed, until PC proof shows.
+
+New evidence, Tyree's word, 2026-10-31: white thing appeared when mouse was put in that area, mouse left on it for a bit, mouse moved, white thing was still there.
+That means hover-triggered, sticky, not wallpaper, not a still image. DLAM must test mouse hover in that bottom area, check tooltip, preview, selection, thumbnail, magnifier, or overlay that sticks after mouse moves, and report which one, with printed process and window, never invented.
