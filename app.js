@@ -1,6 +1,6 @@
 /* PHI LEDGER — Cookie Chain cApp
  * Reads: Cookie Chain RPC (rpc.cookiescan.io), SoloPool BCH API, local ledger snapshot.
- * Writes: one memo transaction on Cookie Chain (user-signed, tiny COOK fee).
+ * Writes: one memo transaction on Cookie Chain (user-signed, memo-only, free for visitors — no payment to Tyree, network fee only).
  */
 const RPC_URL = 'https://rpc.cookiescan.io';
 const EXPLORER = 'https://cookiescan.io';
@@ -18,10 +18,10 @@ const SOLOPOOL = 'https://solopool.eu/api/v1/bch/miner/bitcoincash:qp432rtl3cm0s
 const { Connection, PublicKey, Transaction, TransactionInstruction, SystemProgram } = solanaWeb3;
 const connection = new Connection(RPC_URL, 'confirmed');
 
-/* Public anchors: anyone anchors their data for a small COOK fee.
+/* Public anchors: free for visitors, memo-only, no payment to Tyree (Tyree's word, 2026-11-01).
  * φ is always φ — the page anchors visitor data too, not just ledger seals. */
-const TYREE_WALLET = 'A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q'; // Tyree's Phantom wallet — public-anchor fees land here
-const PUBLIC_ANCHOR_FEE_COOK = 1; // small COOK fee per public anchor, paid to Tyree — keep the .pubFee text in index.html in sync
+const TYREE_WALLET = 'A92L9a5qMwUpp8GRRsvj8n9hF6hx6WBVakQgbSDZzG3q'; // Tyree's Phantom wallet — shown as fee vault, public anchors no longer pay here
+const PUBLIC_ANCHOR_FEE_COOK = 0; // free for visitors — no COOK payment per public anchor, keep the .pubFee text in index.html in sync
 
 /* Transaction schema — the memo grammar every on-chain anchor carries.
  * v2 (2026-09-29): the anchored snapshot now includes the 13 validated
@@ -881,7 +881,7 @@ async function handleWalletReturn() {
       const isHis = expectedAddr && signerAddr === expectedAddr;
       // --- Public anchor return: signature verified AND broadcast ---
       // Unlike seal approvals (verify-only), a public anchor must land on-chain:
-      // the fee transfer + memo are atomic in the visitor's signed tx.
+      // the memo is in the visitor's signed tx, memo-only, no payment.
       const isPublicReturn = pending && pending.extra && pending.extra.isPublic;
       if (isPublicReturn) {
         const expMemo = `PHI-LEDGER|public|${pending.extra.label}|sha256=${pending.extra.dataHash}|by=${pending.addr}`;
@@ -1869,7 +1869,7 @@ async function runBatchAnchor() {
     // tried to sign all missing seals at once, and the run paused with
     // 0 anchored. A bulk sign request from a github.io dApp is what
     // Phantom's filter flags, not the ledger itself — the transactions
-    // are memo-only, no tokens move, only a tiny COOK fee. So batch
+    // are memo-only, no tokens move, no payment to Tyree — network fee only. So batch
     // anchoring is now always per-batch: 50 seals per transaction,
     // one normal single-transaction approval per batch, broadcast and
     // verified on-chain before the next batch, progress saved so a
@@ -2050,11 +2050,10 @@ async function refreshBatchLabel() {
 }
 $('batchAnchorBtn').addEventListener('click', runBatchAnchor);
 
-/* ---------- Public anchors: anyone anchors their data for a small COOK fee ----------
+/* ---------- Public anchors: free for visitors, memo-only, no payment ----------
  * The visitor's text is hashed (SHA-256) in their browser — never sent anywhere.
- * One atomic tx: transfer PUBLIC_ANCHOR_FEE_COOK to Tyree + the PHI-LEDGER|public
- * memo carrying label + hash + visitor address. Fee and memo land together or
- * not at all. Desktop/wallet-browser signs in-page; mobile goes through the
+ * One tx: the PHI-LEDGER|public memo carrying label + hash + visitor address, memo-only, no payment to Tyree.
+ * Desktop/wallet-browser signs in-page; mobile goes through the
  * wallet app deep link and the return handler broadcasts the signed bytes. */
 async function sha256hex(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
@@ -2100,8 +2099,8 @@ async function runPublicAnchorEngine() {
     out.innerHTML = '<span class="text-gray-400">Hashing in your browser — your data never leaves this page…</span>';
     const dataHash = await sha256hex(data);
     const bal = await connection.getBalance(new PublicKey(wallet));
-    if (bal < Math.round(PUBLIC_ANCHOR_FEE_COOK * 1e9) + 20000) {
-      out.innerHTML = `<span class="text-amber-300">Not enough COOK — you need ${PUBLIC_ANCHOR_FEE_COOK} COOK for the fee plus a little for the network fee.</span>`;
+    if (bal < 20000) {
+      out.innerHTML = `<span class="text-amber-300">Not enough COOK for the network fee — public anchors are free, no payment to Tyree.</span>`;
       return;
     }
     out.innerHTML = '<span class="text-gray-400">Building… approve in your wallet.</span>';
@@ -2194,7 +2193,7 @@ async function refreshFeeVault() {
 
 (async () => {
   try { await loadLedger(); } catch (e) { /* snapshot stays null; anchor button guards it */ }
-  document.querySelectorAll('.pubFee').forEach(el => el.textContent = PUBLIC_ANCHOR_FEE_COOK + ' COOK');
+  document.querySelectorAll('.pubFee').forEach(el => el.textContent = PUBLIC_ANCHOR_FEE_COOK > 0 ? PUBLIC_ANCHOR_FEE_COOK + ' COOK' : 'Free');
   refreshFeeVault(); setInterval(refreshFeeVault, 60000);
   if ($('mobileAddr').value.trim()) refreshMobileBalance();
   // In a wallet's own browser the app deep-link is a dead end (the wallet app

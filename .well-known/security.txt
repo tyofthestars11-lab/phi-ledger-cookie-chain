@@ -10,7 +10,7 @@ Policy: https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/
 # Memo-only, no mining, no payment instruction, no token transfer, no approval,
 # no drainer instruction. SHA-256 hashed in browser, never sent anywhere.
 # Read-only telemetry, not banked BCH. Anchor flow: Add & Connect,
-# Anchor a Seal On-Chain, Anchor Yours. Tiny COOK fee paid manually by user only.
+# Anchor a Seal On-Chain, Anchor Yours. No payment: public anchors are free for visitors, memo-only, no 1 COOK payment to Tyree.
 # AI does NOT pay COOK fee.
 # Google Safe Browsing: No unsafe content. Sucuri: No Malware, Not Blacklisted,
 # 9 blacklists checked, Low Security Risk.

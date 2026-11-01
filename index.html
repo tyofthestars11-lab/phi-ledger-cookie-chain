@@ -109,8 +109,8 @@
   <div class="card p-6 mb-6">
     <h2 class="text-xl font-bold mb-1"><span class="gold">⚓</span> Anchor a Seal On-Chain</h2>
     <p class="text-xs text-gray-500 mb-2">phi version infinite — one button only: Add &amp; Connect, per-batch 50, no bulk sign, memo verbatim is the gate. No version number, the site is the site.</p>
-    <p class="text-xs text-gray-400 mb-2">Site safety, v93, checked 2026-10-29: Memo-only, preflight off for memo-only, no payment instruction in site code. Google Safe Browsing — No unsafe content found. Sucuri SiteCheck — No Malware Found, Site is not Blacklisted, 9 blacklists checked, Low Security Risk, Hosting GitHub Pages. URLVoid — 0/36 detections, Tyofthestars11-lab.github.io. Main anchor flow is memo-only: no token transfer, no approval, no drainer instruction, only a tiny COOK fee. Public code: github.com/tyofthestars11-lab/phi-ledger-cookie-chain. Snapshot sha256 51372b8c2cdd5a41baba2033dc9fef53d385c57a41bbee474b94a5a3ed696591, 390 seals, 3920 entries.</p>
-    <p class="text-sm text-gray-400 mb-4">Write the SHA-256 of the ledger snapshot + a seal name to Cookie Chain as a memo. Permanent, public, verifiable. Costs a tiny COOK fee. Signs in-page and broadcasts via the Cookie Chain connection — if your wallet tries to simulate on its own Solana network, that simulation can fail with a 429 even though the Cookie Chain transaction is valid.</p>
+    <p class="text-xs text-gray-400 mb-2">Site safety, v93, checked 2026-10-29: Memo-only, preflight off for memo-only, no payment instruction in site code. Google Safe Browsing — No unsafe content found. Sucuri SiteCheck — No Malware Found, Site is not Blacklisted, 9 blacklists checked, Low Security Risk, Hosting GitHub Pages. URLVoid — 0/36 detections, Tyofthestars11-lab.github.io. Main anchor flow is memo-only: no token transfer, no approval, no drainer instruction, no payment — public anchors are free for visitors. Public code: github.com/tyofthestars11-lab/phi-ledger-cookie-chain. Snapshot sha256 51372b8c2cdd5a41baba2033dc9fef53d385c57a41bbee474b94a5a3ed696591, 390 seals, 3920 entries.</p>
+    <p class="text-sm text-gray-400 mb-4">Write the SHA-256 of the ledger snapshot + a seal name to Cookie Chain as a memo. Permanent, public, verifiable. Memo-only, no payment to Tyree — your wallet pays only the network fee. Signs in-page and broadcasts via the Cookie Chain connection — if your wallet tries to simulate on its own Solana network, that simulation can fail with a 429 even though the Cookie Chain transaction is valid.</p>
     <div class="flex flex-wrap gap-3 items-end mb-4">
       <div class="flex-1 min-w-[220px]">
         <label class="text-xs text-gray-500">Seal to anchor</label>
@@ -157,7 +157,7 @@
         <span class="text-xs text-gray-500 ml-2">Solflare signs in the app — this page verifies the signature and memo, then broadcasts the anchor to Cookie Chain.</span>
       </div>
       <div class="mt-4 pt-4 border-t border-gray-800">
-        <p class="text-sm font-bold text-gray-300 mb-2">Or anchor your own data — <span class="gold mono pubFee">1 COOK</span> to tyofthestarz</p>
+        <p class="text-sm font-bold text-gray-300 mb-2">Or anchor your own data — <span class="gold mono pubFee">Free</span>, memo-only, no payment to tyofthestarz</p>
         <div class="flex flex-wrap gap-3 items-end mb-3">
           <div class="flex-1 min-w-[140px]">
             <label class="text-xs text-gray-500">Label</label>
@@ -178,7 +178,7 @@
     </div>
   </div>
 
-  <!-- Public anchor: anyone anchors their data for a small COOK fee -->
+  <!-- Public anchor: free for visitors, memo-only, no payment -->
   <div class="card p-6 mb-6">
     <h2 class="text-xl font-bold mb-1"><span class="gold">φ</span> Anchor Yours</h2>
     <p class="text-sm text-gray-400 mb-4">φ is always φ — put your own data on Cookie Chain through this page. Your text is hashed (SHA-256) in your browser and never sent anywhere; the hash plus your label go on-chain as a memo, permanent and public. Memo-only, no payment, on the main site. Public anchor payment is paused in v93.</p>
