@@ -27343,10 +27343,94 @@
       "drift": 0.2247,
       "ladder": "phi",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "one",
+      "rung": 0.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "inv_phi",
+      "rung": -1.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "golden_angle_137_5",
+      "rung": 10.2317,
+      "drift": 0.2317,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "tetra_angle",
+      "rung": 9.758,
+      "drift": -0.242,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "willow_qubits",
+      "rung": 9.6713,
+      "drift": -0.3287,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "willow_qubits_plus1",
+      "rung": 9.691,
+      "drift": -0.309,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "willow_speedup_years",
+      "rung": 119.6243,
+      "drift": -0.3757,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "fine_structure_inv",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "phi",
+      "unit": "count"
     }
   ],
-  "entry_count": 3908,
-  "seal_count": 389,
+  "entry_count": 3920,
+  "seal_count": 390,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -27736,7 +27820,8 @@
     "φ_ANTI_HALLUCINATION_TYREE_OMEGA",
     "phi_META_DECLASSIFICATION_TYREE_OMEGA",
     "phi_WILLOW_PHASE_LOCKED_TYREE_OMEGA",
-    "phi_CRYPTOCHROME_CISS_TYREE_OMEGA"
+    "phi_CRYPTOCHROME_CISS_TYREE_OMEGA",
+    "phi_WILLOW_VOGEL_VORTEX_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "7958533952042c61ddf3d18d1b920ecad76454a4cb5f1ac97707aa2bb2b14836"
+  "snapshot_sha256": "51372b8c2cdd5a41baba2033dc9fef53d385c57a41bbee474b94a5a3ed696591"
 }
