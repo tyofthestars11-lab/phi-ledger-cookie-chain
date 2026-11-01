@@ -2152,30 +2152,6 @@ function publicAnchorFlow(addr, label, dataHash, out, outId, kind) {
     out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span>`;
   }
 }
-$('pubSolflareBtn').addEventListener('click', async () => {
-  const addr = $('mobileAddr').value.trim();
-  const out = $('pubOutM');
-  out.classList.remove('hidden');
-  // Same cross-context trap as the seal flow: inside a wallet browser the
-  // Solflare app cannot return to this tab. Anchor in-page instead.
-  if (getProvider()) {
-    out.innerHTML = '<span class="text-amber-300">You are inside a wallet browser — the Solflare app cannot return to this tab.</span><br><span class="text-gray-400 text-sm">Connect with the <b>Connect Wallet</b> button above and use the public-anchor panel at the top of the page instead.</span>';
-    return;
-  }
-  if (!isValidAddress(addr)) { out.innerHTML = '<span class="text-amber-300">Enter your wallet address first.</span>'; return; }
-  const label = cleanLabel($('pubLabelM').value);
-  const data = $('pubDataM').value || '';
-  if (!label) { out.innerHTML = '<span class="text-amber-300">Give your anchor a label first.</span>'; return; }
-  if (!data.trim()) { out.innerHTML = '<span class="text-amber-300">Paste the data to anchor first.</span>'; return; }
-  try {
-    out.innerHTML = '<span class="text-gray-400">Hashing in your browser…</span>';
-    const dataHash = await sha256hex(data);
-    await publicAnchorFlow(addr, label, dataHash, out, 'pubOutM', 'solflare');
-  } catch (e) {
-    out.innerHTML = `<span class="text-red-400">Failed:</span> <span class="text-gray-400">${esc(shortErr(e))}</span>`;
-  }
-});
-
 /* ---------- boot ---------- */
 pulse(); setInterval(pulse, 30000);
 mining(); setInterval(mining, 60000);
@@ -2209,7 +2185,6 @@ async function refreshFeeVault() {
       b.replaceWith(note);
     };
     swapForInPage('solflareAnchorBtn', 'Sealing');
-    swapForInPage('pubSolflareBtn', 'Public anchors');
   }
   await handleWalletReturn();
 })();
