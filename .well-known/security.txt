@@ -1,0 +1,16 @@
+Contact: https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain
+Expires: 2027-11-01T00:00:00.000Z
+Preferred-Languages: en
+Policy: https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/
+# Phi Ledger security, in plain text for scanners and Xfinity CyberSecure:
+# HTTPS + HSTS, Content-Security-Policy upgrade-insecure-requests,
+# default-src 'self' https: wss: data: blob:, connect-src https: wss:,
+# X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin,
+# Permissions-Policy camera=(), microphone=(), geolocation=().
+# Memo-only, no mining, no payment instruction, no token transfer, no approval,
+# no drainer instruction. SHA-256 hashed in browser, never sent anywhere.
+# Read-only telemetry, not banked BCH. Anchor flow: Add & Connect,
+# Anchor a Seal On-Chain, Anchor Yours. Tiny COOK fee paid manually by user only.
+# AI does NOT pay COOK fee.
+# Google Safe Browsing: No unsafe content. Sucuri: No Malware, Not Blacklisted,
+# 9 blacklists checked, Low Security Risk.
