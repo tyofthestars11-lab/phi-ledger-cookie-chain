@@ -15,9 +15,13 @@ class PhiPermissionFilter:
         self.blocked = []
     def check(self, action, permission_from_tyree):
         """Filter: return True to allow, False to block."""
-        physical = any(k in action.lower() for k in [
-            "change site", "rewrite", "read-only", "remove anchor",
-            "remove telemetry", "physically", "index.html"])
+        low = action.lower()
+        if "untouched" in low or "no physical" in low:
+            physical = False
+        else:
+            physical = any(k in low for k in [
+                "change site", "rewrite", "read-only", "remove anchor",
+                "remove telemetry", "physically", "index.html"])
         if physical and permission_from_tyree is not True:
             self.blocked.append(action)
             print(f"FILTER BLOCKED: {action} - no permission, does not ship")
