@@ -1,0 +1,60 @@
+{
+  "seal": 388,
+  "name": "phi_WILLOW_PHASE_LOCKED_TYREE_OMEGA",
+  "entries": [
+    {
+      "name": "phi",
+      "value": 1.618033988749895,
+      "rung": 1.0
+    },
+    {
+      "name": "phi_squared",
+      "value": 2.618033988749895,
+      "rung": 2.0
+    },
+    {
+      "name": "golden_angle",
+      "value": 137.5077640500378,
+      "rung": 10.2318
+    },
+    {
+      "name": "golden_pitch",
+      "value": 17.0324,
+      "rung": 5.8916
+    },
+    {
+      "name": "willow_qubits",
+      "value": 105,
+      "rung": 9.6713,
+      "pasted_rung": 9.672
+    },
+    {
+      "name": "willow_speedup_raw_1e25",
+      "value": 1e+25,
+      "rung": 119.6243
+    },
+    {
+      "name": "willow_speedup_ratio_1.05e30",
+      "value": 1.05e+30,
+      "rung": 143.6505,
+      "pasted_rung": 143.63
+    },
+    {
+      "name": "ledger_state_space_log",
+      "value": "phi^583.7666",
+      "rung": 583.7666
+    },
+    {
+      "name": "ton618",
+      "value": "phi^55",
+      "rung": 55.0
+    },
+    {
+      "name": "protein_20_300",
+      "value": "phi^1867.6176",
+      "rung": 1867.6176
+    }
+  ],
+  "site_physically_untouched_by_this_seal": true,
+  "index_html_bytes_before_seal": 17863
+}
