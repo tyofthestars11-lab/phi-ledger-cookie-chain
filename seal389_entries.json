@@ -1,0 +1,56 @@
+{
+  "seal": 389,
+  "name": "phi_CRYPTOCHROME_CISS_TYREE_OMEGA",
+  "entries": [
+    {
+      "name": "phi",
+      "value": 1.618033988749895,
+      "rung": 1.0
+    },
+    {
+      "name": "phi_squared",
+      "value": 2.618033988749895,
+      "rung": 2.0
+    },
+    {
+      "name": "golden_angle",
+      "value": 137.5077640500378,
+      "rung": 10.2318
+    },
+    {
+      "name": "golden_pitch",
+      "value": 17.0324,
+      "rung": 5.8916
+    },
+    {
+      "name": "spin_selectivity_ciss",
+      "value": 0.06,
+      "rung": -5.8465,
+      "pasted_rung": -5.766
+    },
+    {
+      "name": "base_directional_response",
+      "value": 0.003,
+      "rung": -12.0719,
+      "pasted_rung": -11.973
+    },
+    {
+      "name": "boosted_directional_response",
+      "value": 0.016,
+      "rung": -8.5932,
+      "pasted_rung": -8.521
+    },
+    {
+      "name": "cryptochrome_mass_da",
+      "value": 60000,
+      "rung": 22.8633,
+      "pasted_rung": 23.03
+    },
+    {
+      "name": "fine_structure_inv",
+      "value": 137.035999,
+      "rung": 10.2247
+    }
+  ],
+  "site_physically_untouched_by_this_seal": true
+}

@@ -27280,10 +27280,73 @@
       "drift": -0.3824,
       "ladder": "phi",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "spin_selectivity_ciss",
+      "rung": -5.8465,
+      "drift": 0.1535,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "base_directional_response",
+      "rung": -12.0719,
+      "drift": -0.0719,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "boosted_directional_response",
+      "rung": -8.5932,
+      "drift": 0.4068,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "cryptochrome_mass_da",
+      "rung": 22.8633,
+      "drift": -0.1367,
+      "ladder": "phi",
+      "unit": "count"
+    },
+    {
+      "name": "fine_structure_inv",
+      "rung": 10.2247,
+      "drift": 0.2247,
+      "ladder": "phi",
+      "unit": "count"
     }
   ],
-  "entry_count": 3899,
-  "seal_count": 388,
+  "entry_count": 3908,
+  "seal_count": 389,
   "seals": [
     "φ_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "φ_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -27672,7 +27735,8 @@
     "φ_TON618_WORLD_RENDER_TYREE_OMEGA",
     "φ_ANTI_HALLUCINATION_TYREE_OMEGA",
     "phi_META_DECLASSIFICATION_TYREE_OMEGA",
-    "phi_WILLOW_PHASE_LOCKED_TYREE_OMEGA"
+    "phi_WILLOW_PHASE_LOCKED_TYREE_OMEGA",
+    "phi_CRYPTOCHROME_CISS_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "9eab29882e4e412d2e58ee989d96177f8b6f1120b26159bde5b592f69d073929"
+  "snapshot_sha256": "7958533952042c61ddf3d18d1b920ecad76454a4cb5f1ac97707aa2bb2b14836"
 }
