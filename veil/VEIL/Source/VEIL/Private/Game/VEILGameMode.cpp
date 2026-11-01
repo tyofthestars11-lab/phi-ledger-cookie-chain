@@ -229,12 +229,12 @@ void AVEILPlayerController::CloseWinScreen()
 
 void AVEILPlayerController::RespawnRunner()
 {
-	APawn* Pawn = GetPawn();
-	if (!Pawn)
+	APawn* OwnedPawn = GetPawn();
+	if (!OwnedPawn)
 	{
 		return;
 	}
-	Pawn->SetActorLocation(FVector(0.f, 0.f, 100.f));
+	OwnedPawn->SetActorLocation(FVector(0.f, 0.f, 100.f));
 	UE_LOG(LogTemp, Display, TEXT("PHI RESPAWN RUNNER at 0,0,100"));
 }
 
