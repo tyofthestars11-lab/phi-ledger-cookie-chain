@@ -42,6 +42,13 @@
   .phi-ring { border:2px solid #e8b93c; border-radius:9999px; }
   a { color:#e8b93c; }
   .status-dot { width:10px; height:10px; border-radius:9999px; display:inline-block; }
+
+  .shimmer { animation: shimmer-pulse 1.2s ease-in-out infinite; }
+  @keyframes shimmer-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+  #walletLabel, header a[href="rung-calc.html"] { white-space: nowrap; }
+  #addConnectNote { max-width: 480px; line-height: 1.5; }
+  #entrySearch { padding-left: 12px; }
+  .entry-cat { width: 96px; flex: none; }
 </style>
 </head>
 <body class="min-h-screen">
@@ -64,11 +71,11 @@
 
   <!-- Chain status strip -->
   <div class="card p-4 mb-6 flex flex-wrap gap-x-8 gap-y-3 items-center text-sm">
-    <div class="flex items-center gap-2"><span id="rpcDot" class="status-dot bg-gray-500"></span><span class="text-gray-400">Cookie Chain RPC</span> <span id="rpcState" class="mono">…</span></div>
-    <div><span class="text-gray-400">Slot</span> <span id="statSlot" class="mono gold">…</span></div>
-    <div><span class="text-gray-400">Epoch</span> <span id="statEpoch" class="mono gold">…</span></div>
-    <div><span class="text-gray-400">Block height</span> <span id="statHeight" class="mono gold">…</span></div>
-    <div><span class="text-gray-400">TPS</span> <span id="statTps" class="mono gold">…</span></div>
+    <div class="flex items-center gap-2"><span id="rpcDot" class="status-dot bg-gray-500"></span><span class="text-gray-400">Cookie Chain RPC</span> <span id="rpcState" class="mono shimmer">connecting…</span></div>
+    <div><span class="text-gray-400">Slot</span> <span id="statSlot" class="mono gold shimmer">loading…</span></div>
+    <div><span class="text-gray-400">Epoch</span> <span id="statEpoch" class="mono gold shimmer">loading…</span></div>
+    <div><span class="text-gray-400">Block height</span> <span id="statHeight" class="mono gold shimmer">loading…</span></div>
+    <div><span class="text-gray-400">TPS</span> <span id="statTps" class="mono gold shimmer">loading…</span></div>
     <div class="ml-auto text-xs text-gray-500 mono">rpc.cookiescan.io</div>
   </div>
 
@@ -77,7 +84,7 @@
     <div class="card p-6">
       <h2 class="text-xl font-bold mb-1"><span class="gold">φ</span> Ledger Analytics</h2>
       <p class="text-xs text-gray-500 mb-1">Tyree Jones · public phi ledger · snapshot <span id="snapHash" class="mono"></span></p>
-      <p class="text-xs text-gray-600 mb-4">hash recipe: SHA-256 of the canonical JSON — keys sorted, no whitespace, <span class="mono">snapshot_sha256</span> field excluded. Recompute it yourself: <span class="mono">python3 hash_snapshot.py --verify</span> (recipe in the repo)</p>
+      <p class="text-xs text-[#9aa0a6] mb-4">hash recipe: SHA-256 of the canonical JSON — keys sorted, no whitespace, <span class="mono">snapshot_sha256</span> field excluded. Recompute it yourself: <span class="mono">python3 hash_snapshot.py --verify</span> (recipe in the repo)</p>
       <div class="grid grid-cols-3 gap-3 mb-4 text-center">
         <div class="card p-3"><div id="sealCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">seals</div></div>
         <div class="card p-3"><div id="entryCount" class="text-2xl font-bold gold">…</div><div class="text-xs text-gray-500">entries</div></div>
@@ -92,16 +99,16 @@
     <!-- Mining telemetry -->
     <div class="card p-6">
       <h2 class="text-xl font-bold mb-1"><span class="gold">⛏</span> BCH Mining Telemetry</h2>
-      <p class="text-xs text-gray-500 mb-4">Live · SoloPool · payout <span class="mono">qp432rtl…f2vm</span> <span id="mineAge" class="text-gray-600"></span></p>
+      <p class="text-xs text-gray-500 mb-4">Live <span id="mineStatus" class="text-gray-400"></span> · SoloPool · payout <span class="mono">qp432rtl…f2vm</span> <span id="mineAge" class="text-gray-600"></span></p>
       <div class="grid grid-cols-2 gap-3 mb-4 text-center">
-        <div class="card p-3"><div id="mineHash" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">live hashrate</div></div>
-        <div class="card p-3"><div id="mineShares" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">valid shares</div></div>
-        <div class="card p-3"><div id="mineBest" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">best share · all time</div><div id="mineBestSession" class="text-xs text-gray-500 mt-1">session …</div></div>
-        <div class="card p-3"><div id="mineBlocks" class="text-xl font-bold gold">…</div><div class="text-xs text-gray-500">blocks found</div></div>
+        <div class="card p-3"><div id="mineHash" class="text-xl font-bold gold shimmer">connecting…</div><div class="text-xs text-gray-500">live hashrate</div></div>
+        <div class="card p-3"><div id="mineShares" class="text-xl font-bold gold shimmer">loading…</div><div class="text-xs text-gray-500">valid shares</div></div>
+        <div class="card p-3"><div id="mineBest" class="text-xl font-bold gold shimmer">loading…</div><div class="text-xs text-gray-500">best share · all time</div><div id="mineBestSession" class="text-xs text-gray-500 mt-1 shimmer">session loading…</div></div>
+        <div class="card p-3"><div id="mineBlocks" class="text-xl font-bold gold shimmer">loading…</div><div class="text-xs text-gray-500">blocks found</div></div>
       </div>
       <h3 class="text-sm font-bold text-gray-300 mb-2">Workers</h3>
-      <div id="workerList" class="text-xs mono space-y-1 text-gray-300"></div>
-      <p class="text-[11px] text-gray-600 mt-3">Shares are proof-of-work telemetry, not banked BCH. Read-only.</p>
+      <div id="workerList" class="text-xs mono space-y-1 text-gray-300"><div class="text-gray-400 shimmer">loading workers…</div></div>
+      <p class="text-[11px] text-[#9aa0a6] mt-3">Shares are proof-of-work telemetry, not banked BCH. Read-only.</p>
     </div>
   </div>
 

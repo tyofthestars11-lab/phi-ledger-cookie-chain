@@ -44,6 +44,10 @@ const fmtInt = n => Number(n).toLocaleString('en-US');
 const short = (s, n=6) => s ? s.slice(0,n) + '…' + s.slice(-4) : '';
 
 /* ---------- Cookie Chain network pulse ---------- */
+/* Cold load: gray dot + connecting, not red/unreachable. Unreachable only
+ * after 2 failed tries, with one retry 3 seconds after the first failure. */
+let rpcFails = 0, rpcRetryPending = false;
+const clearShimmer = id => { const el = $(id); if (el) el.classList.remove('shimmer'); };
 async function pulse() {
   if (walletPromptOpen()) return;
   try {
@@ -52,16 +56,26 @@ async function pulse() {
       connection.getEpochInfo(),
       connection.getRecentPerformanceSamples(1),
     ]);
+    rpcFails = 0;
     $('statSlot').textContent = fmtInt(slot);
     $('statEpoch').textContent = epoch.epoch;
     $('statHeight').textContent = fmtInt(epoch.blockHeight);
     const tps = perf && perf[0] ? Math.round(perf[0].numTransactions / perf[0].samplePeriodSecs) : null;
     $('statTps').textContent = tps !== null ? fmtInt(tps) : 'n/a';
+    ['statSlot', 'statEpoch', 'statHeight', 'statTps', 'rpcState'].forEach(clearShimmer);
     $('rpcDot').className = 'status-dot bg-green-500';
     $('rpcState').textContent = 'ok';
   } catch (e) {
-    $('rpcDot').className = 'status-dot bg-red-500';
-    $('rpcState').textContent = 'unreachable';
+    rpcFails++;
+    if (rpcFails < 2) {
+      $('rpcDot').className = 'status-dot bg-gray-500';
+      $('rpcState').textContent = 'connecting…';
+      if (!rpcRetryPending) { rpcRetryPending = true; setTimeout(() => { rpcRetryPending = false; pulse(); }, 3000); }
+    } else {
+      $('rpcDot').className = 'status-dot bg-red-500';
+      $('rpcState').textContent = 'unreachable';
+      clearShimmer('rpcState');
+    }
   }
 }
 
@@ -96,27 +110,46 @@ function renderEntries(q) {
     .sort((a, b) => b.rung - a.rung)
     .slice(0, 60);
   $('entryList').innerHTML = list.map(e =>
-    `<div class="flex justify-between gap-2 border-b border-gray-800/60 py-1"><span>${e.name || '—'}</span><span class="text-gray-500">${e.ladder || ''}</span><span class="gold">φ^${e.rung}</span></div>`
+    `<div class="flex justify-between gap-2 border-b border-gray-800/60 py-1"><span>${e.name || '—'}</span><span class="entry-cat text-gray-500">${e.ladder || ''}</span><span class="gold">φ^${e.rung}</span></div>`
   ).join('') || '<div class="text-gray-500">no matches</div>';
 }
 
 /* ---------- BCH mining telemetry (live, CORS-open) ---------- */
+/* Cold load: connecting, not unreachable. Unreachable only after 2 fails,
+ * with one retry 3 seconds after the first failure. Idle mining is
+ * intentional: all workers at 0 H/s = paused, not idle. */
+let mineFails = 0, mineRetryPending = false;
+const parseHash = h => { if (typeof h === 'number') return h; const v = parseFloat(String(h || '')); return isNaN(v) ? null : v; };
 async function mining() {
   if (typeof walletPromptOpen === 'function' && walletPromptOpen()) return;
   try {
     const r = await fetch(SOLOPOOL);
     const m = await r.json();
+    mineFails = 0;
+    const workers = m.workers || [];
+    const allPaused = workers.length > 0 && workers.every(w => parseHash(w.hashrate) === 0);
     $('mineHash').textContent = m.hashrate || 'n/a';
     $('mineShares').textContent = fmtInt(m.shares_valid || 0);
     $('mineBest').textContent = m.bestshare_alltime_display || 'n/a';
     $('mineBestSession').textContent = 'session ' + (m.bestshare_display || 'n/a');
     $('mineBlocks').textContent = m.blocks_found ?? 0;
-    $('workerList').innerHTML = (m.workers || []).map(w =>
-      `<div class="flex justify-between gap-2 border-b border-gray-800/60 py-1"><span class="gold">${w.name}</span><span>${w.hashrate}</span><span class="text-gray-500">${fmtInt(w.shares)} shares</span><span class="${w.status === 'active' ? 'text-green-400' : 'text-red-400'}">${w.status}</span></div>`
-    ).join('');
+    ['mineHash', 'mineShares', 'mineBest', 'mineBestSession', 'mineBlocks'].forEach(clearShimmer);
+    $('mineStatus').textContent = allPaused ? '· Mining paused' : '';
+    $('workerList').innerHTML = workers.length ? workers.map(w => {
+      const st = (parseHash(w.hashrate) === 0 || w.status === 'idle') ? 'paused' : w.status;
+      const cls = st === 'active' ? 'text-green-400' : (st === 'paused' ? 'text-gray-400' : 'text-red-400');
+      return `<div class="flex justify-between gap-2 border-b border-gray-800/60 py-1"><span class="gold">${w.name}</span><span>${w.hashrate}</span><span class="text-gray-500">${fmtInt(w.shares)} shares</span><span class="${cls}">${st}</span></div>`;
+    }).join('') : '<div class="text-gray-400 shimmer">loading workers…</div>';
     $('mineAge').textContent = '· updated ' + new Date((m.updated_at || 0) * 1000).toLocaleTimeString();
   } catch (e) {
-    $('mineHash').textContent = 'unreachable';
+    mineFails++;
+    if (mineFails < 2) {
+      $('mineHash').textContent = 'connecting…';
+      if (!mineRetryPending) { mineRetryPending = true; setTimeout(() => { mineRetryPending = false; mining(); }, 3000); }
+    } else {
+      $('mineHash').textContent = 'unreachable';
+      clearShimmer('mineHash');
+    }
   }
 }
 
