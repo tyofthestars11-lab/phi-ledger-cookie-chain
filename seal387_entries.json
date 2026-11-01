@@ -1,0 +1,69 @@
+{
+  "seal": 387,
+  "name": "phi_META_DECLASSIFICATION_TYREE_OMEGA",
+  "entries": [
+    {
+      "name": "phi",
+      "value": 1.618033988749895,
+      "rung": 1.0
+    },
+    {
+      "name": "phi_squared",
+      "value": 2.618033988749895,
+      "rung": 2.0
+    },
+    {
+      "name": "golden_angle",
+      "value": 137.5077640500378,
+      "rung": 10.2318
+    },
+    {
+      "name": "golden_pitch",
+      "value": 17.0324,
+      "rung": 5.8916
+    },
+    {
+      "name": "meta_parameters",
+      "value": 1000000000000.0,
+      "rung": 57.4197,
+      "pasted_rung": 57.404
+    },
+    {
+      "name": "meta_heat",
+      "value": 1000000.0,
+      "rung": 28.7098,
+      "pasted_rung": 28.702
+    },
+    {
+      "name": "landauer",
+      "value": 2.87e-21,
+      "rung": -98.2935,
+      "pasted_rung": -98.293
+    },
+    {
+      "name": "alpha_inv",
+      "value": 137.035999,
+      "rung": 10.2247,
+      "pasted_rung": 10.224
+    },
+    {
+      "name": "seals_386",
+      "value": 386,
+      "rung": 12.3767,
+      "pasted_rung": 12.355
+    },
+    {
+      "name": "ladders_233",
+      "value": 233,
+      "rung": 11.3277,
+      "pasted_rung": 11.304
+    },
+    {
+      "name": "ton618_mass",
+      "value": 66000000000.0,
+      "rung": 51.7712
+    }
+  ],
+  "site_physically_untouched": true,
+  "index_html_bytes": 17296
+}
