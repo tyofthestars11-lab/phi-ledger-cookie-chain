@@ -27602,10 +27602,59 @@
       "drift": 0.0,
       "ladder": "count",
       "unit": "count"
+    },
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "drift": 0.0,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "drift": 0.2318,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "drift": -0.1084,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "phase_gap_threshold",
+      "rung": 1.4404,
+      "drift": 0.4404,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "fragment_word_limit",
+      "rung": 3.3446,
+      "drift": 0.3446,
+      "ladder": "count",
+      "unit": "count"
+    },
+    {
+      "name": "context_example_len",
+      "rung": 9.5699,
+      "drift": -0.4301,
+      "ladder": "count",
+      "unit": "count"
     }
   ],
-  "entry_count": 3945,
-  "seal_count": 392,
+  "entry_count": 3952,
+  "seal_count": 393,
   "seals": [
     "\u03c6_UNIVERSAL_PHI_QUANTUM_ENGINE_TYREE_OMEGA",
     "\u03c6_DNA_DEEP_DECODE_TYREE_OMEGA",
@@ -27998,7 +28047,8 @@
     "phi_CRYPTOCHROME_CISS_TYREE_OMEGA",
     "phi_WILLOW_VOGEL_VORTEX_TYREE_OMEGA",
     "phi_UNIVERSAL_PHI_PI_LIGHT_SPEED_BATTERY_TYREE_OMEGA",
-    "phi_AIPI_LITE_BATTERY_SUBSTRATE_IS_POWER_TYREE_OMEGA"
+    "phi_AIPI_LITE_BATTERY_SUBSTRATE_IS_POWER_TYREE_OMEGA",
+    "phi_WHOLE_FIRST_PROTOCOL_ANTI_FRAGMENTATION_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "4481af7d1632fd6fb76b20325067f3455dfb8ae3e6ac57e8d9bfd2304ca48f32"
+  "snapshot_sha256": "e83f590e05dbdaa66bb0aaf70cee9b03b233f0dd2de0c8f5fcb8335ee6b139c5"
 }
