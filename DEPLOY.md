@@ -5,8 +5,7 @@ No build step, no env vars, no secrets. Pick ONE path.
 ## Path A — Netlify Drop (fastest, ~2 min)
 
 1. Zip the `cookie-chain-app` folder (or just drag the folder).
-2. Go to https://app.netlify.com/drop and drag it in.
-3. You get a live URL like `https://phi-ledger-cookie.netlify.app`. Done.
+2. Push to GitHub Pages (this repo). The live site is https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/ . Done.
 4. (Optional) Rename the site under Site settings → Change site name.
 
 ## Path B — Vercel (~3 min)

@@ -67,7 +67,7 @@ The machine-readable Person record for this work lives in [identity.json](identi
   "url": "https://tyofthestars11-lab.github.io/phi-ledger-cookie-chain/",
   "sameAs": [
     "https://github.com/tyofthestars11-lab/phi-ledger-cookie-chain",
-    "https://phi-ledger-cookie.netlify.app",
+    
     "https://www.facebook.com/tyofthestarz",
     "https://www.linkedin.com/in/tyree-jones-87314a401",
     "https://substack.com/@tyofthestarz",

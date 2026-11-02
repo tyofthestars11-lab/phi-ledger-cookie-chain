@@ -48,7 +48,7 @@ Field note: 83 submissions already — differentiation is the ledger + the ancho
 ## Tyree's remaining steps (nothing else needed from the builder)
 
 1. `git init && git add . && git commit -m "phi ledger cookie chain cApp"` → push to GitHub (new public repo, e.g. `phi-ledger-cookie`).
-2. Deploy: drag the folder into https://app.netlify.com/drop (2 min) — or Vercel import, or GitHub Pages. See DEPLOY.md.
+2. Deploy: GitHub Pages (this repo). See DEPLOY.md.
 3. Verify the 6 checks in DEPLOY.md on the live URL.
 4. Install Phantom or Nightly; add Cookie Chain network (RPC `https://rpc.cookiescan.io`, symbol COOK); bridge a little COOK via https://bridge.cookiescan.io (fee money for the demo anchor tx).
 5. Record the demo (optional) and submit the live URL + GitHub URL on the Earn listing page.
