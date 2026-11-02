@@ -1,0 +1,48 @@
+{
+  "entries": [
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "value": 1.618033988749895,
+      "round_trip": 1.618033989
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "value": 2.618033988749895,
+      "round_trip": 2.618033989
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "value": 137.5077640500378,
+      "round_trip": 137.5053949
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "value": 17.0324,
+      "round_trip": 17.03223267
+    },
+    {
+      "name": "phase_gap_threshold",
+      "rung": 1.4404,
+      "value": 2.0,
+      "round_trip": 1.999980665
+    },
+    {
+      "name": "fragment_word_limit",
+      "rung": 3.3446,
+      "value": 5,
+      "round_trip": 5.00011579
+    },
+    {
+      "name": "context_example_len",
+      "rung": 9.5699,
+      "value": 100,
+      "round_trip": 99.99788589
+    }
+  ],
+  "name": "phi_WHOLE_FIRST_PROTOCOL_ANTI_FRAGMENTATION_TYREE_OMEGA",
+  "seal": 393
+}
