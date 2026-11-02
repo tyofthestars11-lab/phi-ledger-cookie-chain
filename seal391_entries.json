@@ -1,0 +1,103 @@
+{
+  "entries": [
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "value": 1.618033988749895,
+      "round_trip": 1.618
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "value": 2.618033988749895,
+      "round_trip": 2.618
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "value": 137.5077640500378,
+      "round_trip": 137.5054
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "value": 17.0324,
+      "round_trip": 17.0322
+    },
+    {
+      "name": "light_speed_m_s",
+      "rung": 40.5613,
+      "value": 299792458,
+      "round_trip": 299785326.995
+    },
+    {
+      "name": "battery_capacity_mAh",
+      "rung": 13.2934,
+      "value": 600,
+      "round_trip": 600.007
+    },
+    {
+      "name": "battery_nominal_V",
+      "rung": 2.7188,
+      "value": 3.7,
+      "round_trip": 3.6999
+    },
+    {
+      "name": "battery_max_V",
+      "rung": 2.9822,
+      "value": 4.2,
+      "round_trip": 4.1999
+    },
+    {
+      "name": "battery_stabilized_pct",
+      "rung": 9.5699,
+      "value": 100,
+      "round_trip": 99.9979
+    },
+    {
+      "name": "firmware_bin_bytes",
+      "rung": 30.3167,
+      "value": 2166784,
+      "round_trip": 2166783.8661
+    },
+    {
+      "name": "fibonacci_fall_3",
+      "rung": 2.283,
+      "value": 3,
+      "round_trip": 3.0
+    },
+    {
+      "name": "fibonacci_fall_5",
+      "rung": 3.3446,
+      "value": 5,
+      "round_trip": 5.0001
+    },
+    {
+      "name": "fibonacci_fall_8",
+      "rung": 4.3213,
+      "value": 8,
+      "round_trip": 8.0002
+    },
+    {
+      "name": "fibonacci_fall_13",
+      "rung": 5.3302,
+      "value": 13,
+      "round_trip": 13.0001
+    },
+    {
+      "name": "lucas_lock_n7_F",
+      "rung": 5.3302,
+      "value": 13,
+      "round_trip": 13.0001
+    },
+    {
+      "name": "lucas_lock_n7_L",
+      "rung": 6.9975,
+      "value": 29,
+      "round_trip": 28.9995
+    }
+  ],
+  "name": "phi_UNIVERSAL_PHI_PI_LIGHT_SPEED_BATTERY_TYREE_OMEGA",
+  "seal": 391,
+  "site_physically_untouched_by_this_seal": true
+}
