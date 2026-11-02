@@ -1,0 +1,61 @@
+{
+  "entries": [
+    {
+      "name": "phi",
+      "rung": 1.0,
+      "value": 1.618033988749895,
+      "round_trip": 1.618033989
+    },
+    {
+      "name": "phi_squared",
+      "rung": 2.0,
+      "value": 2.618033988749895,
+      "round_trip": 2.618033989
+    },
+    {
+      "name": "golden_angle",
+      "rung": 10.2318,
+      "value": 137.5077640500378,
+      "round_trip": 137.5053949
+    },
+    {
+      "name": "golden_pitch",
+      "rung": 5.8916,
+      "value": 17.0324,
+      "round_trip": 17.03223267
+    },
+    {
+      "name": "fine_structure_inv",
+      "rung": 10.2247,
+      "value": 137.035999,
+      "round_trip": 137.036395
+    },
+    {
+      "name": "landauer_limit_J",
+      "rung": -98.2935,
+      "value": 2.87e-21,
+      "round_trip": 2.869943739e-21
+    },
+    {
+      "name": "battery_stabilized_pct",
+      "rung": 9.5699,
+      "value": 100,
+      "round_trip": 99.99788589
+    },
+    {
+      "name": "continuous_display_minutes",
+      "rung": 7.068,
+      "value": 30,
+      "round_trip": 30.00023394
+    },
+    {
+      "name": "fibonacci_error_shrink_phi_squared",
+      "rung": 2.0,
+      "value": 2.618033988749895,
+      "round_trip": 2.618033989
+    }
+  ],
+  "name": "phi_AIPI_LITE_BATTERY_SUBSTRATE_IS_POWER_TYREE_OMEGA",
+  "seal": 392,
+  "site_physically_untouched_by_this_seal": false
+}
