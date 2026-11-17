@@ -8,13 +8,13 @@ From the public phi-ledger of Tyree Jones (tyofthestarz), seal 100 phi_DARK_SECT
 |---|---|---|---|
 | Dark sector total share (percent) | 95.1 | 9.4655 | +0.4655 |
 | Dark energy share (percent) | 68.3 | 8.7777 | -0.2223 |
-| Dark energy fraction (2026-09-20) (percent) | 68 | 8.7685 | +0.0000 |
+| Dark energy fraction (2026-09-20) (percent) | 68 | 8.7685 | -0.2315 |
 | Dark matter share (percent) | 26.8 | 6.8336 | -0.1664 |
-| Dark matter fraction (2026-09-20) (percent) | 27 | 6.849 | +0.0000 |
+| Dark matter fraction (2026-09-20) (percent) | 27 | 6.849 | -0.1510 |
 | Dark energy density (GeV^4) | 1.000e-47 | -224.8937 | +0.1063 |
 | Cosmological constant discrepancy factor (factor) | 1.000e+120 | 574.1966 | +0.1966 |
 | Observed Hubble constant (km/s/Mpc) | 70 | 8.8287 | -0.1713 |
-| Milky Way dark matter extent (2026-09-20) (light-years) | 2.000e+06 | 30.1503 | +0.0000 |
+| Milky Way dark matter extent (2026-09-20) (light-years) | 2.000e+06 | 30.1503 | +0.1503 |
 | El Gordo two-state self-interacting dark matter model: states (states) | 2 | 1.4404 | +0.4404 |
 | supernova dark-energy datasets combined: Pantheon+ and DES-SN5YR (datasets) | 2 | 1.4404 | +0.4404 |
 

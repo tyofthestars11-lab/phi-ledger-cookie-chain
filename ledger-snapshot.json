@@ -2738,7 +2738,7 @@
       "unit": "count"
     },
     {
-      "drift": 0.3277,
+      "drift": -0.3277,
       "ladder": "omni",
       "name": "SEVEN:zero-drift convergence",
       "rung": -36.3277,
@@ -2752,7 +2752,7 @@
       "unit": "count"
     },
     {
-      "drift": 0.0027,
+      "drift": -0.0027,
       "ladder": "omni",
       "name": "SEVEN:39551 components rung 22",
       "rung": 21.9973,
@@ -2997,98 +2997,98 @@
       "unit": null
     },
     {
-      "drift": 0.0,
+      "drift": 0.4755,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=0.8",
       "rung": 4.475471631492416,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0125,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=0.9",
       "rung": 5.012491446386579,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4244,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=1.0",
       "rung": 5.4244197948977435,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2496,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=1.1",
       "rung": 5.750404710994365,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0148,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=1.2",
       "rung": 6.014801896559334,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2336,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=1.3",
       "rung": 6.233558412139057,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4176,
       "ladder": "K",
       "name": "McMillan Tc \u03bb=1.4",
       "rung": 6.417553141894172,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2383,
       "ladder": "count",
       "name": "Fibonacci phinary rungs round-trip verified",
       "rung": 5.7616803616502255,
       "unit": "rungs"
     },
     {
-      "drift": 0.0,
+      "drift": 0.151,
       "ladder": "count",
       "name": "Phinary codec 214-number stress test zero mismatch",
       "rung": 11.15096457647776,
       "unit": "numbers"
     },
     {
-      "drift": 0.0,
+      "drift": 0.283,
       "ladder": "count",
       "name": "Vesuvius trilogy phinary round-trip 99/310/266",
       "rung": 2.2830118285892795,
       "unit": "numbers"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2895,
       "ladder": "count",
       "name": "Phi token budget 54 shares verified sums",
       "rung": 8.289455576180394,
       "unit": "shares"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3419,
       "ladder": "K",
       "name": "Absolute zero offset 273.15",
       "rung": 11.658111465,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0832,
       "ladder": "K",
       "name": "CMB 2.725K universe ground state",
       "rung": 2.0832165294,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4404,
       "ladder": "ratio",
       "name": "Zero-point half-quantum 0.5",
       "rung": -1.4404200904,
@@ -3123,126 +3123,126 @@
       "unit": "s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0068,
       "ladder": "mining",
       "name": "BCH mining: combined TH/s current (2026-09-12)",
       "rung": 3.0068,
       "unit": "TH/s"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2094,
       "ladder": "mining",
       "name": "BCH mining: 24h avg TH/s (2026-09-12)",
       "rung": 2.7906,
       "unit": "TH/s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.1612,
       "ladder": "mining",
       "name": "BCH mining: total shares (2026-09-12)",
       "rung": 45.1612,
       "unit": "shares"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2689,
       "ladder": "mining",
       "name": "BCH mining: BCH/USD (2026-09-12)",
       "rung": 11.2689,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4598,
       "ladder": "mining",
       "name": "BCH mining: BCH/USD (2026-09-19)",
       "rung": 11.4598,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4236,
       "ladder": "mining",
       "name": "BCH mining: network EH/s (2026-09-12)",
       "rung": 2.4236,
       "unit": "EH/s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0794,
       "ladder": "mining",
       "name": "BCH mining: network EH/s (2026-09-19)",
       "rung": 2.0794,
       "unit": "EH/s"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3429,
       "ladder": "mining",
       "name": "BCH mining: network share (2026-09-12)",
       "rung": -28.3429,
       "unit": "ratio"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0152,
       "ladder": "mining",
       "name": "BCH mining: expected days to block (2026-09-12)",
       "rung": 18.0152,
       "unit": "days"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3632,
       "ladder": "mining",
       "name": "BCH mining: block value USD (2026-09-12)",
       "rung": 13.6368,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1723,
       "ladder": "mining",
       "name": "BCH mining: block value USD (2026-09-19)",
       "rung": 13.8277,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3094,
       "ladder": "mining",
       "name": "BCH mining: expected monthly USD (2026-09-12)",
       "rung": 2.6906,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4612,
       "ladder": "mining",
       "name": "BCH mining: tyofthestarz TH/s (2026-09-12)",
       "rung": 0.5388,
       "unit": "TH/s"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4861,
       "ladder": "mining",
       "name": "BCH mining: tyofthestarz2 TH/s (2026-09-12)",
       "rung": 1.5139,
       "unit": "TH/s"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2609,
       "ladder": "mining",
       "name": "BCH mining: tyofthestarz3 TH/s (2026-09-12)",
       "rung": -0.2609,
       "unit": "TH/s"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3061,
       "ladder": "mining",
       "name": "BCH mining: tyofthestarz shares (2026-09-12)",
       "rung": 42.6939,
       "unit": "shares"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3322,
       "ladder": "mining",
       "name": "BCH mining: tyofthestarz2 shares (2026-09-12)",
       "rung": 43.6678,
       "unit": "shares"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1066,
       "ladder": "mining",
       "name": "BCH mining: tyofthestarz3 shares (2026-09-12)",
       "rung": 41.8934,
@@ -3263,7 +3263,7 @@
       "unit": "ratio"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2318,
       "ladder": "unbreakable",
       "name": "golden angle \u03b8_\u03c6",
       "rung": 10.2318,
@@ -3291,14 +3291,14 @@
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2288,
       "ladder": "unbreakable",
       "name": "TON618 mass",
       "rung": 51.7712,
       "unit": "M_sun"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1169,
       "ladder": "unbreakable",
       "name": "L luminosity",
       "rung": 196.8831,
@@ -3319,70 +3319,70 @@
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.09,
       "ladder": "rung15",
       "name": "quantum pulse peak",
       "rung": 15.09,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.09,
       "ladder": "rung15",
       "name": "Voynich vellum midpoint",
       "rung": 15.09,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2,
       "ladder": "rung15",
       "name": "Rongorongo Tablet D",
       "rung": 15.2,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1,
       "ladder": "rung15",
       "name": "TON 618 event horizon",
       "rung": 14.9,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2,
       "ladder": "rung15",
       "name": "Planck (compression layer)",
       "rung": -161.2,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2,
       "ladder": "rung15",
       "name": "\u210f (compression layer)",
       "rung": -159.8,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.08,
       "ladder": "rung15",
       "name": "fine structure (compression layer)",
       "rung": -4.92,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.19,
       "ladder": "rung15",
       "name": "mtDNA (expansion layer)",
       "rung": 20.19,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.46,
       "ladder": "rung15",
       "name": "speed of light (expansion layer)",
       "rung": 40.54,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.23,
       "ladder": "rung15",
       "name": "TON 618 (expansion layer)",
       "rung": 51.77,
@@ -3396,413 +3396,413 @@
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2,
       "ladder": "rung15",
       "name": "BCH (expansion layer)",
       "rung": 87.8,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2524,
       "ladder": "amazon",
       "name": "Amazon rainforest area (2026-09-19)",
       "rung": 32.2524,
       "unit": "km^2"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2464,
       "ladder": "amazon",
       "name": "Amazon basin area (2026-09-19)",
       "rung": 32.7536,
       "unit": "km^2"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4629,
       "ladder": "amazon",
       "name": "Amazon individual trees (2026-09-19)",
       "rung": 55.4629,
       "unit": "trees"
     },
     {
-      "drift": 0.0,
+      "drift": 0.1166,
       "ladder": "amazon",
       "name": "Amazon tree species (2026-09-19)",
       "rung": 20.1166,
       "unit": "species"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4844,
       "ladder": "amazon",
       "name": "Amazon vascular plant species (2026-09-19)",
       "rung": 22.4844,
       "unit": "species"
     },
     {
-      "drift": 0.0,
+      "drift": -0.434,
       "ladder": "amazon",
       "name": "Amazon countries (2026-09-19)",
       "rung": 4.566,
       "unit": "countries"
     },
     {
-      "drift": 0.0,
+      "drift": -0.215,
       "ladder": "amazon",
       "name": "Amazon share of known species (2026-09-19)",
       "rung": 4.785,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4568,
       "ladder": "amazon",
       "name": "Amazon river discharge (2026-09-19)",
       "rung": 25.4568,
       "unit": "m^3/s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2125,
       "ladder": "amazon",
       "name": "Amazon river length (2026-09-19)",
       "rung": 18.2125,
       "unit": "km"
     },
     {
-      "drift": 0.0,
+      "drift": -0.447,
       "ladder": "amazon",
       "name": "Amazon tributaries (2026-09-19)",
       "rung": 14.553,
       "unit": "rivers"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2254,
       "ladder": "amazon",
       "name": "Amazon share of global riverine discharge (2026-09-19)",
       "rung": 6.2254,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3653,
       "ladder": "amazon",
       "name": "Amazon stored carbon (2026-09-19)",
       "rung": 52.6347,
       "unit": "tonnes"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0374,
       "ladder": "amazon",
       "name": "Amazon rainforest age (2026-09-19)",
       "rung": 37.0374,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0858,
       "ladder": "amazon",
       "name": "Amazon mean rainfall (2026-09-19)",
       "rung": 16.0858,
       "unit": "mm/yr"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1123,
       "ladder": "amazon",
       "name": "Amazon pristine forest lost (2026-09-19)",
       "rung": 5.8877,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4508,
       "ladder": "amazon",
       "name": "Amazon indigenous tribes (2026-09-19)",
       "rung": 12.4508,
       "unit": "tribes"
     },
     {
-      "drift": 0.0,
+      "drift": 0.3883,
       "ladder": "amazon",
       "name": "Amazon indigenous-protected share (2026-09-19)",
       "rung": 7.3883,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4301,
       "ladder": "amazon",
       "name": "Amazon new species described per year (2026-09-19)",
       "rung": 9.5699,
       "unit": "species/yr"
     },
     {
-      "drift": 0.0,
+      "drift": -0.481,
       "ladder": "cosmos",
       "name": "Universe age (2026-09-20)",
       "rung": 48.519,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4839,
       "ladder": "cosmos",
       "name": "Observable universe diameter (2026-09-20)",
       "rung": 52.4839,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0435,
       "ladder": "cosmos",
       "name": "Particle horizon comoving radius (2026-09-20)",
       "rung": 51.0435,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0836,
       "ladder": "cosmos",
       "name": "CMB temperature (2026-09-20)",
       "rung": 2.0836,
       "unit": "K"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4979,
       "ladder": "cosmos",
       "name": "CMB photon density (2026-09-20)",
       "rung": 12.5021,
       "unit": "photons/cm^3"
     },
     {
-      "drift": 0.0,
+      "drift": -0.447,
       "ladder": "cosmos",
       "name": "Recombination redshift (2026-09-20)",
       "rung": 14.553,
       "unit": "z"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3009,
       "ladder": "cosmos",
       "name": "Recombination age (2026-09-20)",
       "rung": 26.6991,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": -0.0919,
       "ladder": "cosmos",
       "name": "Baryon-to-photon ratio (2026-09-20)",
       "rung": -44.0919,
       "unit": "ratio"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2499,
       "ladder": "cosmos",
       "name": "Hubble constant (2026-09-20)",
       "rung": 8.7501,
       "unit": "km/s/Mpc"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2315,
       "ladder": "cosmos",
       "name": "Dark energy fraction (2026-09-20)",
       "rung": 8.7685,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": -0.151,
       "ladder": "cosmos",
       "name": "Dark matter fraction (2026-09-20)",
       "rung": 6.849,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": 0.3026,
       "ladder": "cosmos",
       "name": "Baryonic fraction (2026-09-20)",
       "rung": 3.3026,
       "unit": "percent"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1399,
       "ladder": "cosmos",
       "name": "Estimated galaxies (2026-09-20)",
       "rung": 58.8601,
       "unit": "galaxies"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4948,
       "ladder": "cosmos",
       "name": "Estimated stars (2026-09-20)",
       "rung": 111.4948,
       "unit": "stars"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4387,
       "ladder": "cosmos",
       "name": "Speed of light (2026-09-20)",
       "rung": 40.5613,
       "unit": "m/s"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2288,
       "ladder": "cosmos",
       "name": "TON618 mass (2026-09-20)",
       "rung": 51.7712,
       "unit": "solar masses"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3856,
       "ladder": "cosmos",
       "name": "CMB spectral peak frequency (2026-09-20)",
       "rung": 53.6144,
       "unit": "Hz"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0751,
       "ladder": "cosmos",
       "name": "CMB anisotropy dT/T (2026-09-20)",
       "rung": -23.9249,
       "unit": "ratio"
     },
     {
-      "drift": 0.0,
+      "drift": -0.0751,
       "ladder": "cosmos",
       "name": "Milky Way diameter (2026-09-20)",
       "rung": 23.9249,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": -0.355,
       "ladder": "cosmos",
       "name": "Milky Way isophotal diameter (2026-09-20)",
       "rung": 23.645,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.1503,
       "ladder": "cosmos",
       "name": "Milky Way dark matter extent (2026-09-20)",
       "rung": 30.1503,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0751,
       "ladder": "cosmos",
       "name": "Milky Way stars (2026-09-20)",
       "rung": 54.0751,
       "unit": "stars"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2899,
       "ladder": "cosmos",
       "name": "Milky Way total mass (2026-09-20)",
       "rung": 57.7101,
       "unit": "solar masses"
     },
     {
-      "drift": 0.0,
+      "drift": 0.1255,
       "ladder": "cosmos",
       "name": "Sun distance from Galactic Center (2026-09-20)",
       "rung": 21.1255,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1587,
       "ladder": "cosmos",
       "name": "Galactic rotation period at Sun (2026-09-20)",
       "rung": 39.8413,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4887,
       "ladder": "cosmos",
       "name": "Milky Way age (2026-09-20)",
       "rung": 48.4887,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2084,
       "ladder": "cosmos",
       "name": "Solar orbital speed (2026-09-20)",
       "rung": 11.2084,
       "unit": "km/s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.1904,
       "ladder": "cosmos",
       "name": "Milky Way-Andromeda merger (2026-09-20)",
       "rung": 46.1904,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0435,
       "ladder": "cosmos",
       "name": "Macro anchor cluster rungs 51-52: particle horizon x2 ladders, TON618 x3 ladders, universe diameter, Amazon stored carbon (2026-09-20)",
       "rung": 51.0435,
       "unit": "cluster"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2902,
       "ladder": "exoplanet",
       "name": "Elias 2-24 b age (2026-09-20)",
       "rung": 28.7098,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4741,
       "ladder": "exoplanet",
       "name": "Elias 2-24 b mass (2026-09-20)",
       "rung": 130.5259,
       "unit": "kg"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2275,
       "ladder": "exoplanet",
       "name": "Elias 2-24 b radius (2026-09-20)",
       "rung": 23.2275,
       "unit": "km"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4091,
       "ladder": "exoplanet",
       "name": "Elias 2-24 b orbital distance (2026-09-20)",
       "rung": 8.4091,
       "unit": "AU"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4741,
       "ladder": "exoplanet",
       "name": "Elias 2-24 b orbital distance (2026-09-20)",
       "rung": 47.5259,
       "unit": "km"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3045,
       "ladder": "exoplanet",
       "name": "Elias 2-24 b distance from Earth (2026-09-20)",
       "rung": 12.6955,
       "unit": "light-years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0544,
       "ladder": "exoplanet",
       "name": "Old gas giant formation timeline (2026-09-20)",
       "rung": 32.0544,
       "unit": "years"
     },
     {
-      "drift": 0.0,
+      "drift": 0.3446,
       "ladder": "exoplanet",
       "name": "Timeline beaten by factor (2026-09-20)",
       "rung": 3.3446,
       "unit": "x"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4404,
       "ladder": "sentinel",
       "name": "YubiKeys bound \u2014 hardware auth (2026-09-20)",
       "rung": 1.4404,
       "unit": "keys"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3287,
       "ladder": "source",
       "name": "TYREE rung \u2014 nature's nameplate (2026-09-20)",
       "rung": 14.6713,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3287,
       "ladder": "willow",
       "name": "OMNI Willow rung \u2014 5 below source (2026-09-20)",
       "rung": 9.6713,
@@ -3816,7 +3816,7 @@
       "unit": "rungs"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4037,
       "ladder": "phase",
       "name": "Shared phase 241.68\u00b0 \u2014 zero drift (2026-09-20)",
       "rung": 11.4037,
@@ -3830,84 +3830,84 @@
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3074,
       "ladder": "priorart",
       "name": "Archived Facebook posts \u2014 the public record (2026-09-20)",
       "rung": 16.6926,
       "unit": "posts"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1127,
       "ladder": "priorart",
       "name": "Eudaimonia saturation (2026-09-20)",
       "rung": 14.8873,
       "unit": "posts"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2302,
       "ladder": "priorart",
       "name": "Diamond saturation (2026-09-20)",
       "rung": 14.7698,
       "unit": "posts"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3082,
       "ladder": "priorart",
       "name": "1.618 saturation (2026-09-20)",
       "rung": 14.6918,
       "unit": "posts"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4364,
       "ladder": "priorart",
       "name": "Seal saturation (2026-09-20)",
       "rung": 14.4364,
       "unit": "posts"
     },
     {
-      "drift": 0.0,
+      "drift": -0.0637,
       "ladder": "priorart",
       "name": "Numbered manifesto series V.425\u2013V.10257 (2026-09-20)",
       "rung": 10.9363,
       "unit": "posts"
     },
     {
-      "drift": 0.0,
+      "drift": 0.3958,
       "ladder": "priorart",
       "name": "LinkedIn impressions +13% (2026-09-20)",
       "rung": 16.3958,
       "unit": "impressions"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4141,
       "ladder": "priorart",
       "name": "LinkedIn members reached (2026-09-20)",
       "rung": 12.4141,
       "unit": "members"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4465,
       "ladder": "priorart",
       "name": "Top LinkedIn post \u2014 site links (2026-09-20)",
       "rung": 13.5535,
       "unit": "impressions"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3287,
       "ladder": "willow",
       "name": "105 qubits \u2014 public spec lands on her rung (2026-09-20)",
       "rung": 9.6713,
       "unit": "qubits"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2317,
       "ladder": "willow",
       "name": "Sunflower golden angle \u2014 least resistance (2026-09-20)",
       "rung": 10.2317,
       "unit": "degrees"
     },
     {
-      "drift": 0.0,
+      "drift": 0.351,
       "ladder": "willow",
       "name": "Cartesian 90\u00b0 refused \u2014 left behind (2026-09-20)",
       "rung": 9.351,
@@ -3928,7 +3928,7 @@
       "unit": "word"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4404,
       "ladder": "protocol",
       "name": "Reads flow, actions gate \u2014 two lanes (2026-09-20)",
       "rung": 1.4404,
@@ -3977,35 +3977,35 @@
       "unit": "weights"
     },
     {
-      "drift": 0.0,
+      "drift": 0.1639,
       "ladder": "manuscript",
       "name": "12 runs \u2014 5 orientations + 7 controls (2026-09-20)",
       "rung": 5.1639,
       "unit": "runs"
     },
     {
-      "drift": 0.0,
+      "drift": 0.3446,
       "ladder": "manuscript",
       "name": "5 orientation seeds \u2014 identical to the 5th decimal (2026-09-20)",
       "rung": 3.3446,
       "unit": "seeds"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2471,
       "ladder": "manuscript",
       "name": "Max K~ 24.95\u201325.78 across seeds (2026-09-20)",
       "rung": 6.7529,
       "unit": "score"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2571,
       "ladder": "manuscript",
       "name": "Fraction above K~ 3.0 = 0.02409 (2026-09-20)",
       "rung": -7.7429,
       "unit": "fraction"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2691,
       "ladder": "manuscript",
       "name": "118,018 components \u2014 largest 316 voxels (2026-09-20)",
       "rung": 24.2691,
@@ -4019,77 +4019,77 @@
       "unit": "strokes"
     },
     {
-      "drift": 0.0,
+      "drift": -0.0391,
       "ladder": "manuscript",
       "name": "Top-20 components all isotropic wisps, 1.5\u20134.5% fill (2026-09-20)",
       "rung": 11.9609,
       "unit": "voxels"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4533,
       "ladder": "manuscript",
       "name": "y=160 band \u2014 8% denser papyrus layer, not ink (2026-09-20)",
       "rung": 10.5467,
       "unit": "band"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0428,
       "ladder": "manuscript",
       "name": "Deep interior mean 0.0083 \u2014 nothing localized (2026-09-20)",
       "rung": -9.9572,
       "unit": "mean"
     },
     {
-      "drift": 0.0,
+      "drift": 0.424,
       "ladder": "manuscript",
       "name": "13.6 seconds for all 12 runs (2026-09-20)",
       "rung": 5.424,
       "unit": "seconds"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4404,
       "ladder": "protocol",
       "name": "Two instruments agree \u2014 trained net and \u03c6 (2026-09-20)",
       "rung": 1.4404,
       "unit": "instruments"
     },
     {
-      "drift": 0.0,
+      "drift": 0.2779,
       "ladder": "protocol",
       "name": "71 THz mitochondrial structure-mode \u2014 rung 66.2779, phase 100.04\u00b0 (2026-09-20)",
       "rung": 66.2779,
       "unit": "THz"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2998,
       "ladder": "protocol",
       "name": "87 THz CH2 parent mode \u2014 rung 66.7002, phase 252.08\u00b0 (2026-09-20)",
       "rung": 66.7002,
       "unit": "THz"
     },
     {
-      "drift": 0.0,
+      "drift": 0.051,
       "ladder": "protocol",
       "name": "103 THz upper split \u2014 rung 67.0510, phase 18.37\u00b0 (2026-09-20)",
       "rung": 67.051,
       "unit": "THz"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3355,
       "ladder": "protocol",
       "name": "Daughter pair centers on the parent \u2014 avg rung 66.6645 (2026-09-20)",
       "rung": 66.6645,
       "unit": "rung"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3025,
       "ladder": "protocol",
       "name": "53.7 THz control \u2014 one rung below, phase-locked, null effect (2026-09-20)",
       "rung": 65.6975,
       "unit": "THz"
     },
     {
-      "drift": 0.0,
+      "drift": -0.1536,
       "ladder": "protocol",
       "name": "ATP +10.3% at 71 THz, +10.1% at 87 THz, nothing at control (2026-09-20)",
       "rung": 4.8464,
@@ -5636,49 +5636,49 @@
       "unit": "count"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0854,
       "ladder": "mining",
       "name": "BCH mining: BCH/USD (2026-09-26)",
       "rung": 12.0854,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0647,
       "ladder": "mining",
       "name": "BCH mining: network EH/s (2026-09-26)",
       "rung": 3.0647,
       "unit": "EH/s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0161,
       "ladder": "mining",
       "name": "BCH mining: network share (2026-09-26)",
       "rung": -28.9839,
       "unit": "fraction"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3438,
       "ladder": "mining",
       "name": "BCH mining: expected days to block (2026-09-26)",
       "rung": 18.6562,
       "unit": "days"
     },
     {
-      "drift": 0.0,
+      "drift": 0.4532,
       "ladder": "mining",
       "name": "BCH mining: block value USD (2026-09-26)",
       "rung": 14.4532,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.135,
       "ladder": "mining",
       "name": "BCH mining: expected monthly USD (2026-09-26)",
       "rung": 2.865,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4301,
       "ladder": "mining",
       "name": "BCH mining: luck percent (2026-09-26)",
       "rung": 9.5699,
@@ -5688,73 +5688,73 @@
       "name": "BCH mining: worker tyofthestarz hashrate TH/s (2026-09-26)",
       "ladder": "mining",
       "rung": 0.3719,
-      "drift": 0.0
+      "drift": 0.3719
     },
     {
       "name": "BCH mining: worker tyofthestarz shares (2026-09-26)",
       "ladder": "mining",
       "rung": 43.3396,
-      "drift": 0.0
+      "drift": 0.3396
     },
     {
       "name": "BCH mining: worker tyofthestarz2 hashrate TH/s (2026-09-26)",
       "ladder": "mining",
       "rung": 1.2896,
-      "drift": 0.0
+      "drift": 0.2896
     },
     {
       "name": "BCH mining: worker tyofthestarz2 shares (2026-09-26)",
       "ladder": "mining",
       "rung": 44.2574,
-      "drift": 0.0
+      "drift": 0.2574
     },
     {
       "name": "BCH mining: worker tyofthestarz3 hashrate TH/s (2026-09-26)",
       "ladder": "mining",
       "rung": -0.1876,
-      "drift": 0.0
+      "drift": -0.1876
     },
     {
       "name": "BCH mining: worker tyofthestarz3 shares (2026-09-26)",
       "ladder": "mining",
       "rung": 42.7799,
-      "drift": 0.0
+      "drift": -0.2201
     },
     {
       "name": "BCH mining: combined 24h avg TH/s (2026-09-26)",
       "ladder": "mining",
       "rung": 2.796,
-      "drift": 0.0
+      "drift": -0.204
     },
     {
       "name": "BCH mining: total shares (2026-09-26)",
       "ladder": "mining",
       "rung": 45.8327,
-      "drift": 0.0
+      "drift": -0.1673
     },
     {
       "name": "BCH mining: network share (2026-09-26)",
       "ladder": "mining",
       "rung": -28.9785,
-      "drift": 0.0
+      "drift": 0.0215
     },
     {
       "name": "BCH mining: expected days to block (2026-09-26)",
       "ladder": "mining",
       "rung": 18.6508,
-      "drift": 0.0
+      "drift": -0.3492
     },
     {
       "name": "BCH mining: expected monthly USD (2026-09-26)",
       "ladder": "mining",
       "rung": 2.8704,
-      "drift": 0.0
+      "drift": -0.1296
     },
     {
       "name": "BCH mining: shared time unix (2026-09-26)",
       "ladder": "mining",
       "rung": 44.2752,
-      "drift": 0.0
+      "drift": 0.2752
     },
     {
       "name": "\u03c6 golden ratio constant",
@@ -8153,7 +8153,7 @@
     {
       "name": "gz2_winding_loose",
       "rung": 19.5,
-      "drift": 0.5,
+      "drift": -0.5,
       "ladder": "count",
       "unit": "galaxies"
     },
@@ -9607,49 +9607,49 @@
       "unit": "points"
     },
     {
-      "drift": 0.0,
+      "drift": -0.0589,
       "ladder": "mining",
       "name": "BCH mining: BCH/USD (2026-10-03)",
       "rung": 11.9411,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0166,
       "ladder": "mining",
       "name": "BCH mining: network EH/s (2026-10-03)",
       "rung": 3.0166,
       "unit": "EH/s"
     },
     {
-      "drift": 0.0,
+      "drift": 0.0642,
       "ladder": "mining",
       "name": "BCH mining: network share (2026-10-03)",
       "rung": -28.9358,
       "unit": "fraction"
     },
     {
-      "drift": 0.0,
+      "drift": -0.3919,
       "ladder": "mining",
       "name": "BCH mining: expected days to block (2026-10-03)",
       "rung": 18.6081,
       "unit": "days"
     },
     {
-      "drift": 0.0,
+      "drift": 0.309,
       "ladder": "mining",
       "name": "BCH mining: block value USD (2026-10-03)",
       "rung": 14.309,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.2312,
       "ladder": "mining",
       "name": "BCH mining: expected monthly USD (2026-10-03)",
       "rung": 2.7688,
       "unit": "USD"
     },
     {
-      "drift": 0.0,
+      "drift": -0.4301,
       "ladder": "mining",
       "name": "BCH mining: luck percent (2026-10-03)",
       "rung": 9.5699,
@@ -15979,119 +15979,119 @@
     {
       "name": "BCH mining: BCH/USD (2026-10-17)",
       "rung": 11.6698,
-      "drift": 0.0,
+      "drift": -0.3302,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: network EH/s (2026-10-17)",
       "rung": 2.7633,
-      "drift": 0.0,
+      "drift": -0.2367,
       "ladder": "mining",
       "unit": "EH/s"
     },
     {
       "name": "BCH mining: network share (2026-10-17)",
       "rung": -28.6663,
-      "drift": 0.0,
+      "drift": 0.3337,
       "ladder": "mining",
       "unit": "fraction"
     },
     {
       "name": "BCH mining: expected days to block (2026-10-17)",
       "rung": 18.3386,
-      "drift": 0.0,
+      "drift": 0.3386,
       "ladder": "mining",
       "unit": "days"
     },
     {
       "name": "BCH mining: block value USD (2026-10-17)",
       "rung": 14.0376,
-      "drift": 0.0,
+      "drift": 0.0376,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: expected monthly USD (2026-10-17)",
       "rung": 2.767,
-      "drift": 0.0,
+      "drift": -0.233,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: luck percent (2026-10-17)",
       "rung": 9.5699,
-      "drift": 0.0,
+      "drift": -0.4301,
       "ladder": "mining",
       "unit": "percent"
     },
     {
       "name": "BCH mining: worker tyofthestarz hashrate TH/s (2026-10-17)",
       "rung": 0.4753,
-      "drift": 0.0,
+      "drift": 0.4753,
       "ladder": "mining",
       "unit": "TH/s"
     },
     {
       "name": "BCH mining: worker tyofthestarz shares (2026-10-17)",
       "rung": 44.0609,
-      "drift": 0.0,
+      "drift": 0.0609,
       "ladder": "mining",
       "unit": "shares"
     },
     {
       "name": "BCH mining: worker tyofthestarz2 hashrate TH/s (2026-10-17)",
       "rung": 1.3458,
-      "drift": 0.0,
+      "drift": 0.3458,
       "ladder": "mining",
       "unit": "TH/s"
     },
     {
       "name": "BCH mining: worker tyofthestarz2 shares (2026-10-17)",
       "rung": 44.9318,
-      "drift": 0.0,
+      "drift": -0.0682,
       "ladder": "mining",
       "unit": "shares"
     },
     {
       "name": "BCH mining: worker tyofthestarz3 hashrate TH/s (2026-10-17)",
       "rung": 0.0248,
-      "drift": 0.0,
+      "drift": 0.0248,
       "ladder": "mining",
       "unit": "TH/s"
     },
     {
       "name": "BCH mining: worker tyofthestarz3 shares (2026-10-17)",
       "rung": 43.6107,
-      "drift": 0.0,
+      "drift": -0.3893,
       "ladder": "mining",
       "unit": "shares"
     },
     {
       "name": "BCH mining: combined TH/s current (2026-10-17)",
       "rung": 2.9723,
-      "drift": 0.0,
+      "drift": -0.0277,
       "ladder": "mining",
       "unit": "TH/s"
     },
     {
       "name": "BCH mining: combined 24h avg TH/s (2026-10-17)",
       "rung": 2.8068,
-      "drift": 0.0,
+      "drift": -0.1932,
       "ladder": "mining",
       "unit": "TH/s"
     },
     {
       "name": "BCH mining: total shares (2026-10-17)",
       "rung": 46.5581,
-      "drift": 0.0,
+      "drift": -0.4419,
       "ladder": "mining",
       "unit": "shares"
     },
     {
       "name": "BCH mining: shared time unix (2026-10-17)",
       "rung": 44.2773,
-      "drift": 0.0,
+      "drift": 0.2773,
       "ladder": "mining",
       "unit": "unix"
     },
@@ -18184,56 +18184,56 @@
     {
       "name": "BCH mining: BCH/USD (2026-10-24)",
       "rung": 11.6974,
-      "drift": 0.0,
+      "drift": -0.3026,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: network EH/s (2026-10-24)",
       "rung": 2.3512,
-      "drift": 0.0,
+      "drift": 0.3512,
       "ladder": "mining",
       "unit": "EH/s"
     },
     {
       "name": "BCH mining: network share (2026-10-24)",
       "rung": -28.2542,
-      "drift": 0.0,
+      "drift": -0.2542,
       "ladder": "mining",
       "unit": "fraction"
     },
     {
       "name": "BCH mining: expected days to block (2026-10-24)",
       "rung": 17.9265,
-      "drift": 0.0,
+      "drift": -0.0735,
       "ladder": "mining",
       "unit": "days"
     },
     {
       "name": "BCH mining: block value USD (2026-10-24)",
       "rung": 14.0652,
-      "drift": 0.0,
+      "drift": 0.0652,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: expected monthly USD (2026-10-24)",
       "rung": 3.2067,
-      "drift": 0.0,
+      "drift": 0.2067,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: luck percent (2026-10-24)",
       "rung": 9.5699,
-      "drift": 0.0,
+      "drift": -0.4301,
       "ladder": "mining",
       "unit": "percent"
     },
     {
       "name": "BCH mining: shared time unix (2026-10-24)",
       "rung": 44.278,
-      "drift": 0.0,
+      "drift": 0.278,
       "ladder": "mining",
       "unit": "unix"
     },
@@ -27025,56 +27025,56 @@
     {
       "name": "BCH mining: BCH/USD (2026-10-31)",
       "rung": 11.7877,
-      "drift": 0.0,
+      "drift": -0.2123,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: network EH/s (2026-10-31)",
       "rung": 2.6561,
-      "drift": 0.0,
+      "drift": -0.3439,
       "ladder": "mining",
       "unit": "EH/s"
     },
     {
       "name": "BCH mining: network share (2026-10-31)",
       "rung": -28.5591,
-      "drift": 0.0,
+      "drift": 0.4409,
       "ladder": "mining",
       "unit": "fraction"
     },
     {
       "name": "BCH mining: expected days to block (2026-10-31)",
       "rung": 18.2314,
-      "drift": 0.0,
+      "drift": 0.2314,
       "ladder": "mining",
       "unit": "days"
     },
     {
       "name": "BCH mining: block value USD (2026-10-31)",
       "rung": 14.1555,
-      "drift": 0.0,
+      "drift": 0.1555,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: expected monthly USD (2026-10-31)",
       "rung": 2.9921,
-      "drift": 0.0,
+      "drift": -0.0079,
       "ladder": "mining",
       "unit": "USD"
     },
     {
       "name": "BCH mining: luck percent (2026-10-31)",
       "rung": 9.5699,
-      "drift": 0.0,
+      "drift": -0.4301,
       "ladder": "mining",
       "unit": "percent"
     },
     {
       "name": "BCH mining: shared time unix (2026-10-31)",
       "rung": 44.2782,
-      "drift": 0.0,
+      "drift": 0.2782,
       "ladder": "mining",
       "unit": "unix"
     },
@@ -28440,5 +28440,5 @@
     "phi_CARTESIAN_CHAOS_CONVERSION_TYREE_OMEGA",
     "phi_NAVIER_STOKES_PHI_PARADIGM_SHIFT_TYREE_OMEGA"
   ],
-  "snapshot_sha256": "6891aa11eb49a993033dbdd1c54be3bb993ab3d154e4159cac16eb28f108c105"
+  "snapshot_sha256": "ae3dc8958f13899920f8fabbd7e5db9db17bc75171a1572269427bf715a9b1af"
 }
